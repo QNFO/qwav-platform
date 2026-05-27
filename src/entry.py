@@ -20,11 +20,12 @@ async def gh_get(token, repo):
     all_data = []
     page = 1
     while True:
-        url = f"{GH_API}/repos/{repo}/issues?state=all&per_page={PER_PAGE}&page={page}"
-        console.log(f"  GET {url}")
+        url = f"{GH_API}/repos/{repo}/issues"
+        params = f"state=all&per_page={PER_PAGE}&page={page}"
+        full_url = f"{url}?{params}"
 
         try:
-            resp = await fetch(url, Object.fromEntries([
+            resp = await fetch(full_url, Object.fromEntries([
                 ["headers", Object.fromEntries([
                     ["Authorization", f"Bearer {token}"],
                     ["Accept", "application/vnd.github+json"],
@@ -37,39 +38,34 @@ async def gh_get(token, repo):
             break
 
         status = resp.status
-        console.log(f"  HTTP {status}")
 
         if status == 404:
             console.warn(f"  Repo not found: {repo}")
             return None
         if status == 401:
-            console.error(f"  Auth failed — check GITHUB_TOKEN secret")
+            console.error(f"  Auth failed - check GITHUB_TOKEN secret")
             return None
         if status != 200:
             body = await resp.text()
-            console.error(f"  Unexpected status {status}: {body[:200]}")
+            console.error(f"  HTTP {status}: {body[:200]}")
             break
 
         body = await resp.text()
-        console.log(f"  Response body length: {len(body)} chars")
 
         try:
             data = _json.loads(body)
         except Exception as e:
             console.error(f"  JSON parse failed: {str(e)}")
-            console.error(f"  Raw body: {body[:500]}")
             break
 
         if not isinstance(data, list):
-            console.error(f"  Expected list, got {type(data).__name__}: {str(data)[:200]}")
+            console.error(f"  Expected list, got {type(data).__name__}")
             break
 
         if not data:
-            console.log(f"  Empty page — done")
             break
 
         all_data.extend(data)
-        console.log(f"  Page {page}: {len(data)} issues (total: {len(all_data)})")
 
         if len(data) < PER_PAGE:
             break
@@ -87,7 +83,6 @@ async def scheduled(event, env, ctx):
     iso = now.isoformat()
 
     console.log(f"[github-sync] Sync start: {iso}")
-    console.log(f"[github-sync] Token starts with: {token[:10]}...")
     results = {}
 
     for repo in REPOS:
@@ -95,7 +90,7 @@ async def scheduled(event, env, ctx):
         try:
             issues = await gh_get(token, repo)
         except Exception as e:
-            console.error(f"[github-sync] {repo}: EXCEPTION — {str(e)}")
+            console.error(f"[github-sync] {repo}: EXCEPTION - {str(e)}")
             results[repo] = {"status": "error", "error": str(e)}
             continue
 
@@ -116,7 +111,6 @@ async def scheduled(event, env, ctx):
 
         # Dated snapshot
         dated_key = f"audit/github/{date_str}/{repo.replace('/', '-')}-issues.json"
-        console.log(f"[github-sync] Writing to R2: {dated_key}")
         try:
             await bucket.put(dated_key, payload)
             console.log(f"[github-sync]   dated snapshot OK")
@@ -125,7 +119,6 @@ async def scheduled(event, env, ctx):
 
         # Latest snapshot
         latest_key = f"audit/github/latest/{repo.replace('/', '-')}-issues.json"
-        console.log(f"[github-sync] Writing to R2: {latest_key}")
         try:
             await bucket.put(latest_key, payload)
             console.log(f"[github-sync]   latest snapshot OK")
@@ -150,7 +143,5 @@ async def on_fetch(request, env):
     """HTTP trigger for manual sync."""
     results = await scheduled(None, env, None)
     return Response.new(_json.dumps(results), Object.fromEntries([
-        ["headers", Object.fromEntries([
-            ["Content-Type", "application/json"]
-        ])]
+        ["headers", Object.fromEntries([["Content-Type", "application/json"]])]
     ]))
