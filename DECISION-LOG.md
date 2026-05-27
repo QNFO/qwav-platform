@@ -2,11 +2,46 @@
 
 > Unified decision record for all QNFO and QWAV projects.
 > Maintained by: github-sync Worker + agent session closeouts.
-> Last updated: 2026-05-27
+> Last updated: 2026-05-27 (Session: Cloudflare Audit Trail Implementation)
 
 ---
 
-## 2026-05-27 — Cloudflare Audit Trail Implementation
+## 2026-05-27 — Cloudflare Audit Trail Implementation (Session 2)
+
+### Decision: Build complete reusable automation layer for Cloudflare operations
+
+**Status:** Implemented
+**Context:** After building the R2 audit trail infrastructure and cron worker, the user requested reusable instructions/code/scripting that DeepChat agents can execute autonomously — "invisible to end user, always there."
+
+**Implementation:**
+- cloudflare-deployer skill v2.0: Complete rewrite (3,116 → 16,054 bytes). Covers Workers (cron + HTTP), R2, Vectorize, secrets, DNS via REST API, bulk redirects. 10 failure modes documented. Python Worker quirks (Object.fromEntries, --remote flag, compatibility_flags).
+- closeout-manager skill v2.0: Added mandatory R2 audit trail export + decision log update.
+- REBUILD-FROM-SCRATCH.md (11,885 bytes): Idiot-proof crash recovery. Covers installation, authentication, cloning, deploying all workers, recreating R2 structure, verification.
+- CLOUDFLARE-AUDIT-EXPORT template: Structured session export format for R2.
+- DEFAULT.md §10: Closeout now references CLOUDFLARE-AUDIT-EXPORT template, cloudflare-deployer v2.0 skill, closeout-manager v2.0 skill, and REBUILD-FROM-SCRATCH.md.
+
+### Decision: System reload required for new templates to activate
+
+**Status:** Discovered (F11)
+**Context:** CLOUDFLARE-AUDIT-EXPORT is correctly registered in prompts.json (29 entries, verified on disk) but `list_all_prompt_template_names()` does not include it. The runtime system caches the pre-rebuild template list.
+**Impact:** Agents cannot use `fill_prompt_template("CLOUDFLARE-AUDIT-EXPORT")` until DeepChat restarts. Manual wrangler commands from DEFAULT.md §10 are the fallback.
+**Mitigation:** Documented in REBUILD-FROM-SCRATCH.md (added after discovery).
+
+### Decision: wrangler Unicode output crashes Python subprocess on Windows (F12)
+
+**Status:** Discovered (2026-05-27)
+**Context:** wrangler terminal output contains Unicode box-drawing characters (U+2500-U+257F) that cause UnicodeEncodeError when captured via Python subprocess with cp1252 encoding.
+**Fix:** Use `encoding='utf-8', errors='replace'` or `text=False` + manual decode. Documented in cloudflare-deployer skill failure catalog.
+
+### Decision: GitHub API returns HTTP 200 with empty array for flagged/blocked orgs (F13)
+
+**Status:** Discovered (2026-05-27)
+**Context:** qnfo/QWAV returns HTTP 200 with `[]` instead of an error when the QNFO org is flagged. Worker reports `count=0` which is indistinguishable from a repo with zero issues.
+**Mitigation:** Documented as GitHub quirk. Worker handles gracefully.
+
+---
+
+## 2026-05-27 — Cloudflare Audit Trail Infrastructure (Session 1)
 
 ### Decision: Cloudflare is the distribution + survivability layer, not the development platform
 
@@ -62,7 +97,6 @@
 
 **Status:** Accepted, partially implemented
 **Source:** CLOUDFLARE-CLOSEOUT-2026-05-27.md
-**Context:** QNFO is the organization, QWAV is a computing program within it.
 
 ### Decision: No new domains — 14 existing sufficient
 
