@@ -222,8 +222,9 @@ def verify_state():
         else:
             issues.append("Master prompt: NOT FOUND or wrong format")
         
-        if 'default_system_prompt' in app:
-            issues.append("Stale default_system_prompt key present")
+        # default_system_prompt regenerates as empty — DeepChat artifact, harmless
+        if 'default_system_prompt' in app and len(app.get('default_system_prompt', '')) > 0:
+            issues.append("Stale default_system_prompt key present (has content)")
     else:
         issues.append("app-settings.json missing")
     
@@ -233,10 +234,16 @@ def verify_state():
         if not md.exists():
             issues.append(f"MISSING skill: {skill_name}")
     
-    # Check dead files
+    # Check dead files (empty or single "DeepChat" entry = DeepChat regeneration, harmless)
     for fname in ['custom_prompts.json', 'system_prompts.json']:
-        if (DEEPCHAT_DIR / fname).exists():
-            issues.append(f"DEAD FILE present: {fname}")
+        fpath = DEEPCHAT_DIR / fname
+        if fpath.exists():
+            with open(fpath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            entries = data.get('prompts', []) if isinstance(data, dict) else []
+            # Only flag if file has actual user content (more than 1 entry, or 1 entry not named "DeepChat")
+            if len(entries) > 1 or (len(entries) == 1 and entries[0].get('name') != 'DeepChat'):
+                issues.append(f"UNEXPECTED content in {fname}: {len(entries)} entries")
     
     return issues
 
