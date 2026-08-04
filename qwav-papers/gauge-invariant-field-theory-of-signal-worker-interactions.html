@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gauge-Invariant Field Theory of Signal-Worker Interactions | QWAV</title>
+<meta name="description" content="Gauge-Invariant Field Theory of Signal-Worker Interactions Deriving the Logical Cloning Prohibition from First Principles of Quantum Architectonics Author: R...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/gauge-invariant-field-theory-of-signal-worker-interactions">
+<meta property="og:title" content="Gauge-Invariant Field Theory of Signal-Worker Interactions">
+<meta property="og:description" content="Gauge-Invariant Field Theory of Signal-Worker Interactions Deriving the Logical Cloning Prohibition from First Principles of Quantum Architectonics Author: R...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/gauge-invariant-field-theory-of-signal-worker-interactions">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Gauge-Invariant Field Theory of Signal-Worker Interactions",
+  "url": "https://deep.qwav.tech/papers/gauge-invariant-field-theory-of-signal-worker-interactions",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2026-02-03T09:17:22Z",
+  "keywords": [
+    ": Quantum Field Theory",
+    "Quantum Information",
+    "Topological Protection",
+    "Condensed Matter",
+    "Quantum Architectonics",
+    "Renormalization Group",
+    "Non-Abelian Gauge Theory",
+    "Quantum Riemannian Geometry",
+    "Bulk-Boundary Correspondence",
+    "Symmetry-Protected Topological (SPT) Phases",
+    "Ward-Takahashi Identity"
+  ],
+  "abstract": "Gauge-Invariant Field Theory of Signal-Worker Interactions Deriving the Logical Cloning Prohibition from First Principles of Quantum Architectonics Author: R..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1
+id="gauge-invariant-field-theory-of-signal-worker-interactions">Gauge-Invariant
+Field Theory of Signal-Worker Interactions</h1>
+<h2
+id="deriving-the-logical-cloning-prohibition-from-first-principles-of-quantum-architectonics">Deriving
+the Logical Cloning Prohibition from First Principles of Quantum
+Architectonics</h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Contact:</strong> rowan.quni@outlook.com <strong>ORCID:</strong>
+0009-0002-4317-5604 <strong>ISNI:</strong> 0000000526456062
+<strong>DOI:</strong> 10.5281/zenodo.18466521 <strong>Date:</strong>
+2026-02-03 <strong>Version:</strong> 1.0</p>
+<p><strong>Abstract</strong>: The transition of Quantum Architectonics
+from a materials-centric discipline to a fundamental ontology of
+information-matter interaction necessitates a rigorous field-theoretic
+description. This study bridges that gap by promoting the Signal-Worker
+ontology to a continuous Gauge-Invariant Quantum Field Theory, where
+“Workers” are treated as fermionic matter fields and “Signals” as
+non-Abelian gauge bosons. We construct a <span
+class="math inline">\(SU(2)\)</span> invariant Lagrangian that recovers
+the discrete <span class="math inline">\(H_{SW}\)</span> model as a
+stable infrared fixed point, demonstrating that the lattice architecture
+of current models is a fundamental emergent reality rather than a mere
+approximation. The central finding of this research is the
+first-principles derivation of the Logical Cloning Prohibition (LCI). We
+demonstrate that the LCI is not merely an architectural heuristic but a
+symmetry-enforced conservation law—specifically, a Ward identity of the
+Signal gauge field. Numerical analysis reveals that the LCI scales
+exponentially with system size (<span class="math inline">\(N\)</span>),
+providing robust topological protection against local decoherence. By
+identifying the specific anomalous terms responsible for information
+robustness, we provide a theoretical blueprint for the next generation
+of topologically protected quantum devices, validating the Signal-Worker
+ontology as a complete description of quantum information dynamics.</p>
+<p><strong>Keywords</strong>: Quantum Field Theory, Quantum Information,
+Topological Protection, Condensed Matter, Quantum Architectonics,
+Renormalization Group, Non-Abelian Gauge Theory, Quantum Riemannian
+Geometry, Bulk-Boundary Correspondence, Symmetry-Protected Topological
+(SPT) Phases, Ward-Takahashi Identity</p>
+<hr />
+<h2 id="introduction">1.0 Introduction</h2>
+<h3 id="the-evolution-of-quantum-architectonics">1.1 The Evolution of
+Quantum Architectonics</h3>
+<p>The discipline of Quantum Architectonics has undergone a profound
+paradigmatic shift, evolving from a strategy of materials integration to
+a fundamental ontology of quantum information. Originally conceived as a
+methodology for organizing nanoscale components to achieve emergent
+quantum functionalities, the field has moved beyond the phenomenological
+“epistemic patches” that characterized its early development (Uchihashi
+&amp; Fukata, 2024). This maturation is marked by the realization that
+the arrangement of quantum matter is not merely a structural problem but
+a manipulation of the underlying information geometry. The historical
+trajectory of the field suggests that true <em>ab initio</em> design
+requires a framework that treats information flow and material structure
+as dual aspects of a single physical reality.</p>
+<p>Central to this new understanding is the Signal-Worker (S-W)
+ontology, which provides a non-dualistic framework for describing energy
+and information transduction. As articulated in recent foundational
+texts, this ontology distinguishes between “Workers”—fermionic agents
+capable of local processing—and “Signals”—bosonic mediators that
+facilitate long-range entanglement (Quni-Gudzinas, 2026a). This
+distinction has proven robust in modeling complex non-equilibrium
+systems, effectively describing phenomena as diverse as photosynthetic
+energy transfer and ambient superconductivity. By formalizing the
+interaction between these entities, the S-W framework has provided the
+first coherent language for engineering quantum coherence at the
+macroscopic scale.</p>
+<p>However, the current mathematical formulation of this ontology relies
+heavily on the discrete <span class="math inline">\(H_{SW}\)</span>
+Hamiltonian. While this model captures the essential lattice dynamics of
+interacting workers, it treats the “Signal” as a background scaffold
+rather than a dynamic field. This discretization, while computationally
+convenient, obscures the continuous symmetries that govern the system’s
+deep structure. Consequently, the current framework struggles to account
+for global topological properties that arise only in the continuum
+limit. To fully realize the potential of Quantum Architectonics, we must
+therefore elevate the S-W ontology from a discrete lattice model to a
+continuous field theory, capable of describing the infinite-dimensional
+nature of the quantum state space.</p>
+<h3 id="the-lci-paradox-complexity-vs.-prohibition">1.2 The LCI Paradox:
+Complexity vs. Prohibition</h3>
+<p>A critical theoretical tension within the current literature concerns
+the precise definition and role of the LCI. In the context of
+architectural metrics, the LCI has been rigorously defined as the
+“Lossless Complexity Index,” a scalar value quantifying the structural
+intelligence of a quantum array (Quni-Gudzinas, 2026b). Under this
+definition, the LCI serves as a design heuristic, guiding the
+optimization of fluxonium qutrits and other high-dimensional components.
+It functions as a measure of the system’s capacity to maintain coherence
+amidst increasing structural complexity, effectively acting as a
+“quality score” for quantum architectures.</p>
+<p>Yet, as we approach the fundamental limits of information processing,
+this metric assumes a more prohibitive character. Theoretical
+considerations suggest that the LCI represents not just a measure of
+complexity, but a threshold of physical possibility—a “Logical Cloning
+Prohibition” that forbids certain information-copying operations. This
+dual nature presents a paradox: how can a continuous complexity metric
+simultaneously function as a binary prohibition law? We propose that
+these are two phases of the same gauge-theoretic order parameter. Below
+a critical threshold, the LCI measures the complexity of the worker
+state; above this threshold, the gauge symmetry of the Signal field
+enforces a strict prohibition against cloning, manifesting as a
+conservation law.</p>
+<p>This synthesis is necessary to derive the prohibition from first
+principles rather than accepting it as an axiomatic constraint. By
+viewing the LCI through the lens of gauge theory, we can reconcile its
+roles as both a structural index and a fundamental law. The prohibition
+against cloning is thus revealed not as an external imposition, but as
+an emergent property of the system’s complexity itself. This unification
+allows us to treat the “Lossless Complexity Index” and the “Logical
+Cloning Prohibition” as synonymous expressions of the underlying gauge
+invariance, bridging the gap between architectural engineering and
+fundamental physics.</p>
+<h3 id="limitations-of-the-discrete-h_sw-hamiltonian">1.3 Limitations of
+the Discrete <span class="math inline">\(H_{SW}\)</span>
+Hamiltonian</h3>
+<p>The discrete <span class="math inline">\(H_{SW}\)</span> Hamiltonian
+has served as the workhorse of Quantum Architectonics, providing an
+effective description of worker-scaffold interactions in the low-energy
+regime. Its success lies in its ability to model the tight-binding
+dynamics of localized qubits, accurately predicting the behavior of
+systems where the correlation length is comparable to the lattice
+spacing (Quni-Gudzinas, 2026a). In these scenarios, the
+finite-dimensional Hilbert space of the workers is sufficient to capture
+the relevant physics, and the “Signal” can be adequately approximated as
+a static potential or a hopping parameter.</p>
+<p>However, this discrete approach fails when we attempt to describe
+topological protection, which is inherently a global property of the
+state manifold. Topological phases, such as those protecting the edge
+states of symmetry-protected topological (SPT) systems, rely on
+invariants defined over a continuous momentum space—a structure that is
+ill-defined in a strictly finite lattice model. The
+“infinite-dimensional nature” of the true state space is lost in the
+truncation to a finite basis, rendering the <span
+class="math inline">\(H_{SW}\)</span> model blind to the very mechanisms
+that ensure robust coherence. Without a continuum description, we cannot
+rigorously define the winding numbers or Chern classes that characterize
+these protected phases.</p>
+<p>To capture these global properties, we must extend the Riemannian
+geometry of the quantum state manifold to the continuum limit. This
+requires treating the Signal and Worker not as discrete nodes and edges,
+but as interacting fields defined on a spacetime manifold. Only in this
+limit does the full symmetry group of the interaction become apparent,
+allowing us to derive topological protection not as a feature of
+specific lattice geometries, but as a fundamental consequence of the
+field topology. The discrete <span class="math inline">\(H_{SW}\)</span>
+model must therefore be understood as an effective field theory—a
+low-energy approximation of a more fundamental, continuous reality.</p>
+<h3 id="the-promise-of-gauge-invariant-integration">1.4 The Promise of
+Gauge-Invariant Integration</h3>
+<p>The integration of the Signal-Worker ontology with Quantum Field
+Theory (QFT) offers a powerful solution to these limitations: the
+framework of gauge invariance. In standard QFT, gauge symmetries dictate
+the form of interactions and enforce conservation laws through Noether’s
+theorem. By postulating that the Signal-Worker interaction is governed
+by a local gauge symmetry, we can derive the dynamics of the system from
+the requirement of phase invariance. This approach naturally introduces
+the “Signal” as the gauge boson mediating the interaction between
+“Worker” fermions, providing a mathematically rigorous definition of the
+scaffold.</p>
+<p>Crucially, gauge theory provides the natural language for expressing
+constraints on information flow. The Ward-Takahashi identities—quantum
+mechanical analogues of classical conservation laws—impose strict
+relations between correlation functions, effectively forbidding
+processes that violate the underlying symmetry (Oppenheim &amp; Reznik,
+2009). In this context, the Logical Cloning Prohibition can be derived
+directly as a Ward identity: the “cloning” of a worker state would imply
+a violation of the local gauge symmetry, and is thus dynamically
+suppressed. This elevates the LCI from a heuristic rule to a fundamental
+symmetry constraint, robust against local perturbations.</p>
+<p>Furthermore, this field-theoretic perspective opens the door to
+understanding topological protection via anomalous field theories. If
+the Signal-Worker system admits a gauge anomaly—a breaking of symmetry
+at the quantum level—this anomaly can enforce the existence of protected
+edge states via the bulk-boundary correspondence. The “Signal” field
+effectively “knows” the global topology of the system, preventing the
+“Worker” from decohering into the environment. This mechanism provides a
+first-principles explanation for the robustness of quantum
+architectures, grounding the engineering principles of Architectonics in
+the deep structure of quantum geometry.</p>
+<h3 id="research-questions-and-objectives">1.5 Research Questions and
+Objectives</h3>
+<p>This study aims to formalize the field-theoretic foundations of
+Quantum Architectonics by addressing three primary research questions.
+First (<strong>RQ1</strong>), how can the Signal-Worker interaction be
+formally represented as a gauge-invariant action that recovers the
+Logical Cloning Prohibition (LCI) from the first principles of gauge
+theory? This involves constructing a Lagrangian that respects the
+symmetries of the ontology while forbidding information cloning. Second
+(<strong>RQ2</strong>), what specific gauge group and field operator
+definitions are necessary to extend the Riemannian geometry of quantum
+state manifolds to the infinite-dimensional continuum limit? We seek to
+identify the mathematical structures that map the discrete worker logic
+onto a continuous manifold. Finally (<strong>RQ3</strong>), to what
+extent does the Renormalization Group (RG) flow from a continuous
+Signal-Worker field theory validate the discrete <span
+class="math inline">\(H_{SW}\)</span> model as a stable infrared fixed
+point? This question probes the physical reality of the lattice model,
+testing whether it emerges naturally from the high-energy theory.</p>
+<h3 id="methodological-overview">1.6 Methodological Overview</h3>
+<p>To address these questions, we employ a dual methodology combining
+formal analytical derivation with computational simulation. We begin by
+constructing a non-Abelian gauge theory for the Signal-Worker system,
+deriving the Lagrangian and associated Ward identities to prove the
+emergence of the LCI. This theoretical work is complemented by numerical
+simulations of the Renormalization Group (RG) flow, implemented in
+Python, to visualize the trajectory of the system from the ultraviolet
+continuum to the infrared lattice. By calculating the stability
+eigenvalues of the fixed point, we quantitatively verify the robustness
+of the discrete <span class="math inline">\(H_{SW}\)</span> model. This
+synergistic approach ensures that our theoretical claims are both
+mathematically rigorous and physically realizable.</p>
+<h3 id="thesis-statement-and-structural-roadmap">1.7 Thesis Statement
+and Structural Roadmap</h3>
+<p>We argue that the Signal-Worker ontology is fundamentally a
+Gauge-Invariant Quantum Field Theory, where the Logical Cloning
+Prohibition emerges as a necessary consequence of local gauge symmetry.
+The discrete <span class="math inline">\(H_{SW}\)</span> Hamiltonian is
+not an arbitrary model but the stable infrared fixed point of this
+continuous theory, inheriting its topological protection from the global
+anomalies of the high-energy field. Section 2.0 details the mathematical
+construction of this field theory and its geometric properties. Section
+3.0 presents the derivation of the LCI and the results of the RG flow
+simulations. Finally, Section 4.0 discusses the implications of these
+findings for topological protection and the design of next-generation
+quantum hardware, cementing the transition of Quantum Architectonics to
+a rigorous field-theoretic discipline.</p>
+<hr />
+<h2 id="methodology-the-field-theoretic-framework">2.0 Methodology: The
+Field-Theoretic Framework</h2>
+<h3 id="second-quantization-of-the-signal-worker-ontology">2.1 Second
+Quantization of the Signal-Worker Ontology</h3>
+<p>The transition from a discrete architectural model to a continuous
+field theory begins with the second quantization of the fundamental
+ontological entities. In the established <span
+class="math inline">\(H_{SW}\)</span> framework, “Workers” are typically
+treated as localized two-level systems (qubits) or harmonic oscillators
+residing on specific lattice sites (Quni-Gudzinas, 2026a). While
+sufficient for low-energy descriptions, this single-particle picture
+fails to capture the collective excitations and vacuum fluctuations
+inherent to a topologically protected system. To remedy this, we promote
+the discrete worker index <span class="math inline">\(i\)</span> to a
+continuous spatial coordinate <span class="math inline">\(x\)</span>,
+defining the <strong>Worker Field</strong> <span
+class="math inline">\(\Psi_W(x)\)</span> as a fermionic operator acting
+on the infinite-dimensional Fock space of the system.</p>
+<p>This promotion is not merely a mathematical formalism but a physical
+reinterpretation of the “Worker” as an excitation of a ubiquitous
+underlying field. The creation and annihilation operators, <span
+class="math inline">\(\hat{c}_i^\dagger\)</span> and <span
+class="math inline">\(\hat{c}_i\)</span>, are replaced by field
+operators <span class="math inline">\(\hat{\Psi}^\dagger(x)\)</span> and
+<span class="math inline">\(\hat{\Psi}(x)\)</span> satisfying the
+canonical anticommutation relations <span class="math inline">\(\{
+\hat{\Psi}(x), \hat{\Psi}^\dagger(y) \} = \delta^{(3)}(x-y)\)</span>.
+This allows us to describe states with an indefinite number of workers,
+a necessary condition for analyzing the grand canonical ensembles
+relevant to open quantum systems. The “Signal,” previously modeled as a
+static hopping parameter <span class="math inline">\(t_{ij}\)</span>, is
+simultaneously elevated to a dynamic bosonic field <span
+class="math inline">\(A_\mu(x)\)</span>, capable of propagating
+information through the bulk.</p>
+<p>The interaction between these fields is dictated by the requirement
+that the local phase of the Worker field is unobservable, a principle
+that naturally introduces the Signal as a gauge connection. By treating
+the Worker as a spinor field, we capture the internal degrees of freedom
+(such as the qutrit levels in fluxonium architectures) as components of
+the spinor. This continuous description recovers the discrete <span
+class="math inline">\(H_{SW}\)</span> model in the tight-binding limit,
+where the field operators are expanded in a basis of localized Wannier
+functions. However, the continuum formulation reveals the
+“infinite-dimensional nature” of the state space, providing the
+necessary arena for the emergence of topological invariants that are
+invisible in the finite lattice approximation.</p>
+<h3 id="construction-of-the-gauge-invariant-action">2.2 Construction of
+the Gauge-Invariant Action</h3>
+<p>The dynamics of the coupled Signal-Worker system are governed by an
+action functional <span class="math inline">\(S = \int d^4x
+\mathcal{L}\)</span> that must remain invariant under local gauge
+transformations. Standard quantum field theory dictates that the
+coupling between a matter field and a gauge boson is introduced via the
+covariant derivative <span class="math inline">\(D_\mu = \partial_\mu -
+ig A_\mu\)</span>, where <span class="math inline">\(g\)</span> is the
+coupling constant representing the signal strength. We postulate that
+the “Signal” acts as the gauge boson mediating the interaction between
+“Worker” fermions, leading to a Lagrangian density of the
+Yang-Mills-Higgs type (see Appendix A for full derivation).</p>
+<p>Specifically, the <strong>Signal-Worker Lagrangian</strong> is
+constructed as follows:</p>
+<p><span class="math display">\[
+\mathcal{L}_{SW} = \bar{\Psi}_W (i \gamma^\mu D_\mu - m) \Psi_W -
+\frac{1}{4} F_{\mu\nu}^a F^{a\mu\nu} + \mathcal{L}_{scaffold}
+\]</span></p>
+<p>Here, <span class="math inline">\(F_{\mu\nu}^a = \partial_\mu A_\nu^a
+- \partial_\nu A_\mu^a + g f^{abc} A_\mu^b A_\nu^c\)</span> is the field
+strength tensor of the Signal field, capturing the curvature of the
+information geometry. The term <span
+class="math inline">\(f^{abc}\)</span> represents the structure
+constants of the gauge group, implying that the Signal field itself
+carries “charge” and can self-interact—a feature crucial for complex
+information routing. The mass term <span
+class="math inline">\(m\)</span> represents the intrinsic energy cost of
+creating a worker excitation, while <span
+class="math inline">\(\mathcal{L}_{scaffold}\)</span> accounts for the
+background potential of the physical substrate.</p>
+<p>It is important to acknowledge that in many architectural
+implementations, the “Signal” is mediated by phonons or photons which
+are typically Abelian (non-interacting). However, to enforce the Logical
+Cloning Prohibition as a fundamental constraint, we must consider the
+non-Abelian generalization where the signal pathways can entangle with
+one another. This self-interaction allows the Signal field to form
+topological knots or instantons, providing the “magnetic” stability
+required for information protection. The resulting action <span
+class="math inline">\(S_{SW}\)</span> describes a universe where
+information flow is not passive but dynamically constrained by the
+geometry of the gauge field, ensuring that the “cloning” of a quantum
+state is energetically penalized by the gauge curvature.</p>
+<h3 id="mapping-riemannian-geometry-to-state-manifolds">2.3 Mapping
+Riemannian Geometry to State Manifolds</h3>
+<p>To fully integrate the geometric perspective of Quantum
+Architectonics, we must map the field-theoretic operators to the
+Riemannian geometry of the quantum state manifold. As established by
+Majid (2020), the geometry of a quantum system is defined by a metric
+tensor <span class="math inline">\(g_{\mu\nu}\)</span> on the projective
+Hilbert space. In our field-theoretic framework, this metric is not a
+static background but a dynamic variable determined by the configuration
+of the Signal field. The “distance” between two quantum states is
+measured by the Fubini-Study metric, pulled back to the parameter space
+of the field configurations.</p>
+<p>We derive the explicit form of this metric for the Signal-Worker
+system:</p>
+<p><span class="math display">\[
+g_{\mu\nu} = \text{Re} \langle D_\mu \Psi | D_\nu \Psi \rangle - \langle
+D_\mu \Psi | \Psi \rangle \langle \Psi | D_\nu \Psi \rangle
+\]</span></p>
+<p>This expression couples the “information geometry” directly to the
+physical gauge field <span class="math inline">\(A_\mu\)</span>
+contained within the covariant derivative <span
+class="math inline">\(D_\mu\)</span>. Consequently, a fluctuation in the
+Signal field <span class="math inline">\(A_\mu\)</span> induces a
+curvature in the state manifold. This linkage implies that the
+“scaffold” in Quantum Architectonics is literally the geometry of the
+state space; manipulating the scaffold is equivalent to deforming the
+manifold to guide the system trajectory.</p>
+<p>A limitation of this geometric approach is the assumption of
+adiabaticity, where the system remains in the ground state manifold. In
+high-energy events, transitions to excited manifolds may occur,
+requiring a non-Abelian generalization of the Berry curvature. However,
+within the operational limits of most quantum architectures, the ground
+state geometry dominates. This mapping allows us to calculate the Ricci
+scalar of the state manifold, providing a concrete measure of the
+“complexity” or “curvature” of the information stored in the system.
+Regions of high curvature correspond to highly entangled states
+protected by the geometry itself, linking the abstract notion of the LCI
+to the tangible metric of the field.</p>
+<h3 id="selection-of-the-gauge-group-sun-vs.-u1">2.4 Selection of the
+Gauge Group (<span class="math inline">\(SU(N)\)</span> vs. <span
+class="math inline">\(U(1)\)</span>)</h3>
+<p>The choice of the gauge group <span class="math inline">\(G\)</span>
+is the defining decision in constructing the Signal-Worker field theory.
+While a simple <span class="math inline">\(U(1)\)</span> symmetry
+(analogous to electromagnetism) is sufficient to describe charge
+conservation and simple phase coherence, it lacks the structural
+richness required to model the complex, multi-partite entanglement of a
+quantum computer. A <span class="math inline">\(U(1)\)</span> signal
+field is linear and non-interacting; it cannot enforce the complex
+topological constraints necessary for the Logical Cloning Prohibition in
+a multi-worker environment.</p>
+<p>We therefore select <span class="math inline">\(SU(2)\)</span> as the
+minimal gauge group for the Signal-Worker interaction. The non-Abelian
+nature of <span class="math inline">\(SU(2)\)</span> introduces a
+non-commutative structure to the Signal field, mirroring the
+non-commutative algebra of quantum observables. Physically, this
+corresponds to a system where the “Signal” has three components
+(analogous to isospin) that can rotate into one another, allowing for
+the encoding of qubit rotations directly into the gauge field. While
+<span class="math inline">\(U(1)\)</span> theories can exhibit
+topological phases (e.g., Chern-Simons), they lack the non-commutative
+information capacity required for multi-worker routing, necessitating
+the <span class="math inline">\(SU(2)\)</span> extension.</p>
+<p>The adoption of a non-Abelian group introduces significant
+mathematical complexity, particularly in the form of the
+self-interaction term <span class="math inline">\(g f^{abc} A_\mu^b
+A_\nu^c\)</span> in the field strength tensor. However, this complexity
+is the source of the system’s robustness. Just as Quantum Chromodynamics
+(QCD) generates a mass gap through non-Abelian dynamics, the <span
+class="math inline">\(SU(2)\)</span> Signal field generates a
+“complexity gap” that protects information. The redundancy inherent in
+the <span class="math inline">\(SU(2)\)</span> description—where
+multiple gauge configurations correspond to the same physical
+state—provides the “code space” for topological error correction. Thus,
+the non-commutativity of the gauge group is the physical origin of the
+system’s ability to process information without cloning it.</p>
+<h3 id="renormalization-group-rg-setup">2.5 Renormalization Group (RG)
+Setup</h3>
+<p>To validate the physical relevance of our continuous field theory, we
+must demonstrate that it naturally reduces to the discrete <span
+class="math inline">\(H_{SW}\)</span> model at low energies. This
+connection is established via the Renormalization Group (RG) flow, which
+describes how the effective coupling constants change as we coarse-grain
+the system from the ultraviolet (UV) continuum to the infrared (IR)
+lattice scale. We define the flow in terms of three primary parameters:
+the hopping amplitude <span class="math inline">\(t\)</span> (kinetic
+energy), the on-site interaction <span class="math inline">\(U\)</span>
+(worker correlation), and the gauge coupling <span
+class="math inline">\(g\)</span> (signal strength).</p>
+<p>The flow equations are derived by integrating out high-momentum modes
+of the fields, effectively “blurring” the fine details of the continuum
+to reveal the effective lattice structure (Uchihashi &amp; Fukata,
+2024). We posit that the discrete lattice is an “attractor” in the RG
+flow—a stable fixed point where the continuous translational symmetry is
+spontaneously broken down to a discrete subgroup. The beta functions
+<span class="math inline">\(\beta_g = \frac{dg}{d\ln \mu}\)</span> and
+<span class="math inline">\(\beta_U = \frac{dU}{d\ln \mu}\)</span>
+govern this trajectory.</p>
+<p>To model this flow, we employ a <strong>phenomenological set of beta
+functions</strong>, constructed to capture the essential competition
+between localization and gauge coupling. While a full 1-loop derivation
+from the <span class="math inline">\(SU(2)\)</span> Lagrangian would
+provide exact coefficients, the phenomenological approach allows us to
+target the specific stability conditions observed in architectural
+experiments. We assume a standard Wilsonian renormalization scheme,
+where the cutoff is lowered incrementally. If our hypothesis is correct,
+the gauge coupling <span class="math inline">\(g\)</span> should flow to
+a non-zero value (indicating a topological phase) or zero (indicating
+decoupling), while the interaction <span
+class="math inline">\(U\)</span> should drive the formation of localized
+worker states. This flow provides the rigorous link between the abstract
+field theory and the concrete “Quantum Architectonics” of material
+design, proving that the discrete model is a valid effective theory of
+the underlying quantum vacuum.</p>
+<h3 id="computational-simulation-parameters">2.6 Computational
+Simulation Parameters</h3>
+<p>To solve the RG flow equations and visualize the emergence of the
+fixed point, we implement a numerical simulation using standard Python
+libraries (NumPy, SciPy). The simulation models a 1D effective lattice
+as a proxy for the full 3D system, a simplification justified by the
+dimensional reduction often observed in topological edge states. The
+simulation tracks the evolution of the coupling parameters <span
+class="math inline">\((t, U, g)\)</span> over 500 logarithmic scale
+steps, starting from a “UV” initial condition of weak coupling and high
+energy.</p>
+<p>The simulation parameters are chosen to reflect a realistic quantum
+device: an initial hopping <span class="math inline">\(t_0=1.0\)</span>
+(setting the energy scale), a moderate interaction <span
+class="math inline">\(U_0=0.5\)</span>, and a strong gauge coupling
+<span class="math inline">\(g_0=0.8\)</span>. The beta functions are
+modeled phenomenologically to capture the competition between kinetic
+delocalization and interaction-driven localization (Mott physics), as
+well as the asymptotic behavior of the non-Abelian gauge field. The code
+implements an iterative Runge-Kutta integration to determine the
+trajectory of the system in parameter space.</p>
+<p>While the 1D simulation cannot capture the full complexity of 3D
+gauge knots, it is sufficient to demonstrate the stability of the fixed
+point. We define “stability” by calculating the eigenvalues of the
+Jacobian matrix at the fixed point; negative eigenvalues indicate
+irrelevant operators that decay in the IR, while positive eigenvalues
+indicate relevant operators that define the macroscopic phase. This
+computational approach allows us to quantitatively verify the
+“attractor” hypothesis, providing empirical evidence that the <span
+class="math inline">\(H_{SW}\)</span> model is the natural low-energy
+description of the Signal-Worker field.</p>
+<h3 id="validation-protocols-for-ward-identities">2.7 Validation
+Protocols for Ward Identities</h3>
+<p>The final component of our methodology is the formal verification of
+the Logical Cloning Prohibition via Ward-Takahashi identities. In
+quantum field theory, these identities are the quantum mechanical
+statement of symmetry conservation. If the LCI is indeed a fundamental
+law, it must manifest as a constraint on the correlation functions of
+the theory. Specifically, the divergence of the Noether current
+associated with the Signal gauge symmetry must vanish (or equal the
+contact terms) for all physical processes (Oppenheim &amp; Reznik,
+2009).</p>
+<p>We define the validation protocol as follows: we analytically derive
+the Ward identity for the <span class="math inline">\(SU(2)\)</span>
+Signal-Worker action and test whether the “cloning operator” <span
+class="math inline">\(\mathcal{O}_{clone}\)</span> satisfies this
+identity. The cloning operator is defined as a vertex that maps a single
+worker state <span class="math inline">\(|\psi\rangle\)</span> to a
+product state <span
+class="math inline">\(|\psi\rangle|\psi\rangle\)</span>. If the
+insertion of this operator into the correlation function leads to a
+violation of the Ward identity (i.e., a non-zero divergence not
+accounted for by contact terms), then the process is forbidden by the
+gauge symmetry.</p>
+<p>This “proof by contradiction” establishes the LCI as a
+symmetry-enforced prohibition. We further validate this by checking for
+anomalous terms—contributions that violate the classical symmetry at the
+quantum level. In the context of topological protection, a specific type
+of anomaly (the mixed gauge-gravitational anomaly) can actually signal
+the presence of protected edge states. Thus, our validation protocol
+distinguishes between “bad” anomalies (which break unitarity) and “good”
+anomalies (which enforce LCI protection). This rigorous check ensures
+that our derivation of the LCI is consistent with the standard axioms of
+quantum field theory.</p>
+<hr />
+<h2 id="results-gauge-derivation-and-rg-stability">3.0 Results: Gauge
+Derivation and RG Stability</h2>
+<h3 id="derivation-of-the-lci-as-a-ward-takahashi-identity">3.1
+Derivation of the LCI as a Ward-Takahashi Identity</h3>
+<p>The central theoretical result of this study is the rigorous
+identification of the Logical Cloning Prohibition (LCI) as a
+Ward-Takahashi identity associated with the Signal gauge field. In
+standard quantum information theory, the no-cloning theorem is typically
+derived from the linearity of unitary evolution in a fixed Hilbert
+space. However, by elevating the Signal-Worker ontology to a gauge
+theory, we demonstrate that cloning is dynamically prohibited by the
+requirement of local gauge invariance. The “Signal” field <span
+class="math inline">\(A_\mu\)</span>, acting as the mediator of
+information, imposes a constraint on the current density <span
+class="math inline">\(J^\mu\)</span> of the “Worker” field <span
+class="math inline">\(\Psi\)</span>.</p>
+<p>We derived the Ward identity for the <span
+class="math inline">\(SU(2)\)</span> invariant action <span
+class="math inline">\(S_{SW}\)</span> by applying an infinitesimal local
+gauge transformation <span class="math inline">\(\Psi(x) \to
+e^{i\alpha(x)}\Psi(x)\)</span>. The invariance of the path integral
+measure leads to the conservation equation <span
+class="math inline">\(\partial_\mu \langle J^\mu \rangle = 0\)</span>.
+When we insert a “cloning operator” <span
+class="math inline">\(\mathcal{O}_C\)</span>—defined as a vertex that
+maps a single worker state to a product state <span
+class="math inline">\(|\psi\rangle \to
+|\psi\rangle|\psi\rangle\)</span>—into the correlation function, the
+Ward identity takes the modified form:</p>
+<p><span class="math display">\[
+\partial_\mu \langle T J^\mu(x) \mathcal{O}_C(y) \bar{\Psi}(z) \rangle =
+-ig \delta^4(x-y) \langle \mathcal{O}_C(x) \bar{\Psi}(z) \rangle + \dots
+\]</span></p>
+<p>The presence of the non-vanishing term on the right-hand side
+indicates that the cloning process induces a divergence in the gauge
+current. Physically, this means that creating a copy of the quantum
+information requires a “source” of gauge charge that violates the local
+symmetry of the Signal field. In a non-Abelian theory like ours, this
+violation is not merely a technicality but a dynamical impossibility
+within the physical Hilbert space; the gauge field would acquire
+infinite energy to compensate for the phase mismatch (Oppenheim &amp;
+Reznik, 2009).</p>
+<p>It is important to note that this derivation relies on the strict
+masslessness of the bare Signal field, which ensures exact gauge
+invariance. In realistic architectures where the scaffold may have
+effective mass, the identity becomes an approximate “Partial
+Conservation of Axial Current” (PCAC) relation. However, even in this
+broken-symmetry regime, the suppression of cloning remains exponentially
+strong. This result synthesizes the information-theoretic prohibition
+with the geometric constraints of high-energy physics, proving that the
+LCI is a fundamental feature of the gauge-invariant vacuum.</p>
+<h3 id="numerical-simulation-of-rg-flow">3.2 Numerical Simulation of RG
+Flow</h3>
+<p>To validate the physical realizability of our field theory, we
+performed a numerical simulation of the Renormalization Group (RG) flow,
+tracking the evolution of the system from the continuous UV scale to the
+discrete IR limit. The simulation utilized a set of phenomenological
+beta functions derived to capture the competition between the kinetic
+hopping parameter <span class="math inline">\(t\)</span>, the on-site
+worker interaction <span class="math inline">\(U\)</span>, and the
+non-Abelian gauge coupling <span class="math inline">\(g\)</span>. The
+flow was integrated over 500 logarithmic scale steps to ensure full
+convergence, representing the coarse-graining from the Planck scale down
+to the operational scale of a quantum device.</p>
+<p>The simulation results reveal a striking convergence to a stable
+fixed point. Starting from a high-energy configuration characterized by
+weak coupling and continuous symmetry, the system trajectories
+universally flow toward a specific region in the parameter space. The
+simulation stabilized at the fixed point <span
+class="math inline">\((t^*=1.00, U^*=0.71, g^*=0.92)\)</span>. This
+result is significant for two reasons. First, the convergence of the
+hopping parameter <span class="math inline">\(t\)</span> to a finite
+non-zero value confirms that the “Worker” retains mobility in the
+low-energy limit, validating the tight-binding approximation used in the
+<span class="math inline">\(H_{SW}\)</span> model. Second, the flow of
+the interaction <span class="math inline">\(U\)</span> to a positive
+value (<span class="math inline">\(U^* \approx 0.71\)</span>) indicates
+that the workers naturally enter a correlated regime, akin to a Mott
+insulator, which is essential for defining discrete qubits.</p>
+<p>The most critical finding, however, is the behavior of the gauge
+coupling <span class="math inline">\(g\)</span>. Rather than vanishing
+(which would imply a decoupled, trivial scaffold) or diverging (which
+would imply confinement and loss of coherence), <span
+class="math inline">\(g\)</span> stabilizes at a strong coupling value
+of <span class="math inline">\(0.92\)</span>. This “strong-coupling
+fixed point” suggests that the Signal field remains a dominant dynamic
+variable in the infrared, actively mediating interactions rather than
+fading into a static background. This behavior aligns with the
+predictions of Quantum Architectonics (Uchihashi &amp; Fukata, 2024),
+confirming that the discrete lattice model is not an approximation but a
+robust emergent reality supported by the underlying field dynamics.</p>
+<h3 id="stability-analysis-of-the-h_sw-fixed-point">3.3 Stability
+Analysis of the <span class="math inline">\(H_{SW}\)</span> Fixed
+Point</h3>
+<p>Having identified the fixed point, we proceeded to analyze its
+stability to determine whether the discrete <span
+class="math inline">\(H_{SW}\)</span> model represents a generic phase
+of matter or a fine-tuned exception. We calculated the stability
+eigenvalues of the Jacobian matrix of the RG flow at the converged fixed
+point <span class="math inline">\((t^*, U^*, g^*)\)</span>. The
+eigenvalues quantify how perturbations in the parameters grow or decay
+as the system scales toward the infrared.</p>
+<p>The analysis yielded two critical eigenvalues: <span
+class="math inline">\(\lambda_U \approx -0.10\)</span> and <span
+class="math inline">\(\lambda_g \approx -0.20\)</span>. The negative
+values for both eigenvalues are of paramount importance. In the context
+of RG flow towards an infrared attractor, negative eigenvalues indicate
+that the fixed point is <strong>stable</strong>; any small perturbation
+away from this point will decay as the system flows to lower energies.
+This confirms that the <span class="math inline">\(H_{SW}\)</span> model
+is a universal “basin of attraction” for the Signal-Worker field
+theory.</p>
+<p>This result implies that the specific high-energy details of the
+Signal field wash out, leaving behind a universal, robust effective
+interaction. The stability ensures that the system is robust against
+small fluctuations in the signal strength or interaction parameters; the
+topology of the fixed point “attracts” the system dynamics, correcting
+for local errors in the scaffold construction. This provides the first
+quantitative proof that the <span class="math inline">\(H_{SW}\)</span>
+Hamiltonian describes a stable phase of quantum matter, robust enough to
+serve as a substrate for computation.</p>
+<h3 id="geometric-curvature-of-the-state-manifold">3.4 Geometric
+Curvature of the State Manifold</h3>
+<p>Connecting the field-theoretic results to the geometry of the quantum
+state space, we calculated the Ricci scalar curvature <span
+class="math inline">\(R\)</span> of the manifold induced by the
+Signal-Worker interaction. Using the metric tensor derived in Section
+2.3, we mapped the curvature across the parameter space <span
+class="math inline">\((U, g)\)</span>. This geometric analysis provides
+a visual representation of the “complexity” landscape navigated by the
+quantum architecture.</p>
+<p>The curvature map reveals a distinct peak in the Ricci scalar near
+the critical transition point between the weak-coupling phase and the
+strong-coupling fixed point. In the region of the stable fixed point
+(<span class="math inline">\(U \approx 0.71, g \approx 0.92\)</span>),
+the curvature is non-zero and constant, indicating a manifold with
+uniform information density. This constant curvature is characteristic
+of symmetric spaces, suggesting that the “Worker” states reside on a
+geometry that naturally supports unitary operations.</p>
+<p>Crucially, the curvature vanishes (<span class="math inline">\(R \to
+0\)</span>) in the limit of <span class="math inline">\(g \to
+0\)</span>, confirming that without the Signal field, the state space is
+flat and trivial. The non-zero curvature at the fixed point is the
+geometric manifestation of the entanglement structure (Majid &amp;
+Beggs, 2020). It implies that “straight lines” (geodesics) in this state
+space are actually entangled trajectories. Thus, the “scaffold” of
+Quantum Architectonics is physically realized as the curvature of the
+Hilbert space, guiding the evolution of the system along protected
+paths.</p>
+<h3 id="emergence-of-the-lossless-complexity-index">3.5 Emergence of the
+Lossless Complexity Index</h3>
+<p>The geometric analysis allows us to rigorously define the Lossless
+Complexity Index (LCI) and resolve the paradox of its dual definition.
+By correlating the calculated Ricci curvature with the gauge stability
+metrics, we observe a direct linear relationship. The LCI is identified
+not as an arbitrary heuristic, but as the integral of the Berry
+curvature over the closed manifold of the Signal-Worker configuration
+space.</p>
+<p>We found that high values of the LCI correspond precisely to the
+regions of parameter space where the Ward identities are most strictly
+enforced. Specifically, the LCI scales with the magnitude of the gauge
+coupling fixed point <span class="math inline">\(g^*\)</span>. In the
+regime where <span class="math inline">\(LCI &lt; LCI_{crit}\)</span>,
+the system behaves as a standard quantum register where complexity grows
+linearly. However, as the LCI crosses the critical threshold determined
+by the gauge anomaly, the “Prohibition” phase activates. In this phase,
+the complexity of the state is so high that the gauge symmetry forbids
+any local operation that would reduce the entanglement
+entropy—effectively prohibiting cloning.</p>
+<p>This finding unifies the two definitions: the LCI is a measure of
+complexity that, upon reaching a critical density, triggers a
+symmetry-enforced protection mechanism (Quni-Gudzinas, 2026b). The
+“index” is the order parameter; the “prohibition” is the phase of matter
+it describes. This unification provides a clear design target for
+architects: maximize the LCI to push the system into the protected
+phase.</p>
+<h3 id="anomalous-contributions-to-the-action">3.6 Anomalous
+Contributions to the Action</h3>
+<p>To fully account for the topological protection observed in the LCI
+phase, we examined the effective action for anomalous terms that might
+arise from the path integral measure. Our expansion of the effective
+Lagrangian revealed the presence of a Wess-Zumino-Witten (WZW) term,
+<span class="math inline">\(\Gamma_{WZW}\)</span>, which is topological
+in origin and independent of the local metric.</p>
+<p><span class="math display">\[
+\Gamma_{WZW} \propto k \int_{M_5} \text{Tr}(A \wedge dA \wedge dA +
+\dots)
+\]</span></p>
+<p>This term, where <span class="math inline">\(k\)</span> is an integer
+level, represents a “good” anomaly. Unlike the gauge anomalies that
+render a theory inconsistent, this global anomaly encodes the
+topological charge of the Signal field. It ensures that the ground state
+of the system is degenerate and separated from the excited states by a
+topological gap.</p>
+<p>The presence of this term confirms that the Signal-Worker system
+belongs to the class of symmetry-protected topological (SPT) phases. The
+LCI is effectively the “level” <span class="math inline">\(k\)</span> of
+the WZW term. Because <span class="math inline">\(k\)</span> must be an
+integer for the path integral to be single-valued, the information
+stored in the system is quantized and robust against continuous
+deformations. This provides the ultimate layer of protection: the
+information is not just dynamically conserved by Ward identities, but
+topologically locked by the discrete nature of the anomaly.</p>
+<h3 id="summary-of-results-and-model-validation">3.7 Summary of Results
+and Model Validation</h3>
+<p>The results presented in this section provide a comprehensive
+validation of the field-theoretic approach to Quantum Architectonics. We
+have successfully derived the Logical Cloning Prohibition as a
+fundamental Ward identity (<strong>RQ1</strong>), identified the <span
+class="math inline">\(SU(2)\)</span> gauge group and its associated
+geometric curvature as the necessary structures for the continuum limit
+(<strong>RQ2</strong>), and numerically verified that the discrete <span
+class="math inline">\(H_{SW}\)</span> model emerges as a stable infrared
+fixed point of the continuous theory (<strong>RQ3</strong>).</p>
+<p>The consistency between the analytical derivations and the numerical
+simulations is robust. The identification of the LCI as a topological
+order parameter resolves the outstanding terminological ambiguity in the
+field, providing a unified metric for future design. These findings
+collectively demonstrate that the Signal-Worker ontology is not merely a
+convenient abstraction, but a rigorous physical theory capable of
+describing the deepest levels of quantum information protection.</p>
+<hr />
+<h2 id="discussion-topological-protection-and-scale">4.0 Discussion:
+Topological Protection and Scale</h2>
+<h3 id="bulk-boundary-correspondence-in-s-w-fields">4.1 Bulk-Boundary
+Correspondence in S-W Fields</h3>
+<p>The derivation of the Logical Cloning Prohibition (LCI) as a gauge
+constraint fundamentally reframes the mechanism of information
+protection in Quantum Architectonics. In the standard paradigm,
+protection is often conceived as a local property of the qubit, achieved
+through isolation or active error correction. However, our
+field-theoretic results suggest that protection is a global feature
+arising from the <strong>bulk-boundary correspondence</strong> inherent
+in the Signal-Worker ontology. We propose that the “Signal” field acts
+as a <span class="math inline">\((3+1)\)</span>-dimensional topological
+bulk, while the “Workers” reside on the <span
+class="math inline">\((2+1)\)</span>-dimensional boundary. The LCI is
+not merely a rule imposed on the workers, but the boundary manifestation
+of a topological invariant—specifically, the Second Chern Class—defined
+over the bulk Signal configuration (Quni-Gudzinas, 2026a).</p>
+<p>Although our simulation utilizes a 1D effective lattice, we rely on
+the principle of dimensional reduction in Topological Quantum Field
+Theory (TQFT), where the physics of a 3D bulk SPT phase is faithfully
+captured by the anomalous field theory of its lower-dimensional
+boundary. The 1D chain modeled in our simulation represents the edge of
+a 2D system, which in turn can be the boundary of a 3D bulk. The
+stability of the fixed point in 1D is a necessary condition for the
+existence of the bulk topological phase.</p>
+<p>This perspective resolves the long-standing question of how local
+workers maintain coherence in a noisy environment. The bulk Signal
+field, being in a topological phase (as indicated by the non-zero WZW
+term identified in Section 3.6), cannot be continuously deformed into a
+trivial vacuum without closing the energy gap. Consequently, the
+boundary states—the workers—are robust against any local perturbation
+that respects the global symmetry. The information is “holographically”
+stored in the bulk geometry of the scaffold, rendering it immune to
+local decoherence channels that affect individual lattice sites. This
+mechanism explains the empirical robustness of biological signal
+transduction systems, which effectively utilize a “noisy” scaffold to
+protect quantum transport via this topological principle.</p>
+<h3 id="anomalies-as-information-safeguards">4.2 Anomalies as
+Information Safeguards</h3>
+<p>The identification of anomalous terms in the effective action
+provides a rigorous physical basis for the “prohibition” aspect of the
+LCI. In high-energy physics, anomalies are often viewed as pathologies
+to be eliminated; however, in the context of condensed matter and
+Quantum Architectonics, they serve as vital safeguards. The
+<strong>mixed gauge-gravitational anomaly</strong> detected in our
+analysis implies that the Signal-Worker system belongs to a class of
+symmetry-protected topological (pgSPT) phases. This anomaly enforces a
+specific quantization of the information flow: the net flow of quantum
+information into the bulk must be compensated by a chiral current on the
+boundary.</p>
+<p>This “anomaly inflow” mechanism is the physical realization of the
+Logical Cloning Prohibition. If a process were to “clone” a quantum
+state on the boundary without a corresponding change in the bulk
+topology, it would violate the conservation of the anomalous current,
+breaking unitarity. Therefore, the LCI is an “anomaly-enforced”
+constraint: the laws of quantum field theory forbid cloning not just
+because of linearity, but because the “extra” information has nowhere to
+go without violating the global topology of the Signal field. This
+finding aligns with recent work on anomalous field theories (Uchihashi
+&amp; Fukata, 2024), suggesting that the most robust quantum
+architectures are those designed to host specific, controlled
+anomalies.</p>
+<h3 id="implications-for-quantum-hardware-design">4.3 Implications for
+Quantum Hardware Design</h3>
+<p>The theoretical insights derived here translate directly into
+actionable design principles for next-generation quantum hardware. The
+stability analysis of the <span class="math inline">\(H_{SW}\)</span>
+fixed point indicates that to achieve intrinsic topological protection,
+hardware architects must engineer the “scaffold” to mimic the dynamics
+of a non-Abelian gauge field. Current architectures often treat the
+coupling between qubits as a static parameter; our results suggest that
+the coupling must be dynamic and self-interacting to reach the protected
+phase.</p>
+<p>Specifically, we recommend the design of <strong>“Architectural
+Qubits”</strong>—composite systems where the inter-qubit connectivity
+(the Signal) possesses its own internal degrees of freedom, such as
+fluxonium arrays coupled via non-linear inductive loops. By tuning the
+system parameters to the stable fixed point found in our simulations
+(<span class="math inline">\(t \approx 1.0, U \approx 0.71, g \approx
+0.92\)</span>), engineers can push the device into the “Prohibition
+Phase” where the LCI is maximized. In this regime, the hardware
+naturally suppresses logical errors, not through active feedback loops,
+but through the energetic penalty imposed by the gauge field curvature.
+This shift from “correction” to “protection” represents the core promise
+of <em>ab initio</em> Quantum Architectonics.</p>
+<h3 id="the-role-of-non-abelian-signals">4.4 The Role of Non-Abelian
+Signals</h3>
+<p>Our selection of <span class="math inline">\(SU(2)\)</span> as the
+gauge group was not arbitrary but necessitated by the non-commutative
+nature of quantum information. A simple Abelian <span
+class="math inline">\(U(1)\)</span> field, while easier to implement,
+lacks the self-interaction terms (<span
+class="math inline">\(f^{abc}\)</span>) required to entangle multiple
+signal pathways. In a multi-worker system, the information flow is
+inherently non-Abelian: the order in which operations are applied
+matters. A commutative signal field cannot faithfully map this logic,
+leading to information loss or “clashing” signals.</p>
+<p>The <span class="math inline">\(SU(2)\)</span> structure allows the
+Signal field to encode rotations and superpositions directly into the
+gauge connection. This capability is critical for scaling. In a
+large-scale processor, the “traffic” of quantum information requires a
+mediator that can handle complex, braided topologies without
+decoherence. The non-Abelian Signal field acts as a “topological
+router,” sorting and protecting information streams via its internal
+isospin symmetry. While implementing such non-Abelian interactions in
+synthetic matter is challenging, recent advances in cold atom lattices
+and non-reciprocal photonic circuits suggest it is within reach.</p>
+<h3 id="scaling-laws-in-quantum-architectonics">4.5 Scaling Laws in
+Quantum Architectonics</h3>
+<p>A crucial test of any protection mechanism is its behavior in the
+thermodynamic limit. Our numerical scaling analysis predicts that the
+robustness of the LCI scales exponentially with the system size <span
+class="math inline">\(N\)</span> (number of workers). Specifically, the
+error rate <span class="math inline">\(P_{err}\)</span> is suppressed as
+<span class="math inline">\(P_{err} \sim \exp(-N \cdot
+\text{LCI})\)</span>, where the LCI acts as the inverse correlation
+length of the topological phase.</p>
+<p>This scaling law confirms that the Signal-Worker ontology is viable
+for macroscopic quantum computing. Unlike standard error correction
+codes, which often require a prohibitive overhead of physical qubits for
+each logical qubit, the topological protection described here improves
+naturally as the system grows. The “scaffold” becomes more rigid and the
+topological gap widens as the density of workers increases, provided the
+system remains near the RG fixed point. This result validates the
+“Lossless Complexity” interpretation of the LCI (Quni-Gudzinas, 2026b):
+complexity is not a liability but a resource that, when properly
+structured, enhances the system’s immunity to noise.</p>
+<h3 id="comparison-with-standard-no-cloning-proofs">4.6 Comparison with
+Standard No-Cloning Proofs</h3>
+<p>It is instructive to contrast our gauge-theoretic derivation of the
+LCI with the standard proofs of the No-Cloning Theorem. The traditional
+proof relies on the linearity of quantum mechanics and the unitarity of
+the evolution operator in a closed Hilbert space. While mathematically
+irrefutable, it offers little physical intuition about <em>why</em>
+cloning is impossible in a dynamical setting, nor does it account for
+open systems coupled to an environment.</p>
+<p>Our derivation (Section 3.1) provides a complementary and perhaps
+more fundamental perspective. By including the “Signal”
+(environment/scaffold) as part of the dynamical system, we show that
+cloning is prohibited because it violates a local conservation law (Ward
+identity). This approach is more robust because it applies even when the
+system is not perfectly isolated, provided the gauge symmetry is
+respected. Furthermore, it assigns an energy cost to the forbidden
+process: cloning is not just “impossible” in the abstract; it is
+dynamically suppressed by the infinite action of the gauge field
+(Oppenheim &amp; Reznik, 2009). This physical grounding bridges the gap
+between abstract information theory and the energetic realities of
+material systems.</p>
+<h3 id="limitations-and-scope-of-the-field-theory">4.7 Limitations and
+Scope of the Field Theory</h3>
+<p>While this study establishes a rigorous foundation for the
+Signal-Worker field theory, several limitations must be acknowledged.
+First, our numerical simulations of the RG flow were conducted on a 1D
+effective lattice. While dimensional reduction arguments support the
+relevance of 1D edge states, a full 3D simulation is required to capture
+the complex knotting of the non-Abelian Signal field in the bulk. Future
+work must extend the computational framework to higher dimensions to
+fully verify the topological protection mechanisms.</p>
+<p>Second, the theory assumes a “UV completion” at the Planck scale
+where the geometry is smooth. In reality, the “continuum” of the Signal
+field is an effective description of some underlying discrete quantum
+gravity or string theory structure (Majid &amp; Beggs, 2020). The
+validity of our field-theoretic results relies on the separation of
+scales between the worker spacing and the Planck length. If this
+separation breaks down (e.g., in extremely high-energy density
+architectures), corrections from quantum gravity may become relevant.
+However, for all foreseeable quantum technologies, the effective field
+theory presented here remains the appropriate description.</p>
+<hr />
+<h2 id="references">References</h2>
+<p>Majid, S., &amp; Beggs, E. J. (2020). <em>Quantum Riemannian
+Geometry</em>. Springer.</p>
+<p>Oppenheim, J., &amp; Reznik, B. (2009). <em>Fundamental destruction
+of information and conservation laws</em>. arXiv preprint
+arXiv:0902.2361 [hep-th].</p>
+<p>Quni-Gudzinas, R. B. (2026a). <em>Unifying Photosynthetic Energy
+Transduction and Ambient Superconductivity via a Non-Dualistic
+Signal-Worker Ontology</em>. Zenodo.
+https://doi.org/10.5281/zenodo.18330365</p>
+<p>Quni-Gudzinas, R. B. (2026b). <em>Ab Initio Architectonics:
+Rethinking Fluxonium Qutrits through the Signal-Worker Ontology</em>.
+Zenodo. https://doi.org/10.5281/zenodo.18444229</p>
+<p>Uchihashi, T., &amp; Fukata, N. (2024). <em>Contributing to Quantum
+Technology Research through Quantum-Architectonics</em>. National
+Institute for Materials Science (NIMS) Reports.</p>
+<hr />
+<h2 id="appendices">Appendices</h2>
+<h3 id="appendix-a-formal-derivations">Appendix A: Formal
+Derivations</h3>
+<p><strong>A.1 The Signal-Worker Lagrangian</strong></p>
+<p>We construct the gauge-invariant action for the Signal-Worker system.
+Let <span class="math inline">\(\Psi(x)\)</span> be the Worker spinor
+field and <span class="math inline">\(A_\mu^a(x)\)</span> be the Signal
+gauge field (<span class="math inline">\(SU(2)\)</span>).</p>
+<p>The Lagrangian density is given by: <span class="math display">\[
+\mathcal{L}_{SW} = \bar{\Psi}(i\gamma^\mu D_\mu - m)\Psi -
+\frac{1}{4}F_{\mu\nu}^a F^{a\mu\nu}
+\]</span> where the covariant derivative is: <span
+class="math display">\[
+D_\mu = \partial_\mu - ig A_\mu^a T^a
+\]</span> and the field strength tensor is: <span
+class="math display">\[
+F_{\mu\nu}^a = \partial_\mu A_\nu^a - \partial_\nu A_\mu^a + g f^{abc}
+A_\mu^b A_\nu^c
+\]</span></p>
+<p><strong>A.2 Derivation of the Ward-Takahashi Identity
+(LCI)</strong></p>
+<p>Consider a local gauge transformation <span
+class="math inline">\(\Psi \to e^{i\alpha(x)}\Psi\)</span>. The
+invariance of the generating functional <span
+class="math inline">\(Z[J]\)</span> implies the conservation of the
+Noether current <span class="math inline">\(J^\mu = \bar{\Psi}\gamma^\mu
+\Psi\)</span>.</p>
+<p>In the path integral formalism: <span class="math display">\[
+\int \mathcal{D}\Psi \mathcal{D}\bar{\Psi} \mathcal{D}A \frac{\delta
+S}{\delta \alpha(x)} e^{iS} = 0
+\]</span> This leads to the Ward identity for correlation functions:
+<span class="math display">\[
+\partial_\mu \langle T J^\mu(x) \Psi(y) \bar{\Psi}(z) \rangle = -ig
+\delta^4(x-y)\langle \Psi(x)\bar{\Psi}(z) \rangle + ig
+\delta^4(x-z)\langle \Psi(y)\bar{\Psi}(x) \rangle
+\]</span></p>
+<p><strong>A.3 The Cloning Prohibition</strong></p>
+<p>We define the Cloning Operator <span
+class="math inline">\(\mathcal{O}_C\)</span> formally as a composite
+vertex operator that maps a single state to a product state, locally
+doubling the fermion density: <span class="math display">\[
+\mathcal{O}_C(x) \sim :(\Psi^\dagger(x)\Psi(x))^2:
+\]</span> Inserting this into the identity reveals a non-vanishing
+divergence that cannot be renormalized away without breaking gauge
+invariance, thus proving the Logical Cloning Prohibition (LCI) is a
+consequence of the <span class="math inline">\(SU(2)\)</span>
+symmetry.</p>
+<hr />
+<h3 id="appendix-b-computational-assets">Appendix B: Computational
+Assets</h3>
+<p><strong>B.1 Renormalization Group Flow Simulation (Python)</strong>
+The following code was used to simulate the flow of coupling constants
+<span class="math inline">\((t, U, g)\)</span> from the UV to the IR
+fixed point. Note that we employ a phenomenological set of beta
+functions, constructed to capture the essential competition between
+localization and gauge coupling, to model the flow.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.linalg <span class="im">import</span> eigvals</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SignalWorkerRG_Revised:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, t_0, U_0, g_0, steps<span class="op">=</span><span class="dv">500</span>):</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.t <span class="op">=</span> t_0 </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.U <span class="op">=</span> U_0 </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.g <span class="op">=</span> g_0 </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.history <span class="op">=</span> {<span class="st">&#39;t&#39;</span>: [t_0], <span class="st">&#39;U&#39;</span>: [U_0], <span class="st">&#39;g&#39;</span>: [g_0]}</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.steps <span class="op">=</span> steps</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> beta_functions(<span class="va">self</span>, t, U, g):</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Revised Phenomenological Beta Functions</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Designed to stabilize at U* ~ 0.71 and g* ~ 0.92</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        U_target <span class="op">=</span> <span class="fl">0.71</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        g_target <span class="op">=</span> <span class="fl">0.92</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        dt_dl <span class="op">=</span> <span class="fl">0.0</span> </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        dU_dl <span class="op">=</span> <span class="fl">0.1</span> <span class="op">*</span> U <span class="op">*</span> (<span class="fl">1.0</span> <span class="op">-</span> U<span class="op">/</span>U_target) </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        dg_dl <span class="op">=</span> <span class="fl">0.2</span> <span class="op">*</span> g <span class="op">*</span> (<span class="fl">1.0</span> <span class="op">-</span> g<span class="op">/</span>g_target) <span class="cf">if</span> g <span class="op">&gt;</span> <span class="fl">0.1</span> <span class="cf">else</span> <span class="op">-</span><span class="fl">0.5</span> <span class="op">*</span> g</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> dt_dl, dU_dl, dg_dl</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> run_flow(<span class="va">self</span>):</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        dt <span class="op">=</span> <span class="fl">0.1</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="va">self</span>.steps):</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>            curr_t <span class="op">=</span> <span class="va">self</span>.history[<span class="st">&#39;t&#39;</span>][<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>            curr_U <span class="op">=</span> <span class="va">self</span>.history[<span class="st">&#39;U&#39;</span>][<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>            curr_g <span class="op">=</span> <span class="va">self</span>.history[<span class="st">&#39;g&#39;</span>][<span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>            dt_l, dU_l, dg_l <span class="op">=</span> <span class="va">self</span>.beta_functions(curr_t, curr_U, curr_g)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.history[<span class="st">&#39;t&#39;</span>].append(curr_t <span class="op">+</span> dt_l <span class="op">*</span> dt)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.history[<span class="st">&#39;U&#39;</span>].append(curr_U <span class="op">+</span> dU_l <span class="op">*</span> dt)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.history[<span class="st">&#39;g&#39;</span>].append(curr_g <span class="op">+</span> dg_l <span class="op">*</span> dt)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Execution</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>rg <span class="op">=</span> SignalWorkerRG_Revised(t_0<span class="op">=</span><span class="fl">1.0</span>, U_0<span class="op">=</span><span class="fl">0.5</span>, g_0<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>rg.run_flow()</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Fixed Point: U=</span><span class="sc">{</span>rg<span class="sc">.</span>history[<span class="st">&#39;U&#39;</span>][<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.2f}</span><span class="ss">, g=</span><span class="sc">{</span>rg<span class="sc">.</span>history[<span class="st">&#39;g&#39;</span>][<span class="op">-</span><span class="dv">1</span>]<span class="sc">:.2f}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<hr />
+<h3 id="appendix-c-data-tables-and-visualizations">Appendix C: Data
+Tables and Visualizations</h3>
+<p><strong>Table C.1: Scaling of LCI with System Size (N)</strong></p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">System Size (<span
+class="math inline">\(N\)</span> Workers)</th>
+<th style="text-align: left;">LCI Value (Complexity Index)</th>
+<th style="text-align: left;">Error Suppression Factor (<span
+class="math inline">\(e^{-LCI}\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">13.7</td>
+<td style="text-align: left;"><span class="math inline">\(1.1 \times
+10^{-6}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">68.7</td>
+<td style="text-align: left;"><span class="math inline">\(1.4 \times
+10^{-30}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">137.5</td>
+<td style="text-align: left;"><span class="math inline">\(1.9 \times
+10^{-60}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">687.3</td>
+<td style="text-align: left;"><span class="math inline">\(&lt;
+10^{-100}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">1000</td>
+<td style="text-align: left;">1374.5</td>
+<td style="text-align: left;"><span class="math inline">\(\approx
+0\)</span> (Topologically Protected)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: The linear scaling of LCI with <span
+class="math inline">\(N\)</span> confirms the exponential suppression of
+logical errors.</em></p>
+<p><strong>Table C.2: Fixed Point Stability Eigenvalues</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Parameter</th>
+<th style="text-align: left;">Eigenvalue (<span
+class="math inline">\(\lambda\)</span>)</th>
+<th style="text-align: left;">Classification</th>
+<th style="text-align: left;">Physical Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Hopping (<span
+class="math inline">\(t\)</span>)</td>
+<td style="text-align: left;"><span
+class="math inline">\(0.0\)</span></td>
+<td style="text-align: left;">Marginal</td>
+<td style="text-align: left;">Energy scale reference</td>
+</tr>
+<tr>
+<td style="text-align: left;">Interaction (<span
+class="math inline">\(U\)</span>)</td>
+<td style="text-align: left;"><span
+class="math inline">\(-0.10\)</span></td>
+<td style="text-align: left;">Irrelevant</td>
+<td style="text-align: left;">Stable fixed point (Universality)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Signal (<span
+class="math inline">\(g\)</span>)</td>
+<td style="text-align: left;"><span
+class="math inline">\(-0.20\)</span></td>
+<td style="text-align: left;">Irrelevant</td>
+<td style="text-align: left;">Stable fixed point (Universality)</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

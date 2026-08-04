@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Plan: Strange Loop of Being - Phase 2 (Revised Drafting) | QWAV</title>
+<meta name="description" content="Project Plan: Strange Loop of Being - Phase 2 (Revised Drafting) (Version: 1.0) (Based on Project Charter: SLOB-P2-RevDraft v1.0) (Status: Final) 1. Plan Ove...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/project-plan-strange-loop-of-being-phase-2-revised-drafting">
+<meta property="og:title" content="Project Plan: Strange Loop of Being - Phase 2 (Revised Drafting)">
+<meta property="og:description" content="Project Plan: Strange Loop of Being - Phase 2 (Revised Drafting) (Version: 1.0) (Based on Project Charter: SLOB-P2-RevDraft v1.0) (Status: Final) 1. Plan Ove...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/project-plan-strange-loop-of-being-phase-2-revised-drafting">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Project Plan: Strange Loop of Being - Phase 2 (Revised Drafting)",
+  "url": "https://deep.qwav.tech/papers/project-plan-strange-loop-of-being-phase-2-revised-drafting",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-05-09T03:21:59Z",
+  "abstract": "Project Plan: Strange Loop of Being - Phase 2 (Revised Drafting) (Version: 1.0) (Based on Project Charter: SLOB-P2-RevDraft v1.0) (Status: Final) 1. Plan Ove..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1
+id="project-plan-strange-loop-of-being---phase-2-revised-drafting">Project
+Plan: Strange Loop of Being - Phase 2 (Revised Drafting)</h1>
+<p><strong>(Version: 1.0)</strong> <strong>(Based on Project Charter:
+SLOB-P2-RevDraft v1.0)</strong> <strong>(Status: Final)</strong></p>
+<h2 id="plan-overview">1. Plan Overview</h2>
+<ul>
+<li><strong>Purpose:</strong> To detail the execution strategy, tasks,
+resources, quality measures, and risk management for achieving the goals
+outlined in the Project Charter (SLOB-P2-RevDraft v1.0), specifically
+the revision and drafting of the “Strange Loop of Being” manuscript
+using the Structured Collaborative Drafting (SCD) approach.</li>
+<li><strong>Version:</strong> 1.0</li>
+<li><strong>Status:</strong> Final</li>
+</ul>
+<h2 id="work-breakdown-structure-wbs-task-definitions">2. Work Breakdown
+Structure (WBS) &amp; Task Definitions</h2>
+<ul>
+<li><strong>Milestone 1: Protocol Definition &amp; Pilot</strong>
+<ul>
+<li>Task 1.1: Define SCD Protocol
+(<code>PROTO-SLOB_Drafting-v2.0.md</code>) | <strong>DoD:</strong>
+Protocol document created, reviewed, and agreed upon by User and
+AI.</li>
+<li>Task 1.2: Pilot Draft Chapter 2 using SCD Protocol |
+<strong>DoD:</strong> Chapter 2 draft generated according to
+protocol.</li>
+<li>Task 1.3: Evaluate Pilot Results &amp; Refine Plan |
+<strong>DoD:</strong> Collaborative review completed; decisions on
+protocol adjustments and outline/length targets documented (e.g., in
+<code>[[support/LOG-Decisions.md]]</code>).</li>
+</ul></li>
+<li><strong>Milestone 2: Foundational Drafting/Revision (Part I -
+Chapters 1, 3-6)</strong>
+<ul>
+<li>Task 2.1: Apply validated SCD Protocol to revise/draft Chapter 1 |
+<strong>DoD:</strong> Chapter 1 draft meets agreed quality standards (as
+per collaborative review).</li>
+<li>Task 2.2: Apply validated SCD Protocol to revise/draft Chapter 3 |
+<strong>DoD:</strong> Chapter 3 draft meets agreed quality
+standards.</li>
+<li>Task 2.3: Apply validated SCD Protocol to revise/draft Chapter 4 |
+<strong>DoD:</strong> Chapter 4 draft meets agreed quality
+standards.</li>
+<li>Task 2.4: Apply validated SCD Protocol to revise/draft Chapter 5 |
+<strong>DoD:</strong> Chapter 5 draft meets agreed quality
+standards.</li>
+<li>Task 2.5: Apply validated SCD Protocol to revise/draft Chapter 6 |
+<strong>DoD:</strong> Chapter 6 draft meets agreed quality
+standards.</li>
+</ul></li>
+<li><strong>Milestone 3: Level 2 Deep Dive (Part II - Chapters
+7-10)</strong>
+<ul>
+<li>Task 3.1 - 3.4: Apply validated SCD Protocol to revise/draft
+Chapters 7-10 | <strong>DoD:</strong> Each chapter draft meets agreed
+quality standards.</li>
+</ul></li>
+<li><strong>Milestone 4: Level 3 Deep Dive (Part III - Chapters
+11-13)</strong>
+<ul>
+<li>Task 4.1 - 4.3: Apply validated SCD Protocol to revise/draft
+Chapters 11-13 | <strong>DoD:</strong> Each chapter draft meets agreed
+quality standards.</li>
+</ul></li>
+<li><strong>Milestone 5: Level 4 Deep Dive (Part IV - Chapters
+14-19)</strong>
+<ul>
+<li>Task 5.1 - 5.6: Apply validated SCD Protocol to revise/draft
+Chapters 14-19 | <strong>DoD:</strong> Each chapter draft meets agreed
+quality standards.</li>
+</ul></li>
+<li><strong>Milestone 6: Consciousness &amp; AI (Part V - Chapters
+20-30)</strong>
+<ul>
+<li>Task 6.1 - 6.11: Apply validated SCD Protocol to revise/draft
+Chapters 20-30 | <strong>DoD:</strong> Each chapter draft meets agreed
+quality standards.</li>
+</ul></li>
+<li><strong>Milestone 7: Conclusion &amp; Manuscript Assembly</strong>
+<ul>
+<li>Task 7.1: Apply validated SCD Protocol to draft Chapter 31 |
+<strong>DoD:</strong> Chapter 31 draft meets agreed quality
+standards.</li>
+<li>Task 7.2: Assemble all chapters into a single manuscript file |
+<strong>DoD:</strong> Consolidated manuscript file created.</li>
+<li>Task 7.3: Update Working Bibliography | <strong>DoD:</strong>
+Bibliography file reflects all sources implicitly or explicitly
+referenced.</li>
+</ul></li>
+</ul>
+<h2 id="task-sequencing-dependencies">3. Task Sequencing &amp;
+Dependencies</h2>
+<ul>
+<li>Milestone 1 (Protocol &amp; Pilot) must be completed before
+proceeding to Milestone 2.</li>
+<li>Within Milestones 2-7, chapters generally follow the outline order,
+but minor sequence adjustments are permissible if logically sound.</li>
+<li>Task 7.2 (Assembly) depends on the completion of all preceding
+chapter tasks (Tasks 2.1-7.1).</li>
+<li>Task 7.3 (Bibliography) should be updated throughout but finalized
+after Task 7.1.</li>
+</ul>
+<h2 id="resource-identification">4. Resource Identification</h2>
+<ul>
+<li><strong>Information/Data:</strong> Existing draft chapters (1,
+3-16), Outline v10.0 (<code>OUTLINE-SLOB_v10.0.md</code>), Working
+Bibliography (<code>BIBLIO-SLOB_Working_v1.0.md</code>), relevant
+conversation logs (e.g.,
+<code>LOG_20240505_010101_StrangeLoopBook.md</code>), Parameter Ledger
+(<code>SLOB Parameter Ledger v0.1</code>), Framework State
+(<code>SLOB Framework State Doc v0.1</code>).</li>
+<li><strong>Tools/Software:</strong> Current AI model (Large Language
+Model from Google), text editor/platform for Markdown.</li>
+<li><strong>Key Knowledge Areas/Skills:</strong> AI’s knowledge base on
+philosophy, cognitive science, sociology, AI, semiotics; User’s domain
+expertise and critical judgment. AI’s ability to adhere to the SCD
+protocol.</li>
+<li><strong>User Input/Time:</strong> Required for defining the protocol
+(Task 1.1), evaluating the pilot (Task 1.3), providing structured
+prompts (ongoing), and reviewing/providing feedback on each chapter
+draft (ongoing).</li>
+</ul>
+<h2 id="quality-plan">5. Quality Plan</h2>
+<ul>
+<li><strong>Quality Standards:</strong>
+<ul>
+<li><strong>Content:</strong> Chapters must demonstrate analytical
+depth, integrate specified thinkers/concepts accurately, maintain
+logical coherence, and align with the book’s core thesis (Levels of
+Meaning Loop).</li>
+<li><strong>Style/Tone:</strong> Adhere to minimal essential style rules
+defined in SCD Protocol (Markdown, no prose bullets, unique titles,
+proper conclusion/transition). Maintain a bold, assertive, yet scholarly
+tone.</li>
+<li><strong>Length:</strong> Target ~2500 tokens / ~1800-2000 words per
+chapter (subject to adjustment after pilot).</li>
+</ul></li>
+<li><strong>Review &amp; Validation Process:</strong>
+<ul>
+<li>AI performs self-check against SCD protocol before submitting
+draft.</li>
+<li>User reviews each draft chapter.</li>
+<li>Collaborative discussion to identify necessary revisions.</li>
+<li>AI generates revised draft(s).</li>
+<li>User provides final confirmation that the chapter “meets agreed
+quality standards” (DoD). This confirmation serves as acceptance for the
+task.</li>
+</ul></li>
+</ul>
+<h2 id="risk-management">6. Risk Management</h2>
+<ul>
+<li><strong>Risk Register:</strong> | Risk ID | Description | Likelihood
+(H/M/L) | Impact (H/M/L) | Mitigation / Contingency | Status | |:——
+|:———————————————————– |:—————– |:————- |:—————————————————————————————
+|:—– | | R01 | SCD protocol insufficient for consistent AI
+quality/adherence | M | H | Rigorous pilot evaluation (Task 1.3); Adapt
+protocol based on findings; Simplify constraints. | Open | | R02 |
+Maintaining coherence/voice across 32 chapters difficult | M | H |
+Regular review of transitions; Use outline structure; Potential AI check
+for consistency later. | Open | | R03 | Project fatigue (user or AI
+limitations) | M | H | Phased approach (milestones); Realistic
+expectations; Take breaks if needed. | Open | | R04 | Outline requires
+significant revision post-pilot | L | M | Build flexibility into
+schedule; Document changes clearly (<code>LOG-Decisions.md</code>). |
+Open | | R05 | Core argument (“Levels Loop”) faces challenges during
+drafting | M | H | Address issues transparently in text; Refine
+argument/model; Acknowledge limitations. | Open | | R06 | AI
+identity/capability drift during project | L | M | Monitor output
+consistency; Note any significant changes in AI behavior. | Open |</li>
+</ul>
+<h2 id="change-management">7. Change Management</h2>
+<ul>
+<li><strong>Process:</strong> Changes to scope, major outline structure,
+or core protocol require user discussion and explicit agreement. Agreed
+changes will be documented in <code>[[support/LOG-Decisions.md]]</code>.
+The Project Plan version will be updated if significant changes occur.
+Minor adjustments to wording or flow within chapters during revision do
+not require formal change logging.</li>
+</ul>
+<h2 id="methodology-specific-plans-content-creation">8.
+Methodology-Specific Plans (Content Creation)</h2>
+<ul>
+<li><strong>Source Integration Strategy:</strong> Cite thinkers and
+works naturally within the text (e.g., “As Hofstadter proposed…”).
+Maintain the <code>BIBLIO-SLOB_Working_v1.0.md</code> file, adding any
+new sources referenced. Direct quotes should be minimal and clearly
+indicated.</li>
+<li><strong>Outline Adherence:</strong> Use
+<code>OUTLINE-SLOB_v10.0.md</code> as the primary guide for chapter
+content and sequence (subject to Task 1.3 evaluation).</li>
+<li><strong>Style/Tone:</strong> Maintain a bold, assertive, yet
+scholarly tone appropriate for a thought-provoking work. Avoid overly
+academic or jargon-filled language where possible, while still being
+precise. Minimal style rules from SCD protocol apply.</li>
+</ul>
+<h2 id="planning-process-review-summary">9. Planning Process Review
+Summary</h2>
+<ul>
+<li>This plan details the execution steps based on the finalized Project
+Charter (SLOB-P2-RevDraft v1.0). It breaks down the work into manageable
+milestones and tasks, defines quality expectations and review processes,
+identifies resources, outlines risk management, and confirms the change
+process. It provides a clear roadmap for the revised drafting effort,
+starting with Milestone 1: Protocol Definition &amp; Pilot.</li>
+</ul>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

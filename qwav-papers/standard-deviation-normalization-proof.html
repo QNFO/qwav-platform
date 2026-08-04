@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Standard-Deviation Normalization Proof | QWAV</title>
+<meta name="description" content="Fundamental Role of Standard-Deviation Normalization in a Scale-Invariant Statistical Framework Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: r...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/standard-deviation-normalization-proof">
+<meta property="og:title" content="Standard-Deviation Normalization Proof">
+<meta property="og:description" content="Fundamental Role of Standard-Deviation Normalization in a Scale-Invariant Statistical Framework Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: r...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/standard-deviation-normalization-proof">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Standard-Deviation Normalization Proof",
+  "url": "https://deep.qwav.tech/papers/standard-deviation-normalization-proof",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-09-27T22:18:44Z",
+  "abstract": "Fundamental Role of Standard-Deviation Normalization in a Scale-Invariant Statistical Framework Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: r..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h2
+id="fundamental-role-of-standard-deviation-normalization-in-a-scale-invariant-statistical-framework"><strong>Fundamental
+Role of Standard-Deviation Normalization in a Scale-Invariant
+Statistical Framework</strong></h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Affiliation:</strong> QNFO <strong>Contact:</strong>
+rowan.quni@qnfo.org <strong>ORCID:</strong> 0009-0002-4317-5604
+<strong>ISNI:</strong> 0000 0005 2645 6062 <strong>DOI:</strong>
+10.5281/zenodo.17216378 <strong>Publication Date:</strong> 2025-09-28
+<strong>Version:</strong> 1.0</p>
+<hr />
+<h3 id="given"><strong>Given</strong></h3>
+<p>Let <span class="math inline">\((\Omega, \mathcal{F}, P)\)</span>be a
+probability space, and let <span class="math inline">\(X\)</span>be a
+real-valued random variable defined on this space, representing a
+physical observable. Assume <span class="math inline">\(X\)</span>has a
+well-defined mean <span class="math inline">\(\mu =
+\mathbb{E}[X]\)</span>and finite, positive variance <span
+class="math inline">\(\sigma^2 = \mathbb{E}[(X - \mu)^2] &gt;
+0\)</span>.</p>
+<p>Consider the <strong>standardized random variable</strong>:</p>
+<p><span class="math display">\[
+Z := \frac{X - \mu}{\sigma}.
+\]</span></p>
+<p>Let <span class="math inline">\(\mathcal{M}\)</span>be a statistical
+manifold representing a family of probability distributions <span
+class="math inline">\(\{p(x|\theta)\}_{\theta \in \Theta}\)</span>,
+where <span class="math inline">\(\theta\)</span>are parameters. Assume
+the family includes location-scale distributions of the form <span
+class="math inline">\(p(x|\mu, \sigma) = \sigma^{-1}
+f((x-\mu)/\sigma)\)</span>, where <span
+class="math inline">\(f\)</span>is a fixed probability density.</p>
+<hr />
+<h3 id="goal"><strong>Goal</strong></h3>
+<p>Demonstrate that <strong>standard-deviation normalization</strong>
+(i.e., measuring observables in units of their inherent variability
+<span class="math inline">\(\sigma\)</span>) is fundamental to
+constructing a <strong>statistically unified, scale-invariant
+description of reality</strong>, as required by the Scale-Invariant
+Epistemic Framework.</p>
+<hr />
+<h3 id="derivation"><strong>Derivation</strong></h3>
+<h4
+id="step-1-standard-deviation-normalization-defines-scale-invariant-coordinates"><strong>Step
+1: Standard-Deviation Normalization Defines Scale-Invariant
+Coordinates</strong></h4>
+<p>Define the <strong>dimensionless parameters</strong>:</p>
+<p><span class="math display">\[
+\eta := \frac{\mu}{\sigma}, \quad \xi := \log \sigma. \tag{1}
+\]</span></p>
+<p>These are the natural coordinates for the location-scale family. The
+original parameters are recovered via <span class="math inline">\(\mu =
+e^\xi \eta\)</span>, <span class="math inline">\(\sigma =
+e^\xi\)</span>.</p>
+<p>The transformation <span class="math inline">\((\mu, \sigma) \mapsto
+(\eta, \xi)\)</span>is precisely the mathematical operation of
+<strong>standard-deviation normalization</strong>. The location
+parameter <span class="math inline">\(\mu\)</span>is expressed in units
+of the scale parameter <span class="math inline">\(\sigma\)</span>, and
+the scale parameter itself is expressed logarithmically.</p>
+<h4
+id="step-2-the-standardized-variable-z-is-invariant-under-scaling"><strong>Step
+2: The Standardized Variable Z is Invariant under Scaling</strong></h4>
+<p>Consider a global scale transformation of the observable <span
+class="math inline">\(X\)</span>:</p>
+<p><span class="math display">\[
+X \mapsto X&#39; = \lambda X, \quad \lambda &gt; 0.
+\]</span></p>
+<p>The mean and standard deviation transform as:</p>
+<p><span class="math display">\[
+\mu&#39; = \lambda \mu, \quad \sigma&#39; = \lambda \sigma.
+\]</span></p>
+<p>The standardized variable transforms as:</p>
+<p><span class="math display">\[
+Z&#39; = \frac{X&#39; - \mu&#39;}{\sigma&#39;} = \frac{\lambda X -
+\lambda \mu}{\lambda \sigma} = \frac{X - \mu}{\sigma} = Z.
+\]</span></p>
+<p>Thus, <span class="math inline">\(Z\)</span>is
+<strong>invariant</strong> under global scaling of the original variable
+<span class="math inline">\(X\)</span>.</p>
+<h4
+id="step-3-the-fisher-metric-is-scale-invariant-in-normalized-coordinates"><strong>Step
+3: The Fisher Metric is Scale-Invariant in Normalized
+Coordinates</strong></h4>
+<p>For the location-scale family <span
+class="math inline">\(p(x|\mu,\sigma) = \sigma^{-1}
+f((x-\mu)/\sigma)\)</span>, the standard Fisher metric components
+are:</p>
+<p><span class="math display">\[
+g_{\mu\mu} = \frac{I_1}{\sigma^2}, \quad g_{\sigma\sigma} =
+\frac{I_2}{\sigma^2}, \quad g_{\mu\sigma} = \frac{I_3}{\sigma^2},
+\]</span></p>
+<p>where <span class="math inline">\(I_1, I_2, I_3\)</span>are constants
+depending only on the base density <span
+class="math inline">\(f\)</span>.</p>
+<p>Transforming to the normalized coordinates <span
+class="math inline">\((\eta, \xi)\)</span>using the Jacobian:</p>
+<p><span class="math display">\[
+\frac{\partial(\mu, \sigma)}{\partial(\eta, \xi)} = \begin{pmatrix}
+e^\xi &amp; 0 \\ e^\xi \eta &amp; e^\xi \end{pmatrix},
+\]</span></p>
+<p>the metric components become:</p>
+<p><span class="math display">\[
+\tilde{g}_{\eta\eta} = g_{\mu\mu} (e^\xi)^2 + 2 g_{\mu\sigma}
+(e^\xi)(e^\xi \eta) + g_{\sigma\sigma} (e^\xi \eta)^2 =
+\frac{1}{\sigma^2}(I_1 + 2I_3\eta + I_2\eta^2) \cdot \sigma^2 = I_1 +
+2I_3\eta + I_2\eta^2, \tag{2a}
+\]</span></p>
+<p><span class="math display">\[
+\tilde{g}_{\xi\xi} = g_{\sigma\sigma} (e^\xi)^2 = \frac{I_2}{\sigma^2}
+\cdot \sigma^2 = I_2, \tag{2b}
+\]</span></p>
+<p><span class="math display">\[
+\tilde{g}_{\eta\xi} = g_{\mu\sigma} (e^\xi)(e^\xi) + g_{\sigma\sigma}
+(e^\xi \eta)(e^\xi) = \frac{1}{\sigma^2}(I_3 + I_2\eta) \cdot \sigma^2 =
+I_3 + I_2\eta. \tag{2c}
+\]</span></p>
+<p>All components <span class="math inline">\(\tilde{g}_{ij}(\eta,
+\xi)\)</span>are <strong>independent of the scale parameter <span
+class="math inline">\(\sigma\)</span></strong> (or <span
+class="math inline">\(\xi\)</span>). The metric is therefore
+<strong>scale-invariant</strong> in the normalized coordinates <span
+class="math inline">\((\eta, \xi)\)</span>.</p>
+<p>The line element is:</p>
+<p><span class="math display">\[
+ds^2 = \tilde{g}_{ij}(\eta, \xi) \, d\theta^i d\theta^j = (I_1 +
+2I_3\eta + I_2\eta^2) d\eta^2 + 2(I_3 + I_2\eta) d\eta d\xi + I_2
+d\xi^2. \tag{3}
+\]</span></p>
+<p>This metric is manifestly invariant under the transformation <span
+class="math inline">\(\eta \mapsto \lambda \eta\)</span>, <span
+class="math inline">\(\xi \mapsto \xi + \log \lambda\)</span>, which
+corresponds to the original scaling <span class="math inline">\(X
+\mapsto \lambda X\)</span>.</p>
+<h4
+id="step-4-normalized-statistical-distances-are-scale-invariant"><strong>Step
+4: Normalized Statistical Distances Are Scale-Invariant</strong></h4>
+<p>The geodesic distance between two points <span
+class="math inline">\((\eta_1, \xi_1)\)</span>and <span
+class="math inline">\((\eta_2, \xi_2)\)</span>on the statistical
+manifold is:</p>
+<p><span class="math display">\[
+d[(\eta_1, \xi_1), (\eta_2, \xi_2)] = \int_{\gamma} \sqrt{ds^2},
+\]</span></p>
+<p>where <span class="math inline">\(\gamma\)</span>is the geodesic
+path. Since the integrand <span class="math inline">\(ds^2\)</span>is
+invariant under the scaling transformation, the distance <span
+class="math inline">\(d\)</span>is also invariant.</p>
+<p>This implies that the <strong>statistical distinguishability</strong>
+between two distributions, measured by their geodesic distance in the
+normalized parameter space, is independent of the absolute scale of the
+observables. It depends only on the dimensionless ratios <span
+class="math inline">\(\eta\)</span>and the relative scale <span
+class="math inline">\(\Delta \xi = \xi_2 - \xi_1\)</span>.</p>
+<h4
+id="step-5-connection-to-physical-quantities-and-information-theory"><strong>Step
+5: Connection to Physical Quantities and Information
+Theory</strong></h4>
+<p>The standardized variable <span class="math inline">\(Z = (X -
+\mu)/\sigma\)</span>represents the <strong>number of standard
+deviations</strong> <span class="math inline">\(X\)</span>deviates from
+its mean. This is a <strong>dimensionless measure of statistical
+significance</strong>.</p>
+<p>The <strong>Signal-to-Noise Ratio (SNR)</strong> is a fundamental
+quantity in information theory and physics:</p>
+<p><span class="math display">\[
+\text{SNR} = \frac{\mu}{\sigma} = \eta.
+\]</span></p>
+<p>This is precisely the normalized location parameter <span
+class="math inline">\(\eta\)</span>.</p>
+<p>The <strong>Coefficient of Variation (CV)</strong> is another
+scale-invariant measure:</p>
+<p><span class="math display">\[
+\text{CV} = \frac{\sigma}{\mu} = \frac{1}{\eta}.
+\]</span></p>
+<p>The <strong>Fisher information matrix</strong>, when expressed in
+normalized coordinates, yields dimensionless components <span
+class="math inline">\(\tilde{g}_{ij}\)</span>, representing the
+<strong>information content per unit of standard deviation</strong>.</p>
+<h4 id="step-6-universality-and-critical-phenomena"><strong>Step 6:
+Universality and Critical Phenomena</strong></h4>
+<p>In the context of critical phenomena, the correlation function <span
+class="math inline">\(\langle \mathcal{O}(0) \mathcal{O}(r)
+\rangle\)</span>is often normalized by the variance <span
+class="math inline">\(\langle \mathcal{O}^2 \rangle\)</span>:</p>
+<p><span class="math display">\[
+G(r) = \frac{\langle \mathcal{O}(0) \mathcal{O}(r) \rangle}{\langle
+\mathcal{O}^2 \rangle}.
+\]</span></p>
+<p>This normalized function <span
+class="math inline">\(G(r)\)</span>exhibits universal scaling behavior
+<span class="math inline">\(G(r) \sim r^{-\eta}\)</span>near critical
+points, where <span class="math inline">\(\eta\)</span>is a universal
+critical exponent (dimensionless). The normalization by variance ensures
+that <span class="math inline">\(G(r)\)</span>is dimensionless and
+scale-invariant.</p>
+<h4
+id="step-7-implications-for-the-scale-invariant-epistemic-framework"><strong>Step
+7: Implications for the Scale-Invariant Epistemic
+Framework</strong></h4>
+<p>The scale invariance of the Fisher metric in normalized coordinates
+<span class="math inline">\((\eta, \xi)\)</span>demonstrates that:</p>
+<ol type="1">
+<li><strong>Standard-deviation normalization provides the correct
+coordinate system</strong> for describing statistical manifolds in a
+scale-invariant manner.</li>
+<li><strong>Statistical distances and distinguishability measures become
+scale-invariant</strong> when computed using normalized parameters.</li>
+<li><strong>Physical laws expressed in terms of normalized
+quantities</strong> (like SNR, CV, correlation functions normalized by
+variance) automatically satisfy the principle of universal scale
+invariance.</li>
+<li><strong>The standard deviation <span
+class="math inline">\(\sigma\)</span>acts as the natural unit</strong>
+for measuring the variability of an observable <span
+class="math inline">\(X\)</span>, consistent with the epistemic
+principle that knowledge is limited by inherent fluctuations.</li>
+</ol>
+<hr />
+<h3 id="conclusion"><strong>Conclusion</strong></h3>
+<p><strong>Theorem (Fundamental Role of Standard-Deviation
+Normalization).</strong> Standard-deviation normalization, achieved by
+expressing observables as <span class="math inline">\(Z = (X -
+\mu)/\sigma\)</span>and parameters in dimensionless form like <span
+class="math inline">\(\eta = \mu/\sigma\)</span>, is mathematically
+necessary for constructing a <strong>scale-invariant statistical
+description</strong> of reality. This normalization renders the Fisher
+information metric and associated geometric quantities (distances,
+curvatures) invariant under global scale transformations of the
+underlying observables. Consequently, all physically meaningful
+statistical measures (e.g., SNR, CV, normalized correlation functions)
+become dimensionless and scale-invariant, providing the unified,
+observer-independent framework required by the Scale-Invariant Epistemic
+Framework.</p>
+<p>This formalizes the principle that reality’s statistical structure is
+fundamentally captured by <strong>dimensionless ratios relative to
+intrinsic variability</strong>, with the standard deviation <span
+class="math inline">\(\sigma\)</span>serving as the fundamental “ruler”
+for measuring fluctuations.</p>
+<hr />
+<p><strong>Q.E.D.</strong></p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Log-Periodic Oscillations in the CMB | QWAV</title>
+<meta name="description" content="To: CMB-S4, Simons Observatory, and Planck Legacy Archive From: Rowan Brad Quni-Gudzinas Date: 2026-04-13 Subject: Log-Periodic Oscillations in the CMB 1. Th...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/log-periodic-oscillations-in-the-cmb">
+<meta property="og:title" content="Log-Periodic Oscillations in the CMB">
+<meta property="og:description" content="To: CMB-S4, Simons Observatory, and Planck Legacy Archive From: Rowan Brad Quni-Gudzinas Date: 2026-04-13 Subject: Log-Periodic Oscillations in the CMB 1. Th...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/log-periodic-oscillations-in-the-cmb">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Log-Periodic Oscillations in the CMB",
+  "url": "https://deep.qwav.tech/papers/log-periodic-oscillations-in-the-cmb",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2026-04-13T13:12:08Z",
+  "abstract": "To: CMB-S4, Simons Observatory, and Planck Legacy Archive From: Rowan Brad Quni-Gudzinas Date: 2026-04-13 Subject: Log-Periodic Oscillations in the CMB 1. Th..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<p><strong>To:</strong> CMB-S4, Simons Observatory, and Planck Legacy
+Archive <strong>From:</strong> Rowan Brad Quni-Gudzinas
+<strong>Date:</strong> 2026-04-13 <strong>Subject:</strong> Log-Periodic
+Oscillations in the CMB</p>
+<p><strong>1. Theoretical Motivation:</strong> The Syntactic Token
+Calculus (STC), a pre-geometric theory of physics, posits that the
+universe is fundamentally a discrete, hierarchical structure (a
+Bruhat-Tits tree). This structure exhibits discrete scale invariance,
+not continuous scale invariance. A direct consequence is that the
+primordial power spectrum of fluctuations, and therefore the CMB angular
+power spectrum <span class="math inline">\(C_\ell\)</span>, should not
+be a simple power law but should be modulated by log-periodic
+oscillations.</p>
+<p><strong>2. The Predicted Signature:</strong> The angular power
+spectrum <span class="math inline">\(C_\ell\)</span> is predicted to
+have the form: <span class="math display">\[ \ell(\ell+1)C_\ell = A
+\left(\frac{\ell}{\ell_0}\right)^{1-n_s} \left[1 + B
+\cos\left(\frac{2\pi}{\ln q} \ln\left(\frac{\ell}{\ell_0}\right) +
+\phi\right)\right] \]</span> where <span
+class="math inline">\(q\)</span> is the fundamental scaling ratio of the
+cosmic web (hypothesized to be related to <span
+class="math inline">\(e\)</span> or <span
+class="math inline">\(\pi\)</span>), <span
+class="math inline">\(B\)</span> is the oscillation amplitude, and <span
+class="math inline">\(\phi\)</span> is a phase. The key signature is a
+periodic oscillation in the logarithm of the multipole moment <span
+class="math inline">\(\ell\)</span>.</p>
+<p><strong>3. Data Analysis Protocol:</strong> We propose a three-step
+protocol to search for this signature in existing and future CMB
+data:</p>
+<ul>
+<li><p><strong>Step 1: Logarithmic Re-sampling.</strong> Take the
+cleaned, foreground-subtracted <span
+class="math inline">\(C_\ell\)</span> data. Instead of plotting it
+against <span class="math inline">\(\ell\)</span>, plot it against <span
+class="math inline">\(x = \ln(\ell)\)</span>. Interpolate the data to
+create a new dataset that is uniformly sampled in <span
+class="math inline">\(x\)</span>. This transforms the log-periodic
+signal into a standard periodic signal.</p></li>
+<li><p><strong>Step 2: Fourier Analysis.</strong> Perform a Fourier
+transform (or, for unevenly sampled/gapped data, a Lomb-Scargle
+periodogram) on the log-sampled data from Step 1. The power spectrum of
+this transformed data will reveal the frequencies present in the
+log-domain.</p></li>
+<li><p><strong>Step 3: Peak Detection and Significance.</strong> Search
+the resulting power spectrum for statistically significant peaks. A peak
+at frequency <span class="math inline">\(\omega\)</span> corresponds to
+a scaling ratio <span class="math inline">\(q =
+\exp(2\pi/\omega)\)</span>. The significance of any peak must be
+evaluated against the null hypothesis (standard <span
+class="math inline">\(\Lambda\)</span>CDM with cosmic variance) using
+Monte Carlo simulations.</p></li>
+</ul>
+<p><strong>4. Falsification Criterion:</strong> If a comprehensive
+search of the Planck, ACT, SPT, and future CMB-S4 data reveals no
+statistically significant (<span
+class="math inline">\(&gt;3\sigma\)</span>) log-periodic oscillations,
+this would place strong constraints on the STC, potentially falsifying
+its simplest cosmological predictions.</p>
+<p><strong>5. Conclusion:</strong> This search represents a direct,
+powerful, and low-cost test of a fundamental prediction of a new
+physical theory. A confirmed detection would provide the first evidence
+for a discrete, hierarchical structure of spacetime. We urge the
+experimental community to undertake this analysis.</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

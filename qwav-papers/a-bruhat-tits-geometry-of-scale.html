@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Bruhat–Tits Geometry of Scale | QWAV</title>
+<meta name="description" content="A Bruhat–Tits Geometry of Scale Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com ORCID: 0009-0002-4317-5604 ISNI: 0000000526456062 DOI: 10.52...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/a-bruhat-tits-geometry-of-scale">
+<meta property="og:title" content="A Bruhat–Tits Geometry of Scale">
+<meta property="og:description" content="A Bruhat–Tits Geometry of Scale Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com ORCID: 0009-0002-4317-5604 ISNI: 0000000526456062 DOI: 10.52...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/a-bruhat-tits-geometry-of-scale">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "A Bruhat\u2013Tits Geometry of Scale",
+  "url": "https://deep.qwav.tech/papers/a-bruhat-tits-geometry-of-scale",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2026-05-07T14:46:58Z",
+  "abstract": "A Bruhat\u2013Tits Geometry of Scale Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com ORCID: 0009-0002-4317-5604 ISNI: 0000000526456062 DOI: 10.52..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1 id="a-bruhattits-geometry-of-scale">A Bruhat–Tits Geometry of
+Scale</h1>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Contact:</strong> <a
+href="mailto:rowan.quni@outlook.com">rowan.quni@outlook.com</a>
+<strong>ORCID:</strong> <a
+href="http://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>
+<strong>ISNI:</strong> <a
+href="http://isni.org/isni/0000000526456062">0000000526456062</a>
+<strong>DOI:</strong> <a
+href="http://doi.org/10.5281/zenodo.20071716">10.5281/zenodo.20071716</a>
+<strong>Date:</strong> 2026-05-07 <strong>Version:</strong> 0.9</p>
+<h2 id="abstract">Abstract</h2>
+<p>Ostrowski’s theorem (1916) establishes that every absolute value on
+<span class="math inline">\(\mathbb{Q}\)</span> is equivalent to either
+the real absolute value or a <span class="math inline">\(p\)</span>-adic
+one—there is no third option. Physics has been built entirely on <span
+class="math inline">\(\mathbb{R}\)</span>. We propose that the
+fundamental geometry of physical frequencies is a <strong>Bruhat–Tits
+tree</strong> <span class="math inline">\(\mathcal{T}_p\)</span>, the
+natural geometry for the <span class="math inline">\(p\)</span>-adic
+numbers <span class="math inline">\(\mathbb{Q}_p\)</span>. Choosing a
+multiplicative ruler with scaling ratio <span
+class="math inline">\(q\)</span> partitions frequencies into bands, and
+the sequence of <span class="math inline">\(q\)</span>-ary sub-band
+choices defines paths on a rooted tree. The tree distance <span
+class="math inline">\(d_T = q^{-\ell}\)</span> satisfies the strong
+(ultrametric) triangle inequality. This geometry has testable
+consequences: quantum states are superpositions of tree-paths,
+measurement truncates the tree to finite depth, and time emerges from
+correlations between dual trees via a Page–Wootters mechanism. The
+framework makes three falsifiable predictions and points to two research
+directions: (1) non-Markovian decoherence oscillations in
+superconducting qubit–resonator systems; (2) log-periodic oscillations
+in the CMB power spectrum, constrained to amplitude <span
+class="math inline">\(A \lesssim 5\%\)</span> by Planck and testable to
+<span class="math inline">\(A \sim 0.5\%\)</span> by CMB-S4; (3) a
+hierarchical organization of fermion masses. Two additional
+directions—tree-based quantum error correction and adelic unification
+via the Langlands program—are identified as longer-term consequences of
+the tree geometry. The same tree geometry—if confirmed with a common
+scaling ratio <span class="math inline">\(q\)</span>—would produce
+signatures spanning eighteen orders of magnitude in scale, from
+superconducting qubits to the cosmic microwave background. Confirming
+the same <span class="math inline">\(q\)</span> in both domains would be
+a rare connection between quantum measurement and cosmic structure
+through a single geometric principle.</p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<p>In 1916, Alexander Ostrowski proved a theorem that has been called
+one of the most underappreciated results in mathematics: every notion of
+distance on the rational numbers is equivalent to exactly one of two
+fundamentally distinct types—the familiar Archimedean absolute value
+that gives us the real numbers <span
+class="math inline">\(\mathbb{R}\)</span>, or one of the <span
+class="math inline">\(p\)</span>-adic absolute values that give us the
+<span class="math inline">\(p\)</span>-adic numbers <span
+class="math inline">\(\mathbb{Q}_p\)</span>. There is no third option.
+Yet all of conventional physics—classical mechanics, quantum field
+theory, general relativity—is built exclusively on <span
+class="math inline">\(\mathbb{R}\)</span>. Coordinates are real numbers.
+Time is a real parameter. Frequencies are real numbers measured in
+Hertz. The other half of Ostrowski’s dichotomy has been almost entirely
+absent.</p>
+<p>This paper proposes that this absence is an illusion. The fundamental
+geometry of physical frequencies is not the continuous real line, but a
+discrete, ultrametric tree—specifically, a <strong>Bruhat–Tits
+tree</strong> whose boundary is a <span
+class="math inline">\(p\)</span>-adic projective line. What we measure
+as a real-valued frequency in the laboratory is an emergent, Archimedean
+shadow cast by an underlying <span class="math inline">\(p\)</span>-adic
+structure. The tree is not an auxiliary mathematical tool; it is the
+primitive object.</p>
+<p>The idea is simple. Combine Einstein’s <span class="math inline">\(E
+= mc^2\)</span> with Planck’s <span class="math inline">\(E =
+h\nu\)</span>, and every mass is a frequency: the Compton frequency
+<span class="math inline">\(f = mc^2 / h\)</span>. Frequency is the
+universal coordinate of physical scale. But frequencies in nature do not
+organize themselves on a featureless line. They appear in multiplicative
+bands—electromagnetic spectra, particle masses, atomic transitions—where
+the natural operation is not addition but multiplication, and the
+natural question is not “how far apart?” but “at what scale do two
+frequencies first diverge?” This question is answered by a tree: each
+branching represents a choice among <span
+class="math inline">\(q\)</span> sub-bands, and the depth of the deepest
+common ancestor of two frequencies defines an ultrametric distance
+between them.</p>
+<p>The tree framework sits at the intersection of four independent lines
+of inquiry. In <strong>number theory</strong>, Ostrowski’s theorem and
+the Bruhat–Tits tree provide the mathematical backbone. In
+<strong>particle physics</strong>, the renormalization group organizes
+scale transformations hierarchically, and spin glasses exhibit
+ultrametric organization of states. In <strong>condensed
+matter</strong>, the Multiscale Entanglement Renormalization Ansatz
+(MERA) represents quantum many-body states as tensor networks on a tree
+geometry. In <strong>signal processing</strong>, discrete wavelet
+transforms decompose signals into dyadic trees of scale and translation.
+That the same discrete, hierarchical, ultrametric structure appears in
+all four domains—independently—suggests it is not a coincidence but a
+signal.</p>
+<p>The consequences are concrete and testable. If frequency space is a
+tree, then: - Quantum states are <strong>paths</strong> on the tree, and
+measurement is <strong>truncation to finite depth</strong>. -
+Superposition and collapse have geometric interpretations as branching
+and path selection. - Time is not fundamental but emerges from
+correlations between two trees via a Page–Wootters mechanism. - The
+arrow of time runs from coarser to finer scales on the tree. -
+Decoherence is not Markovian; it exhibits <strong>oscillations</strong>
+with a period set by the tree depth. - The cosmic microwave background
+carries <strong>log-periodic</strong> signatures of the tree structure
+imprinted at the Planck scale. - Fermion masses should exhibit a
+hierarchical, tree-like organization.</p>
+<p>This paper synthesizes and extends previous work (Phases 0.1 and 0.2)
+into a unified presentation. Section 2 constructs the tree geometry of
+frequency from first principles. Section 3 derives the physical
+consequences for quantum mechanics, time, and measurement. Section 4
+presents the three falsifiable predictions and two research directions,
+and their current status. Section 5 provides the mathematical
+foundations in greater depth. Section 6 discusses open questions, the
+continuum limit, and connections to other research programs.</p>
+<p><strong>How to read this paper.</strong> Readers primarily interested
+in experimental consequences can read Sections 1, 2.1–2.4 (tree basics),
+and 4 (predictions), skipping the mathematical foundations (Section 5)
+on first pass. Readers seeking the mathematical rigor should read
+Section 2.5–2.6 and all of Section 5. The physical picture of states,
+measurement, and time (Section 3) is essential for understanding the
+deeper implications but not required to evaluate the experimental
+predictions. The “Honest Audit” (Section 6.5) provides a candid
+assessment of the framework’s strengths and weaknesses and is
+recommended for all readers.</p>
+<hr />
+<h2 id="the-tree-geometry-of-frequency">2. The Tree Geometry of
+Frequency</h2>
+<h3 id="frequency-as-the-universal-coordinate-of-scale">2.1 Frequency as
+the Universal Coordinate of Scale</h3>
+<p>Combine the two most famous equations of twentieth-century
+physics—Einstein’s <span class="math inline">\(E = mc^2\)</span> and
+Planck’s <span class="math inline">\(E = h\nu\)</span>—and a profound
+fact emerges: every mass is a frequency. The <strong>Compton
+frequency</strong> of a particle of mass <span
+class="math inline">\(m\)</span> is</p>
+<p><span class="math display">\[
+f = \frac{m c^2}{h}.
+\]</span></p>
+<p>The electron’s Compton frequency is <span class="math inline">\(\sim
+1.24 \times 10^{20}\)</span> Hz; the proton’s is <span
+class="math inline">\(\sim 2.27 \times 10^{23}\)</span> Hz (ratio 1836);
+the Planck frequency is <span class="math inline">\(\sim 2.95 \times
+10^{42}\)</span> Hz. Every physical scale—temporal periods, spatial
+wavelengths, rest energies, masses—is expressible as a frequency.
+Frequency is the universal coordinate of physical scale, the single
+number that tells you where in the hierarchy of nature a process
+lives.</p>
+<h3 id="the-multiplicative-ruler">2.2 The Multiplicative Ruler</h3>
+<p>The organization of frequencies into bands is a fact about
+measurement: when we ask questions about scale—“is this frequency closer
+to radio or to microwave?”—we implicitly compare ratios, not
+differences. The operation that matters is multiplication, not addition.
+This is a choice of <strong>measurement convention</strong>, not a claim
+about ontology.</p>
+<p>However, Ostrowski’s theorem (Section 5.1) tells us something deeper:
+there are exactly two consistent geometries for completing the rational
+numbers—Archimedean (<span class="math inline">\(\mathbb{R}\)</span>)
+and non-Archimedean (<span class="math inline">\(\mathbb{Q}_p\)</span>).
+The choice of ruler (additive vs. multiplicative) selects which of these
+two geometries is made manifest in measurement. If nature’s fundamental
+geometry of frequency is ultrametric, then a multiplicative ruler is the
+<strong>correct</strong> choice—the one that reveals the underlying tree
+structure. If nature’s geometry is Archimedean, an additive ruler is
+correct, and the tree is a measurement artifact. The experimental
+predictions (Section 4) are designed to distinguish these two
+possibilities: they test nature, not our measurement conventions.</p>
+<p>Formally, fix a <strong>scaling ratio</strong> <span
+class="math inline">\(q \geq 2\)</span> (integer). Common choices
+include <span class="math inline">\(q = 2\)</span> (octaves) or values
+tied to the prime <span class="math inline">\(p\)</span> in the <span
+class="math inline">\(p\)</span>-adic construction (e.g., <span
+class="math inline">\(q = 3, 5, 7, \ldots\)</span>); see the terminology
+note in Section 2.5 for the relationship between the general <span
+class="math inline">\(q\)</span>-ary tree and the Bruhat–Tits tree <span
+class="math inline">\(\mathcal{T}_p\)</span>. Non-integer values such as
+<span class="math inline">\(q = e\)</span> (natural log scaling)
+describe a continuum limit and do not correspond to a discrete tree;
+they are included in the search range for experimental fits but do not
+represent a physical tree with <span class="math inline">\(e\)</span>
+branches. The <span class="math inline">\(k\)</span>-th level of the
+hierarchy covers frequencies in the interval</p>
+<p><span class="math display">\[
+[f_0 q^k,\; f_0 q^{k+1}),
+\]</span></p>
+<p>where <span class="math inline">\(f_0\)</span> is an arbitrary
+reference frequency. Each level differs from its neighbors by a factor
+of <span class="math inline">\(q\)</span>.</p>
+<h3 id="base-q-expansion-and-paths-on-a-tree">2.3 Base-<span
+class="math inline">\(q\)</span> Expansion and Paths on a Tree</h3>
+<p>Any frequency <span class="math inline">\(f\)</span> can be expressed
+in base <span class="math inline">\(q\)</span> as</p>
+<p><span class="math display">\[
+\frac{f}{f_0} = d_0 . d_1 d_2 d_3 \ldots_q,
+\]</span></p>
+<p>where each digit <span class="math inline">\(d_i \in \{0, 1, \ldots,
+q-1\}\)</span>. The integer part <span
+class="math inline">\(d_0\)</span> selects the band; the first
+fractional digit <span class="math inline">\(d_1\)</span> selects a
+sub-band among <span class="math inline">\(q\)</span> possibilities;
+<span class="math inline">\(d_2\)</span> selects a sub-sub-band; and so
+on. Specifying a frequency to finite precision is making a finite
+sequence of <span class="math inline">\(q\)</span>-ary choices.</p>
+<p>This sequence of choices defines a <strong>path</strong> on a rooted,
+<span class="math inline">\(q\)</span>-ary tree (see Figure 1 in the
+supplementary file <code>0.8_fig_tree.png</code>). The root represents
+the set of all frequencies. Its <span class="math inline">\(q\)</span>
+children represent the <span class="math inline">\(q\)</span> bands at
+the first level. Each of those has <span
+class="math inline">\(q\)</span> children, and so on ad infinitum. The
+set of all infinite paths is the set of all frequencies specified to
+infinite precision—the <strong>boundary</strong> of the tree.</p>
+<p>Crucially, a tree is not merely a log scale drawn with branches. A
+log scale indexes levels by a single integer <span
+class="math inline">\(k\)</span>; a tree has <span
+class="math inline">\(q^k\)</span> distinct intervals at depth <span
+class="math inline">\(k\)</span>. The tree is the minimal geometry that
+supports the operation “identify a frequency to a factor of <span
+class="math inline">\(q^k\)</span> by making <span
+class="math inline">\(k\)</span> choices among <span
+class="math inline">\(q\)</span> alternatives.” The branching reflects a
+physical fact: at any given scale, there are multiple physically
+distinct types of oscillators (photons, phonons, fermionic excitations,
+collective modes), and the tree organizes them all within a single
+geometric object.</p>
+<h3 id="ultrametric-distance">2.4 Ultrametric Distance</h3>
+<p>The tree defines a natural notion of closeness between frequencies.
+Given two frequencies <span class="math inline">\(f_1\)</span> and <span
+class="math inline">\(f_2\)</span> with base-<span
+class="math inline">\(q\)</span> expansions, let <span
+class="math inline">\(\ell\)</span> be the depth of the <strong>most
+recent common ancestor</strong>—the vertex where their paths from the
+root first diverge. The tree distance between them is</p>
+<p><span class="math display">\[
+d_T(f_1, f_2) = q^{-\ell}.
+\]</span></p>
+<p>Frequencies that share a long common prefix (deep common ancestor)
+are close; frequencies that diverge near the root are far apart. The
+maximum distance is <span class="math inline">\(q^0 = 1\)</span> (they
+differ at the root); the minimum approaches zero as their paths coincide
+to ever-greater depth.</p>
+<p>This distance satisfies the <strong>strong triangle
+inequality</strong>:</p>
+<p><span class="math display">\[
+d_T(x, z) \leq \max\big(d_T(x, y),\; d_T(y, z)\big),
+\]</span></p>
+<p>a property strictly stronger than the ordinary triangle inequality
+<span class="math inline">\(d(x,z) \leq d(x) + d(y,z)\)</span>. All
+triangles in this geometry are <strong>isosceles with a short
+base</strong>: of the three pairwise distances, the two largest are
+always equal. Equivalently, two balls in the tree metric either are
+disjoint or one contains the other—there is no partial overlap.</p>
+<p>This is the defining signature of an <strong>ultrametric</strong>
+space, and it is the geometric fingerprint that distinguishes the tree
+from any Euclidean or Riemannian manifold. In Section 4, we will argue
+that this fingerprint is directly observable in laboratory decoherence
+experiments.</p>
+<h3 id="the-bruhattits-tree">2.5 The Bruhat–Tits Tree</h3>
+<p>The mathematical object that realizes these properties with minimal
+structure is the <strong>Bruhat–Tits tree</strong> <span
+class="math inline">\(\mathcal{T}_p\)</span>. For any prime <span
+class="math inline">\(p\)</span>, <span
+class="math inline">\(\mathcal{T}_p\)</span> is an infinite <span
+class="math inline">\((p+1)\)</span>-regular tree. Its vertices
+correspond to equivalence classes of lattices in <span
+class="math inline">\(\mathbb{Q}_p^2\)</span>; its boundary <span
+class="math inline">\(\partial\mathcal{T}_p\)</span> is the <span
+class="math inline">\(p\)</span>-adic projective line <span
+class="math inline">\(\mathbb{P}^1(\mathbb{Q}_p)\)</span>.</p>
+<p>In the tree framework, we take <span class="math inline">\(p =
+q\)</span> (or, more generally, any integer <span
+class="math inline">\(q \geq 2\)</span> obtained as a product of
+primes). The Bruhat–Tits tree is then the <strong>fundamental geometry
+of frequency space</strong>. Each vertex at depth <span
+class="math inline">\(k\)</span> represents a frequency band; each of
+its <span class="math inline">\(q\)</span> children represents a
+sub-band; the boundary points represent frequencies specified to
+infinite precision in the <span class="math inline">\(p\)</span>-adic
+completion.</p>
+<p><strong>A note on terminology.</strong> Throughout this paper, we use
+“the tree” to refer to a general <span
+class="math inline">\(q\)</span>-ary rooted tree with branching factor
+<span class="math inline">\(q \geq 2\)</span> (integer). This general
+tree possesses the essential physical properties—ultrametric distance
+<span class="math inline">\(d_T = q^{-\ell}\)</span>, strong triangle
+inequality, discrete spectral density—that generate the experimental
+predictions of Section 4. The Bruhat–Tits tree <span
+class="math inline">\(\mathcal{T}_p\)</span> is the special case where
+<span class="math inline">\(q = p\)</span> (prime), providing the
+rigorous number-theoretic foundation in <span
+class="math inline">\(\mathbb{Q}_p\)</span>. When <span
+class="math inline">\(q\)</span> is composite, the <span
+class="math inline">\(q\)</span>-ary tree is a product of Bruhat–Tits
+factors. In both cases, the physical predictions are identical—they
+depend on the tree structure, not on the primality of <span
+class="math inline">\(q\)</span>. The Bruhat–Tits construction anchors
+the framework in Ostrowski’s theorem; the general <span
+class="math inline">\(q\)</span>-ary tree anchors it in experiment.</p>
+<p>The only primitive notion on the tree is integer
+<strong>depth</strong> <span class="math inline">\(k\)</span>. A vertex
+at depth <span class="math inline">\(k\)</span> is identified by a
+sequence of <span class="math inline">\(k\)</span> branching
+choices:</p>
+<p><span class="math display">\[
+\text{vertex} \;\longleftrightarrow\; (d_0, d_1, d_2, \ldots, d_{k-1}),
+\qquad d_i \in \{0, 1, \ldots, q-1\}.
+\]</span></p>
+<p>This is a pure count—<span class="math inline">\(k\)</span> integers,
+nothing more. There is no “time,” no “seconds,” no “Hertz” at this
+level. As we will see in Section 3, what we call time emerges from
+correlations between two such trees. The Archimedean continuum <span
+class="math inline">\(\mathbb{R}\)</span> of laboratory frequencies is
+an emergent approximation to the boundary of this tree in the limit of
+large depth.</p>
+<h3 id="why-a-tree-four-independent-discoveries">2.6 Why a Tree? Four
+Independent Discoveries</h3>
+<p>The tree geometry is not an arbitrary construction. The same
+discrete, hierarchical, ultrametric structure has been discovered
+independently in four distinct domains:</p>
+<ol type="1">
+<li><p><strong>Number theory.</strong> Ostrowski’s theorem (1916)
+establishes that the only two completions of <span
+class="math inline">\(\mathbb{Q}\)</span> are <span
+class="math inline">\(\mathbb{R}\)</span> and <span
+class="math inline">\(\mathbb{Q}_p\)</span>. The Bruhat–Tits tree is the
+natural geometry of <span class="math inline">\(\mathbb{Q}_p\)</span>.
+If the fundamental geometry of scale is not <span
+class="math inline">\(\mathbb{R}\)</span>, it must be this
+tree.</p></li>
+<li><p><strong>Particle physics.</strong> The renormalization group (RG)
+organizes scale transformations multiplicatively and hierarchically.
+Wilson’s RG flows on theory space have a tree-like structure. Spin
+glasses, solved by Parisi, exhibit ultrametric organization of
+equilibrium states—a direct physical realization of tree
+geometry.</p></li>
+<li><p><strong>Condensed matter.</strong> The Multiscale Entanglement
+Renormalization Ansatz (MERA) represents quantum many-body ground states
+as tensor networks living on a tree (specifically, a hyperbolic tiling).
+MERA captures scale-invariant critical systems by explicitly removing
+entanglement at each scale—the tree is the computational geometry of
+quantum matter.</p></li>
+<li><p><strong>Signal processing.</strong> Discrete wavelet transforms
+decompose signals into a dyadic tree of scale and translation. The fast
+wavelet transform is an algorithm that walks a binary tree, and the
+resulting coefficients are naturally organized in a hierarchical,
+logarithmic structure.</p></li>
+</ol>
+<p>That the tree appears in all four domains—independently and for
+entirely different reasons—strongly suggests that the tree is not an
+artifact of any one formalism. It is the natural geometry of scale
+itself.</p>
+<hr />
+<h2 id="physical-consequences">3. Physical Consequences</h2>
+<p>If frequency space is a tree, the standard formalism of quantum
+mechanics—Hilbert spaces, superpositions, measurement, time
+evolution—acquires a geometric interpretation. This section derives the
+physical picture that follows from taking the tree seriously.</p>
+<h3 id="states-as-paths">3.1 States as Paths</h3>
+<p>On the tree, a frequency specified to infinite precision is an
+infinite path from the root to the boundary. In quantum mechanics, we
+rarely have infinite precision—and indeed the theory tells us we cannot.
+A quantum state of a system at a given scale is not a single path, but a
+<strong>superposition of paths</strong> that are unresolved at the
+current depth.</p>
+<p>Formally, let the tree have branching factor <span
+class="math inline">\(q\)</span> and depth <span
+class="math inline">\(D\)</span> (which may be infinite). The set of all
+paths of length <span class="math inline">\(D\)</span> forms the
+boundary <span class="math inline">\(\partial\mathcal{T}\)</span>. A
+Hilbert space <span class="math inline">\(\mathcal{H}\)</span> can be
+constructed by taking square-integrable functions on <span
+class="math inline">\(\partial\mathcal{T}\)</span> with respect to a
+natural measure. Basis states correspond to individual paths
+(frequencies at infinite precision). At finite depth <span
+class="math inline">\(k &lt; D\)</span>, a state that is localized to a
+particular vertex is a uniform superposition over all paths passing
+through that vertex:</p>
+<p><span class="math display">\[
+|v_k\rangle = \frac{1}{\sqrt{q^{D-k}}} \sum_{\text{paths through } v_k}
+|\text{path}\rangle.
+\]</span></p>
+<p>The state space at depth <span class="math inline">\(k\)</span> has
+dimension <span class="math inline">\(q^k\)</span>. Descending one level
+(increasing <span class="math inline">\(k\)</span> by 1) multiplies the
+dimension by <span class="math inline">\(q\)</span>—each vertex splits
+into <span class="math inline">\(q\)</span> children. Information about
+which sub-band a system occupies is encoded in which branch of the tree
+the state lives on.</p>
+<h3 id="measurement-as-truncation-to-finite-depth">3.2 Measurement as
+Truncation to Finite Depth</h3>
+<p>A measurement of frequency—or of any observable conjugate to
+scale—does not access the full infinite boundary. It resolves the system
+only to some finite depth <span
+class="math inline">\(k_{\text{meas}}\)</span>, corresponding to the
+precision of the apparatus. The measurement outcome is a vertex at depth
+<span class="math inline">\(k_{\text{meas}}\)</span>: a frequency band
+of width determined by <span
+class="math inline">\(q^{-k_{\text{meas}}}\)</span>.</p>
+<p>In this picture, the <strong>collapse of the wavefunction</strong> is
+not a mysterious non-unitary process but a geometric operation:
+selecting a single path among the <span class="math inline">\(q\)</span>
+children at each branching, down to the resolved depth. Before
+measurement, the state is spread across an unresolved subtree; after
+measurement, it is localized to a single branch. The Born rule emerges
+from the uniform weighting of paths at each branching:</p>
+<p><span class="math display">\[
+P(\text{outcome } v_k) = \frac{\text{number of paths through } v_k
+\text{ consistent with the state}}{\text{total number of paths in the
+state}}.
+\]</span></p>
+<p><strong>Derivation.</strong> At the tree root, all <span
+class="math inline">\(q^D\)</span> boundary paths are equally weighted
+(the maximum-entropy prior). Descending the tree, at each vertex, the
+<span class="math inline">\(q\)</span> children are equally probable by
+symmetry—the tree has no preferred branch. The probability of reaching
+vertex <span class="math inline">\(v_k\)</span> (depth <span
+class="math inline">\(k\)</span>) is the product of <span
+class="math inline">\(1/q\)</span> at each of the <span
+class="math inline">\(k\)</span> branchings: <span
+class="math inline">\(P(v_k) = q^{-k}\)</span>. This is equivalent to
+the uniform measure on the boundary. When a quantum state is a
+superposition over a subtree <span class="math inline">\(S\)</span>
+containing <span class="math inline">\(N_S\)</span> boundary paths, and
+measurement selects a vertex <span class="math inline">\(v_k\)</span>
+whose subtree contains <span class="math inline">\(N_{v_k}\)</span>
+paths, the conditional probability is <span class="math inline">\(P(v_k
+| S) = N_{v_k} / N_S\)</span>—a ratio of path counts. In the continuum
+limit <span class="math inline">\(q \to 1^+\)</span>, this path-counting
+measure converges to the Lebesgue measure on <span
+class="math inline">\(\mathbb{R}\)</span>, and the Born rule <span
+class="math inline">\(|\psi(x)|^2 dx\)</span> is recovered as the
+density of paths per unit frequency interval. The tree-level Born rule
+is thus the discrete, uniform-path-counting ancestor of the continuum
+Born rule.</p>
+<p>This yields a geometric interpretation of probability as a ratio of
+path counts on the tree.</p>
+<p>A crucial consequence: <strong>measurements at different depths do
+not commute in the same way as in the continuum.</strong> Two
+measurements that resolve the system to depths <span
+class="math inline">\(k_1\)</span> and <span
+class="math inline">\(k_2\)</span> correspond to different partitions of
+the tree boundary. The non-commutativity of scale and phase observables
+arises naturally from the tree geometry (see Section 3.3).</p>
+<h3 id="dual-trees-and-complementarity">3.3 Dual Trees and
+Complementarity</h3>
+<p>The tree framework requires not one but <strong>two</strong> dual
+tree structures to capture the full phase space of a quantum system. The
+first tree organizes frequencies <span class="math inline">\(f\)</span>
+(the <strong>scale tree</strong>). The second organizes
+<strong>phases</strong> <span class="math inline">\(\phi\)</span> (the
+<strong>phase tree</strong>). A complete specification of a harmonic
+oscillator requires both a frequency and a phase.</p>
+<p>These two trees are complementary in the sense of a Fourier
+transform. To see this explicitly, consider characters on the tree
+boundary. A character <span class="math inline">\(\chi_u(f)\)</span> on
+the frequency tree boundary <span
+class="math inline">\(\partial\mathcal{T}_f\)</span> is parameterized by
+a point <span class="math inline">\(u\)</span> on the phase tree
+boundary <span class="math inline">\(\partial\mathcal{T}_\phi\)</span>.
+In the <span class="math inline">\(p\)</span>-adic case, these are the
+additive characters <span class="math inline">\(\chi_u(f) = \exp(2\pi i
+\{u f\}_p)\)</span>, where <span class="math inline">\(\{ \cdot
+\}_p\)</span> is the fractional <span
+class="math inline">\(p\)</span>-adic part. A frequency state localized
+to depth <span class="math inline">\(k_f\)</span> on the scale tree (a
+narrow band of width <span class="math inline">\(q^{-k_f}\)</span>)
+corresponds, under the character transform, to a phase state delocalized
+over the first <span class="math inline">\(\sim k_f\)</span> levels of
+the phase tree—a broad superposition over <span
+class="math inline">\(q^{k_f}\)</span> phase branches.</p>
+<p>Conversely, precise phase localization (deep on the phase tree, depth
+<span class="math inline">\(k_\phi\)</span>) forces frequency
+delocalization over <span class="math inline">\(q^{k_\phi}\)</span>
+scale branches. This reciprocity is the tree-geometric origin of the
+<strong>uncertainty principle</strong>:</p>
+<p><span class="math display">\[
+\Delta f \cdot \Delta\phi \;\sim\; q^{-|k_f - k_\phi|},
+\]</span></p>
+<p>where <span class="math inline">\(k_f\)</span> and <span
+class="math inline">\(k_\phi\)</span> are the localization depths on the
+two trees. The product of uncertainties is minimized when the depths are
+balanced (<span class="math inline">\(k_f \approx k_\phi\)</span>); it
+grows when one tree is probed deeply and the other shallowly.</p>
+<p>This complementarity is not an epistemic limitation but a geometric
+fact about dual tree structures: one cannot simultaneously be deep on
+both trees because depth on one corresponds to breadth on the other. The
+standard Heisenberg uncertainty relation <span
+class="math inline">\(\Delta E \Delta t \geq \hbar/2\)</span> is the
+Archimedean, continuum limit of this tree-level complementarity,
+recovered as <span class="math inline">\(q \to 1^+\)</span> with the
+depth variables mapped to continuous real parameters. The tree framework
+thus embeds the uncertainty principle in a discrete, number-theoretic
+foundation—it is a consequence of Pontryagin duality on the boundary of
+the Bruhat–Tits tree.</p>
+<h3 id="time-emergence-the-pagewootters-mechanism-on-the-tree">3.4 Time
+Emergence: The Page–Wootters Mechanism on the Tree</h3>
+<p>If the fundamental geometry is a static tree, where does time come
+from? The tree framework adopts the <strong>Page–Wootters</strong>
+mechanism: time is not a fundamental parameter but an emergent
+correlation between two subsystems.</p>
+<p>Consider two trees: a <strong>clock tree</strong> <span
+class="math inline">\(\mathcal{T}_C\)</span> and a <strong>system
+tree</strong> <span class="math inline">\(\mathcal{T}_S\)</span>.
+Neither contains time. But correlations between them—specifically, the
+alignment of their depth indices—define a joint state:</p>
+<p><span class="math display">\[
+|\Psi\rangle = \sum_k |k\rangle_C \otimes |\psi(k)\rangle_S,
+\]</span></p>
+<p>where <span class="math inline">\(|k\rangle_C\)</span> is a state of
+the clock tree at depth <span class="math inline">\(k\)</span>, and
+<span class="math inline">\(|\psi(k)\rangle_S\)</span> is the state of
+the system conditioned on the clock reading <span
+class="math inline">\(k\)</span>. The integer <span
+class="math inline">\(k\)</span> serves as an internal time parameter.
+As <span class="math inline">\(k\)</span> increases, the system state
+evolves—not because time flows, but because conditioning on larger <span
+class="math inline">\(k\)</span> selects finer-scale correlations.</p>
+<p>The <strong>arrow of time</strong> on the tree runs from coarser to
+finer scales (increasing <span class="math inline">\(k\)</span>). This
+is the direction in which branching creates new degrees of freedom, new
+distinguishability, and new entanglement. The thermodynamic arrow aligns
+with the tree-depth arrow: entropy increases as information flows from
+the unresolved root toward the resolved leaves. This provides a
+geometric origin for the second law that does not require special
+initial conditions—it is built into the directed structure of the tree
+itself.</p>
+<p><strong>Caveat.</strong> The increase in the number of states with
+depth—from <span class="math inline">\(q^k\)</span> vertices at level
+<span class="math inline">\(k\)</span>—is a kinematic fact about the
+tree geometry. The alignment of this kinematic arrow with the
+thermodynamic arrow of the Second Law requires additional structure: a
+statistical ensemble on the tree boundary and a dynamics that drives the
+Page–Wootters clock parameter <span class="math inline">\(k\)</span>
+monotonically forward. The tree framework supplies the kinematic arrow
+(the directed branching structure) but does not yet provide the
+dynamical mechanism that links it to thermodynamic entropy production.
+The conjecture that the tree-depth arrow and the thermodynamic arrow
+coincide is natural—both point from less to more information—but remains
+to be demonstrated within a complete tree-level dynamics (see Open
+Question 3, Section 6.4).</p>
+<h3 id="the-central-structural-equation-spectral-density">3.5 The
+Central Structural Equation: Spectral Density</h3>
+<p>The physical content of the tree framework is encoded in the
+<strong>spectral density</strong> <span
+class="math inline">\(J(\omega)\)</span>, which describes how a quantum
+system couples to its environment as a function of frequency. On the
+tree, the spectral density is not a smooth function but a sum of
+discrete peaks, one at each vertex:</p>
+<p><span class="math display">\[
+J(\omega) = \sum_{k=0}^{D} \sum_{v \in \text{vertices at depth } k}
+\gamma_{v} \, \delta(\omega - \omega_v),
+\]</span></p>
+<p>where <span class="math inline">\(\omega_v\)</span> is the
+characteristic frequency of vertex <span
+class="math inline">\(v\)</span>, and <span
+class="math inline">\(\gamma_v\)</span> is the coupling strength at that
+vertex. The hierarchical, discrete structure of <span
+class="math inline">\(J(\omega)\)</span> is the central structural
+equation of the framework. It is this discrete spectral density that
+produces the non-Markovian decoherence oscillations predicted in Section
+4.1.</p>
+<p>In the continuum limit <span class="math inline">\(q \to
+1^+\)</span>, the sum over vertices becomes an integral, and the
+discrete peaks merge into a smooth function—recovering the standard
+Caldeira–Leggett spectral density of open quantum systems. The tree
+framework is thus not a rejection of the continuum but an embedding of
+it: the continuum is what you see when you refuse to resolve the
+individual branchings of the tree.</p>
+<hr />
+<h2 id="experimental-predictions">4. Experimental Predictions</h2>
+<p>The tree framework makes <strong>three concrete falsifiable
+predictions</strong> (Sections 4.1–4.3) and identifies <strong>two
+research directions</strong> (Sections 4.4–4.5). Two
+predictions—non-Markovian decoherence oscillations and log-periodic CMB
+modulations—are ready for near-term experimental testing. Each
+prediction and direction is accompanied by specific falsification
+criteria where applicable.</p>
+<hr />
+<h3 id="prediction-1-non-markovian-decoherence-oscillations">4.1
+Prediction 1: Non-Markovian Decoherence Oscillations</h3>
+<p><strong>Status:</strong> Ready for near-term superconducting qubit
+experiment. Numerical simulation available
+(<code>0.8_pred1_sim.py</code>).</p>
+<h4 id="the-setupa-tree-structured-bath">4.1.1 The Setup—A
+Tree-Structured Bath</h4>
+<p>Couple a superconducting qubit to a set of <span
+class="math inline">\(d\)</span> microwave resonators whose frequencies
+are geometrically spaced:</p>
+<p><span class="math display">\[
+\omega_k = \omega_0 \, q^k, \qquad k = 1, \ldots, d.
+\]</span></p>
+<p>With <span class="math inline">\(q = 2\)</span> (octave spacing) and
+<span class="math inline">\(\omega_0 = 0.5\)</span> GHz, four resonators
+cover 1, 2, 4, and 8 GHz—all within the operational range of standard
+transmon qubits. The qubit–resonator couplings decay with frequency:</p>
+<p><span class="math display">\[
+g_k = g_0 \, q^{-\gamma k},
+\]</span></p>
+<p>with <span class="math inline">\(\gamma = 1\)</span> (each octave
+halves the coupling) and <span class="math inline">\(g_0/2\pi =
+50\)</span> MHz. The system operates at <span class="math inline">\(T =
+10\)</span> mK.</p>
+<p>The Hamiltonian is the standard pure-dephasing spin–boson model:</p>
+<p><span class="math display">\[
+H = \frac{\omega_q}{2} \hat{\sigma}_z + \sum_{k=1}^{d} \omega_k
+\hat{a}_k^\dagger \hat{a}_k + \hat{\sigma}_z \otimes \sum_{k=1}^{d} g_k
+(\hat{a}_k + \hat{a}_k^\dagger).
+\]</span></p>
+<p>Here <span class="math inline">\(\omega_q = 5\)</span> GHz is chosen
+off-resonant from all <span class="math inline">\(\omega_k\)</span> to
+ensure the dispersive regime (<span class="math inline">\(|\omega_q -
+\omega_k| \gg g_k\)</span>).</p>
+<p><strong>Why geometric spacing creates a structured bath.</strong> A
+qubit coupled to a continuum of harmonic oscillators normally
+experiences exponential (Markovian) decay if the spectral density is
+smooth and broad. Here the tree framework provides a <strong>discrete,
+finite set</strong> of resonators with geometric frequencies <span
+class="math inline">\(\omega_k = \omega_0 q^k\)</span>. This “comb” of
+modes, weighted by couplings <span class="math inline">\(g_k = g_0
+q^{-\gamma k}\)</span>, synthesises an effective spectral density</p>
+<p><span class="math display">\[
+J(\omega) = \pi \sum_{k=1}^{d} g_k^2 \,\delta(\omega - \omega_k)
+\;\xrightarrow{d\to\infty}\; J(\omega) \propto \omega^{-2\gamma} \quad
+(\text{over the comb frequencies}).
+\]</span></p>
+<p>For <span class="math inline">\(\gamma = 1\)</span> this yields a
+<span class="math inline">\(1/\omega^2\)</span> decay of the spectral
+density. Because the number of modes is <strong>finite</strong> and the
+frequencies are <strong>widely spaced</strong> (octaves, <span
+class="math inline">\(q = 2\)</span>), the bath’s correlation function
+does not decay monotonically. Instead, it exhibits long-lived
+oscillations that beat at the mode frequencies. These coherent beats
+cause <strong>information backflow</strong> from the bath to the
+qubit—the defining signature of non-Markovian dynamics.</p>
+<p>With finite resonator quality factors, the delta functions broaden
+into Lorentzians:</p>
+<p><span class="math display">\[
+J(\omega) = \sum_{k=1}^{d} g_k^2 \, \frac{\eta_k / \pi}{(\omega -
+\omega_k)^2 + \eta_k^2}, \qquad \eta_k = \frac{\omega_k}{Q}.
+\]</span></p>
+<p>The tree structure enters entirely through this discrete,
+geometrically-spaced spectral density. For the default simulation
+parameters (<span class="math inline">\(d = 4\)</span>, <span
+class="math inline">\(Q = 10^6\)</span>), the resonators span 1–8 GHz
+with linewidths <span class="math inline">\(\eta_k/2\pi =
+1\)</span>–<span class="math inline">\(8\)</span> kHz. All are well
+within the dispersive regime (<span class="math inline">\(|\omega_q -
+\omega_k| \geq 1\)</span> GHz, <span class="math inline">\(g_k \leq
+25\)</span> MHz, ratio <span class="math inline">\(\geq
+160\times\)</span>).</p>
+<h4 id="the-signaturedecoherence-oscillations">4.1.2 The
+Signature—Decoherence Oscillations</h4>
+<p>If the qubit starts in a superposition <span
+class="math inline">\((|0\rangle + |1\rangle)/\sqrt{2}\)</span> and the
+interaction is pure dephasing (<span class="math inline">\(\sigma_z \sum
+g_k (a_k + a_k^\dagger)\)</span>), the off-diagonal coherence <span
+class="math inline">\(\rho_{01}(t)\)</span> evolves as</p>
+<p><span class="math display">\[
+\rho_{01}(t) = \rho_{01}(0) \prod_{k=1}^{d}
+\exp\!\Big[ -\Big(\frac{g_k}{\omega_k}\Big)^2 (1 - \cos\omega_k t)
+\coth\frac{\hbar\omega_k}{2k_B T} \Big].
+\]</span></p>
+<p>At <span class="math inline">\(T = 10\)</span> mK, <span
+class="math inline">\(k_B T \approx 0.2\)</span> GHz, so the lower modes
+(0.5–2 GHz) have non-negligible thermal populations (<span
+class="math inline">\(n_{\text{th}} \lesssim 0.1\)</span>). The product
+form leads to <strong>partial revivals</strong> whenever the cosine
+terms from different modes accidentally re-phase. For octave spacing
+(frequencies 1, 2, 4, 8 GHz), the least common multiple period is long,
+so the initial decay is followed by irregular oscillations rather than
+perfect revivals. The coherence shows:</p>
+<ul>
+<li>A <strong>fast initial drop</strong> governed by the
+strongest-coupled low-frequency modes.</li>
+<li><strong>Oscillatory “kicks”</strong> with frequencies <span
+class="math inline">\(\omega_k\)</span> and their harmonics.</li>
+<li>An overall envelope that decays more slowly than a single
+exponential; the decay becomes power-law if the number of modes is
+large.</li>
+</ul>
+<p>At <span class="math inline">\(T = 0\)</span> and with finite
+resonator linewidths <span class="math inline">\(\eta_k = \omega_k /
+Q\)</span>, the exact coherence function reduces to</p>
+<p><span class="math display">\[
+C(t) \equiv \frac{|\rho_{01}(t)|}{|\rho_{01}(0)|}
+= \exp\!\left[-2\sum_{k=1}^{d} \left(\frac{g_k}{\omega_k}\right)^{\!2}
+\Bigl(1 - e^{-\eta_k t}\cos\omega_k t - \frac{\eta_k}{\omega_k}
+e^{-\eta_k t}\sin\omega_k t\Bigr)\right].
+\]</span></p>
+<p>Expanding for small <span
+class="math inline">\((g_k/\omega_k)^2\)</span>:</p>
+<p><span class="math display">\[
+C(t) \approx e^{-\kappa} \Bigl[1 + 2\sum_k a_k e^{-\eta_k t}\cos\omega_k
+t + \mathcal{O}(a^2)\Bigr],
+\]</span></p>
+<p>where <span class="math inline">\(a_k \equiv
+(g_k/\omega_k)^2\)</span> and <span class="math inline">\(\kappa \equiv
+2\sum_k a_k\)</span>. The coherence oscillates at the resonator
+frequencies <span class="math inline">\(\omega_k\)</span> with
+amplitudes <span class="math inline">\(2(g_k/\omega_k)^2\)</span>. For
+realistic parameters (<span class="math inline">\(g_0/2\pi = 50\)</span>
+MHz, <span class="math inline">\(\omega_1/2\pi = 1\)</span> GHz, <span
+class="math inline">\(Q = 10^6\)</span>), the fundamental oscillation
+amplitude is <span class="math inline">\(2(g_1/\omega_1)^2 \approx
+0.12\%\)</span>.</p>
+<p>If the coupling is transverse (<span
+class="math inline">\(\sigma_x\)</span> instead of <span
+class="math inline">\(\sigma_z\)</span>), the qubit exhibits
+<strong>population oscillations</strong> in addition to dephasing,
+showing similar non-Markovian structure. The pure-dephasing case is the
+cleanest test of the tree geometry since it isolates the spectral
+density’s influence on coherence without energy exchange.</p>
+<h4 id="measurement-strategy">4.1.3 Measurement Strategy</h4>
+<p>The primary strategy is <strong>frequency-domain noise
+spectroscopy</strong>: - <strong>CPMG / spin-locking</strong> sequences
+act as bandpass filters for environmental noise. - Sweeping the filter
+frequency probes <span class="math inline">\(J(\omega)\)</span>. - The
+tree prediction is a <strong>sparse spectrum</strong>: narrow peaks at
+geometrically-spaced frequencies <span
+class="math inline">\(\omega_k\)</span>, with negligible spectral weight
+in the gaps.</p>
+<p>The distinctive signature is the <strong>absence</strong> of noise
+between tree levels—the ultrametric “no partial overlap” property as an
+observable.</p>
+<p><strong>Experimental realization.</strong> The parameters are
+carefully chosen to match standard superconducting qubit hardware. The
+resonator frequencies (1–8 GHz) are easily reached with lumped-element
+resonators or transmission-line stubs. The decaying coupling law <span
+class="math inline">\(g_k \propto 1/\omega_k\)</span> (for <span
+class="math inline">\(\gamma = 1\)</span>) can be engineered by varying
+coupling capacitances or by deliberately shaping the qubit’s
+electromagnetic environment to produce the desired spectral density. All
+four resonators can be implemented as separate on-chip cavities
+capacitively coupled to a single transmon qubit. The qubit frequency is
+placed at 5 GHz, far from any resonator, to ensure the coupling is
+well-approximated by a dispersive interaction. Time-domain measurements
+of the qubit’s <span class="math inline">\(T_2^*\)</span> or Ramsey
+fringes directly reveal the oscillatory decoherence envelope.</p>
+<p>At 10 mK, the 1 GHz mode has <span
+class="math inline">\(n_{\text{th}} \approx 0.008\)</span>—essentially
+at vacuum. The higher modes are even colder. This small thermal
+population adds a slight incoherent dephasing channel but does not wash
+out the non-Markovian oscillations. The dominant noise source is
+intrinsic qubit dephasing (<span class="math inline">\(T_2^* \sim 20\
+\mu\text{s}\)</span>, corresponding to a 50 kHz dephasing rate), which
+exceeds the tree-induced decay rate (9 Hz) by a factor of <span
+class="math inline">\(\sim 5,500\)</span>. Detecting the tree signal
+therefore requires either longer integration or frequency-domain
+filtering to isolate the narrow spectral peaks from the broadband qubit
+noise floor.</p>
+<h4 id="falsification-criteria">4.1.4 Falsification Criteria</h4>
+<p>Falsified at <span class="math inline">\(\geq 5\sigma\)</span> if,
+for any <span class="math inline">\(q \in [1.5, 3.0]\)</span>: 1. No
+narrow spectral peaks are observed at integer powers of <span
+class="math inline">\(q\)</span>, <strong>or</strong> 2. The measured
+spectral density between peaks exceeds <span class="math inline">\(0.1
+\times\)</span> the peak height, <strong>or</strong> 3. The peak
+coupling strengths do not satisfy <span class="math inline">\(g_k = g_0
+q^{-\gamma k}\)</span> for any <span class="math inline">\(\gamma \in
+[0, 2]\)</span>.</p>
+<p><strong>Detection requirement.</strong> Validating criterion (1)
+requires sensitivity to at least two tree vertices—i.e., detection of
+narrow spectral peaks at two distinct frequencies whose ratio is an
+integer power of <span class="math inline">\(q\)</span>. A single
+detected peak is consistent with the tree framework (it identifies one
+vertex) but is insufficient to verify the geometric spacing <span
+class="math inline">\(\omega_k = \omega_0 q^k\)</span> or to
+independently measure <span class="math inline">\(q\)</span>. A
+realistic SNR analysis (see Section 6.5) shows that with present cQED
+parameters (<span class="math inline">\(g_0/2\pi = 50\)</span> MHz,
+<span class="math inline">\(Q = 10^6\)</span>, <span
+class="math inline">\(T = 10\)</span> mK, <span
+class="math inline">\(10^6\)</span> repetitions), only the fundamental
+harmonic (1 GHz, SNR <span class="math inline">\(\sim 6\sigma\)</span>)
+is practically measurable; higher harmonics fall below the <span
+class="math inline">\(5\sigma\)</span> detection threshold. Detecting a
+second harmonic and thereby measuring <span
+class="math inline">\(q\)</span> requires either stronger coupling
+(<span class="math inline">\(g_0/2\pi \gtrsim 200\)</span> MHz), longer
+integration, or frequency-domain noise spectroscopy with enhanced
+sensitivity.</p>
+<h4 id="why-this-matters">4.1.5 Why This Matters</h4>
+<p>Non-Markovian oscillations are not merely a curiosity—they
+demonstrate that the qubit retains a memory of its environment and can,
+in principle, recover lost coherence. In quantum technologies, such
+structured baths can be harnessed for <strong>coherence
+protection</strong> (dynamical decoupling or error-corrected gates) or
+as a resource for <strong>quantum memory</strong>. The geometric tree
+structure is a minimal model of a fractal spectral density. Its
+experimental realization would validate the tree framework’s central
+claim—that frequency space possesses discrete, ultrametric structure—and
+open the door to engineering arbitrary open-system dynamics on a chip.
+Moreover, detecting the same scaling ratio <span
+class="math inline">\(q\)</span> in both a tabletop quantum experiment
+(Prediction 1) and the cosmic microwave background (Prediction 2) would
+connect the smallest controllable quantum systems to the largest
+observable structure, unified by a single geometric principle.</p>
+<hr />
+<h3 id="prediction-2-log-periodic-cmb-oscillations">4.2 Prediction 2:
+Log-Periodic CMB Oscillations</h3>
+<p><strong>Status:</strong> Constrained by Planck 2018 (<span
+class="math inline">\(A \lesssim 5\%\)</span> at 95% CL). CMB-S4 will
+provide a definitive test.</p>
+<h4 id="from-frequency-tree-to-cosmological-perturbations">4.2.1 From
+Frequency Tree to Cosmological Perturbations</h4>
+<p>If frequency space is a discrete tree, Fourier duality implies that
+primordial density perturbations inherit the same discrete scale
+invariance (DSI):</p>
+<p><span class="math display">\[
+\mathcal{P}_\mathcal{R}(q k) = \mathcal{P}_\mathcal{R}(k).
+\]</span></p>
+<p>The general solution is a log-periodic modulation of the standard
+spectrum:</p>
+<p><span class="math display">\[
+\boxed{\mathcal{P}_\mathcal{R}(k) = A_s
+\left(\frac{k}{k_*}\right)^{n_s-1}
+\times \left[1 + A \cos\!\left(\frac{2\pi}{\log q} \log\frac{k}{k_*} +
+\phi\right)\right]},
+\]</span></p>
+<p>where <span class="math inline">\(A\)</span> is the modulation
+amplitude (<span class="math inline">\(\sim 0.5\%\)</span>–<span
+class="math inline">\(5\%\)</span>), <span
+class="math inline">\(k_*\)</span> is the pivot scale, and the period in
+<span class="math inline">\(\log_{10} k\)</span> is <span
+class="math inline">\(\log_{10} q\)</span> (<span
+class="math inline">\(\approx 0.301\)</span> for <span
+class="math inline">\(q = 2\)</span>).</p>
+<h4 id="observable-in-the-cmb">4.2.2 Observable in the CMB</h4>
+<p>The CMB temperature power spectrum inherits the same log-periodic
+pattern:</p>
+<p><span class="math display">\[
+\mathcal{D}_\ell^{\rm TT} = \mathcal{D}_\ell^{\rm TT, \Lambda{\rm CDM}}
+\times \left[1 + A_{\rm eff} \cos\!\left(\frac{2\pi}{\log q}
+\log\frac{\ell}{\ell_*} + \tilde{\phi}\right)\right].
+\]</span></p>
+<p>For <span class="math inline">\(q = 2\)</span> and <span
+class="math inline">\(\ell_* \approx 700\)</span>, there are <span
+class="math inline">\(\sim 10\)</span> full oscillation cycles in the
+Planck range <span class="math inline">\(2 \leq \ell \leq
+2500\)</span>.</p>
+<h4 id="current-constraints">4.2.3 Current Constraints</h4>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Observatory</th>
+<th style="text-align: right;"><span
+class="math inline">\(5\sigma\)</span> Sensitivity to <span
+class="math inline">\(A\)</span> (for <span
+class="math inline">\(q=2\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Planck 2018</td>
+<td style="text-align: right;"><span class="math inline">\(\sim
+3.2\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">CMB-S4 (projected)</td>
+<td style="text-align: right;"><span class="math inline">\(\sim
+0.7\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tree prediction
+range</strong></td>
+<td style="text-align: right;"><span class="math inline">\(A \sim
+0.5\%\)</span>–<span class="math inline">\(5\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Falsification
+threshold</strong></td>
+<td style="text-align: right;"><span class="math inline">\(A &lt;
+0.1\%\)</span> (requires beyond-CMB-S4 sensitivity)</td>
+</tr>
+</tbody>
+</table>
+<p>Current Planck searches constrain generic log-periodic modulations to
+<span class="math inline">\(A \lesssim 5\%\)</span> at 95% CL. The tree
+prediction survives but is under pressure. A Fisher forecast (see
+<code>0.8_pred2_cmb.py</code>) gives CMB-S4 a <span
+class="math inline">\(5\sigma\)</span> detection floor of <span
+class="math inline">\(A_{\min} \approx 0.67\%\)</span> for <span
+class="math inline">\(q=2\)</span>. CMB-S4 can therefore
+<strong>constrain</strong> the tree prediction to the <span
+class="math inline">\(A \lesssim 0.7\%\)</span> level but cannot reach
+the definitive <span class="math inline">\(A &lt; 0.1\%\)</span>
+falsification threshold—that would require a next-generation CMB
+experiment with <span class="math inline">\(\gtrsim 7\times\)</span> the
+sensitivity of CMB-S4. #### 4.2.4 Falsification Criteria</p>
+<p>Falsified at 95% CL if: 1. A dedicated search for log-periodic
+modulations with period <span class="math inline">\(\log q\)</span> for
+any <span class="math inline">\(q \in [1.5, 3.0]\)</span> yields <span
+class="math inline">\(A &lt; 0.5\%\)</span> (CMB-S4 <span
+class="math inline">\(3\sigma\)</span> level; definitive falsification
+at <span class="math inline">\(A &lt; 0.1\%\)</span> requires a
+next-generation experiment), <strong>or</strong> 2. The modulation
+pattern is inconsistent with the lab-measured value of <span
+class="math inline">\(q\)</span> from Prediction 1.</p>
+<p>A positive detection would be extraordinary: the same tree geometry,
+with the same <span class="math inline">\(q\)</span>, shaping both a
+tabletop quantum experiment and the CMB.</p>
+<hr />
+<h3 id="prediction-3-fermion-mass-hierarchy">4.3 Prediction 3: Fermion
+Mass Hierarchy</h3>
+<p><strong>Status: Data-limited.</strong> The tree fit to the nine known
+fermion masses (3 charged leptons + 6 quarks) yields <span
+class="math inline">\(p = 0.346\)</span> for <span
+class="math inline">\(q=2\)</span> under the uniform-span null model—not
+statistically significant at the 95% confidence level. The three
+neutrino masses remain unmeasured individually. This prediction should
+be understood as a <strong>structural hypothesis awaiting data</strong>:
+it makes a definite claim about how masses should organize (near tree
+vertices, with log-ratios approximating integer multiples of <span
+class="math inline">\(\log q\)</span>), but this claim cannot be tested
+at the <span class="math inline">\(p &lt; 0.01\)</span> level until
+neutrino masses are measured with sufficient precision. The prediction
+sharpens in parallel with neutrino experiments (KATRIN, Project 8,
+cosmological surveys).</p>
+<p>If the tree organizes all frequencies, then the rest masses of
+fundamental fermions—which are Compton frequencies <span
+class="math inline">\(f = mc^2/h\)</span>—should exhibit a hierarchical,
+tree-like organization. The twelve fermion masses (three charged
+leptons, six quarks, three neutrinos) span roughly twelve orders of
+magnitude from the lightest neutrino to the top quark.</p>
+<p><strong>Quantitative prediction:</strong> When expressed as Compton
+frequencies and plotted on a logarithmic scale, the twelve masses should
+cluster at tree vertices—their log-ratios should approximate integer
+multiples of <span class="math inline">\(\log q\)</span> for some
+scaling ratio <span class="math inline">\(q\)</span> consistent with
+Predictions 1 and 2. The tree framework constrains the mass
+<strong>ratios</strong>, not the absolute scale, so the prediction is
+independent of the unknown overall mass scale.</p>
+<p><strong>Current status—charged leptons and quarks:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Particle</th>
+<th style="text-align: left;">Mass (MeV/<span
+class="math inline">\(c^2\)</span>)</th>
+<th style="text-align: left;"><span
+class="math inline">\(\log_{10}(m/m_e)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(e\)</span></td>
+<td style="text-align: left;">0.511</td>
+<td style="text-align: left;">5.708</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(u\)</span></td>
+<td style="text-align: left;">2.16</td>
+<td style="text-align: left;">6.335</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(d\)</span></td>
+<td style="text-align: left;">4.67</td>
+<td style="text-align: left;">6.669</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(s\)</span></td>
+<td style="text-align: left;">93.4</td>
+<td style="text-align: left;">7.970</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\mu\)</span></td>
+<td style="text-align: left;">105.66</td>
+<td style="text-align: left;">8.024</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(c\)</span></td>
+<td style="text-align: left;">1275</td>
+<td style="text-align: left;">9.106</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\tau\)</span></td>
+<td style="text-align: left;">1776.86</td>
+<td style="text-align: left;">9.250</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(b\)</span></td>
+<td style="text-align: left;">4180</td>
+<td style="text-align: left;">9.621</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(t\)</span></td>
+<td style="text-align: left;">172,500</td>
+<td style="text-align: left;">11.237</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tree fit analysis (Python-executed, <span
+class="math inline">\(n_{\text{trials}} = 10^4\)</span>, uniform-span
+null model):</strong> For <span class="math inline">\(q = 2\)</span>
+(octave scaling, the value from Prediction 1), the RMS residual between
+the observed mass logarithms and the nearest tree vertex is 0.0806 in
+<span class="math inline">\(\log_{10}\)</span> units—meaning typical
+masses are within a factor of <span class="math inline">\(10^{0.08}
+\approx 1.2\)</span> of a tree vertex. A randomization test yields <span
+class="math inline">\(p = 0.346\)</span>, meaning the observed
+clustering is not statistically distinguishable from random placement at
+the 95% confidence level. The best-fit <span
+class="math inline">\(q\)</span> among <span
+class="math inline">\(\{1.5, 2.0, e, 3.0\}\)</span> is <span
+class="math inline">\(q = 1.5\)</span> by RMS (0.0510), with <span
+class="math inline">\(q = 2\)</span> at 0.0806; however, no <span
+class="math inline">\(q\)</span> achieves statistical significance. Full
+results in Section 4.3.1.</p>
+<p><strong>Neutrino masses:</strong> The three neutrino masses are known
+only through mass-squared differences from oscillation experiments
+(<span class="math inline">\(\Delta m^2_{21} \approx 7.5 \times
+10^{-5}\)</span> eV<span class="math inline">\(^2\)</span>, <span
+class="math inline">\(|\Delta m^2_{31}| \approx 2.5 \times
+10^{-3}\)</span> eV<span class="math inline">\(^2\)</span>). Individual
+masses are bounded above by KATRIN (<span
+class="math inline">\(m_{\nu_e} &lt; 0.8\)</span> eV) and cosmological
+constraints (<span class="math inline">\(\sum m_\nu &lt; 0.12\)</span>
+eV). Once absolute neutrino masses are measured (e.g., by KATRIN,
+Project 8, or future cosmological surveys), three additional data points
+will be added to the tree fit, substantially improving statistical
+power.</p>
+<p><strong>Falsification criteria:</strong> The tree framework is
+falsified for mass ratios if: 1. A statistically significant fit (<span
+class="math inline">\(p &lt; 0.01\)</span>) to integer powers of any
+<span class="math inline">\(q \in [1.5, 3.0]\)</span> cannot be achieved
+given the precision of all twelve masses (including neutrinos),
+<strong>or</strong> 2. The best-fit <span
+class="math inline">\(q\)</span> from the mass hierarchy differs from
+the laboratory-measured <span class="math inline">\(q\)</span> from
+Prediction 1 at <span class="math inline">\(&gt;3\sigma\)</span>.</p>
+<p><strong>Current assessment:</strong> Prediction 3 is
+<strong>data-limited</strong>—the neutrino mass uncertainties preclude a
+definitive test. The hierarchical, factor-of-10 to factor-of-100 spacing
+between the three fermion generations is qualitatively consistent with a
+tree structure, but quantitative confirmation awaits improved neutrino
+mass measurements. This prediction sharpens in parallel with
+experimental progress in neutrino physics.</p>
+<h4 id="reproducible-tree-fit-results">4.3.1 Reproducible Tree Fit
+Results</h4>
+<p>The analysis was reproduced and extended in
+<code>0.8_fermion_mass.py</code>. Results for four candidate scaling
+ratios (10,000-trial randomization test, uniform-span null):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">q</th>
+<th style="text-align: left;">RMS residual</th>
+<th style="text-align: left;">p-value</th>
+<th style="text-align: left;">Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1.5</td>
+<td style="text-align: left;">0.0510</td>
+<td style="text-align: left;">0.527</td>
+<td style="text-align: left;">Not significant</td>
+</tr>
+<tr>
+<td style="text-align: left;">2.0</td>
+<td style="text-align: left;">0.0806</td>
+<td style="text-align: left;">0.346</td>
+<td style="text-align: left;">Not significant</td>
+</tr>
+<tr>
+<td style="text-align: left;">e <span
+class="math inline">\(\approx\)</span> 2.7</td>
+<td style="text-align: left;">0.1046</td>
+<td style="text-align: left;">0.151</td>
+<td style="text-align: left;">Not significant</td>
+</tr>
+<tr>
+<td style="text-align: left;">3.0</td>
+<td style="text-align: left;">0.1221</td>
+<td style="text-align: left;">0.243</td>
+<td style="text-align: left;">Not significant</td>
+</tr>
+</tbody>
+</table>
+<p>No q achieves p &lt; 0.05 with the current nine known masses. The
+table uses the uniform-span null model (random placement of 9 points
+over the observed span), which is the simpler and more transparent
+baseline. Both the header analysis and this reproducible table agree:
+Prediction 3 is <strong>not currently falsifiable</strong>.</p>
+<h4 id="generation-structure">4.3.2 Generation Structure</h4>
+<p>Ratios between successive fermion generations reveal suggestive but
+statistically inconclusive patterns:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Ratio</th>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;"><span
+class="math inline">\(\log_{10}\)</span></th>
+<th style="text-align: left;">Nearest tree k</th>
+<th style="text-align: left;">Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">m<span class="math inline">\(_\mu\)</span>
+/ m<span class="math inline">\(_e\)</span></td>
+<td style="text-align: left;">206.8</td>
+<td style="text-align: left;">2.315</td>
+<td style="text-align: left;">k = 8</td>
+<td style="text-align: left;">30.8%</td>
+</tr>
+<tr>
+<td style="text-align: left;">m<span
+class="math inline">\(_\tau\)</span> / m<span
+class="math inline">\(_\mu\)</span></td>
+<td style="text-align: left;">16.8</td>
+<td style="text-align: left;">1.226</td>
+<td style="text-align: left;">k = 4</td>
+<td style="text-align: left;"><strong>7.2%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">m<span class="math inline">\(_c\)</span> /
+m<span class="math inline">\(_u\)</span></td>
+<td style="text-align: left;">590.3</td>
+<td style="text-align: left;">2.771</td>
+<td style="text-align: left;">k = 9</td>
+<td style="text-align: left;">20.5%</td>
+</tr>
+<tr>
+<td style="text-align: left;">m<span class="math inline">\(_t\)</span> /
+m<span class="math inline">\(_c\)</span></td>
+<td style="text-align: left;">135.3</td>
+<td style="text-align: left;">2.131</td>
+<td style="text-align: left;">k = 7</td>
+<td style="text-align: left;"><strong>8.0%</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">m<span class="math inline">\(_b\)</span> /
+m<span class="math inline">\(_s\)</span></td>
+<td style="text-align: left;">44.8</td>
+<td style="text-align: left;">1.651</td>
+<td style="text-align: left;">k = 5</td>
+<td style="text-align: left;">48.4%</td>
+</tr>
+</tbody>
+</table>
+<p>The <span class="math inline">\(\tau/\mu\)</span> and t/c ratios
+align with integer tree steps to within &lt;10% of the tree period—the
+cleanest signals in the current data. The b/s ratio (48.4% deviation) is
+the worst fit. The generation structure does not reach collective
+statistical significance.</p>
+<h4 id="koide-formula">4.3.3 Koide Formula</h4>
+<p>The charged lepton masses satisfy the Koide relation to high
+precision:</p>
+<p><span class="math display">\[
+K = \frac{m_e + m_\mu + m_\tau}{(\sqrt{m_e} + \sqrt{m_\mu} +
+\sqrt{m_\tau})^2} = 0.666659 \approx \frac{2}{3}.
+\]</span></p>
+<p>In the tree framework, a relation of this form could arise if the
+three charged lepton masses occupy three specific tree vertices. For q =
+2, the best-fit vertex depths are k = 0 (e), k = 8 (<span
+class="math inline">\(\mu\)</span>), k = 12 (<span
+class="math inline">\(\tau\)</span>), giving log<span
+class="math inline">\(_{10}\)</span> ratios of 2.408 and 3.613
+vs. observed 2.315 and 3.541. The Koide formula constrains the absolute
+mass scale—information the pure tree fit (which constrains only ratios)
+does not provide. A tree-theoretic derivation of the Koide formula would
+require specifying the absolute scale (see Open Question 5, Section
+6.4).</p>
+<h4 id="neutrino-sensitivity">4.3.4 Neutrino Sensitivity</h4>
+<p>A Monte Carlo power analysis (5000 trials per scenario) adding 1–3
+neutrino masses in the 0.001–0.1 eV range shows that even with all three
+neutrino masses known, the median RMS residual remains $$0.08 and the
+p-value distribution does not cross the p &lt; 0.05 threshold. The
+limiting factor is not only the missing neutrino masses but the
+intrinsic scatter among the nine known masses. Achieving p &lt; 0.01
+will require either a larger fermion sample (e.g., beyond-Standard-Model
+particles) or a statistical method that incorporates the <span
+class="math inline">\(\gtrsim 10\%\)</span> uncertainties on light quark
+masses.</p>
+<p>Figure 2 (see <code>0.8_fig_fermion_mass.png</code>) visualizes the
+tree fit for q = 2, showing observed masses and their nearest tree
+vertices.</p>
+<hr />
+<h3 id="direction-1-fault-tolerant-quantum-architecture">4.4 Direction
+1: Fault-Tolerant Quantum Architecture</h3>
+<p><strong>Status:</strong> Theoretical proposal—engineering timeline
+set by quantum computing maturation, not by this framework.</p>
+<p>The tree geometry is both a description of nature and a
+<strong>prescription for engineering</strong>. The ultrametric
+property—balls are nested or disjoint, never partially overlapping—has a
+computational interpretation: errors on different branches are naturally
+isolated.</p>
+<p><strong>Consequence:</strong> A quantum computer whose logical qubits
+are encoded on the boundary of a Bruhat–Tits tree, with error correction
+implemented hierarchically, would achieve a fault-tolerance threshold
+that scales <strong>exponentially</strong> with tree depth (versus
+polynomially for surface codes). This is a theoretical claim about the
+information-theoretic properties of tree geometries, not a near-term
+experimental prediction.</p>
+<p>Concretely, the ultrametric property—balls never partially
+overlap—eliminates crosstalk between logically distinct error-correction
+patches: a physical error on one branch cannot propagate to neighboring
+branches because the tree structure enforces nested-or-disjoint
+boundaries. In surface codes, the overhead to suppress logical error to
+probability <span class="math inline">\(p_L\)</span> scales as <span
+class="math inline">\(\mathcal{O}(\log^2(1/p_L))\)</span>; a tree-based
+code with <span class="math inline">\(q\)</span>-ary branching at depth
+<span class="math inline">\(k\)</span> handles <span
+class="math inline">\(q^k\)</span> logical qubits with only <span
+class="math inline">\(k\)</span> levels of syndrome processing. At <span
+class="math inline">\(q=2\)</span> and depth <span
+class="math inline">\(k=20\)</span>, this supports <span
+class="math inline">\(\sim 10^6\)</span> logical qubits with 20 levels
+of classical post-processing—a dramatic reduction in classical decoding
+complexity. The proposal remains theoretical; no physical realization of
+tree-based error correction has been demonstrated.</p>
+<hr />
+<h3 id="direction-2-adelic-unification">4.5 Direction 2: Adelic
+Unification</h3>
+<p><strong>Status:</strong> Long-term mathematical research program—not
+constrained by current experimental capabilities.</p>
+<p>Ostrowski’s theorem: <span class="math inline">\(\mathbb{R}\)</span>
+and <span class="math inline">\(\mathbb{Q}_p\)</span> are the only two
+completions of <span class="math inline">\(\mathbb{Q}\)</span>. If both
+play physical roles—<span class="math inline">\(\mathbb{R}\)</span> for
+spacetime, <span class="math inline">\(\mathbb{Q}_p\)</span> (via the
+Bruhat–Tits tree) for frequency space—then the full symmetry group of
+nature should be <strong>adelic</strong>.</p>
+<p><strong>Consequence:</strong> Physical laws should treat all places
+(Archimedean and <span class="math inline">\(p\)</span>-adic) on an
+equal footing. The adele ring <span
+class="math inline">\(\mathbb{A}_\mathbb{Q}\)</span> is the natural
+object for a unified formulation. This connects the tree framework to
+the Langlands program in number theory.</p>
+<p><strong>Testability:</strong> Adelic unification is the least
+experimentally constrained prediction. Its primary test is internal
+consistency: can the known forces and particles be organized into adelic
+representations? This is a mathematical program running in parallel with
+the experimental predictions 1–4.</p>
+<p>A concrete entry point: the Standard Model gauge group <span
+class="math inline">\(\mathrm{SU}(3) \times \mathrm{SU}(2) \times
+\mathrm{U}(1)\)</span> may be a “real-place shadow” of adelic
+objects—the adele ring <span
+class="math inline">\(\mathbb{A}_\mathbb{Q}\)</span> is the natural home
+for representations of all completions of <span
+class="math inline">\(\mathbb{Q}\)</span> simultaneously. If the gauge
+group at the real place emerges from a product over all places, the
+observed coupling constants should be constrained by adelic consistency
+conditions. This connects to the Langlands program’s goal of expressing
+automorphic <span class="math inline">\(L\)</span>-functions—which
+naturally live on <span
+class="math inline">\(\mathbb{A}_\mathbb{Q}\)</span>—as physical
+observables. The connection remains speculative but provides a
+mathematical roadmap for unification that does not require postulating
+new symmetries beyond those already forced by Ostrowski’s theorem.</p>
+<hr />
+<h2 id="mathematical-foundations">5. Mathematical Foundations</h2>
+<p>This section provides the rigorous mathematical backing for the tree
+framework, intended for readers who wish to verify the claims at full
+depth. The material is self-contained at the level of advanced
+undergraduate mathematics (real analysis, abstract algebra) but can be
+skipped on a first reading.</p>
+<h3 id="ostrowskis-theorem">5.1 Ostrowski’s Theorem</h3>
+<p><strong>Theorem (Ostrowski, 1916).</strong> Every non-trivial
+absolute value <span class="math inline">\(|\cdot|\)</span> on <span
+class="math inline">\(\mathbb{Q}\)</span> is equivalent either to the
+standard real absolute value <span
+class="math inline">\(|\cdot|_\infty\)</span> or to a <span
+class="math inline">\(p\)</span>-adic absolute value <span
+class="math inline">\(|\cdot|_p\)</span> for some prime <span
+class="math inline">\(p\)</span>.</p>
+<p>Here, “equivalent” means they induce the same topology. An
+<strong>absolute value</strong> is a function <span
+class="math inline">\(|\cdot| : \mathbb{Q} \to \mathbb{R}_{\geq
+0}\)</span> satisfying: 1. <span class="math inline">\(|x| = 0 \iff x =
+0\)</span>, 2. <span class="math inline">\(|xy| = |x|\,|y|\)</span>, 3.
+<span class="math inline">\(|x + y| \leq |x| + |y|\)</span>
+(Archimedean) or <span class="math inline">\(|x + y| \leq \max(|x|,
+|y|)\)</span> (non-Archimedean).</p>
+<p>The real absolute value satisfies the ordinary triangle inequality;
+the <span class="math inline">\(p\)</span>-adic absolute value satisfies
+the <strong>strong triangle inequality</strong> (ultrametric).
+Ostrowski’s theorem states that these are the <strong>only</strong> two
+types.</p>
+<p><strong>Physical significance.</strong> Any physical theory built on
+a notion of distance derived from <span
+class="math inline">\(\mathbb{Q}\)</span> must choose between these two
+geometries. Conventional physics chooses the Archimedean completion
+<span class="math inline">\(\mathbb{R}\)</span>. The tree framework
+proposes that frequency space is the non-Archimedean completion <span
+class="math inline">\(\mathbb{Q}_p\)</span>.</p>
+<h3 id="p-adic-numbers">5.2 <span class="math inline">\(p\)</span>-adic
+Numbers</h3>
+<p>For a fixed prime <span class="math inline">\(p\)</span>, any
+non-zero rational <span class="math inline">\(x \in \mathbb{Q}\)</span>
+can be written uniquely as</p>
+<p><span class="math display">\[
+x = p^{v_p(x)} \cdot \frac{a}{b},
+\]</span></p>
+<p>where <span class="math inline">\(v_p(x) \in \mathbb{Z}\)</span> (the
+<span class="math inline">\(p\)</span>-adic valuation) and <span
+class="math inline">\(a, b\)</span> are integers coprime to <span
+class="math inline">\(p\)</span>. The <span
+class="math inline">\(p\)</span>-adic absolute value is:</p>
+<p><span class="math display">\[
+|x|_p = p^{-v_p(x)}, \qquad |0|_p = 0.
+\]</span></p>
+<p>Numbers divisible by high powers of <span
+class="math inline">\(p\)</span> are “small” in the <span
+class="math inline">\(p\)</span>-adic sense. The completion of <span
+class="math inline">\(\mathbb{Q}\)</span> with respect to <span
+class="math inline">\(|\cdot|_p\)</span> is the field <span
+class="math inline">\(\mathbb{Q}_p\)</span> of <span
+class="math inline">\(p\)</span>-adic numbers. Elements of <span
+class="math inline">\(\mathbb{Q}_p\)</span> can be represented as
+infinite series:</p>
+<p><span class="math display">\[
+x = \sum_{n = v_p(x)}^{\infty} a_n p^n, \qquad a_n \in \{0, 1, \ldots,
+p-1\},
+\]</span></p>
+<p>convergent in the <span class="math inline">\(p\)</span>-adic metric.
+This is a direct analogue of decimal expansion for <span
+class="math inline">\(\mathbb{R}\)</span>, but with the crucial
+difference that the ultrametric property makes convergence behave very
+differently.</p>
+<h3 id="the-bruhattits-tree-mathcalt_p">5.3 The Bruhat–Tits Tree <span
+class="math inline">\(\mathcal{T}_p\)</span></h3>
+<p>The <strong>Bruhat–Tits tree</strong> <span
+class="math inline">\(\mathcal{T}_p\)</span> is an infinite <span
+class="math inline">\((p+1)\)</span>-regular tree that serves as the
+natural geometric object for <span
+class="math inline">\(\mathbb{Q}_p\)</span>. Its construction:</p>
+<p><strong>Vertices.</strong> Equivalence classes of <span
+class="math inline">\(\mathbb{Z}_p\)</span>-lattices in <span
+class="math inline">\(\mathbb{Q}_p^2\)</span>. Two lattices <span
+class="math inline">\(L_1, L_2\)</span> are equivalent if <span
+class="math inline">\(L_1 = \lambda L_2\)</span> for some <span
+class="math inline">\(\lambda \in \mathbb{Q}_p^\times\)</span>. The set
+of vertices forms an infinite tree where each vertex has degree <span
+class="math inline">\(p+1\)</span>.</p>
+<p><strong>Edges.</strong> Two vertices are adjacent if their
+representative lattices satisfy <span class="math inline">\(pL_1 \subset
+L_2 \subset L_1\)</span> (or vice versa).</p>
+<p><strong>Boundary.</strong> The set of ends (equivalence classes of
+infinite geodesic rays) is the <span
+class="math inline">\(p\)</span>-adic projective line:</p>
+<p><span class="math display">\[
+\partial\mathcal{T}_p \;\cong\; \mathbb{P}^1(\mathbb{Q}_p) =
+\mathbb{Q}_p \cup \{\infty\}.
+\]</span></p>
+<p>Each boundary point corresponds to a <span
+class="math inline">\(p\)</span>-adic number (or <span
+class="math inline">\(\infty\)</span>), specified to infinite
+precision—exactly as the infinite paths on the frequency tree correspond
+to frequencies at infinite precision.</p>
+<p><strong>Ultrametric on the boundary.</strong> For <span
+class="math inline">\(x, y \in \partial\mathcal{T}_p\)</span>, the tree
+distance is:</p>
+<p><span class="math display">\[
+d_T(x, y) = p^{-\ell},
+\]</span></p>
+<p>where <span class="math inline">\(\ell\)</span> is the depth of the
+vertex where the unique geodesics from a fixed root to <span
+class="math inline">\(x\)</span> and <span
+class="math inline">\(y\)</span> first diverge. This satisfies the
+strong triangle inequality identically to the frequency tree distance of
+Section 2.4.</p>
+<h3 id="from-tree-to-continuum-the-limit-q-to-1">5.4 From Tree to
+Continuum: The Limit <span class="math inline">\(q \to 1^+\)</span></h3>
+<p><strong>Mathematical note.</strong> The Bruhat–Tits tree <span
+class="math inline">\(\mathcal{T}_p\)</span> (Section 5.3) is defined
+for a prime <span class="math inline">\(p\)</span> and is <span
+class="math inline">\((p+1)\)</span>-regular. The general <span
+class="math inline">\(q\)</span>-ary tree used throughout the physics
+sections (Sections 2–4) is defined for integer <span
+class="math inline">\(q \geq 2\)</span>. These are distinct objects:
+<span class="math inline">\(\mathcal{T}_p\)</span> provides the rigorous
+<span class="math inline">\(p\)</span>-adic foundation; the general
+<span class="math inline">\(q\)</span>-ary tree provides the physical
+phenomenology. The two coincide when <span
+class="math inline">\(q\)</span> is prime (see the terminology note in
+Section 2.5). The continuum limit discussed below applies to the general
+<span class="math inline">\(q\)</span>-ary tree; a continuum limit of
+<span class="math inline">\(\mathcal{T}_p\)</span> itself would instead
+be obtained through the adelic product over all primes (Section
+5.5).</p>
+<p>The standard continuous frequency line <span
+class="math inline">\(\mathbb{R}\)</span> is not an alternative to the
+tree—it is a <strong>limit</strong> of the tree when the branching
+factor approaches unity. Consider a sequence of <span
+class="math inline">\(q\)</span>-ary trees with <span
+class="math inline">\(q = 1 + \varepsilon\)</span>, <span
+class="math inline">\(\varepsilon \to 0^+\)</span>. As the branching
+becomes infinitely fine:</p>
+<ul>
+<li>The number of vertices at depth <span
+class="math inline">\(k\)</span> is <span class="math inline">\(q^k =
+(1+\varepsilon)^k\)</span>, which grows without bound for any fixed
+<span class="math inline">\(k\)</span> as <span
+class="math inline">\(\varepsilon\)</span> decreases. The continuous
+limit requires the simultaneous limit <span class="math inline">\(k \to
+\infty\)</span>, <span class="math inline">\(\varepsilon \to 0\)</span>
+with <span class="math inline">\(k\varepsilon\)</span> held finite.</li>
+<li>The ultrametric distance <span class="math inline">\(d_T =
+q^{-\ell}\)</span> becomes an exponential of the continuous depth
+parameter.</li>
+<li>The spectral density <span class="math inline">\(J(\omega) = \sum_k
+\sum_v \gamma_v \delta(\omega - \omega_v)\)</span> becomes an integral
+<span class="math inline">\(J(\omega) = \int \gamma(u) \, du\)</span>
+over a continuous parameter <span class="math inline">\(u\)</span>.</li>
+<li>The discrete sum over paths becomes a path integral over continuous
+functions.</li>
+</ul>
+<p>In this limit, the Schrödinger equation emerges as the infinitesimal
+generator of depth evolution, and the standard formalism of quantum
+mechanics on <span class="math inline">\(\mathbb{R}\)</span> is
+recovered. The tree framework is thus not a rival to standard quantum
+theory but an <strong>ultraviolet completion</strong> of it—the discrete
+tree provides the short-distance regulator that the continuum lacks.</p>
+<p>The physical value of <span class="math inline">\(q\)</span> is not
+determined <em>a priori</em> by the framework. It is an empirical
+parameter, to be measured in the laboratory (Prediction 1). The fact
+that <span class="math inline">\(q\)</span> could be <span
+class="math inline">\(2\)</span>, <span
+class="math inline">\(e\)</span>, <span
+class="math inline">\(3\)</span>, or any other value reflects the choice
+of multiplicative ruler (Section 2.2). The prime <span
+class="math inline">\(p\)</span> in the Bruhat–Tits construction would
+then be either <span class="math inline">\(p = q\)</span> (if <span
+class="math inline">\(q\)</span> is prime) or a product of primes.</p>
+<h3 id="langlands-program-and-adelic-unification">5.5 Langlands Program
+and Adelic Unification</h3>
+<p>The tree framework naturally points toward the <strong>Langlands
+program</strong>, a vast web of conjectures connecting number theory
+(Galois representations) to harmonic analysis (automorphic forms). The
+Bruhat–Tits tree is a central object in the <span
+class="math inline">\(p\)</span>-adic Langlands correspondence for <span
+class="math inline">\(\mathrm{GL}_2\)</span>.</p>
+<p>In physical terms: if frequency space is a Bruhat–Tits tree, then the
+“wavefunctions” on the tree boundary are automorphic forms, and the
+symmetry group acting on the tree is <span
+class="math inline">\(\mathrm{PGL}_2(\mathbb{Q}_p)\)</span>. The adele
+ring <span class="math inline">\(\mathbb{A}_\mathbb{Q}\)</span>—the
+restricted product of <span class="math inline">\(\mathbb{R}\)</span>
+and all <span class="math inline">\(\mathbb{Q}_p\)</span>—is the natural
+object on which to formulate a theory that treats all completions of
+<span class="math inline">\(\mathbb{Q}\)</span> on an equal footing.</p>
+<p>This connects the tree framework to the broader program of
+<strong>adelic physics</strong>, which seeks to ground physical law in
+the number-theoretic structure of the rational numbers. While this is
+the most speculative aspect of the framework, it is also the one with
+the deepest mathematical pedigree.</p>
+<hr />
+<h2 id="discussion">6. Discussion</h2>
+<h3 id="what-the-tree-framework-isand-what-it-is-not">6.1 What the Tree
+Framework Is—and What It Is Not</h3>
+<p>The tree framework is a <strong>geometric proposal</strong>: the
+appropriate geometry for the space of physical frequencies is a
+discrete, ultrametric Bruhat–Tits tree. It is not a new force, a new
+particle, or a modification of the Standard Model Lagrangian. It is a
+claim about the underlying mathematical structure of scale—a structure
+that, once taken seriously, generates concrete, testable
+predictions.</p>
+<p>The framework is not a rejection of the continuum. It is an
+<strong>embedding</strong> of the continuum as an emergent limit. Just
+as fluid dynamics emerges from molecular dynamics when you coarse-grain
+over many particles, the continuous frequency line <span
+class="math inline">\(\mathbb{R}\)</span> emerges from the tree when you
+refuse to resolve individual branchings. The standard formalism of
+quantum mechanics—Hilbert spaces, unitary evolution, the Schrödinger
+equation—is the <span class="math inline">\(q \to 1^+\)</span> limit of
+the tree framework.</p>
+<h3 id="the-scaling-ratio-q-and-the-fine-structure-constant">6.2 The
+Scaling Ratio <span class="math inline">\(q\)</span> and the
+Fine-Structure Constant</h3>
+<p>A central open question: <strong>what determines <span
+class="math inline">\(q\)</span>?</strong> The tree framework does not
+predict <span class="math inline">\(q\)</span> from first principles; it
+treats <span class="math inline">\(q\)</span> as an empirical parameter
+to be measured. But one possibility, tantalizing and highly speculative,
+is that <span class="math inline">\(q\)</span> is related to the
+fine-structure constant <span class="math inline">\(\alpha \approx
+1/137\)</span>. The electron’s Compton frequency and the Rydberg
+frequency are related by a factor of <span
+class="math inline">\(\alpha^2/2\)</span>; the ratio of the electron to
+proton mass is approximately <span class="math inline">\(6\pi^5 \approx
+1836\)</span>. These numerical coincidences, if they are not
+coincidences, suggest that dimensionless ratios in physics may encode
+the tree’s branching structure. If <span
+class="math inline">\(q\)</span> is measured as <span
+class="math inline">\(2.000 \pm 0.001\)</span> in the laboratory
+(Prediction 1), the question of why nature chose that particular value
+becomes pressing.</p>
+<h3 id="connections-to-other-programs">6.3 Connections to Other
+Programs</h3>
+<p><strong>Tensor networks and holography.</strong> The Multiscale
+Entanglement Renormalization Ansatz (MERA) represents quantum critical
+ground states as tensor networks on a tree. The tree geometry of MERA is
+a discrete realization of the hyperbolic geometry of anti-de Sitter
+space—the bulk geometry in the AdS/CFT correspondence. This suggests a
+deep connection: if frequency space is a tree, then the “frequency
+direction” in physical theories may be geometrically analogous to the
+radial direction in AdS. The tree framework may provide a new entry
+point to holographic duality, with the tree boundary playing the role of
+the CFT and the tree interior playing the role of the bulk.</p>
+<p><strong>Quantum gravity.</strong> The tree framework cures the
+Planck-scale ultraviolet catastrophe without quantizing gravity per se:
+by making high-frequency modes discrete and physically inaccessible, it
+provides a natural short-distance cutoff. The Planck frequency is simply
+the deepest resolvable vertex on the tree, and modes beyond it do not
+exist because the tree does not branch further.</p>
+<p><strong>Conformal field theory.</strong> The scaling operator in
+conformal field theory generates multiplicative rescalings of
+coordinates—exactly the operation that moves between levels on the tree.
+The discrete spectrum of scaling dimensions in rational CFTs may reflect
+an underlying tree structure in the space of scaling operators.</p>
+<h3 id="open-questions">6.4 Open Questions</h3>
+<ol type="1">
+<li><p><strong>What is <span class="math inline">\(q\)</span>?</strong>
+Is it <span class="math inline">\(2\)</span>, a prime, or something
+else? Can it be derived from first principles (e.g., from the
+fine-structure constant or the Langlands program) or must it be
+measured?</p></li>
+<li><p><strong>Why one tree?</strong> Ostrowski’s theorem gives one
+<span class="math inline">\(p\)</span>-adic completion per prime <span
+class="math inline">\(p\)</span>. Is there a <em>single</em> <span
+class="math inline">\(p\)</span> (a single tree) for all of physics, or
+does each interaction have its own tree with its own <span
+class="math inline">\(p\)</span>? If q is measured as <span
+class="math inline">\(2.000 \pm 0.001\)</span> in Prediction 1, does
+that select a specific prime or remain ambiguous?</p></li>
+<li><p><strong>Tree dynamics.</strong> The framework describes the
+static geometry of frequency space, but what are the tree’s dynamics?
+How do states evolve on the tree, and what are the equations of motion
+for tree-level degrees of freedom? The Page–Wootters mechanism provides
+a kinematic arrow of time (Section 3.4), but what is the Hamiltonian
+that drives evolution along that arrow?</p></li>
+<li><p><strong>Gravity.</strong> How does general relativity—a theory of
+smooth spacetime—couple to a discrete frequency tree? Does the tree
+framework modify the gravitational sector, or only the matter sector? If
+the tree provides a UV cutoff at the Planck frequency, does this affect
+the cosmological constant problem?</p></li>
+<li><p><strong>The measurement problem.</strong> The tree framework
+provides a geometric interpretation of wavefunction collapse (Section
+3.2), but does it solve the measurement problem, or merely reframe it?
+The Born rule emerges from uniform path-counting, but the transition
+from superposition to a single branch remains a selection rule—what
+picks the branch?</p></li>
+<li><p><strong>Neutrino mass timeline.</strong> When will absolute
+neutrino mass measurements reach the precision needed to bring the
+fermion mass tree fit (Section 4.3) below p &lt; 0.01? KATRIN’s
+projected sensitivity is <span class="math inline">\(m_{\nu_e} \sim
+0.2\)</span> eV (90% CL); Project 8 aims for <span
+class="math inline">\(\sim 0.04\)</span> eV. Even with all three masses
+measured, the power analysis (Section 4.3.4) suggests p &lt; 0.01
+requires either a larger fermion sample or a method that incorporates
+quark mass uncertainties.</p></li>
+<li><p><strong>q universality across sectors.</strong> The framework
+assumes the same q applies to all three predictions—decoherence
+(electromagnetic/weak), CMB (gravitational/primordial), and fermion
+masses (Yukawa). But is q-universality required by the framework, or
+could different sectors have different q values while still being
+organized as trees? A positive detection with different q values in
+different experiments would constrain the “one tree vs. many trees”
+question.</p></li>
+<li><p><strong>Adelic dynamics.</strong> If the adelic framework
+(Section 5.5) is correct, what does a dynamical equation look like that
+simultaneously involves the real place (<span
+class="math inline">\(\mathbb{R}\)</span>) and all <span
+class="math inline">\(p\)</span>-adic places (<span
+class="math inline">\(\mathbb{Q}_p\)</span>)? Is there an adelic
+Schrödinger equation, and does it make predictions beyond those of the
+single-tree framework?</p></li>
+<li><p><strong>Connection to holography.</strong> The tree geometry
+(MERA) has a known connection to AdS/CFT holography (Section 6.3). Does
+the frequency tree correspond to a specific bulk geometry? Can
+holographic techniques be used to compute tree-level
+observables?</p></li>
+<li><p><strong>What would falsify the framework decisively?</strong> The
+paper provides falsification criteria for each prediction, but what is
+the <em>minimal</em> experimental result that would kill the entire
+framework—not just one prediction? If Prediction 1 fails but Prediction
+2 succeeds, does the framework survive in modified form?</p>
+<p><strong>Answer.</strong> The entire framework rests on a single
+physical claim: that the spectral density <span
+class="math inline">\(J(\omega)\)</span> of quantum systems is discrete
+and tree-structured, with peaks at <span class="math inline">\(\omega_k
+= \omega_0 q^k\)</span> for some <span class="math inline">\(q\)</span>.
+The minimal fatal result is therefore: <strong>a dedicated search for
+log-periodic signatures in any physical domain—decoherence, CMB, or
+fermion masses—that excludes <span class="math inline">\(A &gt;
+0.1\%\)</span> for all <span class="math inline">\(q \in [1.5,
+3.0]\)</span> with a tree-structured pattern.</strong> Concretely, if
+CMB-S4 or a successor experiment constrains log-periodic modulation to
+<span class="math inline">\(A &lt; 0.1\%\)</span> across the full <span
+class="math inline">\(q\)</span> range, and if Prediction 1 finds no
+sparse spectral peaks after a dedicated search in cQED systems (null
+result at <span class="math inline">\(&gt;5\sigma\)</span> on criterion
+4.1.4 for all <span class="math inline">\(q\)</span>), then the tree
+framework has no empirical support and should be abandoned as a physical
+theory—though it may survive as a useful phenomenological tool (like the
+renormalization group). A mixed outcome (e.g., Prediction 1 positive but
+Prediction 2 null) would constrain but not kill the framework: it would
+indicate that the tree geometry is sector-dependent, requiring multiple
+trees with different <span class="math inline">\(q\)</span>
+values.</p></li>
+</ol>
+<h3 id="honest-audit">6.5 Honest Audit</h3>
+<p>The tree framework is speculative. It makes contact with established
+mathematics (Ostrowski, Bruhat–Tits, Langlands) and established physics
+(open quantum systems, CMB cosmology, the renormalization group), but
+the central claim—that frequency space <em>is</em> a tree—is radical.
+The framework could be wrong in several ways:</p>
+<ul>
+<li>Prediction 1 could yield null results: the spectral density of a
+multi-resonator system could show no sparse structure, or the measured
+peak spacings could be inconsistent with any <span
+class="math inline">\(q\)</span>.</li>
+<li><strong>Near-term limitation—single-harmonic detection.</strong>
+Even if Prediction 1 returns a positive result, a realistic analysis
+with <span class="math inline">\(g_0/2\pi = 50\)</span> MHz, <span
+class="math inline">\(Q = 10^6\)</span>, <span class="math inline">\(T =
+10\)</span> mK, and <span class="math inline">\(10^6\)</span>
+repetitions shows that only the fundamental harmonic (1 GHz, SNR <span
+class="math inline">\(\sim 6\sigma\)</span>) is practically measurable.
+Higher harmonics fall below a <span
+class="math inline">\(5\sigma\)</span> detection threshold unless
+coupling strengths exceed <span class="math inline">\(\sim 200\)</span>
+MHz—challenging in current cQED platforms. Consequently, confirming the
+geometric progression <span class="math inline">\(\omega_k = \omega_0
+q^k\)</span> (and thereby measuring <span
+class="math inline">\(q\)</span>) will require either stronger coupling,
+longer integration times, or frequency-domain noise spectroscopy with
+enhanced sensitivity. Until at least two tree vertices are resolved,
+Prediction 1 can establish the existence of a single spectral peak but
+cannot independently verify the tree geometry.</li>
+<li>Prediction 2 could be constrained by CMB-S4: log-periodic
+modulations can be excluded to <span class="math inline">\(A \lesssim
+0.7\%\)</span> (<span class="math inline">\(5\sigma\)</span>), putting
+pressure on the tree parameter space. A definitive falsification at
+<span class="math inline">\(A &lt; 0.1\%\)</span> requires a
+next-generation CMB experiment—CMB-S4 alone cannot reach this threshold
+(see Fisher forecast, Section 4.2.3).</li>
+<li>The tree might be a useful <em>effective</em> description (like the
+renormalization group) rather than a <em>fundamental</em> geometry—a
+phenomenological tool rather than a truth about nature.</li>
+<li>The entire framework might be a mathematical coincidence: the tree
+appears in number theory, MERA, spin glasses, and wavelets for
+independent reasons, with no deep physical connection between them.</li>
+</ul>
+<p>The honest position is that the tree framework is a <strong>bold
+conjecture awaiting experimental judgment</strong>. The virtue of the
+framework is not that it is certainly true, but that it is certainly
+testable.</p>
+<hr />
+<h2 id="conclusion">7. Conclusion</h2>
+<p>This paper has proposed that the fundamental geometry of physical
+frequencies is not the continuous real line <span
+class="math inline">\(\mathbb{R}\)</span> but a discrete, ultrametric
+Bruhat–Tits tree <span class="math inline">\(\mathcal{T}_p\)</span>. The
+proposal is motivated by:</p>
+<ol type="1">
+<li><p><strong>Ostrowski’s theorem:</strong> <span
+class="math inline">\(\mathbb{R}\)</span> and <span
+class="math inline">\(\mathbb{Q}_p\)</span> are the only two completions
+of the rationals. Physics has built everything on <span
+class="math inline">\(\mathbb{R}\)</span>; the tree framework explores
+what happens when we take <span
+class="math inline">\(\mathbb{Q}_p\)</span> seriously for the space of
+frequencies.</p></li>
+<li><p><strong>The multiplicative structure of measurement:</strong>
+When we choose a multiplicative ruler for frequency, the natural
+geometry is a tree—not because nature is “banded” but because the ruler
+itself imposes a hierarchical structure.</p></li>
+<li><p><strong>Four independent discoveries:</strong> The same tree
+geometry appears in number theory (Bruhat–Tits), particle physics (RG,
+spin glasses), condensed matter (MERA), and signal processing
+(wavelets). The convergence is unlikely to be an accident.</p></li>
+<li><p><strong>Testable predictions:</strong> The framework makes three
+concrete falsifiable predictions. Two—non-Markovian decoherence
+oscillations and log-periodic CMB modulations—are within reach of
+current or near-term experiments. A third—a hierarchical organization of
+fermion masses—sharpens as measurements improve. Two additional research
+directions—tree-based quantum error correction and adelic
+unification—are identified as longer-term consequences.</p></li>
+</ol>
+<p>The framework is speculative. It could be wrong. But it is wrong in a
+precise, testable way, and that is its chief virtue. If a
+superconducting qubit coupled to geometrically-spaced resonators shows a
+sparse noise spectrum with peaks at <span class="math inline">\(\omega_0
+q^k\)</span>, and if the CMB shows log-periodic modulations with the
+same period <span class="math inline">\(\log q\)</span>, then something
+deep is happening—something that connects a tabletop quantum experiment
+to the largest structure in the observable universe through the geometry
+of a tree.</p>
+<p>If these signatures are absent—if the noise spectrum is smooth, if
+the CMB is featureless at the <span class="math inline">\(0.1\%\)</span>
+level—then the tree framework is falsified, and we will have learned
+that the geometry of frequency, whatever it is, is not a tree. Either
+outcome advances our understanding.</p>
+<p>The tree framework is offered in that spirit: as a precise
+conjecture, awaiting experimental judgment.</p>
+<h2 id="references">References</h2>
+<ol type="1">
+<li><p><strong>Ostrowski, A.</strong> (1916). Über einige Lösungen der
+Funktionalgleichung <span class="math inline">\(\varphi(x) \cdot
+\varphi(y) = \varphi(xy)\)</span>. <em>Acta Mathematica</em>, 41,
+271–284.<br />
+<em>The theorem that every absolute value on <span
+class="math inline">\(\mathbb{Q}\)</span> is either Archimedean or <span
+class="math inline">\(p\)</span>-adic.</em></p></li>
+<li><p><strong>Bruhat, F. &amp; Tits, J.</strong> (1972). Groupes
+réductifs sur un corps local I. <em>Publications Mathématiques de
+l’IHÉS</em>, 41, 5–251.<br />
+<em>Construction of the Bruhat–Tits tree and its role in <span
+class="math inline">\(p\)</span>-adic Lie groups.</em></p></li>
+<li><p><strong>Page, D. N. &amp; Wootters, W. K.</strong> (1983).
+Evolution without evolution: Dynamics described by stationary
+observables. <em>Physical Review D</em>, 27(12), 2885–2892.<br />
+<em>The proposal that time is an emergent correlation between
+subsystems.</em></p></li>
+<li><p><strong>Wheeler, J. A.</strong> (1968). Superspace and the nature
+of quantum geometrodynamics. In <em>Battelle Rencontres</em>
+(pp. 242–307). Benjamin.<br />
+<em>The Hamiltonian constraint and the problem of time in quantum
+gravity.</em></p></li>
+<li><p><strong>Wilson, K. G.</strong> (1971). Renormalization group and
+critical phenomena. I &amp; II. <em>Physical Review B</em>, 4(9),
+3174–3205.<br />
+<em>The renormalization group as a hierarchical organization of scale
+transformations.</em></p></li>
+<li><p><strong>Parisi, G.</strong> (1979). Infinite number of order
+parameters for spin-glasses. <em>Physical Review Letters</em>, 43(23),
+1754–1756.<br />
+<em>Ultrametric organization of equilibrium states in spin
+glasses.</em></p></li>
+<li><p><strong>Mézard, M., Parisi, G., &amp; Virasoro, M. A.</strong>
+(1987). <em>Spin Glass Theory and Beyond</em>. World Scientific.<br />
+<em>Comprehensive treatment of ultrametricity in disordered
+systems.</em></p></li>
+<li><p><strong>Vidal, G.</strong> (2007). Entanglement renormalization.
+<em>Physical Review Letters</em>, 99(22), 220405.<br />
+<em>The Multiscale Entanglement Renormalization Ansatz (MERA) as a tree
+tensor network.</em></p></li>
+<li><p><strong>Vidal, G.</strong> (2008). Class of quantum many-body
+states that can be efficiently simulated. <em>Physical Review
+Letters</em>, 101(11), 110501.<br />
+<em>MERA and the discrete hyperbolic geometry of quantum critical
+systems.</em></p></li>
+<li><p><strong>Mallat, S.</strong> (2009). <em>A Wavelet Tour of Signal
+Processing</em> (3rd ed.). Academic Press.<br />
+<em>Wavelet transforms as dyadic tree decompositions of
+signals.</em></p></li>
+<li><p><strong>Caldeira, A. O. &amp; Leggett, A. J.</strong> (1983).
+Quantum tunnelling in a dissipative system. <em>Annals of Physics</em>,
+149(2), 374–456.<br />
+<em>The spin-boson model and spectral density formalism for open quantum
+systems.</em></p></li>
+<li><p><strong>Breuer, H.-P. &amp; Petruccione, F.</strong> (2002).
+<em>The Theory of Open Quantum Systems</em>. Oxford University
+Press.<br />
+<em>Non-Markovian dynamics, decoherence, and the CPMG noise spectroscopy
+formalism.</em></p></li>
+<li><p><strong>Planck Collaboration</strong> (2020). Planck 2018
+results. I. Overview and the cosmological legacy of Planck.
+<em>Astronomy &amp; Astrophysics</em>, 641, A1.<br />
+<em>Primary CMB temperature and polarization data constraining
+log-periodic modulations.</em></p></li>
+<li><p><strong>Planck Collaboration</strong> (2020). Planck 2018
+results. X. Constraints on inflation. <em>Astronomy &amp;
+Astrophysics</em>, 641, A10.<br />
+<em>Planck searches for features in the primordial power
+spectrum.</em></p></li>
+<li><p><strong>CMB-S4 Collaboration</strong> (Abazajian, K. et al.)
+(2016). CMB-S4 Science Book, First Edition. arXiv:1610.02743.<br />
+<em>Projected sensitivity of next-generation CMB
+experiments.</em></p></li>
+<li><p><strong>Vladimirov, V. S., Volovich, I. V., &amp; Zelenov, E.
+I.</strong> (1994). <em><span class="math inline">\(p\)</span>-adic
+Analysis and Mathematical Physics</em>. World Scientific.<br />
+<em>The <span class="math inline">\(p\)</span>-adic Fourier transform
+(Vladimirov operator) and its physical applications.</em></p></li>
+<li><p><strong>Langlands, R. P.</strong> (1970). Problems in the theory
+of automorphic forms. In <em>Lectures in Modern Analysis and
+Applications III</em> (pp. 18–61). Springer.<br />
+<em>The Langlands program connecting number theory to harmonic
+analysis.</em></p></li>
+<li><p><strong>Gelbart, S.</strong> (1984). An elementary introduction
+to the Langlands program. <em>Bulletin of the AMS</em>, 10(2),
+177–219.<br />
+<em>Accessible overview of the Langlands correspondences.</em></p></li>
+<li><p><strong>Manin, Yu. I.</strong> (1991). <em>Topics in
+Noncommutative Geometry</em>. Princeton University Press.<br />
+<em>Connections between <span class="math inline">\(p\)</span>-adic
+geometry and physics; the adelic perspective.</em></p></li>
+<li><p><strong>Maldacena, J.</strong> (1999). The large-<span
+class="math inline">\(N\)</span> limit of superconformal field theories
+and supergravity. <em>International Journal of Theoretical Physics</em>,
+38(4), 1113–1133.<br />
+<em>The AdS/CFT correspondence; MERA as a discrete realization of
+holography.</em></p></li>
+</ol>
+<h2 id="glossary">Glossary</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Bruhat–Tits tree</strong> <span
+class="math inline">\(\mathcal{T}_p\)</span></td>
+<td style="text-align: left;">An infinite <span
+class="math inline">\((p+1)\)</span>-regular tree whose vertices are
+equivalence classes of lattices in <span
+class="math inline">\(\mathbb{Q}_p^2\)</span> and whose boundary is
+<span class="math inline">\(\mathbb{P}^1(\mathbb{Q}_p)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Ultrametric</strong></td>
+<td style="text-align: left;">A distance function satisfying the strong
+triangle inequality <span class="math inline">\(d(x,z) \leq \max(d(x,y),
+d(y,z))\)</span>; characteristic of tree geometries</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Scaling ratio</strong> <span
+class="math inline">\(q\)</span></td>
+<td style="text-align: left;">The multiplicative factor defining tree
+levels; <span class="math inline">\(q &gt; 1\)</span>; values of
+interest include <span class="math inline">\(q=2\)</span> (octaves) and
+primes <span class="math inline">\(p\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Depth</strong> <span
+class="math inline">\(k\)</span></td>
+<td style="text-align: left;">An integer labeling a vertex on the tree;
+the number of branching choices from the root</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Boundary</strong> <span
+class="math inline">\(\partial\mathcal{T}\)</span></td>
+<td style="text-align: left;">The set of infinite paths from the root;
+corresponds to frequencies specified to infinite precision</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Spectral density</strong> <span
+class="math inline">\(J(\omega)\)</span></td>
+<td style="text-align: left;">The function describing how a quantum
+system couples to environmental modes at frequency <span
+class="math inline">\(\omega\)</span>; on the tree, a sum of discrete
+peaks</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong><span
+class="math inline">\(p\)</span>-adic numbers</strong> <span
+class="math inline">\(\mathbb{Q}_p\)</span></td>
+<td style="text-align: left;">The completion of <span
+class="math inline">\(\mathbb{Q}\)</span> with respect to the <span
+class="math inline">\(p\)</span>-adic absolute value; a non-Archimedean
+field</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Strong triangle
+inequality</strong></td>
+<td style="text-align: left;"><span class="math inline">\(d(x,z) \leq
+\max(d(x,y), d(y,z))\)</span>; implies all triangles are isosceles with
+a short base</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Page–Wootters
+mechanism</strong></td>
+<td style="text-align: left;">The proposal that time emerges from
+correlations between a “clock” system and the system of interest</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Log-periodic</strong></td>
+<td style="text-align: left;">A function satisfying <span
+class="math inline">\(f(qx) = f(x)\)</span> for some <span
+class="math inline">\(q\)</span>; oscillatory when expressed in <span
+class="math inline">\(\log x\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MERA</strong></td>
+<td style="text-align: left;">Multiscale Entanglement Renormalization
+Ansatz; a tensor network on a tree geometry</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CPMG</strong></td>
+<td style="text-align: left;">Carr–Purcell–Meiboom–Gill dynamical
+decoupling sequence; a bandpass filter for environmental noise</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fisher matrix</strong></td>
+<td style="text-align: left;">A measure of the information an observable
+carries about a parameter; determines minimum detectable signal
+amplitude</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Adeles</strong> <span
+class="math inline">\(\mathbb{A}_\mathbb{Q}\)</span></td>
+<td style="text-align: left;">The restricted product of <span
+class="math inline">\(\mathbb{R}\)</span> and all <span
+class="math inline">\(\mathbb{Q}_p\)</span>; the natural object for
+unifying Archimedean and <span class="math inline">\(p\)</span>-adic
+physics</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

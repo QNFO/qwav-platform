@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C.4 Edges Thermo StatMech | QWAV</title>
+<meta name="description" content="Appendix C: Detailed Graph Data (Edges) C.4.1: Edges Originating from Thermodynamics (Thermo) Nodes: Source Node ID Target Node ID Type Rationale Conf. Dir. ...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/c-4-edges-thermo-statmech">
+<meta property="og:title" content="C.4 Edges Thermo StatMech">
+<meta property="og:description" content="Appendix C: Detailed Graph Data (Edges) C.4.1: Edges Originating from Thermodynamics (Thermo) Nodes: Source Node ID Target Node ID Type Rationale Conf. Dir. ...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/c-4-edges-thermo-statmech">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "C.4 Edges Thermo StatMech",
+  "url": "https://deep.qwav.tech/papers/c-4-edges-thermo-statmech",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-05-09T03:21:33Z",
+  "abstract": "Appendix C: Detailed Graph Data (Edges) C.4.1: Edges Originating from Thermodynamics (Thermo) Nodes: Source Node ID Target Node ID Type Rationale Conf. Dir. ..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<p><strong>Appendix C: Detailed Graph Data (Edges)</strong></p>
+<p><strong>C.4.1: Edges Originating from Thermodynamics (Thermo)
+Nodes:</strong></p>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 2%" />
+<col style="width: 66%" />
+<col style="width: 2%" />
+<col style="width: 1%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Source Node ID</th>
+<th style="text-align: left;">Target Node ID</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Rationale</th>
+<th style="text-align: left;">Conf.</th>
+<th style="text-align: left;">Dir.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Thermo</code></td>
+<td style="text-align: left;"><code>StatMech</code></td>
+<td style="text-align: left;"><code>E-XPBY</code></td>
+<td style="text-align: left;">The macroscopic laws of thermodynamics are
+explained by the statistical behavior of microscopic constituents
+described by statistical mechanics.</td>
+<td style="text-align: left;">M/H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo</code></td>
+<td style="text-align: left;"><code>Concept::Energy</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Thermodynamics is fundamentally concerned
+with energy, its forms (heat, work), and its conservation (First
+Law).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo</code></td>
+<td style="text-align: left;"><code>Concept::Entropy</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Thermodynamics introduces entropy as a key
+state variable governing spontaneity and equilibrium (Second, Third
+Laws).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::ZerothLaw</code></td>
+<td style="text-align: left;"><code>Thermo</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Zeroth Law is a foundational principle
+defining thermal equilibrium within thermodynamics.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::FirstLaw</code></td>
+<td style="text-align: left;"><code>Thermo</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The First Law is a core principle of
+thermodynamics, stating energy conservation.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::FirstLaw</code></td>
+<td style="text-align: left;"><code>Concept::Energy</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The First Law is a specific
+application/statement of the general principle of energy conservation to
+thermodynamic systems.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::SecondLaw</code></td>
+<td style="text-align: left;"><code>Thermo</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Second Law is a core principle of
+thermodynamics, defining entropy increase and the direction of
+spontaneous processes.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::SecondLaw</code></td>
+<td style="text-align: left;"><code>Thermo::Entropy</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The Second Law is formulated in terms of
+the behavior of thermodynamic entropy.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::SecondLaw</code></td>
+<td style="text-align: left;"><code>ArrowOfTime</code> <em>(Concept
+needed)</em></td>
+<td style="text-align: left;"><code>E-XPL</code></td>
+<td style="text-align: left;">The Second Law provides the basis for the
+macroscopic thermodynamic arrow of time (irreversibility).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::SecondLaw</code></td>
+<td style="text-align: left;"><code>CM::Determinism</code> /
+<code>QM::UnitaryEvolution</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">The irreversibility implied by the Second
+Law appears to conflict with the time-reversible nature of underlying
+micro-dynamics (Loschmidt’s paradox).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::ThirdLaw</code></td>
+<td style="text-align: left;"><code>Thermo</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Third Law is a core principle
+concerning the behavior of entropy near absolute zero.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::ThirdLaw</code></td>
+<td style="text-align: left;"><code>Thermo::Entropy</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The Third Law makes specific statements
+about the limiting value of thermodynamic entropy.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::Entropy</code></td>
+<td style="text-align: left;"><code>Concept::Entropy</code></td>
+<td style="text-align: left;"><code>L-INST</code></td>
+<td style="text-align: left;">Thermodynamic entropy is a specific
+instance/measure of the broader concept of entropy, related to heat and
+macroscopic disorder.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>Thermo::MacroscopicSystem</code></td>
+<td style="text-align: left;"><code>Thermo</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">The laws of thermodynamics are formulated
+for and apply primarily to macroscopic systems near equilibrium.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+</tbody>
+</table>
+<p><strong>C.4.2: Edges Originating from Statistical Mechanics
+(StatMech) Nodes:</strong></p>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 13%" />
+<col style="width: 2%" />
+<col style="width: 65%" />
+<col style="width: 2%" />
+<col style="width: 1%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Source Node ID</th>
+<th style="text-align: left;">Target Node ID</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Rationale</th>
+<th style="text-align: left;">Conf.</th>
+<th style="text-align: left;">Dir.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>StatMech</code></td>
+<td style="text-align: left;"><code>Thermo</code></td>
+<td style="text-align: left;"><code>E-RED</code></td>
+<td style="text-align: left;">Statistical mechanics provides a
+microscopic foundation aiming to reduce thermodynamic laws to
+statistical behavior of constituents.</td>
+<td style="text-align: left;">M/H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>StatMech</code></td>
+<td style="text-align: left;"><code>CM</code> / <code>QM</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Statistical mechanics applies statistical
+methods to the underlying microscopic dynamics described by either
+classical or quantum mechanics.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>StatMech</code></td>
+<td style="text-align: left;"><code>Math::ProbabilityTheory</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Statistical mechanics fundamentally relies
+on probability theory and statistical ensembles to calculate macroscopic
+properties.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>StatMech::BoltzmannEntropy</code></td>
+<td style="text-align: left;"><code>StatMech</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Boltzmann’s entropy formula is a core
+definition within statistical mechanics linking entropy to microstate
+count.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>StatMech::BoltzmannEntropy</code></td>
+<td style="text-align: left;"><code>Thermo::Entropy</code></td>
+<td
+style="text-align: left;"><code>S-FORM</code>/<code>E-XPL</code></td>
+<td style="text-align: left;">Provides a microscopic interpretation
+intended to correspond to thermodynamic entropy for isolated systems in
+equilibrium.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>StatMech::BoltzmannEntropy</code></td>
+<td style="text-align: left;"><code>StatMech::Microstate</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Boltzmann entropy is defined based on the
+number (W or Ω) of accessible microstates.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>StatMech::GibbsEntropy</code></td>
+<td style="text-align: left;"><code>StatMech</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Gibbs’ entropy formula is a core
+definition within statistical mechanics for ensembles described by
+probability distributions.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>StatMech::GibbsEntropy</code></td>
+<td style="text-align: left;"><code>Thermo::Entropy</code></td>
+<td
+style="text-align: left;"><code>S-FORM</code>/<code>E-XPL</code></td>
+<td style="text-align: left;">Provides a more general microscopic
+interpretation intended to correspond to thermodynamic entropy.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>StatMech::GibbsEntropy</code></td>
+<td style="text-align: left;"><code>InfoSci::ShannonEntropy</code></td>
+<td
+style="text-align: left;"><code>S-FORM</code>/<code>E-ANL</code></td>
+<td style="text-align: left;">Gibbs entropy has the identical
+mathematical form as Shannon entropy, indicating a deep formal
+analogy.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>StatMech::Microstate</code></td>
+<td style="text-align: left;"><code>StatMech</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The concept of microstates is fundamental
+to the statistical mechanics approach.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>StatMech::Macrostate</code></td>
+<td style="text-align: left;"><code>StatMech</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The concept of macrostates (defined by
+macroscopic variables) is fundamental to linking micro and macro
+descriptions.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>StatMech::Macrostate</code></td>
+<td style="text-align: left;"><code>StatMech::Microstate</code></td>
+<td style="text-align: left;"><code>S-ABS</code></td>
+<td style="text-align: left;">A macrostate is an abstraction
+corresponding to a large ensemble of possible microstates.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>StatMech::ProbabilisticAssumption</code></td>
+<td style="text-align: left;"><code>StatMech</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Assumptions like equal a priori
+probabilities or ergodicity are necessary methodological components for
+standard statistical mechanics calculations.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>StatMech</code></td>
+<td style="text-align: left;"><code>Thermo::SecondLaw</code></td>
+<td style="text-align: left;"><code>E-XPL</code></td>
+<td style="text-align: left;">Statistical mechanics explains the Second
+Law as the overwhelming tendency for systems to evolve towards more
+probable macrostates (higher W or H).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

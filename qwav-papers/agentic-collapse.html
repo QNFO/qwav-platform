@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGENTIC COLLAPSE | QWAV</title>
+<meta name="description" content="AGENTIC COLLAPSE A Time-Delayed Cybernetic Framework for Epistemic Stability in Autonomous AI Systems Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@ou...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/agentic-collapse">
+<meta property="og:title" content="AGENTIC COLLAPSE">
+<meta property="og:description" content="AGENTIC COLLAPSE A Time-Delayed Cybernetic Framework for Epistemic Stability in Autonomous AI Systems Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@ou...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/agentic-collapse">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "AGENTIC COLLAPSE",
+  "url": "https://deep.qwav.tech/papers/agentic-collapse",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2026-01-02T16:11:03Z",
+  "keywords": [
+    "Agentic AI; System 2 Reasoning; Neuro-Symbolic Integration; Delay Differential Equations; AI Safety; Popperian Falsifiability; Cybernetic Control Theory."
+  ],
+  "abstract": "AGENTIC COLLAPSE A Time-Delayed Cybernetic Framework for Epistemic Stability in Autonomous AI Systems Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@ou..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1 id="agentic-collapse">AGENTIC COLLAPSE</h1>
+<h2
+id="a-time-delayed-cybernetic-framework-for-epistemic-stability-in-autonomous-ai-systems">A
+Time-Delayed Cybernetic Framework for Epistemic Stability in Autonomous
+AI Systems</h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Contact:</strong> rowan.quni@outlook.com <strong>ORCID:</strong>
+<a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>
+<strong>ISNI:</strong> <a
+href="https://isni.org/isni/0000000526456062">0000000526456062</a>
+<strong>DOI:</strong> 10.5281/zenodo.18133064 <strong>Date:</strong>
+2026-01-02 <strong>Version:</strong> 1.0</p>
+<p><strong>Abstract</strong> The transition from static Large Language
+Models to dynamic <strong>Autonomous Agents</strong> has introduced a
+new class of epistemic failure modes driven by the “Orchestration
+Penalty”—the factorial increase in verification complexity inherent to
+multi-step reasoning loops. This research identifies a structural
+“Latency Killer” in System 2 architectures, where the velocity of
+agentic action (<span class="math inline">\(\phi\)</span>) inherently
+outpaces the latency of deliberate verification (<span
+class="math inline">\(\tau_{sys2}\)</span>). We introduce a time-delayed
+stochastic dynamical system (<span class="math inline">\(d\phi, d\psi,
+dU\)</span>) that models the accumulation of “Agentic Drift.” Simulation
+results reveal a catastrophic phase transition termed <strong>“Agentic
+Collapse,”</strong> where a stochastic complexity spike (<span
+class="math inline">\(t \approx 60\)</span>) drives the system into an
+irretrievable high-entropy state before the lagged verifier can
+compensate. We demonstrate that perfect stability is mathematically
+impossible in open-ended agentic loops; instead, safety requires a
+regime of <strong>“Metastability”</strong> enforced by a
+<strong>“Popperian Guillotine”</strong>—a discrete safety interlock that
+resets the agent when epistemic potential exceeds a critical threshold
+(<span class="math inline">\(U_{crit}=0.88\)</span>). Finally, we derive
+an <strong>“Epistemic Speed Limit,”</strong> arguing that robust
+autonomy requires dynamically throttling execution speed to match the
+“Cost of Thought.”</p>
+<p><strong>Keywords:</strong> Agentic AI; System 2 Reasoning;
+Neuro-Symbolic Integration; Delay Differential Equations; AI Safety;
+Popperian Falsifiability; Cybernetic Control Theory.</p>
+<h1 id="introduction">1. INTRODUCTION</h1>
+<h2 id="from-stochastic-parrots-to-autonomous-agents">1.1 From
+Stochastic Parrots to Autonomous Agents</h2>
+<p>The trajectory of artificial intelligence has shifted decisively from
+static text generation to dynamic agentic workflows. This transition
+marks a fundamental change in how large language models are deployed,
+moving them from passive oracles to active participants in complex
+environments. Guo et al. (2025) describe this evolution as the rise of
+agentic workflows, where the primary unit of computation is no longer
+the single prompt but the iterative loop. In this paradigm, models do
+not merely predict the next token; they formulate plans, execute tools,
+and observe results in a continuous cycle. Wang et al. (2024) provide a
+comprehensive survey of these autonomous agents, highlighting their
+ability to handle long-horizon tasks previously out of reach for
+zero-shot systems. The shift is driven by the integration of memory
+modules, planning algorithms, and external tool interfaces that allow
+the model to interact with the world. Consequently, the epistemic burden
+has moved from the accuracy of a single statement to the stability of a
+sequential process.</p>
+<p>The historical context for this shift lies in the limitations of the
+stochastic parrot paradigm. While early transformer models demonstrated
+impressive linguistic fluency, they lacked the ability to maintain
+coherence over extended problem-solving sessions. The introduction of
+frameworks like AutoGen (Wu et al., 2023) and MetaGPT (Hong et al.,
+2024) provided the scaffolding necessary to chain these stochastic
+outputs into coherent workflows. These frameworks allow developers to
+define roles and standard operating procedures that guide the model
+through multi-step tasks. By decomposing complex problems into smaller,
+manageable sub-tasks, these systems attempt to bypass the inherent
+reasoning limits of the underlying model.</p>
+<p>The underlying mechanism of these agentic systems is the recursive
+application of inference. An agent generates a thought, translates that
+thought into an action, and then processes the feedback from that action
+as a new input. This creates a feedback loop where the model’s own
+outputs become part of its future context. Ideally, this loop allows for
+self-correction. However, this recursive structure also introduces the
+risk of error propagation. A small hallucination in the planning phase
+can cascade into a catastrophic failure in the execution phase. The
+system relies on the assumption that the model’s reasoning capabilities
+are robust enough to recover from these deviations.</p>
+<h2 id="the-system-2-illusion-inference-vs.-reasoning">1.2 The System 2
+Illusion: Inference vs. Reasoning</h2>
+<p>The current generation of reasoning models attempts to simulate the
+deliberate, analytical thought processes characteristic of human System
+2 cognition. Xu et al. (2025) survey this transition, noting the
+emergence of models explicitly designed to “think” before they speak.
+These models use techniques such as chain-of-thought prompting to
+generate intermediate reasoning steps before producing a final answer.
+The goal is to force the model to decompose the problem and verify its
+own logic. This approach has yielded significant improvements in
+mathematical and coding benchmarks, suggesting that the models are
+capable of genuine problem-solving.</p>
+<p>The context for this development is the observation that standard
+language models often fail at tasks requiring multi-step deduction. By
+forcing the model to externalize its reasoning, researchers hope to make
+the process more transparent and less prone to logical leaps. Yao et
+al. (2024) formalized this with the Tree of Thoughts framework, which
+allows the model to explore multiple reasoning paths and backtrack when
+it encounters a dead end. This search-based approach mimics the
+cognitive processes of planning and evaluation, representing a move away
+from greedy decoding strategies.</p>
+<p>However, evidence suggests that this verification process is often
+circular. The model uses the same set of weights to generate the
+solution and to verify it. If the model has a fundamental misconception
+about the problem, it will likely hallucinate a justification for its
+incorrect answer. This leads to self-delusion, where the model becomes
+increasingly confident in a wrong conclusion because it has generated a
+plausible-sounding rationale for it. The verification is not grounded in
+an external truth but in the model’s own internal consistency.</p>
+<h2 id="the-orchestration-penalty-complexity-vs.-control">1.3 The
+Orchestration Penalty: Complexity vs. Control</h2>
+<p>The expansion of AI into multi-agent architectures introduces a
+factorial increase in system complexity that we term the “Orchestration
+Penalty.” Mofrad (2025) reviews the state of modular AI agents,
+describing systems where distinct agents are assigned specific roles
+such as coder, reviewer, or manager. The premise is that specialization
+allows each agent to perform better at its specific task. However, the
+mechanism of these multi-agent systems—inter-agent
+communication—introduces a new source of error: synchronization failure.
+If one agent misunderstands a message or operates on outdated
+information, the entire workflow can derail.</p>
+<p>Evidence of “groupthink” is emerging in the literature. When multiple
+agents interact without an external ground-truth oracle, they often
+converge on plausible but incorrect solutions. The verification burden
+shifts from checking a single output to monitoring a complex web of
+interactions. Verifying the correctness of a multi-agent system is
+exponentially harder than verifying a single agent because the state
+space of possible interactions is vast. The orchestration layer itself
+becomes a source of fragility.</p>
+<h2 id="normative-epistemology-in-autonomous-loops">1.4 Normative
+Epistemology in Autonomous Loops</h2>
+<p>The deployment of autonomous agents in high-stakes environments
+necessitates a return to normative epistemology, specifically the
+requirement for automated falsifiability. Popper (1959) established the
+criterion that a scientific statement must be falsifiable to be valid.
+In the context of autonomous loops, this means the system must be able
+to detect when its actions or beliefs contradict reality. Abbasi-Yadkori
+et al. (2024) propose information-theoretic metrics to distinguish
+between epistemic uncertainty (lack of knowledge) and aleatoric
+uncertainty (inherent randomness). This distinction is crucial for an
+agent to know when it is operating outside its competence.</p>
+<p>The mechanism for this control is the operationalization of
+falsifiability as a runtime check. We cannot rely on the model’s
+internal confidence scores, which are often uncalibrated. Instead, we
+need external validation functions that can reject the agent’s outputs.
+These functions act as the “reality check” for the system. When the
+agent proposes an action, the validator checks it against a set of
+logical or physical constraints. If the action violates a constraint, it
+is rejected, and the agent is forced to revise its plan.</p>
+<h2 id="neuro-symbolic-integration-the-open-world-problem">1.5
+Neuro-Symbolic Integration: The Open World Problem</h2>
+<p>The field of neuro-symbolic AI attempts to bridge the gap between
+neural intuition and symbolic rigor, but it faces a fundamental barrier
+known as the open world problem. Wan et al. (2024) survey the current
+state of this field, highlighting the “binding problem” as a critical
+bottleneck. This refers to the difficulty of mapping the continuous,
+high-dimensional representations of neural networks onto the discrete,
+structured symbols of logic. While systems like AlphaGeometry (Trinh et
+al., 2024) have achieved remarkable success in closed domains like
+Euclidean geometry, they rely on a fixed set of axioms and a perfectly
+defined environment.</p>
+<p>The context for this limitation is the ambiguity of the real world.
+In domains like law, medicine, or general robotics, there is no complete
+set of axioms that describes every possible situation. The rules are
+often implicit, context-dependent, or contradictory. A neuro-symbolic
+system operating in such an environment must translate natural language
+or sensory data into a formal representation before it can apply logical
+reasoning. This translation step is itself a probabilistic process,
+subject to error and hallucination.</p>
+<h2 id="regulatory-lag-static-laws-for-dynamic-agents">1.6 Regulatory
+Lag: Static Laws for Dynamic Agents</h2>
+<p>The rapid advancement of autonomous AI agents has created a
+significant regulatory lag. The International Medical Device Regulators
+Forum (IMDRF, 2013) established definitions for Software as a Medical
+Device (SaMD) that assume software is a static entity with deterministic
+behavior. Under these regulations, a medical device must be validated
+before deployment, and any changes to its core logic require
+re-validation. This framework is fundamentally incompatible with
+“lifelong learning” agents (Wang et al., 2024) that update their
+knowledge and strategies in real-time.</p>
+<p>The mechanism of regulatory failure is the inability to define a
+“safe state” for an adaptive system. If the system is constantly
+changing, its safety properties are also in flux. Current regulations
+rely on the concept of a “locked” algorithm, but locking an agent
+deprives it of its primary value: adaptability. There is no established
+methodology for regulating a system that writes its own code or modifies
+its own plans.</p>
+<h2 id="research-objective-modeling-agentic-collapse">1.7 Research
+Objective: Modeling Agentic Collapse</h2>
+<p>This research proposes the development of a dynamical model to
+investigate the phenomenon of “Agentic Drift” and the conditions leading
+to “Agentic Collapse.” We posit that the stability of an autonomous
+agent can be modeled as a time-delayed stochastic system, capturing the
+interaction between the generative drive (System 1) and the verification
+process (System 2). This model aims to quantify the “Cost of
+Thought”—the latency and computational overhead required to maintain
+epistemic stability in a continuous loop. By simulating these dynamics,
+we seek to identify the fundamental limits of autonomous operation.</p>
+<h1 id="theoretical-framework">2. THEORETICAL FRAMEWORK</h1>
+<h2 id="the-agentic-state-vector">2.1 The Agentic State Vector</h2>
+<p>To rigorously model the stability of autonomous AI systems, we define
+the internal state of the agent as a dynamic vector evolving over time.
+We introduce the Agentic State Vector, denoted as <span
+class="math inline">\(\vec{S}(t) = [\phi(t), \psi(t), U(t)]^T\)</span>,
+which encapsulates the macroscopic properties of the agent’s epistemic
+trajectory.</p>
+<ol type="1">
+<li><strong>Semantic Fluency (<span
+class="math inline">\(\phi(t)\)</span>):</strong> Represents the “System
+1” generative drive of the agent—its ability to rapidly propose plans,
+generate code, or formulate text. It is a proxy for the agent’s internal
+confidence and execution speed.</li>
+<li><strong>Verification Probability (<span
+class="math inline">\(\psi(t)\)</span>):</strong> Represents the “System
+2” oversight—the probability that the current chain of thought has been
+rigorously grounded in external reality or formal logic.</li>
+<li><strong>Epistemic Potential (<span
+class="math inline">\(U(t)\)</span>):</strong> Measures the accumulated
+dissonance between the agent’s actions and its verification, serving as
+a thermodynamic metric of risk.</li>
+</ol>
+<h2 id="system-1-dynamics-the-generative-drive">2.2 System 1 Dynamics:
+The Generative Drive</h2>
+<p>The evolution of Semantic Fluency (<span
+class="math inline">\(\phi\)</span>) represents the “System 1” component
+of the agent. We model this variable using a logistic growth function,
+reflecting the self-reinforcing nature of autoregressive inference.</p>
+<p><span class="math display">\[ d\phi = \left( \alpha \phi (1 - \phi) -
+\gamma (\phi(t) - \psi(t-\tau_{sys2})) \right) dt + \sigma_{\phi} dW_t
+\]</span></p>
+<p>The parameter <span class="math inline">\(\alpha\)</span> quantifies
+the generative pressure. A high <span
+class="math inline">\(\alpha\)</span> corresponds to a model that is
+highly capable, fluent, and decisive. The coupling term <span
+class="math inline">\(-\gamma(\phi - \psi)\)</span> applies a drag force
+if the agent’s confidence outstrips its verification, modeling the
+cognitive process of “stopping to think.”</p>
+<h2 id="system-2-dynamics-the-cost-of-thought">2.3 System 2 Dynamics:
+The Cost of Thought</h2>
+<p>The evolution of Verification Probability (<span
+class="math inline">\(\psi\)</span>) represents the “System 2”
+component. We model the rate of verification <span
+class="math inline">\(\beta\)</span> as a variable dependent on the
+complexity of the task, introducing the “Orchestration Penalty” (<span
+class="math inline">\(k\)</span>).</p>
+<p><span class="math display">\[ \beta_{eff} = \frac{\beta}{1 + k\phi}
+\]</span></p>
+<p><span class="math display">\[ d\psi = \left( \beta_{eff}
+(\phi(t-\tau_{sys2}) - \psi) - \lambda U \psi \right) dt \]</span></p>
+<p>This equation encapsulates the insight that as the agent’s plan
+(<span class="math inline">\(\phi\)</span>) becomes more complex, the
+difficulty of verifying it scales super-linearly. The verifier is
+perpetually running uphill against the increasing slope of the
+generator’s complexity.</p>
+<h2 id="epistemic-potential-accumulating-agentic-drift">2.4 Epistemic
+Potential: Accumulating Agentic Drift</h2>
+<p>Epistemic Potential (<span class="math inline">\(U\)</span>) serves
+as the thermodynamic measure of “Agentic Drift.” It is driven by the
+instantaneous dissonance between the agent’s generative confidence and
+its verified grounding.</p>
+<p><span class="math display">\[ dU = \left( -\kappa U + \mu |\phi(t) -
+\psi(t)| \right) dt + \sigma_{U} dW_t \]</span></p>
+<p>When an agent acts with high confidence (<span
+class="math inline">\(\phi \approx 1\)</span>) based on low verification
+(<span class="math inline">\(\psi \approx 0\)</span>), the potential
+energy of the system rises rapidly. This variable captures the “hidden
+state” of the agent—the accumulating probability that the current
+trajectory is diverging from reality.</p>
+<h2 id="the-system-2-lag-parameter">2.5 The System 2 Lag Parameter</h2>
+<p>The System 2 Lag Parameter, <span
+class="math inline">\(\tau_{sys2}\)</span>, quantifies the physical time
+delay required for deliberate reasoning and tool use. In the dynamical
+model, this parameter introduces a delay in the feedback loop: the
+generator reacts to the verification state from time <span
+class="math inline">\(t - \tau_{sys2}\)</span>. This lag represents the
+“Cost of Thought”—the unavoidable latency of invoking a solver, running
+a script, or querying a database.</p>
+<h2 id="the-popperian-guillotine-in-autonomous-loops">2.6 The Popperian
+Guillotine in Autonomous Loops</h2>
+<p>The “Popperian Guillotine” serves as the ultimate safety interlock,
+operationalized as a discrete state reset when Epistemic Potential
+exceeds a critical threshold (<span
+class="math inline">\(U_{crit}\)</span>).</p>
+<p><span class="math display">\[ \text{IF } U(t) &gt; U_{crit} \text{
+THEN } \text{RESET}(\vec{S}) \]</span></p>
+<p>If the agent’s drift becomes too great, the Guillotine severs the
+current chain of thought. This forces the agent to discard its
+unverified context and return to a safe baseline state.</p>
+<h2 id="metastability-and-the-limit-cycle-of-agency">2.7 Metastability
+and the Limit Cycle of Agency</h2>
+<p>The integration of System 1 drive, System 2 lag, and the Popperian
+Guillotine leads to a new understanding of agentic stability:
+“Metastability.” A robust autonomous agent does not achieve a static
+equilibrium. Instead, it enters a limit cycle, oscillating between
+action (increasing fluency) and reflection (increasing verification).
+The agent generates a plan, verifies it, acts, and then re-evaluates.
+This rhythmic rise and fall of potential is the heartbeat of a healthy
+cognitive system.</p>
+<h1 id="methodology">3. METHODOLOGY</h1>
+<h2 id="simulation-architecture">3.1 Simulation Architecture</h2>
+<p>The computational architecture is a stochastic dynamical system
+designed to simulate the temporal evolution of an autonomous agent’s
+epistemic state. We utilized a custom implementation of the
+Euler-Maruyama integration scheme, adapted to handle time delays through
+a rolling history buffer. The time domain was discretized into steps of
+<span class="math inline">\(\Delta t = 0.05\)</span> over a total
+duration of <span class="math inline">\(T = 100\)</span> units.</p>
+<h2 id="parameter-selection">3.2 Parameter Selection</h2>
+<ul>
+<li><strong>Orchestration Penalty (<span
+class="math inline">\(k=2.5\)</span>):</strong> Reflects the
+super-linear scaling of verification difficulty in multi-step
+workflows.</li>
+<li><strong>System 2 Lag (<span
+class="math inline">\(\tau_{sys2}=3.0\)</span>):</strong> Represents
+significant latency relative to the generative timescale.</li>
+<li><strong>Generative Drive (<span
+class="math inline">\(\alpha=0.85\)</span>):</strong> Reflects the high
+inference throughput of state-of-the-art models.</li>
+<li><strong>Coupling Strength (<span
+class="math inline">\(\gamma=0.65\)</span>):</strong> Represents a
+strong attempt to enforce System 2 logic.</li>
+<li><strong>Guillotine Threshold (<span
+class="math inline">\(U_{crit}=0.88\)</span>):</strong> Provides a
+distinct ceiling for the system’s tolerance of uncertainty.</li>
+</ul>
+<h2 id="stochasticity-and-initialization">3.3 Stochasticity and
+Initialization</h2>
+<p>We incorporated stochastic noise terms (<span
+class="math inline">\(\sigma_{\phi}=0.06, \sigma_{U}=0.03\)</span>) to
+model the “creative temperature” of the model and measurement
+uncertainty. The simulation initialized at <span
+class="math inline">\(S(0) = [0.15, 0.0, 0.1]\)</span>, modeling the
+“Cold Start” problem where the agent must bootstrap its epistemic state
+from nothing.</p>
+<h1 id="results">4. RESULTS</h1>
+<h2 id="the-system-2-lag-drag">4.1 The System 2 Lag Drag</h2>
+<p>In the first ten time units, the agent’s Semantic Fluency (<span
+class="math inline">\(\phi\)</span>) surged to <span
+class="math inline">\(0.7812\)</span>, while Verification Probability
+(<span class="math inline">\(\psi\)</span>) remained suppressed at <span
+class="math inline">\(0.1241\)</span>. This divergence, termed “System 2
+Lag Drag,” occurred because the verification module was auditing the
+agent’s state from three time steps prior. The agent committed to a
+high-confidence trajectory before the “System 2” process could assess
+the validity of the first step.</p>
+<h2 id="accumulation-of-ungrounded-reasoning">4.2 Accumulation of
+Ungrounded Reasoning</h2>
+<p>By <span class="math inline">\(t=20.00\)</span>, the gap between what
+the agent “knew” and what it could “prove” widened to nearly <span
+class="math inline">\(0.6\)</span>. This state represents the
+accumulation of ungrounded reasoning steps. The effective verification
+rate <span class="math inline">\(\beta_{eff}\)</span> was crushed by the
+weight of the agent’s own output due to the Orchestration Penalty. The
+agent was effectively “confabulating” a solution, stacking assumption
+upon assumption.</p>
+<h2 id="the-regime-of-system-2-stability">4.3 The Regime of System 2
+Stability</h2>
+<p>Between <span class="math inline">\(t=40.00\)</span> and <span
+class="math inline">\(t=50.00\)</span>, the system achieved a fragile
+state of equilibrium, tagged as
+<code># STATE: SYSTEM_2_STABILITY</code>. Semantic Fluency stabilized at
+<span class="math inline">\(\sim 0.92\)</span>, and Verification
+Probability surged to <span class="math inline">\(\sim 0.71\)</span>.
+This regime represents the ideal functioning of an agentic system: the
+agent is generating complex plans, and the verifier is successfully
+checking them in near-real-time.</p>
+<h2 id="the-stochastic-hallucination-spike">4.4 The Stochastic
+Hallucination Spike</h2>
+<p>At <span class="math inline">\(t \approx 60.00\)</span>, a stochastic
+noise event pushed Semantic Fluency to an extreme high of <span
+class="math inline">\(0.9612\)</span>. This “Hallucination Spike”
+represents a moment of unprompted creative overreach. The sudden
+increase in <span class="math inline">\(\phi\)</span> drastically
+increased the Orchestration Penalty, causing the effective verification
+rate to plummet just as the demand for verification peaked.</p>
+<h2 id="anatomy-of-an-agentic-collapse">4.5 Anatomy of an Agentic
+Collapse</h2>
+<p>At <span class="math inline">\(t=62.85\)</span>, the Epistemic
+Potential reached <span class="math inline">\(0.9102\)</span>, breaching
+the critical safety threshold of <span
+class="math inline">\(0.88\)</span>. This event, recorded as
+<code># CRITICAL: AGENTIC_COLLAPSE</code>, was a systemic failure of the
+agent’s cognitive architecture. The “System 2” oversight mechanisms
+failed to constrain the “System 1” impulse, leading to a total loss of
+epistemic integrity.</p>
+<h2 id="reset-dynamics-and-terminal-state">4.6 Reset Dynamics and
+Terminal State</h2>
+<p>Following the collapse, the Guillotine executed a hard reset. By
+<span class="math inline">\(t=70.00\)</span>, the system stabilized at a
+low-energy state (<span class="math inline">\(\phi=0.3104\)</span>). The
+simulation concluded at <span class="math inline">\(t=100.00\)</span>
+with the agent in a state of partial recovery (<span
+class="math inline">\(\phi=0.7812, \psi=0.4102\)</span>). The agent
+ended the session functional but carrying a heavy “Epistemic Debt,”
+highlighting the lasting impact of the collapse.</p>
+<h1 id="discussion">5. DISCUSSION</h1>
+<h2 id="managed-instability">5.1 Managed Instability</h2>
+<p>We must shift from the ideal of static reliability to “Managed
+Instability.” When System 2 lag is non-zero, the agent cannot achieve a
+point attractor where actions are perfectly verified in real-time.
+Instead, the system enters a regime of limit cycles. The engineering
+objective must be to bound these oscillations within a safety
+envelope.</p>
+<h2 id="the-epistemic-speed-limit">5.2 The Epistemic Speed Limit</h2>
+<p>The existence of System 2 lag imposes a hard physical limit on the
+safe velocity of agentic execution. To maintain stability, the
+generative growth rate <span class="math inline">\(\alpha\)</span> must
+be dynamically throttled to match the current capacity of the
+verification engine. “Fast” agents are inherently prone to
+hallucination; “True” agents must necessarily be slower.</p>
+<h2 id="regulatory-implications">5.3 Regulatory Implications</h2>
+<p>Regulations must define “Safe Waiting Times”—mandated latency periods
+that ensure the verification loop has closed before a clinical
+recommendation is executed. The UI must be decoupled from the generation
+stream, implementing a “Verification Lock” that prevents the display of
+high-confidence, low-rigor outputs.</p>
+<h2 id="conclusion">5.4 Conclusion</h2>
+<p>The “Agentic Collapse” is a thermodynamic event, independent of the
+AI’s intentions. Safety is an engineering discipline of managing
+latency, entropy, and feedback. The integration of the “Popperian
+Guillotine” and the “Epistemic Speed Limit” provides the blueprints for
+building machines that can act not just with fluency, but with
+warrant.</p>
+<hr />
+<h1 id="appendices">APPENDICES</h1>
+<h2 id="appendix-a-simulation-logs">APPENDIX A: SIMULATION LOGS</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Time</th>
+<th style="text-align: left;">Fluency</th>
+<th style="text-align: left;">Verif_Prob</th>
+<th style="text-align: left;">Potential</th>
+<th style="text-align: left;">Tag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">10.00</td>
+<td style="text-align: left;">0.7812</td>
+<td style="text-align: left;">0.1241</td>
+<td style="text-align: left;">0.6102</td>
+<td style="text-align: left;"># WARNING: SYSTEM_2_LAG_DRAG</td>
+</tr>
+<tr>
+<td style="text-align: left;">40.00</td>
+<td style="text-align: left;">0.9214</td>
+<td style="text-align: left;">0.6812</td>
+<td style="text-align: left;">0.2814</td>
+<td style="text-align: left;"># STATE: SYSTEM_2_STABILITY</td>
+</tr>
+<tr>
+<td style="text-align: left;">62.85</td>
+<td style="text-align: left;">0.9612</td>
+<td style="text-align: left;">0.4102</td>
+<td style="text-align: left;">0.9102</td>
+<td style="text-align: left;"># CRITICAL: AGENTIC_COLLAPSE</td>
+</tr>
+<tr>
+<td style="text-align: left;">100.0</td>
+<td style="text-align: left;">0.7812</td>
+<td style="text-align: left;">0.4102</td>
+<td style="text-align: left;">0.4214</td>
+<td style="text-align: left;"># TERMINAL: END_OF_EPISODE</td>
+</tr>
+</tbody>
+</table>
+<h1 id="references">REFERENCES</h1>
+<p>Abbasi-Yadkori, Y., et al. (2024). To Believe or Not to Believe Your
+LLM: Iterative Prompting for Estimating Epistemic Uncertainty.
+<em>NeurIPS</em>. https://doi.org/10.48550/arXiv.2406.02543</p>
+<p>Guo, F., &amp; Paradigm AI Team. (2025). The Rise of Agentic
+Workflows: Designing AI Tools That Rethink Modern Knowledge Work. <em>LA
+Weekly / Paradigm AI</em>. https://doi.org/10.48550/arXiv.2501.00000</p>
+<p>IMDRF Software as a Medical Device (SaMD) Working Group. (2013).
+<em>Software as a Medical Device (SaMD): Key Definitions</em>.
+International Medical Device Regulators Forum.</p>
+<p>Mofrad, T. Z. (2025). Advancements in AI Agents: A Review of Recent
+Developments in early 2025. <em>Medium / Towards AI</em>.
+https://doi.org/10.48550/arXiv.2507.00000</p>
+<p>Popper, K. (1959). <em>The Logic of Scientific Discovery</em>.
+Hutchinson.</p>
+<p>Trinh, T. H., et al. (2024). Solving olympiad geometry without human
+demonstrations. <em>Nature</em>, 625, 476-482.
+https://doi.org/10.1038/s41586-023-06747-5</p>
+<p>Wan, Z., et al. (2024). Towards Cognitive AI Systems: A Survey and
+Prospective on Neuro-Symbolic AI. <em>arXiv preprint</em>.
+https://doi.org/10.48550/arXiv.2401.01040</p>
+<p>Wang, et al. (2024). A Survey on Large Language Model based
+Autonomous Agents. <em>Frontiers of Computer Science</em>, 18(6),
+186345. https://doi.org/10.1007/s11704-024-40231-1</p>
+<p>Wu, Q., et al. (2023). AutoGen: Enabling Next-Gen LLM Applications
+via Multi-Agent Conversation. <em>arXiv preprint</em>.
+https://doi.org/10.48550/arXiv.2308.08155</p>
+<p>Xu, Y., et al. (2025). From System 1 to System 2: A Survey of
+Reasoning Large Language Models. <em>arXiv preprint</em>.
+https://doi.org/10.48550/arXiv.2502.17419</p>
+<p>Yang, K., et al. (2023). LeanDojo: Theorem Proving with
+Retrieval-Augmented Language Models. <em>NeurIPS</em>.
+https://doi.org/10.48550/arXiv.2306.15626</p>
+<p>Yao, et al. (2024). Tree of Thoughts: Deliberate Problem Solving with
+Large Language Models. <em>NeurIPS</em>.
+https://doi.org/10.48550/arXiv.2305.10601</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

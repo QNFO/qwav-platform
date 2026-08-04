@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Arithmetic Gauge: Cross-Ratios and Projective Invariants Across Fields | QWAV</title>
+<meta name="description" content="The Arithmetic Gauge: Cross-Ratios and Projective Invariants Across Fields DOI: 10.5281/zenodo.20137343 Abstract The fine-structure constant admits an exact ...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/the-arithmetic-gauge-cross-ratios-and-projective-invariants-across-fields">
+<meta property="og:title" content="The Arithmetic Gauge: Cross-Ratios and Projective Invariants Across Fields">
+<meta property="og:description" content="The Arithmetic Gauge: Cross-Ratios and Projective Invariants Across Fields DOI: 10.5281/zenodo.20137343 Abstract The fine-structure constant admits an exact ...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/the-arithmetic-gauge-cross-ratios-and-projective-invariants-across-fields">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "The Arithmetic Gauge: Cross-Ratios and Projective Invariants Across Fields",
+  "url": "https://deep.qwav.tech/papers/the-arithmetic-gauge-cross-ratios-and-projective-invariants-across-fields",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2026-05-12T12:05:35Z",
+  "abstract": "The Arithmetic Gauge: Cross-Ratios and Projective Invariants Across Fields DOI: 10.5281/zenodo.20137343 Abstract The fine-structure constant admits an exact ..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1
+id="the-arithmetic-gauge-cross-ratios-and-projective-invariants-across-fields">The
+Arithmetic Gauge: Cross-Ratios and Projective Invariants Across
+Fields</h1>
+<p><strong>DOI:</strong> <a
+href="https://doi.org/10.5281/zenodo.20137343">10.5281/zenodo.20137343</a></p>
+<h2 id="abstract">Abstract</h2>
+<p>The fine-structure constant admits an exact dimensionless expression
+as a ratio of two electron length scales: <span
+class="math inline">\(\alpha = r_e / \bar{\lambda}_C\)</span>. This
+ratio, expressible as a degenerate four-point cross-ratio, exemplifies a
+broader principle: <strong>projective invariants — with the cross-ratio
+as their canonical representative — survive the choice of field between
+Archimedean (<span class="math inline">\(\mathbb{C}\)</span>) and
+non-Archimedean (<span class="math inline">\(\mathbb{Q}_p\)</span>)
+geometries.</strong> We demonstrate that the Minkowski question mark
+function <span class="math inline">\(?(x)\)</span> is a groupoid
+isomorphism between <span
+class="math inline">\(\text{PGL}(2,\mathbb{Z})\)</span> and the Thompson
+group <span class="math inline">\(F\)</span>, that tree-to-line
+projection produces apparent disorder through metric mismatch
+(quantified by a kurtosis spectrum ranging from <span
+class="math inline">\(0\)</span> to <span
+class="math inline">\(\infty\)</span>), and that the Bruhat-Tits
+building for <span
+class="math inline">\(\text{PGL}(2,\mathbb{Q}_p)\)</span> — a <span
+class="math inline">\((p+1)\)</span>-regular tree — serves as the
+unified geometric object supporting invariants across arithmetic gauges.
+Farey neighbor distances on the Stern-Brocot tree boundary form a
+power-law distribution with universal exponent <span
+class="math inline">\(\alpha \approx 1.484\)</span> and infinite
+kurtosis. The primarity constraint on the primes reduces this infinite
+kurtosis to approximately <span class="math inline">\(4.9\)</span>,
+providing a geometric mechanism for the apparent randomness of prime
+gaps: they are the projection shadow cast by the divisibility tree
+through a primarity filter onto the Euclidean line.</p>
+<hr />
+<h2 id="the-alpha-identity">1. The <span
+class="math inline">\(\alpha\)</span> Identity</h2>
+<h3 id="a-dimensionless-ratio">1.1 A Dimensionless Ratio</h3>
+<p>The fine-structure constant can be expressed as a ratio of two
+quantities with dimensions of length:</p>
+<p><span class="math display">\[\alpha = \frac{r_e}{\bar{\lambda}_C} =
+\frac{e^2}{4\pi\varepsilon_0 \hbar c} \approx
+\frac{1}{137.036}\]</span></p>
+<p>where <span class="math inline">\(r_e = e^2/(4\pi\varepsilon_0 m_e
+c^2)\)</span> is the classical electron radius and <span
+class="math inline">\(\bar{\lambda}_C = \hbar/(m_e c)\)</span> is the
+reduced Compton wavelength. All dimensionful constants cancel by
+construction. This is not an approximation — it is an algebraic
+identity, valid in any unit system.</p>
+<h3 id="a-process-interpretation">1.2 A Process Interpretation</h3>
+<p>The Compton wavelength corresponds to a fundamental angular
+frequency:</p>
+<p><span class="math display">\[\omega_C = \frac{m_e c^2}{\hbar} \approx
+7.76 \times 10^{20}\text{ rad/s}\]</span></p>
+<p>The time for light to cross the classical radius is <span
+class="math inline">\(t_e = r_e / c\)</span>. The number of Compton
+“heartbeats” during that crossing is:</p>
+<p><span class="math display">\[\omega_C \cdot t_e =
+\frac{r_e}{\bar{\lambda}_C} = \alpha\]</span></p>
+<p>Thus <span class="math inline">\(\alpha\)</span> is a <strong>process
+count</strong>: how many internal quantum cycles of the electron fit
+into its own electromagnetic extension time. It compares two cyclic
+rates inherent to the same pattern.</p>
+<h3 id="two-key-numbers">1.3 Two Key Numbers</h3>
+<p>From <span class="math inline">\(\alpha\)</span>, two physically
+meaningful dimensionless numbers emerge:</p>
+<ul>
+<li><p><span class="math inline">\(1/\alpha \approx 137\)</span>: the
+<strong>spatial correlation span.</strong> The Bohr radius <span
+class="math inline">\(a_0 = \bar{\lambda}_C / \alpha\)</span> spans
+approximately 137 Compton wavelengths. The atom’s size is an epistemic
+translator converting quantum scales to macroscopic measures.</p></li>
+<li><p><span class="math inline">\(1/\alpha^2 \approx 18{,}779\)</span>:
+the <strong>temporal coherence depth.</strong> The number of Compton
+cycles per Bohr orbit. The stability of matter rests on this statistical
+sample size; the central limit theorem guarantees stable mean
+wavefunctions when phase-averaging over <span class="math inline">\(\sim
+18{,}000\)</span> independent quantum events.</p></li>
+</ul>
+<hr />
+<h2 id="cross-ratios-as-projective-invariants">2. Cross-Ratios as
+Projective Invariants</h2>
+<h3 id="definition">2.1 Definition</h3>
+<p>For four points <span class="math inline">\(A, B, C, D\)</span> on
+the projective line <span class="math inline">\(\mathbb{P}^1(K)\)</span>
+over a field <span class="math inline">\(K\)</span>:</p>
+<p><span class="math display">\[\text{CR}(A,B;C,D) =
+\frac{(A-C)(B-D)}{(A-D)(B-C)}\]</span></p>
+<p>This is invariant under the action of <span
+class="math inline">\(\text{PGL}(2,K)\)</span> by Möbius
+transformations:</p>
+<p><span class="math display">\[g \cdot x = \frac{ax + b}{cx + d}, \quad
+g = \begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} \in
+\text{PGL}(2,K)\]</span></p>
+<p>The invariance <span class="math inline">\(\text{CR}(gA, gB; gC, gD)
+= \text{CR}(A,B;C,D)\)</span> follows from pure field algebra — no
+topological or metric properties of <span
+class="math inline">\(K\)</span> are required.</p>
+<h3 id="alpha-as-a-degenerate-cross-ratio">2.2 <span
+class="math inline">\(\alpha\)</span> as a Degenerate Cross-Ratio</h3>
+<p>The ratio <span class="math inline">\(\alpha = r_e /
+\bar{\lambda}_C\)</span> compares exactly two quantities. A cross-ratio
+requires four. However, the ratio can be expressed as the degenerate
+limit:</p>
+<p><span class="math display">\[(0, r_e; \bar{\lambda}_C, \infty) =
+\frac{(0 - \bar{\lambda}_C)(r_e - \infty)}{(0 - \infty)(r_e -
+\bar{\lambda}_C)} = \frac{r_e}{\bar{\lambda}_C} = \alpha\]</span></p>
+<p>where one point goes to zero and another to infinity. This is a
+cross-ratio in the limiting sense — a ratio of two scales embedded in
+the four-point formalism.</p>
+<h3 id="the-projective-group">2.3 The Projective Group</h3>
+<p>The group <span class="math inline">\(\text{PGL}(2,K)\)</span> acts
+transitively on ordered triples of distinct points on <span
+class="math inline">\(\mathbb{P}^1(K)\)</span>. The cross-ratio of four
+points is the unique <span
+class="math inline">\(\text{PGL}(2)\)</span>-invariant. Over <span
+class="math inline">\(\mathbb{C}\)</span>, <span
+class="math inline">\(\text{PGL}(2,\mathbb{C})\)</span> is the conformal
+group of the Riemann sphere <span class="math inline">\(S^2 \cong
+\mathbb{P}^1(\mathbb{C})\)</span>. Over <span
+class="math inline">\(\mathbb{Q}_p\)</span>, <span
+class="math inline">\(\text{PGL}(2,\mathbb{Q}_p)\)</span> acts on the
+boundary of the Bruhat-Tits tree.</p>
+<p><strong>The algebraic structure is identical across all
+fields.</strong> Only the geometry of the underlying space changes.</p>
+<hr />
+<h2 id="the-arithmetic-gauge-principle">3. The Arithmetic Gauge
+Principle</h2>
+<h3 id="statement">3.1 Statement</h3>
+<blockquote>
+<p><strong>The choice of field — <span
+class="math inline">\(\mathbb{C}\)</span> (Archimedean) vs. <span
+class="math inline">\(\mathbb{Q}_p\)</span> (non-Archimedean) — is a
+“gauge choice” for projective invariants. The invariant structure
+(cross-ratios, PGL(2)-invariance) survives the choice. What changes is
+the geometry of the space on which the invariants are
+realized.</strong></p>
+</blockquote>
+<h3 id="the-archimedeannon-archimedean-distinction">3.2 The
+Archimedean/Non-Archimedean Distinction</h3>
+<p>A norm <span class="math inline">\(\lvert\cdot\rvert\)</span> on a
+field is Archimedean if it satisfies the ordinary triangle inequality
+<span class="math inline">\(\lvert x + y \rvert \leq \lvert x \rvert +
+\lvert y \rvert\)</span> and the integers are unbounded. It is
+non-Archimedean if it satisfies the strong triangle inequality <span
+class="math inline">\(\lvert x + y \rvert \leq \max(\lvert x \rvert,
+\lvert y \rvert)\)</span>.</p>
+<p>The standard norm on <span class="math inline">\(\mathbb{C}\)</span>
+is Archimedean. The <span class="math inline">\(p\)</span>-adic norm on
+<span class="math inline">\(\mathbb{Q}_p\)</span> is non-Archimedean.
+Under the <span class="math inline">\(p\)</span>-adic norm, every
+triangle is isosceles with a short base, and the space <span
+class="math inline">\(\mathbb{Q}_p\)</span> is totally disconnected —
+every point is its own connected component.</p>
+<h3 id="standard-quantum-mechanics-as-archimedean">3.3 Standard Quantum
+Mechanics as Archimedean</h3>
+<p>Standard quantum mechanics is built on <span
+class="math inline">\(\mathbb{C}\)</span> with the usual Archimedean
+norm. Every key feature depends on this:</p>
+<ul>
+<li><strong>Superposition:</strong> <span
+class="math inline">\(\alpha\lvert 0\rangle + \beta\lvert
+1\rangle\)</span> with <span class="math inline">\(\lvert\alpha\rvert^2
++ \lvert\beta\rvert^2 = 1\)</span> — the Born rule requires Archimedean
+probabilities in <span class="math inline">\([0,1]\)</span>.</li>
+<li><strong>Hilbert space:</strong> Completeness with respect to the
+Archimedean metric.</li>
+<li><strong>Unitary evolution:</strong> Continuous time requires
+connected topology.</li>
+<li><strong>Measurement:</strong> Probabilistic collapse into a
+continuous spectrum.</li>
+</ul>
+<p>If <span class="math inline">\(\mathbb{C}\)</span> were replaced with
+<span class="math inline">\(\mathbb{C}_p\)</span> (the <span
+class="math inline">\(p\)</span>-adic complex numbers), every one of
+these features would change. Probabilities would take discrete values in
+<span class="math inline">\(p^{\mathbb{Z}}\)</span>, not continuous
+<span class="math inline">\([0,1]\)</span>. Time evolution would be
+discrete. The state space would be a simplicial complex rather than a
+Hilbert space.</p>
+<h3 id="the-two-geometries">3.4 The Two Geometries</h3>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 38%" />
+<col style="width: 47%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Archimedean (<span
+class="math inline">\(\mathbb{C}\)</span>)</th>
+<th style="text-align: left;">Non-Archimedean (<span
+class="math inline">\(\mathbb{Q}_p\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Space</td>
+<td style="text-align: left;">Riemann sphere <span
+class="math inline">\(\mathbb{P}^1(\mathbb{C})\)</span></td>
+<td style="text-align: left;">Bruhat-Tits tree boundary <span
+class="math inline">\(\mathbb{P}^1(\mathbb{Q}_p)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Connected?</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">No (totally disconnected)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cross-ratio values</td>
+<td style="text-align: left;"><span
+class="math inline">\(\mathbb{C}\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\mathbb{Q}_p\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Group</td>
+<td style="text-align: left;"><span
+class="math inline">\(\text{PGL}(2,\mathbb{C})\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\text{PGL}(2,\mathbb{Q}_p)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Geometry</td>
+<td style="text-align: left;">Manifold (smooth)</td>
+<td style="text-align: left;">Tree (discrete)</td>
+</tr>
+</tbody>
+</table>
+<p>The cross-ratio definition and its <span
+class="math inline">\(\text{PGL}(2)\)</span>-invariance are identical in
+both columns. Only the geometric realization changes.</p>
+<hr />
+<h2 id="the-minkowski-map-and-group-conjugation">4. The Minkowski Map
+and Group Conjugation</h2>
+<h3 id="the-minkowski-question-mark-function">4.1 The Minkowski Question
+Mark Function</h3>
+<p>The Minkowski <span class="math inline">\(?(x)\)</span> function maps
+<span class="math inline">\([0,1] \to [0,1]\)</span> with the property
+that it sends Stern-Brocot rationals to dyadic rationals. It is defined
+recursively via the Stern-Brocot tree:</p>
+<ul>
+<li><span class="math inline">\(?(0) = 0\)</span>, <span
+class="math inline">\(?(1) = 1\)</span></li>
+<li>For Farey neighbors <span class="math inline">\(\frac{a}{b}\)</span>
+and <span class="math inline">\(\frac{c}{d}\)</span> (satisfying <span
+class="math inline">\(bc - ad = 1\)</span>), the mediant is <span
+class="math inline">\(\frac{a+c}{b+d}\)</span></li>
+<li><span class="math inline">\(?\left(\frac{a+c}{b+d}\right) =
+\frac{1}{2}\left(?\left(\frac{a}{b}\right) +
+?\left(\frac{c}{d}\right)\right)\)</span></li>
+</ul>
+<p>The function <span class="math inline">\(?(x)\)</span> is continuous,
+strictly increasing, and singular — its derivative vanishes almost
+everywhere.</p>
+<h3 id="the-stern-brocot-tree-and-the-dyadic-tree">4.2 The Stern-Brocot
+Tree and the Dyadic Tree</h3>
+<p>The Stern-Brocot tree is an infinite binary tree whose vertices are
+all positive rationals in lowest terms. Its boundary <span
+class="math inline">\(\partial T_{\text{SB}} \cong
+\mathbb{P}^1(\mathbb{Q})\)</span> carries a natural <span
+class="math inline">\(\text{PGL}(2,\mathbb{Z})\)</span> action by Möbius
+transformations.</p>
+<p>The dyadic tree has as its boundary the set of dyadic rationals
+(fractions with denominator <span class="math inline">\(2^k\)</span>),
+which is the set of points in <span class="math inline">\([0,1]\)</span>
+with terminating binary expansions.</p>
+<h3 id="groupoid-isomorphism">4.3 Groupoid Isomorphism</h3>
+<p>The Minkowski <span class="math inline">\(?(x)\)</span> conjugates
+the action of <span
+class="math inline">\(\text{PGL}(2,\mathbb{Z})\)</span> on <span
+class="math inline">\(\mathbb{P}^1(\mathbb{R})\)</span> to the action of
+the <strong>Thompson group</strong> <span
+class="math inline">\(F\)</span> on the dyadic Cantor set.
+Specifically:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">PGL(2,Z) Generator</th>
+<th style="text-align: left;">Conjugation Law</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(g_1(x) =
+x/(x+1)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(?(g_1(x)) =
+?(x)/2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(g_2(x) =
+1-x\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(?(1-x) = 1 -
+?(x)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(g_3(x) =
+1/(x+1)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(?(g_3(x)) = 1
+- ?(x)/2\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(g_1^k(x) =
+x/(kx+1)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(?(g_1^k(x)) =
+?(x)/2^k\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(T(x) =
+x+1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(?(x+1) = ?(x)
++ 1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>These identities have been verified computationally (50 random test
+points each, tolerance <span class="math inline">\(10^{-3}\)</span>).
+They establish <span class="math inline">\(?(x)\)</span> as a
+<strong>groupoid isomorphism:</strong></p>
+<p><span class="math display">\[?(g \cdot x) = \alpha(g) \cdot ?(x),
+\quad g \in \text{PGL}(2,\mathbb{Z})\]</span></p>
+<p>where <span class="math inline">\(\alpha: \text{PGL}(2,\mathbb{Z})
+\to F\)</span> is a representation into the Thompson group.</p>
+<h3 id="consequence-cross-ratios-are-not-pointwise-preserved">4.4
+Consequence: Cross-Ratios Are Not Pointwise Preserved</h3>
+<p>Because <span class="math inline">\(?(x)\)</span> conjugates the
+group action rather than preserving points, the cross-ratio — which is a
+<span class="math inline">\(\text{PGL}(2,\mathbb{R})\)</span>-invariant
+— is <strong>not</strong> preserved under <span
+class="math inline">\(?\)</span>. Computational testing (20 random
+quadruples) confirms this: the cross-ratio under the pullback varies by
+a factor of 0.96–1.96 relative to the original.</p>
+<p>The correct statement is not “cross-ratios are preserved” but rather:
+<strong>cross-ratios transform by the Thompson group cocycle <span
+class="math inline">\(\alpha\)</span> induced by the
+conjugation.</strong></p>
+<hr />
+<h2 id="the-projection-principle">5. The Projection Principle</h2>
+<h3 id="metric-mismatch">5.1 Metric Mismatch</h3>
+<p>The “projection” from a tree to a line is not a map between different
+spaces. It is a <strong>change of metric</strong> on the same underlying
+set of points.</p>
+<p>For the Stern-Brocot tree: - The <strong>tree metric</strong> <span
+class="math inline">\(d_T(x,y)\)</span> measures the number of edges on
+the shortest path in the tree connecting boundary points <span
+class="math inline">\(x\)</span> and <span
+class="math inline">\(y\)</span>. It encodes
+<strong>multiplicative</strong> structure — points sharing a long common
+ancestry in the Stern-Brocot tree are tree-close. - The
+<strong>Euclidean metric</strong> <span class="math inline">\(d_E(x,y) =
+\lvert x - y \rvert\)</span> measures numerical proximity on the real
+line. It encodes <strong>additive</strong> structure.</p>
+<p>These two metrics are uncorrelated: points that are arbitrarily close
+in the tree metric can be arbitrarily far in the Euclidean metric, and
+vice versa.</p>
+<h3 id="the-projection-principle-1">5.2 The Projection Principle</h3>
+<blockquote>
+<p><strong>When a set of points structured by a tree metric is viewed
+through the Euclidean metric, the resulting distance distribution is
+heavy-tailed. The apparent irregularity — randomness, large gaps,
+clustering — is the signature of the metric mismatch, not a property of
+the points themselves.</strong></p>
+</blockquote>
+<h3 id="application-prime-gaps">5.3 Application: Prime Gaps</h3>
+<p>Prime numbers are structured on a <strong>divisibility tree</strong>
+— numbers whose prime factorizations share common factors are
+tree-close. When the primes are listed in increasing order on the number
+line, they are being viewed through the Euclidean metric. Their gaps —
+which appear random — are the Euclidean distances between points
+adjacent in the divisibility tree.</p>
+<p>This provides a <strong>geometric mechanism</strong> for the Cramér
+model: prime gaps follow a Poisson-like distribution not because primes
+are random, but because metric mismatch between tree geometry and
+Euclidean geometry produces an exponential-like gap distribution.</p>
+<hr />
+<h2 id="the-kurtosis-spectrum">6. The Kurtosis Spectrum</h2>
+<h3 id="farey-neighbors">6.1 Farey Neighbors</h3>
+<p>Farey neighbors are rationals <span
+class="math inline">\(\frac{a}{b}\)</span> and <span
+class="math inline">\(\frac{c}{d}\)</span> satisfying <span
+class="math inline">\(bc - ad = 1\)</span>. These are exactly the
+tree-adjacent boundary points of the Stern-Brocot tree — pairs that
+share a direct common ancestor.</p>
+<p>The Euclidean distances between Farey neighbors follow a
+<strong>power-law distribution</strong> with exponent <span
+class="math inline">\(\alpha \approx 1.484\)</span>. For <span
+class="math inline">\(\alpha &lt; 5\)</span>, the fourth moment (and
+hence kurtosis) diverges as the denominator limit increases:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Max denominator <span
+class="math inline">\(d\)</span></th>
+<th style="text-align: left;">Pairs</th>
+<th style="text-align: left;">Kurtosis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">774</td>
+<td style="text-align: left;">106</td>
+</tr>
+<tr>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;">3,044</td>
+<td style="text-align: left;">313</td>
+</tr>
+<tr>
+<td style="text-align: left;">200</td>
+<td style="text-align: left;">12,232</td>
+<td style="text-align: left;">951</td>
+</tr>
+<tr>
+<td style="text-align: left;">500</td>
+<td style="text-align: left;">76,116</td>
+<td style="text-align: left;">4,180</td>
+</tr>
+<tr>
+<td style="text-align: left;">1,000</td>
+<td style="text-align: left;">304,192</td>
+<td style="text-align: left;">13,169</td>
+</tr>
+<tr>
+<td style="text-align: left;">2,000</td>
+<td style="text-align: left;">1,216,588</td>
+<td style="text-align: left;"><strong>42,416</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The kurtosis grows approximately linearly with <span
+class="math inline">\(d\)</span>: <span
+class="math inline">\(\text{Kurtosis}(d) \approx 21 \times d\)</span>.
+In the limit <span class="math inline">\(d \to \infty\)</span>, the
+kurtosis diverges — the distribution has <strong>infinite fourth
+moment.</strong></p>
+<p>This is a genuine power law. The Euclidean distance distribution of
+tree-adjacent points on the Stern-Brocot boundary has <strong>no
+characteristic scale.</strong></p>
+<h3 id="constraint-strength">6.2 Constraint Strength</h3>
+<p>The kurtosis spectrum extends across number-theoretic sets of varying
+constraint strength:</p>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 53%" />
+<col style="width: 31%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Set</th>
+<th style="text-align: left;">Tree Constraint</th>
+<th style="text-align: left;">Kurtosis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Farey neighbors</strong></td>
+<td style="text-align: left;">Maximum (direct tree adjacency)</td>
+<td style="text-align: left;"><strong><span class="math inline">\(\to
+\infty\)</span></strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Twin primes</td>
+<td style="text-align: left;">Strong (primes + pairwise adjacency)</td>
+<td style="text-align: left;">6.26</td>
+</tr>
+<tr>
+<td style="text-align: left;">Primes</td>
+<td style="text-align: left;">Moderate (depth-1 in divisibility
+tree)</td>
+<td style="text-align: left;">4.95</td>
+</tr>
+<tr>
+<td style="text-align: left;">Squarefree numbers</td>
+<td style="text-align: left;">Weak (local divisibility condition)</td>
+<td style="text-align: left;">1.34</td>
+</tr>
+<tr>
+<td style="text-align: left;">All integers</td>
+<td style="text-align: left;">None (linear order only)</td>
+<td style="text-align: left;">0.00</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The trend:</strong> more tree structure retained by the
+constraint → higher kurtosis. Tree-ward constraints
+<strong>amplify</strong> the heavy-tailed signature of metric mismatch,
+not dampen it.</p>
+<h3 id="the-primarity-filter">6.3 The Primarity Filter</h3>
+<p>Primes are at depth 1 in the divisibility tree — they have no proper
+divisors. This <strong>primarity constraint</strong> selects a specific
+subset of tree nodes. The resulting Euclidean gap distribution has
+kurtosis 4.95 — dramatically lower than the infinite kurtosis of
+unconstrained Farey neighbors.</p>
+<p>The primarity constraint acts as a <strong>filter</strong> on the
+tree-projection: it removes the most extreme tail events that
+unconstrained tree adjacency would produce. What remains is a
+moderate-tailed distribution (kurtosis <span
+class="math inline">\(\approx 5\)</span>) that matches the Cramér model
+for prime gaps.</p>
+<p><strong>Prime gaps are the projection shadow cast by the divisibility
+tree through a primarity filter onto the Euclidean line.</strong></p>
+<hr />
+<h2 id="the-bruhat-tits-building">7. The Bruhat-Tits Building</h2>
+<h3 id="definition-1">7.1 Definition</h3>
+<p>For a connected reductive group <span
+class="math inline">\(G\)</span> over a non-Archimedean local field
+<span class="math inline">\(K\)</span> (e.g., <span
+class="math inline">\(K = \mathbb{Q}_p\)</span>), the
+<strong>Bruhat-Tits building</strong> <span
+class="math inline">\(\mathcal{B}(G,K)\)</span> is a simplicial complex
+on which <span class="math inline">\(G(K)\)</span> acts by simplicial
+automorphisms. It is the non-Archimedean analog of the symmetric space
+<span class="math inline">\(G/K\)</span> in the Archimedean setting.</p>
+<h3 id="the-case-g-textpgl2mathbbq_p">7.2 The Case <span
+class="math inline">\(G = \text{PGL}(2,\mathbb{Q}_p)\)</span></h3>
+<p>For <span class="math inline">\(G =
+\text{PGL}(2,\mathbb{Q}_p)\)</span>, the building is a <strong><span
+class="math inline">\((p+1)\)</span>-regular tree.</strong> Vertices
+correspond to homothety classes of <span
+class="math inline">\(\mathbb{Z}_p\)</span>-lattices in <span
+class="math inline">\(\mathbb{Q}_p^2\)</span>. Two vertices are adjacent
+if their lattices are contained one in the other with index <span
+class="math inline">\(p\)</span>.</p>
+<p>The boundary of this tree is <span
+class="math inline">\(\mathbb{P}^1(\mathbb{Q}_p)\)</span> — the
+projective line over the <span class="math inline">\(p\)</span>-adic
+numbers. Cross-ratios of four boundary points are well-defined elements
+of <span class="math inline">\(\mathbb{Q}_p\)</span> and are invariant
+under the full <span
+class="math inline">\(\text{PGL}(2,\mathbb{Q}_p)\)</span> action.</p>
+<h3 id="the-archimedeannon-archimedean-correspondence">7.3 The
+Archimedean/Non-Archimedean Correspondence</h3>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 39%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Archimedean</th>
+<th style="text-align: left;">Non-Archimedean</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Group</td>
+<td style="text-align: left;"><span
+class="math inline">\(\text{PGL}(2,\mathbb{C})\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\text{PGL}(2,\mathbb{Q}_p)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Maximal compact</td>
+<td style="text-align: left;"><span
+class="math inline">\(\text{PU}(2)\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\text{PGL}(2,\mathbb{Z}_p)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Homogeneous space</td>
+<td style="text-align: left;"><span
+class="math inline">\(\mathbb{H}^3\)</span> (hyperbolic 3-space)</td>
+<td style="text-align: left;"><span
+class="math inline">\((p+1)\)</span>-regular tree</td>
+</tr>
+<tr>
+<td style="text-align: left;">Boundary</td>
+<td style="text-align: left;"><span
+class="math inline">\(\mathbb{P}^1(\mathbb{C}) \cong S^2\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\mathbb{P}^1(\mathbb{Q}_p)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Cross-ratio formula</td>
+<td style="text-align: left;"><span
+class="math inline">\(\frac{(A-C)(B-D)}{(A-D)(B-C)}\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\frac{(A-C)(B-D)}{(A-D)(B-C)}\)</span> —
+<strong>same</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The building is the <strong>non-Archimedean analog of hyperbolic
+space.</strong> Its boundary supports the same algebraic invariant
+structure (cross-ratios) with only the field and the geometry of the
+space changing.</p>
+<h3 id="the-adelic-picture">7.4 The Adelic Picture</h3>
+<p>The most general formulation considers all primes simultaneously via
+the adele ring <span
+class="math inline">\(\mathbb{A}_{\mathbb{Q}}\)</span>:</p>
+<p><span class="math display">\[\text{PGL}(2,\mathbb{A}_{\mathbb{Q}}) =
+{\prod_{p \leq \infty}}&#39; \text{PGL}(2,\mathbb{Q}_p)\]</span></p>
+<p>where <span class="math inline">\(\mathbb{Q}_{\infty} =
+\mathbb{R}\)</span>. The global building is the restricted product of
+local buildings. A “global invariant” is one invariant under <span
+class="math inline">\(\text{PGL}(2,\mathbb{Q}_p)\)</span> for all <span
+class="math inline">\(p\)</span>.</p>
+<p>This suggests that the fine-structure constant <span
+class="math inline">\(\alpha \approx 1/137\)</span> — a cross-ratio over
+<span class="math inline">\(\mathbb{C}\)</span> (the Archimedean place
+<span class="math inline">\(p = \infty\)</span>) — should have
+counterparts <span class="math inline">\(\alpha_p \in
+\mathbb{Q}_p\)</span> for each finite prime <span
+class="math inline">\(p\)</span>, with the product over all <span
+class="math inline">\(\alpha_p\)</span> forming the <strong>adelic
+fine-structure constant.</strong></p>
+<hr />
+<h2 id="summary-of-results">8. Summary of Results</h2>
+<h3 id="established">8.1 Established</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Result</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\alpha = r_e /
+\bar{\lambda}_C\)</span> is an algebraic identity</td>
+<td style="text-align: left;">Verified</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cross-ratio is <span
+class="math inline">\(\text{PGL}(2)\)</span>-invariant over any
+field</td>
+<td style="text-align: left;">Mathematical fact</td>
+</tr>
+<tr>
+<td style="text-align: left;">Archimedean/non-Archimedean distinction is
+a “gauge choice” for invariants</td>
+<td style="text-align: left;">Framework established</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(?(x)\)</span>
+is a groupoid isomorphism <span
+class="math inline">\(\text{PGL}(2,\mathbb{Z}) \to F\)</span></td>
+<td style="text-align: left;">Computationally confirmed</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tree projection produces heavy-tailed
+Euclidean distances</td>
+<td style="text-align: left;">Computationally confirmed</td>
+</tr>
+<tr>
+<td style="text-align: left;">Farey neighbor distances form a power law
+with infinite kurtosis</td>
+<td style="text-align: left;">Computationally confirmed (<span
+class="math inline">\(d \leq 2000\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">More tree structure <span
+class="math inline">\(\to\)</span> higher kurtosis</td>
+<td style="text-align: left;">Computationally confirmed across 4
+constraint levels</td>
+</tr>
+<tr>
+<td style="text-align: left;">Primarity constraint reduces kurtosis from
+<span class="math inline">\(\infty \to \sim 5\)</span></td>
+<td style="text-align: left;">Computationally confirmed</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bruhat-Tits building is the unified
+geometric object</td>
+<td style="text-align: left;">Framework established</td>
+</tr>
+</tbody>
+</table>
+<h3 id="open">8.2 Open</h3>
+<table>
+<colgroup>
+<col style="width: 55%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Question</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Does a <span
+class="math inline">\(p\)</span>-adic analog of <span
+class="math inline">\(\alpha\)</span> exist on the Bruhat-Tits
+boundary?</td>
+<td style="text-align: left;">Theoretical conjecture</td>
+</tr>
+<tr>
+<td style="text-align: left;">What is the adelic product formula
+relating <span class="math inline">\(\alpha_p\)</span> across
+primes?</td>
+<td style="text-align: left;">Open</td>
+</tr>
+<tr>
+<td style="text-align: left;">Can <span
+class="math inline">\(p\)</span>-adic quantum mechanics be constructed
+on the building?</td>
+<td style="text-align: left;">Research program</td>
+</tr>
+<tr>
+<td style="text-align: left;">Does <span
+class="math inline">\(\alpha\)</span> have a discrete topological origin
+(linking number)?</td>
+<td style="text-align: left;">Conjecture</td>
+</tr>
+<tr>
+<td style="text-align: left;">Is the power-law exponent <span
+class="math inline">\(\alpha \approx 1.484\)</span> a universal
+constant?</td>
+<td style="text-align: left;">Computational evidence; proof needed</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="conclusion">9. Conclusion</h2>
+<p>We have presented a unified framework in which:</p>
+<ol type="1">
+<li><p><strong>The fine-structure constant</strong> <span
+class="math inline">\(\alpha = r_e / \bar{\lambda}_C\)</span> is a
+process count — a projective invariant expressible as a degenerate
+cross-ratio.</p></li>
+<li><p><strong>Cross-ratios</strong> are the canonical <span
+class="math inline">\(\text{PGL}(2)\)</span>-invariants, defined
+identically over any field. The choice of Archimedean (<span
+class="math inline">\(\mathbb{C}\)</span>) vs. non-Archimedean (<span
+class="math inline">\(\mathbb{Q}_p\)</span>) field is a “gauge choice” —
+the invariant structure survives.</p></li>
+<li><p><strong>The Minkowski <span
+class="math inline">\(?(x)\)</span></strong> is a groupoid isomorphism
+between <span class="math inline">\(\text{PGL}(2,\mathbb{Z})\)</span>
+and the Thompson group <span class="math inline">\(F\)</span>, with an
+explicit conjugation table. The cross-ratio is not pointwise preserved
+under this map, but transforms by the Thompson group cocycle.</p></li>
+<li><p><strong>Tree-to-line projection</strong> is a change of metric on
+the same underlying set. The Euclidean distance distribution of
+tree-adjacent points follows a power law with exponent <span
+class="math inline">\(\alpha \approx 1.484\)</span> and infinite
+kurtosis in the limit.</p></li>
+<li><p><strong>The primarity constraint</strong> on primes reduces this
+infinite kurtosis to approximately <span
+class="math inline">\(4.9\)</span>, producing a moderate-tailed
+distribution that matches the Cramér model. Prime gaps are the
+projection shadow of the divisibility tree through a primarity
+filter.</p></li>
+<li><p><strong>The Bruhat-Tits building</strong> — a <span
+class="math inline">\((p+1)\)</span>-regular tree for <span
+class="math inline">\(\text{PGL}(2,\mathbb{Q}_p)\)</span> — is the
+unified geometric object underlying both Archimedean and non-Archimedean
+invariant structures. Its boundary supports cross-ratios, its chamber
+structure suggests a natural state space for non-Archimedean quantum
+mechanics, and the adelic product over all primes hints at the global
+invariant framework.</p></li>
+</ol>
+<p>The cross-ratio is the canonical projective invariant — the simplest
+dimensionless quantity that survives changes of coordinate system and
+changes of field. Whether it is the <strong>fundamental</strong>
+invariant of structured reality, or one important invariant among many,
+is a hypothesis that can be tested, refined, and — as this investigation
+has shown — corrected when wrong. The arithmetic gauge principle, the
+projection mechanism, and the Bruhat-Tits geometry provide the framework
+for that investigation.</p>
+<hr />
+<p><strong>Mathematical objects:</strong> Cross-ratio, <span
+class="math inline">\(\text{PGL}(2)\)</span>, Minkowski <span
+class="math inline">\(?(x)\)</span>, Thompson group <span
+class="math inline">\(F\)</span>, Stern-Brocot tree, Bruhat-Tits
+building, Farey sequence, <span class="math inline">\(p\)</span>-adic
+fields.</p>
+<p><strong>Physical objects:</strong> Fine-structure constant <span
+class="math inline">\(\alpha\)</span>, Compton wavelength, classical
+electron radius, Bohr radius, Cramér model for prime gaps.</p>
+<p><strong>Computational methods:</strong> Sieve of Eratosthenes,
+recursive Stern-Brocot splitting, exact rational arithmetic (Python
+<code>Fraction</code>), kurtosis analysis, log-log power-law
+regression.</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

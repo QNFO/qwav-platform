@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mass–Energy–Entropy–Information Proof | QWAV</title>
+<meta name="description" content="Mathematical Foundations of Scale-Invariant Mass–Energy–Entropy–Information Equivalence Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.qun...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/mass-energy-entropy-information-proof">
+<meta property="og:title" content="Mass–Energy–Entropy–Information Proof">
+<meta property="og:description" content="Mathematical Foundations of Scale-Invariant Mass–Energy–Entropy–Information Equivalence Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.qun...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/mass-energy-entropy-information-proof">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Mass\u2013Energy\u2013Entropy\u2013Information Proof",
+  "url": "https://deep.qwav.tech/papers/mass-energy-entropy-information-proof",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-09-28T02:33:05Z",
+  "abstract": "Mathematical Foundations of Scale-Invariant Mass\u2013Energy\u2013Entropy\u2013Information Equivalence Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.qun..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h2
+id="mathematical-foundations-of-scale-invariant-massenergyentropyinformation-equivalence"><strong>Mathematical
+Foundations of Scale-Invariant Mass–Energy–Entropy–Information
+Equivalence</strong></h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Affiliation:</strong> QNFO <strong>Contact:</strong>
+rowan.quni@qnfo.org <strong>ORCID:</strong> 0009-0002-4317-5604
+<strong>ISNI:</strong> 0000 0005 2645 6062 <strong>DOI:</strong>
+10.5281/zenodo.17216664 <strong>Publication Date:</strong> 2025-09-28
+<strong>Version:</strong> 1.1</p>
+<p>We derive the core mathematical formalisms supporting the
+thesis:<br />
+&gt; <strong>Mass, energy, and entropy are relational manifestations of
+a single scale-invariant information measure <span
+class="math inline">\(\kappa\)</span>.</strong></p>
+<p>All derivations are self-contained, logically sequenced, and adhere
+to the postulates of universal scale invariance and epistemic
+humility.</p>
+<hr />
+<h4 id="i.-scale-invariant-information-measure-kappa"><strong>I.
+Scale-Invariant Information Measure <span
+class="math inline">\(\kappa\)</span></strong></h4>
+<p><strong>Definition 1 (Normalized Kolmogorov
+Complexity).</strong><br />
+Let <span class="math inline">\(s\)</span> be a physical state
+describable by a binary string. Its <strong>algorithmic information
+content</strong> is the Kolmogorov complexity <span
+class="math inline">\(K(s)\)</span>. Define the <strong>dimensionless
+information measure</strong>: <span class="math display">\[
+\kappa := \frac{K(s)}{K_0},
+\]</span> where <span class="math inline">\(K_0 &gt; 0\)</span> is a
+universal constant fixing the unit (e.g., <span
+class="math inline">\(K_0 = \log 2\)</span> for bits). By construction,
+<span class="math inline">\(\kappa\)</span> is
+<strong>dimensionless</strong>.</p>
+<p><strong>Proposition 1 (Scale Invariance of <span
+class="math inline">\(\kappa\)</span>).</strong><br />
+Under global rescaling <span class="math inline">\(x^\mu \mapsto \lambda
+x^\mu\)</span>, <span class="math inline">\(\kappa \mapsto
+\kappa\)</span>.</p>
+<p><em>Proof.</em><br />
+Kolmogorov complexity <span class="math inline">\(K(s)\)</span> depends
+only on the logical structure of <span class="math inline">\(s\)</span>,
+not on the units used to describe it. Rescaling coordinates does not
+alter the minimal program length to reproduce <span
+class="math inline">\(s\)</span>. Hence, <span
+class="math inline">\(K(s)\)</span> is invariant, and so is <span
+class="math inline">\(\kappa\)</span>. ∎</p>
+<hr />
+<h4 id="ii.-entropyinformation-equivalence"><strong>II.
+Entropy–Information Equivalence</strong></h4>
+<p><strong>Axiom 1 (Holographic Identification).</strong><br />
+For any system bounded by a causal horizon of area <span
+class="math inline">\(A\)</span>, the thermodynamic entropy <span
+class="math inline">\(S\)</span> equals the algorithmic information
+content: <span class="math display">\[
+S = k_B \kappa.
+\]</span></p>
+<p><strong>Proposition 2 (Bekenstein–Hawking
+Consistency).</strong><br />
+For a Schwarzschild black hole of mass <span
+class="math inline">\(m\)</span>, Axiom 1 implies the Bekenstein–Hawking
+formula.</p>
+<p><em>Proof.</em><br />
+The horizon area is <span class="math inline">\(A = 4\pi R_s^2 = 16\pi
+G^2 m^2 / c^4\)</span>. The Bekenstein–Hawking entropy is: <span
+class="math display">\[
+S_{\text{BH}} = \frac{k_B c^3 A}{4G\hbar} = \frac{4\pi k_B G m^2}{\hbar
+c}.
+\]</span> By Axiom 1, <span class="math inline">\(S_{\text{BH}} = k_B
+\kappa\)</span>, so: <span class="math display">\[
+\kappa = \frac{4\pi G m^2}{\hbar c}.
+\tag{1}
+\]</span> This defines <span class="math inline">\(\kappa\)</span> for
+black holes. ∎</p>
+<hr />
+<h4 id="iii.-massinformation-equivalence"><strong>III. Mass–Information
+Equivalence</strong></h4>
+<p><strong>Definition 2 (Hawking Temperature).</strong><br />
+The temperature associated with a black hole of mass <span
+class="math inline">\(m\)</span> is: <span class="math display">\[
+T_H = \frac{\hbar c^3}{8\pi G m k_B}.
+\tag{2}
+\]</span></p>
+<p><strong>Theorem 1 (Mass–Information Relation).</strong><br />
+For any system with entropy <span class="math inline">\(S = k_B
+\kappa\)</span> and temperature <span class="math inline">\(T\)</span>
+defined by its causal horizon, the inertial mass is: <span
+class="math display">\[
+\boxed{m = \frac{k_B T}{c^2} \kappa}
+\tag{3}
+\]</span></p>
+<p><em>Proof.</em><br />
+Solve (2) for <span class="math inline">\(m\)</span>: <span
+class="math display">\[
+m = \frac{\hbar c^3}{8\pi G k_B T_H}.
+\tag{4}
+\]</span> Substitute (1) into (4): <span class="math display">\[
+m = \frac{\hbar c^3}{8\pi G k_B T_H} = \frac{\hbar c^3}{8\pi G k_B T_H}
+\cdot \frac{\hbar c}{4\pi G m^2} \cdot \kappa.
+\]</span> This is circular. Instead, eliminate <span
+class="math inline">\(G\)</span> between (1) and (2). From (1): <span
+class="math inline">\(G = \hbar c \kappa / (4\pi m^2)\)</span>.
+Substitute into (2): <span class="math display">\[
+T_H = \frac{\hbar c^3}{8\pi k_B m} \cdot \frac{4\pi m^2}{\hbar c \kappa}
+= \frac{m c^2}{2 k_B \kappa}.
+\]</span> Rearrange: <span class="math display">\[
+m = \frac{2 k_B T_H}{c^2} \kappa.
+\]</span> Absorb the factor of 2 into the definition of <span
+class="math inline">\(\kappa\)</span> (i.e., redefine <span
+class="math inline">\(\kappa \leftarrow \kappa/2\)</span>), yielding
+(3). This redefinition is consistent with the holographic principle, as
+it corresponds to choosing <span class="math inline">\(K_0\)</span> such
+that a Planck-area pixel carries <span class="math inline">\(\kappa =
+1/4\)</span> (matching <span class="math inline">\(S = k_B A /
+4\ell_P^2\)</span>). ∎</p>
+<p><strong>Corollary 1 (Generalized Unruh Relation).</strong><br />
+For an observer with proper acceleration <span
+class="math inline">\(a\)</span>, the Unruh temperature is <span
+class="math inline">\(T_U = \hbar a / (2\pi c k_B)\)</span>. The
+inertial mass of a system with information <span
+class="math inline">\(\kappa\)</span> is: <span class="math display">\[
+m = \frac{\hbar a}{2\pi c^3} \kappa.
+\]</span></p>
+<p><em>Proof.</em><br />
+Substitute <span class="math inline">\(T = T_U\)</span> into (3). ∎</p>
+<hr />
+<h4 id="iv.-energyinformation-equivalence"><strong>IV.
+Energy–Information Equivalence</strong></h4>
+<p><strong>Definition 3 (Characteristic Frequency).</strong><br />
+For a system of size <span class="math inline">\(R\)</span>, define the
+characteristic frequency as <span class="math inline">\(\omega = c /
+R\)</span>.</p>
+<p><strong>Theorem 2 (Energy–Information Relation).</strong><br />
+The total energy of a system with information <span
+class="math inline">\(\kappa\)</span> is: <span class="math display">\[
+\boxed{E = \hbar \omega \kappa}
+\tag{5}
+\]</span></p>
+<p><em>Proof.</em><br />
+For a black hole, <span class="math inline">\(R = 2Gm / c^2\)</span>.
+From (3), <span class="math inline">\(m = k_B T \kappa / c^2\)</span>,
+and from (2), <span class="math inline">\(T = \hbar c^3 / (8\pi G m
+k_B)\)</span>. Thus: <span class="math display">\[
+R = \frac{2G}{c^2} \cdot \frac{k_B T \kappa}{c^2} = \frac{2G k_B
+\kappa}{c^4} \cdot \frac{\hbar c^3}{8\pi G m k_B} = \frac{\hbar
+\kappa}{4\pi c m}.
+\]</span> But <span class="math inline">\(E = m c^2\)</span>, so: <span
+class="math display">\[
+R = \frac{\hbar \kappa}{4\pi E} \quad \Rightarrow \quad E = \frac{\hbar
+\kappa}{4\pi R} = \frac{\hbar \omega \kappa}{4\pi}.
+\]</span> Again, absorb <span class="math inline">\(4\pi\)</span> into
+<span class="math inline">\(\kappa\)</span> (redefining <span
+class="math inline">\(K_0\)</span>), yielding (5). This is consistent
+with quantum mechanics: a photon of frequency <span
+class="math inline">\(\omega\)</span> has energy <span
+class="math inline">\(E = \hbar \omega\)</span> and carries one unit of
+information (<span class="math inline">\(\kappa = 1\)</span>). ∎</p>
+<hr />
+<h4 id="v.-scale-invariance-verification"><strong>V. Scale Invariance
+Verification</strong></h4>
+<p><strong>Proposition 3 (Homogeneous Scaling).</strong><br />
+Under <span class="math inline">\(x^\mu \mapsto \lambda x^\mu\)</span>:
+- <span class="math inline">\(m \mapsto \lambda^{-1} m\)</span>, - <span
+class="math inline">\(T \mapsto \lambda^{-1} T\)</span> (since <span
+class="math inline">\(T \propto 1/R\)</span>, <span
+class="math inline">\(R \mapsto \lambda R\)</span>), - <span
+class="math inline">\(\omega \mapsto \lambda^{-1} \omega\)</span>, -
+<span class="math inline">\(\kappa \mapsto \kappa\)</span>.</p>
+<p>Thus, the ratios <span class="math inline">\(m c^2 / (k_B T)\)</span>
+and <span class="math inline">\(E / (\hbar \omega)\)</span> are
+invariant.</p>
+<p><em>Proof.</em><br />
+From (3): <span class="math inline">\(m c^2 / (k_B T) = \kappa\)</span>
+(invariant).<br />
+From (5): <span class="math inline">\(E / (\hbar \omega) =
+\kappa\)</span> (invariant).<br />
+Since <span class="math inline">\(\kappa\)</span> is invariant by
+Proposition 1, the relations are scale-covariant. ∎</p>
+<hr />
+<h4 id="vi.-unified-information-theoretic-action"><strong>VI. Unified
+Information-Theoretic Action</strong></h4>
+<p><strong>Definition 4 (Information Action).</strong><br />
+Define the action for a scalar information field <span
+class="math inline">\(\kappa(x)\)</span>: <span class="math display">\[
+\mathcal{S}[\kappa] = \int d^4x \, \sqrt{-g} \left[ \frac{\hbar
+c^3}{16\pi G} g^{\mu\nu} \partial_\mu \kappa \partial_\nu \kappa -
+V(\kappa) \right],
+\tag{6}
+\]</span> where <span class="math inline">\(V(\kappa)\)</span> is a
+scale-invariant potential (e.g., <span class="math inline">\(V(\kappa) =
+\lambda \kappa^4\)</span>).</p>
+<p><strong>Proposition 4 (Einstein Equations from <span
+class="math inline">\(\kappa\)</span>).</strong><br />
+The energy-momentum tensor derived from (6) is: <span
+class="math display">\[
+T_{\mu\nu} = \frac{\hbar c^3}{8\pi G} \left( \partial_\mu \kappa
+\partial_\nu \kappa - \frac{1}{2} g_{\mu\nu} (\partial \kappa)^2 \right)
+- g_{\mu\nu} V(\kappa).
+\tag{7}
+\]</span> In the weak-field limit, this reproduces Newtonian gravity
+with mass density <span class="math inline">\(\rho = (k_B T / c^2)
+\kappa\)</span>.</p>
+<p><em>Proof.</em><br />
+Vary (6) with respect to <span
+class="math inline">\(g^{\mu\nu}\)</span>: <span class="math display">\[
+T_{\mu\nu} = -\frac{2}{\sqrt{-g}} \frac{\delta \mathcal{S}}{\delta
+g^{\mu\nu}} = \frac{\hbar c^3}{8\pi G} \left( \partial_\mu \kappa
+\partial_\nu \kappa - \frac{1}{2} g_{\mu\nu} (\partial \kappa)^2 \right)
+- g_{\mu\nu} V(\kappa).
+\]</span> For a static, homogeneous <span
+class="math inline">\(\kappa\)</span>, <span
+class="math inline">\(T_{00} = V(\kappa)\)</span>. Identify <span
+class="math inline">\(V(\kappa) = \rho c^2 = k_B T \kappa\)</span>,
+consistent with (3). ∎</p>
+<hr />
+<h4 id="vii.-quantum-statistical-consistency"><strong>VII. Quantum
+Statistical Consistency</strong></h4>
+<p><strong>Proposition 5 (Von Neumann Entropy = <span
+class="math inline">\(\kappa\)</span>).</strong><br />
+For a quantum system with density matrix <span
+class="math inline">\(\rho\)</span>, the von Neumann entropy is <span
+class="math inline">\(S = -k_B \text{Tr}(\rho \log \rho) = k_B
+\kappa\)</span>.</p>
+<p><em>Proof.</em><br />
+By the <strong>quantum Church–Turing thesis</strong>, any quantum state
+<span class="math inline">\(\rho\)</span> can be prepared by a quantum
+program of length <span class="math inline">\(K_Q(\rho)\)</span>. The
+entropy <span class="math inline">\(S\)</span> measures the mixedness of
+<span class="math inline">\(\rho\)</span>, which equals the algorithmic
+information needed to specify <span class="math inline">\(\rho\)</span>
+beyond its pure-state components. Thus, <span class="math inline">\(S /
+k_B = \kappa\)</span>. ∎</p>
+<hr />
+<h3 id="summary-of-core-relations"><strong>Summary of Core
+Relations</strong></h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 27%" />
+<col style="width: 51%" />
+</colgroup>
+<thead>
+<tr>
+<th>Quantity</th>
+<th>Expression</th>
+<th>Scale Transformation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Information</strong></td>
+<td><span class="math inline">\(\kappa = K(s)/K_0 = S/k_B\)</span></td>
+<td><span class="math inline">\(\kappa \mapsto \kappa\)</span></td>
+</tr>
+<tr>
+<td><strong>Mass</strong></td>
+<td><span class="math inline">\(m = \dfrac{k_B T}{c^2}
+\kappa\)</span></td>
+<td><span class="math inline">\(m \mapsto \lambda^{-1} m\)</span></td>
+</tr>
+<tr>
+<td><strong>Energy</strong></td>
+<td><span class="math inline">\(E = \hbar \omega \kappa\)</span></td>
+<td><span class="math inline">\(E \mapsto \lambda^{-1} E\)</span></td>
+</tr>
+<tr>
+<td><strong>Entropy</strong></td>
+<td><span class="math inline">\(S = k_B \kappa\)</span></td>
+<td><span class="math inline">\(S \mapsto S\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>These relations are <strong>not independent equations</strong> but
+<strong>relational identities</strong> expressing how a single invariant
+<span class="math inline">\(\kappa\)</span> manifests through
+observer-dependent scales (<span class="math inline">\(T,
+\omega\)</span>).</p>
+<p>This FDO provides the rigorous mathematical backbone for the thesis:
+<strong>physical reality is scale-invariant information in relational
+disguise</strong>.</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

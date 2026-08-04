@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C.8 Edges InfoSci | QWAV</title>
+<meta name="description" content="Appendix C: Detailed Graph Data (Edges) C.8: Edges Originating from Information Science Nodes Source Node ID Target Node ID Type Rationale Conf. Dir. InfoSci...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/c-8-edges-infosci">
+<meta property="og:title" content="C.8 Edges InfoSci">
+<meta property="og:description" content="Appendix C: Detailed Graph Data (Edges) C.8: Edges Originating from Information Science Nodes Source Node ID Target Node ID Type Rationale Conf. Dir. InfoSci...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/c-8-edges-infosci">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "C.8 Edges InfoSci",
+  "url": "https://deep.qwav.tech/papers/c-8-edges-infosci",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-05-09T03:21:33Z",
+  "abstract": "Appendix C: Detailed Graph Data (Edges) C.8: Edges Originating from Information Science Nodes Source Node ID Target Node ID Type Rationale Conf. Dir. InfoSci..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<p><strong>Appendix C: Detailed Graph Data (Edges)</strong></p>
+<p><strong>C.8: Edges Originating from Information Science
+Nodes</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 10%" />
+<col style="width: 3%" />
+<col style="width: 71%" />
+<col style="width: 1%" />
+<col style="width: 1%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Source Node ID</th>
+<th style="text-align: left;">Target Node ID</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Rationale</th>
+<th style="text-align: left;">Conf.</th>
+<th style="text-align: left;">Dir.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>InfoSci::ShannonTheory</code></td>
+<td style="text-align: left;"><code>Math::ProbabilityTheory</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Shannon Information Theory is
+mathematically formulated using and relies fundamentally on probability
+theory.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::ShannonTheory</code></td>
+<td style="text-align: left;"><code>Concept::Information</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">Provides a specific, quantitative,
+syntactic definition of information as reduction of uncertainty.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::ShannonEntropy</code></td>
+<td style="text-align: left;"><code>InfoSci::ShannonTheory</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Shannon Entropy (H) is a core
+concept/measure defined within Shannon Information Theory.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::ShannonEntropy</code></td>
+<td style="text-align: left;"><code>StatMech::GibbsEntropy</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">Shannon Entropy has the identical
+mathematical form as Gibbs Entropy.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::ShannonEntropy</code></td>
+<td style="text-align: left;"><code>StatMech::GibbsEntropy</code></td>
+<td style="text-align: left;"><code>E-ANL</code></td>
+<td style="text-align: left;">The identical form suggests a deep analogy
+related to uncertainty/information/number of states between the two
+concepts.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::ShannonEntropy</code></td>
+<td style="text-align: left;"><code>Concept::Entropy</code></td>
+<td style="text-align: left;"><code>L-INST</code></td>
+<td style="text-align: left;">Shannon Entropy is a specific instance of
+the broader concept of entropy, focused on information/uncertainty.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::ChannelCapacity</code></td>
+<td style="text-align: left;"><code>InfoSci::ShannonTheory</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Channel Capacity (C) is a core
+concept/limit defined within Shannon Information Theory.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>InfoSci::SourceCodingTheorem</code></td>
+<td style="text-align: left;"><code>InfoSci::ShannonTheory</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Source Coding Theorem is a key result
+derived within Shannon Information Theory concerning data compression
+limits.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>InfoSci::SourceCodingTheorem</code></td>
+<td style="text-align: left;"><code>InfoSci::ShannonEntropy</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">The limit for lossless compression is
+determined by the Shannon Entropy of the source.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>InfoSci::NoisyChannelTheorem</code></td>
+<td style="text-align: left;"><code>InfoSci::ShannonTheory</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Noisy-Channel Coding Theorem is a key
+result derived within Shannon Information Theory concerning reliable
+communication limits.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>InfoSci::NoisyChannelTheorem</code></td>
+<td style="text-align: left;"><code>InfoSci::ChannelCapacity</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">The limit for reliable communication is
+determined by the Channel Capacity.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::Information</code></td>
+<td style="text-align: left;"><code>InfoSci::ShannonTheory</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The specific syntactic concept of
+information (reduction of uncertainty) is central to Shannon
+Theory.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::Information</code></td>
+<td style="text-align: left;"><code>Physics</code></td>
+<td style="text-align: left;"><code>E-ANL</code></td>
+<td style="text-align: left;">Connections between Shannon’s syntactic
+information and physical concepts like entropy or energy are often
+analogical or require careful interpretation (e.g., Landauer’s
+principle).</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::Information</code></td>
+<td style="text-align: left;"><code>Physics</code></td>
+<td style="text-align: left;"><code>F-REQ</code></td>
+<td style="text-align: left;">The precise relationship between abstract
+Shannon information and physical reality requires further
+explanation/unification.</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::Information</code></td>
+<td style="text-align: left;"><code>Philosophy</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">Shannon’s purely syntactic definition
+challenges broader philosophical concepts of information involving
+meaning or semantics.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

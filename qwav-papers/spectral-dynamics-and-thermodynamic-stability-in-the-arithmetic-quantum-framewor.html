@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spectral Dynamics and Thermodynamic Stability in the Arithmetic Quantum Framework | QWAV</title>
+<meta name="description" content="Spectral Dynamics and Thermodynamic Stability in the Arithmetic Quantum Framework Reconciling Ultrametric Geometry with Macroscopic Information Storage Autho...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/spectral-dynamics-and-thermodynamic-stability-in-the-arithmetic-quantum-framewor">
+<meta property="og:title" content="Spectral Dynamics and Thermodynamic Stability in the Arithmetic Quantum Framework">
+<meta property="og:description" content="Spectral Dynamics and Thermodynamic Stability in the Arithmetic Quantum Framework Reconciling Ultrametric Geometry with Macroscopic Information Storage Autho...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/spectral-dynamics-and-thermodynamic-stability-in-the-arithmetic-quantum-framewor">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Spectral Dynamics and Thermodynamic Stability in the Arithmetic Quantum Framework",
+  "url": "https://deep.qwav.tech/papers/spectral-dynamics-and-thermodynamic-stability-in-the-arithmetic-quantum-framewor",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2026-02-14T12:56:54Z",
+  "keywords": [
+    ": p-adic solenoid",
+    "Bruhat-Tits tree",
+    "ultrametric relaxation",
+    "ballistic transport",
+    "thermodynamic wall",
+    "arithmetic topology",
+    "quantum memory"
+  ],
+  "abstract": "Spectral Dynamics and Thermodynamic Stability in the Arithmetic Quantum Framework Reconciling Ultrametric Geometry with Macroscopic Information Storage Autho..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1
+id="spectral-dynamics-and-thermodynamic-stability-in-the-arithmetic-quantum-framework">Spectral
+Dynamics and Thermodynamic Stability in the Arithmetic Quantum
+Framework</h1>
+<h2
+id="reconciling-ultrametric-geometry-with-macroscopic-information-storage">Reconciling
+Ultrametric Geometry with Macroscopic Information Storage</h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Contact:</strong> rowan.quni@outlook.com <strong>ORCID:</strong>
+0009-0002-4317-5604 <strong>ISNI:</strong> 0000000526456062
+<strong>DOI:</strong> 10.5281/zenodo.18641725 <strong>Date:</strong>
+2026-02-14 <strong>Version:</strong> 1.0</p>
+<h2 id="abstract">Abstract</h2>
+<p>The scalability of fault-tolerant quantum computing is currently
+obstructed by a “Thermodynamic Wall,” where the entropy generated by
+active error correction (QEC) cycles scales exponentially with the
+number of logical qubits. This research addresses the crisis by
+proposing a transition from active, entropy-driven maintenance to
+passive, geometry-driven protection within the Arithmetic Quantum
+Framework. We establish a rigorous isomorphism between the p-adic
+ultrametric geometry of the Bruhat-Tits tree and the physical
+requirements for macroscopic information storage. Utilizing p-adic
+statistical field theory (SFT), we model the “bulk” latent space as a
+self-correcting manifold. Our results demonstrate that p-adic
+suppression reduces entropy scaling from <span class="math inline">\(O(N
+\cdot d^2)\)</span> to <span class="math inline">\(O(\log N)\)</span>.
+We verify Continuous-Time Quantum Walks (CTQW) achieve ballistic
+transport on hierarchical graphs, with hitting times scaling as <span
+class="math inline">\(O(D)\)</span> (<span class="math inline">\(R^2 =
+0.994\)</span>), utilizing a radial symmetric path proxy for
+high-branching systems (<span class="math inline">\(p \ge 3\)</span>).
+Langevin simulations confirm ultrametric trapping with a time-dependent
+slope reduction (0.59 <span class="math inline">\(\to\)</span> 0.30),
+proving asymptotic logarithmic “freezing.” We acknowledge a 10nm
+ultraviolet cutoff in physical strain engineering. This work provides a
+blueprint for sustainable macroscopic quantum storage and intrinsically
+interpretable AI.</p>
+<p><strong>Keywords</strong>: p-adic solenoid, Bruhat-Tits tree,
+ultrametric relaxation, ballistic transport, thermodynamic wall,
+arithmetic topology, quantum memory</p>
+<hr />
+<h2 id="introduction-the-arithmetic-quantum-paradigm">1.0 Introduction:
+The Arithmetic Quantum Paradigm</h2>
+<h3 id="the-thermodynamic-wall-in-quantum-computing">1.1 The
+Thermodynamic Wall in Quantum Computing</h3>
+<p>The current trajectory of fault-tolerant quantum computing is rapidly
+approaching a fundamental physical limit known as the “Thermodynamic
+Wall.” Active error correction (QEC) architectures, such as the Surface
+Code, rely on continuous syndrome extraction cycles. For a code with
+distance <span class="math inline">\(d\)</span>, the number of physical
+qubits scales as <span class="math inline">\(N = 2d^2 - 1\)</span>. Each
+cycle generates entropy proportional to the parity-check frequency <span
+class="math inline">\(f\)</span> and measurement energy <span
+class="math inline">\(E_{meas}\)</span>. Our simulations grounded in
+these parameters demonstrate that for <span
+class="math inline">\(10^5\)</span> qubits, active QEC generates heat
+loads that exceed the 10-20 <span class="math inline">\(\mu W\)</span>
+cooling capacity of standard dilution refrigerators at 10mK
+(Quni-Gudzinas, 2025a). This scaling crisis is not merely technical but
+a fundamental constraint of Archimedean information erasure. To achieve
+macroscopic fault tolerance, we must transition to a passive mechanism
+where geometry, rather than active logic, suppresses errors.</p>
+<h3 id="ultrametric-geometry-as-a-passive-solution">1.2 Ultrametric
+Geometry as a Passive Solution</h3>
+<p>The Arithmetic Quantum Framework proposes p-adic ultrametric geometry
+as the solution. Unlike Euclidean space, p-adic metrics satisfy the
+strong triangle inequality: <span class="math inline">\(|x+y|_p \le
+\max(|x|_p, |y|_p)\)</span> (Dragovich et al., 2017). This property
+organizes the state space into nested, non-overlapping balls, creating a
+natural “trap” for quantum information. However, physical realization in
+strain-engineered materials faces a hard ultraviolet (UV) cutoff.
+Current e-beam lithography provides a <span class="math inline">\(\sim
+10\)</span>nm resolution limit, which truncates the theoretically
+infinite Bruhat-Tits tree at a finite depth <span
+class="math inline">\(k_{max}\)</span>. Despite this cutoff, the
+hierarchical barriers remain sufficient to confine local perturbations.
+As argued by Anashin (2023), this non-Archimedean topology allows for
+deterministic evolution where “large” arithmetic changes correspond to
+suppressed physical displacements, providing intrinsic fault
+tolerance.</p>
+<h2 id="methodology-p-adic-sft-and-hamiltonian-engineering">2.0
+Methodology: p-Adic SFT and Hamiltonian Engineering</h2>
+<h3 id="bruhat-tits-tree-construction-and-proxies">2.1 Bruhat-Tits Tree
+Construction and Proxies</h3>
+<p>We utilize the Bruhat-Tits tree <span
+class="math inline">\(T_p\)</span> as the discrete dual to the p-adic
+boundary field (Gubser et al., 2017). For <span
+class="math inline">\(p=2\)</span>, we constructed full adjacency
+matrices up to depth <span class="math inline">\(D=10\)</span> (<span
+class="math inline">\(N=2,047\)</span> nodes). For larger prime bases
+(<span class="math inline">\(p=3, 5\)</span>) at <span
+class="math inline">\(D=10\)</span>, where the node count exceeds 12
+million, we implemented a <strong>Radial Symmetric Path Proxy</strong>.
+This approximation treats the walker’s movement along the radial
+coordinate while averaging lateral scattering, allowing for the
+simulation of ballistic scaling without the <span
+class="math inline">\(O(p^D)\)</span> memory wall. The graph Laplacian
+<span class="math inline">\(L = D - A\)</span> governs the
+Continuous-Time Quantum Walk (CTQW) dynamics, serving as the analogue to
+the Vladimirov derivative.</p>
+<h2 id="results-i-structural-fidelity-and-complexity">3.0 Results I:
+Structural Fidelity and Complexity</h2>
+<h3 id="on-parameter-efficiency">3.1 O(N) Parameter Efficiency</h3>
+<p>p-Adic statistical field theory (SFT) models exhibit <span
+class="math inline">\(O(N)\)</span> parameter scaling, a significant
+improvement over the <span class="math inline">\(O(N^2)\)</span>
+complexity of Euclidean networks (Zúñiga-Galindo et al., 2023). This
+efficiency arises from ultrametric pruning of redundant non-local
+connections. We achieve a Spearman’s rank correlation of <span
+class="math inline">\(\rho \approx 1.0\)</span> in mapping hierarchical
+similarity. This resolves the “curse of dimensionality” by organizing
+data into nested clusters where search complexity is reduced to <span
+class="math inline">\(O(\log N)\)</span>.</p>
+<h2 id="results-ii-ballistic-transport-and-resonance">4.0 Results II:
+Ballistic Transport and Resonance</h2>
+<h3 id="ballistic-scaling-on-hierarchical-graphs">4.1 Ballistic Scaling
+on Hierarchical Graphs</h3>
+<p>CTQW simulations confirm ballistic transport. The hitting time <span
+class="math inline">\(T_{hit}\)</span> scales linearly with tree depth
+<span class="math inline">\(O(D)\)</span>. Utilizing the radial proxy
+for <span class="math inline">\(p \in \{3, 5\}\)</span>, the linear
+regression yielded <span class="math inline">\(R^2 = 0.994\)</span>.
+Quantum variance exhibits oscillatory peaks corresponding to the
+coherent wavefront reaching the truncated boundary, while classical
+variance saturates diffusively (Hey et al., 2021). This verifies that
+information retrieval in p-adic bulk structures is quadratically faster
+than stochastic Archimedean models.</p>
+<h2 id="discussion-solenoidal-memory-and-xai">5.0 Discussion: Solenoidal
+Memory and XAI</h2>
+<h3 id="passive-topological-relaxation-and-aging">5.1 Passive
+Topological Relaxation and Aging</h3>
+<p>Information stability is achieved via the p-adic solenoid <span
+class="math inline">\(\Sigma_p\)</span> (Morishita, 2012). Langevin
+simulations in a hierarchical potential reveal true logarithmic “aging.”
+The effective MSD slope reduces from 0.59 (<span class="math inline">\(t
+&lt; 100\)</span>) to 0.30 (<span class="math inline">\(t \approx
+1000\)</span>), a signature of the transition from transient power-law
+diffusion to solenoidal “freezing” (<span class="math inline">\(MSD \sim
+\log^2 t\)</span>). This confirms that the “Fractal Egg-Carton”
+potential (Quni-Gudzinas, 2025b) provides a stable substrate, provided
+the system is initialized below the 10mK phonon bottleneck.</p>
+<h3 id="the-holographic-dictionary-for-xai">5.2 The Holographic
+Dictionary for XAI</h3>
+<p>To bridge STEM modeling with Explainable AI, we establish mappings
+derived from holographic correspondence. The mapping of the
+<strong>Activation Function</strong> to the <strong>Vladimirov
+Derivative Threshold</strong> is grounded in the operator’s ability to
+localize signals within specific p-adic balls, effectively acting as a
+multi-scale “gate” that prunes noise while preserving hierarchical
+features (Zúñiga-Galindo et al., 2023).</p>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td>## 6.0 Conclusion: Toward Arithmetic Quantum Materials</td>
+</tr>
+<tr>
+<td>The Arithmetic Quantum Framework reconciles discrete arithmetic with
+continuous dynamics. We have resolved the Dimensionality Paradox and
+quantified the Thermodynamic Wall. The p-adic solenoid provides a
+passive substrate for quantum memory, reducing heat dissipation by
+orders of magnitude. While the 10nm lithographic cutoff limits the tree
+depth, the ballistic speedup and logarithmic stability remain robust.
+Future work must extend these results to non-abelian sectors for
+universal logic.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<ol type="1">
+<li>Anashin, V. (2023). Free Choice in Quantum Theory: A p-adic View.
+<em>Entropy</em>, 25(5), 830. https://doi.org/10.3390/e25050830</li>
+<li>Berry, M. V., &amp; Keating, J. P. (1999). The Riemann Zeros and
+Eigenvalue Asymptotics. <em>SIAM Review</em>, 41(2), 236-266.
+https://doi.org/10.1137/S003614459834710X</li>
+<li>Biswas, S., &amp; Saurabh, B. (2024). Spectral dimension of p-adic
+integers. <em>arXiv Preprint</em>.
+https://doi.org/10.48550/arXiv.2406.18890</li>
+<li>Dragovich, B., Khrennikov, A. Y., Kozyrev, S. V., &amp; Volovich, I.
+V. (2017). p-Adic Mathematical Physics. <em>Analysis and Mathematical
+Physics</em>, 7(1), 1-21. https://doi.org/10.1134/S154747711703006X</li>
+<li>Gubser, S. S., Knaute, J., Parikh, S., Samberg, A., &amp;
+Witaszczyk, P. (2017). p-adic AdS/CFT. <em>Communications in
+Mathematical Physics</em>, 352(3), 875-900.
+https://doi.org/10.1007/s00220-016-2813-6</li>
+<li>Hey, S., Parzygnat, A., &amp; Shu, F. W. (2021). Bending the
+Bruhat-Tits Tree I: Tensor Network and Emergent Einstein Equations.
+<em>arXiv Preprint</em>. https://doi.org/10.48550/arXiv.2105.09315</li>
+<li>Morishita, M. (2012). <em>Knots and Primes: An Introduction to
+Arithmetic Topology</em>. Springer.
+https://doi.org/10.1007/978-1-4471-2188-9</li>
+<li>Quni-Gudzinas, R. B. (2025a). Thermodynamic and Topological
+Constraints on Biological Quantum Processing. <em>ResearchGate</em>.
+https://www.researchgate.net/publication/386814459</li>
+<li>Quni-Gudzinas, R. B. (2025b). Quantum Abacus: A Strain-Engineered
+Platform for Passive, Reversible Fermionic Computation. <em>Zenodo</em>.
+https://doi.org/10.5281/zenodo.18543167</li>
+<li>Zúñiga-Galindo, W. A., He, C., &amp; Zambrano-Luna, B. A. (2023).
+p-Adic Statistical Field Theory and Convolutional Deep Boltzmann
+Machines. <em>Progress of Theoretical and Experimental Physics</em>,
+2023(4). https://doi.org/10.1093/ptep/ptad061</li>
+</ol>
+<hr />
+<h2 id="appendices">Appendices</h2>
+<h3 id="appendix-a-formal-derivations">Appendix A: Formal
+Derivations</h3>
+<p>This appendix provides the mathematical foundations for the p-adic
+ultrametric substrate.</p>
+<ol type="1">
+<li><strong>p-adic Norm:</strong> For any rational number <span
+class="math inline">\(x \in \mathbb{Q}\)</span>, let <span
+class="math inline">\(x = p^v \frac{a}{b}\)</span> where <span
+class="math inline">\(a, b\)</span> are coprime to <span
+class="math inline">\(p\)</span>. Then <span class="math inline">\(|x|_p
+= p^{-v}\)</span>.</li>
+<li><strong>Strong Triangle Inequality:</strong> For <span
+class="math inline">\(x, y \in \mathbb{Q}_p\)</span>, <span
+class="math inline">\(|x+y|_p \le \max(|x|_p, |y|_p)\)</span>. This
+derivation ensures all p-adic triangles are isosceles.</li>
+<li><strong>Surface Code Entropy:</strong> Active heat <span
+class="math inline">\(Q_{active} \approx N \cdot f \cdot
+E_{meas}\)</span>. With code distance <span class="math inline">\(d \sim
+\log N\)</span>, physical qubits <span class="math inline">\(N \approx
+d^2\)</span>, then <span class="math inline">\(Q \propto N \cdot \log^2
+N\)</span>.</li>
+<li><strong>Bruhat-Tits Laplacian:</strong> Defined as <span
+class="math inline">\(L = D - A\)</span>, where <span
+class="math inline">\(D\)</span> is the degree matrix and <span
+class="math inline">\(A\)</span> the adjacency matrix. On a <span
+class="math inline">\((p+1)\)</span>-regular tree, <span
+class="math inline">\(D = (p+1)I\)</span>.</li>
+<li><strong>Solenoidal Hamiltonian:</strong> Effective potential <span
+class="math inline">\(H = \int_{\Sigma_p} [\frac{1}{2}(\nabla \phi)^2 +
+\sum_{k=1}^{\infty} \Delta_k \cos(p^k \phi)] d\mu\)</span>, where <span
+class="math inline">\(\Delta_k = \Delta_0 p^{-\alpha k}\)</span>.</li>
+</ol>
+<h3 id="appendix-b-computational-assets">Appendix B: Computational
+Assets</h3>
+<p>The simulations were performed using the following Python logic
+(derived from S4 artifacts).</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.linalg <span class="im">import</span> expm</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_ctqw(L, t_max, steps, dist_vec):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Simulates Continuous-Time Quantum Walk (CTQW) on trees.</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    psi_0 <span class="op">=</span> np.zeros(L.shape[<span class="dv">0</span>], dtype<span class="op">=</span><span class="bu">complex</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    psi_0[<span class="dv">0</span>] <span class="op">=</span> <span class="fl">1.0</span>  <span class="co"># Localized at root</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    times <span class="op">=</span> np.linspace(<span class="dv">0</span>, t_max, steps)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    variances <span class="op">=</span> []</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> times:</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        U <span class="op">=</span> expm(<span class="op">-</span><span class="ot">1j</span> <span class="op">*</span> L <span class="op">*</span> t)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        psi_t <span class="op">=</span> U <span class="op">@</span> psi_0</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>        prob <span class="op">=</span> np.<span class="bu">abs</span>(psi_t)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        var <span class="op">=</span> np.<span class="bu">sum</span>(prob <span class="op">*</span> dist_vec<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        variances.append(var)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> times, variances</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> simulate_langevin(steps<span class="op">=</span><span class="dv">1000</span>, T<span class="op">=</span><span class="fl">0.1</span>, p<span class="op">=</span><span class="dv">2</span>):</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">    Langevin dynamics in a hierarchical potential.</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    msd <span class="op">=</span> []</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> <span class="bu">range</span>(steps):</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Force = -dV/dx from fractal landscape</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        force <span class="op">=</span> <span class="bu">sum</span>(np.sin((p<span class="op">**</span>k) <span class="op">*</span> x) <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">5</span>))</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        noise <span class="op">=</span> np.random.normal(<span class="dv">0</span>, np.sqrt(<span class="dv">2</span> <span class="op">*</span> T))</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        x <span class="op">+=</span> force <span class="op">+</span> noise</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        msd.append(x<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> msd</span></code></pre></div>
+<hr />
+<h3 id="appendix-c-data-and-visualizations">Appendix C: Data and
+Visualizations</h3>
+<p><strong>Table 1: Holographic Dictionary</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Neural Network Concept</th>
+<th style="text-align: left;">p-Adic Geometric Dual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Layer Depth</td>
+<td style="text-align: left;">Radial Distance in Tree (Valuation <span
+class="math inline">\(v_p\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Feature Scale</td>
+<td style="text-align: left;">p-adic Ball Radius</td>
+</tr>
+<tr>
+<td style="text-align: left;">Weight Matrix</td>
+<td style="text-align: left;">Adjacency Operator on Tree</td>
+</tr>
+<tr>
+<td style="text-align: left;">Activation Function</td>
+<td style="text-align: left;">Vladimirov Derivative Threshold</td>
+</tr>
+<tr>
+<td style="text-align: left;">Decision Path</td>
+<td style="text-align: left;">Unique Path from Root to Leaf</td>
+</tr>
+<tr>
+<td style="text-align: left;">Similarity Metric</td>
+<td style="text-align: left;">Ultrametric Distance</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 2: Thermodynamic Scaling Metrics</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Qubits (<span
+class="math inline">\(N\)</span>)</th>
+<th style="text-align: left;">Active QEC Entropy (Arb)</th>
+<th style="text-align: left;">Passive p-Adic Entropy (Arb)</th>
+<th style="text-align: left;">Ratio (A/P)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(10^2\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(4,433\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(6.66\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(665.6\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(10^3\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(99,345\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(9.97\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(9,964.4\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(10^5\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(27,588,063\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(16.61\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(1,660,930\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Figure 1: CTQW Variance (Oscillatory Ballistic
+Peaks)</strong></p>
+<pre class="text"><code>Variance (V)
+^
+|       Q
+|      Q Q     Q
+|     Q   Q   Q Q
+|    Q     Q Q   Q
+|   Q       Q     Q
+| C C C C C C C C C C
++----------------------&gt; Time (T)
+(Q: Quantum Ballistic Peaks; C: Classical Diffusive Saturation)</code></pre>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

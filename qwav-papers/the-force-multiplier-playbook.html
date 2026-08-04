@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Force-Multiplier Playbook | QWAV</title>
+<meta name="description" content="The Force-Multiplier Playbook How One Scientist + One LLM Can Match a Research Team Version: 1.0—Public Release Date: 2026-05-14 DOI: 10.5281/zenodo.20154578...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/the-force-multiplier-playbook">
+<meta property="og:title" content="The Force-Multiplier Playbook">
+<meta property="og:description" content="The Force-Multiplier Playbook How One Scientist + One LLM Can Match a Research Team Version: 1.0—Public Release Date: 2026-05-14 DOI: 10.5281/zenodo.20154578...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/the-force-multiplier-playbook">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "The Force-Multiplier Playbook",
+  "url": "https://deep.qwav.tech/papers/the-force-multiplier-playbook",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2026-05-14T11:23:43Z",
+  "abstract": "The Force-Multiplier Playbook How One Scientist + One LLM Can Match a Research Team Version: 1.0\u2014Public Release Date: 2026-05-14 DOI: 10.5281/zenodo.20154578..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1 id="the-force-multiplier-playbook">The Force-Multiplier
+Playbook</h1>
+<h2 id="how-one-scientist-one-llm-can-match-a-research-team">How One
+Scientist + One LLM Can Match a Research Team</h2>
+<p><strong>Version:</strong> 1.0—Public Release <strong>Date:</strong>
+2026-05-14 <strong>DOI:</strong> <a
+href="https://doi.org/10.5281/zenodo.20154578">10.5281/zenodo.20154578</a>
+<strong>License:</strong> CC BY 4.0</p>
+<blockquote>
+<p><em>The whole point of the force-multiplier project is that the LLM
+compresses a year-long, half-time research project into a day of focused
+human direction.</em></p>
+</blockquote>
+<h2 id="the-shift">1. The Shift</h2>
+<p>Modern science rewards teams. The ATLAS collaboration numbers over
+3,000 scientists. The average biomedical paper now lists 6.5 authors—up
+from 2.5 in 1950. Grant committees favor multi-institution consortia.
+The solo scientist, once the default mode of discovery (Newton,
+Einstein, Dirac), has become an endangered species—not because they lack
+ideas, but because they lack the <strong>throughput</strong> that teams
+provide: literature review, code prototyping, equation derivation,
+figure generation, first-draft writing.</p>
+<p>But something changed in 2024-2025. Large language models crossed a
+threshold. They can now:</p>
+<ul>
+<li>Synthesize literature across dozens of papers in minutes</li>
+<li>Derive equations with symbolic algebra verification</li>
+<li>Generate, run, and debug code in a single conversation</li>
+<li>Draft and revise technical prose at postdoc quality</li>
+<li>Maintain a git-tracked audit trail of every change</li>
+</ul>
+<p>A single researcher, equipped with an LLM in a unified conversation
+environment (file I/O + Python execution + git), can <strong>reproduce
+the output of a small research team</strong>—not in theory, but in
+practice. Our preliminary self-experiments suggest speedups of <span
+class="math inline">\(25\times\)</span> to <span
+class="math inline">\(90\times\)</span> across two domains.</p>
+<h2 id="the-core-idea">2. The Core Idea</h2>
+<blockquote>
+<p><strong>A structured protocol turns the LLM from a chatbot into a
+force multiplier.</strong></p>
+</blockquote>
+<p>The key insight is not “LLMs are smart.” It’s that <strong>most
+research tasks are bottlenecked by throughput, not by
+brilliance.</strong> A postdoc is not <span
+class="math inline">\(20\times\)</span> smarter than a professor—they’re
+<span class="math inline">\(20\times\)</span> faster at executing
+well-defined subtasks. The LLM closes that gap, provided it’s given the
+right structure.</p>
+<p>The Force-Multiplier Protocol has five phases:</p>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 43%" />
+<col style="width: 34%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Phase</th>
+<th style="text-align: left;">What Happens</th>
+<th style="text-align: left;">Who Leads</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Define</strong></td>
+<td style="text-align: left;">Frame the research question, specify
+deliverables, set success criteria</td>
+<td style="text-align: left;">Human</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Delegate</strong></td>
+<td style="text-align: left;">Issue structured prompts for literature,
+code, derivation, drafting</td>
+<td style="text-align: left;">Human → LLM</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Execute &amp;
+Iterate</strong></td>
+<td style="text-align: left;">LLM produces output; human reviews; LLM
+refines; repeat</td>
+<td style="text-align: left;">LLM (with human steering)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Verify</strong></td>
+<td style="text-align: left;">Cross-check every quantitative claim, run
+reproducibility tests</td>
+<td style="text-align: left;">LLM + Human</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Synthesize</strong></td>
+<td style="text-align: left;">Assemble the final document, abstract,
+cover letter, repository</td>
+<td style="text-align: left;">LLM</td>
+</tr>
+</tbody>
+</table>
+<p>The human’s role is <strong>orchestrator, not executor.</strong> You
+don’t write the code—you review it. You don’t derive the equations—you
+check the limits. You don’t draft every paragraph—you edit for clarity
+and correctness. The LLM handles throughput; you handle direction,
+taste, and verification.</p>
+<h2 id="what-the-protocol-produces">3. What the Protocol Produces</h2>
+<p>We tested this protocol on two real research problems:</p>
+<h3 id="case-study-1-theoretical-physics">Case Study 1: Theoretical
+Physics</h3>
+<p><strong>Problem:</strong> Resolve the cosmological constant
+discrepancy (<span class="math inline">\(10^{120}\)</span> mismatch
+between quantum vacuum energy and observed dark energy) using
+ultrametric (p-adic) quantum gravity frameworks.</p>
+<p><strong>Traditional timeline:</strong> ~6 months for a postdoc + PI,
+working part-time. <strong>Force-multiplied timeline:</strong> ~1 day of
+focused human direction.</p>
+<hr />
+<p><strong>Deliverables produced:</strong> - Comprehensive literature
+synthesis (15+ references, competitor analysis) - Original symbolic
+derivation (vacuum energy suppression in ultrametric geometry) - Live
+verification: SymPy script caught two mathematical errors, human steered
+the correction - Draft paper with LaTeX math, structured as a landmark
+review - All tracked in git—full audit trail</p>
+<p><strong>Self-experiment speedup:</strong> approximately <span
+class="math inline">\(25\times\)</span> over traditional solo research,
+comparable to the output volume of a small team (preliminary—controlled
+replication needed).</p>
+<h3 id="case-study-2-computational-linguistics">Case Study 2:
+Computational Linguistics</h3>
+<p><strong>Problem:</strong> Cross-linguistic Bayesian analysis of 22
+languages—testing whether information-theoretic constraints shape
+grammatical structure.</p>
+<p><strong>Traditional timeline:</strong> ~3 months for a linguist.
+<strong>Force-multiplied timeline:</strong> ~1 day.</p>
+<p><strong>Deliverables produced:</strong> - Data extraction from 22
+language corpora - Hierarchical Bayesian model specification and fitting
+- Statistical analysis and visualization - Complete preprint, published
+to Zenodo</p>
+<p><strong>Self-experiment speedup:</strong> approximately <span
+class="math inline">\(90\times\)</span> (preliminary—controlled
+replication needed).</p>
+<h3 id="the-bottom-line">The Bottom Line</h3>
+<p>In both cases, the bottleneck was not the difficulty of the
+research—it was the <strong>throughput</strong> of a single human
+executing sequential tasks. The LLM parallelizes the work: while you
+review the derivation, it drafts the next section. While you check the
+code output, it formats the references. This is the force
+multiplier.</p>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr>
+<th>## 4. The Stack (What You Actually Need)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>## 5. The 5 Prompts That Make It Work</td>
+</tr>
+<tr>
+<td>You don’t need a prompt library of 100 templates. Five prompt
+patterns cover virtually all research tasks:</td>
+</tr>
+<tr>
+<td>### Prompt 1: Literature Synthesis</td>
+</tr>
+<tr>
+<td>&gt; “Synthesize the current state of research on [TOPIC]. Cover:
+(a) the standard model/consensus, (b) 3-5 key competing approaches, (c)
+open problems, (d) what a new contribution would need to address. Cite
+specific papers with authors and years. Flag anything you’re uncertain
+about.”</td>
+</tr>
+<tr>
+<td>### Prompt 2: Derivation with Reality Check</td>
+</tr>
+<tr>
+<td>&gt; “Derive [RESULT] from [STARTING POINT], showing all steps.
+After the derivation, run a reality check: (a) does the result have the
+right physical dimensions? (b) does it reduce to known cases in
+appropriate limits? (c) are there any divergences or singularities?
+Implement the key expression in Python/SymPy and verify numerically for
+test cases.”</td>
+</tr>
+<tr>
+<td>### Prompt 3: Code Prototyping</td>
+</tr>
+<tr>
+<td>&gt; “Write a self-contained Python script that [TASK].
+Requirements: (a) uses only standard library + numpy/scipy, (b) includes
+test cases that verify correctness, (c) saves results in a structured
+format (JSON/CSV), (d) generates at least one publication-quality
+figure. Document all assumptions in comments.”</td>
+</tr>
+<tr>
+<td>### Prompt 4: Section Drafting</td>
+</tr>
+<tr>
+<td>&gt; “Draft a [SECTION TYPE] for a paper on [TOPIC]. The section
+should cover [KEY POINTS]. Use the following references: [REFS]. Style:
+academic but accessible, [JOURNAL] conventions. Flag any claims that
+need verification. After the draft, list 3 things a reviewer might
+criticize and suggest how to address them.”</td>
+</tr>
+<tr>
+<td>### Prompt 5: Verification Audit</td>
+</tr>
+<tr>
+<td>&gt; “Audit this document for: (a) quantitative claims without
+evidence—flag each one, (b) missing references, (c) internal
+contradictions, (d) ambiguous statements that could be interpreted
+multiple ways, (e) assumptions presented as facts. For each issue found,
+state what’s wrong and suggest a fix.”</td>
+</tr>
+<tr>
+<td>These five prompts, applied iteratively, cover the full research
+pipeline. The key is <strong>iteration</strong>: the first output is
+never final. You review, you redirect, the LLM refines. Three to five
+cycles per section is typical.</td>
+</tr>
+<tr>
+<td>## 6. The Verification Imperative</td>
+</tr>
+<tr>
+<td>LLMs hallucinate. They produce confident-sounding nonsense. They
+make arithmetic errors. This is not a fatal flaw—it’s a
+<strong>manageable risk</strong> if you build verification into the
+protocol.</td>
+</tr>
+<tr>
+<td>The Verification Cycle has four gates:</td>
+</tr>
+<tr>
+<td>| Gate | What | When | Who | |:—–|:—–|:—–|:—| | <strong>G1: Code
+Verification</strong> | Every quantitative claim must be reproducible
+via Python | During execution | LLM + Human | | <strong>G2: Limit
+Checks</strong> | Every derivation must be tested in known limits (<span
+class="math inline">\(t \to 0\)</span>, <span class="math inline">\(N
+\to \infty\)</span>, etc.) | After derivation | LLM | | <strong>G3:
+Reader Testing</strong> | Feed the draft to a fresh LLM instance and ask
+targeted questions | Before finalization | LLM (blind) | | <strong>G4:
+Human Review</strong> | Read the final document. Check tone, accuracy,
+completeness. | Before publication | Human |</td>
+</tr>
+<tr>
+<td><strong>Rule of thumb:</strong> If you can’t reproduce a number with
+code, it doesn’t go in the paper. If a limit check fails, the derivation
+is wrong. If a blind reader is confused, real readers will be too.</td>
+</tr>
+<tr>
+<td>We caught four significant issues through reader testing that had
+survived two rounds of self-review—including a logical contradiction
+between an 8-hour experiment cap and a 200-hour effect size estimate.
+Blind readers catch what authors can’t see.</td>
+</tr>
+<tr>
+<td>## 7. What This Changes</td>
+</tr>
+<tr>
+<td>If a solo scientist can match a small team’s output, several things
+break:</td>
+</tr>
+<tr>
+<td>### Funding</td>
+</tr>
+<tr>
+<td>The current model—“bigger team = bigger grant = more papers = bigger
+team”—assumes team size is the bottleneck. If throughput can be
+LLM-amplified, the bottleneck shifts to <strong>idea quality and
+experimental design.</strong> A $50k grant to one researcher with an LLM
+might produce more science than a $500k grant to a team of five without
+one. Grant committees need to evaluate <strong>amplified
+output</strong>, not headcount.</td>
+</tr>
+<tr>
+<td>### Training</td>
+</tr>
+<tr>
+<td>LLM fluency becomes a core scientific skill—as important as
+statistics or programming. Graduate programs should teach prompt
+engineering, verification protocols, and the difference between
+LLM-assisted and LLM-generated work. The scientist who can direct an LLM
+effectively will outproduce the one who can’t.</td>
+</tr>
+<tr>
+<td>### Publishing</td>
+</tr>
+<tr>
+<td>We should expect a rise in papers from independent researchers and
+small labs. Peer review will need to adapt: reviewers should check for
+verification hygiene (are numbers reproducible? were limit checks
+performed?) rather than assuming that a large author list implies
+rigor.</td>
+</tr>
+<tr>
+<td>### The Human Still Matters</td>
+</tr>
+<tr>
+<td>The LLM doesn’t have taste. It doesn’t know which research questions
+are important. It can’t design a clever experiment or recognize a
+surprising result. These remain human capabilities—and they become
+<em>more</em> valuable, not less, when the throughput bottleneck is
+removed. The force multiplier amplifies human creativity, it doesn’t
+replace it.</td>
+</tr>
+<tr>
+<td>## 8. Try It: The One-Day Challenge</td>
+</tr>
+<tr>
+<td>The best way to evaluate this is to run it yourself. Here’s the
+challenge:</td>
+</tr>
+<tr>
+<td>1. <strong>Pick a research question</strong>—something you’d
+normally budget a week for. A literature review. A data analysis. A
+derivation you’ve been meaning to do.</td>
+</tr>
+<tr>
+<td>2. <strong>Open a conversation with an LLM</strong> that has file
+access and code execution.</td>
+</tr>
+<tr>
+<td>3. <strong>Follow the five phases:</strong> - Define: write down
+exactly what success looks like (30 min) - Delegate: use the five
+prompts from Section 5 (15 min) - Execute &amp; Iterate: let the LLM
+produce; review and redirect (3-4 hours) - Verify: run code checks,
+limit tests, reader test (1 hour) - Synthesize: assemble the final
+output (30 min)</td>
+</tr>
+<tr>
+<td>4. <strong>Measure the speedup.</strong> How long would this have
+taken you alone? Compare.</td>
+</tr>
+<tr>
+<td>5. <strong>Report back.</strong> Tell someone. Write a blog post.
+Post to your lab’s Slack. The more data points we have, the stronger the
+case becomes.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="whats-next">9. What’s Next</h2>
+<p>This playbook is a <strong>proof of concept</strong>, not the final
+word. The next steps:</p>
+<ul>
+<li><strong>More case studies</strong> across domains: computational
+biology, pure mathematics, philosophy of science, social science</li>
+<li><strong>Controlled experiments:</strong> three-condition
+between-subjects design (solo, solo+ad-hoc LLM, solo+protocol) to
+measure the effect rigorously</li>
+<li><strong>Tool development:</strong> a containerized version of the
+stack for one-click deployment</li>
+<li><strong>Community:</strong> a repository of protocols, prompts, and
+verified case studies</li>
+</ul>
+<p>If you’re a researcher who tries this—especially if you’re in a field
+we haven’t tested yet—we want to hear from you. The methodology improves
+with every data point.</p>
+<h2 id="what-this-protocol-cannot-do-yet">10. What This Protocol Cannot
+Do (Yet)</h2>
+<p>This playbook is honest about its boundaries. Understanding what the
+protocol <em>cannot</em> do is as important as knowing what it can.</p>
+<h3 id="when-the-protocol-breaks">When the Protocol Breaks</h3>
+<p>The force-multiplier effect requires tasks that are
+<strong>well-defined, self-contained, and executable within a
+conversation.</strong> The protocol is not designed for:</p>
+<ul>
+<li><strong>Wet lab work.</strong> Pipetting, cell culture, animal
+experiments—the LLM can help plan experiments and analyze results, but
+it cannot execute physical protocols.</li>
+<li><strong>Fieldwork and human subjects.</strong> Interviews,
+ethnography, clinical trials, survey administration—these require human
+presence and institutional ethics review.</li>
+<li><strong>Proprietary or classified data.</strong> The LLM
+conversation environment is not a secure computing facility. Do not use
+it with protected health information, export-controlled data, or
+confidential industry data.</li>
+<li><strong>Large-scale computation.</strong> The built-in Python
+environment is suitable for prototyping and moderate analysis.
+Production-scale machine learning, climate simulations, or genome-wide
+analyses require dedicated HPC resources—though the protocol can
+generate the code that runs there.</li>
+</ul>
+<h3 id="quality-trade-offs">Quality Trade-offs</h3>
+<p>LLM-generated output has characteristic failure modes:</p>
+<ul>
+<li><strong>Prose can be bland.</strong> The LLM’s default “academic but
+accessible” style tends toward the generic. Human editing for voice and
+sharpness is essential and not fully captured by the protocol’s time
+estimates.</li>
+<li><strong>Code may be naive.</strong> The LLM writes functional code
+quickly but lacks domain-specific optimization knowledge. A human expert
+in the domain will often spot unnecessary loops, inefficient data
+structures, or missed numerical tricks.</li>
+<li><strong>Derivations may be algebraically correct but physically
+wrong.</strong> The LLM can manipulate symbols fluently while making
+conceptual errors. The reality check and SymPy verification catch many
+of these, but not all.</li>
+</ul>
+<h3 id="verification-gates-are-fallible">Verification Gates Are
+Fallible</h3>
+<p>The four verification gates (Section 6) reduce error rates
+dramatically—but they do not eliminate them:</p>
+<ul>
+<li><strong>G1 (Code Verification)</strong> catches arithmetic errors
+but cannot detect flawed model assumptions.</li>
+<li><strong>G2 (Limit Checks)</strong> catches divergences and boundary
+failures but cannot detect subtly wrong intermediate steps.</li>
+<li><strong>G3 (Reader Testing)</strong> catches what a fresh reader
+notices—but a fresh reader may share the same blind spots as the
+author.</li>
+<li><strong>G4 (Human Review)</strong> is the final defense, but the
+human is subject to the same cognitive biases as any reviewer.</li>
+</ul>
+<p><strong>Our experience:</strong> The verification gates caught 4 of 4
+issues in our reader test that had survived two rounds of self-review.
+But we cannot claim this generalizes to all documents, all domains, or
+all LLM versions. The gates reduce risk; they do not guarantee
+correctness.</p>
+<h3 id="what-we-dont-know">What We Don’t Know</h3>
+<ul>
+<li><strong>Domain generality.</strong> The protocol has been tested in
+two domains (theoretical physics, computational linguistics). Claims
+about biology, mathematics, philosophy, or social science are
+extrapolations.</li>
+<li><strong>Novice vs. expert.</strong> The speedup numbers were
+achieved by someone familiar with both the research domain and the
+protocol. A first-time user will likely see smaller gains.</li>
+<li><strong>LLM version dependence.</strong> Capabilities improve with
+each model generation. A protocol validated on one LLM version may
+behave differently on the next.</li>
+<li><strong>Long-term effects.</strong> Does LLM-assisted research
+change how scientists think? Does it reduce deep engagement with source
+material? Does it shift publication norms? We don’t know yet—these are
+empirical questions for future study.</li>
+</ul>
+<h3 id="ethical-boundaries">Ethical Boundaries</h3>
+<ul>
+<li><strong>Authorship.</strong> The LLM is a tool, not an author. The
+human bears full responsibility for every claim in the final output.
+Disclose LLM use explicitly in acknowledgments.</li>
+<li><strong>Reproducibility.</strong> LLM outputs are not deterministic.
+The combination of a specific prompt, a specific model version, and a
+specific random seed may not be reproducible. The <em>code</em> and
+<em>data</em> you produce should be—the conversation transcript may not
+be.</li>
+<li><strong>Plagiarism and attribution.</strong> LLMs may reproduce
+memorized text from their training data. The verification audit prompt
+helps catch this, but it is not foolproof. When in doubt, search key
+phrases against the literature.</li>
+</ul>
+<h2 id="key-metrics-at-a-glance">Key Metrics at a Glance</h2>
+<table>
+<colgroup>
+<col style="width: 53%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Metric</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Speedup (theoretical physics)</td>
+<td style="text-align: left;">~<span
+class="math inline">\(25\times\)</span> (preliminary)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Speedup (computational linguistics)</td>
+<td style="text-align: left;">~<span
+class="math inline">\(90\times\)</span> (preliminary)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Effective team size amplification</td>
+<td style="text-align: left;">~<span
+class="math inline">\(17\times\)</span> (power analysis)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Time to first draft (manuscript)</td>
+<td style="text-align: left;">~1 day of human direction</td>
+</tr>
+<tr>
+<td style="text-align: left;">Verification issues caught by reader
+testing</td>
+<td style="text-align: left;">4 of 4 (100% detection rate)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stack components</td>
+<td style="text-align: left;">4 (LLM + files + code + git)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Core prompts</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">Verification gates</td>
+<td style="text-align: left;">4</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>The bottleneck to scientific productivity could shift from
+team size to human creativity and LLM-fluency. The solo scientist is
+back.</strong></p>
+</blockquote>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

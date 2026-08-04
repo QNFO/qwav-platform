@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C.5 Edges Math | QWAV</title>
+<meta name="description" content="Appendix C: Detailed Graph Data (Edges) C.5: Edges Originating from Mathematics (Math) Nodes: Source Node ID Target Node ID Type Rationale Conf. Dir. Math::F...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/c-5-edges-math">
+<meta property="og:title" content="C.5 Edges Math">
+<meta property="og:description" content="Appendix C: Detailed Graph Data (Edges) C.5: Edges Originating from Mathematics (Math) Nodes: Source Node ID Target Node ID Type Rationale Conf. Dir. Math::F...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/c-5-edges-math">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "C.5 Edges Math",
+  "url": "https://deep.qwav.tech/papers/c-5-edges-math",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-05-09T03:21:34Z",
+  "abstract": "Appendix C: Detailed Graph Data (Edges) C.5: Edges Originating from Mathematics (Math) Nodes: Source Node ID Target Node ID Type Rationale Conf. Dir. Math::F..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<p><strong>Appendix C: Detailed Graph Data (Edges)</strong></p>
+<p><strong>C.5: Edges Originating from Mathematics (Math)
+Nodes:</strong></p>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 13%" />
+<col style="width: 2%" />
+<col style="width: 65%" />
+<col style="width: 2%" />
+<col style="width: 1%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Source Node ID</th>
+<th style="text-align: left;">Target Node ID</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Rationale</th>
+<th style="text-align: left;">Conf.</th>
+<th style="text-align: left;">Dir.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Math::FormalSystem</code></td>
+<td style="text-align: left;"><code>FOL</code></td>
+<td style="text-align: left;"><code>L-INST</code></td>
+<td style="text-align: left;">First-Order Logic is a primary example of
+a formal system used in mathematics and logic.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::FormalSystem</code></td>
+<td style="text-align: left;"><code>ZFC</code></td>
+<td style="text-align: left;"><code>L-INST</code></td>
+<td style="text-align: left;">ZFC is constructed as an axiomatic formal
+system intended to found mathematics.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::FormalSystem</code></td>
+<td style="text-align: left;"><code>Math::GoedelTheorems</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Gödel’s Incompleteness Theorems are
+meta-mathematical results <em>about</em> the properties and limitations
+of formal systems.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::GoedelTheorems</code></td>
+<td style="text-align: left;"><code>Math::FormalSystem</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">Gödel’s theorems demonstrate inherent
+limitations (incompleteness, unprovability of consistency) of formal
+systems meeting certain criteria.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::GoedelTheorems</code></td>
+<td style="text-align: left;"><code>ZFC</code></td>
+<td style="text-align: left;"><code>F-CHL</code> (Applies To)</td>
+<td style="text-align: left;">Gödel’s Incompleteness Theorems apply
+directly to ZFC (assuming its consistency), showing its inherent
+limitations.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::GoedelTheorems</code></td>
+<td style="text-align: left;"><code>Logic::Completeness</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">Gödel’s <em>Incompleteness</em> Theorems
+show that sufficiently strong systems cannot be <em>syntactically</em>
+complete (cf. FOL’s semantic completeness).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::GoedelTheorems</code></td>
+<td style="text-align: left;"><code>Logic::Decidability</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">A consequence of incompleteness is that
+sufficiently strong, consistent theories like Peano Arithmetic are
+undecidable.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::GoedelTheorems</code></td>
+<td style="text-align: left;"><code>Phil::HilbertsProgram</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Gödel’s Second Theorem, showing
+unprovability of consistency from within, refuted a central aim of
+Hilbert’s foundational program.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Calculus</code></td>
+<td style="text-align: left;"><code>CM::Law2_Force</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">Newton’s Second Law (F=ma) is a
+differential equation requiring calculus for its solution and
+analysis.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Calculus</code></td>
+<td style="text-align: left;"><code>GR::EFE</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">Einstein’s Field Equations are partial
+differential equations formulated using differential geometry, which
+builds on calculus.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Calculus</code></td>
+<td style="text-align: left;"><code>QM::SchrodingerEq</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">The Schrödinger Equation is a partial
+differential equation requiring calculus.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Calculus</code></td>
+<td style="text-align: left;"><code>Math::Continuum</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Standard calculus (limits, derivatives,
+integrals) is rigorously defined based on the properties of the real
+number continuum.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Calculus</code></td>
+<td style="text-align: left;"><code>Math::Zero</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">Reliance on limits approaching zero can
+lead to singularities when applied naively to physical models
+(infomatics critique).</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>Math::DifferentialGeometry</code></td>
+<td style="text-align: left;"><code>GR</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">Differential geometry provides the
+essential mathematical language (manifolds, tensors, curvature) for
+formulating general relativity.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>Math::DifferentialGeometry</code></td>
+<td style="text-align: left;"><code>Math::Calculus</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Differential geometry extends calculus to
+curved spaces (manifolds).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::HilbertSpace</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">Hilbert spaces provide the mathematical
+framework for representing quantum states and operators.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::HilbertSpace</code></td>
+<td style="text-align: left;"><code>Math::Calculus</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Hilbert spaces integrate concepts from
+calculus (function spaces, inner products involving integrals).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::HilbertSpace</code></td>
+<td style="text-align: left;"><code>Math::LinearAlgebra</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Hilbert spaces are vector spaces,
+fundamentally relying on linear algebra concepts (vectors, operators,
+inner products).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::ProbabilityTheory</code></td>
+<td style="text-align: left;"><code>QM::BornRule</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">The Born rule expresses measurement
+outcomes using the mathematical formalism of probability theory.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::ProbabilityTheory</code></td>
+<td style="text-align: left;"><code>StatMech</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Statistical mechanics is fundamentally
+based on applying probability theory to large ensembles of
+microstates.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::ProbabilityTheory</code></td>
+<td style="text-align: left;"><code>InfoSci::ShannonTheory</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Shannon Information Theory is
+mathematically formulated using probability distributions.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::GroupTheory</code></td>
+<td style="text-align: left;"><code>SM::GaugeSymmetry</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">Gauge symmetries in the Standard Model are
+described mathematically using Lie groups (SU(3), SU(2), U(1)).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::GroupTheory</code></td>
+<td style="text-align: left;"><code>Concept::Symmetry</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">Group theory is the mathematical framework
+for formally describing symmetries.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Continuum</code></td>
+<td style="text-align: left;"><code>Math::Calculus</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">The real number continuum is the assumed
+domain for standard calculus.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Continuum</code></td>
+<td style="text-align: left;"><code>GR::ContinuumAssumption</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">GR’s assumption of a continuous spacetime
+manifold relies on the mathematical concept of the continuum.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Continuum</code></td>
+<td style="text-align: left;"><code>Problem::PlanckScale</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">The physical relevance of the mathematical
+continuum is challenged at the Planck scale where quantum gravity
+effects are expected.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Continuum</code></td>
+<td style="text-align: left;"><code>Infomatics::Axiom2</code></td>
+<td style="text-align: left;"><code>L-CON</code> /
+<code>F-BAS</code></td>
+<td style="text-align: left;">Infomatics’ Continuum Postulate aligns
+with the mathematical concept but reinterprets its physical meaning
+(potentiality field I).</td>
+<td style="text-align: left;">M/H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Zero</code></td>
+<td style="text-align: left;"><code>Math::Calculus</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Zero is essential for concepts like limits
+and origins in standard calculus.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Zero</code></td>
+<td style="text-align: left;"><code>Problem::GRSingularity</code></td>
+<td style="text-align: left;"><code>C-INF</code></td>
+<td style="text-align: left;">Mathematical operations involving zero
+(e.g., division by zero in coordinate systems) contribute to the
+appearance of singularities in GR.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Pi</code></td>
+<td style="text-align: left;"><code>Math::Calculus</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Pi appears ubiquitously in calculus,
+especially related to trigonometric functions, integration, and
+geometry.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Pi</code></td>
+<td
+style="text-align: left;"><code>Concept::RotationalDynamics</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Pi fundamentally governs cyclical and
+rotational phenomena (infomatics Axiom 3).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Pi</code></td>
+<td style="text-align: left;"><code>QM::StateVector</code></td>
+<td style="text-align: left;"><code>S-FORM</code> (Phase)</td>
+<td style="text-align: left;">Phase factors in quantum mechanics often
+involve <span class="math inline">\(e^{i\theta}\)</span>where angles
+relate to π.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Phi</code></td>
+<td
+style="text-align: left;"><code>Concept::ScalingPhenomena</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Phi fundamentally governs scaling,
+recursion, and optimal proportion (infomatics Axiom 3).</td>
+<td style="text-align: left;">M/H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Phi</code></td>
+<td style="text-align: left;"><code>Concept::Renormalization</code></td>
+<td style="text-align: left;"><code>E-ANL</code></td>
+<td style="text-align: left;">Potential connection via scaling
+properties (speculative link to φ-recursive renormalization in
+infomatics).</td>
+<td style="text-align: left;">L/M</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Base10</code></td>
+<td style="text-align: left;"><code>Math::Pi</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">Base-10 decimals provide only
+approximations for π, introducing errors when modeling phenomena
+potentially governed by exact π ratios.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Base10</code></td>
+<td style="text-align: left;"><code>Math::Phi</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">Base-10 decimals provide only
+approximations for φ, introducing errors when modeling phenomena
+potentially governed by exact φ ratios.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Base10</code></td>
+<td
+style="text-align: left;"><code>Concept::ComputationalPhysics</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">Reliance on base-10 and floating-point
+arithmetic introduces round-off/truncation errors in simulations.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

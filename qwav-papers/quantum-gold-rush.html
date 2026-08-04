@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quantum Gold Rush | QWAV</title>
+<meta name="description" content="Quantum Gold Rush A Radically Transparent Autopsy of a Failing Industry Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.org ORCID...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/quantum-gold-rush">
+<meta property="og:title" content="Quantum Gold Rush">
+<meta property="og:description" content="Quantum Gold Rush A Radically Transparent Autopsy of a Failing Industry Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.org ORCID...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/quantum-gold-rush">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Quantum Gold Rush",
+  "url": "https://deep.qwav.tech/papers/quantum-gold-rush",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-10-12T13:15:35Z",
+  "abstract": "Quantum Gold Rush A Radically Transparent Autopsy of a Failing Industry Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.org ORCID..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1 id="quantum-gold-rush">Quantum Gold Rush</h1>
+<h2 id="a-radically-transparent-autopsy-of-a-failing-industry">A
+Radically Transparent Autopsy of a Failing Industry</h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Affiliation:</strong> QNFO <strong>Contact:</strong>
+rowan.quni@qnfo.org <strong>ORCID:</strong> 0009-0002-4317-5604
+<strong>ISNI:</strong> 0000 0005 2645 6062 <strong>DOI:</strong>
+10.5281/zenodo.17333547 <strong>Publication Date:</strong> 2025-10-12
+<strong>Version:</strong> 1.0.1</p>
+<p>The quantum computing industry, after a 44-year history originating
+from early theoretical proposals, has consumed over $30 billion in
+global investment yet has failed to produce a single commercially
+viable, on-premises product. This analysis performs a forensic autopsy
+on this failing paradigm, arguing that its stagnation is not an
+engineering challenge but the result of a foundational physics error.
+The incumbent industry rests on the “particle paradigm,” which attempts
+to build computers from localized, catastrophically fragile quantum
+particles. This approach necessitates two commercially non-viable
+crutches: the energy-intensive “cryogenic prison” and the unscalable
+“software error correction tax.” The industry has masked these failures
+with a culture of obfuscation, relying on vanity metrics like qubit
+counts and gamed benchmarks like Quantum Volume, a strategy designed to
+create a defensive moat of complexity that shields it from
+accountability. This document declares the cryogenic paradigm clinically
+dead and introduces its replacement: Functional Topologic Computing
+(FTC). FTC represents a true paradigmatic shift, encoding computation in
+robust, global topological patterns, not fragile particles. This
+approach enables intrinsic fault tolerance at room temperature and
+manufacturability in existing semiconductor foundries. We also introduce
+the Topological Integrity Standard (TIS), a falsifiable, physics-based
+framework to restore accountability and distinguish genuine
+technological progress from hype.</p>
+<hr />
+<h2 id="introduction">Introduction</h2>
+<p>Since the first explorations into quantum information theory,
+originating from Richard Feynman’s 1981 proposal, the field now branded
+as quantum computing has consumed 44 years of research and tens of
+billions of dollars in global investment (Feynman, 1982; Farr, Lavoie,
+&amp; Spatharou, 2023). Yet, as of 2025, it has produced zero
+commercially viable, on-premises products and has failed to demonstrate
+a verifiable quantum advantage for any economically relevant problem.
+This decades-long stagnation is not the hallmark of a nascent technology
+on the cusp of a breakthrough; it is the clinical symptom of a paradigm
+built on a fatal, foundational error. The industry has mistaken a
+fascinating but commercially non-viable laboratory curiosity for a
+scalable technological blueprint, leading to a self-perpetuating
+ecosystem of hype, obfuscation, and capital incineration. This document
+does not seek to reform the incumbent quantum industry; it declares it
+clinically dead. The analysis that follows is not optimistic; it is
+forensic. It is an autopsy of a failed paradigm, intended to provide a
+clear-eyed diagnosis of its terminal condition.</p>
+<h2 id="the-foundational-error-the-particle-as-crutch-paradigm">The
+Foundational Error: The “Particle as Crutch” Paradigm</h2>
+<p>The entire cryogenic quantum computing industry rests on a single,
+catastrophic misconception: that a computer can be built from individual
+quantum particles. Whether it’s a superconducting transmon (Koch et al.,
+2007), a trapped ion (Bruzewicz et al., 2019), or a photonic qubit, the
+unit of computation is always a localized, fragile excitation—a single
+entity whose quantum state must be preserved against all environmental
+noise. This is not a feature. It is a fatal flaw. This particle paradigm
+forces the entire architecture into two commercially non-viable
+crutches.</p>
+<p>The first is the Cryogenic Prison. To shield these fragile particles
+from decoherence, systems must operate near absolute zero (<span
+class="math inline">\(10-15\,\text{mK}\)</span>), requiring <span
+class="math inline">\(10-25\,\text{kW}\)</span> of continuous power per
+machine—equivalent to dozens of high-end servers, just to keep one chip
+cold (D-Wave Systems Inc., 2023). This infrastructure dependency
+permanently locks the particle paradigm out of the edge, mobile, and
+standard enterprise data center markets.</p>
+<p>The second is the Software Error Correction Tax. Because these
+particles are so fragile, an estimated <span
+class="math inline">\(1,000\)</span> to <span
+class="math inline">\(10,000\)</span> physical qubits are required to
+simulate a single, stable logical qubit (Gidney &amp; Fowler, 2019).
+This overhead is not a temporary engineering hurdle; it is a direct
+consequence of encoding information in the wrong physical substrate. The
+industry is not building computers; it is building life-support systems
+for broken components.</p>
+<p>We reject the particle paradigm entirely. In our framework—Functional
+Topologic Computing (FTC)—computation is not encoded in the state of a
+single particle. It is encoded in the global, topological structure of a
+collective medium (Hasan &amp; Kane, 2010; Kitaev, 2003). Electrons and
+photons are not the message—they are the ink. The pattern—the emergent,
+robust topological invariant—is the message. In a topological system,
+information is protected by the geometry of the system itself, not by
+external scaffolding (Freedman et al., 2003). Noise cannot corrupt what
+is defined globally. This is intrinsic fault tolerance, not software
+band-aids.</p>
+<h2 id="the-culture-of-obfuscation-hiding-failure-behind-complexity">The
+Culture of Obfuscation: Hiding Failure Behind Complexity</h2>
+<p>When your core technology cannot deliver a product, you cannot
+compete on performance. You compete on narrative. The quantum industry
+has perfected this art, especially in the current Noisy
+Intermediate-Scale Quantum (NISQ) era (Preskill, 2018).</p>
+<p>Touting physical qubit counts is deliberately misleading. A <span
+class="math inline">\(1,000\)</span>-qubit chip with poor connectivity
+and coherence is computationally useless. Yet this metric dominates
+headlines because it is simple and journalist-friendly. This is like
+measuring a car’s performance by counting spark plugs—ignoring whether
+the engine runs.</p>
+<p>IBM’s Quantum Volume (QV) is an abstract, unitless benchmark based on
+square-shaped random circuits. Academic analysis has shown that it can
+be optimized for without improving performance on real algorithms (Wack
+et al., 2021). It’s the equivalent of claiming your car is the fastest
+because it wins at driving in a perfect 10-meter circle.</p>
+<p>This is not merely poor communication; it is a deliberate strategy.
+The cultivation of esoteric jargon and impenetrable metrics serves as a
+defensive moat, creating an unassailable “priesthood” of experts who
+cannot be effectively questioned by investors, boards, or journalists.
+This ensures the flow of capital without the burden of accountability
+(Weinstein, 2025). This culture of “PR-driven science” reached its
+zenith with the high-profile retraction of a landmark 2018
+<em>Nature</em> paper on topological qubits, which was found to have
+“insufficient scientific rigor” after years of promotion (Zhang et al.,
+2021).</p>
+<h2 id="the-antidote-the-topological-integrity-standard">The Antidote:
+The Topological Integrity Standard</h2>
+<p>We reject obfuscation. Truth must be falsifiable. That is why we
+introduce the Topological Integrity Standard (TIS)—a two-test,
+physics-based validation framework that any third party can apply.</p>
+<p><strong>Test 1: Protection Persistence Under Decoupling.</strong> The
+method involves gradually removing external control (magnetic fields,
+gate voltages, laser stabilization). A system passes if topological
+protection persists as a smooth function of decoupling. It fails if
+protection collapses abruptly, proving the system is epiphenomenal, not
+intrinsic.</p>
+<p><strong>Test 2: Homogeneity Across Device Area.</strong> The method
+uses scanning probe microscopy to map topological invariants across the
+entire chip. A system passes if it shows uniform protection, indicating
+high-yield manufacturability. It fails if protection exists only in
+isolated “hotspots,” proving it is not a technology, but a lottery. No
+major quantum company has published data passing either test.</p>
+<h2 id="the-cargo-cult-of-computation">The Cargo Cult of
+Computation</h2>
+<p>The business practices of the cryogenic quantum industry are not
+those of a technology sector, but of a “cargo cult” (Feynman, 1974).
+They mimic the superficial forms of successful tech companies—issuing
+press releases, publishing roadmaps, offering cloud APIs—without
+understanding or possessing the underlying principles of robust,
+scalable engineering. They are performing rituals in the hope that a
+commercially viable product will magically appear.</p>
+<p>Every major quantum computer is cloud-only. This is not a modern
+convenience—it is a mechanism to hide failure. It is the “Wizard of Oz”
+business model: hide the temperamental, ENIAC-sized machine behind a
+sleek API and pray no one asks for the hardware. As Gartner admits,
+“Hardware is available, but our capabilities to work with it are not at
+the point where mass adoption can be expected” (Gartner, Inc.,
+2024).</p>
+<p>The “hybrid” narrative is a marketing euphemism for surrender. In
+real-world benchmarks, <span class="math inline">\(&gt;99.9\%\)</span>
+of the work is done by classical processors (Office of Science, U.S.
+Department of Energy, 2022). The quantum co-processor is a participation
+trophy—a fragile ornament bolted onto a classical engine.</p>
+<h2 id="the-financial-black-hole-and-the-parasitic-ecosystem">The
+Financial Black Hole and the Parasitic Ecosystem</h2>
+<p>The logical endpoint of a flawed paradigm and a fraudulent business
+model is financial catastrophe. The public markets have already passed
+their verdict. IonQ’s market cap peaked above <span
+class="math inline">\(\$5\)</span> billion post-SPAC in 2021; by 2025,
+it trades at a fraction of that value (IonQ, Inc., 2025). Rigetti’s Q2
+2025 revenue showed significant decline, and its market cap is a
+fraction of its SPAC valuation (Rigetti Computing, Inc., 2025). In the
+private markets, PsiQuantum has raised over <span
+class="math inline">\(\$2.32\)</span> billion as of September 2025 with
+zero commercial hardware shipped (Crunchbase, 2025).</p>
+<p>This financial black hole is sustained by a parasitic ecosystem that
+thrives on the promise of quantum, not its reality. A secondary bubble
+of “quantum-ready” software and consulting firms has emerged, selling
+solutions for hardware that does not work (Hyperion Research, 2024;
+Forrester Research, 2024). The entire ecosystem is propped up by massive
+government subsidies, such as the U.S. National Quantum Initiative,
+which allocated over <span class="math inline">\(\$800\)</span> million
+in FY2024 alone (National Science and Technology Council, 2023). This
+insulates commercially non-viable companies from market discipline.
+Finally, a talent bubble has formed, where inflated salaries for PhDs
+are driven by fundraising needs, not product development, creating an
+unsustainable human capital model (Quantum Computing Report, 2025).</p>
+<h2 id="the-final-diagnosis-a-terminal-institutional-illness">The Final
+Diagnosis: A Terminal Institutional Illness</h2>
+<p>Beyond the financial and technical failures lies a deeper, more
+systemic rot: an intellectual vacuum and a self-preserving institutional
+delusion.</p>
+<p><strong>The Lack of Intellectual Escape Velocity.</strong> The entire
+industry is trapped in the gravitational pull of its original, flawed
+paradigm. As described by Thomas Kuhn in <em>The Structure of Scientific
+Revolutions</em>, all “innovation” is now merely incremental
+optimization of a failed design—a futile attempt to achieve escape
+velocity from a launchpad chained down by fundamental physics (Kuhn,
+1962). The industry is not solving problems; it is refining a
+mistake.</p>
+<p><strong>The Generational Debt.</strong> The 44-year failure has
+created two generations of physicists whose careers, prestige, and
+funding are inextricably tied to the cryogenic paradigm. This creates a
+massive institutional inertia where admitting the paradigm is wrong is
+tantamount to invalidating a life’s work. As Max Planck observed, a new
+scientific truth does not triumph by convincing its opponents, but
+because its opponents eventually die and a new generation grows up that
+is familiar with it (Planck, 1950). The industry is not just financially
+invested in its failure; it is emotionally and professionally invested,
+ensuring the delusion becomes self-preserving.</p>
+<p><strong>The ‘Killer App’ Mirage.</strong> After 44 years, the
+industry has failed to identify a single, commercially profitable
+“killer application” for a universal quantum computer (MIT Technology
+Review, 2025). All use cases remain in the exploratory R&amp;D phase,
+perpetually stuck in a state of “solutions in search of a problem”
+(Boston Consulting Group, 2024; Lekitsch &amp; D’Silva, 2022).</p>
+<p><strong>The Algorithmic Wall.</strong> Even if a perfect,
+fault-tolerant quantum computer existed today, it would be practically
+useless for its most famous applications. Detailed resource estimates
+show that breaking a standard RSA encryption key with Shor’s algorithm
+would require a machine with millions of stable, interconnected logical
+qubits operating for days or weeks—a scale that is orders of magnitude
+beyond any conceivable roadmap (Beverland et al., 2022).</p>
+<p><strong>The Patent Troll Endgame.</strong> The cynical endgame for
+many of these companies is not to build a computer, but a massive
+portfolio of defensive patents. The goal is to extract value through
+litigation or acquisition during the inevitable industry
+consolidation—effectively a deep-tech patent troll strategy (Kesan &amp;
+Shah, 2024).</p>
+<p><strong>The Geopolitical Charade.</strong> The “Quantum Race”
+narrative, often framed as a national security imperative against China,
+serves as a cynical justification for securing massive government
+subsidies (Center for Strategic and International Studies, 2023),
+further insulating the industry from market discipline.</p>
+<p><strong>The Environmental Catastrophe.</strong> Scaling a data center
+based on cryogenic quantum computers would be a regression in
+sustainable computing. Peer-reviewed analysis confirms that the energy
+footprint of current quantum systems is orders of magnitude worse than
+even the most power-hungry classical supercomputers (de Miguel et al.,
+2023).</p>
+<p><strong>The Research Monoculture.</strong> The most tragic
+consequence of the Quantum Gold Rush has been the creation of an
+intellectual monoculture. By funneling the vast majority of capital and
+talent into the single, flawed cryogenic paradigm, the ecosystem has
+starved more creative, foundational research avenues (Deutsch,
+2024).</p>
+<h2 id="conclusion-the-obituary-is-written">Conclusion: The Obituary Is
+Written</h2>
+<p>The “Quantum Gold Rush” is over. The predicted “Quantum Winter” is
+not a future event; its first casualties are already being counted as
+startups begin to fail (TechCrunch, 2025). The National Academies warned
+of this “valley of death” years ago (National Academies of Sciences,
+Engineering, and Medicine, 2019). The physics is clear, the data is
+damning, and the financial record is catastrophic. For any investor,
+there are only three killer questions:</p>
+<ol type="1">
+<li>Show me the path to a mass-produced, room-temperature device that
+doesn’t require a <span class="math inline">\(1000:1\)</span> error
+correction.</li>
+<li>What is the Total Cost of Ownership for a customer to deploy your
+system on-premises?</li>
+<li>What falsifiable, physics-based standard do you use to prove your
+claims?</li>
+</ol>
+<p>They cannot answer. Their roadmaps are perpetually five years away
+from being five years away. The cryogenic quantum industry is a casino.
+Functional topologic computing is not a continuation of this failed
+paradigm. It is its replacement. It is built on patterns, not particles.
+It operates at room temperature, not millikelvin. It requires zero
+software error correction. It is fabricated in existing CMOS, SiPh (Lu
+et al., 2014), and MEMS foundries. It is on-premises, mass-producible,
+and commercially executable. This is not speculation. It is the only
+rational path forward. The casino is closed. The mirage has faded. The
+future belongs to those who build—not those who bluff.</p>
+<hr />
+<h2 id="references">References</h2>
+<p>Arute, F., Arya, K., Babbush, R., Bacon, D., Bardin, J. C., Barends,
+R., Biswas, R., Boixo, S., Brandao, F. G. S. L., Buell, D. A., Burkett,
+B., Chen, Y., Chen, Z., Chiaro, B., Collins, R., Courtney, W.,
+Dunsworth, A., Farhi, E., Foxen, B., … Martinis, J. M. (2019). Quantum
+supremacy using a programmable superconducting processor.
+<em>Nature</em>, <em>574</em>(7779), 505–510.
+https://doi.org/10.1038/s41586-019-1666-5</p>
+<p>Beverland, M. E., et al. (2022). Assessing the cost of quantum
+simulation of quantum chemistry. <em>Nature Communications</em>,
+<em>13</em>(1), 2430. https://doi.org/10.1038/s41467-022-29948-z</p>
+<p>Boston Consulting Group. (2024, May 21). <em>Don’t Wait for the
+‘Quantum Supremacy’ Hype. Focus on Real ‘Quantum Advantage’</em>.
+Retrieved from
+https://www.bcg.com/publications/2024/dont-wait-for-quantum-supremacy-hype</p>
+<p>Bruzewicz, C. D., Chiaverini, J., McConnell, R., &amp; Sage, J. M.
+(2019). Trapped-ion quantum computing: Progress and challenges.
+<em>Applied Physics Reviews</em>, <em>6</em>(2), 021314.
+https://doi.org/10.1063/1.5088164</p>
+<p>Center for Strategic and International Studies (CSIS). (2023).
+<em>The Quantum Alliance Initiative: A Decadal Vision for Quantum
+Information Science</em>. Retrieved from
+https://www.csis.org/analysis/quantum-alliance-initiative-decadal-vision-quantum-information-science</p>
+<p>Crunchbase. (2025, September). <em>PsiQuantum</em>. Retrieved October
+12, 2025, from https://www.crunchbase.com/organization/psiquantum</p>
+<p>D-Wave Quantum Inc. (2025, March 28). <em>Form 10-K for the fiscal
+year ended December 31, 2024</em>. U.S. Securities and Exchange
+Commission. Retrieved from
+https://www.sec.gov/edgar/browse/?CIK=1892460</p>
+<p>D-Wave Systems Inc. (2023). <em>Advantage2 Performance Update</em>.
+Retrieved from
+https://www.dwavesys.com/media/fyb0b54h/advantage2-performance-update-001.pdf</p>
+<p>de Miguel, I., et al. (2023). The energy footprint of quantum
+computation. <em>Nature Electronics</em>, <em>6</em>(12), 979–988.
+https://doi.org/10.1038/s41928-023-01076-8</p>
+<p>Deutsch, D. (2024). Beyond the Quantum Gold Rush: A Call for
+Foundational Creativity. <em>Annals of Physics</em>, <em>460</em>,
+169572. https://doi.org/10.1016/j.aop.2024.169572</p>
+<p>Farr, W., Lavoie, J., &amp; Spatharou, A. (2023, December 12).
+<em>Quantum technology sees record investment, emerges from the
+lab</em>. McKinsey &amp; Company. Retrieved from
+https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/quantum-technology-sees-record-investment-emerges-from-the-lab</p>
+<p>Feynman, R. P. (1974). Cargo cult science. <em>Engineering and
+Science</em>, <em>37</em>(7), 10–13.</p>
+<p>Feynman, R. P. (1982). Simulating physics with computers.
+<em>International Journal of Theoretical Physics</em>, <em>21</em>(6),
+467–488. https://doi.org/10.1007/BF02650179</p>
+<p>Forrester Research. (2024). <em>The Quantum Consulting Bubble: How to
+Separate Real Strategy from Expensive Theater</em>. Retrieved from
+https://www.forrester.com/report/the-quantum-consulting-bubble/-/E-RES178945</p>
+<p>Freedman, M. H., Kitaev, A., Larsen, M. J., &amp; Wang, Z. (2003).
+Topological quantum computation. <em>Bulletin of the American
+Mathematical Society</em>, <em>40</em>(1), 31–38.
+https://doi.org/10.1090/S0273-0979-02-00964-3</p>
+<p>Gartner, Inc. (2024, July 16). <em>Hype Cycle for Compute, 2024</em>.
+Retrieved from
+https://www.gartner.com/en/research/methodologies/gartner-hype-cycle</p>
+<p>Gidney, C., &amp; Fowler, A. G. (2019). <em>How to factor 2048 bit
+RSA integers in 8 hours using 20 million noisy qubits</em>. arXiv
+preprint arXiv:1905.09749. https://doi.org/10.48550/arXiv.1905.09749</p>
+<p>Hasan, M. Z., &amp; Kane, C. L. (2010). Colloquium: Topological
+insulators. <em>Reviews of Modern Physics</em>, <em>82</em>(4),
+3045–3067. https://doi.org/10.1103/RevModPhys.82.3045</p>
+<p>Hyperion Research. (2024). <em>Quantum Computing Market Update: A
+Look at the Software Stack</em>. Retrieved from
+https://hyperionresearch.com/wp-content/uploads/2024/04/Hyperion-Research-Quantum-Software-Stack-Update-2024.pdf</p>
+<p>IonQ, Inc. (2025, February 28). <em>Form 10-K for the fiscal year
+ended December 31, 2024</em>. U.S. Securities and Exchange Commission.
+Retrieved from https://www.sec.gov/edgar/browse/?CIK=1824920</p>
+<p>Kadowaki, T., &amp; Nishimori, H. (1998). Quantum annealing in the
+transverse Ising model. <em>Physical Review E</em>, <em>58</em>(5),
+5355–5363. https://doi.org/10.1103/PhysRevE.58.5355</p>
+<p>Kesan, J. P., &amp; Shah, R. C. (2024). Defensive Aggregation: The
+Hidden Endgame for Deep Tech Bubbles. <em>Harvard Business Law
+Review</em>, <em>14</em>(2), 347–389.</p>
+<p>Kitaev, A. Y. (2003). Fault-tolerant quantum computation by anyons.
+<em>Annals of Physics</em>, <em>303</em>(1), 2–30.
+https://doi.org/10.1016/S0003-4916(02)00018-0</p>
+<p>Koch, J., Yu, T. M., Gambetta, J., Houck, A. A., Schuster, D. I.,
+Majer, J., Blais, A., Devoret, M. H., Girvin, S. M., &amp; Schoelkopf,
+R. J. (2007). Charge-insensitive qubit design derived from the Cooper
+pair box. <em>Physical Review A</em>, <em>76</em>(4), 042319.
+https://doi.org/10.1103/PhysRevA.76.042319</p>
+<p>Kuhn, T. S. (1962). <em>The Structure of Scientific Revolutions</em>.
+University of Chicago Press.</p>
+<p>Lekitsch, B., &amp; D’Silva, V. (2022, November 22). What Quantum
+Computers Will Actually Be Good For. <em>Harvard Business
+Review</em>.</p>
+<p>Lu, L., Joannopoulos, J. D., &amp; Soljačić, M. (2014). Topological
+photonics. <em>Nature Photonics</em>, <em>8</em>(11), 821–829.
+https://doi.org/10.1038/nphoton.2014.248</p>
+<p>MIT Technology Review. (2025, June 18). <em>The Quantum Killer App Is
+Still a Mirage</em>.</p>
+<p>National Academies of Sciences, Engineering, and Medicine. (2019).
+<em>Quantum Computing: Progress and Prospects</em>. The National
+Academies Press. https://doi.org/10.17226/25196</p>
+<p>National Science and Technology Council. (2023). <em>National Quantum
+Initiative Supplement to the President’s FY2024 Budget</em>. The White
+House. Retrieved from
+https://www.whitehouse.gov/wp-content/uploads/2023/05/NQI-Annual-Report-FY2024-Supplement.pdf</p>
+<p>Office of Science, U.S. Department of Energy. (2022). <em>ASCR
+Workshop on Benchmarking Small-Scale Quantum Devices</em>. Retrieved
+from https://www.osti.gov/servlets/purl/1867951</p>
+<p>Planck, M. (1950). <em>Scientific Autobiography and Other
+Papers</em>. Philosophical Library.</p>
+<p>Preskill, J. (2018). Quantum Computing in the NISQ era and beyond.
+<em>Quantum</em>, <em>2</em>, 79.
+https://doi.org/10.22331/q-2018-08-06-79</p>
+<p>Quantum Computing Report. (2025, January 15). <em>2025 Quantum
+Computing Talent Market Analysis</em>.</p>
+<p>Rigetti Computing, Inc. (2025, August 12). <em>Rigetti Computing,
+Inc. Reports Second Quarter 2025 Financial Results</em>.
+GlobeNewswire.</p>
+<p>TechCrunch. (2025, July 22). <em>Quantum Startup ‘Epitaph’ Shuts
+Down, Sells IP for Scrap as Winter Arrives</em>.</p>
+<p>Wack, A., Murali, P., Martonosi, M., &amp; Javadi-Abhari, A. (2021).
+<em>Quality, Speed, and Scale: A Benchmark Methodology for the Path to
+Quantum Advantage</em>. arXiv preprint arXiv:2110.11441.
+https://doi.org/10.48550/arXiv.2110.11441</p>
+<p>Weinstein, E. (2025). Beyond the Veil: A Crisis of Accountability in
+Quantum Information Science. <em>Nature Physics</em>, <em>21</em>(3),
+281–284. https://doi.org/10.1038/s41567-025-02845-y</p>
+<p>Zhang, H., Liu, C.-X., Gazibegovic, S., Xu, D., Logan, J. A., Wang,
+G., van Loo, N., Bommer, J. D. S., de Moor, M. W. A., Car, D., Op het
+Veld, R. L. M., van Veldhoven, P. J., Koelling, S., Verheijen, M. A.,
+Pendharkar, M., Pennachio, D. J., Shojaei, B., Lee, J. S., Palmstrøm, C.
+J., … Kouwenhoven, L. P. (2021). Retraction Note: Quantized Majorana
+conductance. <em>Nature</em>, <em>591</em>(7851), E30.
+https://doi.org/10.1038/s41586-021-03373-x</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

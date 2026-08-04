@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C.6 Edges Logic | QWAV</title>
+<meta name="description" content="Appendix C: Detailed Graph Data (Edges) C.6: Edges Originating from Logic Nodes Source Node ID Target Node ID Type Rationale Conf. Dir. FOL ZFC F-BAS First-O...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/c-6-edges-logic">
+<meta property="og:title" content="C.6 Edges Logic">
+<meta property="og:description" content="Appendix C: Detailed Graph Data (Edges) C.6: Edges Originating from Logic Nodes Source Node ID Target Node ID Type Rationale Conf. Dir. FOL ZFC F-BAS First-O...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/c-6-edges-logic">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "C.6 Edges Logic",
+  "url": "https://deep.qwav.tech/papers/c-6-edges-logic",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-05-09T03:21:33Z",
+  "abstract": "Appendix C: Detailed Graph Data (Edges) C.6: Edges Originating from Logic Nodes Source Node ID Target Node ID Type Rationale Conf. Dir. FOL ZFC F-BAS First-O..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<p><strong>Appendix C: Detailed Graph Data (Edges)</strong></p>
+<p><strong>C.6: Edges Originating from Logic Nodes</strong></p>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 3%" />
+<col style="width: 74%" />
+<col style="width: 1%" />
+<col style="width: 1%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Source Node ID</th>
+<th style="text-align: left;">Target Node ID</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Rationale</th>
+<th style="text-align: left;">Conf.</th>
+<th style="text-align: left;">Dir.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>FOL</code></td>
+<td style="text-align: left;"><code>ZFC</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">First-Order Logic provides the formal
+language and deductive system within which the axioms of ZFC are stated
+and theorems are derived.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FOL</code></td>
+<td style="text-align: left;"><code>Math::FormalSystem</code></td>
+<td style="text-align: left;"><code>L-INST</code></td>
+<td style="text-align: left;">First-Order Logic is a primary example and
+foundation for many mathematical formal systems.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FOL</code></td>
+<td style="text-align: left;"><code>Logic::Soundness</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The standard proof systems for FOL are
+sound (only prove valid formulas).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FOL</code></td>
+<td style="text-align: left;"><code>Logic::Completeness</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">FOL is semantically complete (all valid
+formulas are provable) according to Gödel’s Completeness Theorem.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FOL::Syntax</code></td>
+<td style="text-align: left;"><code>FOL</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The syntax (symbols, formation rules) is a
+defining component of FOL.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FOL::Semantics</code></td>
+<td style="text-align: left;"><code>FOL</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The semantics (rules for interpretation in
+models, truth definition) are a defining component of FOL.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FOL::ProofTheory</code></td>
+<td style="text-align: left;"><code>FOL</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The proof theory (logical axioms,
+inference rules) is a defining component of FOL.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FOL::ProofTheory</code></td>
+<td style="text-align: left;"><code>Logic::Soundness</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">Soundness is a property <em>of</em> the
+proof theory relative to the semantics.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC</code></td>
+<td style="text-align: left;"><code>Mathematics</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">ZFC serves as the standard foundational
+axiomatic system for the vast majority of contemporary mathematics.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC</code></td>
+<td style="text-align: left;"><code>Math::Continuum</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">The real number continuum is typically
+constructed rigorously within ZFC using set-theoretic definitions (e.g.,
+Dedekind cuts).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC</code></td>
+<td style="text-align: left;"><code>Math::HilbertSpace</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">The definition and properties of Hilbert
+spaces rely on concepts (sets, functions, limits) formally grounded in
+ZFC.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC</code></td>
+<td style="text-align: left;"><code>Math::GoedelTheorems</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">Gödel’s Incompleteness Theorems apply to
+ZFC (assuming its consistency), challenging its potential for syntactic
+completeness and demonstrating the unprovability of its own consistency
+from within</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC::Axioms</code></td>
+<td style="text-align: left;"><code>ZFC</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The specific axioms are the defining
+components of the ZFC system.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC::AxiomOfChoice</code></td>
+<td style="text-align: left;"><code>ZFC::Axioms</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Axiom of Choice is a distinct (and
+historically controversial) axiom within the ZFC axiom set.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC::AxiomOfInfinity</code></td>
+<td style="text-align: left;"><code>ZFC::Axioms</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Axiom of Infinity is crucial within
+ZFC for founding analysis and dealing with infinite sets.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC::AxiomOfRegularity</code></td>
+<td style="text-align: left;"><code>ZFC::Axioms</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Axiom of Regularity is a key axiom in
+ZFC ensuring sets are well-founded.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC::SetConcept</code></td>
+<td style="text-align: left;"><code>ZFC</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">The ontological commitment to pure sets is
+fundamental to the ZFC framework.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC::CumulativeHierarchy</code></td>
+<td style="text-align: left;"><code>ZFC</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">The cumulative hierarchy provides the
+standard intended model or picture for the universe of sets described by
+ZFC.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC::CumulativeHierarchy</code></td>
+<td style="text-align: left;"><code>ZFC::AxiomOfRegularity</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The Axiom of Regularity formally implies
+the well-founded hierarchical structure.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

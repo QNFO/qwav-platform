@@ -1,0 +1,11 @@
+name = "github-sync"
+main = "src/entry.py"
+compatibility_date = "2025-08-01"
+compatibility_flags = ["python_workers"]
+
+[triggers]
+crons = ["0 6 * * *"]
+
+[[r2_buckets]]
+binding = "QNFO"
+bucket_name = "qnfo"

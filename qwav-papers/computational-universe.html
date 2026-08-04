@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computational Universe | QWAV</title>
+<meta name="description" content="Computational Universe A Unified Theory of Multi-Scale Computation Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.org ORCID: 000...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/computational-universe">
+<meta property="og:title" content="Computational Universe">
+<meta property="og:description" content="Computational Universe A Unified Theory of Multi-Scale Computation Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.org ORCID: 000...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/computational-universe">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Computational Universe",
+  "url": "https://deep.qwav.tech/papers/computational-universe",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-10-24T10:39:50Z",
+  "keywords": [
+    ": computation",
+    "multi-scale computation",
+    "homotopy type theory",
+    "cohesive topos",
+    "scale invariance",
+    "computational physics",
+    "strange loops",
+    "self-reference",
+    "biological computation",
+    "quantum computation"
+  ],
+  "abstract": "Computational Universe A Unified Theory of Multi-Scale Computation Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.org ORCID: 000..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1 id="computational-universe">Computational Universe</h1>
+<h2 id="a-unified-theory-of-multi-scale-computation">A Unified Theory of
+Multi-Scale Computation</h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Affiliation:</strong> QNFO <strong>Contact:</strong>
+rowan.quni@qnfo.org <strong>ORCID:</strong> 0009-0002-4317-5604
+<strong>ISNI:</strong> 0000 0005 2645 6062 <strong>DOI:</strong>
+10.5281/zenodo.17432891 <strong>Publication Date:</strong> 2025-10-24
+<strong>Version:</strong> 1.0</p>
+<p><strong>Abstract</strong>: This work establishes computation as an
+ontological primitive from which physical reality emerges. Spacetime,
+matter, and energy are derived from a self-computing causal network of
+distinctions (<span class="math inline">\(A \neq B\)</span>) realized
+through spontaneous symmetry breaking. The bacterial flagellar motor is
+presented as a physical embodiment of these principles, a system that
+both computes and measures, thus instantiating observational
+entanglement. A formal framework built on homotopy type theory, cohesive
+<span class="math inline">\(\infty\)</span>-topos theory, and synthetic
+differential geometry is used to model computational identity across
+scales. Quantum, biological, and cognitive domains are unified using
+computational gauge theory, sheaf cohomology, and renormalization group
+flow. The theory manages its own epistemological closure by
+distinguishing between Object, Model, and Meta-Computation, transforming
+epistemological paradoxes into generative constraints. This framework
+provides a foundation for quantum-bio-inspired computing, offers a new
+perspective on computational cosmology, and grounds a participatory
+ontology that dissolves the subject-object dualism.</p>
+<p><strong>Keywords</strong>: computation, multi-scale computation,
+homotopy type theory, cohesive topos, scale invariance, computational
+physics, strange loops, self-reference, biological computation, quantum
+computation</p>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr>
+<th>## 1. Computation as Ontologically Primitive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>## Appendices</td>
+</tr>
+<tr>
+<td>### Appendix A: Homotopy Type Theory Formalizations</td>
+</tr>
+<tr>
+<td><strong>Theorem A.1: Computational equivalence is constructively
+witnessed by cubical paths.</strong></td>
+</tr>
+<tr>
+<td><strong>Proof:</strong> Working in cubical type theory with interval
+object <span class="math inline">\(\mathbb{I}\)</span>, for
+computational systems <span class="math inline">\(A, B:
+\text{Type}\)</span>, we define the function <span
+class="math inline">\(\text{comp\_equiv}\)</span> that turns an
+equivalence <span class="math inline">\(e\)</span> into a path:</td>
+</tr>
+<tr>
+<td><span class="math display">\[
+\begin{aligned}
+\text{comp\_equiv} : (A \simeq B) &amp;\to \text{Path}(\text{Type}, A,
+B) := \\
+\lambda e. \langle i \rangle \text{Glue } A [(i = 0) &amp;\to (A,
+\text{idEquiv } A), (i = 1) \to (B, e)] \\
+\end{aligned}
+\]</span></td>
+</tr>
+<tr>
+<td>This function constructs a higher-dimensional cube whose boundary at
+<span class="math inline">\(i=0\)</span> is system <span
+class="math inline">\(A\)</span> and at <span
+class="math inline">\(i=1\)</span> is system <span
+class="math inline">\(B\)</span>, with the equivalence <span
+class="math inline">\(e\)</span> specifying how to relate them. For a
+quantum system <span class="math inline">\(Q\)</span>, a biological
+system <span class="math inline">\(B\)</span>, and a digital system
+<span class="math inline">\(D\)</span> with proven equivalences <span
+class="math inline">\(e: Q \simeq B\)</span> and <span
+class="math inline">\(f: B \simeq D\)</span>, the computational identity
+across all three scales is witnessed by the composite path:</td>
+</tr>
+<tr>
+<td><span class="math display">\[
+\text{comp\_path} : \text{Path}(\text{Type}, Q, D) :=
+\text{transp} (\text{comp\_equiv } e) (\text{comp\_equiv } f)
+\]</span></td>
+</tr>
+<tr>
+<td>This provides an explicit, constructive witness for the claim that
+all three systems, despite their different physical substrates, are
+performing the same computation. This formalizes the principle of scale
+equivalence within the theory. <span
+class="math inline">\(\square\)</span></td>
+</tr>
+<tr>
+<td>### Appendix B: Cohesive <span
+class="math inline">\(\infty\)</span>-topos Constructions</td>
+</tr>
+<tr>
+<td><strong>Theorem B.1: The <span
+class="math inline">\(\infty\)</span>-topos of multi-scale computational
+processes is cohesive.</strong></td>
+</tr>
+<tr>
+<td><strong>Proof:</strong> Let <span
+class="math inline">\(\mathcal{C}\)</span> be the <span
+class="math inline">\(\infty\)</span>-category whose objects are
+computational processes at all physical scales, 1-morphisms are
+computational transformations, and higher morphisms are equivalences
+between these transformations. We define the cohesive structure via the
+following modalities, which form an adjoint triple <span
+class="math inline">\(\int \dashv \flat \dashv \sharp\)</span>: -
+<strong>Shape Modality <span class="math inline">\(ʃ\)</span></strong>:
+Encodes the coarse-grained, homotopical essence of a computation,
+forgetting its specific state representation. - <strong>Flat Modality
+<span class="math inline">\(\flat\)</span></strong>: Encodes the
+underlying discrete computational states of a process, forgetting its
+continuous evolution. - <strong>Sharp Modality <span
+class="math inline">\(\sharp\)</span></strong>: Encodes the continuous
+limit of a computational process, forgetting its discrete steps.</td>
+</tr>
+<tr>
+<td>These modalities are verified to satisfy the cohesion axioms. For
+instance, the computational differential, a natural transformation <span
+class="math inline">\(d : \int X \to \flat X\)</span>, connects the
+global behavior to the discrete states, representing the infinitesimal
+computational transitions that drive the system’s evolution. The
+existence of this structure proves that the space of all computations is
+cohesive, meaning its discrete, continuous, and global aspects are
+internally consistent. <span class="math inline">\(\square\)</span></td>
+</tr>
+<tr>
+<td>### Appendix C: Synthetic Differential Geometric Calculations</td>
+</tr>
+<tr>
+<td><strong>Theorem C.1: Computational state spaces carry natural
+prequantum circle bundles with metaplectic correction.</strong></td>
+</tr>
+<tr>
+<td><strong>Proof:</strong> Let <span class="math inline">\((M,
+\omega)\)</span> be the symplectic manifold representing the
+computational state space, where the 2-form <span
+class="math inline">\(\omega = d\theta\)</span> is derived from the
+information 1-form <span class="math inline">\(\theta\)</span>. The
+prequantization condition, which requires that the integral of <span
+class="math inline">\(\omega\)</span> over any closed 2-surface is an
+integer multiple of <span class="math inline">\(2\pi\)</span>, is
+satisfied because information in any physical computation is ultimately
+quantized.</td>
+</tr>
+<tr>
+<td><span class="math display">\[
+[\omega] \in H^2(M, 2\pi\mathbb{Z})
+\]</span></td>
+</tr>
+<tr>
+<td>This condition guarantees the existence of a prequantum circle
+bundle over <span class="math inline">\(M\)</span>. The metaplectic
+structure is then given by a lift of the structure group of the frame
+bundle from the symplectic group <span
+class="math inline">\(\text{Sp}(n)\)</span> to its double cover, the
+metaplectic group <span class="math inline">\(\text{Mp}(n)\)</span>.
+This is formally represented by a lift of the classifying map:</td>
+</tr>
+<tr>
+<td><span class="math display">\[
+M \to B\text{Sp}(n) \to BU(1)_\nabla
+\]</span></td>
+</tr>
+<tr>
+<td>This correction incorporates the Maslov index into the computational
+phase, which is essential for correctly calculating interference effects
+in quantum biological and quantum computing systems. <span
+class="math inline">\(\square\)</span></td>
+</tr>
+<tr>
+<td>### Appendix D: Computational Gauge Theory Derivations</td>
+</tr>
+<tr>
+<td><strong>Theorem D.1: The Yang-Mills-Higgs functional describes
+optimal computational configurations.</strong></td>
+</tr>
+<tr>
+<td><strong>Definition:</strong> The computational Yang-Mills-Higgs
+functional is defined as:</td>
+</tr>
+<tr>
+<td><span class="math display">\[
+\mathcal{S}[\nabla, \Phi] = \int_M (\|F_\nabla\|^2 + \|d_\nabla\Phi\|^2
++ V(\Phi)) \, d\text{vol}
+\]</span></td>
+</tr>
+<tr>
+<td>where <span class="math inline">\(F_\nabla\)</span> is the curvature
+of the computational connection (representing scale-transition
+anomalies), <span class="math inline">\(\Phi\)</span> is the
+computational Higgs field (representing the separation between scales),
+and <span class="math inline">\(V(\Phi)\)</span> is a potential (e.g., a
+Mexican hat potential) that drives spontaneous symmetry breaking between
+computational regimes.</td>
+</tr>
+<tr>
+<td><strong>Equations of Motion:</strong> The principle of least action
+yields the equations of motion:</td>
+</tr>
+<tr>
+<td><span class="math display">\[
+d_\nabla^* F_\nabla = J(\Phi), \quad d_\nabla^*d_\nabla\Phi =
+-V&#39;(\Phi)
+\]</span></td>
+</tr>
+<tr>
+<td>These equations describe the optimal, physically realized
+computational configurations as those that minimize curvature and
+potential energy.</td>
+</tr>
+<tr>
+<td><strong>Theorem D.2: BRST cohomology eliminates unphysical
+computational states.</strong></td>
+</tr>
+<tr>
+<td><strong>Construction:</strong> For a computational gauge algebra
+<span class="math inline">\(\mathfrak{g}\)</span>, we introduce ghost
+fields <span class="math inline">\(c\)</span> and antighost fields <span
+class="math inline">\(b\)</span>. The BRST operator <span
+class="math inline">\(Q\)</span>, which is nilpotent (<span
+class="math inline">\(Q^2=0\)</span>), acts on the fields as:</td>
+</tr>
+<tr>
+<td><span class="math display">\[
+\begin{aligned}
+Q\phi &amp;= d_\nabla\phi + \{c, \phi\} \\
+Qc &amp;= -(1/2)[c, c] \\
+Qb &amp;= F_\nabla
+\end{aligned}
+\]</span></td>
+</tr>
+<tr>
+<td>The physical, gauge-invariant computational states are precisely the
+elements of the zeroth cohomology group, <span
+class="math inline">\(H^0_{\text{BRST}}(C^*(M, \mathfrak{g}))\)</span>.
+Higher cohomology groups classify the anomalies. <span
+class="math inline">\(\square\)</span></td>
+</tr>
+<tr>
+<td>### Appendix E: Sheaf Cohomology Computations</td>
+</tr>
+<tr>
+<td><strong>Theorem E.1: The derived moduli stack of computational
+processes classifies scale-transition anomalies.</strong></td>
+</tr>
+<tr>
+<td><strong>Construction:</strong> The derived stack of computational
+processes is defined as a functor from the opposite category of
+differential graded affine schemes to the category of simplicial
+sets:</td>
+</tr>
+<tr>
+<td><span class="math display">\[
+\text{CompStack} : \text{dAff}^{\text{op}} \to \text{sSet}
+\]</span></td>
+</tr>
+<tr>
+<td><span class="math display">\[
+R \mapsto \text{Map}(\text{Spec } R, \mathfrak{M}_{\text{comp}})
+\]</span></td>
+</tr>
+<tr>
+<td>where <span
+class="math inline">\(\mathfrak{M}_{\text{comp}}\)</span> is the derived
+moduli space parametrizing computational states, transition morphisms,
+and all higher coherence data. The tangent complex to this stack, <span
+class="math inline">\(T\mathfrak{M}_{\text{comp}}[-1]\)</span>, encodes
+the infinitesimal deformations of computational processes. The
+cohomology of this complex, <span
+class="math inline">\(H^i(T\mathfrak{M}_{\text{comp}})\)</span>,
+classifies the <span class="math inline">\(i\)</span>-fold obstructions
+to integrating local computational processes into a globally consistent
+multi-scale computation. A non-vanishing <span
+class="math inline">\(H^1\)</span> indicates a first-order obstruction,
+while higher groups indicate more complex consistency failures. <span
+class="math inline">\(\square\)</span></td>
+</tr>
+<tr>
+<td>### Appendix F: Renormalization Group Analysis</td>
+</tr>
+<tr>
+<td><strong>Theorem F.1: Computational complexity flows according to the
+Callan-Symanzik equation.</strong></td>
+</tr>
+<tr>
+<td><strong>Derivation:</strong> We define the computational <span
+class="math inline">\(\beta\)</span>-function as the logarithmic
+derivative of the computational coupling constant <span
+class="math inline">\(g\)</span> with respect to the energy scale <span
+class="math inline">\(\mu\)</span>:</td>
+</tr>
+<tr>
+<td><span class="math display">\[
+\beta(g) = \mu \frac{\partial g}{\partial \mu}
+\]</span></td>
+</tr>
+<tr>
+<td>For a transition between a quantum and a classical computational
+regime, this function has fixed points at <span
+class="math inline">\(g=0\)</span> (trivial computation) and <span
+class="math inline">\(g=g^*\)</span> (a non-trivial fixed point
+corresponding to critical computation at the scale transition). The
+Callan-Symanzik equation describes how the <span
+class="math inline">\(n\)</span>-point correlation functions <span
+class="math inline">\(G^{(n)}\)</span> of the computational system scale
+with energy:</td>
+</tr>
+<tr>
+<td><span class="math display">\[
+\left[\mu \frac{\partial}{\partial \mu} + \beta(g)
+\frac{\partial}{\partial g} + \gamma\right]G^{(n)} = 0
+\]</span></td>
+</tr>
+<tr>
+<td>This equation demonstrates that computational complexity is not
+absolute but is a scale-dependent quantity that flows, with universal
+properties near critical points. <span
+class="math inline">\(\square\)</span></td>
+</tr>
+<tr>
+<td>### Appendix G: Physical System Derivations</td>
+</tr>
+<tr>
+<td><strong>Theorem G.1: The quantum biological path integral includes a
+biological action quantum and topological phase terms.</strong></td>
+</tr>
+<tr>
+<td><strong>Formulation:</strong> The amplitude for a quantum biological
+process to transition from an initial to a final state is given by the
+Feynman path integral over all possible computational histories:</td>
+</tr>
+<tr>
+<td><span class="math display">\[
+\langle \text{final}|\text{initial}\rangle = \int
+\mathcal{D}[\text{path}]
+\exp(i\mathcal{S}[\text{path}]/\hbar_{\text{bio}})
+\]</span></td>
+</tr>
+<tr>
+<td>where <span class="math inline">\(\hbar_{\text{bio}}\)</span> is a
+characteristic biological action quantum, and the action <span
+class="math inline">\(\mathcal{S}[\text{path}]\)</span> for a process
+like photosynthetic energy transfer includes a topological term
+involving the Berry connection <span
+class="math inline">\(A\)</span>:</td>
+</tr>
+<tr>
+<td><span class="math display">\[
+\mathcal{S}[\text{path}] = \int dt \left[ (1/2)m\dot{x}^2 - V(x) + A
+\cdot \dot{x} \right]
+\]</span></td>
+</tr>
+<tr>
+<td>The Berry connection term encodes the geometric phases that
+accumulate in the chromophore networks, which are crucial for the high
+efficiency of these biological computations. The convergence of this
+path integral is ensured by the physical constraints of the biological
+system. <span class="math inline">\(\square\)</span></td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<p>Altenkirch, T., Capriotti, P., &amp; Kraus, N. (2016).
+<em>Constructions with higher inductive-inductive types</em>. arXiv
+preprint arXiv:1612.02346. https://doi.org/10.48550/arXiv.1612.02346</p>
+<p>Anderson, P. W. (1972). More is different. <em>Science,
+177</em>(4047), 393-396.
+https://doi.org/10.1126/science.177.4047.393</p>
+<p>Atiyah, M. F., &amp; Bott, R. (1983). The Yang-Mills equations over
+Riemann surfaces. <em>Philosophical Transactions of the Royal Society of
+London. Series A, Mathematical and Physical Sciences, 308</em>(1505),
+523-615. https://doi.org/10.1098/rsta.1983.0017</p>
+<p>Ayoub, J. (2007). <em>Les six opérations de Grothendieck et le
+formalisme des cycles évanescents dans le monde motivique</em>. Société
+Mathématique de France. https://doi.org/10.24033/ast.751</p>
+<p>Baez, J. C., &amp; Schreiber, U. (2006). <em>Higher gauge
+theory</em>. arXiv preprint math/0511710.
+https://doi.org/10.48550/arXiv.math/0511710</p>
+<p>Benner, S. A. (2010). Defining life. <em>Astrobiology, 10</em>(10),
+1021-1030. https://doi.org/10.1089/ast.2010.0524</p>
+<p>Blankenship, R. E. (2014). <em>Molecular Mechanisms of
+Photosynthesis</em> (2nd ed.). Wiley-Blackwell.
+https://doi.org/10.1002/9781118541424</p>
+<p>Bousso, R. (2002). The holographic principle. <em>Reviews of Modern
+Physics, 74</em>(3), 825-874.
+https://doi.org/10.1103/RevModPhys.74.825</p>
+<p>Buzsáki, G. (2006). <em>Rhythms of the Brain</em>. Oxford University
+Press. https://doi.org/10.1093/acprof:oso/9780195301069.001.0001</p>
+<p>Cardy, J. (1996). <em>Scaling and Renormalization in Statistical
+Physics</em>. Cambridge University Press.
+https://doi.org/10.1017/CBO9781139172921</p>
+<p>Cohen, C., Coquand, T., Huber, S., &amp; Mörtberg, A. (2016).
+<em>Cubical type theory: A constructive interpretation of the univalence
+axiom</em>. arXiv preprint arXiv:1611.02108.
+https://doi.org/10.48550/arXiv.1611.02108</p>
+<p>Collins, J. C. (1984). <em>Renormalization</em>. Cambridge University
+Press. https://doi.org/10.1017/CBO9780511622656</p>
+<p>Davey, B. A., &amp; Priestley, H. A. (2002). <em>Introduction to
+Lattices and Order</em> (2nd ed.). Cambridge University Press.
+https://doi.org/10.1017/CBO9780511809088</p>
+<p>de Broglie, L. (1925). Recherches sur la théorie des quanta.
+<em>Annales de Physique, 10</em>(3), 22-128.
+https://doi.org/10.1051/anphys/192510030022</p>
+<p>Donaldson, S. K., &amp; Kronheimer, P. B. (1990). <em>The Geometry of
+Four-Manifolds</em>. Oxford University Press.</p>
+<p>Engel, G. S., Calhoun, T. R., Read, E. L., Ahn, T. K., Mančal, T.,
+Cheng, Y. C., … &amp; Fleming, G. R. (2007). Evidence for wavelike
+energy transfer through quantum coherence in photosynthetic systems.
+<em>Nature, 446</em>(7137), 782-786.
+https://doi.org/10.1038/nature05678</p>
+<p>Friston, K. (2010). The free-energy principle: a unified brain
+theory? <em>Nature Reviews Neuroscience, 11</em>(2), 127-138.
+https://doi.org/10.1038/nrn2787</p>
+<p>Goldenfeld, N. (1992). <em>Lectures on Phase Transitions and the
+Renormalization Group</em>. CRC Press.
+https://doi.org/10.1201/9780429493492</p>
+<p>Hameroff, S., &amp; Penrose, R. (2014). Consciousness in the
+universe: A review of the ‘Orch OR’ theory. <em>Physics of Life Reviews,
+11</em>(1), 39-78. https://doi.org/10.1016/j.plrev.2013.08.002</p>
+<p>Hartshorne, R. (1977). <em>Algebraic Geometry</em>. Springer.
+https://doi.org/10.1007/978-1-4757-3849-0</p>
+<p>Henneaux, M., &amp; Teitelboim, C. (1992). <em>Quantization of Gauge
+Systems</em>. Princeton University Press.</p>
+<p>Hestenes, D. (1990). The zitterbewegung interpretation of quantum
+mechanics. <em>Foundations of Physics, 20</em>(10), 1213-1232.
+https://doi.org/10.1007/BF01889466</p>
+<p>Hofstadter, D. R. (1979). <em>Gödel, Escher, Bach: an Eternal Golden
+Braid</em>. Basic Books.</p>
+<p>Kauffman, S. A. (1993). <em>The Origins of Order: Self-Organization
+and Selection in Evolution</em>. Oxford University Press.
+https://doi.org/10.1093/oso/9780195079517.001.0001</p>
+<p>Kock, A. (2006). <em>Synthetic Differential Geometry</em> (2nd ed.).
+Cambridge University Press. https://doi.org/10.1017/CBO9780511617041</p>
+<p>Kostant, B. (1970). Quantization and unitary representations. In
+<em>Lectures in Modern Analysis and Applications III</em> (pp. 87-208).
+Springer. https://doi.org/10.1007/BFb0079068</p>
+<p>Lloyd, S. (2000). Ultimate physical limits to computation.
+<em>Nature, 406</em>(6799), 1047-1054.
+https://doi.org/10.1038/35023282</p>
+<p>Lloyd, S. (2006). <em>Programming the Universe: A Quantum Computer
+Scientist Takes On the Cosmos</em>. Alfred A. Knopf.</p>
+<p>Martin-Löf, P. (1984). <em>Intuitionistic Type Theory</em>.
+Bibliopolis.</p>
+<p>Milonni, P. W. (1994). <em>The Quantum Vacuum: An Introduction to
+Quantum Electrodynamics</em>. Academic Press.</p>
+<p>Murphy, M. P. (2009). How mitochondria produce reactive oxygen
+species. <em>Biochemical Journal, 417</em>(1), 1-13.
+https://doi.org/10.1042/BJ20081386</p>
+<p>Nicholls, D. G., &amp; Ferguson, S. J. (2013). <em>Bioenergetics
+4</em>. Academic Press.</p>
+<p>Priest, G. (2002). Paraconsistent logic. In D. Gabbay &amp; F.
+Guenthner (Eds.), <em>Handbook of Philosophical Logic</em> (Vol. 6,
+pp. 287-393). Springer.</p>
+<p>Raichle, M. E., &amp; Gusnard, D. A. (2002). Appraising the brain’s
+energy budget. <em>Proceedings of the National Academy of Sciences,
+99</em>(16), 10237-10239. https://doi.org/10.1073/pnas.172399499</p>
+<p>Reyes, G. E. (1974). From sheaves to logic. In <em>Studies in
+Algebraic Logic</em> (pp. 143-204). Mathematical Association of
+America.</p>
+<p>Rovelli, C. (1996). Relational quantum mechanics. <em>International
+Journal of Theoretical Physics, 35</em>(8), 1637-1678.
+https://doi.org/10.1007/BF02302261</p>
+<p>Schreiber, U. (2013). <em>Differential cohomology in a cohesive
+∞-topos</em>. arXiv preprint arXiv:1310.7930.
+https://doi.org/10.48550/arXiv.1310.7930</p>
+<p>Scott, D. (1970). <em>Outline of a mathematical theory of
+computation</em>. Oxford University Computing Laboratory.</p>
+<p>Semenza, G. L. (2010). Oxygen sensing, homeostasis, and disease.
+<em>Annals of the New York Academy of Sciences, 1177</em>(1), 1-8.
+https://doi.org/10.1111/j.1749-6632.2010.05570.x</p>
+<p>Sorkin, R. D. (1990). Spacetime and causal sets. In <em>Relativity
+and Gravitation: Classical and Quantum</em> (pp. 150-173). World
+Scientific.</p>
+<p>Tegmark, M. (2008). The mathematical universe. <em>Foundations of
+Physics, 38</em>(2), 101-150.
+https://doi.org/10.1007/s10701-007-9186-9</p>
+<p>Voevodsky, V. (2006). <em>A very short note on the univalence
+axiom</em>. Institute for Advanced Study.</p>
+<p>Weibel, C. A. (1994). <em>An Introduction to Homological
+Algebra</em>. Cambridge University Press.
+https://doi.org/10.1017/CBO9781139644136</p>
+<p>Wellen, F. (2017). <em>Formalizing Cartan Geometry in Modal Homotopy
+Type Theory</em>. Karlsruhe Institute of Technology.</p>
+<p>West, G. B., Brown, J. H., &amp; Enquist, B. J. (1997). A general
+model for the origin of allometric scaling laws in biology. <em>Science,
+276</em>(5309), 122-126.
+https://doi.org/10.1126/science.276.5309.122</p>
+<p>Wheeler, J. A. (1990). Information, physics, quantum: The search for
+links. In <em>Complexity, Entropy, and the Physics of Information</em>
+(pp. 3-28). Addison-Wesley.</p>
+<p>Wilson, K. G. (1971). Renormalization group and critical phenomena.
+I. Renormalization group and the Kadanoff scaling picture. <em>Physical
+Review B, 4</em>(9), 3174-3183.
+https://doi.org/10.1103/PhysRevB.4.3174</p>
+<p>Witten, E. (1989). Quantum field theory and the Jones polynomial.
+<em>Communications in Mathematical Physics, 121</em>(3), 351-399.
+https://doi.org/10.1007/BF01217730</p>
+<p>Wolfram, S. (2002). <em>A New Kind of Science</em>. Wolfram
+Media.</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

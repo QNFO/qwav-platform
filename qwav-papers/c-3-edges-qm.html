@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C.3 Edges QM | QWAV</title>
+<meta name="description" content="Appendix C: Detailed Graph Data (Edges) C.3: Edges Originating from Quantum Mechanics (QM - Standard Interpretation) Nodes: Source Node ID Target Node ID Typ...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/c-3-edges-qm">
+<meta property="og:title" content="C.3 Edges QM">
+<meta property="og:description" content="Appendix C: Detailed Graph Data (Edges) C.3: Edges Originating from Quantum Mechanics (QM - Standard Interpretation) Nodes: Source Node ID Target Node ID Typ...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/c-3-edges-qm">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "C.3 Edges QM",
+  "url": "https://deep.qwav.tech/papers/c-3-edges-qm",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-05-09T03:21:34Z",
+  "abstract": "Appendix C: Detailed Graph Data (Edges) C.3: Edges Originating from Quantum Mechanics (QM - Standard Interpretation) Nodes: Source Node ID Target Node ID Typ..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<p><strong>Appendix C: Detailed Graph Data (Edges)</strong></p>
+<p><strong>C.3: Edges Originating from Quantum Mechanics (QM - Standard
+Interpretation) Nodes:</strong></p>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 2%" />
+<col style="width: 66%" />
+<col style="width: 2%" />
+<col style="width: 1%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Source Node ID</th>
+<th style="text-align: left;">Target Node ID</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Rationale</th>
+<th style="text-align: left;">Conf.</th>
+<th style="text-align: left;">Dir.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>CM</code></td>
+<td style="text-align: left;"><code>F-LIM</code> (Inverse)</td>
+<td style="text-align: left;">Quantum Mechanics contains Classical
+Mechanics as its macroscopic or large quantum number limit
+(Correspondence Principle).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>SM</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Quantum Mechanics provides the
+foundational principles upon which the Standard Model (as a QFT) is
+built.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>Math::HilbertSpace</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">The standard mathematical formulation of
+QM uses Hilbert spaces to represent states and operators.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>Math::ProbabilityTheory</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">QM fundamentally relies on probability
+theory via the Born rule to connect formalism to experimental
+outcomes.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>Problem::QuantumGravity</code></td>
+<td style="text-align: left;"><code>F-REQ</code></td>
+<td style="text-align: left;">Standard QM does not incorporate gravity
+dynamically, necessitating a unification with GR (Quantum Gravity).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>Problem::QMeasurement</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The measurement problem is an internal
+conceptual inconsistency or incompleteness within standard QM
+interpretations.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::StateVector</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The state vector (wavefunction) is the
+core representation of a system’s state in QM.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::StateVector</code></td>
+<td style="text-align: left;"><code>QM::Superposition</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The vector nature of states in Hilbert
+space directly entails the principle of superposition (linear
+combinations are valid states).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::HilbertSpace</code></td>
+<td style="text-align: left;"><code>QM::StateVector</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Hilbert space is the mathematical
+structure within which state vectors are defined.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::ObservableOperator</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Associating observables with operators is
+a core postulate of QM.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::ObservableOperator</code></td>
+<td style="text-align: left;"><code>QM::Quantization</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The postulate that measurement results are
+eigenvalues of operators directly leads to observed quantization.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::SchrodingerEq</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Schrödinger equation is the core
+postulate governing time evolution (between measurements).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::SchrodingerEq</code></td>
+<td style="text-align: left;"><code>QM::UnitaryEvolution</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The mathematical form of the Schrödinger
+equation ensures that time evolution is unitary.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::UnitaryEvolution</code></td>
+<td style="text-align: left;"><code>QM::MeasurementCollapse</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Unitary evolution is deterministic and
+preserves superposition, contradicting the non-unitary, probabilistic
+nature of collapse.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::BornRule</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Born rule is the core postulate
+linking the formalism (state vector) to experimental probabilities.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::BornRule</code></td>
+<td
+style="text-align: left;"><code>QM::IntrinsicIndeterminism</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">The Born rule provides probabilities,
+which are interpreted as fundamental indeterminism in standard QM.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::MeasurementCollapse</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The projection postulate (collapse) is a
+core component of the standard description of measurement.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::MeasurementCollapse</code></td>
+<td style="text-align: left;"><code>CM::ObjectiveProperties</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Collapse implies properties are
+defined/created by measurement, contradicting classical objective
+reality.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::MeasurementCollapse</code></td>
+<td style="text-align: left;"><code>Phil::Realism</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">The nature of collapse challenges simple
+forms of scientific realism about pre-measurement properties.</td>
+<td style="text-align: left;">M/H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::MeasurementCollapse</code></td>
+<td style="text-align: left;"><code>Problem::QMeasurement</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The collapse postulate is central to the
+measurement problem, conflicting with unitary evolution.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Superposition</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Superposition is a fundamental principle
+arising from the linearity of the Hilbert space structure.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Quantization</code></td>
+<td style="text-align: left;"><code>CM</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Observed quantization contradicts the
+classical assumption that physical quantities can take continuous
+values.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>QM::IntrinsicIndeterminism</code></td>
+<td style="text-align: left;"><code>CM::Determinism</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Fundamental indeterminism contradicts
+classical determinism.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>QM::IntrinsicIndeterminism</code></td>
+<td style="text-align: left;"><code>Phil::Determinism</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Standard QM interpretation contradicts the
+philosophical thesis of determinism.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>QM::IntrinsicIndeterminism</code></td>
+<td style="text-align: left;"><code>Phil::CausalClosure</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">If quantum events are truly random, it
+potentially challenges the idea that all physical events have sufficient
+<em>physical</em> causes.</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Complementarity</code></td>
+<td style="text-align: left;"><code>CM::ObjectiveProperties</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">Complementarity challenges the classical
+assumption that all properties can possess definite values
+simultaneously.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::UncertaintyPrinciple</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Uncertainty Principle is a core
+principle derived from the QM formalism (non-commuting operators).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::UncertaintyPrinciple</code></td>
+<td style="text-align: left;"><code>CM::ObjectiveProperties</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">The Uncertainty Principle places
+fundamental limits on the simultaneous definability of properties
+assumed objective in CM.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Entanglement</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Entanglement is a key phenomenon predicted
+and described by the QM formalism for multi-part systems.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Entanglement</code></td>
+<td style="text-align: left;"><code>CM::Locality</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">Entanglement demonstrates non-local
+correlations that challenge the implicit locality assumptions of
+classical mechanics.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Entanglement</code></td>
+<td style="text-align: left;"><code>Phil::LocalRealism</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Experimental verification of Bell’s
+theorem violations using entangled states contradicts local
+realism.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::NonLocality</code></td>
+<td style="text-align: left;"><code>GR::Locality</code></td>
+<td style="text-align: left;"><code>L-CTR</code> /
+<code>F-CHL</code></td>
+<td style="text-align: left;">QM non-locality conflicts with the local
+nature of interactions described by classical GR field equations.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S/D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>QM::ClassicalDescriptionReq</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Bohr’s requirement for classical
+descriptions is a component of the Copenhagen interpretation.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>QM::ClassicalDescriptionReq</code></td>
+<td style="text-align: left;"><code>Problem::QMeasurement</code></td>
+<td style="text-align: left;"><code>C-INF</code></td>
+<td style="text-align: left;">This requirement contributes to the
+measurement problem by creating an ambiguous quantum-classical
+divide.</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::MeasurementProblem</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">The measurement problem indicates a
+fundamental conceptual incompleteness or inconsistency within standard
+QM interpretations.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

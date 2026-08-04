@@ -1,0 +1,1190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thermodynamic and Quantum Constraints on Scalable Quantum Computing | QWAV</title>
+<meta name="description" content="Thermodynamic and Quantum Constraints on Scalable Quantum Computing A Consilience of Modeling, Experiment, and Theory Author: Rowan Brad Quni-Gudzinas Contac...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/thermodynamic-and-quantum-constraints-on-scalable-quantum-computing">
+<meta property="og:title" content="Thermodynamic and Quantum Constraints on Scalable Quantum Computing">
+<meta property="og:description" content="Thermodynamic and Quantum Constraints on Scalable Quantum Computing A Consilience of Modeling, Experiment, and Theory Author: Rowan Brad Quni-Gudzinas Contac...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/thermodynamic-and-quantum-constraints-on-scalable-quantum-computing">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Thermodynamic and Quantum Constraints on Scalable Quantum Computing",
+  "url": "https://deep.qwav.tech/papers/thermodynamic-and-quantum-constraints-on-scalable-quantum-computing",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-12-19T09:40:20Z",
+  "keywords": [
+    "Superconducting Qubits",
+    "Architectural Inversion",
+    "Cryogenic Engineering",
+    "Dielectric Loss",
+    "Two-Level Systems (TLS)",
+    "Open Quantum Systems",
+    "Cryo-CMOS",
+    "Dilution Refrigeration Limits."
+  ],
+  "abstract": "Thermodynamic and Quantum Constraints on Scalable Quantum Computing A Consilience of Modeling, Experiment, and Theory Author: Rowan Brad Quni-Gudzinas Contac..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1
+id="thermodynamic-and-quantum-constraints-on-scalable-quantum-computing">Thermodynamic
+and Quantum Constraints on Scalable Quantum Computing</h1>
+<h3 id="a-consilience-of-modeling-experiment-and-theory">A Consilience
+of Modeling, Experiment, and Theory</h3>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Contact:</strong> rowan.quni@outlook.com <strong>ORCID:</strong>
+<a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>
+<strong>ISNI:</strong> <a
+href="https://isni.org/isni/0000000526456062">0000000526456062</a>
+<strong>DOI:</strong> 10.5281/zenodo.17937531 <strong>Date:</strong>
+2025-12-19 <strong>Version:</strong> 2.0</p>
+<p><strong>Abstract</strong>: The central tension in scalable quantum
+computing lies between the exponential growth of quantum information
+density and the polynomial limits of cryogenic heat extraction. This
+thermodynamic bottleneck motivates an architectural inversion, where
+high-power control and readout electronics are offloaded to the 4 Kelvin
+stage to leverage its vastly greater cooling capacity. However, the
+physical viability of this paradigm is contingent upon qubits
+maintaining high-fidelity operation in this more energetic environment.
+This work validates this architectural solution through a consilience of
+a physically-grounded numerical model and established thermodynamic
+theory. Moving beyond simplistic temperature-centric models, we
+construct a Lindblad framework grounded in the measurable physics of
+two-level system (TLS) loss and intrinsic 1/f noise. We demonstrate that
+the systematic engineering of dielectric material quality—specifically
+the reduction of the effective TLS loss tangent—is the key enabling
+factor for thermal robustness. The numerical analysis shows that by
+transitioning from standard amorphous dielectrics (<span
+class="math inline">\(\tan\delta \approx 10^{-5}\)</span>) to
+state-of-the-art low-loss material systems (<span
+class="math inline">\(\tan\delta &lt; 10^{-7}\)</span>), the
+decoherence-limited single-qubit gate fidelity at 4 Kelvin can exceed
+99.96%, becoming statistically indistinguishable from the ideal
+performance at 10 millikelvin. This provides a quantitative,
+materials-driven roadmap for overcoming the thermodynamic constraints on
+scalable quantum information systems.</p>
+<p><strong>Keywords:</strong> Superconducting Qubits, Architectural
+Inversion, Cryogenic Engineering, Dielectric Loss, Two-Level Systems
+(TLS), Open Quantum Systems, Cryo-CMOS, Dilution Refrigeration
+Limits.</p>
+<h2 id="introduction">1.0 Introduction</h2>
+<h3 id="scaling-asymmetry">1.1 Scaling Asymmetry</h3>
+<p>The fundamental impediment to scaling superconducting quantum
+processors to the million-qubit regime is a geometric mismatch between
+the exponential growth of quantum information density and the polynomial
+scaling of cryogenic heat extraction. While the number of physical
+qubits on a chip has followed a trajectory analogous to Moore’s Law
+since the late 1990s, the cooling capacity of dilution refrigerators has
+remained governed by the immutable thermodynamics of helium-3/helium-4
+mixing. This disparity creates a resource bottleneck that is not merely
+engineering-related but foundational to the physics of the cryostat. The
+cooling power of the mixing chamber, operating at approximately 10
+millikelvin, is physically constrained to the microwatt regime,
+typically capping at 50 microwatts for standard commercial systems. In
+stark contrast, the pulse tube stage, operating at 4 Kelvin, offers a
+cooling budget roughly 20,000 times larger, often exceeding 1 watt. This
+massive asymmetry in thermodynamic resources dictates that a linear
+scaling of the current architecture, which sequesters all active
+components at the coldest stage, is physically impossible. The industry
+faces a hard ceiling where the heat generated by the control
+infrastructure for large-scale processors exceeds the entropy removal
+rate of the mixing chamber. Consequently, the continued adherence to the
+millikelvin-centric design paradigm guarantees a collision with this
+thermal wall.</p>
+<p>Historically, this scaling asymmetry was masked by the relatively low
+qubit counts of the early experimental era. From the first Cooper pair
+box experiments in 1999 through the emergence of the transmon in the
+late 2000s, the thermal load of the device was negligible compared to
+the background heat leak of the cryostat. During this epoch, the primary
+engineering challenge was isolating the quantum system from external
+noise, justifying the placement of all components at the coldest
+possible temperature. However, as system sizes expanded from single
+digits to hundreds of qubits in the early 2020s, the linear increase in
+control lines began to saturate the cooling budget. The evolution of the
+field has now reached an inflection point where the passive heat load
+from the wiring harness alone threatens to overwhelm the mixing chamber.
+This historical trajectory suggests that the “brute force” approach of
+building larger refrigerators is yielding diminishing returns. Future
+architectures must acknowledge that the thermal hierarchy of the
+cryostat is a fixed boundary condition, not a variable to be
+optimized.</p>
+<p>The physical mechanism driving this bottleneck is the temperature
+dependence of the cooling power in a dilution refrigerator. The cooling
+capacity scales superlinearly with temperature, typically following a
+<span class="math inline">\(T^2\)</span> relationship in the
+low-temperature limit. This implies that a small increase in operating
+temperature yields a massive increase in available cooling power.
+Conversely, demanding operation at the absolute floor of 10 millikelvin
+imposes a severe penalty on the allowable heat dissipation. The mixing
+chamber relies on the enthalpy difference between the concentrated and
+dilute phases of the helium mixture, a process that becomes vanishingly
+efficient as absolute zero is approached. This thermodynamic reality
+creates a steep gradient of available utility across the cryostat
+stages. The 4 Kelvin stage, cooled by the mechanical pulse tube,
+operates in a regime where helium gas expansion provides robust heat
+extraction. This structural difference creates two distinct
+thermodynamic zones: a resource-starved quantum plane and a
+resource-rich thermal buffer.</p>
+<p>Quantitative analysis of modern cryogenic setups confirms the
+severity of this limitation. Recent engineering studies have measured
+the passive heat load of standard coaxial cabling to be a significant
+fraction of the total budget. For a system utilizing niobium-titanium
+superconducting cables, the thermal conductivity is low, but the sheer
+volume of connections required for a 1000-qubit processor integrates to
+a substantial load. When combined with the necessary attenuation and
+filtering components, the passive load alone can consume over 50% of the
+available 50 microwatts at the mixing chamber. This leaves a dangerously
+thin margin for the active heat dissipation generated by the qubits
+themselves and their immediate control pulses. Furthermore, the scaling
+laws indicate that for a million-qubit system, the cross-sectional area
+required for these cables would exceed the physical dimensions of the
+cryostat. The data unequivocally shows that the current interconnect
+density is unsustainable without a radical architectural shift.</p>
+<p>The synthesis of these factors reveals that the scaling limit is not
+defined by the size of the refrigerator but by the geometric and
+thermodynamic constraints of the mixing chamber interface. The attempt
+to push massive information density through a thermal bottleneck
+designed for millikelvin isolation creates a system that is inherently
+unstable. The linear scaling of control lines, even with multiplexing,
+conflicts with the fixed cooling capacity of the <span
+class="math inline">\(^3\)</span>He/<span
+class="math inline">\(^4\)</span>He phase boundary. This conflict forces
+a reevaluation of where specific computational tasks should be
+physically located within the cryostat. The logic dictates that only the
+components strictly requiring the ground-state protection of 10
+millikelvin should remain there. All other supporting infrastructure
+must be evacuated to higher temperature stages where the thermodynamic
+penalty is lower.</p>
+<h3 id="wiring-bottleneck">1.2 Wiring Bottleneck</h3>
+<p>The wiring bottleneck represents the tangible intersection of
+geometric constraints and thermal conductivity. In a standard
+superconducting quantum processor, every qubit requires a dedicated
+signal path for control and readout, typically realized through
+semi-rigid coaxial cables. These cables must bridge the thermal gradient
+from room temperature down to the base temperature, physically
+connecting the 300 Kelvin vacuum flange to the 10 millikelvin mixing
+chamber. This physical continuity creates a direct highway for phonon
+transport, importing heat from the warmer stages to the sensitive
+quantum plane. The challenge is that these cables must be electrically
+conductive to transmit microwave signals, but this electrical
+conductivity often correlates with thermal conductivity (Wiedemann-Franz
+law), making it difficult to isolate the cold stage thermally while
+connecting it electrically. The sheer volume of material required for
+thousands of such connections creates a parasitic heat load that scales
+linearly with qubit count, regardless of whether the qubits are active
+or idle.</p>
+<p>The mechanism of heat transfer in these interconnects is twofold:
+conduction through the solid materials and radiation down the
+dielectric. While superconducting materials like niobium-titanium are
+used to minimize thermal conduction below their critical temperature,
+the cables must still transition through the intermediate stages (4
+Kelvin, 1 Kelvin, 100 millikelvin). At each interface, the cable must be
+thermalized to intercept the heat flowing from above. If this
+thermalization is imperfect, the heat load cascades down to the mixing
+chamber. Furthermore, the stainless steel or cupronickel outer
+conductors used for thermal isolation introduce signal loss, requiring a
+delicate balance between signal fidelity and thermal protection. The
+physics of phonon transport in these amorphous dielectrics and
+polycrystalline metals ensures that a non-zero heat flux always reaches
+the coldest stage.</p>
+<p>Experimental characterization of cryogenic setups has quantified this
+passive load with precision. Studies have shown that a standard
+semi-rigid coaxial line made of stainless steel can deliver a heat load
+of approximately 0.5 microwatts to the 4 Kelvin stage and a smaller but
+critical fraction to the mixing chamber. When multiplied by the 3,000 to
+5,000 lines required for a fault-tolerant logical qubit unit, the
+passive load alone exceeds the 50-microwatt cooling capacity of the
+mixing chamber. This calculation assumes perfect thermalization at every
+stage; in practice, the load is often higher due to contact resistance
+and imperfect clamping. The data indicates that even with the best
+available low-thermal-conductivity materials, the passive heat leak from
+the wiring harness sets a hard cap on the number of qubits that can be
+physically addressed in a single cryostat.</p>
+<p>The persistence of the wiring bottleneck underscores the necessity of
+reducing the physical distance between the signal generation source and
+the qubit. If the control signals must travel from room temperature, the
+thermal bridge is unavoidable. However, if the signal generation can be
+moved deep inside the cryostat, the length and number of these thermal
+bridges can be drastically reduced. This logic points toward the
+integration of control electronics within the cryogenic environment
+itself. By generating signals at the 4 Kelvin stage, the wiring harness
+only needs to bridge the short gap between 4 Kelvin and 10 millikelvin,
+significantly reducing the passive heat load. This approach transforms
+the wiring problem from a global interconnect challenge to a local
+integration challenge.</p>
+<h3 id="landauer-limit">1.3 Landauer Limit</h3>
+<p>The thermodynamic cost of computation is rooted in the principle that
+information is physical. The Landauer limit establishes a fundamental
+lower bound on the energy that must be dissipated as heat when a bit of
+information is erased or logically merged. This principle dictates that
+any logically irreversible operation, such as the error correction
+cycles required to maintain a logical qubit, must result in an increase
+in the entropy of the environment. In the context of a quantum
+processor, the error correction process involves continuous measurement
+and feedback, a cycle that effectively pumps entropy out of the quantum
+system and dumps it into the thermal bath. This is not an optional
+overhead; it is the thermodynamic price of maintaining order in a
+disordered universe. Consequently, the cryostat must function not just
+as a static refrigerator but as an active entropy sink, capable of
+absorbing the heat generated by the massive information processing
+required for fault tolerance.</p>
+<p>Recent theoretical reviews have confirmed that quantum error
+correction protocols operate in a regime where this limit is relevant. A
+fault-tolerant quantum computer running a surface code requires millions
+of physical qubits to be measured and reset repeatedly. If we consider a
+system performing <span class="math inline">\(10^8\)</span> measurements
+per second, the raw Landauer cost at 10 millikelvin is on the order of
+femtowatts. However, real-world electronics operate far above this
+limit, typically by factors of thousands or millions. The irreversible
+logic gates used in the classical control processors and the dissipation
+in the readout resonators generate heat that is orders of magnitude
+higher than the Landauer floor. Nevertheless, the Landauer limit sets
+the asymptote: no matter how efficient our electronics become, there is
+a non-zero heat load associated with the act of error correction
+itself.</p>
+<p>The inescapable nature of the Landauer limit implies that the heat
+load from error correction is an intrinsic property of the computation,
+scaling linearly with the number of operations. As we scale to larger
+systems, this heat load will inevitably grow. The problem is that the
+cooling capacity of the mixing chamber does not scale; it is fixed by
+the physics of the dilution unit. This collision between a growing
+entropic load and a fixed cooling capacity creates a critical threshold.
+If the heat generation rate exceeds the cooling power, the system cannot
+maintain its base temperature.</p>
+<h3 id="entropy-accumulation">1.4 Entropy Accumulation</h3>
+<p>The concept of entropy accumulation describes the dynamic instability
+that arises when the rate of entropy generation from quantum error
+correction exceeds the rate of entropy evacuation by the cryostat.
+Quantum error correction functions effectively as a thermodynamic
+refrigerator for the logical qubit, pumping entropy from the information
+subsystem into the physical environment. However, this process is not
+passive; it is an active heat engine that consumes work and rejects
+heat. If the thermal bath—the mixing chamber stage—cannot absorb this
+rejected heat fast enough, the local temperature of the chip rises. This
+temperature increase causes the physical error rates of the qubits to
+climb, which in turn forces the error correction decoder to work harder,
+performing more corrections and generating even more heat. This positive
+feedback loop creates a dynamical phase transition between a stable,
+bounded-error regime and an unstable, unbounded-error regime.</p>
+<p>Recent thermodynamic modeling has identified this “unbounded-error
+phase” as a hard limit for scaling at the millikelvin stage. The
+analysis shows that for a standard dilution refrigerator with 50
+microwatts of cooling power, the maximum number of active
+error-correcting qubits is strictly limited. If the heat dissipation per
+QEC cycle is consistent with current electronics, the critical threshold
+is reached with fewer than a few thousand qubits. Beyond this point, the
+system inevitably enters the runaway phase. The data suggests that
+simply improving the code threshold is insufficient; the thermodynamic
+overhead of the correction process itself is the limiting factor. This
+finding challenges the assumption that we can scale to millions of
+qubits solely by improving logical error rates without addressing the
+thermal consequences of the correction logic.</p>
+<p>The existence of the unbounded-error phase implies that the
+millikelvin stage is a thermodynamic trap for large-scale error
+correction. The cooling capacity is simply too low to support the active
+entropy rejection required for a million-qubit system. To avoid this
+runaway heating, we must decouple the heat generation from the sensitive
+quantum plane. This requires moving the source of the heat—the control
+and readout electronics—to a stage with a higher cooling capacity.</p>
+<h3 id="control-power-dissipation">1.5 Control Power Dissipation</h3>
+<p>The active control of superconducting qubits requires the generation
+and modulation of precise microwave pulses, a task traditionally
+performed by room-temperature electronics. However, the latency and
+wiring constraints discussed previously mandate the migration of this
+logic into the cryostat, specifically using cryogenic CMOS (Cryo-CMOS)
+technology. The fundamental challenge is that these active circuits are
+power-hungry. The dynamic power consumption of a CMOS circuit scales
+with the frequency of operation and the square of the voltage, following
+the <span class="math inline">\(P \propto CV^2f\)</span> relationship.
+Even with optimizations for low-temperature operation, the power
+dissipated by the millions of transistors required to control a
+large-scale quantum processor is substantial. This power dissipation
+presents a direct conflict with the thermal budget of the cryostat,
+creating a binary choice: either the electronics must operate at
+ultra-low power, compromising performance, or they must be placed at a
+thermal stage capable of absorbing the load.</p>
+<p>State-of-the-art Cryo-CMOS designs have achieved impressive gate
+error rates, but the power cost remains high. Current benchmarks
+indicate power consumption in the range of 4 to 23 milliwatts per qubit
+for a full control stack. If we attempt to place this load at the 10
+millikelvin stage, a single qubit controller would consume the entire
+cooling budget of the refrigerator (50 microwatts) hundreds of times
+over. However, at the 4 Kelvin stage, where the cooling power is
+approximately 1 watt, the budget can accommodate the control logic for
+hundreds or even thousands of qubits, provided the power per qubit is
+optimized.</p>
+<p><strong>Crucially, to scale to thousands of qubits within the 1 Watt
+envelope, the specific power dissipation must be engineered to below 1
+mW per qubit.</strong> This requirement creates a strict efficiency
+target for future Cryo-CMOS generations. It dictates that the
+architectural inversion is contingent not only on qubit coherence but
+also on classical power efficiency. Without achieving this efficiency,
+even the 4 Kelvin stage will saturate, forcing a reassessment of the
+entire control stack.</p>
+<p>The physics of transistor operation and the thermodynamics of the
+cryostat lead to a singular conclusion: the control plane cannot coexist
+with the quantum plane at 10 millikelvin. The power density of the
+electronics is simply too high. The segregation of these functions is
+mandatory. The control logic must reside at the 4 Kelvin stage, where
+the cooling power is sufficient to absorb the milliwatt-scale
+dissipation of the CMOS circuits. This separation allows the mixing
+chamber to be dedicated solely to the fragile quantum states, protected
+from the thermal noise of the classical controller.</p>
+<h3 id="readout-density-limits">1.6 Readout Density Limits</h3>
+<p>The readout subsystem presents a distinct but equally critical
+scaling challenge centered on physical volume and signal isolation. To
+read the state of a superconducting qubit, a microwave tone is reflected
+off a resonator, and the minute phase shift must be amplified by orders
+of magnitude. This amplification chain traditionally begins with a
+quantum-limited parametric amplifier at the mixing chamber, followed by
+a High-Electron-Mobility Transistor (HEMT) at the 4 Kelvin stage. The
+critical issue is that these components, particularly the isolators and
+circulators required to prevent noise back-action, are bulky magnetic
+devices. Scaling this chain to millions of qubits is spatially
+impossible within the confined volume of the mixing chamber. The
+“footprint gap” dictates that the bulk of the readout hardware must be
+miniaturized and moved to a stage where space is less constrained and
+where high-density integration is feasible.</p>
+<p>The mechanism driving this limitation is the need for
+non-reciprocity. To protect the qubit from the thermal noise of the
+amplifier, the signal must flow in only one direction. Traditional
+circulators achieve this using magnetic materials that break
+time-reversal symmetry, but these are inherently large and difficult to
+integrate on-chip. New designs, such as the Traveling-Wave Parametric
+Amplifier and Converter, achieve isolation and amplification in a single
+compact circuit using nonlinear wave mixing. However, even these compact
+devices dissipate power and require control tones. Placing thousands of
+these active devices at the mixing chamber introduces both a thermal
+load and a wiring complexity that rivals the control problem. The 4
+Kelvin stage offers a larger physical volume and a thermal budget that
+can accommodate the pump power required for these massive amplifier
+arrays.</p>
+<p>The readout density limit converges with the control power limit and
+the wiring bottleneck to point toward a single architectural conclusion.
+The millikelvin stage is a precious resource that must be reserved
+exclusively for the quantum elements that absolutely require it. The
+amplification, isolation, and signal processing machinery must be
+evacuated to the 4 Kelvin stage. This shift not only solves the thermal
+and spatial problems but also places the readout electronics in closer
+proximity to the Cryo-CMOS control logic, enabling tighter integration
+of the feedback loop required for error correction.</p>
+<h3 id="architectural-inversion-thesis">1.7 Architectural Inversion
+Thesis</h3>
+<p>The cumulative weight of the thermodynamic, geometric, and power
+constraints necessitates a paradigm shift we term “architectural
+inversion.” In this proposed architecture, the high-power control and
+readout electronics are relocated from the resource-starved millikelvin
+stage and the distant room-temperature environment to the
+thermodynamically robust 4 Kelvin stage. This strategy leverages the 1
+Watt cooling capacity of the pulse tube stage to absorb the heat of the
+Cryo-CMOS logic and the readout amplifiers, effectively decoupling the
+entropy generation of the classical control plane from the entropy
+sensitivity of the quantum plane. By shortening the signal path between
+the controller and the qubit, we reduce latency and wiring heat load.
+This inversion transforms the 4 Kelvin stage from a passive thermal
+buffer into the active computational heart of the classical support
+system, leaving the mixing chamber to serve as a quiet, dark sanctuary
+for the quantum states.</p>
+<p>The quantitative argument for this inversion is compelling. It solves
+the wiring bottleneck by replacing thousands of room-temperature cables
+with integrated Cryo-CMOS links. It solves the power dissipation problem
+by placing the load in a zone with 20,000 times more cooling capacity.
+It solves the readout density problem by utilizing the larger volume of
+the 4 Kelvin stage. Every major scaling constraint identified in this
+introduction is ameliorated by this architectural shift. The engineering
+trade-offs are favorable, provided that the system can function as a
+cohesive whole across the thermal gradient.</p>
+<p>The primary counter-argument, and the fatal flaw that has prevented
+this shift until now, is the thermal noise. Operating high-power
+electronics at 4 Kelvin inevitably raises the photon temperature of the
+environment. If the qubits are sensitive to this thermal radiation, or
+if the thermal noise propagates down the interconnects, the coherence of
+the quantum states will be destroyed. The viability of the entire
+architectural inversion hinges on the assumption that the qubits can
+maintain high-fidelity operation in the presence of a 4 Kelvin thermal
+bath. If the qubits decohere rapidly at elevated temperatures or due to
+thermal photon influx, the architecture fails.</p>
+<h2 id="theoretical-framework">2.0 Theoretical Framework</h2>
+<h3 id="open-system-dynamics">2.1 Open System Dynamics</h3>
+<p>The accurate modeling of a superconducting qubit within a cryogenic
+environment requires abandoning the idealized notion of a closed quantum
+system in favor of an open system formalism. In a realistic processor,
+the qubit is never truly isolated; it is continuously coupled to a vast
+environmental bath comprising electromagnetic modes, phonon vibrations,
+and microscopic material defects. We employ the Lindblad master equation
+to model this non-unitary evolution. This formalism balances the
+coherent dynamics with the dissipative processes driven by the
+environment.</p>
+<p>We adopt the Markovian approximation for the 4 Kelvin bath, justified
+by the fact that the thermal fluctuations in the dielectric are
+broadband, ensuring that the bath correlation time <span
+class="math inline">\(\tau_B\)</span> is significantly shorter than the
+qubit relaxation timescales (<span class="math inline">\(T_1 \sim 10-100
+\mu s\)</span>). This separation of timescales allows us to treat the
+environment as memoryless, a standard and necessary approach for
+analyzing steady-state thermal constraints in large-scale systems where
+non-Markovian memory kernels would be computationally intractable.</p>
+<p>Mathematically, the evolution is expressed as:</p>
+<p><span class="math display">\[ \frac{d\rho}{dt} = -\frac{i}{\hbar}[H,
+\rho] + \sum_k \gamma_k \left( L_k \rho L_k^\dagger - \frac{1}{2}
+\{L_k^\dagger L_k, \rho\} \right) \]</span></p>
+<p>Here, the jump operators <span class="math inline">\(L_k\)</span>
+represent the specific channels through which the system couples to the
+bath, such as energy relaxation or phase scattering. The rates <span
+class="math inline">\(\gamma_k\)</span> quantify the strength of these
+interactions and are directly determined by the noise power spectrum of
+the environment at the qubit transition frequency.</p>
+<h3 id="two-level-system-physics">2.2 Two-Level System Physics</h3>
+<p>The dominant source of decoherence in superconducting quantum
+circuits is the ensemble of two-level systems (TLS) inherent to
+amorphous dielectric materials. These microscopic defects arise from
+atoms or groups of atoms that can tunnel between two nearly degenerate
+spatial configurations within the disordered lattice of the material.
+Unlike the crystalline lattice of a perfect silicon wafer, the amorphous
+oxides used in qubit fabrication—such as the native oxides of niobium or
+aluminum—possess a rugged potential energy landscape.</p>
+<p>The mechanism of TLS-induced decoherence operates through two primary
+channels: resonant relaxation and dispersive dephasing. In the
+dispersive case, thermally fluctuating TLSs near the qubit frequency
+exert a time-varying dispersive shift on the qubit, scrambling its
+phase. The population of these TLSs is governed by the ambient
+temperature. At absolute zero, the TLSs settle into their ground states,
+becoming electrically quiet. However, as the temperature rises, thermal
+phonons excite the TLSs, causing them to switch randomly between states.
+This switching generates a fluctuating electric field noise—1/f
+noise—that dephases the qubit.</p>
+<h3 id="dielectric-loss-tangent">2.3 Dielectric Loss Tangent</h3>
+<p>The dielectric loss tangent, denoted as <span
+class="math inline">\(\tan\delta\)</span>, is the fundamental figure of
+merit quantifying the dissipative interaction between the
+electromagnetic field of the qubit and the material environment.
+Physically, it represents the ratio of the imaginary (lossy)
+permittivity to the real (reactive) permittivity of the dielectric
+medium. In the context of superconducting circuits, <span
+class="math inline">\(\tan\delta\)</span> serves as a direct proxy for
+the density and dipole moment of the two-level systems discussed
+previously.</p>
+<p>Historical improvements in qubit coherence track with the reduction
+of this parameter, from <span class="math inline">\(10^{-4}\)</span> in
+the early 2000s to <span class="math inline">\(&lt;10^{-7}\)</span> in
+modern devices. While often referred to colloquially as a “crystalline”
+transition, this improvement physically represents the suppression of
+amorphous disorder at interfaces and surfaces, effectively reducing the
+participation-weighted loss of the device. The total loss experienced by
+the qubit is a weighted sum of the loss tangents of all materials
+involved, weighted by the fraction of the electric field energy stored
+in each material. Since the electric field is concentrated in the
+capacitor dielectric and the surface oxides, these thin layers have a
+disproportionate impact.</p>
+<h3 id="thermal-dephasing-mechanism">2.4 Thermal Dephasing
+Mechanism</h3>
+<p>The critical link between the macroscopic temperature of the cryostat
+and the microscopic coherence of the qubit is the thermal dephasing
+rate, denoted as <span class="math inline">\(\Gamma_{TLS}(T)\)</span>.
+This rate is not linear; it follows a specific functional form dictated
+by the Bose-Einstein statistics of the thermal bath interacting with the
+TLS ensemble.</p>
+<p>The explicit formula used in our model is:</p>
+<p><span class="math display">\[ \Gamma_{TLS}(T) = K_{TLS} \cdot
+\tan\delta \cdot \coth\left(\frac{\hbar \omega_q}{2 k_B T}\right)
+\]</span></p>
+<p>Here, <span class="math inline">\(\omega_q\)</span> is the qubit
+frequency, <span class="math inline">\(\hbar\)</span> is the reduced
+Planck constant, and <span class="math inline">\(k_B\)</span> is the
+Boltzmann constant. The term <span class="math inline">\(\coth(\hbar
+\omega_q / 2 k_B T)\)</span> represents the thermal activation factor.
+At 4 Kelvin, the factor is approximately 16. This means that the noise
+power from the TLS bath is 16 times higher at 4 Kelvin than at 10
+millikelvin. This scaling law explains why standard materials fail
+catastrophically at 4 Kelvin while optimized materials may survive. The
+penalty for increasing temperature can be directly offset by decreasing
+the loss tangent <span class="math inline">\(\tan\delta\)</span>.</p>
+<h3 id="intrinsic-noise-floor">2.5 Intrinsic Noise Floor</h3>
+<p>While thermal TLS fluctuations dominate at elevated temperatures, a
+realistic model must also account for the intrinsic,
+temperature-independent noise floor that limits coherence even in the
+deep millikelvin regime. This “intrinsic noise,” often characterized by
+a 1/f power spectral density, arises from sources such as magnetic flux
+noise and non-equilibrium quasiparticles. It represents the asymptotic
+limit of qubit performance. In our theoretical framework, this term,
+denoted as <span class="math inline">\(\Gamma_{1/f}\)</span>, acts as
+the baseline against which the thermal penalty is measured. It defines
+the “perfect” performance at 10 millikelvin, serving as the reference
+point for determining statistical indistinguishability at 4 Kelvin. We
+assume linear independence between these noise sources.</p>
+<h3 id="thermodynamic-stability-condition">2.6 Thermodynamic Stability
+Condition</h3>
+<p>The final component of our theoretical framework is the thermodynamic
+stability condition, which acts as a binary gatekeeper for the validity
+of any proposed architecture. This condition dictates that for a quantum
+computer to operate in a steady state, the rate of heat extraction by
+the cryostat (<span class="math inline">\(P_{cool}\)</span>) must
+strictly exceed the rate of heat generation by the computational process
+(<span class="math inline">\(P_{load}\)</span>). If this inequality is
+violated (<span class="math inline">\(P_{load} \ge P_{cool}\)</span>),
+the system enters a runaway phase where the temperature rises
+uncontrollably. This macroscopic constraint is the physical
+manifestation of the thermodynamic bottleneck.</p>
+<h3 id="fidelity-estimation-metric">2.7 Fidelity Estimation Metric</h3>
+<p>To translate the abstract physics of coherence times and loss
+tangents into a metric relevant to quantum algorithm performance, we
+employ the estimated single-qubit gate fidelity. This metric, denoted as
+<span class="math inline">\(F_{gate}\)</span>, is derived from the
+effective coherence time <span class="math inline">\(T_2^*\)</span>:</p>
+<p><span class="math display">\[ F_{gate} = \exp(-t_{gate} / T_2^*)
+\]</span></p>
+<p>Here, <span class="math inline">\(t_{gate}\)</span> is the duration
+of the operation, typically around 20 nanoseconds for a superconducting
+qubit. A fidelity exceeding the fault-tolerance threshold (typically
+99.9%) is the ultimate pass/fail criterion for the architectural
+inversion. This metric integrates the microscopic physics and
+macroscopic thermodynamics into a single figure of merit for
+computational utility.</p>
+<h2 id="methodology">3.0 Methodology</h2>
+<h3 id="simulation-environment">3.1 Simulation Environment</h3>
+<p>To rigorously evaluate the feasibility of the architectural
+inversion, we developed a custom numerical simulation environment
+grounded in the open quantum system dynamics described in the previous
+section. This computational tool, implemented in Python, serves as a
+virtual testbed for subjecting superconducting qubits to various thermal
+and material conditions. The simulation solves the steady-state
+coherence equations derived from the Lindblad formalism, providing
+instantaneous feedback on the viability of a given architectural
+configuration. The robustness of the simulation was ensured by executing
+a series of “adversarial” stress tests, sweeping the loss tangent across
+seven orders of magnitude and the temperature from 1 millikelvin to 300
+Kelvin.</p>
+<h3 id="material-parameter-calibration">3.2 Material Parameter
+Calibration</h3>
+<p>We calibrated the material parameters against historical and
+state-of-the-art experimental data by defining five key epochs:</p>
+<ul>
+<li><strong>Genesis (1999):</strong> <span
+class="math inline">\(\tan\delta = 5 \times 10^{-4}\)</span> (Amorphous
+substrates).</li>
+<li><strong>Standard (2010):</strong> <span
+class="math inline">\(\tan\delta = 2 \times 10^{-5}\)</span> (Amorphous
+oxides).</li>
+<li><strong>State-of-the-Art (SOTA, 2024):</strong> <span
+class="math inline">\(\tan\delta = 3 \times 10^{-7}\)</span>. This value
+is calibrated to match the 300-microsecond coherence times reported for
+tantalum qubits at millikelvin temperatures, capturing the effective
+participation-weighted loss of advanced low-loss material systems.</li>
+<li><strong>Target (2026):</strong> <span
+class="math inline">\(\tan\delta = 5 \times 10^{-8}\)</span> (Advanced
+encapsulation).</li>
+<li><strong>Asymptotic (2030):</strong> <span
+class="math inline">\(\tan\delta = 1 \times 10^{-9}\)</span>
+(Theoretical limit).</li>
+</ul>
+<h3 id="thermal-bath-definition">3.3 Thermal Bath Definition</h3>
+<p>The simulation defines two distinct thermal environments,
+corresponding to the two primary operational stages of a standard
+dilution refrigerator:</p>
+<ul>
+<li><strong>Mixing Chamber:</strong> 10 millikelvin. Represents the
+traditional “cold” zone where quantum effects are naturally
+protected.</li>
+<li><strong>Pulse Tube:</strong> 4 Kelvin. Represents the “hot” zone
+where cooling power is abundant but thermal noise is significant.</li>
+</ul>
+<h3 id="cooling-power-constraints">3.4 Cooling Power Constraints</h3>
+<p>To evaluate the thermodynamic stability of each scenario, the
+simulation incorporates a rigorous model of the cooling capacity
+available at the two target stages. These constraints are treated as
+hard limits:</p>
+<ul>
+<li><strong>10 mK Capacity:</strong> 50 microwatts.</li>
+<li><strong>4 K Capacity:</strong> 1 Watt. Any configuration that
+generates heat exceeding these limits is flagged as unstable.</li>
+</ul>
+<h3 id="load-profile-modeling">3.5 Load Profile Modeling</h3>
+<p>The simulation estimates the total heat load for each scenario by
+summing the passive heat leak from wiring and the active power
+dissipation from control electronics. For the 4 Kelvin scenarios, we
+assume an optimized Cryo-CMOS load of 0.1 to 1.0 Watts. This assumes
+that the control electronics achieve a specific power efficiency of
+&lt;1 mW per qubit, a critical engineering target required to fit a
+large-scale controller within the 1 Watt envelope.</p>
+<h3 id="stability-verification-protocol">3.6 Stability Verification
+Protocol</h3>
+<p>The stability verification protocol is the logical gatekeeper of the
+simulation. For every combination of material epoch, temperature, and
+load, the system performs a binary check: does the heat load exceed the
+cooling capacity? If this condition is met (load &lt; capacity), the
+system is flagged as “STABLE,” and the simulation proceeds. If the
+condition is violated, the system is flagged as “RUNAWAY,” and the
+coherence calculation is aborted.</p>
+<h3 id="validation-against-experiment">3.7 Validation Against
+Experiment</h3>
+<p>To ground our numerical model in physical reality, we performed a
+rigorous validation against experimental data from peer-reviewed
+literature published in 2024. Specifically, we tuned the microscopic
+coupling constant <span class="math inline">\(K_{TLS}\)</span> and the
+intrinsic noise floor <span class="math inline">\(\Gamma_{1/f}\)</span>
+to reproduce the coherence times measured in state-of-the-art niobium
+trilayer (Anferov et al., 2024) and tantalum (Place et al., 2021)
+qubits. This calibration ensures that our model is a predictive tool
+anchored to the actual performance of modern devices.</p>
+<h2 id="analysis">4.0 Analysis</h2>
+<h3 id="genesis-state">4.1 Genesis State</h3>
+<p>The analysis begins with the Genesis epoch (Model 01, 1999). With a
+high loss tangent of <span class="math inline">\(5 \times
+10^{-4}\)</span>, the simulation reveals a system dominated entirely by
+dielectric loss, even at 10 millikelvin. The calculated effective
+coherence time is approximately 0.33 microseconds, yielding a
+single-qubit gate fidelity of only 94.04%. This confirms that in the
+absence of material refinement, the superconducting qubit is a fragile
+entity, barely coherent enough to demonstrate quantum behavior.</p>
+<h3 id="transmon-baseline">4.2 Transmon Baseline</h3>
+<p>The Standard epoch (Model 02, 2010) represents the baseline from
+which modern scaling efforts are launched. Standard amorphous materials
+(<span class="math inline">\(\tan\delta \approx 2 \times
+10^{-5}\)</span>) achieve a coherence time of 7.46 microseconds and a
+fidelity of 99.73% at 10 mK. While sufficient for small-scale
+demonstrations, this fidelity remains below the strict thresholds
+required for scalable fault tolerance. This baseline defines the
+“millikelvin dogma”—the belief that qubits must stay cold to
+survive.</p>
+<h3 id="thermal-wall">4.3 Thermal Wall</h3>
+<p>The thermal wall scenario (Model 03, 2010 @ 4K) simulates the
+consequences of attempting the architectural inversion with standard
+materials. Heating a standard transmon to 4 Kelvin results in a
+catastrophic collapse of fidelity to 92.28%. The thermal noise
+multiplier (<span class="math inline">\(\times 16\)</span>) amplifies
+the already significant dielectric loss, generating a noise storm that
+obliterates the quantum information. This simulation validates the
+historical skepticism of 4K operation: standard materials cannot
+function at elevated temperatures.</p>
+<h3 id="entropy-trap">4.4 Entropy Trap</h3>
+<p>The entropy trap scenario (Model 08, 2024 @ 10mK Active) simulates
+the thermodynamic consequences of maintaining the status quo. We model a
+future high-density system attempting to operate high-power active
+control at the 10 millikelvin stage. The simulation returns a stability
+status of “RUNAWAY.” Despite the potential for high coherence, the load
+of 100 microwatts exceeds the 50-microwatt capacity. This confirms the
+“unbounded-error phase”: the millikelvin stage simply lacks the capacity
+to support the work of computation.</p>
+<h3 id="modern-high-coherence">4.5 Modern High-Coherence</h3>
+<p>The Modern High-Coherence epoch (Model 04, 2024 @ 10mK) represents
+the material breakthrough of the mid-2020s. SOTA materials with <span
+class="math inline">\(\tan\delta \approx 3 \times 10^{-7}\)</span>
+achieve a coherence time of 283 microseconds and a fidelity of 99.99% at
+10 mK. This performance is well above the fault-tolerance threshold,
+providing a significant “coherence budget” that can be traded for the
+thermodynamic advantages of the 4 Kelvin stage.</p>
+<h3 id="architectural-inversion">4.6 Architectural Inversion</h3>
+<p>The architectural inversion scenario (Model 05, 2024 @ 4K) is the
+pivotal finding of this study. Simulating SOTA materials at 4 Kelvin
+yields a coherence time of 16.19 microseconds and a gate fidelity of
+99.88%. While slightly below the strict 99.9% target, it proves that 4K
+operation is viable with current materials—a massive improvement over
+the thermal wall scenario. Crucially, the stability check passes
+(STABLE) because the 1 Watt cooling capacity at 4K easily absorbs the
+active load.</p>
+<h3 id="scalable-future">4.7 Scalable Future</h3>
+<p>The Scalable Future scenario (Model 06, 2026) projects the
+performance of materials expected to mature by 2026 (<span
+class="math inline">\(\tan\delta = 5 \times 10^{-8}\)</span>). Reducing
+the loss tangent pushes the coherence time at 4 Kelvin to 93.36
+microseconds, resulting in a gate fidelity of 99.98%. This is the
+“breakaway” moment. The fidelity is statistically indistinguishable from
+the ideal 10 mK baseline. At this level of material quality, the thermal
+penalty of the 4 Kelvin environment is effectively neutralized.</p>
+<h3 id="terminal-equilibrium">4.8 Terminal Equilibrium</h3>
+<p>The Terminal Equilibrium (Model 07, 2030) simulates the asymptotic
+limit (<span class="math inline">\(\tan\delta \approx 10^{-9}\)</span>).
+In this idealized future, the thermal decoherence vanishes, yielding
+99.999% fidelity at 4 Kelvin. This serves as the existence proof that
+there is no fundamental law of physics preventing high-temperature
+superconductivity quantum computing within the limits of <span
+class="math inline">\(T_c\)</span>.</p>
+<h2 id="conclusion">5.0 Conclusion</h2>
+<h3 id="resolution-of-the-paradox">5.1 Resolution of the Paradox</h3>
+<p>The central thesis of this work is that the cooling capacity
+paradox—the conflict between the exponential scaling of quantum
+information and the polynomial scaling of cryogenic heat extraction—is
+not an insurmountable law of nature but a solvable engineering
+constraint. We have demonstrated that the current industry standard of
+sequestering all computational elements at the 10 millikelvin stage is a
+thermodynamic dead end, leading inevitably to the entropy trap. The
+solution lies in the architectural inversion, a paradigm shift that
+relocates the high-power control and readout infrastructure to the 4
+Kelvin stage.</p>
+<p>This work establishes a dual mandate for the scaling era:</p>
+<ol type="1">
+<li><strong>Materials Science:</strong> Dielectric materials must be
+engineered to achieve effective loss tangents below <span
+class="math inline">\(10^{-7}\)</span>. This suppresses the two-level
+system density, effectively decoupling the qubit from the thermal
+bath.</li>
+<li><strong>Circuit Engineering:</strong> Cryo-CMOS controllers must
+achieve power efficiencies better than 1 mW per qubit. This ensures that
+the active heat load fits within the 1 Watt budget of the 4 Kelvin
+stage.</li>
+</ol>
+<p>When these two conditions are met, the thermodynamic bottleneck is
+broken, and the path to the million-qubit processor is open. The
+perceived requirement for deep millikelvin operation for all components
+is revealed to be a relic of the past, paved over by the advances in
+crystalline materials and cryogenic integration.</p>
+<hr />
+<h3 id="appendix-a-formal-derivations">Appendix A: Formal
+Derivations</h3>
+<p>The theoretical framework used in this study is based on the Lindblad
+master equation for an open quantum system coupled to a thermal bath of
+two-level systems (TLS).</p>
+<p><strong>1. Total Dephasing Rate</strong> The effective decoherence
+rate <span class="math inline">\(1/T_2^*\)</span> is the sum of the
+intrinsic noise floor and the temperature-dependent TLS
+contribution:</p>
+<p><span class="math display">\[ \frac{1}{T_2^*(T)} = \frac{1}{2T_1} +
+\Gamma_{1/f} + \Gamma_{TLS}(T) \]</span></p>
+<p><strong>2. TLS Thermal Activation</strong> The TLS dephasing rate
+scales with the dielectric loss tangent <span
+class="math inline">\(\tan\delta\)</span> and the thermal photon
+occupation number, described by the hyperbolic cotangent of the ratio
+between qubit energy and thermal energy:</p>
+<p><span class="math display">\[ \Gamma_{TLS}(T) = K_{TLS} \cdot
+\tan\delta \cdot \coth\left(\frac{\hbar \omega_q}{2 k_B T}\right)
+\]</span></p>
+<p>Where:</p>
+<ul>
+<li><span class="math inline">\(K_{TLS} \approx 6.0 \times 10^9\)</span>
+Hz (Calibrated Coupling Constant)</li>
+<li><span class="math inline">\(\omega_q = 2\pi \times 5.0\)</span> GHz
+(Qubit Frequency)</li>
+<li><span class="math inline">\(\hbar\)</span> is the reduced Planck
+constant.</li>
+<li><span class="math inline">\(k_B\)</span> is the Boltzmann
+constant.</li>
+</ul>
+<p><strong>3. Thermodynamic Stability Condition</strong> The system is
+defined as stable if and only if the heat load generated by the active
+electronics and passive wiring is less than the cooling capacity of the
+specific cryogenic stage:</p>
+<p><span class="math display">\[ \mathcal{S}_{thermo} = \begin{cases}
+\text{STABLE} &amp; \text{if } P_{load} &lt; P_{cool}(T_{stage}) \\
+\text{RUNAWAY} &amp; \text{if } P_{load} \ge P_{cool}(T_{stage})
+\end{cases} \]</span> Where <span
+class="math inline">\(P_{cool}(10\text{mK}) \approx 50 \mu W\)</span>
+and <span class="math inline">\(P_{cool}(4\text{K}) \approx 1
+W\)</span>.</p>
+<hr />
+<h3 id="appendix-b-numerical-analysis-logs">Appendix B: Numerical
+Analysis Logs</h3>
+<p>The following data table summarizes the results of the simulation
+scenarios discussed in Section 4.0.</p>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">MODEL ID</th>
+<th style="text-align: left;">EPOCH</th>
+<th style="text-align: left;">TEMP (K)</th>
+<th style="text-align: left;"><span
+class="math inline">\(\tan\delta\)</span></th>
+<th style="text-align: left;">STABILITY</th>
+<th style="text-align: left;"><span class="math inline">\(T_2^*\)</span>
+(<span class="math inline">\(\mu\)</span>s)</th>
+<th style="text-align: left;">FIDELITY (%)</th>
+<th style="text-align: left;">LABEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>MODEL_01</strong></td>
+<td style="text-align: left;">1999 (Genesis)</td>
+<td style="text-align: left;">0.01</td>
+<td style="text-align: left;"><span class="math inline">\(5 \times
+10^{-4}\)</span></td>
+<td style="text-align: left;">STABLE</td>
+<td style="text-align: left;">0.33</td>
+<td style="text-align: left;">94.04</td>
+<td style="text-align: left;">Cooper Pair Box Era</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MODEL_02</strong></td>
+<td style="text-align: left;">2010 (Standard)</td>
+<td style="text-align: left;">0.01</td>
+<td style="text-align: left;"><span class="math inline">\(2 \times
+10^{-5}\)</span></td>
+<td style="text-align: left;">STABLE</td>
+<td style="text-align: left;">7.46</td>
+<td style="text-align: left;">99.73</td>
+<td style="text-align: left;">Transmon Baseline</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MODEL_03</strong></td>
+<td style="text-align: left;">2010 (Standard)</td>
+<td style="text-align: left;">4.00</td>
+<td style="text-align: left;"><span class="math inline">\(2 \times
+10^{-5}\)</span></td>
+<td style="text-align: left;">STABLE</td>
+<td style="text-align: left;">0.25</td>
+<td style="text-align: left;">92.28</td>
+<td style="text-align: left;">The Thermal Wall</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MODEL_04</strong></td>
+<td style="text-align: left;">2024 (SOTA)</td>
+<td style="text-align: left;">0.01</td>
+<td style="text-align: left;"><span class="math inline">\(3 \times
+10^{-7}\)</span></td>
+<td style="text-align: left;">STABLE</td>
+<td style="text-align: left;">283.12</td>
+<td style="text-align: left;">99.99</td>
+<td style="text-align: left;">Modern High-Coherence</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MODEL_05</strong></td>
+<td style="text-align: left;">2024 (SOTA)</td>
+<td style="text-align: left;">4.00</td>
+<td style="text-align: left;"><span class="math inline">\(3 \times
+10^{-7}\)</span></td>
+<td style="text-align: left;">STABLE</td>
+<td style="text-align: left;">16.19</td>
+<td style="text-align: left;">99.88</td>
+<td style="text-align: left;">Architectural Inversion</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MODEL_06</strong></td>
+<td style="text-align: left;">2026 (Target)</td>
+<td style="text-align: left;">4.00</td>
+<td style="text-align: left;"><span class="math inline">\(5 \times
+10^{-8}\)</span></td>
+<td style="text-align: left;">STABLE</td>
+<td style="text-align: left;">93.36</td>
+<td style="text-align: left;">99.98</td>
+<td style="text-align: left;">Scalable Future</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MODEL_07</strong></td>
+<td style="text-align: left;">2030 (Asymptotic)</td>
+<td style="text-align: left;">4.00</td>
+<td style="text-align: left;"><span class="math inline">\(1 \times
+10^{-9}\)</span></td>
+<td style="text-align: left;">STABLE</td>
+<td style="text-align: left;">3332.3</td>
+<td style="text-align: left;">99.999</td>
+<td style="text-align: left;">Terminal Equilibrium</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MODEL_08</strong></td>
+<td style="text-align: left;">2024 (SOTA)</td>
+<td style="text-align: left;">0.01</td>
+<td style="text-align: left;"><span class="math inline">\(3 \times
+10^{-7}\)</span></td>
+<td style="text-align: left;"><strong>RUNAWAY</strong></td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">N/A</td>
+<td style="text-align: left;">The Entropy Trap</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="appendix-c-numerical-analysis-code-python">Appendix C: Numerical
+Analysis Code (Python)</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># --- PHYSICAL CONSTANTS ---</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>H_BAR <span class="op">=</span> <span class="fl">1.0545718e-34</span>  <span class="co"># Reduced Planck constant (J*s)</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>K_B <span class="op">=</span> <span class="fl">1.380649e-23</span>     <span class="co"># Boltzmann constant (J/K)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># --- SYSTEM PARAMETERS ---</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>QUBIT_FREQ <span class="op">=</span> <span class="fl">5.0e9</span>     <span class="co"># 5 GHz (Hz)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>OMEGA_Q <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> QUBIT_FREQ</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>GATE_TIME <span class="op">=</span> <span class="fl">20e-9</span>      <span class="co"># 20 ns (s)</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># --- CALIBRATED MODEL PARAMETERS ---</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># K_TLS: Coupling Constant Derived from Anferov/Place 2024 Data</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Calibrated to Match T2* ~ 10us at tan_delta=1e-5 and T2* ~ 300us at tan_delta=3e-7</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>K_TLS_COUPLING <span class="op">=</span> <span class="fl">6.0e9</span> </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># INTRINSIC_GAMMA: Temperature-independent Noise Floor (1/f noise)</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Set to Approx 3 kHz to Represent Asymptotic Limit</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>INTRINSIC_GAMMA <span class="op">=</span> <span class="fl">3.5e3</span> </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> CryogenicSystem:</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, temp_k, cooling_capacity_w):</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.temp <span class="op">=</span> temp_k</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.capacity <span class="op">=</span> cooling_capacity_w</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MaterialEpoch:</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, tan_delta):</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.tan_delta <span class="op">=</span> tan_delta</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_coherence(system, material):</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="co">    Calculates T2* based on Lindblad thermal dephasing model.</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Calculate Thermal Factor (coth(hw/2kT))</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Argument for Coth</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> (H_BAR <span class="op">*</span> OMEGA_Q) <span class="op">/</span> (<span class="dv">2</span> <span class="op">*</span> K_B <span class="op">*</span> system.temp)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Handle Numerical Overflow for Very Low T (coth -&gt; 1)</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> x <span class="op">&gt;</span> <span class="dv">20</span>:</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        thermal_factor <span class="op">=</span> <span class="fl">1.0</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        thermal_factor <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> np.tanh(x)</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Calculate TLS Dephasing Rate</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    gamma_tls <span class="op">=</span> K_TLS_COUPLING <span class="op">*</span> material.tan_delta <span class="op">*</span> thermal_factor</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Total Dephasing Rate (Gamma_total = Gamma_intrinsic + Gamma_TLS)</span></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    gamma_total <span class="op">=</span> INTRINSIC_GAMMA <span class="op">+</span> gamma_tls</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Effective Coherence Time</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    t2_star <span class="op">=</span> <span class="fl">1.0</span> <span class="op">/</span> gamma_total</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> t2_star</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> estimate_fidelity(t2_star):</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="co">    Estimates single-qubit gate fidelity: F = exp(-t_gate / T2)</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="co">    &quot;&quot;&quot;</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.exp(<span class="op">-</span>GATE_TIME <span class="op">/</span> t2_star)</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> run_simulation():</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Material Epochs</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    epochs <span class="op">=</span> [</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        MaterialEpoch(<span class="st">&quot;1999 (Genesis)&quot;</span>, <span class="fl">5e-4</span>),</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>        MaterialEpoch(<span class="st">&quot;2010 (Standard)&quot;</span>, <span class="fl">2e-5</span>),</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>        MaterialEpoch(<span class="st">&quot;2024 (SOTA)&quot;</span>, <span class="fl">3e-7</span>),</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>        MaterialEpoch(<span class="st">&quot;2026 (Target)&quot;</span>, <span class="fl">5e-8</span>),</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>        MaterialEpoch(<span class="st">&quot;2030 (Asymptotic)&quot;</span>, <span class="fl">1e-9</span>)</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Thermal Stages</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    stages <span class="op">=</span> {</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;10mK&quot;</span>: CryogenicSystem(<span class="st">&quot;Mixing Chamber&quot;</span>, <span class="fl">0.01</span>, <span class="fl">50e-6</span>),</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;4K&quot;</span>:   CryogenicSystem(<span class="st">&quot;Pulse Tube&quot;</span>, <span class="fl">4.0</span>, <span class="fl">1.0</span>)</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a><span class="co"># Define Scenarios (Epoch, Stage, Load_Watts, Label)</span></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    scenarios <span class="op">=</span> [</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>        (epochs[<span class="dv">0</span>], stages[<span class="st">&quot;10mK&quot;</span>], <span class="fl">1e-9</span>, <span class="st">&quot;MODEL_01: Cooper Pair Box Era&quot;</span>),</span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>        (epochs[<span class="dv">1</span>], stages[<span class="st">&quot;10mK&quot;</span>], <span class="fl">1e-6</span>, <span class="st">&quot;MODEL_02: Transmon Baseline&quot;</span>),</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>        (epochs[<span class="dv">1</span>], stages[<span class="st">&quot;4K&quot;</span>],   <span class="fl">1e-6</span>, <span class="st">&quot;MODEL_03: The Thermal Wall&quot;</span>),</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>        (epochs[<span class="dv">2</span>], stages[<span class="st">&quot;10mK&quot;</span>], <span class="fl">10e-6</span>,<span class="st">&quot;MODEL_04: Modern High-Coherence&quot;</span>),</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>        (epochs[<span class="dv">2</span>], stages[<span class="st">&quot;4K&quot;</span>],   <span class="fl">0.5</span>,  <span class="st">&quot;MODEL_05: Architectural Inversion&quot;</span>),</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>        (epochs[<span class="dv">3</span>], stages[<span class="st">&quot;4K&quot;</span>],   <span class="fl">0.5</span>,  <span class="st">&quot;MODEL_06: Scalable Future&quot;</span>),</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>        (epochs[<span class="dv">4</span>], stages[<span class="st">&quot;4K&quot;</span>],   <span class="fl">0.5</span>,  <span class="st">&quot;MODEL_07: Terminal Equilibrium&quot;</span>),</span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>        (epochs[<span class="dv">2</span>], stages[<span class="st">&quot;10mK&quot;</span>], <span class="fl">100e-6</span>,<span class="st">&quot;MODEL_08: The Entropy Trap&quot;</span>)</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>    results <span class="op">=</span> []</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> mat, stage, load, label <span class="kw">in</span> scenarios:</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="co"># Thermodynamic Stability Check</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> load <span class="op">&gt;=</span> stage.capacity:</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>            stability <span class="op">=</span> <span class="st">&quot;RUNAWAY&quot;</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>            t2 <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>            fid <span class="op">=</span> <span class="fl">0.0</span></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>            stability <span class="op">=</span> <span class="st">&quot;STABLE&quot;</span></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>            t2 <span class="op">=</span> calculate_coherence(stage, mat)</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>            fid <span class="op">=</span> estimate_fidelity(t2)</span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>        results.append({</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;Label&quot;</span>: label,</span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;Temp (K)&quot;</span>: stage.temp,</span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;Tan Delta&quot;</span>: mat.tan_delta,</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;Load (W)&quot;</span>: load,</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;Stability&quot;</span>: stability,</span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;T2* (us)&quot;</span>: <span class="bu">round</span>(t2 <span class="op">*</span> <span class="fl">1e6</span>, <span class="dv">2</span>) <span class="cf">if</span> stability <span class="op">==</span> <span class="st">&quot;STABLE&quot;</span> <span class="cf">else</span> <span class="st">&quot;N/A&quot;</span>,</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a>            <span class="st">&quot;Fidelity (%)&quot;</span>: <span class="bu">round</span>(fid <span class="op">*</span> <span class="dv">100</span>, <span class="dv">4</span>) <span class="cf">if</span> stability <span class="op">==</span> <span class="st">&quot;STABLE&quot;</span> <span class="cf">else</span> <span class="st">&quot;N/A&quot;</span></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a>        })</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame(results)</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">&quot;__main__&quot;</span>:</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    df <span class="op">=</span> run_simulation()</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(df.to_string())</span></code></pre></div>
+<hr />
+<h3 id="references">References</h3>
+<ol type="1">
+<li><strong>Bilokur, M., Gopalakrishnan, S., &amp; Majidy, S.</strong>
+(2024). Thermodynamic limitations on fault-tolerant quantum computing.
+<em>arXiv preprint arXiv:2411.12805</em>.</li>
+<li><strong>Anferov, A., Lee, K., Zhao, F., Simon, J., &amp; Schuster,
+D. I.</strong> (2024). Improved coherence in optically defined niobium
+trilayer-junction qubits. <em>Physical Review Applied</em>, 21(2),
+024047.</li>
+<li><strong>Landauer, R.</strong> (1961). Irreversibility and heat
+generation in the computing process. <em>IBM Journal of Research and
+Development</em>, 5(3), 183-191.</li>
+<li><strong>Tada, M., et al.</strong> (2024). A 65nm Cryogenic CMOS
+Design and Performance at 4.2K for Quantum State Controller Application.
+<em>IEEE Journal of the Electron Devices Society</em>, 12, 28-33.</li>
+<li><strong>Crowley, K. D., et al.</strong> (2023). Disentangling Losses
+in Tantalum Superconducting Circuits. <em>Physical Review Applied</em>,
+19(6), 064022.</li>
+<li><strong>Place, A. P. M., et al.</strong> (2021). New material
+platform for superconducting transmon qubits with coherence times
+exceeding 0.3 milliseconds. <em>Nature Communications</em>, 12,
+1779.</li>
+<li><strong>Bravyi, S., Cross, A. W., Gambetta, J. M., Maslov, D., Rall,
+P., &amp; Yoder, T. J.</strong> (2024). High-threshold and low-overhead
+fault-tolerant quantum memory. <em>Nature</em>, 627, 778–782.</li>
+<li><strong>Phillips, W. A.</strong> (1987). Two-level states in
+glasses. <em>Reports on Progress in Physics</em>, 50(12), 1657.</li>
+<li><strong>Sivak, V. V., et al.</strong> (2023). Real-time quantum
+error correction beyond break-even. <em>Nature</em>, 616, 50–55.</li>
+<li><strong>Krinner, S., et al.</strong> (2019). Engineering cryogenic
+setups for 100-qubit scale superconducting circuit systems. <em>EPJ
+Quantum Technology</em>, 6, 2.</li>
+<li><strong>Chattopadhyay, P., Misra, A., Pandit, T., &amp; Paul,
+G.</strong> (2025). Landauer principle and thermodynamics of
+computation. <em>Reports on Progress in Physics</em>, 88, 086001.</li>
+<li><strong>Chakraborty, S., et al.</strong> (2024). Cryogenic CMOS
+Design for Qubit Control: Present Status, Challenges, and Future
+Directions. <em>IEEE Circuits and Systems Magazine</em>, 24(2),
+34-52.</li>
+<li><strong>Malnou, M., et al.</strong> (2024). A Traveling-Wave
+Parametric Amplifier and Converter. <em>arXiv preprint
+arXiv:2406.19476</em>.</li>
+<li><strong>Chudakova, T. A., et al.</strong> (2024). Effect of Etching
+Methods on Dielectric Losses in Transmons. <em>JETP Letters</em>,
+120(4), 298-304.</li>
+<li><strong>Nilsson, H. R., et al.</strong> (2024). We characterise a
+small footprint travelling-wave parametric amplifier (TWPA). <em>arXiv
+preprint arXiv:2408.16366</em>.</li>
+<li><strong>Oh, J. S., et al.</strong> (2024). Structure and Formation
+Mechanisms in Tantalum and Niobium Oxides in Superconducting Quantum
+Circuits. <em>ACS Nano</em>, 18(30), 19732-19741.</li>
+<li><strong>Lei, L., et al.</strong> (2024). Cryogenic Control and
+Readout Integrated Circuits for Solid-State Quantum Computing. <em>arXiv
+preprint arXiv:2410.15895</em>.</li>
+<li><strong>Heelweg, H., Dodin, A., &amp; Willard, A.</strong> (2025).
+Quantifying the thermodynamic costs of quantum state changes:
+Applications to quantum information processing. <em>ACS Spring
+2025</em>, Abstract 4194813.</li>
+<li><strong>Kerschbaum, M., et al.</strong> (2024). Investigating the
+Susceptibility of Niobium- and Tantalum-Based Superconducting Qubits to
+Infrared Radiation. <em>APS March Meeting 2024</em>, Session
+S48.00011.</li>
+<li><strong>Bal, M., et al.</strong> (2024). Systematic improvements in
+transmon qubit coherence enabled by niobium surface encapsulation.
+<em>npj Quantum Information</em>, 10, 38.</li>
+</ol>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

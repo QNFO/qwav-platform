@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Functorial Framework for Morphological Computing | QWAV</title>
+<meta name="description" content="A Functorial Framework for Morphological Computing: A Vectorial, Topologically-Protected Solution to the Residue Number System Reconstruction Paradox Author:...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/functorial-framework-for-morphological-computing">
+<meta property="og:title" content="Functorial Framework for Morphological Computing">
+<meta property="og:description" content="A Functorial Framework for Morphological Computing: A Vectorial, Topologically-Protected Solution to the Residue Number System Reconstruction Paradox Author:...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/functorial-framework-for-morphological-computing">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Functorial Framework for Morphological Computing",
+  "url": "https://deep.qwav.tech/papers/functorial-framework-for-morphological-computing",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-10-31T07:12:48Z",
+  "keywords": [
+    ": morphological computing",
+    "Residue Number Systems",
+    "topological quantum matter",
+    "functorial framework",
+    "category theory",
+    "Chern insulator",
+    "moir\u00e9 materials",
+    "quantum Hall effect",
+    "physical computation",
+    "hardware-software co-design",
+    "energy-efficient computing"
+  ],
+  "abstract": "A Functorial Framework for Morphological Computing: A Vectorial, Topologically-Protected Solution to the Residue Number System Reconstruction Paradox Author:..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h2
+id="a-functorial-framework-for-morphological-computing-a-vectorial-topologically-protected-solution-to-the-residue-number-system-reconstruction-paradox">A
+Functorial Framework for Morphological Computing: A Vectorial,
+Topologically-Protected Solution to the Residue Number System
+Reconstruction Paradox</h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Contact:</strong> rowan.quni@outlook.com <strong>ORCID:</strong>
+0009-0002-4317-5604 <strong>ISNI:</strong> 0000 0005 2645 6062
+<strong>DOI:</strong> 10.5281/zenodo.17491258 <strong>Publication
+Date:</strong> 2025-10-31 <strong>Version:</strong> 1.0</p>
+<p><strong>Abstract</strong>: This work introduces a formal framework
+for morphological computing that resolves the longstanding
+reconstruction paradox in Residue Number System (RNS) arithmetic by
+leveraging the physics of topological quantum matter. Conventional
+RNS-based accelerators are bottlenecked by the serial, computationally
+expensive conversion of a parallel residue vector into a scalar integer
+via the Chinese Remainder Theorem. We dissolve this bottleneck by
+proposing a vectorial topological encoding scheme where the
+computational result is the residue vector itself, physically embodied
+as a vector of Chern numbers in a moiré superlattice. We address the
+critical challenge of formal verification in physical computing by
+constructing a structure-preserving functor from the algebraic category
+of RNS computations to the physical category of adiabatic evolutions in
+topological phases. This functor provides a formal guarantee of
+computational correctness. The final result is read out directly via a
+multi-terminal quantum Hall conductance measurement, which yields the
+Chern vector without any algorithmic post-processing. This approach
+establishes a new paradigm of computation-by-relaxation that is formally
+verifiable, physically robust, and achieves end-to-end energy efficiency
+by eliminating the reconstruction step entirely.</p>
+<p><strong>Keywords</strong>: morphological computing, Residue Number
+Systems, topological quantum matter, functorial framework, category
+theory, Chern insulator, moiré materials, quantum Hall effect, physical
+computation, hardware-software co-design, energy-efficient computing</p>
+<h3 id="i.-state-of-the-art-and-gap-identification"><strong>I. State of
+the Art and Gap Identification</strong></h3>
+<p><strong>A. Summary of key prior work</strong></p>
+<p>The scholarly context for this work is situated at the confluence of
+three distinct but complementary fields: morphological computing,
+Residue Number Systems (RNS), and topological quantum matter. The
+concept of morphological computing, where a system’s physical structure
+contributes to computation, was advanced by Pfeifer &amp; Bongard
+(2007), but has been critically assessed as often lacking a rigorous
+information-theoretic foundation that would distinguish it from trivial
+physical dynamics (Müller &amp; Hoffmann, 2017). This concern is
+reinforced by the argument that without a formal framework to define the
+relationship between a physical process and an abstract computation,
+claims of physical computation risk becoming unverifiable (Horsman et
+al., 2014). In parallel, RNS, as formalized by Szabo &amp; Tanaka
+(1967), offers an architecture for carry-free parallel arithmetic.
+However, its practical application is persistently hindered by the
+computational overhead of the Chinese Remainder Theorem (CRT)
+reconstruction step, a bottleneck that remains a challenge even in
+modern applications such as homomorphic encryption (Cheon et al., 2017).
+Concurrently, the study of topological phases of matter has progressed
+from theoretical proposals (Kitaev, 2003) to experimental realizations
+of robust, topologically protected states in moiré materials (Sharpe et
+al., 2019). While these systems provide stable, quantized invariants,
+the literature lacks a clear protocol for encoding arbitrary
+computational results into these invariants and reading them out
+directly. Existing work on topological quantum computing has largely
+focused on developing fault-tolerant quantum gates using non-Abelian
+anyons, rather than addressing general-purpose integer arithmetic (Nayak
+et al., 2008). The broader field of physical computation has long
+explored analogues to Turing-completeness in continuous physical systems
+but has not yet produced scalable, noise-resilient, and formally
+verifiable architectures for integer arithmetic (MacLennan, 2004;
+Siegelmann, 1999). Finally, the persistent demand for energy-efficient
+computing in the post-Moore era highlights the limitations of existing
+RNS accelerators, which have yet to overcome the systems-level overhead
+imposed by the reconstruction step (Horowitz, 2014).</p>
+<p><strong>B. Identified open problems or tensions</strong></p>
+<p>The confluence of these fields reveals a set of interconnected and
+unresolved problems. The primary issue is the reconstruction paradox,
+where the inherent parallelism of RNS is nullified by the serial,
+computationally intensive CRT reconstruction required to produce a
+usable scalar output. This is directly linked to the verification
+challenge: many proposals for physics-based computation remain
+descriptive, lacking the formal mathematical structure, such as that
+provided by category theory, needed to prove that a physical system
+correctly implements a specified computation (Müller &amp; Hoffmann,
+2017; Horsman et al., 2014). Even if a computational state were encoded
+in a topological invariant, a measurement problem persists, as no
+established protocol allows for the direct measurement of such an
+invariant to yield a final computational result without requiring
+further algorithmic processing. This has led to a scalar encoding
+failure, where attempts to map the CRT reconstruction onto a single,
+weighted physical observable have proven unworkable due to non-physical
+requirements and a misunderstanding of measurement principles. These
+specific issues point to a deeper ontological mismatch: prior work
+typically treats a physical system as a passive substrate on which an
+abstract algorithm is executed, whereas this work proposes an inversion
+where the computation is the natural dynamics of the physics itself.
+Furthermore, existing topological computing frameworks exhibit a lack of
+arithmetic universality, focusing on specialized quantum gate sets
+rather than the general-purpose integer arithmetic needed for many
+classical computing tasks. This disconnect is formalized by the absence
+of categorical grounding, as no prior work has constructed a functorial
+bridge to formally link an algebraic model of computation with a
+category of topological quantum phases. Finally, these issues culminate
+in a practical energy-latency tradeoff, where the benefits of RNS
+arithmetic are offset by the costs of reconstruction, yielding no net
+system-level advantage.</p>
+<p><strong>C. Positioned contribution of this work</strong></p>
+<p>This work presents a framework that directly addresses the identified
+gaps by integrating these fields through a novel, formally grounded
+approach. It resolves the reconstruction paradox by dissolving the
+problem: a vectorial topological encoding is proposed where the
+computational result is the vector of residues itself, rendered directly
+as a physical observable, eliminating the need for a scalar
+reconstruction. The verification challenge is met through a
+categorically formalized framework that constructs an explicit,
+structure-preserving functor from the category of RNS computations to
+the category of topological physical evolutions, providing a formal
+proof of correctness that responds to the critiques of Müller &amp;
+Hoffmann (2017). The measurement problem is solved by specifying an
+experimentally feasible, direct multi-terminal measurement protocol
+where the encoded Chern vector is read out as a set of quantized Hall
+conductances, yielding the final result without post-processing. This
+approach overcomes the scalar encoding failure by embracing a parallel
+vector output that is native to both RNS and the physics of topological
+matter. By grounding the framework in a computation-by-relaxation
+paradigm, this work offers a concrete realization of morphological
+computing that is non-trivial and formally verifiable, as called for by
+Horsman et al. (2014). It establishes arithmetic universality for a
+class of topological systems by demonstrating a mapping from any integer
+arithmetic operation to a realizable physical protocol. Through an
+ontological inversion, computation is redefined not as an abstract
+process imposed on matter, but as the natural, deterministic relaxation
+of a constrained physical system. By eliminating the reconstruction
+bottleneck, this architecture achieves end-to-end energy efficiency,
+breaking the longstanding energy-latency tradeoff that has limited the
+utility of RNS accelerators.</p>
+<h3
+id="ii.-theoretical-foundations-of-morphological-computing"><strong>II.
+Theoretical Foundations of Morphological Computing</strong></h3>
+<p><strong>A. From symbolic to physical computation</strong></p>
+<p>This framework redefines computation not as the execution of a
+logical sequence, but as the deterministic evolution of a constrained
+physical system. The process begins with the preparation of a
+high-energy initial state, which then naturally relaxes to a
+minimum-energy ground state that physically encodes the computational
+solution. This “computation-by-relaxation” paradigm leverages the
+system’s natural physics to perform computational work, thereby avoiding
+the von Neumann bottleneck and the energy costs associated with
+transistor switching. The process can be understood as a physical
+instantiation of coarse-graining, where microscopic degrees of freedom
+self-organize into a stable, macroscopic state that represents the
+computational result. This view is consistent with Landauer’s principle,
+as the energy dissipated is fundamentally linked to the physical
+relaxation process rather than the logical irreversibility of an
+abstract gate model. The computational complexity of a problem is
+encoded in the landscape of the system’s free energy functional, with
+the solution path corresponding to a geodesic in the system’s state
+space, a concept that aligns with the notion of thermodynamic depth
+(Lloyd &amp; Pagels, 1988). The input is encoded in the preparation of
+the initial state, while the function to be computed is encoded in the
+topology of the energy landscape, thus unifying program and data within
+the physical substrate. The system functions as a dissipative structure,
+where an external energy flow is used to prepare the system far from
+equilibrium, and its subsequent relaxation toward equilibrium performs
+the computation (Prigogine, 1967).</p>
+<p><strong>B. Residue number systems as the optimal physical
+logic</strong></p>
+<p>Residue Number Systems provide the ideal mathematical structure for
+this physical computing paradigm. The core advantage of RNS is its
+inherent parallelism; arithmetic operations on each residue channel are
+performed independently of all others, which eliminates the carry
+propagation that fundamentally limits conventional binary arithmetic.
+This mathematical independence maps directly and naturally onto a
+physical architecture of decoupled subsystems, such as distinct regions
+of a mesoscopic material, where each prime modulus corresponds to a
+unique, topologically protected computational channel. The Chinese
+Remainder Theorem guarantees a bijective mapping between a global
+integer and its corresponding vector of local residues, ensuring that
+the vector representation is both complete and unambiguous. The product
+ring structure, <span class="math inline">\(\prod_{i=1}^k
+\mathbb{Z}/p_i\mathbb{Z}\)</span>, is not merely a mathematical
+convenience but is the formal expression of a physically decomposable
+system, making RNS the natural logic for a modular hardware
+implementation. The isomorphism of algebras guaranteed by the CRT
+ensures that all essential ring-theoretic properties, such as
+distributivity and associativity, are preserved in the vectorial
+representation, providing a faithful encoding of the computation.
+Furthermore, the use of small prime moduli provides a balance between
+dynamic range, physical realizability, and intrinsic error detection, as
+any error affecting a single channel produces an out-of-range vector
+that is immediately detectable. RNS thus functions as a non-linear
+error-detecting code, a property that is maintained and physically
+grounded in the topological embodiment.</p>
+<p><strong>C. Topological protection for robust information
+encoding</strong></p>
+<p>To ensure that the physical embodiment of RNS is robust, information
+is encoded in global topological invariants that are intrinsically
+resilient to local noise, defects, and thermal perturbations. The Chern
+number, a global property of a system’s electronic band structure,
+serves as the physical carrier of a residue value. Fractional Chern
+Insulators (FCIs), which have been realized in moiré superlattices,
+offer a suitable physical platform where the ground-state degeneracy and
+associated Chern number can be engineered to be prime-bounded, thereby
+creating a direct physical realization of an RNS residue channel. In
+this architecture, the moiré pattern is not a passive substrate but an
+active computational landscape whose electronic properties can be
+programmed by tuning physical parameters like twist angle and external
+electric fields. The topological degeneracy of the ground state provides
+a natural Hilbert space for storing a residue, with each distinct Chern
+sector functioning as a stable, noise-immune memory element. The
+robustness of this encoding is physically guaranteed by the spectral gap
+of the system, which exponentially suppresses fluctuations that could
+cause unintended transitions between different topological sectors.
+Information can be read out by leveraging the chiral edge states
+characteristic of such systems, which carry a quantized current directly
+proportional to the bulk Chern number, enabling a non-invasive,
+contact-based measurement. This system exhibits topological quantum
+order, where long-range quantum entanglement provides a deep, intrinsic
+fault tolerance that protects the encoded information beyond the simple
+energy barrier of the spectral gap (Wen, 2002).</p>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr>
+<th>### <strong>III. The Functorial Framework: A Formal Bridge from
+Computation to Physics</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>### <strong>Appendix A: Formal Verification of the Functorial
+Framework</strong></td>
+</tr>
+<tr>
+<td>The formal correctness of the proposed framework is established
+through the following derivation.</td>
+</tr>
+<tr>
+<td>1. <strong>Chinese Remainder Theorem</strong>: For a set of pairwise
+coprime integers <span class="math inline">\(p_1, \dots, p_k\)</span>,
+the map <span class="math inline">\(\phi: N \mapsto (N \bmod p_1, \dots,
+N \bmod p_k)\)</span> defines a ring isomorphism <span
+class="math inline">\(\phi: \mathbb{Z}/M\mathbb{Z} \to \prod_{i=1}^k
+\mathbb{Z}/p_i\mathbb{Z}\)</span>, where <span class="math inline">\(M =
+\prod_i p_i\)</span>.</td>
+</tr>
+<tr>
+<td>2. <strong>Category RNS</strong>: The category <strong>RNS</strong>
+is defined. Its objects are the rings <span
+class="math inline">\(\mathbb{Z}/p_i\mathbb{Z}\)</span>. Its morphisms
+are ring homomorphisms <span class="math inline">\(f:
+\mathbb{Z}/p_i\mathbb{Z} \to \mathbb{Z}/p_i\mathbb{Z}\)</span> induced
+by arithmetic operations (e.g., <span class="math inline">\(f(x) = x + a
+\bmod p_i\)</span>).</td>
+</tr>
+<tr>
+<td>3. <strong>Category TopPh</strong>: The category
+<strong>TopPh</strong> is defined. Its objects are pairs <span
+class="math inline">\((\mathcal{H}_i, H_i)\)</span>, where <span
+class="math inline">\(\mathcal{H}_i\)</span> is the ground-state Hilbert
+space of an FCI with Chern numbers in <span class="math inline">\(\{0,
+\dots, p_i-1\}\)</span>, and <span class="math inline">\(H_i\)</span> is
+its Hamiltonian. Its morphisms are unitary operators <span
+class="math inline">\(U_f\)</span> generated by adiabatic protocols,
+given by:</td>
+</tr>
+<tr>
+<td><span class="math display">\[U_f = \mathcal{T}
+\exp\left(-\frac{i}{\hbar} \int_0^\tau H_i(t) \, dt\right) \quad
+(A1)\]</span></td>
+</tr>
+<tr>
+<td>4. <strong>Functor Construction (Objects)</strong>: The functor
+<span class="math inline">\(\mathcal{F}: \textbf{RNS} \to
+\textbf{TopPh}\)</span> is constructed on objects by the mapping <span
+class="math inline">\(\mathcal{F}(\mathbb{Z}/p_i\mathbb{Z}) =
+(\mathcal{H}_i, H_i)\)</span>.</td>
+</tr>
+<tr>
+<td>5. <strong>Functor Construction (Morphisms)</strong>: On morphisms,
+for an arithmetic operation <span class="math inline">\(f(x) = x + a
+\bmod p_i\)</span>, the functor maps it to a unitary evolution <span
+class="math inline">\(\mathcal{F}(f) = U_f\)</span>, where <span
+class="math inline">\(U_f\)</span> is generated by a Thouless pumping
+protocol that shifts the Chern number by <span
+class="math inline">\(a\)</span>.</td>
+</tr>
+<tr>
+<td>6. <strong>Identity Preservation</strong>: The functor preserves
+identities. The identity morphism in <strong>RNS</strong> is <span
+class="math inline">\(f(x)=x\)</span>, which corresponds to a shift of
+<span class="math inline">\(a=0\)</span>. The corresponding physical
+protocol is a static Hamiltonian, which generates the identity unitary
+<span class="math inline">\(\mathbb{I}_{\mathcal{H}_i}\)</span>. Thus,
+<span
+class="math inline">\(\mathcal{F}(\mathrm{id}_{\mathbb{Z}/p_i\mathbb{Z}})
+= \mathbb{I}_{\mathcal{H}_i}\)</span>.</td>
+</tr>
+<tr>
+<td>7. <strong>Composition Preservation</strong>: The functor preserves
+composition. For two morphisms <span class="math inline">\(f\)</span>
+and <span class="math inline">\(g\)</span>, the physical protocol for
+<span class="math inline">\(g \circ f\)</span> is the temporal
+concatenation of the individual protocols. The resulting unitary
+evolution is the product of the individual unitaries, <span
+class="math inline">\(U_g U_f\)</span>. Therefore, <span
+class="math inline">\(\mathcal{F}(g \circ f) = U_g U_f = \mathcal{F}(g)
+\circ \mathcal{F}(f)\)</span>.</td>
+</tr>
+<tr>
+<td>8. <strong>Conclusion</strong>: Since <span
+class="math inline">\(\mathcal{F}\)</span> preserves both identities and
+composition, it is a well-defined, structure-preserving functor. This
+provides a formal guarantee that the physical system correctly
+implements the algebra of RNS computations.</td>
+</tr>
+<tr>
+<td>9. <strong>Universality</strong>: The framework is general. Any
+other physical system that realizes the same algebraic structure (e.g.,
+a photonic lattice) would be related to this moiré implementation by a
+natural isomorphism, demonstrating the universality of the categorical
+approach.</td>
+</tr>
+<tr>
+<td>10. <strong>Extension to Multiplication</strong>: Ring homomorphisms
+for multiplication (e.g., <span class="math inline">\(f_b(x) = b x \bmod
+p_i\)</span>) can be implemented via sequences of additions or other
+non-linear adiabatic protocols, ensuring the full ring structure is
+preserved under <span class="math inline">\(\mathcal{F}\)</span>.</td>
+</tr>
+<tr>
+<td>11. <strong>Faithfulness</strong>: The functor is faithful. If <span
+class="math inline">\(\mathcal{F}(f) = \mathcal{F}(g)\)</span>, their
+corresponding physical effects are identical. Since distinct arithmetic
+operations produce distinct and measurable shifts in the Chern number,
+this implies <span class="math inline">\(f = g\)</span>.</td>
+</tr>
+<tr>
+<td>12. <strong>Fullness</strong>: The functor is full. Every adiabatic
+protocol that shifts the Chern number by an integer <span
+class="math inline">\(a\)</span> corresponds to the morphism <span
+class="math inline">\(f_a(x) = x + a \bmod p_i\)</span> in
+<strong>RNS</strong>.</td>
+</tr>
+<tr>
+<td>13. <strong>Categorical Equivalence</strong>: Because the functor
+<span class="math inline">\(\mathcal{F}\)</span> is full, faithful, and
+essentially surjective onto the relevant subcategory of
+<strong>TopPh</strong>, it establishes an equivalence of categories
+between <strong>RNS</strong> and its physical realization.</td>
+</tr>
+</tbody>
+</table>
+<h3
+id="appendix-b-verification-of-the-vectorial-encoding-scheme"><strong>Appendix
+B: Verification of the Vectorial Encoding Scheme</strong></h3>
+<p>The validity of the vectorial encoding and measurement scheme is
+established as follows.</p>
+<ol type="1">
+<li><p><strong>Bijective Mapping (CRT)</strong>: From the Chinese
+Remainder Theorem, the map <span class="math inline">\(\phi: N \mapsto
+(r_1, \dots, r_k)\)</span>, where <span class="math inline">\(r_i = N
+\bmod p_i\)</span>, is a bijection from the set of integers <span
+class="math inline">\(\{0, \dots, M-1\}\)</span> to the product ring
+<span class="math inline">\(\prod_{i=1}^k
+\mathbb{Z}/p_i\mathbb{Z}\)</span>.</p></li>
+<li><p><strong>Physical State Representation</strong>: In the proposed
+physical system, the computational state is characterized by the Chern
+vector <span class="math inline">\(\mathbf{C} = (C_1, \dots,
+C_k)\)</span>, where each <span class="math inline">\(C_i\)</span> is an
+integer in the range <span class="math inline">\(\{0, \dots,
+p_i-1\}\)</span>.</p></li>
+<li><p><strong>Encoding Correspondence</strong>: By the construction of
+the functorial framework (Section III.C) and the operational protocols
+(Section IV.B), the physical encoding ensures a direct correspondence
+<span class="math inline">\(C_i = r_i\)</span> for all channels <span
+class="math inline">\(i\)</span>. Therefore, the map from an integer to
+its physical representation, <span class="math inline">\(N \mapsto
+\mathbf{C}\)</span>, is also a bijection.</p></li>
+<li><p><strong>Unambiguous Representation</strong>: A bijective mapping
+means that the Chern vector <span
+class="math inline">\(\mathbf{C}\)</span> is a complete and unambiguous
+representation of the integer <span class="math inline">\(N\)</span>.
+There is a one-to-one correspondence, ensuring no information is lost.
+This obviates any need for algorithmic reconstruction.</p></li>
+<li><p><strong>Direct Measurement</strong>: The multi-terminal
+measurement protocol (Section IV.C) directly yields the integer
+components of the Chern vector, <span class="math inline">\(\{C_1,
+\dots, C_k\}\)</span>, via a set of independent, quantized Hall
+conductance measurements.</p></li>
+<li><p><strong>Conclusion</strong>: The final output of the physical
+system is the vector <span class="math inline">\(\mathbf{C}\)</span>,
+which is demonstrably equivalent to the RNS representation of <span
+class="math inline">\(N\)</span>. The computational problem is solved
+entirely by the physical process, and the result is directly readable
+from the hardware.</p></li>
+<li><p><strong>Edge Case Analysis</strong>: The encoding is valid across
+the entire dynamic range. For <span class="math inline">\(N =
+0\)</span>, the system is in the vacuum state with <span
+class="math inline">\(\mathbf{C} = (0, \dots, 0)\)</span>. For <span
+class="math inline">\(N = M-1\)</span>, the system is in the state <span
+class="math inline">\(\mathbf{C} = (p_1-1, \dots, p_k-1)\)</span>. Both
+are valid and stable ground states.</p></li>
+<li><p><strong>Robustness and Error Detection</strong>: Any error that
+alters a single component <span class="math inline">\(C_i\)</span>
+results in a vector that does not correspond to a valid integer within
+the intended computational range, enabling immediate error
+detection.</p></li>
+<li><p><strong>Error Correction Potential</strong>: By choosing moduli
+such that the total dynamic range <span class="math inline">\(M\)</span>
+exceeds the required range for a given problem, the redundant space can
+be used to encode error-correcting information, enabling the correction
+of single-channel errors.</p></li>
+<li><p><strong>Formal Measurement Map</strong>: The measurement process
+can be formalized as a linear isomorphism <span
+class="math inline">\(\mathcal{M}: \mathbf{C} \mapsto
+\{G_{xy}^{(i)}\}\)</span>, which maps the Chern vector space to the
+conductance vector space, completing the formal chain from abstract
+integer to physical observable.</p></li>
+</ol>
+<hr />
+<h3 id="references"><strong>References</strong></h3>
+<p>Cheon, J. H., Kim, A., Kim, M., &amp; Song, Y. (2017). Homomorphic
+Encryption for Arithmetic of Approximate Numbers. In <em>Advances in
+Cryptology–ASIACRYPT 2017</em> (pp. 409-437). Springer.
+https://doi.org/10.1007/978-3-319-70697-9_15</p>
+<p>Goguen, J. A., &amp; Burstall, R. M. (1984). Some fundamental
+algebraic tools for the semantics of computation. Part 1: Compositions
+and refinements. <em>Theoretical Computer Science</em>, <em>31</em>,
+175-213. https://doi.org/10.1016/0304-3975(84)90004-0</p>
+<p>Horowitz, M. (2014). Computing’s Energy Problem (and what we can do
+about it). In <em>IEEE International Solid-State Circuits Conference
+Digest of Technical Papers (ISSCC)</em> (pp. 10-14).
+https://doi.org/10.1109/ISSCC.2014.6757323</p>
+<p>Horsman, C., Kendon, V., Stepney, S., &amp; Munro, W. J. (2014). When
+does a physical system compute? <em>Proceedings of the Royal Society A:
+Mathematical, Physical and Engineering Sciences</em>,
+<em>470</em>(2171), 20140152. https://doi.org/10.1098/rspa.2014.0152</p>
+<p>Kitaev, A. Y. (2003). Fault-tolerant quantum computation by anyons.
+<em>Annals of Physics</em>, <em>303</em>(1), 2-30.
+https://doi.org/10.1016/S0003-4916(02)00018-0</p>
+<p>Lloyd, S., &amp; Pagels, H. (1988). Complexity as Thermodynamic
+Depth. <em>Annals of Physics</em>, <em>188</em>(1), 186-213.
+https://doi.org/10.1016/0003-4916(88)90094-2</p>
+<p>MacLennan, B. J. (2004). Natural Computation and Non-Turing Models of
+Computation. <em>Theoretical Computer Science</em>, <em>317</em>(1-3),
+115-145. https://doi.org/10.1016/j.tcs.2003.12.006</p>
+<p>Müller, V. C., &amp; Hoffmann, M. (2017). What Is Morphological
+Computation? On How the Body Contributes to Cognition and Control.
+<em>Artificial Life</em>, <em>23</em>(1), 1-24.
+https://doi.org/10.1162/ARTL_a_00219</p>
+<p>Nayak, C., Simon, S. H., Stern, A., Freedman, M., &amp; Das Sarma, S.
+(2008). Non-Abelian anyons and topological quantum computation.
+<em>Reviews of Modern Physics</em>, <em>80</em>(3), 1083-1159.
+https://doi.org/10.1103/RevModPhys.80.1083</p>
+<p>Pfeifer, R., &amp; Bongard, J. (2007). <em>How the Body Shapes the
+Way We Think: A New View of Intelligence</em>. MIT Press.</p>
+<p>Prigogine, I. (1967). Structure, Dissipation and Life. In
+<em>Theoretical Physics and Biology</em> (pp. 23-52). North Holland.</p>
+<p>Sharpe, A. L., Fox, E. J., Barnard, A. W., Finney, J., Watanabe, K.,
+Taniguchi, T., Kastner, M. A., &amp; Goldhaber-Gordon, D. (2019).
+Emergent ferromagnetism near three-quarters filling in twisted bilayer
+graphene. <em>Science</em>, <em>365</em>(6453), 605-608.
+https://doi.org/10.1126/science.aaw3780</p>
+<p>Siegelmann, H. T. (1999). Neural and Super-Turing Computing.
+<em>Minds and Machines</em>, <em>13</em>, 103-114.
+https://doi.org/10.1023/A:1022902524528</p>
+<p>Szabo, N. S., &amp; Tanaka, R. I. (1967). <em>Residue Arithmetic and
+Its Applications to Computer Technology</em>. McGraw-Hill.</p>
+<p>Wen, X.-G. (2002). Quantum orders in an exact soluble model.
+<em>Physical Review B</em>, <em>65</em>(16), 165113.
+https://doi.org/10.1103/PhysRevB.65.165113</p>
+<p>Xie, Y., Pierce, A. T., Park, J. M., Parker, D. E., Khalaf, E.,
+Ledwith, P., Lee, Y., Chen, S., Călugăru, D., Andrei, B. A., &amp;
+Yacoby, A. (2021). Fractional Chern insulators in magic-angle twisted
+bilayer graphene. <em>Nature</em>, <em>597</em>(7874), 38–43.
+https://doi.org/10.1038/s41586-021-03842-4</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

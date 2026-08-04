@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2 Fundamental Entities | QWAV</title>
+<meta name="description" content="Section 2: The Corpus of Fundamental Entities To construct a meaningful network map of fundamental knowledge, the first step is to identify a representative ...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/2-fundamental-entities">
+<meta property="og:title" content="2 Fundamental Entities">
+<meta property="og:description" content="Section 2: The Corpus of Fundamental Entities To construct a meaningful network map of fundamental knowledge, the first step is to identify a representative ...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/2-fundamental-entities">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "2 Fundamental Entities",
+  "url": "https://deep.qwav.tech/papers/2-fundamental-entities",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-05-09T03:21:33Z",
+  "abstract": "Section 2: The Corpus of Fundamental Entities To construct a meaningful network map of fundamental knowledge, the first step is to identify a representative ..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<p><strong>Section 2: The Corpus of Fundamental Entities</strong></p>
+<p>To construct a meaningful network map of fundamental knowledge, the
+first step is to identify a representative set of core concepts,
+theories, laws, and principles that serve as foundational pillars across
+key domains of inquiry, primarily physics, mathematics, philosophy, and
+information science. The selection of these initial entities is guided
+by criteria emphasizing broad explanatory scope, foundational role
+within their disciplines, conceptual primacy in discussions about
+reality, and relative irreducibility within their domain. This initial
+corpus, while not exhaustive, provides the essential nodes around which
+the network of relationships will be built. The goal is objectivity,
+selecting entities based on their established significance rather than
+any preconceived theoretical bias.</p>
+<p>Within <strong>physics</strong>, several entities stand out as
+foundational. <strong>Classical mechanics (CM)</strong> provides the
+deterministic framework for describing the motion of macroscopic objects
+under the influence of forces, built upon Newton’s laws and assuming
+absolute space and time. Superseding it in crucial domains is
+<strong>general relativity (GR)</strong>, Einstein’s geometric theory of
+gravitation, which describes gravity not as a force, but as the
+curvature of a dynamic spacetime manifold, governed by Einstein’s field
+equations (EFE) and the principle of geodesic motion. Complementing GR
+is <strong>quantum mechanics (qm)</strong>, the fundamental theory
+describing reality at microscopic scales through state vectors
+(wavefunctions) in Hilbert space, operators representing observables,
+and probabilistic measurement outcomes governed by the Born rule, often
+interpreted via frameworks like the <strong>Copenhagen
+Interpretation</strong> involving superposition and wavefunction
+collapse. The <strong>Standard Model</strong> of particle physics builds
+upon qm and special relativity, providing a quantum field theory (QFT)
+description of fundamental particles (quarks, leptons) and their
+interactions via the electromagnetic, weak, and strong forces, mediated
+by gauge bosons. Underlying many physical descriptions are the
+<strong>laws of thermodynamics</strong>, universal principles governing
+energy, heat, work, and crucially, entropy, particularly the second law
+mandating non-decreasing entropy in isolated systems, which introduces
+an apparent directionality to physical processes. Central conceptual
+entities within physics include <strong>Energy</strong>, recognized as
+the capacity to do work and a universally conserved quantity
+transformable between forms (including mass via <span
+class="math inline">\(E=mc^2\)</span>); <strong>Entropy</strong>, a
+measure of disorder or energy unavailability in thermodynamics, later
+connected via statistical mechanics (Boltzmann’s <span
+class="math inline">\(S=k_B \ln \Omega\)</span>) to the number of
+microscopic states corresponding to a macroscopic state; and the concept
+of <strong>Spacetime</strong> itself, evolving from the absolute
+background of CM to the dynamic manifold of GR.</p>
+<p>In <strong>mathematics</strong> and <strong>logic</strong>, the
+foundations upon which physical theories are built are crucial.
+<strong>First-order logic (FOL)</strong> provides the standard formal
+system for rigorous deduction, defining the rules of inference used in
+mathematical proofs and axiomatizations. Providing the bedrock for most
+modern mathematics is <strong>Zermelo-Fraenkel set theory with the Axiom
+of Choice (ZFC)</strong>, an axiomatic system formulated within FOL that
+aims to define all mathematical objects in terms of sets built up from
+the empty set according to specific axioms (Extensionality, Pairing,
+Union, Power Set, Infinity, Specification, Replacement, Regularity,
+Choice). The very concept of a <strong>Formal System</strong>,
+characterized by a formal language, decidable axioms, and effective
+inference rules, is itself a fundamental entity relevant to
+understanding the structure and limits of mathematical reasoning,
+particularly in light of <strong>Gödel’s Incompleteness
+Theorems</strong>, which reveal inherent limitations in sufficiently
+powerful, consistent, effectively axiomatized formal systems capable of
+expressing arithmetic.</p>
+<p><strong>Philosophy</strong>, particularly metaphysics and
+epistemology, contributes core concepts concerning the nature of reality
+and knowledge. The concept of <strong>Fundamentality</strong> itself
+addresses the metaphysical question of what constitutes the basic,
+irreducible level of reality, often analyzed through notions of
+grounding or dependence. <strong>Causation</strong>, the relationship
+between cause and effect, is a central concept in both metaphysics and
+scientific explanation, with various competing analyses (regularity,
+counterfactual, mechanistic, probabilistic, interventionist).
+<strong>Physicalism (or materialism)</strong> stands as a dominant
+metaphysical thesis asserting that everything that exists is ultimately
+physical or supervenes upon the physical, providing an interpretive lens
+for scientific findings, particularly concerning the mind-body
+problem.</p>
+<p>From <strong>information science</strong>, the foundational framework
+is <strong>Shannon Information Theory</strong>. This mathematical theory
+quantifies information transmission and communication limits, defining
+key concepts like <strong>Shannon entropy (H)</strong> as a measure of
+uncertainty or average information content (<span
+class="math inline">\(H = -\sum p_i \log p_i\)</span>) and
+<strong>Channel Capacity (C)</strong> as the maximum rate of reliable
+communication over a noisy channel. Its focus is primarily syntactic–the
+accurate reproduction of symbols–but its concepts, particularly entropy,
+have found deep analogies and connections within statistical
+physics.</p>
+<p>Finally, <strong>cosmology</strong> provides the <strong>ΛCDM
+Model</strong> (Lambda Cold Dark Matter), the current standard model
+which integrates GR and particle physics principles to describe the
+origin and evolution of the universe. As discussed previously, it relies
+on the <strong>Cosmological Principle</strong> (large-scale homogeneity
+and isotropy) and postulates the existence of dark matter (CDM) and dark
+energy (Λ) alongside ordinary matter and radiation to explain
+observations like cosmic expansion, the Cosmic Microwave Background
+(CMB), Big Bang Nucleosynthesis (BBN), and large-scale structure
+formation. The origin event is typically associated with the <strong>Big
+Bang</strong>.</p>
+<p>This initial corpus represents a diverse set of foundational
+entities. Already, cross-domain linkages are apparent. Energy, entropy,
+and information appear in multiple domains. Physical theories rely
+heavily on mathematical and logical structures (FOL, ZFC). Philosophical
+concepts like causation and fundamentality are relevant to interpreting
+scientific theories. Tensions are also evident, most notably between the
+deterministic framework of GR and the probabilistic nature of standard
+qm measurement, and between the ontology suggested by qm and the
+commitments of physicalism. These entities and their inherent
+connections and conflicts form the nodes and potential edges of our
+initial network graph, setting the stage for a detailed analysis of
+their components and relationships.</p>
+<hr />
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

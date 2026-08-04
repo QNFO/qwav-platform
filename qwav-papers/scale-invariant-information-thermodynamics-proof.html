@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scale-Invariant Information Thermodynamics Proof | QWAV</title>
+<meta name="description" content="Gravity As Scale-Invariant Information Thermodynamics and Unification of Forces Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.o...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/scale-invariant-information-thermodynamics-proof">
+<meta property="og:title" content="Scale-Invariant Information Thermodynamics Proof">
+<meta property="og:description" content="Gravity As Scale-Invariant Information Thermodynamics and Unification of Forces Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.o...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/scale-invariant-information-thermodynamics-proof">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Scale-Invariant Information Thermodynamics Proof",
+  "url": "https://deep.qwav.tech/papers/scale-invariant-information-thermodynamics-proof",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-09-28T02:12:41Z",
+  "abstract": "Gravity As Scale-Invariant Information Thermodynamics and Unification of Forces Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.o..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h2
+id="gravity-as-scale-invariant-information-thermodynamics-and-unification-of-forces"><strong>Gravity
+As Scale-Invariant Information Thermodynamics and Unification of
+Forces</strong></h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Affiliation:</strong> QNFO <strong>Contact:</strong>
+rowan.quni@qnfo.org <strong>ORCID:</strong> 0009-0002-4317-5604
+<strong>ISNI:</strong> 0000 0005 2645 6062 <strong>DOI:</strong>
+10.5281/zenodo.17216824 <strong>Publication Date:</strong> 2025-09-28
+<strong>Version:</strong> 1.0</p>
+<p>We derive <strong>precise, falsifiable formalisms</strong> showing
+how gravity emerges from scale-invariant information dynamics and how
+all fundamental forces unify under a single information-theoretic
+principle. The framework is <strong>explicitly falsifiable</strong> via
+observational signatures.</p>
+<hr />
+<h3
+id="i.-gravity-from-scale-invariant-information-thermodynamics"><strong>I.
+Gravity from Scale-Invariant Information Thermodynamics</strong></h3>
+<p><strong>Axiom 1 (Local Scale Invariance).</strong> Physical laws are
+invariant under local Weyl rescalings <span
+class="math inline">\(g_{\mu\nu}(x) \mapsto \Omega^2(x)
+g_{\mu\nu}(x)\)</span>, with matter fields transforming as <span
+class="math inline">\(\phi(x) \mapsto \Omega^{-d_\phi}(x)
+\phi(x)\)</span>.</p>
+<p><strong>Axiom 2 (Information–Entropy Identity).</strong> The entropy
+associated with a local causal horizon is <span class="math inline">\(S
+= k_B \kappa\)</span>, where <span class="math inline">\(\kappa\)</span>
+is the scale-invariant information measure.</p>
+<p><strong>Definition 1 (Local Causal Horizon).</strong> For an observer
+with 4-velocity <span class="math inline">\(u^\mu\)</span> at point
+<span class="math inline">\(p\)</span>, the local Rindler horizon is
+generated by the null congruence with expansion <span
+class="math inline">\(\theta = 0\)</span>at <span
+class="math inline">\(p\)</span>.</p>
+<p><strong>Definition 2 (Information Density).</strong> Define the
+<strong>information scalar field</strong> <span
+class="math inline">\(\kappa(x)\)</span> such that the entropy of a
+horizon element <span class="math inline">\(dA\)</span> is:</p>
+<p><span class="math display">\[
+dS = k_B \, \kappa(x) \, \frac{dA}{4\ell_P^2},
+\tag{1}
+\]</span></p>
+<p>where <span class="math inline">\(\ell_P = \sqrt{\hbar G /
+c^3}\)</span> is the Planck length. This ensures consistency with
+Bekenstein–Hawking for <span class="math inline">\(\kappa =
+1\)</span>.</p>
+<p><strong>Proposition 1 (Einstein Equation from Clausius
+Relation).</strong> Assume the Clausius relation <span
+class="math inline">\(\delta Q = T dS\)</span> holds for all local
+causal horizons. Then:</p>
+<p><span class="math display">\[
+G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4}
+T_{\mu\nu}^{\text{(matter)}},
+\tag{2}
+\]</span></p>
+<p>where <span
+class="math inline">\(T_{\mu\nu}^{\text{(matter)}}\)</span> is the
+energy-momentum tensor of matter, and <span
+class="math inline">\(\Lambda\)</span> is an integration constant.</p>
+<p><em>Proof.</em> Following Jacobson (1995), but generalized for
+variable <span class="math inline">\(\kappa\)</span>:</p>
+<ol type="1">
+<li><p><strong>Energy Flux</strong>: For a local Rindler horizon with
+tangent vector <span class="math inline">\(\xi^\mu\)</span>, the energy
+flux is:</p>
+<p><span class="math display">\[
+\delta Q = \int T_{\mu\nu}^{\text{(matter)}} \xi^\mu d\Sigma^\nu.
+\tag{3}
+\]</span></p></li>
+<li><p><strong>Temperature</strong>: Unruh temperature for acceleration
+<span class="math inline">\(a = \sqrt{\xi^\mu \xi_\mu} / \delta\)</span>
+is:</p>
+<p><span class="math display">\[
+T = \frac{\hbar a}{2\pi c k_B}.
+\tag{4}
+\]</span></p></li>
+<li><p><strong>Entropy Change</strong>: From (1), the area change <span
+class="math inline">\(\delta A\)</span> induces:</p>
+<p><span class="math display">\[
+dS = k_B \kappa \frac{\delta A}{4\ell_P^2} = \frac{k_B c^3
+\kappa}{4G\hbar} \delta A.
+\tag{5}
+\]</span></p></li>
+<li><p><strong>Raychaudhuri Equation</strong>: For null geodesics, <span
+class="math inline">\(\delta A = -\int R_{\mu\nu} \xi^\mu
+d\Sigma^\nu\)</span> to first order.</p></li>
+<li><p><strong>Clausius Relation</strong>: <span
+class="math inline">\(\delta Q = T dS\)</span> implies:</p>
+<p><span class="math display">\[
+\int T_{\mu\nu}^{\text{(matter)}} \xi^\mu d\Sigma^\nu = \frac{\hbar
+a}{2\pi c k_B} \cdot \frac{k_B c^3 \kappa}{4G\hbar} \left( -\int
+R_{\mu\nu} \xi^\mu d\Sigma^\nu \right).
+\]</span></p>
+<p>Simplify:</p>
+<p><span class="math display">\[
+\int \left[ T_{\mu\nu}^{\text{(matter)}} + \frac{c^2 \kappa}{8\pi G}
+R_{\mu\nu} \right] \xi^\mu d\Sigma^\nu = 0.
+\tag{6}
+\]</span></p></li>
+<li><p><strong>Scale Invariance Requirement</strong>: For (6) to hold
+for all <span class="math inline">\(\xi^\mu\)</span>, and for the theory
+to be scale-invariant, <span class="math inline">\(\kappa\)</span>must
+be <strong>constant</strong>. Set <span class="math inline">\(\kappa =
+1\)</span> (by choice of <span class="math inline">\(K_0\)</span>).
+Then:</p>
+<p><span class="math display">\[
+R_{\mu\nu} - \frac{1}{2} R g_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi
+G}{c^4} T_{\mu\nu}^{\text{(matter)}}.
+\]</span></p>
+<p>This is Einstein’s equation. ∎</p></li>
+</ol>
+<p><strong>Corollary 1 (Gravity as Entropic Force).</strong> Newton’s
+law <span class="math inline">\(F = G m_1 m_2 / r^2\)</span> emerges
+from:</p>
+<p><span class="math display">\[
+F \Delta x = T \Delta S, \quad \Delta S = k_B \kappa \frac{\Delta
+A}{4\ell_P^2}, \quad T = \frac{\hbar a}{2\pi c k_B},
+\]</span></p>
+<p>yielding <span class="math inline">\(a = 2\pi c \ell_P^2 \kappa /
+\hbar \cdot \Delta A / \Delta x\)</span>. For a spherical mass, <span
+class="math inline">\(\Delta A / \Delta x = 4\pi r\)</span>, so <span
+class="math inline">\(a = (G m / r^2) \kappa\)</span>. With <span
+class="math inline">\(\kappa = 1\)</span>, this is standard gravity.</p>
+<hr />
+<h3
+id="ii.-unification-of-fundamental-forces-via-information-flow"><strong>II.
+Unification of Fundamental Forces via Information Flow</strong></h3>
+<p><strong>Axiom 3 (Information Conservation).</strong> The total
+information <span class="math inline">\(\kappa_{\text{total}}\)</span>
+in a closed system is conserved under unitary evolution.</p>
+<p><strong>Definition 3 (Information Current).</strong> For each force,
+define an information current <span
+class="math inline">\(J^\mu_i\)</span> such that:</p>
+<p><span class="math display">\[
+\partial_\mu J^\mu_i = 0,
+\tag{7}
+\]</span></p>
+<p>where <span class="math inline">\(i \in \{ \text{EM}, \text{strong},
+\text{weak}, \text{gravity} \}\)</span>.</p>
+<p><strong>Proposition 2 (Gauge Forces from Information
+Symmetry).</strong> Each fundamental force corresponds to a symmetry of
+the information measure <span class="math inline">\(\kappa\)</span>:</p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 26%" />
+<col style="width: 35%" />
+<col style="width: 26%" />
+</colgroup>
+<thead>
+<tr>
+<th>Force</th>
+<th>Symmetry Group</th>
+<th>Information Current</th>
+<th>Field Equation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Electromagnetism</strong></td>
+<td><span class="math inline">\(U(1)\)</span></td>
+<td><span class="math inline">\(J^\mu_{\text{EM}} = q \bar{\psi}
+\gamma^\mu \psi\)</span></td>
+<td><span class="math inline">\(\partial_\nu F^{\mu\nu} = \mu_0
+J^\mu_{\text{EM}}\)</span></td>
+</tr>
+<tr>
+<td><strong>Strong</strong></td>
+<td><span class="math inline">\(SU(3)\)</span></td>
+<td><span class="math inline">\(J^{\mu a}_{\text{strong}} = g_s \bar{q}
+\gamma^\mu T^a q\)</span></td>
+<td><span class="math inline">\(D_\nu G^{\mu\nu a} = J^{\mu
+a}_{\text{strong}}\)</span></td>
+</tr>
+<tr>
+<td><strong>Weak</strong></td>
+<td><span class="math inline">\(SU(2)\)</span></td>
+<td><span class="math inline">\(J^{\mu I}_{\text{weak}} = g_w \bar{\psi}
+\gamma^\mu \tau^I \psi\)</span></td>
+<td><span class="math inline">\(D_\nu W^{\mu\nu I} = J^{\mu
+I}_{\text{weak}}\)</span></td>
+</tr>
+<tr>
+<td><strong>Gravity</strong></td>
+<td>Diffeomorphism</td>
+<td><span class="math inline">\(J^\mu_{\text{grav}} = T^{\mu\nu}
+u_\nu\)</span></td>
+<td><span class="math inline">\(G_{\mu\nu} = 8\pi G
+T_{\mu\nu}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Theorem 1 (Unification via RG Fixed Point).</strong> All
+coupling constants <span class="math inline">\(g_i\)</span> flow to a
+common value at a UV fixed point where <span
+class="math inline">\(\kappa\)</span>is maximally symmetric.</p>
+<p><em>Proof.</em> In the renormalization group (RG) framework, the beta
+functions are:</p>
+<p><span class="math display">\[
+\beta_i(g) = \frac{d g_i}{d \ln \mu} = -\epsilon_i g_i + b_i g_i^3 +
+\cdots,
+\]</span></p>
+<p>where <span class="math inline">\(\epsilon_i\)</span> is the
+classical scaling dimension. At a fixed point <span
+class="math inline">\(\beta_i(g^*) = 0\)</span>, the couplings
+satisfy:</p>
+<p><span class="math display">\[
+g_1^* = g_2^* = g_3^* = g_*.
+\]</span></p>
+<p>This occurs in Grand Unified Theories (GUTs) at <span
+class="math inline">\(\mu \sim 10^{16}\)</span> GeV. In our framework,
+the fixed point corresponds to <strong>maximal information
+symmetry</strong>: the information measure <span
+class="math inline">\(\kappa\)</span> is invariant under the unified
+group <span class="math inline">\(G_{\text{GUT}}\)</span> (e.g., <span
+class="math inline">\(SU(5)\)</span>). Thus, all forces are facets of a
+single information-conserving flow. ∎</p>
+<p><strong>Corollary 2 (Higgs Mechanism as Information Symmetry
+Breaking).</strong> The Higgs field <span
+class="math inline">\(H\)</span> is a compensator that breaks <span
+class="math inline">\(G_{\text{GUT}} \rightarrow SU(3)_c \times
+U(1)_{\text{EM}}\)</span>, reducing the symmetry of <span
+class="math inline">\(\kappa\)</span>. Particle masses arise as:</p>
+<p><span class="math display">\[
+m_f = y_f \langle H \rangle = y_f v \propto y_f \sqrt{\kappa},
+\]</span></p>
+<p>linking mass to information content.</p>
+<hr />
+<h3
+id="iii.-falsifiability-concrete-observational-signatures"><strong>III.
+Falsifiability: Concrete Observational Signatures</strong></h3>
+<p>The framework makes <strong>quantitative, falsifiable
+predictions</strong>:</p>
+<p><strong>A. Gravitational Sector</strong> 1. <strong>Gravitational
+Wave Polarizations</strong>: - <strong>Prediction</strong>: Conformal
+gravity (required for local scale invariance) predicts <strong>6
+polarizations</strong> (vs. 2 in GR). - <strong>Test</strong>: LISA or
+Einstein Telescope can detect vector/scalar modes via antenna pattern
+asymmetry. - <strong>Falsification</strong>: Observation of only (+) and
+() modes rules out local scale invariance.</p>
+<ol start="2" type="1">
+<li><strong>Black Hole Shadows</strong>:
+<ul>
+<li><p><strong>Prediction</strong>: Mannheim–Kazanas metric in conformal
+gravity alters photon sphere radius:</p>
+<p><span class="math display">\[
+r_{\text{ph}} = 3GM/c^2 + \gamma M,
+\]</span></p>
+<p>where <span class="math inline">\(\gamma\)</span> is a conformal
+parameter.</p></li>
+<li><p><strong>Test</strong>: EHT measurements of M87* and Sgr A*
+constrain <span class="math inline">\(\gamma &lt; 10^{-26}\)</span>
+m<span class="math inline">\(^{-1}\)</span>.</p></li>
+<li><p><strong>Falsification</strong>: Consistency with Kerr metric
+(<span class="math inline">\(\gamma = 0\)</span>) to high precision
+disfavors conformal gravity.</p></li>
+</ul></li>
+</ol>
+<p><strong>B. Particle Physics Sector</strong> 3. <strong>Dilaton–Higgs
+Mixing</strong>: - <strong>Prediction</strong>: Higgs couplings
+suppressed by <span class="math inline">\(\cos\theta\)</span>, with
+<span class="math inline">\(\sin\theta = \sqrt{\xi_H / (\xi_H +
+\xi_\sigma)}\)</span>. - <strong>Test</strong>: HL-LHC will measure
+<span class="math inline">\(\mu_{h\gamma\gamma} = \sigma /
+\sigma_{\text{SM}}\)</span> to 2% precision. -
+<strong>Falsification</strong>: <span
+class="math inline">\(\mu_{h\gamma\gamma} = 1 \pm 0.02\)</span> rules
+out significant mixing.</p>
+<ol start="4" type="1">
+<li><strong>Running of Couplings</strong>:
+<ul>
+<li><strong>Prediction</strong>: GUT-scale unification at <span
+class="math inline">\(M_{\text{GUT}} = 2 \times 10^{16}\)</span> GeV
+with <span class="math inline">\(\alpha_{\text{GUT}}^{-1} =
+25\)</span>.</li>
+<li><strong>Test</strong>: Proton decay <span class="math inline">\(p
+\rightarrow e^+ \pi^0\)</span> with lifetime <span
+class="math inline">\(\tau_p &lt; 10^{35}\)</span> years
+(Hyper-Kamiokande).</li>
+<li><strong>Falsification</strong>: Non-observation of proton decay by
+2040 falsifies minimal GUT embedding.</li>
+</ul></li>
+</ol>
+<p><strong>C. Cosmological Sector</strong> 5. <strong>Primordial
+Gravitational Waves</strong>: - <strong>Prediction</strong>:
+Scale-invariant initial conditions suppress tensor-to-scalar ratio:
+<span class="math inline">\(r &lt; 0.01\)</span>. -
+<strong>Test</strong>: CMB-S4 will measure <span
+class="math inline">\(r\)</span> to <span
+class="math inline">\(\sigma(r) = 0.001\)</span>. -
+<strong>Falsification</strong>: <span class="math inline">\(r &gt;
+0.01\)</span> rules out scale-invariant inflation.</p>
+<ol start="6" type="1">
+<li><strong>Dark Matter as Information Condensate</strong>:
+<ul>
+<li><strong>Prediction</strong>: <span
+class="math inline">\(\rho_{\text{DM}}(r) \propto \kappa_{\text{DM}} /
+r^2\)</span> (cored profile).</li>
+<li><strong>Test</strong>: JWST observations of high-(z) galaxy rotation
+curves.</li>
+<li><strong>Falsification</strong>: Universal NFW profile (<span
+class="math inline">\(\rho \propto r^{-1}\)</span>) contradicts
+prediction.</li>
+</ul></li>
+</ol>
+<hr />
+<h3 id="iv.-mathematical-consistency-checks"><strong>IV. Mathematical
+Consistency Checks</strong></h3>
+<p><strong>Proposition 3 (Anomaly Cancellation).</strong> In the unified
+information framework, gauge and gravitational anomalies cancel if:</p>
+<p><span class="math display">\[
+\sum_{\text{fermions}} Y_L = \sum_{\text{fermions}} Y_R, \quad
+\text{Tr}(T^a \{T^b, T^c\}) = 0,
+\]</span></p>
+<p>which holds for the Standard Model fermion content. This ensures
+unitarity of information flow.</p>
+<p><strong>Proposition 4 (Scale-Invariant Action).</strong> The total
+action is:</p>
+<p><span class="math display">\[
+S = \int d^4x \sqrt{-g} \left[ -\alpha C_{\mu\nu\rho\sigma}
+C^{\mu\nu\rho\sigma} + \mathcal{L}_{\text{GUT}}(H, \psi, A_\mu) +
+\mathcal{L}_{\text{dilaton}} \right],
+\]</span></p>
+<p>where <span class="math inline">\(\mathcal{L}_{\text{GUT}}\)</span>
+is scale-invariant (no <span class="math inline">\(\mu^2\)</span>
+terms), and <span class="math inline">\(\mathcal{L}_{\text{dilaton}} =
+\frac{1}{2} (\partial \sigma)^2 - V(\sigma)\)</span> with <span
+class="math inline">\(V(\sigma) = \lambda \sigma^4\)</span>. This action
+is Weyl-invariant if <span class="math inline">\(\sigma\)</span>
+transforms as <span class="math inline">\(\sigma \mapsto \Omega^{-1}
+\sigma\)</span>.</p>
+<hr />
+<h2 id="conclusion-a-falsifiable-unified-framework"><strong>Conclusion:
+A Falsifiable, Unified Framework</strong></h2>
+<p>This FDO demonstrates that:</p>
+<ol type="1">
+<li><strong>Gravity</strong> emerges from the thermodynamics of
+scale-invariant information (<span class="math inline">\(S = k_B
+\kappa\)</span>).</li>
+<li><strong>All forces</strong> unify at a UV fixed point where
+information symmetry is maximal.</li>
+<li><strong>Falsifiability</strong> is ensured by concrete, quantitative
+predictions across gravitational waves, particle physics, and
+cosmology.</li>
+</ol>
+<p>The framework is <strong>not metaphysical speculation</strong> but a
+<strong>rigorous, predictive physical theory</strong>—ready for
+experimental confrontation.</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

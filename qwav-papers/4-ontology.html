@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4 Ontology | QWAV</title>
+<meta name="description" content="Section 4: Preliminary Relationship Ontology To accurately map the complex web of interactions between the fundamental entities and their core components ide...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/4-ontology">
+<meta property="og:title" content="4 Ontology">
+<meta property="og:description" content="Section 4: Preliminary Relationship Ontology To accurately map the complex web of interactions between the fundamental entities and their core components ide...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/4-ontology">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "4 Ontology",
+  "url": "https://deep.qwav.tech/papers/4-ontology",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-05-09T03:21:34Z",
+  "abstract": "Section 4: Preliminary Relationship Ontology To accurately map the complex web of interactions between the fundamental entities and their core components ide..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<hr />
+<p><strong>Section 4: Preliminary Relationship Ontology</strong></p>
+<p>To accurately map the complex web of interactions between the
+fundamental entities and their core components identified in Sections 2
+and 3, a well-defined vocabulary of relationship types is essential.
+This ontology serves as the set of permissible “edges” connecting the
+conceptual “nodes” in our network graph. These definitions aim for
+sufficient precision to capture the nuances of logical entailment,
+causal influence, structural composition, foundational dependence,
+conceptual refinement, explanatory roles, and points of conflict or
+tension, while allowing for future refinement as the graph construction
+proceeds. The goal is to move beyond simple association and specify the
+<em>nature</em> of the connection between ideas, categorized for
+clarity.</p>
+<p>Within the category of <strong>Logical Relationships</strong>, which
+describe connections based on formal logic or definition, we define
+several types. <strong>Logically Entails (L-ENT)</strong> signifies a
+directed relationship where component B is a necessary logical
+consequence of component A, derivable purely from definitions or axioms
+within a shared formal framework; for example, certain theorems within
+ZFC are logically entailed by its axioms. Conversely,
+<strong>Contradicts (L-CTR)</strong> indicates a symmetric relationship
+where component A and component B are logically incompatible and cannot
+both be true simultaneously within a consistent framework; the
+deterministic evolution postulate of classical mechanics, for instance,
+contradicts the intrinsic indeterminism postulate of standard quantum
+mechanics. <strong>Is Consistent With / Is Compatible With
+(L-CON)</strong> denotes a symmetric relationship where components A and
+B can logically coexist, perhaps applying to different domains or
+offering complementary perspectives without entailing a contradiction;
+physicalism might be considered consistent with classical mechanics,
+though its compatibility with quantum mechanics is more complex. Lastly,
+<strong>Is Instance Of (L-INST)</strong> is a directed relationship
+where component A serves as a specific example, case, or instantiation
+falling under the general category, rule, or concept B; Shannon entropy,
+for example, is an instance of the broader concept of entropy,
+specifically quantifying informational uncertainty.</p>
+<p><strong>Causal Relationships</strong> describe connections involving
+influence, production, or dependence in time or process. <strong>Causes
+(C-CAU)</strong> represents a directed relationship where an event,
+state, or process A brings about, produces, or significantly contributes
+to the occurrence of B, with its application depending on adopting a
+specific theory of causation (e.g., counterfactual, mechanistic); within
+evolutionary theory, a specific mutation (A) might be said to cause an
+increase in fitness (B) in a particular environment. <strong>Enables /
+Is Necessary Condition For (C-NEC)</strong> is a directed relationship
+signifying that state, property, or entity A is a prerequisite for B to
+occur or exist; B cannot happen without A. For example, heritable
+variation (A) is a necessary condition for natural selection (B). A
+weaker connection is <strong>Influences / Modulates (C-INF)</strong>, a
+directed relationship where a change in A tends to produce or alter B
+(probabilistically or deterministically), without necessarily being the
+sole cause or a strict necessary condition; temperature (A), for
+instance, influences the rate of chemical reactions (B).</p>
+<p><strong>Structural Relationships</strong> pertain to composition,
+emergence, representation, or symmetry. <strong>Is Composed Of /
+Contains (S-COMP)</strong> denotes a directed mereological (part-whole)
+connection, where entity/system A is materially or structurally
+constituted by components {B, C,…}; an atom (A) is composed of electrons
+and a nucleus (B, C). <strong>Emerges From (S-EMR)</strong> signifies a
+directed relationship where a higher-level property or entity A arises
+from the interactions of lower-level components {B, C,…} but possesses
+novel characteristics not simply reducible to the individual components;
+temperature (A) emerges from the average kinetic energy of molecules
+(B). <strong>Is Formalized By / Is Model Of (S-FORM)</strong> indicates
+a directed relationship where an abstract structure or formalism A
+(often mathematical or logical) represents, models, or provides the
+formal language for describing phenomenon, system, or concept B; the
+Hilbert space formalism (A) is used to model quantum states (B).
+<strong>Is Abstracted From (S-ABS)</strong> is a directed relationship
+signifying that concept or structure A is derived from B by focusing on
+certain properties while disregarding others, often representing a
+simplification or generalization; the ideal gas law (A) is abstracted
+from the behavior of real gases (B). Finally, <strong>Is Symmetric Under
+(S-SYM)</strong> indicates that entity or law A remains invariant when
+subjected to transformation B; the laws of physics (A) are symmetric
+under Lorentz transformations (B) in special relativity.</p>
+<p><strong>Explanatory Relationships</strong> describe connections
+related to providing understanding or accounting for phenomena.
+<strong>Explains (E-XPL)</strong> is a directed relationship signifying
+that theory, law, or mechanism A provides an account of <em>why</em>
+phenomenon or regularity B occurs, according to a chosen model of
+scientific explanation; natural selection (A) explains adaptation (B).
+Its inverse is <strong>Is Explained By (E-XPBY)</strong>, where
+phenomenon B is accounted for by A. <strong>Reduces To (E-RED)</strong>
+is a directed relationship indicating that theory or entity A can, in
+principle, be fully accounted for or derived from theory or entity B,
+which is typically considered more fundamental, often involving the
+derivation of laws or identification of properties across levels;
+thermodynamics (A) is often considered to reduce to statistical
+mechanics (B), though debate exists. <strong>Is Analogous To
+(E-ANL)</strong> signifies that structure, process, or concept A shares
+significant relational or functional similarities with B, potentially
+suggesting deeper connections or aiding understanding through
+comparison, despite differences in domain; statistical mechanical
+entropy (A) is analogous to Shannon entropy (B).</p>
+<p><strong>Mathematical Relationships</strong> describe connections
+specific to mathematical derivation or transformation. <strong>Is
+Derived From (M-DER)</strong> indicates a directed relationship where
+equation or result A is mathematically deduced from premise, equation,
+or axiom set B using established mathematical rules; the
+time-independent Schrödinger equation (A) is derived from the
+time-dependent one (B). <strong>Is Transformation Of (M-TRN)</strong>
+signifies that entity or representation A can be converted into entity
+or representation B via a specific mathematical transformation, such as
+the Fourier transform linking position (A) and momentum (B)
+representations of a wavefunction. <strong>Is Isomorphic To
+(M-ISO)</strong> denotes a symmetric relationship where mathematical
+structures A and B have a one-to-one correspondence that preserves all
+relevant operations and relations; Boolean algebra (A) is isomorphic to
+a subset of propositional logic (B).</p>
+<p><strong>Ontological Relationships</strong> describe connections
+related to existence, dependence, grounding, or constitution in a
+metaphysical sense. <strong>Ontologically Depends On (O-DEP)</strong> is
+a directed relationship signifying that entity A cannot exist unless
+entity B exists, with B being metaphysically prior; a biological
+organism (A) ontologically depends on its underlying physical matter
+(B), according to physicalism. <strong>Grounds (O-GRD)</strong>
+represents an asymmetric, non-causal determination where entity/fact A
+exists or is true <em>in virtue of</em> entity/fact B, with B being
+metaphysically more fundamental; mental states (A) are often argued to
+be grounded in brain states (B) by physicalists. <strong>Constitutes /
+Is Constituted By (O-CON)</strong> describes the specific relationship
+between an object and the matter making it up at a particular time,
+distinct from mere part-whole relations; a statue (A) is constituted by
+a lump of clay (B).</p>
+<p>Finally, <strong>Foundational / Critical Relationships</strong>
+capture interactions related to theoretical support, limitation, or
+challenge. <strong>Provides Basis For / Assumes Framework Of
+(F-BAS)</strong> is a directed relationship signifying that paradigm B
+explicitly or implicitly uses the laws, concepts, or mathematical
+structure of paradigm A as a foundation; the ΛCDM Model (B) assumes the
+framework of GR (A). <strong>Is Special Case Of / Is Limit Of
+(F-LIM)</strong> indicates that the description provided by paradigm A
+emerges as an approximation or simplification of paradigm B under
+specific limiting conditions; CM (A) is a limit of GR (B).
+<strong>Challenges Assumption Of (F-CHL)</strong> signifies that a
+concept or finding within paradigm A undermines or calls into question a
+fundamental (often implicit) assumption underlying paradigm B; QM
+entanglement (A) challenges the assumption of local realism (B).
+<strong>Requires Explanation From (F-REQ)</strong> suggests that
+features within paradigm A (like singularities or paradoxes) indicate
+incompleteness and point towards the need for a deeper explanation,
+potentially offered by paradigm B; GR singularities (A) require
+explanation from quantum gravity (B?).</p>
+<p>This expanded ontology provides a richer vocabulary for mapping the
+intricate connections within our corpus. Applying these relationships
+consistently during graph construction, along with justifications and
+confidence levels, will allow for a detailed network analysis capable of
+revealing the deep structure of fundamental knowledge and guiding the
+synthesis of a consilient meta-framework.</p>
+<hr />
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>
