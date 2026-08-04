@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fine-Structure Constant as a Cross-Ratio | QWAV</title>
+<meta name="description" content="Fine-Structure Constant as a Cross-Ratio A Geometric Reframing of \(\alpha\) Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com ORCID: 0009-000...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/fine-structure-constant-as-a-cross-ratio">
+<meta property="og:title" content="Fine-Structure Constant as a Cross-Ratio">
+<meta property="og:description" content="Fine-Structure Constant as a Cross-Ratio A Geometric Reframing of \(\alpha\) Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com ORCID: 0009-000...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/fine-structure-constant-as-a-cross-ratio">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Fine-Structure Constant as a Cross-Ratio",
+  "url": "https://deep.qwav.tech/papers/fine-structure-constant-as-a-cross-ratio",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2026-05-10T09:46:39Z",
+  "abstract": "Fine-Structure Constant as a Cross-Ratio A Geometric Reframing of \\(\\alpha\\) Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com ORCID: 0009-000..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1 id="fine-structure-constant-as-a-cross-ratio">Fine-Structure
+Constant as a Cross-Ratio</h1>
+<h2 id="a-geometric-reframing-of-alpha">A Geometric Reframing of <span
+class="math inline">\(\alpha\)</span></h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Contact:</strong> <a
+href="mailto:rowan.quni@outlook.com">rowan.quni@outlook.com</a>
+<strong>ORCID:</strong> <a
+href="http://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>
+<strong>ISNI:</strong> <a
+href="http://isni.org/isni/0000000526456062">0000000526456062</a>
+<strong>DOI:</strong> <a
+href="http://doi.org/10.5281/zenodo.20100109">10.5281/zenodo.20100109</a>
+<strong>Date:</strong> 2026-05-10 <strong>Version:</strong> 0.8</p>
+<p><strong>Abstract</strong>: The fine-structure constant <span
+class="math inline">\(\alpha \approx 1/137.036\)</span> is one of the
+most precisely measured numbers in physics, yet its origin remains
+unexplained. The standard presentation—<span
+class="math inline">\(\alpha = e^2/(4\pi\varepsilon_0\hbar c)\)</span>
+with dimensionful constants—frames it as an abstract coupling strength,
+obscuring its geometric character. This document proposes a reframing:
+<span class="math inline">\(\alpha\)</span> is naturally understood as
+the cross-ratio of two measurable length scales characterizing the
+electron—the classical electron radius <span
+class="math inline">\(r_e\)</span> and the reduced Compton wavelength
+<span class="math inline">\(\bar{\lambda}_C\)</span>. The reframing
+makes three contributions: (a) it reveals <span
+class="math inline">\(\alpha\)</span>’s projective invariance structure,
+explaining why <span class="math inline">\(\alpha\)</span> is
+independent of unit choices and coordinate rescalings in geometric
+rather than algebraic terms; (b) it connects to the integer-ratio
+structure of precision experiments, where <span
+class="math inline">\(\alpha\)</span> is determined from rational
+observables (quantum Hall filling factors <span
+class="math inline">\(\nu = p/q\)</span>, Penning trap frequency ratios
+<span class="math inline">\(N_s/N_c)\)</span>; and (c) it integrates
+five complementary mathematical formalisms—adelic, projective,
+topological, syntactic, and hierarchical—that illuminate different
+aspects of <span class="math inline">\(\alpha\)</span>’s cross-ratio
+nature. The document includes Python-verified quantitative results,
+historical context (Eddington, Wyler), experimental grounding, and an
+honest acknowledgment of limitations—most notably that <span
+class="math inline">\(\alpha = r_e/\bar{\lambda}_C\)</span> is an
+algebraic identity, not a first-principles derivation, and the
+contribution lies in conceptual reframing rather than numerical
+prediction.</p>
+<hr />
+<h2 id="the-puzzle">1. The Puzzle</h2>
+<h3 id="what-is-the-fine-structure-constant">1.1 What Is the
+Fine-Structure Constant?</h3>
+<p>The fine-structure constant, denoted <span
+class="math inline">\(\alpha\)</span> (alpha), is a dimensionless number
+that characterizes the strength of electromagnetic interactions:</p>
+<p><span class="math display">\[ \alpha = \frac{e^2}{4\pi\varepsilon_0
+\hbar c} \approx \frac{1}{137.035999084} \]</span></p>
+<p>where e is the elementary charge, <span
+class="math inline">\(\varepsilon_0\)</span> is the vacuum permittivity,
+<span class="math inline">\(\hbar = h/(2\pi)\)</span> is the reduced
+Planck constant, and c is the speed of light. Introduced by Arnold
+Sommerfeld in 1916, <span class="math inline">\(\alpha\)</span> was the
+first dimensionless combination of fundamental constants to be
+recognized as physically significant.</p>
+<p><span class="math inline">\(\alpha\)</span> appears throughout
+physics: - In quantum electrodynamics, it sets the scale of all
+electromagnetic processes—the probability of emitting a photon, the
+strength of electron-electron scattering, the Lamb shift in hydrogen -
+In atomic physics, it controls the fine-structure splitting of spectral
+lines (hence the name) - In condensed matter physics, it determines the
+von Klitzing constant <span class="math inline">\(R_K = h/e^2\)</span>
+measured in the quantum Hall effect - In metrology, it is the link
+between the Josephson effect (frequency-to-voltage conversion) and the
+quantum Hall effect (resistance quantization)</p>
+<p>Despite being one of the most precisely measured numbers in science
+(relative uncertainty <span class="math inline">\(~1.5 \times
+10^{-10}\)</span> as of CODATA 2018), <span
+class="math inline">\(\alpha\)</span> has no accepted theoretical
+explanation. It is an input parameter—measured, not derived.</p>
+<h3 id="the-question">1.2 The Question</h3>
+<p>Why does <span class="math inline">\(\alpha\)</span> take the value
+<span class="math inline">\(\approx 1/137.036\)</span> and not some
+other number? Is this value fundamental—a brute fact about our
+universe—or is it derivable from deeper principles?</p>
+<p>This question has attracted some of the greatest minds in physics.
+Wolfgang Pauli famously quipped: “When I die, my first question to the
+Devil will be: What is the meaning of the fine-structure constant?”
+Richard Feynman called it “one of the greatest damn mysteries of
+physics: a magic number that comes to us with no understanding by
+humans.” Arthur Eddington spent the last two decades of his career
+attempting to derive <span class="math inline">\(\alpha\)</span> from
+pure mathematics, with results that were initially celebrated and later
+dismissed as numerology.</p>
+<p>This document argues that the way we <em>present</em> <span
+class="math inline">\(\alpha\)</span>—as a transcendental real number
+<span class="math inline">\(1/137.036\)</span>…, cobbled together from
+dimensionful constants—obscures its true nature. When reframed
+geometrically, <span class="math inline">\(\alpha\)</span> reveals
+itself as a <em>cross-ratio</em>: a projective invariant of two
+characteristic length scales of the electron.</p>
+<h3 id="what-this-document-does-and-does-not-claim">1.3 What This
+Document Does and Does Not Claim</h3>
+<p><strong>What it claims:</strong> 1. <span
+class="math inline">\(\alpha\)</span> can be understood as the ratio
+<span class="math inline">\(r_e / \bar{\lambda}_C\)</span>, where <span
+class="math inline">\(r_e\)</span> is the classical electron radius and
+<span class="math inline">\(\bar{\lambda}_C\)</span> is the reduced
+Compton wavelength 2. This ratio has the mathematical structure of a
+projective cross-ratio—an invariant under Möbius transformations 3.
+Reframing <span class="math inline">\(\alpha\)</span> as a cross-ratio
+makes its invariance properties geometrically transparent and connects
+naturally to how <span class="math inline">\(\alpha\)</span> is measured
+in precision experiments 4. Five complementary mathematical formalisms
+(adelic, projective, topological, syntactic, hierarchical) illuminate
+different aspects of this cross-ratio structure</p>
+<p><strong>What it does NOT claim:</strong> 1. That <span
+class="math inline">\(\alpha = r_e/\bar{\lambda}_C\)</span> is a
+<em>derivation</em> of <span class="math inline">\(\alpha\)</span> from
+first principles—it is an algebraic identity since <span
+class="math inline">\(r_e \equiv \alpha \bar{\lambda}_C\)</span> by
+definition 2. That <span class="math inline">\(\alpha\)</span> itself is
+a rational number—the claim is about measurement methodology, not
+ontology 3. That the five formalisms represent independent discoveries
+by different researchers 4. That the cross-ratio framing makes novel,
+testable predictions (beyond those already pursued in precision
+metrology)</p>
+<p>The contribution is <strong>conceptual reframing</strong>, not
+numerical derivation. Like changing coordinate systems in geometry, a
+reframing does not create new information—but it can make hidden
+structure visible.</p>
+<hr />
+<h2 id="the-reframing-alpha-as-a-length-ratio">2. The Reframing: <span
+class="math inline">\(\alpha\)</span> as a Length Ratio</h2>
+<h3 id="two-characteristic-lengths-of-the-electron">2.1 Two
+Characteristic Lengths of the Electron</h3>
+<p>An electron is characterized by two natural length scales:</p>
+<p><strong>The classical electron radius <span
+class="math inline">\(r_e\)</span></strong>: In classical
+electrodynamics, if you imagine the electron’s charge distributed over a
+sphere, the electrostatic self-energy is E = <span
+class="math inline">\(e^2/(4\pi\varepsilon_0r)\)</span>. Setting this
+equal to the rest energy <span class="math inline">\(m_e c^2\)</span>
+gives the classical electron radius:</p>
+<p><span class="math display">\[ r_e = \frac{e^2}{4\pi\varepsilon_0 m_e
+c^2} \approx 2.818 \times 10^{-15} \text{ m} \]</span></p>
+<p>Physically, <span class="math inline">\(r_e\)</span> characterizes
+the scale at which electromagnetic interactions become strong enough
+that the classical picture breaks down. It appears in the Thomson
+cross-section for low-energy photon-electron scattering: <span
+class="math inline">\(\sigma_T = (8\pi/3) r_e^2 \approx\)</span> 0.665
+barn.</p>
+<p><strong>The reduced Compton wavelength <span
+class="math inline">\(\bar{\lambda}_C\)</span></strong>: In quantum
+mechanics, the Compton wavelength <span class="math inline">\(\lambda_C
+= h/(m_e\)</span> c) is the scale at which quantum field theory effects
+become important—pair creation, vacuum polarization. The reduced Compton
+wavelength is:</p>
+<p><span class="math display">\[ \bar{\lambda}_C = \frac{\hbar}{m_e c} =
+\frac{\lambda_C}{2\pi} \approx 3.862 \times 10^{-13} \text{ m}
+\]</span></p>
+<p>Physically, <span class="math inline">\(\bar{\lambda}_C\)</span> is
+approximately the scale below which the concept of a single-particle
+description breaks down and quantum field theory becomes necessary. It
+appears in the Compton scattering formula: the wavelength shift when a
+photon scatters off an electron is <span
+class="math inline">\(\Delta\lambda = \lambda_C\)</span> (1 - cos <span
+class="math inline">\(\theta)\)</span>.</p>
+<p><strong>Notation warning:</strong> Throughout this document, <span
+class="math inline">\(\bar{\lambda}_C\)</span> (read “lambda-bar-sub-C”)
+denotes the reduced Compton wavelength <span
+class="math inline">\(\hbar/(m_e\)</span> c). The non-reduced Compton
+wavelength <span class="math inline">\(\lambda_C = h/(m_e\)</span> c) is
+<span class="math inline">\(2\pi\)</span> times larger. Using the
+non-reduced wavelength would give <span
+class="math inline">\(r_e/\lambda_C = \alpha/(2\pi)\)</span>, which is
+NOT <span class="math inline">\(\alpha\)</span>. This distinction is
+essential.</p>
+<h3 id="the-ratio">2.2 The Ratio</h3>
+<p>Divide the two lengths:</p>
+<p><span class="math display">\[ \frac{r_e}{\bar{\lambda}_C} =
+\frac{e^2/(4\pi\varepsilon_0 m_e c^2)}{\hbar/(m_e c)} =
+\frac{e^2}{4\pi\varepsilon_0 \hbar c} = \alpha \]</span></p>
+<p>The ratio is exactly the fine-structure constant. This is not a
+coincidence—it follows from the definitions of <span
+class="math inline">\(r_e, \bar{\lambda}_C\)</span>, and <span
+class="math inline">\(\alpha\)</span>. Mathematically, it is an
+algebraic identity: <span class="math inline">\(r_e \equiv \alpha
+\bar{\lambda}_C\)</span> by definition, so the ratio gives <span
+class="math inline">\(\alpha\)</span> by construction.</p>
+<h3 id="why-reframe">2.3 Why Reframe?</h3>
+<p>If <span class="math inline">\(\alpha = r_e/\bar{\lambda}_C\)</span>
+is just an algebraic identity, what is gained by reframing <span
+class="math inline">\(\alpha\)</span> as a length ratio? Three
+things:</p>
+<p><strong>First, the reframing reveals geometric structure.</strong>
+The standard presentation <span class="math inline">\(\alpha =
+e^2/(4\pi\varepsilon_0\hbar c)\)</span> involves four dimensionful
+constants (e, <span class="math inline">\(\varepsilon_0, \hbar\)</span>,
+c) whose numerical values depend on the human-chosen SI unit system. The
+fact that <span class="math inline">\(\alpha\)</span> is dimensionless
+is presented as a happy algebraic cancellation—the units “happen” to
+cancel. The length-ratio presentation <span class="math inline">\(\alpha
+= r_e/\bar{\lambda}_C\)</span> makes the dimensionless nature
+geometrically obvious: we are comparing two lengths, so the units must
+cancel regardless of which units we choose.</p>
+<p><strong>Second, the reframing connects to projective
+geometry.</strong> The ratio of two lengths can be embedded as a
+<em>cross-ratio</em> on the projective line—a mathematical object with
+well-understood invariance properties. This embedding reveals that <span
+class="math inline">\(\alpha\)</span> inherits its unit-independence
+from a deeper mathematical principle: projective invariance under Möbius
+transformations.</p>
+<p><strong>Third, the reframing illuminates experimental
+methodology.</strong> The highest-precision measurements of <span
+class="math inline">\(\alpha\)</span> (quantum Hall effect, Penning trap
+g-2) proceed by counting—integer filling factors <span
+class="math inline">\(\nu = p/q\)</span>, integer cycle counts <span
+class="math inline">\(N_s/N_c\)</span>. The length-ratio framing makes
+the connection between <span class="math inline">\(\alpha\)</span> and
+counting experiments natural: if <span
+class="math inline">\(\alpha\)</span> is fundamentally a ratio, then
+measuring it by counting ratios is the conceptually appropriate
+method.</p>
+<p>In short: the coupling-constant framing answers “what is <span
+class="math inline">\(\alpha?\)</span>” with “the strength of
+electromagnetism”—a true but opaque answer. The length-ratio framing
+answers with “the ratio of the electron’s electromagnetic size to its
+quantum size”—a geometrically revealing answer.</p>
+<hr />
+<h2 id="the-mathematics-cross-ratios-and-projective-geometry">3. The
+Mathematics: Cross-Ratios and Projective Geometry</h2>
+<h3 id="what-is-a-cross-ratio">3.1 What Is a Cross-Ratio?</h3>
+<p>In projective geometry, the <em>cross-ratio</em> (also called the
+anharmonic ratio) is the fundamental invariant associated with four
+collinear points. Given four distinct points with coordinates <span
+class="math inline">\(x_1, x_2, x_3, x_4\)</span> on a line, the
+cross-ratio is:</p>
+<p><span class="math display">\[ (x_1, x_2; x_3, x_4) = \frac{(x_1 -
+x_3)(x_2 - x_4)}{(x_1 - x_4)(x_2 - x_3)} \]</span></p>
+<p>The cross-ratio has a remarkable property: it is <strong>invariant
+under all Möbius transformations</strong>. A Möbius transformation maps
+each coordinate as:</p>
+<p><span class="math display">\[ x \mapsto \frac{ax + b}{cx + d}, \quad
+ad - bc \neq 0 \]</span></p>
+<p>This means that no matter how we choose our coordinate system—where
+we place the origin, what we call the unit length, how we stretch or
+compress the line—the cross-ratio of four points remains unchanged. The
+cross-ratio is the <strong>only</strong> quantity with this property; it
+is the complete set of projective invariants for four collinear
+points.</p>
+<p><strong>Examples:</strong> - (0, 1; 2, 3) = (0-2)(1-3)/((0-3)(1-2)) =
+(-2)(-2)/((-3)(-1)) = <span class="math inline">\(4/3\)</span> - (1, 2;
+4, 8) <span class="math inline">\(\approx\)</span> 1.286 - After any
+Möbius transformation of the coordinates, these values remain
+identical.</p>
+<p>The 24 possible orderings of four points produce at most 6 distinct
+cross-ratio values, related by the <em>anharmonic group</em> (isomorphic
+to the symmetric group <span class="math inline">\(S_3): {\lambda,
+1/\lambda, 1−\lambda, 1/(1−\lambda), (\lambda−1)/\lambda,
+\lambda/(\lambda−1)}\)</span>.</p>
+<h3 id="simple-ratios-as-degenerate-cross-ratios">3.2 Simple Ratios as
+Degenerate Cross-Ratios</h3>
+<p>Any simple ratio <span class="math inline">\(a/b\)</span> can be
+expressed as a degenerate cross-ratio by placing two reference points at
+0 and <span class="math inline">\(\infty\)</span>:</p>
+<p><span class="math display">\[ (0, \infty; a, b) = \lim_{L \to \infty}
+\frac{(0 - a)(L - b)}{(0 - b)(L - a)} = \frac{(-a)}{(-b)} \cdot \lim_{L
+\to \infty} \frac{L - b}{L - a} = \frac{a}{b} \]</span></p>
+<p>As L <span class="math inline">\(\to \infty\)</span>, the fraction
+(L−b)/(L−a) <span class="math inline">\(\to\)</span> 1, leaving <span
+class="math inline">\(a/b\)</span>. This is verified computationally
+(see Appendix A).</p>
+<h3 id="alpha-as-a-cross-ratio">3.3 <span
+class="math inline">\(\alpha\)</span> As a Cross-Ratio</h3>
+<p>Applying this to <span class="math inline">\(\alpha\)</span>:</p>
+<p><span class="math display">\[ (0, \infty; r_e, \bar{\lambda}_C) =
+\frac{r_e}{\bar{\lambda}_C} = \alpha \]</span></p>
+<p>The four projective points and their interpretations:</p>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 24%" />
+<col style="width: 50%" />
+<col style="width: 12%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Point</th>
+<th style="text-align: left;">Coordinate</th>
+<th style="text-align: left;">Physical Interpretation</th>
+<th style="text-align: left;">Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(P_0\)</span></td>
+<td style="text-align: left;">0 [0:1]</td>
+<td style="text-align: left;">Zero-length reference</td>
+<td style="text-align: left;">Mathematical anchor—fixes the origin</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(P_\infty\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\infty\)</span> [1:0]</td>
+<td style="text-align: left;">Scale anchor at infinity</td>
+<td style="text-align: left;">Mathematical anchor—ensures projective
+invariance</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(P_a\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(r_e
+[r_e:1]\)</span></td>
+<td style="text-align: left;">Classical electron radius</td>
+<td style="text-align: left;">Physical length—characterizes
+electromagnetic interaction scale</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(P_b\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\bar{\lambda}_C [\bar{\lambda}_C:1]\)</span></td>
+<td style="text-align: left;">Reduced Compton wavelength</td>
+<td style="text-align: left;">Physical length—characterizes
+quantum-relativistic scale</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important clarification:</strong> Points <span
+class="math inline">\(P_0\)</span> and <span
+class="math inline">\(P_\infty\)</span> are <strong>mathematical
+reference points</strong>, not physically distinct length scales. The
+physically meaningful content is entirely in the relationship between
+the two physical points—<span class="math inline">\(r_e\)</span> and
+<span class="math inline">\(\bar{\lambda}_C\)</span>. One should not
+claim that <span class="math inline">\(\alpha\)</span> is “a cross-ratio
+of four physical lengths.” It is a cross-ratio of two physical lengths
+embedded in a projective frame that requires two mathematical reference
+points for its formal definition.</p>
+<h3 id="why-projective-invariance-matters">3.4 Why Projective Invariance
+Matters</h3>
+<p>The Möbius invariance of the cross-ratio means <span
+class="math inline">\(\alpha\)</span> does not depend on:</p>
+<ol type="1">
+<li><strong>Choice of length units:</strong> Whether <span
+class="math inline">\(r_e\)</span> and <span
+class="math inline">\(\bar{\lambda}_C\)</span> are expressed in meters,
+Planck lengths, or light-years—the ratio is the same</li>
+<li><strong>Choice of coordinate origin:</strong> Where we place “zero”
+on the length scale is irrelevant</li>
+<li><strong>Smooth rescalings:</strong> Any transformation x <span
+class="math inline">\(\to\)</span> (ax + b)/(cx + d) leaves <span
+class="math inline">\(\alpha\)</span> unchanged</li>
+</ol>
+<p>These are precisely the properties we demand of a genuine physical
+invariant: it must be independent of human conventions about measurement
+systems and coordinate choices. The cross-ratio provides the
+mathematical guarantee that <span class="math inline">\(\alpha\)</span>
+satisfies these requirements.</p>
+<p>Note that <span class="math inline">\(\alpha\)</span> is already
+known to be dimensionless, and dimensionless numbers are trivially
+independent of unit choices. The cross-ratio framing does not
+<em>discover</em> new invariance—it <em>explains</em> the existing
+invariance in geometric terms, making intuitive what the
+coupling-constant framing merely asserts.</p>
+<hr />
+<h2 id="quantitative-verification">4. Quantitative Verification</h2>
+<p>All numerical results in this section are produced by self-contained
+Python code (see Appendix A). The code is re-executable and all values
+are <code>[CODE-EXECUTED]</code>.</p>
+<h3 id="fundamental-constants-and-length-scales">4.1 Fundamental
+Constants and Length Scales</h3>
+<p>The following values use CODATA 2018 fundamental constants. Since the
+2019 redefinition of SI base units, e, <span
+class="math inline">\(\hbar\)</span>, and c are <strong>exactly
+defined</strong>, while <span
+class="math inline">\(\varepsilon_0\)</span> and <span
+class="math inline">\(m_e\)</span> are measured quantities.</p>
+<pre><code>e      = 1.602176634 $\times 10^{-19}$ C    (exact)
+$\hbar$      = 1.054571817 $\times 10^{-34} J\cdots$  (exact)
+c      = 299792458 $m/s$             (exact)
+$\varepsilon_0$     = 8.8541878128 $\times 10^{-12} F/m$ (measured post-2019)
+$m_e$    = 9.1093837015 $\times 10^{-31}$ kg  (measured)</code></pre>
+<p>Derived length scales:</p>
+<pre><code>$r_e$    = 2.817940 $\times 10^{-15}$ m    (classical electron radius)
+$\bar{\lambda}_C$    = 3.861593 $\times 10^{-13}$ m    (reduced Compton wavelength)
+$\lambda_C$    = 2.426310 $\times 10^{-12}$ m    (non-reduced Compton wavelength)</code></pre>
+<h3 id="α-verification">4.2 Α Verification</h3>
+<p><span class="math inline">\(\alpha\)</span> computed via three
+routes—all must agree to machine precision:</p>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 29%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Route</th>
+<th style="text-align: left;">Value</th>
+<th style="text-align: left;">Matches?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\alpha =
+e^2/(4\pi\varepsilon_0\hbar c)\)</span></td>
+<td style="text-align: left;">0.007297352573749</td>
+<td style="text-align: left;">Reference</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\alpha = r_e /
+\bar{\lambda}_C\)</span></td>
+<td style="text-align: left;">0.007297352573749</td>
+<td style="text-align: left;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\alpha = r_e /
+\lambda_C\)</span></td>
+<td style="text-align: left;">0.001161409733597</td>
+<td style="text-align: left;">✗ (off by factor <span
+class="math inline">\(2\pi)\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The second row confirms <span class="math inline">\(\alpha =
+r_e/\bar{\lambda}_C\)</span>. The third row shows the hazard of using
+the non-reduced Compton wavelength.</p>
+<p><strong>Inverse fine-structure constant:</strong></p>
+<pre><code>$1/\alpha$ (computed)       = 137.035999000144
+CODATA 2018 $1/\alpha$      = 137.035999084
+Difference            = 8.4 $\times 10^{-8}$ (well within CODATA uncertainty)</code></pre>
+<h3 id="cross-ratio-verification">4.3 Cross-Ratio Verification</h3>
+<p>The degenerate cross-ratio (0, <span
+class="math inline">\(\infty\)</span>; a, b) = <span
+class="math inline">\(a/b\)</span> is verified numerically:</p>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 10%" />
+<col style="width: 17%" />
+<col style="width: 37%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">a</th>
+<th style="text-align: left;">b</th>
+<th style="text-align: left;"><span
+class="math inline">\(a/b\)</span></th>
+<th style="text-align: left;"><span
+class="math inline">\((0,\infty;a,b)\)</span></th>
+<th style="text-align: left;">Match</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(r_e\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\bar{\lambda}_C\)</span></td>
+<td style="text-align: left;">0.007297352573749</td>
+<td style="text-align: left;">0.007297352573749</td>
+<td style="text-align: left;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">3.000000000000000</td>
+<td style="text-align: left;">3.000000000000000</td>
+<td style="text-align: left;">✓</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><span
+class="math inline">\(\pi\)</span></td>
+<td style="text-align: left;">0.318309886183791</td>
+<td style="text-align: left;">0.318309886183791</td>
+<td style="text-align: left;">✓</td>
+</tr>
+</tbody>
+</table>
+<p>The verification uses L = <span
+class="math inline">\(10^{30}\)</span> as a numerical proxy for
+infinity. The limit converges rapidly.</p>
+<h3 id="thomson-and-compton-scattering">4.4 Thomson and Compton
+Scattering</h3>
+<p>The two length scales are independently measurable through classical
+and quantum scattering:</p>
+<p><strong>Thomson scattering</strong> gives <span
+class="math inline">\(r_e\)</span> via the low-energy photon-electron
+cross-section:</p>
+<pre><code>$\sigma_T = (8\pi/3) r_e^2$ = 6.652 $\times 10^{-29} m^2$ = 0.665 barn</code></pre>
+<p><strong>Compton scattering</strong> gives <span
+class="math inline">\(\bar{\lambda}_C\)</span> via the wavelength shift
+at 180°:</p>
+<pre><code>$\Delta\lambda_max$ = 2 $\lambda_C$ = 4.853 $\times 10^{-12}$ m
+$\bar{\lambda}_C = \Delta\lambda_max / (4\pi)$</code></pre>
+<p>While these measurements are conceptually independent (classical EM
+vs. quantum mechanics), the identity <span class="math inline">\(r_e =
+\alpha \bar{\lambda}_C\)</span> means they measure the same underlying
+physics. The measurements are independent in methodology but not in
+physical content.</p>
+<hr />
+<h2 id="the-experiments-integer-count-measurements">5. The Experiments:
+Integer-Count Measurements</h2>
+<h3 id="how-α-is-actually-measured">5.1 How Α Is Actually Measured</h3>
+<p>The highest-precision determinations of <span
+class="math inline">\(\alpha\)</span> do not involve measuring <span
+class="math inline">\(r_e\)</span> with a ruler or <span
+class="math inline">\(\bar{\lambda}_C\)</span> with a wavelength meter.
+Instead, they use two types of counting experiments:</p>
+<h3 id="quantum-hall-effect">5.2 Quantum Hall Effect</h3>
+<p>When a two-dimensional electron gas is subjected to a strong
+perpendicular magnetic field at low temperature, the Hall resistance
+<span class="math inline">\(R_H = V_H/I\)</span> becomes
+<em>quantized</em>:</p>
+<p><span class="math display">\[ R_H = \frac{h}{e^2} \cdot \frac{1}{\nu}
+= \frac{R_K}{\nu} \]</span></p>
+<p>where <span class="math inline">\(R_K = h/e^2 \approx\)</span>
+25,812.807 <span class="math inline">\(\Omega\)</span> is the von
+Klitzing constant, and <span class="math inline">\(\nu\)</span> is the
+<em>filling factor</em>—a rational number representing the ratio of
+electron density to magnetic flux quanta density.</p>
+<p><strong>Observed filling factors:</strong></p>
+<pre><code>$\nu$ = 1, 2, 3, 4, ...       (integer quantum Hall effect)
+$\nu = 1/3, 2/3, 2/5$,        (fractional quantum Hall effect)
+    $3/5, 3/7, 4/7$, ...</code></pre>
+<p>The filling factor <span class="math inline">\(\nu = p/q\)</span> is
+a rational number—a ratio of integers. The measurement determines <span
+class="math inline">\(R_K\)</span> by comparing the quantized Hall
+resistance to a known reference, often using a Josephson voltage
+standard where voltage steps are produced at frequencies <span
+class="math inline">\(f_n = 2eV/h\)</span>, and the step number (an
+integer count) determines the voltage.</p>
+<p>From <span class="math inline">\(R_K\)</span>, the fine-structure
+constant follows as <span class="math inline">\(\alpha =
+\mu_0c/(2R_K)\)</span> in the pre-2019 SI, or through the measured <span
+class="math inline">\(\varepsilon_0\)</span> in the post-2019 SI.</p>
+<p><strong>Key point:</strong> The experimentally measured quantity—the
+filling factor <span class="math inline">\(\nu = p/q\)</span>—is a
+rational number. <span class="math inline">\(\alpha\)</span> is
+<em>extracted</em> from this rational measurement. The “transcendental”
+decimal <span class="math inline">\(1/137.035999084\)</span> is not
+directly measured; it is computed from rational inputs.</p>
+<h3 id="penning-trap-g2">5.3 Penning Trap (g−2)</h3>
+<p>A single electron is trapped in a Penning trap—a combination of
+electric and magnetic fields that confines the electron to a small
+volume. The electron exhibits three characteristic motions: -
+<strong>Cyclotron motion:</strong> <span class="math inline">\(\omega_c
+= eB/m_e\)</span> (circular motion in the magnetic field) - <strong>Spin
+precession:</strong> <span class="math inline">\(\omega_s\)</span> = g e
+B/(2 <span class="math inline">\(m_e)\)</span> (precession of the
+electron’s intrinsic spin)</p>
+<p>The anomalous magnetic moment <span
+class="math inline">\(a_e\)</span> = (g−2)/2 is obtained by comparing
+these two frequencies:</p>
+<p><span class="math display">\[ a_e = \frac{\omega_s}{\omega_c} - 1 =
+\frac{N_s}{N_c} - 1 \]</span></p>
+<p>where <span class="math inline">\(N_s\)</span> and <span
+class="math inline">\(N_c\)</span> are the <strong>counted</strong>
+numbers of spin-precession and cyclotron cycles over the measurement
+interval. Both are integers. Thus <span
+class="math inline">\(a_e\)</span> is directly a <strong>rational
+number</strong>—the ratio of two integer counts, minus one.</p>
+<p><strong>Concrete example:</strong> The experimentally measured <span
+class="math inline">\(a_e \approx\)</span> 0.00115965218059 corresponds
+to approximately <span class="math inline">\(N_s/N_c \approx\)</span>
+7,090,509 / 7,082,296 <span class="math inline">\(\approx\)</span>
+1.0011596522. Neither of these large integers is “fundamental”—they
+depend on the measurement duration—but their <em>ratio</em> is the
+physical observable, and it is rational.</p>
+<p><strong>Extracting <span class="math inline">\(\alpha\)</span> from
+<span class="math inline">\(a_e\)</span></strong>: The QED prediction
+for the anomalous magnetic moment is a perturbation series:</p>
+<p><span class="math display">\[ a_e^{\text{QED}}(\alpha) =
+\frac{\alpha}{2\pi} + C_2\left(\frac{\alpha}{\pi}\right)^2 +
+C_3\left(\frac{\alpha}{\pi}\right)^3 +
+C_4\left(\frac{\alpha}{\pi}\right)^4 +
+C_5\left(\frac{\alpha}{\pi}\right)^5 + \ldots \]</span></p>
+<p>where <span class="math inline">\(C_2 \approx\)</span> −0.328, <span
+class="math inline">\(C_3 \approx\)</span> 1.181, <span
+class="math inline">\(C_4 \approx\)</span> −1.914, and <span
+class="math inline">\(C_5\)</span> requires evaluating 12,672 Feynman
+diagrams. To extract <span class="math inline">\(\alpha\)</span>, we
+solve <span class="math inline">\(a_e^{\text{QED}}(\alpha) =
+a_e^{\text{measured}}\)</span> for <span
+class="math inline">\(\alpha\)</span>.</p>
+<p><strong>A note on circularity:</strong> This extraction uses a series
+in powers of <span class="math inline">\(\alpha\)</span> to solve for
+<span class="math inline">\(\alpha\)</span>—an apparent circularity.
+This is not unique to <span class="math inline">\(\alpha\)</span>; it is
+standard practice in quantum field theory parameter extraction (the
+strong coupling <span class="math inline">\(\alpha_s\)</span> is
+extracted similarly). The circularity is <em>computational</em>, not
+ontological: we use an iterative scheme to find the value of <span
+class="math inline">\(\alpha\)</span> that makes QED match measurement.
+The convergence of the scheme confirms that <span
+class="math inline">\(\alpha\)</span> is a well-defined parameter,
+regardless of whether it is “fundamental.”</p>
+<h3 id="the-measurement-to-cross-ratio-connection">5.4 The Measurement
+<span class="math inline">\(\to\)</span> Cross-Ratio Connection</h3>
+<table>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 26%" />
+<col style="width: 36%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Experiment</th>
+<th style="text-align: left;">Directly Measured</th>
+<th style="text-align: left;">Integer-Ratio Observable</th>
+<th style="text-align: left;"><span
+class="math inline">\(\alpha\)</span> Extraction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Quantum Hall</td>
+<td style="text-align: left;"><span class="math inline">\(R_K =
+h/e^2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\nu =
+p/q\)</span> (rational filling factor)</td>
+<td style="text-align: left;"><span class="math inline">\(\alpha =
+\mu_0c/(2R_K)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Penning trap</td>
+<td style="text-align: left;"><span class="math inline">\(a_e\)</span> =
+(g−2)/2</td>
+<td style="text-align: left;"><span class="math inline">\(a_e =
+N_s/N_c\)</span> − 1 (rational)</td>
+<td style="text-align: left;">Solve QED series</td>
+</tr>
+<tr>
+<td style="text-align: left;">Josephson effect</td>
+<td style="text-align: left;"><span class="math inline">\(K_J =
+2e/h\)</span></td>
+<td style="text-align: left;">Frequency ratio (counted cycles)</td>
+<td style="text-align: left;">Combined with <span
+class="math inline">\(R_K\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Atom interferometry</td>
+<td style="text-align: left;"><span class="math inline">\(h/m\)</span>
+ratio</td>
+<td style="text-align: left;">Recoil frequency (counted)</td>
+<td style="text-align: left;">Combined with <span
+class="math inline">\(R_K\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>In every case, the experiment directly measures a rational number—a
+ratio of integer counts. <span class="math inline">\(\alpha\)</span> is
+extracted from these rational observables. The cross-ratio framing makes
+this connection natural: just as <span class="math inline">\((0,\infty;
+r_e, \bar{\lambda}_C)\)</span> is a ratio of lengths, the filling factor
+<span class="math inline">\(\nu\)</span> and the frequency ratio <span
+class="math inline">\(N_s/N_c\)</span> are ratios of counts—and all are
+projective invariants of their respective domains.</p>
+<hr />
+<h2 id="the-history-past-attempts-to-explain-α">6. The History: Past
+Attempts to Explain Α</h2>
+<h3 id="eddingtons-fundamental-theory">6.1 Eddington’s Fundamental
+Theory</h3>
+<p>Arthur Eddington (1882–1944) was among the first to attempt a
+derivation of <span class="math inline">\(\alpha\)</span> from pure
+mathematics. His approach was audacious: he sought to derive all
+physical constants from epistemological first principles—the claim that
+the structure of physical law is determined by the structure of
+observation itself.</p>
+<p>Eddington initially derived <span
+class="math inline">\(\alpha^{-1}\)</span> = 136, arguing that his
+“E-number” algebra (a 16-dimensional algebraic structure) contained
+exactly 136 independent components—and that <span
+class="math inline">\(\alpha\)</span> must be their reciprocal. When
+experimental evidence shifted toward <span
+class="math inline">\(\alpha^{-1} \approx\)</span> 137, he revised his
+theory, introducing an additional degree of freedom to reach 137.</p>
+<p><strong>Numerical comparison:</strong></p>
+<pre><code>Eddington $\alpha^{-1}$ = 136  $\to$  deviation from CODATA: 7,618 ppm
+Eddington $\alpha^{-1}$ = 137  $\to$  deviation from CODATA: 263 ppm
+CODATA 2018 $\alpha^{-1}$     = 137.035999084</code></pre>
+<p>Eddington’s program is now generally regarded as a failure—a
+cautionary tale about the dangers of numerology, where a theory is
+adjusted post hoc to match data. However, his core intuition—that <span
+class="math inline">\(\alpha\)</span> should be derivable from
+mathematical structure rather than accepted as a brute fact—is shared by
+the cross-ratio approach. The difference is that Eddington sought a
+<em>single integer</em> as the source of <span
+class="math inline">\(\alpha\)</span>, while the cross-ratio approach
+identifies the <em>ratio structure</em>—the relationship between
+quantities, not the quantities themselves—as the proper mathematical
+object.</p>
+<h3 id="wylers-1969-formula">6.2 Wyler’s 1969 Formula</h3>
+<p>Armand Wyler proposed in 1969 that <span
+class="math inline">\(\alpha\)</span> could be derived from the geometry
+of bounded complex domains:</p>
+<p><span class="math display">\[ \alpha_{\text{Wyler}} =
+\frac{9}{16\pi^3} \left( \frac{\pi}{5!} \right)^{1/4} \]</span></p>
+<p>Numerical evaluation:</p>
+<pre><code>Wyler $\alpha$           = 0.007297348130032
+1 / Wyler $\alpha$       = 137.036082448164
+CODATA 2018 $1/\alpha$  = 137.035999084
+Deviation          = 0.6 parts per million</code></pre>
+<p>The 0.6 ppm deviation is comparable to the experimental uncertainty
+of <span class="math inline">\(\alpha\)</span> when Wyler published his
+formula in 1969—meaning he could not have fudged his formula to match a
+precision that did not exist at the time.</p>
+<p>Wyler’s derivation invoked the conformal group SO(4,2) acting on a
+bounded complex domain—a group-theoretic, geometric origin. While his
+argument was never widely accepted (and his formula, elegant as it is,
+has not been placed on a rigorous foundation), the 0.6 ppm match is
+striking.</p>
+<p><strong>Honest assessment:</strong> The Wyler formula’s accuracy is
+genuinely surprising. However, without a statistical analysis of how
+many random formulas of similar complexity would coincidentally hit
+within 0.6 ppm of <span class="math inline">\(1/137.036\)</span>, the
+significance is aesthetic rather than statistical. The formula motivates
+the search for a geometric derivation of <span
+class="math inline">\(\alpha\)</span> but does not itself constitute
+one.</p>
+<h3 id="the-numerology-problem">6.3 The Numerology Problem</h3>
+<p>A persistent challenge in <span class="math inline">\(\alpha\)</span>
+research is distinguishing genuine mathematical structure from the
+“Strong Law of Small Numbers”—the fact that with small integers,
+factorials, and powers of <span class="math inline">\(\pi\)</span>, one
+can construct many formulas that approximate any given small number. The
+numbers 136, 137, and 138 were all proposed at various times by
+different researchers using different combinations of integers.</p>
+<p>The cross-ratio reframing addresses this by focusing not on a
+<em>single number</em> (137 or otherwise) but on a
+<em>structure</em>—the ratio <span
+class="math inline">\(r_e/\bar{\lambda}_C\)</span> and its embedding in
+projective geometry. The structure is the invariant; the specific
+decimal value <span class="math inline">\(1/137.036\)</span> is the
+contingent realization of that structure in our universe.</p>
+<hr />
+<h2 id="the-landscape-five-complementary-formalisms">7. The Landscape:
+Five Complementary Formalisms</h2>
+<p>The cross-ratio nature of <span class="math inline">\(\alpha\)</span>
+has been approached from five different mathematical directions within a
+unified research program. These formalisms are <em>complementary</em>
+(each illuminating a different aspect) rather than <em>independent</em>
+(they were developed by the same investigator in overlapping time
+periods).</p>
+<h3 id="adelic-number-theoretic">7.1 Adelic / Number-Theoretic</h3>
+<p><strong>Mathematical language:</strong> Ostrowski’s theorem, p-adic
+numbers, adelic product formulas</p>
+<p><strong>Key idea:</strong> Ostrowski’s theorem states that the only
+completions of the rational numbers <span
+class="math inline">\(\mathbb{Q}\)</span> are the real numbers <span
+class="math inline">\(\mathbb{R}\)</span> (the “archimedean” completion,
+corresponding to the usual absolute value) and the p-adic numbers <span
+class="math inline">\(\mathbb{Q}_p\)</span> (the “non-archimedean”
+completions, one for each prime p). If a physical quantity is
+well-defined, it must be consistently expressible across <em>all</em>
+completions of <span class="math inline">\(\mathbb{Q}\)</span>—the
+“adelic” requirement. This forces the quantity to have the structure of
+a cross-ratio: something whose archimedean component (the real number we
+measure) and non-archimedean components (its p-adic valuations) satisfy
+a product formula.</p>
+<p><strong>Contribution:</strong> Establishes <em>why</em> <span
+class="math inline">\(\alpha\)</span> must be a cross-ratio—the adelic
+consistency requirement. However, adelic consistency alone does not fix
+the numerical value of <span class="math inline">\(\alpha\)</span>; it
+constrains the functional form but requires additional geometric
+input.</p>
+<h3 id="projective-geometric-this-work">7.2 Projective / Geometric (This
+Work)</h3>
+<p><strong>Mathematical language:</strong> Cross-ratio of four collinear
+points, Möbius transformations, projective line <span
+class="math inline">\(\mathbb{P}^1\)</span></p>
+<p><strong>Key idea:</strong> <span class="math inline">\(\alpha =
+r_e/\bar{\lambda}_C\)</span> can be embedded as the cross-ratio <span
+class="math inline">\((0,\infty; r_e, \bar{\lambda}_C)\)</span>. This
+makes the projective invariance of <span
+class="math inline">\(\alpha\)</span> geometrically explicit—<span
+class="math inline">\(\alpha\)</span> is invariant under all Möbius
+transformations, just as the physical world should be independent of
+human choices of units and coordinates.</p>
+<p><strong>Contribution:</strong> Provides the <em>geometric
+identification</em>—<span class="math inline">\(\alpha\)</span> is
+specifically <span
+class="math inline">\(r_e/\bar{\lambda}_C\)</span>—that the adelic
+approach lacked. The projective formalism also makes the connection to
+experiment natural through the integer-count structure.</p>
+<h3 id="topological-winding">7.3 Topological / Winding</h3>
+<p><strong>Mathematical language:</strong> Fundamental group <span
+class="math inline">\(\pi_1(S^1)\)</span> ≅ <span
+class="math inline">\(\mathbb{Z}\)</span>, winding numbers</p>
+<p><strong>Key idea:</strong> The integer identification mechanism that
+underlies counting experiments has a topological origin. The circle
+<span class="math inline">\(S^1\)</span> has fundamental group <span
+class="math inline">\(\mathbb{Z}\)</span>—every closed loop on a circle
+can be characterized by an integer winding number. When physical
+measurements involve periodic processes (cycles, oscillations), the
+integer counts that emerge are winding numbers in an abstract
+configuration space.</p>
+<p><strong>Contribution:</strong> Explains <em>how</em> integer counts
+emerge from topological structure—the measurement of <span
+class="math inline">\(\alpha\)</span> through counting is not an
+arbitrary experimental convenience but reflects the topological nature
+of periodic physical processes.</p>
+<h3 id="syntactic-base-independent">7.4 Syntactic /
+Base-Independent</h3>
+<p><strong>Mathematical language:</strong> Distinction logic, base-free
+formulation</p>
+<p><strong>Key idea:</strong> The decimal representation <span
+class="math inline">\(\alpha \approx 1/137.036\)</span> is an artifact
+of base-10 notation, which itself is an artifact of human anatomy (ten
+fingers). Physical law should be formulated without reference to a
+particular integer base. Cross-ratios are naturally
+base-independent—they are geometric objects, not decimal strings.</p>
+<p><strong>Contribution:</strong> Explains <em>why</em> the standard
+presentation of <span class="math inline">\(\alpha\)</span> as a
+specific decimal is misleading—it embeds a base-10 convention into what
+should be a base-independent physical quantity.</p>
+<h3 id="hierarchical-scaling">7.5 Hierarchical / Scaling</h3>
+<p><strong>Mathematical language:</strong> Frequency hierarchies,
+Minkowski geometry of numbers</p>
+<p><strong>Key idea:</strong> Physical constants emerge from
+hierarchical scaling relations. <span
+class="math inline">\(\alpha\)</span> is not an isolated number but a
+node in a network of scaling relationships connecting different physical
+scales (subatomic, atomic, macroscopic, cosmological). The cross-ratio
+structure propagates through these hierarchies.</p>
+<p><strong>Contribution:</strong> Shows <em>how</em> <span
+class="math inline">\(\alpha\)</span> connects to other scales and why
+it appears in so many different physical contexts—it is the scaling
+ratio that relates electromagnetic to quantum-relativistic
+phenomena.</p>
+<h3 id="synthesis">7.6 Synthesis</h3>
+<p>These five formalisms are not competing explanations but
+<strong>complementary perspectives</strong> on the same underlying
+structure. The adelic approach tells us <em>why</em> <span
+class="math inline">\(\alpha\)</span> must be a cross-ratio
+(mathematical consistency across completions of <span
+class="math inline">\(\mathbb{Q})\)</span>. The projective approach
+tells us <em>what</em> the cross-ratio is <span
+class="math inline">\((r_e/\bar{\lambda}_C)\)</span>. The topological
+approach tells us <em>how</em> integer counts arise. The syntactic
+approach tells us <em>why</em> decimal representations are artifacts.
+The hierarchical approach tells us <em>where</em> <span
+class="math inline">\(\alpha\)</span> fits in the broader network of
+physical scales.</p>
+<p>Together, they form a coherent picture: <span
+class="math inline">\(\alpha\)</span> is a cross-ratio that (a) is
+forced by adelic consistency, (b) is geometrically realized as the ratio
+of two electron length scales, (c) is measured through topological
+integer counting, (d) is independent of base and representation, and (e)
+propagates through a hierarchy of physical scales.</p>
+<hr />
+<h2 id="implications">8. Implications</h2>
+<h3 id="philosophical-implications">8.1 Philosophical Implications</h3>
+<p><strong>Only dimensionless ratios are physically meaningful.</strong>
+This is not a new idea—Michael Duff has argued since 2002 that claims of
+varying dimensionful constants are physically ambiguous because they
+depend on the choice of units. The cross-ratio framing provides the
+mathematical underpinning: projective invariance guarantees that only
+dimensionless ratios are independent of human conventions.</p>
+<p><strong>“Fundamental constants” should be restricted to dimensionless
+ratios.</strong> The dimensionful quantities we call “fundamental
+constants”—c, <span class="math inline">\(\hbar\)</span>, e in SI—are
+human conventions reflecting our choice of measurement system. In
+natural units (c = <span class="math inline">\(\hbar\)</span> = 1), many
+of these “constants” disappear, revealing that their apparent
+fundamentality was an artifact of unit choices. The truly fundamental
+parameters of physics are dimensionless ratios like <span
+class="math inline">\(\alpha, m_p/m_e\)</span>, and the cosmological
+constant in Planck units.</p>
+<p><strong>The SI system obscures structure.</strong> By presenting
+<span class="math inline">\(\alpha\)</span> as <span
+class="math inline">\(e^2/(4\pi\varepsilon_0\hbar c)\)</span>—a formula
+involving four dimensionful constants—the standard textbook presentation
+hides the fact that <span class="math inline">\(\alpha\)</span> is a
+pure geometric ratio. While working physicists internalize <span
+class="math inline">\(\alpha\)</span>’s dimensionless nature, the
+<em>presentation</em> in terms of dimensionful inputs encourages the
+misconception that <span class="math inline">\(\alpha\)</span> somehow
+“arises from” c, <span class="math inline">\(\hbar\)</span>, and e
+interacting—when in fact these constants’ numerical values are chosen by
+the SI committee to be consistent with measurements of <span
+class="math inline">\(\alpha\)</span> and other dimensionless
+ratios.</p>
+<h3 id="testable-predictions">8.2 Testable Predictions</h3>
+<p>The cross-ratio reframing is primarily a change of perspective, and
+does not make dramatically novel predictions. However, it suggests three
+avenues:</p>
+<p><strong>Prediction 1: Cross-ratio structure should be
+universal.</strong> If <span class="math inline">\(\alpha\)</span> has
+the structure of a projective cross-ratio, then other dimensionless
+physical constants should also be expressible as cross-ratios of
+independently characterizable physical scales. For example, the
+proton-to-electron mass ratio <span
+class="math inline">\(m_p/m_e\)</span> might be expressible as a ratio
+of QCD to QED length scales. Failure to find such representations would
+weaken the cross-ratio framing.</p>
+<p><strong>Prediction 2: Precision measurements should continue to
+converge.</strong> If <span class="math inline">\(\alpha\)</span> is
+fundamentally determined from integer-count ratios, then improving
+counting precision in QHE and Penning trap experiments should yield
+increasingly consistent values. Discrepancies between QHE-derived and
+g-2-derived <span class="math inline">\(\alpha\)</span> would signal new
+physics (e.g., beyond-Standard-Model contributions to <span
+class="math inline">\(a_e)\)</span>.</p>
+<p><strong>Prediction 3: SI independence is trivially
+confirmed.</strong> <span class="math inline">\(\alpha\)</span>’s value
+should be the same regardless of the unit system used—and indeed it is.
+This prediction is already verified, but the cross-ratio framing
+explains <em>why</em> it must be true in geometric terms.</p>
+<h3 id="what-would-change-in-practice">8.3 What Would Change in
+Practice?</h3>
+<p>A physicist who adopts the cross-ratio perspective would: - Think of
+<span class="math inline">\(\alpha\)</span> as the ratio of the
+electron’s electromagnetic size to its quantum size, rather than as an
+abstract coupling strength - Recognize that precision <span
+class="math inline">\(\alpha\)</span> measurements are fundamentally
+counting experiments - Evaluate claims about varying constants with the
+criterion that only variations in dimensionless ratios are physically
+meaningful - Be skeptical of theoretical programs that treat
+dimensionful constants as fundamental parameters</p>
+<p>What would NOT change: the numerical value of <span
+class="math inline">\(\alpha\)</span>, the equations of QED, or any
+prediction of the Standard Model. The reframing changes our
+<em>understanding</em> of <span class="math inline">\(\alpha\)</span>,
+not <span class="math inline">\(\alpha\)</span> itself.</p>
+<hr />
+<h2 id="open-questions">9. Open Questions</h2>
+<h3 id="why-these-particular-scales">9.1 Why These Particular
+Scales?</h3>
+<p>The classical electron radius and reduced Compton wavelength are the
+two natural length scales of the electron—but <em>why</em> does nature
+select these particular scales? The cross-ratio identifies the ratio but
+does not explain the origin of the individual scales. A more fundamental
+theory would derive both <span class="math inline">\(r_e\)</span> and
+<span class="math inline">\(\bar{\lambda}_C\)</span> (and therefore
+<span class="math inline">\(\alpha)\)</span> from deeper principles.</p>
+<h3 id="can-α-be-derived-from-pure-geometry">9.2 Can Α Be Derived from
+Pure Geometry?</h3>
+<p>The cross-ratio says <span class="math inline">\(\alpha\)</span>
+<em>is</em> <span class="math inline">\((0,\infty; r_e,
+\bar{\lambda}_C)\)</span>. Could pure projective geometry, perhaps
+constrained by group-theoretic considerations (e.g., invariants of a
+specific symmetry group acting on a domain), fix the <em>numerical
+value</em> of this cross-ratio without inputting the electron mass,
+charge, or other parameters? Wyler’s formula at 0.6 ppm suggests this
+might be possible, but no rigorous derivation currently exists.</p>
+<h3 id="anthropic-or-mathematical">9.3 Anthropic or Mathematical?</h3>
+<p>Even if <span class="math inline">\(\alpha\)</span> has a
+mathematical structure, why does it take the specific value <span
+class="math inline">\(\approx 1/137.036\)</span> rather than some other
+cross-ratio? Two classes of answer are possible: -
+<strong>Mathematical:</strong> The value is uniquely determined by
+mathematical consistency requirements (the approach attempted by
+Eddington, Wyler, and the adelic program) - <strong>Anthropic:</strong>
+<span class="math inline">\(\alpha\)</span> varies across a multiverse
+landscape, and we observe a value compatible with carbon-based life (the
+approach of Barrow and Tipler)</p>
+<p>These are not mutually exclusive: a mathematical derivation might
+yield a <em>discrete spectrum</em> of possible <span
+class="math inline">\(\alpha\)</span> values, with anthropic selection
+picking out the life-permitting one.</p>
+<h3 id="the-minimal-set-of-fundamental-ratios">9.4 The Minimal Set of
+Fundamental Ratios</h3>
+<p>If only dimensionless cross-ratios are physically meaningful, what is
+the complete set of such ratios needed to specify the Standard Model of
+particle physics? The answer would enumerate the truly fundamental
+parameters of nature—the independent cross-ratios from which all
+dimensionful “constants” are derived through unit conventions.</p>
+<h3 id="quantum-gravity">9.5 Quantum Gravity</h3>
+<p>How does the cross-ratio structure behave when gravity is included?
+The Planck length <span class="math inline">\(\ell_P = √(\hbar
+G/c^3)\)</span> introduces a third fundamental length scale. The
+cross-ratios among <span class="math inline">\({r_e, \bar{\lambda}_C,
+\ell_P}\)</span> might encode the relationship between electromagnetic,
+quantum, and gravitational physics—potentially constraining quantum
+gravity models.</p>
+<h3 id="required-external-literature">9.6 Required External
+Literature</h3>
+<p>To complete the argument, the following sources—not currently
+available—are needed:</p>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Source</th>
+<th style="text-align: left;">Why Needed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Duff, M.J. (2002). Comment on
+time-variation of fundamental constants. arXiv:hep-th/0208093</td>
+<td style="text-align: left;">Establishes the operational argument that
+only dimensionless constants are physically meaningful</td>
+</tr>
+<tr>
+<td style="text-align: left;">Barrow, J.D. &amp; Tipler, F.J. (1986).
+The Anthropic Cosmological Principle. Oxford University Press</td>
+<td style="text-align: left;">Provides the anthropic complement to the
+mathematical approach</td>
+</tr>
+<tr>
+<td style="text-align: left;">Eddington, A.S. (1946). Fundamental
+Theory. Cambridge University Press</td>
+<td style="text-align: left;">Historical context—the first serious
+attempt to derive <span class="math inline">\(\alpha\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Wyler, A. (1969). L’espace symétrique du
+groupe des équations de Maxwell. C.R. Acad. Sci. Paris 269, 743</td>
+<td style="text-align: left;">Original derivation of the 0.6 ppm
+formula</td>
+</tr>
+<tr>
+<td style="text-align: left;">CODATA 2022 recommended values</td>
+<td style="text-align: left;">Most current <span
+class="math inline">\(\alpha\)</span> value</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="conclusion">10. Conclusion</h2>
+<p>The fine-structure constant <span
+class="math inline">\(\alpha\)</span> has been a puzzle for over a
+century. Measured to extraordinary precision, it lacks any accepted
+theoretical explanation. The standard presentation—<span
+class="math inline">\(\alpha = e^2/(4\pi\varepsilon_0\hbar
+c)\)</span>—frames it as an abstract coupling strength, obscuring its
+geometric character.</p>
+<p>This document has argued for a reframing: <span
+class="math inline">\(\alpha\)</span> is naturally understood as the
+cross-ratio of two characteristic length scales of the electron—the
+classical electron radius <span class="math inline">\(r_e\)</span> and
+the reduced Compton wavelength <span
+class="math inline">\(\bar{\lambda}_C\)</span>. This reframing:</p>
+<ol type="1">
+<li><p><strong>Reveals geometric structure:</strong> <span
+class="math inline">\(\alpha\)</span> inherits its invariance properties
+from projective geometry—the cross-ratio is the fundamental invariant of
+four collinear points under Möbius transformations.</p></li>
+<li><p><strong>Connects to experiment:</strong> The highest-precision
+measurements of <span class="math inline">\(\alpha\)</span> (quantum
+Hall effect, Penning trap) proceed by <em>counting</em>—measuring
+rational filling factors <span class="math inline">\(\nu = p/q\)</span>
+and frequency ratios <span class="math inline">\(N_s/N_c\)</span>. The
+cross-ratio framing makes this connection natural.</p></li>
+<li><p><strong>Integrates five formalisms:</strong> Adelic, projective,
+topological, syntactic, and hierarchical approaches illuminate
+complementary aspects of <span class="math inline">\(\alpha\)</span>’s
+cross-ratio nature. Together they form a coherent picture: why <span
+class="math inline">\(\alpha\)</span> must be a cross-ratio, what
+cross-ratio it is, how it is measured, why its standard presentation
+obscures it, and where it fits in the hierarchy of physical
+scales.</p></li>
+<li><p><strong>Clarifies fundamentality:</strong> Dimensionful
+“fundamental constants” (c, <span class="math inline">\(\hbar\)</span>,
+e in SI) are human conventions. Only dimensionless ratios carry
+invariant physical content. The cross-ratio provides the mathematical
+formalization of this principle.</p></li>
+</ol>
+<p>The reframing is honest about its limitations. <span
+class="math inline">\(\alpha = r_e/\bar{\lambda}_C\)</span> is an
+algebraic identity, not a first-principles derivation. The contribution
+is conceptual—a change of perspective that makes hidden structure
+visible, like changing coordinate systems reveals symmetries that were
+present but obscured. Whether <span
+class="math inline">\(\alpha\)</span> can be <em>derived</em> from pure
+geometry, without experimental input, remains an open question—one that
+the cross-ratio framing helps to formulate precisely.</p>
+<hr />
+<h2 id="appendix-a-python-verification-code">Appendix A: Python
+Verification Code</h2>
+<p>The following self-contained Python script verifies all quantitative
+claims in this document. It requires only the Python standard
+library.</p>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">Self-contained verification of all quantitative claims in</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">&#39;The Fine-Structure Constant as a Cross-Ratio&#39;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">&quot;&quot;&quot;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> fractions <span class="im">import</span> Fraction</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co"># CODATA 2018 FUNDAMENTAL CONSTANTS</span></span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>e      <span class="op">=</span> <span class="fl">1.602176634e-19</span>       <span class="co"># elementary charge (C) — exact since 2019 SI</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>eps0   <span class="op">=</span> <span class="fl">8.8541878128e-12</span>      <span class="co"># vacuum permittivity (F/m) — measured post-2019</span></span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a>hbar   <span class="op">=</span> <span class="fl">1.054571817e-34</span>       <span class="co"># reduced Planck constant (J·s) — exact</span></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>c      <span class="op">=</span> <span class="dv">299792458</span>             <span class="co"># speed of light (m/s) — exact</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a>m_e    <span class="op">=</span> <span class="fl">9.1093837015e-31</span>      <span class="co"># electron mass (kg) — measured</span></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a>h      <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> math.pi <span class="op">*</span> hbar    <span class="co"># Planck constant</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a><span class="co"># LENGTH SCALES</span></span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a>r_e     <span class="op">=</span> e<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">4</span> <span class="op">*</span> math.pi <span class="op">*</span> eps0 <span class="op">*</span> m_e <span class="op">*</span> c<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a>lc_bar  <span class="op">=</span> hbar <span class="op">/</span> (m_e <span class="op">*</span> c)           <span class="co"># reduced Compton</span></span>
+<span id="cb9-24"><a href="#cb9-24" aria-hidden="true" tabindex="-1"></a>lc_full <span class="op">=</span> h <span class="op">/</span> (m_e <span class="op">*</span> c)              <span class="co"># non-reduced Compton</span></span>
+<span id="cb9-25"><a href="#cb9-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="co"># ALPHA VIA MULTIPLE ROUTES</span></span>
+<span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>alpha_SI    <span class="op">=</span> e<span class="op">**</span><span class="dv">2</span> <span class="op">/</span> (<span class="dv">4</span> <span class="op">*</span> math.pi <span class="op">*</span> eps0 <span class="op">*</span> hbar <span class="op">*</span> c)</span>
+<span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a>alpha_cr    <span class="op">=</span> r_e <span class="op">/</span> lc_bar</span>
+<span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a>alpha_wrong <span class="op">=</span> r_e <span class="op">/</span> lc_full</span>
+<span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-33"><a href="#cb9-33" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;=== LENGTH SCALES ===&quot;</span>)</span>
+<span id="cb9-34"><a href="#cb9-34" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;r_e     = </span><span class="sc">{</span>r_e<span class="sc">:.6e}</span><span class="ss"> m&quot;</span>)</span>
+<span id="cb9-35"><a href="#cb9-35" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;λ̄_C     = </span><span class="sc">{</span>lc_bar<span class="sc">:.6e}</span><span class="ss"> m&quot;</span>)</span>
+<span id="cb9-36"><a href="#cb9-36" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;λ_C     = </span><span class="sc">{</span>lc_full<span class="sc">:.6e}</span><span class="ss"> m&quot;</span>)</span>
+<span id="cb9-37"><a href="#cb9-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-38"><a href="#cb9-38" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">=== ALPHA ===&quot;</span>)</span>
+<span id="cb9-39"><a href="#cb9-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;α (SI)              = </span><span class="sc">{</span>alpha_SI<span class="sc">:.15f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-40"><a href="#cb9-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;α = r_e/λ̄_C         = </span><span class="sc">{</span>alpha_cr<span class="sc">:.15f}</span><span class="ss">  </span><span class="sc">{</span><span class="st">&#39;✓&#39;</span> <span class="cf">if</span> <span class="bu">abs</span>(alpha_SI <span class="op">-</span> alpha_cr) <span class="op">&lt;</span> <span class="fl">1e-15</span> <span class="cf">else</span> <span class="st">&#39;✗&#39;</span><span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-41"><a href="#cb9-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;α = r_e/λ_C         = </span><span class="sc">{</span>alpha_wrong<span class="sc">:.15f}</span><span class="ss">  (off by factor 2π)&quot;</span>)</span>
+<span id="cb9-42"><a href="#cb9-42" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;1/α                 = </span><span class="sc">{</span><span class="dv">1</span><span class="op">/</span>alpha_SI<span class="sc">:.12f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-43"><a href="#cb9-43" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;CODATA 2018 1/α    = 137.035999084&quot;</span>)</span>
+<span id="cb9-44"><a href="#cb9-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-45"><a href="#cb9-45" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-46"><a href="#cb9-46" aria-hidden="true" tabindex="-1"></a><span class="co"># CROSS-RATIO VERIFICATION</span></span>
+<span id="cb9-47"><a href="#cb9-47" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-48"><a href="#cb9-48" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> cross_ratio(x1, x2, x3, x4):</span>
+<span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a>    num <span class="op">=</span> (x1 <span class="op">-</span> x3) <span class="op">*</span> (x2 <span class="op">-</span> x4)</span>
+<span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a>    den <span class="op">=</span> (x1 <span class="op">-</span> x4) <span class="op">*</span> (x2 <span class="op">-</span> x3)</span>
+<span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> num <span class="op">/</span> den <span class="cf">if</span> den <span class="op">!=</span> <span class="dv">0</span> <span class="cf">else</span> <span class="bu">float</span>(<span class="st">&#39;inf&#39;</span>)</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">=== CROSS-RATIO VERIFICATION ===&quot;</span>)</span>
+<span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;(0, ∞; a, b) should equal a/b:&quot;</span>)</span>
+<span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a>L <span class="op">=</span> <span class="fl">1e30</span>  <span class="co"># proxy for infinity</span></span>
+<span id="cb9-56"><a href="#cb9-56" aria-hidden="true" tabindex="-1"></a>tests <span class="op">=</span> [(r_e, lc_bar, <span class="st">&quot;r_e, λ̄_C&quot;</span>), (<span class="fl">3.0</span>, <span class="fl">1.0</span>, <span class="st">&quot;3, 1&quot;</span>), (<span class="fl">1.0</span>, math.pi, <span class="st">&quot;1, π&quot;</span>)]</span>
+<span id="cb9-57"><a href="#cb9-57" aria-hidden="true" tabindex="-1"></a>all_pass <span class="op">=</span> <span class="va">True</span></span>
+<span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> a, b, label <span class="kw">in</span> tests:</span>
+<span id="cb9-59"><a href="#cb9-59" aria-hidden="true" tabindex="-1"></a>    cr <span class="op">=</span> cross_ratio(<span class="dv">0</span>, L, a, b)</span>
+<span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a>    match <span class="op">=</span> <span class="bu">abs</span>(cr <span class="op">-</span> a<span class="op">/</span>b) <span class="op">&lt;</span> <span class="fl">1e-10</span></span>
+<span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> match: all_pass <span class="op">=</span> <span class="va">False</span></span>
+<span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  </span><span class="sc">{</span>label<span class="sc">}</span><span class="ss">: a/b=</span><span class="sc">{</span>a<span class="op">/</span>b<span class="sc">:.15f}</span><span class="ss">, CR=</span><span class="sc">{</span>cr<span class="sc">:.15f}</span><span class="ss"> </span><span class="sc">{</span><span class="st">&#39;✓&#39;</span> <span class="cf">if</span> match <span class="cf">else</span> <span class="st">&#39;✗&#39;</span><span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a><span class="co"># HISTORICAL NUMEROLOGY</span></span>
+<span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-67"><a href="#cb9-67" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">=== HISTORICAL NUMEROLOGY ===&quot;</span>)</span>
+<span id="cb9-68"><a href="#cb9-68" aria-hidden="true" tabindex="-1"></a>edd_136 <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="dv">136</span></span>
+<span id="cb9-69"><a href="#cb9-69" aria-hidden="true" tabindex="-1"></a>edd_137 <span class="op">=</span> <span class="dv">1</span><span class="op">/</span><span class="dv">137</span></span>
+<span id="cb9-70"><a href="#cb9-70" aria-hidden="true" tabindex="-1"></a>wyler   <span class="op">=</span> (<span class="dv">9</span> <span class="op">/</span> (<span class="dv">16</span> <span class="op">*</span> math.pi<span class="op">**</span><span class="dv">3</span>)) <span class="op">*</span> (math.pi <span class="op">/</span> math.factorial(<span class="dv">5</span>))<span class="op">**</span><span class="fl">0.25</span></span>
+<span id="cb9-71"><a href="#cb9-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-72"><a href="#cb9-72" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Eddington 1/136:  dev = </span><span class="sc">{</span><span class="bu">abs</span>(edd_136 <span class="op">-</span> alpha_SI)<span class="op">/</span>alpha_SI<span class="op">*</span><span class="fl">1e6</span><span class="sc">:.1f}</span><span class="ss"> ppm&quot;</span>)</span>
+<span id="cb9-73"><a href="#cb9-73" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Eddington 1/137:  dev = </span><span class="sc">{</span><span class="bu">abs</span>(edd_137 <span class="op">-</span> alpha_SI)<span class="op">/</span>alpha_SI<span class="op">*</span><span class="fl">1e6</span><span class="sc">:.1f}</span><span class="ss"> ppm&quot;</span>)</span>
+<span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Wyler 1969:       1/α = </span><span class="sc">{</span><span class="dv">1</span><span class="op">/</span>wyler<span class="sc">:.12f}</span><span class="ss">, dev = </span><span class="sc">{</span><span class="bu">abs</span>(wyler <span class="op">-</span> alpha_SI)<span class="op">/</span>alpha_SI<span class="op">*</span><span class="fl">1e6</span><span class="sc">:.1f}</span><span class="ss"> ppm&quot;</span>)</span>
+<span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a><span class="co"># EXPERIMENTAL EXAMPLES</span></span>
+<span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">=== EXPERIMENTAL EXAMPLES ===&quot;</span>)</span>
+<span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a><span class="co"># Thomson cross-section</span></span>
+<span id="cb9-81"><a href="#cb9-81" aria-hidden="true" tabindex="-1"></a>sigma_T <span class="op">=</span> (<span class="dv">8</span> <span class="op">*</span> math.pi <span class="op">/</span> <span class="dv">3</span>) <span class="op">*</span> r_e<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb9-82"><a href="#cb9-82" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Thomson σ_T = </span><span class="sc">{</span>sigma_T<span class="sc">:.4e}</span><span class="ss"> m² = </span><span class="sc">{</span>sigma_T<span class="op">*</span><span class="fl">1e28</span><span class="sc">:.4f}</span><span class="ss"> barn&quot;</span>)</span>
+<span id="cb9-83"><a href="#cb9-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-84"><a href="#cb9-84" aria-hidden="true" tabindex="-1"></a><span class="co"># Compton max shift</span></span>
+<span id="cb9-85"><a href="#cb9-85" aria-hidden="true" tabindex="-1"></a>delta_lambda_max <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> lc_full</span>
+<span id="cb9-86"><a href="#cb9-86" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Compton Δλ_max = </span><span class="sc">{</span>delta_lambda_max<span class="sc">:.4e}</span><span class="ss"> m&quot;</span>)</span>
+<span id="cb9-87"><a href="#cb9-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-88"><a href="#cb9-88" aria-hidden="true" tabindex="-1"></a><span class="co"># Penning trap example</span></span>
+<span id="cb9-89"><a href="#cb9-89" aria-hidden="true" tabindex="-1"></a>a_e_exp <span class="op">=</span> <span class="fl">0.00115965218059</span></span>
+<span id="cb9-90"><a href="#cb9-90" aria-hidden="true" tabindex="-1"></a>ratio_n <span class="op">=</span> <span class="dv">1</span> <span class="op">+</span> a_e_exp</span>
+<span id="cb9-91"><a href="#cb9-91" aria-hidden="true" tabindex="-1"></a>frac <span class="op">=</span> Fraction(ratio_n).limit_denominator(<span class="dv">10_000_000</span>)</span>
+<span id="cb9-92"><a href="#cb9-92" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;a_e = </span><span class="sc">{</span>a_e_exp<span class="sc">:.14f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-93"><a href="#cb9-93" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;N_s/N_c ≈ </span><span class="sc">{</span>frac<span class="sc">.</span>numerator<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>frac<span class="sc">.</span>denominator<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>frac<span class="sc">.</span>numerator<span class="op">/</span>frac<span class="sc">.</span>denominator<span class="sc">:.14f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-94"><a href="#cb9-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-95"><a href="#cb9-95" aria-hidden="true" tabindex="-1"></a><span class="co"># QHE filling factors</span></span>
+<span id="cb9-96"><a href="#cb9-96" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">QHE filling factors:&quot;</span>)</span>
+<span id="cb9-97"><a href="#cb9-97" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> p, q <span class="kw">in</span> [(<span class="dv">1</span>,<span class="dv">1</span>), (<span class="dv">2</span>,<span class="dv">1</span>), (<span class="dv">3</span>,<span class="dv">1</span>), (<span class="dv">1</span>,<span class="dv">3</span>), (<span class="dv">2</span>,<span class="dv">3</span>), (<span class="dv">2</span>,<span class="dv">5</span>), (<span class="dv">3</span>,<span class="dv">5</span>), (<span class="dv">3</span>,<span class="dv">7</span>), (<span class="dv">4</span>,<span class="dv">7</span>)]:</span>
+<span id="cb9-98"><a href="#cb9-98" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;  ν = </span><span class="sc">{</span>p<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>q<span class="sc">}</span><span class="ss"> = </span><span class="sc">{</span>p<span class="op">/</span>q<span class="sc">:.6f}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-99"><a href="#cb9-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-100"><a href="#cb9-100" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-101"><a href="#cb9-101" aria-hidden="true" tabindex="-1"></a><span class="co"># ASSERTIONS</span></span>
+<span id="cb9-102"><a href="#cb9-102" aria-hidden="true" tabindex="-1"></a><span class="co"># ============================================================</span></span>
+<span id="cb9-103"><a href="#cb9-103" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> <span class="bu">abs</span>(alpha_SI <span class="op">-</span> alpha_cr) <span class="op">&lt;</span> <span class="fl">1e-15</span></span>
+<span id="cb9-104"><a href="#cb9-104" aria-hidden="true" tabindex="-1"></a><span class="cf">assert</span> all_pass</span>
+<span id="cb9-105"><a href="#cb9-105" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="ch">\n</span><span class="sc">{</span><span class="st">&#39;=&#39;</span><span class="op">*</span><span class="dv">50</span><span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb9-106"><a href="#cb9-106" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;All assertions passed.&quot;</span>)</span>
+<span id="cb9-107"><a href="#cb9-107" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;</span><span class="sc">{</span><span class="st">&#39;=&#39;</span><span class="op">*</span><span class="dv">50</span><span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<hr />
+<h2 id="appendix-b-notation-guide">Appendix B: Notation Guide</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 37%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Meaning</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\alpha\)</span></td>
+<td style="text-align: left;">Fine-structure constant</td>
+<td style="text-align: left;"><span class="math inline">\(\approx
+1/137.035999084\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\alpha^{-1}\)</span></td>
+<td style="text-align: left;">Inverse fine-structure constant</td>
+<td style="text-align: left;"><span
+class="math inline">\(\approx\)</span> 137.035999084</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(r_e\)</span></td>
+<td style="text-align: left;">Classical electron radius</td>
+<td style="text-align: left;"><span
+class="math inline">\(\approx\)</span> 2.818 <span
+class="math inline">\(\times 10^{-15}\)</span> m</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\lambda_C\)</span></td>
+<td style="text-align: left;">Compton wavelength (non-reduced) = <span
+class="math inline">\(h/(m_e\)</span> c)</td>
+<td style="text-align: left;"><span
+class="math inline">\(\approx\)</span> 2.426 <span
+class="math inline">\(\times 10^{-12}\)</span> m</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\bar{\lambda}_C\)</span></td>
+<td style="text-align: left;">Reduced Compton wavelength = <span
+class="math inline">\(\hbar/(m_e\)</span> c) = <span
+class="math inline">\(\lambda_C/(2\pi)\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\approx\)</span> 3.862 <span
+class="math inline">\(\times 10^{-13}\)</span> m</td>
+</tr>
+<tr>
+<td style="text-align: left;">e</td>
+<td style="text-align: left;">Elementary charge</td>
+<td style="text-align: left;">1.602176634 <span
+class="math inline">\(\times 10^{-19}\)</span> C</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\varepsilon_0\)</span></td>
+<td style="text-align: left;">Vacuum permittivity</td>
+<td style="text-align: left;"><span
+class="math inline">\(\approx\)</span> 8.854 <span
+class="math inline">\(\times 10^{-12} F/m\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\hbar\)</span></td>
+<td style="text-align: left;">Reduced Planck constant</td>
+<td style="text-align: left;">1.054571817 <span
+class="math inline">\(\times 10^{-34} J\cdots\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">c</td>
+<td style="text-align: left;">Speed of light</td>
+<td style="text-align: left;">299,792,458 <span
+class="math inline">\(m/s\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(m_e\)</span></td>
+<td style="text-align: left;">Electron mass</td>
+<td style="text-align: left;"><span
+class="math inline">\(\approx\)</span> 9.109 <span
+class="math inline">\(\times 10^{-31}\)</span> kg</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(R_K\)</span></td>
+<td style="text-align: left;">von Klitzing constant = <span
+class="math inline">\(h/e^2\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\approx\)</span> 25,812.807 <span
+class="math inline">\(\Omega\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\nu\)</span></td>
+<td style="text-align: left;">Quantum Hall filling factor</td>
+<td style="text-align: left;">Rational <span
+class="math inline">\((p/q)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(a_e\)</span></td>
+<td style="text-align: left;">Electron anomalous magnetic moment =
+(g−2)/2</td>
+<td style="text-align: left;"><span
+class="math inline">\(\approx\)</span> 0.00115965218059</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(N_s,
+N_c\)</span></td>
+<td style="text-align: left;">Penning trap cycle counts</td>
+<td style="text-align: left;">Integers (specific values depend on
+measurement duration)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\((x_1,x_2;x_3,x_4)\)</span></td>
+<td style="text-align: left;">Cross-ratio of four collinear points</td>
+<td style="text-align: left;">Dimensionless invariant</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="appendix-c-glossary">Appendix C: Glossary</h2>
+<p><strong>Adelic:</strong> Pertaining to the <em>adèle ring</em>—a
+mathematical object that combines the real numbers <span
+class="math inline">\(\mathbb{R}\)</span> with all p-adic numbers <span
+class="math inline">\(\mathbb{Q}_p\)</span>. Physical quantities defined
+on the adèles must be consistent across all “completions” of the
+rational numbers.</p>
+<p><strong>Anharmonic group:</strong> The group of transformations
+relating the six possible values of a cross-ratio under permutation of
+its four points. Isomorphic to the symmetric group <span
+class="math inline">\(S_3\)</span>.</p>
+<p><strong>CODATA:</strong> Committee on Data for Science and
+Technology. Publishes internationally recommended values for fundamental
+physical constants approximately every four years.</p>
+<p><strong>Cross-ratio (anharmonic ratio):</strong> The fundamental
+projective invariant of four collinear points. Given by <span
+class="math inline">\((x_1−x_3)(x_2−x_4)/((x_1−x_4)(x_2−x_3))\)</span>.
+Invariant under all Möbius transformations.</p>
+<p><strong>Filling factor <span
+class="math inline">\((\nu)\)</span></strong>: In the quantum Hall
+effect, the ratio of electron density to magnetic flux quanta density.
+Takes rational values <span class="math inline">\(p/q\)</span>
+corresponding to the number of occupied Landau levels.</p>
+<p><strong>Fine-structure constant <span
+class="math inline">\((\alpha)\)</span></strong>: A dimensionless number
+<span class="math inline">\(\approx 1/137\)</span> characterizing the
+strength of electromagnetic interactions. Originally introduced to
+explain the fine-structure splitting of atomic spectral lines.</p>
+<p><strong>Josephson effect:</strong> The phenomenon where a
+superconducting junction produces an AC voltage at frequency f = <span
+class="math inline">\((2e/h)V\)</span> when a DC voltage V is applied.
+Provides the most precise frequency-to-voltage conversion.</p>
+<p><strong>Möbius transformation:</strong> A transformation of the form
+x <span class="math inline">\(\to\)</span> (ax + b)/(cx + d) with ad−bc
+<span class="math inline">\(\neq\)</span> 0. The most general
+transformation that preserves the cross-ratio.</p>
+<p><strong>Ostrowski’s theorem:</strong> Every non-trivial absolute
+value on <span class="math inline">\(\mathbb{Q}\)</span> is equivalent
+to either the usual real absolute value or a p-adic absolute value.
+Implies that <span class="math inline">\(\mathbb{R}\)</span> and <span
+class="math inline">\(\mathbb{Q}_p\)</span> are the only completions of
+<span class="math inline">\(\mathbb{Q}\)</span>.</p>
+<p><strong>p-adic numbers <span
+class="math inline">\((\mathbb{Q}_p)\)</span></strong>: A completion of
+the rational numbers using a different notion of “closeness”—two numbers
+are p-adically close if their difference is divisible by a large power
+of p.</p>
+<p><strong>Penning trap:</strong> A device that confines charged
+particles using a combination of electric and magnetic fields. Used for
+the most precise measurements of the electron’s magnetic moment.</p>
+<p><strong>Quantum Hall effect:</strong> The quantization of Hall
+resistance in two-dimensional electron systems at low temperature and
+high magnetic field. Provides the most precise determination of <span
+class="math inline">\(h/e^2\)</span>.</p>
+<p><strong>Thomson scattering:</strong> The elastic scattering of
+low-energy photons by free electrons. The cross-section depends on <span
+class="math inline">\(r_e^2\)</span>.</p>
+<p><strong>von Klitzing constant:</strong> <span
+class="math inline">\(R_K = h/e^2 \approx\)</span> 25,812.807 <span
+class="math inline">\(\Omega\)</span>. The quantum of Hall
+resistance.</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

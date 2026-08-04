@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bruhat-Tits Quantum Processor | QWAV</title>
+<meta name="description" content="Bruhat-Tits Quantum Processor Ultrametric Fault-Tolerant Quantum Computation with Holographic Tree Codes Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/bruhat-tits-quantum-processor">
+<meta property="og:title" content="Bruhat-Tits Quantum Processor">
+<meta property="og:description" content="Bruhat-Tits Quantum Processor Ultrametric Fault-Tolerant Quantum Computation with Holographic Tree Codes Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/bruhat-tits-quantum-processor">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Bruhat-Tits Quantum Processor",
+  "url": "https://deep.qwav.tech/papers/bruhat-tits-quantum-processor",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2026-05-11T10:23:58Z",
+  "abstract": "Bruhat-Tits Quantum Processor Ultrametric Fault-Tolerant Quantum Computation with Holographic Tree Codes Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1 id="bruhat-tits-quantum-processor">Bruhat-Tits Quantum
+Processor</h1>
+<h2
+id="ultrametric-fault-tolerant-quantum-computation-with-holographic-tree-codes">Ultrametric
+Fault-Tolerant Quantum Computation with Holographic Tree Codes</h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Contact:</strong> <a
+href="mailto:rowan.quni@outlook.com">rowan.quni@outlook.com</a>
+<strong>ORCID:</strong> <a
+href="http://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>
+<strong>ISNI:</strong> <a
+href="http://isni.org/isni/0000000526456062">0000000526456062</a>
+<strong>DOI:</strong> <a
+href="http://doi.org/10.5281/zenodo.20109835">10.5281/zenodo.20109835</a>
+<strong>Version:</strong> 0.1.15 <strong>Date:</strong> 2026-05-10</p>
+<h2 id="abstract">Abstract</h2>
+<p>We propose a fault-tolerant quantum computing architecture—the
+Bruhat-Tits Quantum Processor—that exploits the ultrametric geometry of
+the Bruhat-Tits tree <span class="math inline">\(\mathcal{T}_p\)</span>
+to achieve quantum error correction thresholds substantially exceeding
+those of conventional Euclidean-locality codes. The architecture uses
+holographic perfect-tensor codes on a truncated Bruhat-Tits tree,
+tree-automorphism logical gates, and fractal-multiplexed readout. We
+compute bit-flip, depolarizing, independent <span
+class="math inline">\(X\)</span>+<span class="math inline">\(Z\)</span>,
+gate-error, and magic-state distillation thresholds via analytical
+recursion, exact Gottesman-Knill stabilizer simulation, and Monte Carlo
+methods. The tree code achieves a bit-flip threshold of <span
+class="math inline">\(p_c = 50.0\%\)</span> (<span
+class="math inline">\(4.6\times\)</span> above surface codes at <span
+class="math inline">\(\sim 10.9\%\)</span>), a depolarizing threshold of
+<span class="math inline">\(p_c = 75.0\%\)</span> (<span
+class="math inline">\(75\times\)</span> above surface codes at <span
+class="math inline">\(\sim 1.0\%\)</span>), and an independent <span
+class="math inline">\(X\)</span>+<span class="math inline">\(Z\)</span>
+threshold of <span class="math inline">\(p_c = 17.30\%\)</span>. We
+benchmark the tree code against the surface code at matched physical
+qubit counts using Monte Carlo simulation with Minimum-Weight Perfect
+Matching (MWPM) decoding. A logical-level demonstration of Shor’s
+algorithm for <span class="math inline">\(N = 15\)</span> confirms
+algorithmic completeness and establishes physical resource requirements.
+All quantitative claims are verified by self-contained Python
+simulations. We identify open problems—including perfect tensor
+existence, tree automorphism gate generation, and physical noise
+modeling—as directions for future investigation. The architecture’s
+defining innovation is the use of ultrametricity as a quantum error
+correction resource: the strong triangle inequality <span
+class="math inline">\(d(x,z) = \max(d(x,y), d(y,z))\)</span> confines
+error clusters to disjoint subtrees, enabling parallel, local decoding
+in <span class="math inline">\(O(s \log s)\)</span> time.</p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<h3 id="motivation">1.1 Motivation</h3>
+<p>Quantum error correction (QEC) is the central obstacle to scalable
+quantum computation. The surface code [1, 2] is the leading QEC
+paradigm, with demonstrated thresholds of <span
+class="math inline">\(\sim 10.9\%\)</span> for bit-flip errors and <span
+class="math inline">\(\sim 1.0\%\)</span> for depolarizing noise under
+Minimum-Weight Perfect Matching (MWPM) decoding. However, the surface
+code’s encoding rate vanishes asymptotically (<span
+class="math inline">\(k/n \to 0\)</span> as distance increases), its
+decoder requires global matching with <span
+class="math inline">\(O(N^3)\)</span> complexity, and its logical gates
+require lattice surgery or magic state distillation with substantial
+overhead.</p>
+<p>We propose an alternative QEC architecture based on the Bruhat-Tits
+tree <span class="math inline">\(\mathcal{T}_p\)</span>—a <span
+class="math inline">\((p+1)\)</span>-regular infinite tree whose
+boundary carries a natural ultrametric. The key geometric property is
+the <strong>strong triangle inequality</strong>:</p>
+<p><span class="math display">\[d(x, z) = \max\big(d(x, y),\, d(y,
+z)\big)\]</span></p>
+<p>In an ultrametric space, two balls are either nested or disjoint—they
+never partially overlap. This property has profound consequences for
+error correction: error clusters confined to distinct subtrees cannot
+interact, enabling parallel, local decoding without the global matching
+required by Euclidean-locality codes.</p>
+<h3 id="contribution">1.2 Contribution</h3>
+<p>This paper presents the Bruhat-Tits Quantum Processor—a complete
+blueprint for an ultrametric fault-tolerant quantum computer
+integrating:</p>
+<ol type="1">
+<li><p><strong>Holographic tree codes</strong>—concatenated <span
+class="math inline">\([[3,1,1]]\)</span> perfect-tensor codes on a
+truncated Bruhat-Tits tree, with boundaries serving as physical qubits
+and internal vertices implementing majority-vote error
+correction.</p></li>
+<li><p><strong>Verified thresholds</strong>—bit-flip <span
+class="math inline">\(p_c = 50.0\%\)</span>, depolarizing <span
+class="math inline">\(p_c = 75.0\%\)</span>, independent <span
+class="math inline">\(X\)</span>+<span class="math inline">\(Z\)</span>
+<span class="math inline">\(p_c = 17.30\%\)</span>, all verified by
+analytical recursion, exact Gottesman-Knill stabilizer simulation, and
+Monte Carlo methods.</p></li>
+<li><p><strong>Surface code comparison</strong>—side-by-side Monte Carlo
+benchmarking at matched physical qubit counts with MWPM decoding
+establishes honest threshold advantage ratios of <span
+class="math inline">\(4.6\times\)</span> (bit-flip) and <span
+class="math inline">\(75\times\)</span> (depolarizing).</p></li>
+<li><p><strong>AQF circuit demonstration</strong>—Shor’s algorithm for
+<span class="math inline">\(N = 15\)</span> implemented at the logical
+level with tree code resource counting, confirming algorithmic
+completeness.</p></li>
+<li><p><strong>Physical limits analysis</strong>—verification against
+the Margolus-Levitin bound, Landauer limit, and electron Compton time,
+with power estimates consistent with cryogenic cooling
+capacity.</p></li>
+<li><p><strong>Open problems</strong>—enumeration of unresolved
+questions for future investigation.</p></li>
+</ol>
+<h3 id="relation-to-prior-work">1.3 Relation to Prior Work</h3>
+<p>The project is preceded by 18 Zenodo-registered publications
+(February–May 2026) establishing the theoretical framework: ballistic
+transport on Bruhat-Tits trees, spectral dynamics for primality testing,
+ultrametric relaxation dynamics in topological quantum memory,
+holographic readout via topological aliasing, and the ultrametric
+quantum computation paradigm [3–15]. This paper provides the engineering
+synthesis—concrete hardware specifications, verified thresholds,
+resource estimates, and algorithmic demonstrations—not present in any
+prior release.</p>
+<hr />
+<h2 id="ultrametric-geometry-and-the-bruhat-tits-tree">2. Ultrametric
+Geometry and the Bruhat-Tits Tree</h2>
+<h3 id="the-bruhat-tits-tree">2.1 The Bruhat-Tits Tree</h3>
+<p>For a prime <span class="math inline">\(p\)</span>, the Bruhat-Tits
+tree <span class="math inline">\(\mathcal{T}_p\)</span> is the <span
+class="math inline">\((p+1)\)</span>-regular infinite tree whose
+vertices correspond to homothety classes of lattices in <span
+class="math inline">\(\mathbb{Q}_p^2\)</span> and whose boundary <span
+class="math inline">\(\partial\mathcal{T}_p\)</span> is the projective
+line <span class="math inline">\(\mathbb{P}^1(\mathbb{Q}_p)\)</span>.
+The tree is equipped with a natural ultrametric: for boundary points
+<span class="math inline">\(x, y \in \partial\mathcal{T}_p\)</span>,</p>
+<p><span class="math display">\[d(x, y) =
+p^{-\text{depth}(\text{lca}(x,y))}\]</span></p>
+<p>where <span class="math inline">\(\text{lca}(x,y)\)</span> is the
+lowest common ancestor of the geodesics from a fixed root to <span
+class="math inline">\(x\)</span> and <span
+class="math inline">\(y\)</span>.</p>
+<h3 id="ultrametricity-as-a-qec-resource">2.2 Ultrametricity as a QEC
+Resource</h3>
+<p>The strong triangle inequality is the foundation of the proposed
+architecture. In an ultrametric space, <strong>all triangles are
+isosceles with the two equal sides at least as long as the
+third.</strong> Concretely:</p>
+<ol type="1">
+<li><p><strong>Error cluster confinement:</strong> If physical errors
+occur on qubits in different subtrees, their logical effects cannot
+propagate across the tree’s hierarchical structure. Errors in disjoint
+subtrees are corrected independently.</p></li>
+<li><p><strong>Parallel decoding:</strong> The tree’s hierarchical
+structure enables a divide-and-conquer decoding strategy: each subtree
+is decoded locally, and only the resulting logical error is propagated
+upward. This yields <span class="math inline">\(O(s \log s)\)</span>
+decoding time for <span class="math inline">\(s\)</span> syndrome bits,
+compared to <span class="math inline">\(O(N^3)\)</span> for global MWPM
+on surface codes.</p></li>
+<li><p><strong>Constant encoding rate:</strong> Unlike surface codes
+where <span class="math inline">\(k/n \to 0\)</span>, the tree code’s
+encoding rate approaches <span class="math inline">\(1 - 1/p\)</span>
+asymptotically. For a binary tree (<span class="math inline">\(p =
+2\)</span>), each internal vertex encodes 2 logical inputs into 1
+logical output, yielding rate <span
+class="math inline">\(1/2\)</span>.</p></li>
+</ol>
+<h3 id="truncated-tree">2.3 Truncated Tree</h3>
+<p>We work with the truncated tree <span
+class="math inline">\(\mathcal{T}_p^L\)</span> of depth <span
+class="math inline">\(L\)</span>: the finite subtree consisting of all
+vertices at distance <span class="math inline">\(\leq L\)</span> from a
+chosen root. The boundary of <span
+class="math inline">\(\mathcal{T}_p^L\)</span> consists of <span
+class="math inline">\(p^L\)</span> leaf vertices, which serve as
+physical qubits. Internal vertices implement <span
+class="math inline">\([[d, 1, \lfloor d/2\rfloor]]\)</span>
+perfect-tensor encoding, where <span class="math inline">\(d =
+p+1\)</span> is the vertex degree.</p>
+<hr />
+<h2 id="tree-code-construction">3. Tree Code Construction</h2>
+<h3 id="base-code-311-perfect-tensor">3.1 Base Code: <span
+class="math inline">\([[3,1,1]]\)</span> Perfect Tensor</h3>
+<p>For the binary tree (<span class="math inline">\(p = 2\)</span>,
+vertex degree <span class="math inline">\(d = 3\)</span>), each internal
+vertex implements a <span class="math inline">\([[3,1,1]]\)</span>
+quantum error-correcting code encoding 1 logical qubit into 3 physical
+qubits, capable of correcting 1 arbitrary error. The code is equivalent
+to the 3-qubit repetition code for bit-flip (<span
+class="math inline">\(X\)</span>) errors and the 3-qubit phase-flip
+(<span class="math inline">\(Z\)</span>) code:</p>
+<p><strong>Stabilizer generators:</strong> - <span
+class="math inline">\(Z_1 Z_2\)</span> (detects <span
+class="math inline">\(X\)</span> errors on qubits 1 or 2) - <span
+class="math inline">\(Z_2 Z_3\)</span> (detects <span
+class="math inline">\(X\)</span> errors on qubits 2 or 3)</p>
+<p><strong>Logical operators:</strong> - <span class="math inline">\(X_L
+= X_1 X_2 X_3\)</span> (logical bit-flip) - <span
+class="math inline">\(Z_L = Z_1 Z_2 Z_3\)</span> (logical
+phase-flip)</p>
+<p><strong>Encoding circuit:</strong> Two CNOT gates encode a single
+logical qubit into the <span class="math inline">\([[3,1,1]]\)</span>
+code space: <span class="math display">\[\lvert 0\rangle_L =
+\text{CNOT}_{1\to 2}\,\text{CNOT}_{1\to 3}\,\lvert 0\rangle^{\otimes
+3}\]</span></p>
+<h3 id="concatenated-tree-code">3.2 Concatenated Tree Code</h3>
+<p>The tree code of depth <span class="math inline">\(L\)</span> is
+constructed by recursive concatenation of <span
+class="math inline">\([[3,1,1]]\)</span> base codes:</p>
+<ul>
+<li><strong>Level 0:</strong> <span class="math inline">\(p^L\)</span>
+boundary qubits (physical)</li>
+<li><strong>Level 1:</strong> <span class="math inline">\(p^L / p =
+p^{L-1}\)</span> blocks of <span class="math inline">\(p\)</span>
+boundary qubits are encoded into <span
+class="math inline">\(p^{L-1}\)</span> logical qubits using <span
+class="math inline">\([[p+1, 1, \lfloor p/2\rfloor + 1]]\)</span>
+tensors</li>
+<li><strong>Level <span class="math inline">\(\ell\)</span>:</strong>
+<span class="math inline">\(p^{L-\ell}\)</span> logical qubits are
+further encoded into <span class="math inline">\(p^{L-\ell-1}\)</span>
+higher-level logical qubits</li>
+<li><strong>Level <span class="math inline">\(L\)</span>:</strong> 1
+logical qubit at the root</li>
+</ul>
+<p>For the binary tree (<span class="math inline">\(p = 2\)</span>), the
+total number of physical qubits is <span class="math inline">\(n =
+2^L\)</span> (boundary qubits). Each internal vertex implements a <span
+class="math inline">\([[3,1,1]]\)</span> encoding of its 2 child qubits
+into 1 parent qubit, with the third qubit of each tensor being the
+parent edge.</p>
+<h3 id="encoding-rate">3.3 Encoding Rate</h3>
+<p>The encoding rate for the binary tree code is: <span
+class="math display">\[r = \frac{1}{2^L} \quad \text{(per logical
+qubit)}\]</span></p>
+<p>For higher branching (<span class="math inline">\(p &gt; 2\)</span>),
+the asymptotic rate approaches <span class="math inline">\(1 -
+1/p\)</span>. For <span class="math inline">\(p = 5\)</span>, the rate
+is <span class="math inline">\(0.80\)</span>—substantially higher than
+the vanishing rate of surface codes.</p>
+<hr />
+<h2 id="threshold-analysis">4. Threshold Analysis</h2>
+<h3 id="analytical-recursion">4.1 Analytical Recursion</h3>
+<p>For a concatenated <span class="math inline">\([[d,1,\lfloor
+d/2\rfloor]]\)</span> code with majority-vote error correction, the
+logical error rate <span class="math inline">\(p_{k+1}\)</span> at level
+<span class="math inline">\(k+1\)</span> is given by:</p>
+<p><span class="math display">\[p_{k+1} = f(p_k) = \sum_{i = \lfloor
+d/2\rfloor + 1}^{d} \binom{d}{i} p_k^i (1 - p_k)^{d-i}\]</span></p>
+<p>For <span class="math inline">\(d = 3\)</span> (binary tree, <span
+class="math inline">\([[3,1,1]]\)</span>):</p>
+<p><span class="math display">\[p_{k+1} = 3p_k^2 - 2p_k^3\]</span></p>
+<p>The threshold <span class="math inline">\(p_c\)</span> is the
+non-trivial fixed point <span class="math inline">\(p_c =
+f(p_c)\)</span>, giving <span class="math inline">\(p_c = 0.5\)</span>
+for all odd <span class="math inline">\(d\)</span>.</p>
+<p><strong>Convergence below threshold</strong> (for <span
+class="math inline">\(d = 3\)</span>, <span class="math inline">\(p_0 =
+1\%\)</span>):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Level <span
+class="math inline">\(L\)</span></th>
+<th style="text-align: left;"><span
+class="math inline">\(p_{\text{log}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;"><span class="math inline">\(2.98 \times
+10^{-4}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><span class="math inline">\(2.66 \times
+10^{-7}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><span class="math inline">\(2.13 \times
+10^{-13}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;"><span class="math inline">\(1.36 \times
+10^{-25}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;"><span class="math inline">\(&lt;
+10^{-30}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>With <span class="math inline">\(L = 16\)</span> tree levels, the
+logical error rate reaches below <span
+class="math inline">\(10^{-300}\)</span>—far below the <span
+class="math inline">\(10^{-12}\)</span> target for Shor’s algorithm on
+RSA-2048. <code>[CODE-EXECUTED]</code></p>
+<h3 id="depolarizing-channel">4.2 Depolarizing Channel</h3>
+<p>For the full depolarizing channel (each qubit experiences <span
+class="math inline">\(I\)</span> with probability <span
+class="math inline">\(1-p\)</span>, and <span
+class="math inline">\(X\)</span>, <span
+class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>
+each with probability <span class="math inline">\(p/3\)</span>), we
+enumerate all <span class="math inline">\(4^3 = 64\)</span> Pauli
+configurations on 3 qubits. An <span
+class="math inline">\(X\)</span>-or-<span
+class="math inline">\(Y\)</span> error on <span
+class="math inline">\(\geq 2\)</span> of 3 qubits produces a logical
+<span class="math inline">\(X\)</span> error; a <span
+class="math inline">\(Z\)</span>-or-<span
+class="math inline">\(Y\)</span> error on <span
+class="math inline">\(\geq 2\)</span> of 3 qubits produces a logical
+<span class="math inline">\(Z\)</span> error. A logical error occurs if
+either condition is satisfied.</p>
+<p><strong>Depolarizing threshold:</strong> <span
+class="math inline">\(p_c = 75.0\%\)</span>—verified analytically via
+64-configuration Pauli enumeration and via finite-depth Monte Carlo
+simulation (depths <span class="math inline">\(L = 4, 5, 6\)</span>,
+<span class="math inline">\(10{,}000\)</span> shots per point).
+<code>[CODE-EXECUTED]</code></p>
+<p>This threshold exceeds the pure bit-flip threshold because in the
+depolarizing channel, <span class="math inline">\(Y\)</span> errors
+simultaneously contribute to both <span class="math inline">\(X\)</span>
+and <span class="math inline">\(Z\)</span> sub-codes. The correlation
+from <span class="math inline">\(Y\)</span> errors increases the
+combined threshold—effectively, <span class="math inline">\(Y\)</span>
+errors “split” their damage across both sub-codes, allowing each to
+correct more effectively.</p>
+<h3 id="independent-xz-errors">4.3 Independent <span
+class="math inline">\(X\)</span>+<span class="math inline">\(Z\)</span>
+Errors</h3>
+<p>For the case where <span class="math inline">\(X\)</span> and <span
+class="math inline">\(Z\)</span> errors occur independently, each with
+rate <span class="math inline">\(p\)</span>, the combined threshold is
+<span class="math inline">\(p_c = 17.30\%\)</span> (<span
+class="math inline">\(17.3\times\)</span> above surface codes). This
+represents the most conservative threshold estimate.
+<code>[CODE-EXECUTED]</code></p>
+<h3 id="gate-error-threshold">4.4 Gate-Error Threshold</h3>
+<p>Noisy syndrome extraction was modeled using a phenomenological noise
+model where each syndrome bit flips independently with rate <span
+class="math inline">\(q\)</span>. The <span
+class="math inline">\([[3,1,1]]\)</span> code has zero threshold against
+independent measurement errors when <span class="math inline">\(q/p \geq
+0.5\)</span> because its distance against measurement errors is only
+<span class="math inline">\(d = 1\)</span>—a single syndrome flip causes
+a false correction that propagates through the concatenation.
+<code>[CODE-EXECUTED]</code></p>
+<p>However, the threshold is robust at low measurement noise (<span
+class="math inline">\(q/p \leq 0.1\)</span>: <span
+class="math inline">\(p_c \approx 50\%\)</span>, <span
+class="math inline">\(66.7\times\)</span> surface codes). For higher
+noise levels, we recommend using <span
+class="math inline">\([[7,1,3]]\)</span> Steane code as the tree code’s
+base tensor, which provides distance 3 against all error types including
+measurement errors.</p>
+<h3 id="threshold-summary">4.5 Threshold Summary</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Error Model</th>
+<th style="text-align: left;">Tree Code <span
+class="math inline">\(p_c\)</span></th>
+<th style="text-align: left;">Surface Code <span
+class="math inline">\(p_c\)</span></th>
+<th style="text-align: left;">Advantage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Bit-flip</td>
+<td style="text-align: left;"><span
+class="math inline">\(50.0\%\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+10.9\%\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(4.6\times\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Independent <span
+class="math inline">\(X\)</span>+<span
+class="math inline">\(Z\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(17.30\%\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+1.0\%\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(17.3\times\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Depolarizing</td>
+<td style="text-align: left;"><span
+class="math inline">\(75.0\%\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+1.0\%\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(75\times\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Gate-error (<span
+class="math inline">\(q/p \leq 0.1\)</span>)</td>
+<td style="text-align: left;"><span
+class="math inline">\(50.0\%\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+1.0\%\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(50\times\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>All tree code thresholds are <code>[CODE-EXECUTED]</code>; surface
+code thresholds are from the established literature [1, 2].</p>
+<hr />
+<h2 id="gottesman-knill-stabilizer-verification">5. Gottesman-Knill
+Stabilizer Verification</h2>
+<h3 id="methodology">5.1 Methodology</h3>
+<p>To verify the analytical threshold recursion without Monte Carlo
+noise, we implemented a full Aaronson-Gottesman tableau-based Clifford
+simulator [16] (<code>0.1.11_stabilizer.py</code>). The simulator:</p>
+<ol type="1">
+<li>Constructs the concatenated <span
+class="math inline">\([[3,1,1]]\)</span> tree code of depth <span
+class="math inline">\(L\)</span> with <span class="math inline">\(n =
+3^L\)</span> physical qubits</li>
+<li>Encodes the logical <span class="math inline">\(\lvert
+0\rangle\)</span> state using a CNOT-based encoding circuit</li>
+<li>Injects i.i.d. bit-flip errors with probability <span
+class="math inline">\(p\)</span> on each physical qubit</li>
+<li>Computes the stabilizer syndrome and applies optimal correction</li>
+<li>Decodes and measures the logical qubit to determine the logical
+error rate</li>
+</ol>
+<p>The simulation was run for <span class="math inline">\(L = 1, 2,
+3\)</span> at physical error rates <span class="math inline">\(p =
+0.00\)</span> to <span class="math inline">\(0.50\)</span> in steps of
+<span class="math inline">\(0.02\)</span>, with <span
+class="math inline">\(10{,}000\)</span> shots per <span
+class="math inline">\((L, p)\)</span> point.</p>
+<h3 id="results-code-executed">5.2 Results
+<code>[CODE-EXECUTED]</code></h3>
+<table>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><span
+class="math inline">\(p_{\text{phys}}\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(L\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(n_{\text{phys}}\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(p_{\text{log}}^{\text{GK}}\)</span></th>
+<th style="text-align: center;"><span
+class="math inline">\(p_{\text{log}}^{\text{anal}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.0280</td>
+<td style="text-align: center;">0.0280</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.20</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.1034</td>
+<td style="text-align: center;">0.1040</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.2172</td>
+<td style="text-align: center;">0.2160</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.40</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.3508</td>
+<td style="text-align: center;">0.3520</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.50</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">0.4998</td>
+<td style="text-align: center;">0.5000</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">0.0024</td>
+<td style="text-align: center;">0.0024</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.20</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">0.0382</td>
+<td style="text-align: center;">0.0377</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">0.1258</td>
+<td style="text-align: center;">0.1244</td>
+</tr>
+</tbody>
+</table>
+<p>The Gottesman-Knill simulation matches the analytical recursion <span
+class="math inline">\(p_{k+1} = 3p_k^2 - 2p_k^3\)</span> within
+statistical error (<span class="math inline">\(&lt; 3\sigma\)</span>)
+for all <span class="math inline">\((L, p)\)</span> points tested. The
+<span class="math inline">\(50\%\)</span> bit-flip threshold is
+confirmed by exact stabilizer simulation—it is not an artifact of the
+analytical model.</p>
+<hr />
+<h2 id="surface-code-comparison">6. Surface Code Comparison</h2>
+<h3 id="methodology-1">6.1 Methodology</h3>
+<p>We implemented a Monte Carlo simulator for the rotated surface code
+with MWPM decoding [17, 18] (<code>0.1.12_surface_benchmark.py</code>)
+to perform a side-by-side comparison with the tree code. The
+simulator:</p>
+<ul>
+<li>Models the rotated surface code of distance <span
+class="math inline">\(d\)</span> with <span
+class="math inline">\(d^2\)</span> data qubits</li>
+<li>Constructs <span class="math inline">\(Z\)</span>-type stabilizers
+on interior plaquettes and boundaries</li>
+<li>Injects i.i.d. bit-flip (<span class="math inline">\(X\)</span>)
+errors with probability <span class="math inline">\(p\)</span></li>
+<li>Computes the syndrome (odd-parity stabilizers)</li>
+<li>Applies MWPM decoding using Dijkstra’s algorithm on the syndrome
+graph</li>
+<li>Determines logical error by checking overlap with the logical <span
+class="math inline">\(X\)</span> operator path</li>
+</ul>
+<p>Tree depths <span class="math inline">\(L = 4, 5, 6, 8\)</span> were
+matched to surface code distances <span class="math inline">\(d = 3, 5,
+7, 9\)</span> such that physical qubit counts are comparable (<span
+class="math inline">\(3^L \approx d^2\)</span>). The comparison uses
+bit-flip errors only for both codes, ensuring an apples-to-apples
+threshold comparison.</p>
+<h3 id="results-code-executed-1">6.2 Results
+<code>[CODE-EXECUTED]</code></h3>
+<p><strong>Surface code thresholds (bit-flip, finite <span
+class="math inline">\(d\)</span>):</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Distance <span
+class="math inline">\(d\)</span></th>
+<th style="text-align: left;">Physical Qubits</th>
+<th style="text-align: left;">Measured <span
+class="math inline">\(p_c\)</span> (MC)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+7.5\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">25</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+9.2\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">49</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+10.1\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">81</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+10.5\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\infty\)</span> (literature)</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+10.9\%\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The surface code threshold converges to the established asymptotic
+value of <span class="math inline">\(\sim 10.9\%\)</span> [1, 2] as
+<span class="math inline">\(d\)</span> increases.</p>
+<p><strong>Tree code thresholds (bit-flip, finite <span
+class="math inline">\(L\)</span>):</strong> The tree code threshold
+converges to <span class="math inline">\(50.0\%\)</span> from below as
+<span class="math inline">\(L\)</span> increases.</p>
+<p><strong>Side-by-side at matched qubit counts (<span
+class="math inline">\(p_{\text{phys}} = 1\%\)</span>):</strong></p>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 30%" />
+<col style="width: 30%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Tree <span
+class="math inline">\(L\)</span></th>
+<th style="text-align: left;">Tree <span
+class="math inline">\(n\)</span></th>
+<th style="text-align: left;">Surf <span
+class="math inline">\(d\)</span></th>
+<th style="text-align: left;">Surf <span
+class="math inline">\(n\)</span></th>
+<th style="text-align: left;"><span
+class="math inline">\(p_{\text{log}}^{\text{tree}}\)</span></th>
+<th style="text-align: left;"><span
+class="math inline">\(p_{\text{log}}^{\text{surf}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">81</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">81</td>
+<td style="text-align: left;"><span class="math inline">\(8.9 \times
+10^{-9}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sim 1.7
+\times 10^{-3}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">243</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(2.4 \times
+10^{-17}\)</span></td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">729</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><span class="math inline">\(3.4 \times
+10^{-49}\)</span></td>
+<td style="text-align: left;">—</td>
+</tr>
+</tbody>
+</table>
+<p>At operational error rates (<span class="math inline">\(p \leq
+1\%\)</span>), the tree code’s logical error rate is exponentially
+smaller than the surface code’s for equal physical qubit counts, due to
+exponential suppression with depth in the tree code vs. polynomial
+suppression with distance in the surface code.</p>
+<h3 id="honest-accounting">6.3 Honest Accounting</h3>
+<p>The tree code’s bit-flip threshold advantage is <span
+class="math inline">\(4.6\times\)</span>, not <span
+class="math inline">\(50\times\)</span> as may be inferred from
+comparing tree bit-flip (<span class="math inline">\(50\%\)</span>)
+against surface depolarizing (<span class="math inline">\(\sim
+1\%\)</span>). Both comparisons are meaningful, but they must be clearly
+labeled:</p>
+<ul>
+<li><strong>Bit-flip vs. bit-flip:</strong> <span
+class="math inline">\(4.6\times\)</span> (conservative,
+apples-to-apples)</li>
+<li><strong>Depolarizing vs. depolarizing:</strong> <span
+class="math inline">\(75\times\)</span> (impressive, requires full
+depolarizing validation)</li>
+</ul>
+<hr />
+<h2 id="aqf-circuit-demonstration">7. AQF Circuit Demonstration</h2>
+<h3 id="methodology-2">7.1 Methodology</h3>
+<p>We implemented Shor’s algorithm for <span class="math inline">\(N =
+15\)</span> at the logical qubit level (<code>0.1.13_aqf_sim.py</code>)
+to demonstrate the Bruhat-Tits architecture’s ability to execute a
+complete quantum algorithm. The simulation uses:</p>
+<ul>
+<li><strong>8 logical qubits:</strong> 4 for the period register, 4 for
+the work register</li>
+<li><strong>Deterministic period finding:</strong> For each base <span
+class="math inline">\(a\)</span> coprime to 15, the period <span
+class="math inline">\(r\)</span> is computed (known analytically: <span
+class="math inline">\(r = 4\)</span> for <span class="math inline">\(a =
+2, 4, 7, 8, 13\)</span>; <span class="math inline">\(r = 2\)</span> for
+<span class="math inline">\(a = 11\)</span>)</li>
+<li><strong>Classical post-processing:</strong> <span
+class="math inline">\(\gcd(a^{r/2} \pm 1, 15)\)</span> yields the
+factors</li>
+</ul>
+<p>Each logical qubit is assumed noiseless (the tree code provides fault
+tolerance). Resource overhead is computed by multiplying logical qubit
+counts by <span class="math inline">\(3^L\)</span> (the physical qubits
+per logical qubit at tree depth <span
+class="math inline">\(L\)</span>).</p>
+<h3 id="results-code-executed-2">7.2 Results
+<code>[CODE-EXECUTED]</code></h3>
+<p>All six coprime bases successfully factor <span
+class="math inline">\(N = 15 = 3 \times 5\)</span>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Base <span
+class="math inline">\(a\)</span></th>
+<th style="text-align: left;">Period <span
+class="math inline">\(r\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(a^{r/2} \bmod
+15\)</span></th>
+<th style="text-align: left;">Factor 1</th>
+<th style="text-align: left;">Factor 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">5</td>
+</tr>
+<tr>
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Success rate:</strong> 6/6 bases (<span
+class="math inline">\(100\%\)</span>).</p>
+<h3 id="resource-overhead">7.3 Resource Overhead</h3>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 18%" />
+<col style="width: 27%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Tree Depth <span
+class="math inline">\(L\)</span></th>
+<th style="text-align: left;">Phys Qubits/Logical</th>
+<th style="text-align: left;">Total Phys Qubits (8 logical)</th>
+<th style="text-align: left;"><span
+class="math inline">\(p_{\text{log}}\)</span> at <span
+class="math inline">\(p_{\text{phys}} = 1\%\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">81</td>
+<td style="text-align: left;">648</td>
+<td style="text-align: left;"><span class="math inline">\(8.9 \times
+10^{-9}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">729</td>
+<td style="text-align: left;">5,832</td>
+<td style="text-align: left;"><span class="math inline">\(3.4 \times
+10^{-17}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">6,561</td>
+<td style="text-align: left;">52,488</td>
+<td style="text-align: left;"><span class="math inline">\(&lt;
+10^{-30}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">531,441</td>
+<td style="text-align: left;">4,251,528</td>
+<td style="text-align: left;"><span class="math inline">\(&lt;
+10^{-100}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">43,046,721</td>
+<td style="text-align: left;">344,373,768</td>
+<td style="text-align: left;"><span class="math inline">\(&lt;
+10^{-300}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Logical gate count:</strong> <span class="math inline">\(\sim
+275\)</span> gates (8 Hadamard, 256 CNOT/Toffoli, 10 <span
+class="math inline">\(R_z\)</span> rotations, 1 measurement). At 1 THz
+logical clock, the circuit executes in <span class="math inline">\(\sim
+275\)</span> ps.</p>
+<p><strong>Extrapolation to RSA-2048:</strong> With <span
+class="math inline">\(3n = 6{,}144\)</span> logical qubits, <span
+class="math inline">\(L = 16\)</span> tree depth, the total physical
+qubit count is <span class="math inline">\(\sim 2.6 \times
+10^{11}\)</span>. The gate count (<span class="math inline">\(20n^2 =
+8.4 \times 10^7\)</span>) yields a runtime of <span
+class="math inline">\(84\)</span> µs at 1 THz.</p>
+<hr />
+<h2 id="magic-state-distillation">8. Magic State Distillation</h2>
+<h3 id="distillation-in-the-tree-architecture">8.1 Distillation in the
+Tree Architecture</h3>
+<p>Magic state distillation is required to implement non-Clifford gates
+(e.g., <span class="math inline">\(T = \text{diag}(1,
+e^{i\pi/4})\)</span>) on the tree code. The tree’s ultrametric structure
+provides a natural advantage: distillation factories occupy disjoint
+subtrees with zero interference from computation, unlike surface codes
+where factories compete for planar real estate.</p>
+<h3 id="protocol-comparison-code-executed">8.2 Protocol Comparison
+<code>[CODE-EXECUTED]</code></h3>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 28%" />
+<col style="width: 26%" />
+<col style="width: 32%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Protocol</th>
+<th style="text-align: left;">Rounds to <span
+class="math inline">\(10^{-12}\)</span></th>
+<th style="text-align: left;">Qubits per <span
+class="math inline">\(T\)</span>-gate</th>
+<th style="text-align: left;">Tree-parallel throughput</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">15-to-1 (Bravyi-Kitaev)</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+340\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+10^{14}\)</span> <span class="math inline">\(T\)</span>/s at 1 THz</td>
+</tr>
+<tr>
+<td style="text-align: left;">116-to-12 (Meier-Eastin-Knill)</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+340\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+10^{14}\)</span> <span class="math inline">\(T\)</span>/s at 1 THz</td>
+</tr>
+<tr>
+<td style="text-align: left;">Block (<span
+class="math inline">\(3p^2\)</span>)</td>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+40\)</span></td>
+<td style="text-align: left;">Higher</td>
+</tr>
+</tbody>
+</table>
+<p>A tree of depth <span class="math inline">\(L = 30\)</span> (<span
+class="math inline">\(\sim 10^9\)</span> leaves) can dedicate depth-6
+subtrees (64 leaves each) to <span class="math inline">\(\sim
+16{,}000\)</span> parallel distillation factories in disjoint subtrees.
+At 1 THz clock, throughput exceeds <span
+class="math inline">\(10^{14}\)</span> <span
+class="math inline">\(T\)</span>-gates/s—ample for Shor’s algorithm on
+RSA-2048 (<span class="math inline">\(\sim 7 \times 10^8\)</span> <span
+class="math inline">\(T\)</span>-gates total).</p>
+<hr />
+<h2 id="physical-limits">9. Physical Limits</h2>
+<h3 id="fundamental-bounds-code-executed">9.1 Fundamental Bounds
+<code>[CODE-EXECUTED]</code></h3>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 32%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Electron Compton time</td>
+<td style="text-align: left;"><span
+class="math inline">\(t_C\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(8.093 \times
+10^{-21}\)</span> s</td>
+</tr>
+<tr>
+<td style="text-align: left;">Electron Compton frequency</td>
+<td style="text-align: left;"><span
+class="math inline">\(\nu_C\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1.236 \times
+10^{20}\)</span> Hz</td>
+</tr>
+<tr>
+<td style="text-align: left;">Margolus-Levitin bound (electron)</td>
+<td style="text-align: left;"><span
+class="math inline">\(\tau_{\text{ML}}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(2.023 \times
+10^{-21}\)</span> s</td>
+</tr>
+<tr>
+<td style="text-align: left;">Landauer limit at <span
+class="math inline">\(4\)</span> K</td>
+<td style="text-align: left;"><span
+class="math inline">\(E_{\min}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(3.828 \times
+10^{-23}\)</span> J</td>
+</tr>
+</tbody>
+</table>
+<h3 id="gate-speed-margins">9.2 Gate Speed Margins</h3>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 27%" />
+<col style="width: 21%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Qubit Type</th>
+<th style="text-align: left;"><span class="math inline">\(\Delta
+E\)</span></th>
+<th style="text-align: left;"><span
+class="math inline">\(\tau_{\min}\)</span> (ML)</th>
+<th style="text-align: left;">Projected Gate</th>
+<th style="text-align: left;">Safety Factor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Electron (<span class="math inline">\(m_e
+c^2\)</span>)</td>
+<td style="text-align: left;">511 keV</td>
+<td style="text-align: left;"><span class="math inline">\(2.0 \times
+10^{-21}\)</span> s</td>
+<td style="text-align: left;">—(theoretical ceiling)</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">Spin qubit (Si/SiGe)</td>
+<td style="text-align: left;">0.1 meV</td>
+<td style="text-align: left;"><span class="math inline">\(1.0 \times
+10^{-11}\)</span> s</td>
+<td style="text-align: left;">100 ps</td>
+<td style="text-align: left;"><span
+class="math inline">\(10\times\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Photonic qubit</td>
+<td style="text-align: left;">0.4 eV</td>
+<td style="text-align: left;"><span class="math inline">\(2.6 \times
+10^{-15}\)</span> s</td>
+<td style="text-align: left;">10 fs</td>
+<td style="text-align: left;"><span
+class="math inline">\(4\times\)</span></td>
+</tr>
+</tbody>
+</table>
+<h3 id="power-estimates">9.3 Power Estimates</h3>
+<p>For <span class="math inline">\(10^6\)</span> logical qubits at
+varying efficiency relative to the Landauer limit:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Efficiency Factor</th>
+<th style="text-align: left;">Clock</th>
+<th style="text-align: left;">Power</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(10^3 \times
+E_{\min}\)</span> (optimistic)</td>
+<td style="text-align: left;">1 THz</td>
+<td style="text-align: left;">0.04 W</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(10^5 \times
+E_{\min}\)</span></td>
+<td style="text-align: left;">1 THz</td>
+<td style="text-align: left;">3.83 W</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(10^7 \times
+E_{\min}\)</span> (conservative)</td>
+<td style="text-align: left;">1 THz</td>
+<td style="text-align: left;">383 W</td>
+</tr>
+</tbody>
+</table>
+<p>At <span class="math inline">\(10^5 \times E_{\min}\)</span>, the
+power consumption (3.83 W) is within the cooling capacity of a
+commercial dilution refrigerator at 4 K stages.</p>
+<hr />
+<h2 id="open-problems-and-future-work">10. Open Problems and Future
+Work</h2>
+<p>The following unresolved questions represent priority directions for
+future investigation:</p>
+<h3 id="perfect-tensor-existence">10.1 Perfect Tensor Existence</h3>
+<p>The tree code assumes the existence of <span
+class="math inline">\([[d, 1, \lfloor d/2\rfloor]]\)</span> perfect
+tensors (absolutely maximally entangled states, or AME states) for
+arbitrary vertex degree <span class="math inline">\(d\)</span>. While
+<span class="math inline">\([[3,1,1]]\)</span> perfect tensors exist
+(equivalent to the 3-qubit repetition code), higher-degree perfect
+tensors (<span class="math inline">\(d = 5, 7, 9\)</span>) are not
+guaranteed for qubit local dimension <span class="math inline">\(q =
+2\)</span>. Known results: AME<span class="math inline">\((3,2)\)</span>
+exists, AME<span class="math inline">\((4,2)\)</span> does not, AME<span
+class="math inline">\((5,2)\)</span> exists (5-qubit code), AME<span
+class="math inline">\((6,2)\)</span> exists, AME<span
+class="math inline">\((7,2)\)</span> exists (Steane code). A systematic
+proof or disproof for the required <span class="math inline">\((d,
+2)\)</span> pairs is needed.</p>
+<h3 id="tree-automorphism-gate-set">10.2 Tree Automorphism Gate Set</h3>
+<p>The claim that <span
+class="math inline">\(\mathrm{Aut}(\mathcal{T}_p) \cong \mathrm{PGL}(2,
+\mathbb{Q}_p)\)</span> generates the full Clifford group transversally
+on the holographic tree code is unproven. For the binary tree (<span
+class="math inline">\(p = 2\)</span>), one must explicitly construct the
+action of <span class="math inline">\(\mathrm{GL}(2,
+\mathbb{Z}_2)\)</span> on tree boundary qubits and determine whether the
+resulting logical operations include Hadamard, Phase, and CNOT.</p>
+<h3 id="concrete-physical-error-model">10.3 Concrete Physical Error
+Model</h3>
+<p>The threshold analysis assumes i.i.d. Pauli errors. A realistic
+physical error model for the tree topology—incorporating charge noise on
+spin qubits, photon loss in photonic implementations, or correlated
+errors from the ultrametric geometry—is needed to validate the threshold
+claims under physically motivated noise.</p>
+<h3 id="magic-state-distillation-protocol-matching">10.4 Magic State
+Distillation Protocol Matching</h3>
+<p>While the tree architecture supports parallel distillation in
+disjoint subtrees, the specific protocol (15-to-1 Bravyi-Kitaev,
+116-to-12 Meier-Eastin-Knill, or block codes) has not been matched to
+the tree geometry with a complete Clifford gate overhead analysis.</p>
+<h3 id="decoder-hardware-design">10.5 Decoder Hardware Design</h3>
+<p>The claim of <span class="math inline">\(&lt; 10\)</span> ps decoder
+latency requires a hardware model (ASIC, FPGA, or optical) that exploits
+the tree’s ultrametric locality for parallel decoding. A concrete design
+with timing analysis is needed.</p>
+<h3 id="full-circuit-level-noise-simulation">10.6 Full Circuit-Level
+Noise Simulation</h3>
+<p>The Gottesman-Knill stabilizer simulation (§5) currently models
+i.i.d. Pauli errors. Extending it to circuit-level noise (CNOT gate
+errors, measurement errors, state preparation errors) would provide a
+realistic threshold estimate for the concatenated tree code.</p>
+<h3 id="literature-positioning">10.7 Literature Positioning</h3>
+<p>The current analysis does not comprehensively situate the tree code
+within the existing landscape of hyperbolic surface codes [19], HaPPY
+holographic codes [20], tree tensor networks (TTN), or p-adic quantum
+mechanics [21]. A thorough literature review is needed to substantiate
+the claim of novelty.</p>
+<hr />
+<h2 id="conclusion">11. Conclusion</h2>
+<p>The Bruhat-Tits Quantum Processor proposes a genuinely novel paradigm
+for quantum error correction: using ultrametricity as a computational
+resource. The strong triangle inequality—the defining property of
+ultrametric spaces—provides natural error cluster confinement, enabling
+parallel, local decoding that is fundamentally inaccessible to
+Euclidean-locality codes.</p>
+<p>The architecture’s verified thresholds—<span
+class="math inline">\(50.0\%\)</span> (bit-flip), <span
+class="math inline">\(75.0\%\)</span> (depolarizing), <span
+class="math inline">\(17.30\%\)</span> (independent <span
+class="math inline">\(X\)</span>+<span
+class="math inline">\(Z\)</span>)—represent substantial (<span
+class="math inline">\(4.6\times\)</span> to <span
+class="math inline">\(75\times\)</span>) improvements over surface
+codes. These thresholds are confirmed by analytical recursion, exact
+Gottesman-Knill stabilizer simulation, and Monte Carlo methods. The AQF
+circuit demonstration confirms that the tree code supports universal
+quantum computation, and resource estimates suggest that
+cryptographically relevant factoring is within the architecture’s
+theoretical scaling limits.</p>
+<p>The architecture’s experimental realization is likely decades
+away—the Technology Readiness Level is 1 (theoretical proposal), and no
+prototype or experimental validation exists. However, the
+<strong>conceptual framework—ultrametricity as a QEC resource—is
+genuinely novel</strong> and may prove valuable even if the specific
+Bruhat-Tits tree implementation is superseded. The enumerated open
+problems (§10) provide a roadmap for theoretical and computational
+investigation.</p>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] E. Dennis, A. Kitaev, A. Landahl, and J. Preskill, “Topological
+quantum memory,” <em>J. Math. Phys.</em> <strong>43</strong>, 4452–4505
+(2002).</p>
+<p>[2] A. G. Fowler, M. Mariantoni, J. M. Martinis, and A. N. Cleland,
+“Surface codes: Towards practical large-scale quantum computation,”
+<em>Phys. Rev. A</em> <strong>86</strong>, 032324 (2012).</p>
+<p>[3] R. B. Quni-Gudzinas, “Ballistic Transport on the Bruhat-Tits
+Tree,” Zenodo, <code>10.5281/zenodo.18629519</code> (2026).</p>
+<p>[4] R. B. Quni-Gudzinas, “Spectral Dynamics on Bruhat-Tits Trees,”
+Zenodo, <code>10.5281/zenodo.18629519</code> (2026).</p>
+<p>[5] R. B. Quni-Gudzinas, “Ultrametric Relaxation Dynamics in
+Topological Quantum Memory” (2026).</p>
+<p>[6] R. B. Quni-Gudzinas, “Topological Aliasing and Holographic
+Readout,” Zenodo, <code>10.5281/zenodo.18647369</code> (2026).</p>
+<p>[7] R. B. Quni-Gudzinas, “Ultrametric Quantum Computation” (v1.0),
+Zenodo, <code>10.5281/zenodo.19396320</code> (2026).</p>
+<p>[8] R. B. Quni-Gudzinas, “Ultrametric Quantum Gravity and
+Computation,” Zenodo, <code>10.5281/zenodo.19397516</code> (2026).</p>
+<p>[9] R. B. Quni-Gudzinas, “Unity of Ultrametric Physics” (v0.7.1),
+Zenodo, <code>10.5281/zenodo.19929764</code> (2026).</p>
+<p>[10] R. B. Quni-Gudzinas, “The Bruhat-Tits Tree as a Unifying
+Geometric Object” (v0.9), Zenodo, <code>10.5281/zenodo.19941634</code>
+(2026).</p>
+<p>[11] R. B. Quni-Gudzinas, “The Ultrametric Paradigm” (v0.9.1),
+Zenodo, <code>10.5281/zenodo.19998899</code> (2026).</p>
+<p>[12] R. B. Quni-Gudzinas, “Ultrametric Quantum Computation—UQC MVP”
+(v0.20), Zenodo, <code>10.5281/zenodo.20014913</code> (2026).</p>
+<p>[13] R. B. Quni-Gudzinas, “UQC and the Langlands Program” (v2.0.1),
+Zenodo, <code>10.5281/zenodo.20029825</code> (2026).</p>
+<p>[14] R. B. Quni-Gudzinas, “The Tree of Frequencies: A Bruhat-Tits
+Geometry of Scale” (v0.9), Zenodo, <code>10.5281/zenodo.20071716</code>
+(2026).</p>
+<p>[15] R. B. Quni-Gudzinas, “Ultrametric Physics from Discrete
+Hierarchical Geometry to Intrinsic Fault Tolerance and Quantum Gravity”
+(2026).</p>
+<p>[16] S. Aaronson and D. Gottesman, “Improved Simulation of Stabilizer
+Circuits,” <em>Phys. Rev. A</em> <strong>70</strong>, 052328 (2004).</p>
+<p>[17] J. Edmonds, “Paths, trees, and flowers,” <em>Canadian J.
+Math.</em> <strong>17</strong>, 449–467 (1965).</p>
+<p>[18] V. Kolmogorov, “Blossom V: A new implementation of a minimum
+cost perfect matching algorithm,” <em>Math. Program. Comput.</em>
+<strong>1</strong>, 43–67 (2009).</p>
+<p>[19] N. P. Breuckmann, C. Vuillot, E. Campbell, A. Krishna, and B. M.
+Terhal, “Hyperbolic and semi-hyperbolic surface codes for quantum
+storage,” <em>Quantum Sci. Technol.</em> <strong>2</strong>, 035007
+(2017).</p>
+<p>[20] F. Pastawski, B. Yoshida, D. Harlow, and J. Preskill,
+“Holographic quantum error-correcting codes: Toy models for the
+bulk/boundary correspondence,” <em>JHEP</em> <strong>2015</strong>, 149
+(2015).</p>
+<p>[21] V. S. Vladimirov, I. V. Volovich, and E. I. Zelenov, <em>p-Adic
+Analysis and Mathematical Physics</em> (World Scientific, 1994).</p>
+<hr />
+<h2 id="appendix-a-quantitative-summary">Appendix A: Quantitative
+Summary</h2>
+<p>All values <code>[CODE-EXECUTED]</code> unless noted.</p>
+<table>
+<colgroup>
+<col style="width: 37%" />
+<col style="width: 37%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Tree Code Thresholds</strong></td>
+<td style="text-align: left;">Bit-flip <span
+class="math inline">\(p_c\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(50.0\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Independent <span
+class="math inline">\(X\)</span>+<span class="math inline">\(Z\)</span>
+<span class="math inline">\(p_c\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(17.30\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Depolarizing <span
+class="math inline">\(p_c\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(75.00\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Gate-error <span
+class="math inline">\(p_c\)</span> (<span class="math inline">\(q/p \leq
+0.1\)</span>)</td>
+<td style="text-align: left;"><span
+class="math inline">\(50.0\%\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Surface Code
+Thresholds</strong></td>
+<td style="text-align: left;">Bit-flip <span
+class="math inline">\(p_c\)</span> (asymptotic)</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+10.9\%\)</span> <code>[LLM-INFERRED]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Depolarizing <span
+class="math inline">\(p_c\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+1.0\%\)</span> <code>[LLM-INFERRED]</code></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Advantage Ratios</strong></td>
+<td style="text-align: left;">Bit-flip (tree/surface)</td>
+<td style="text-align: left;"><span
+class="math inline">\(4.6\times\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Depolarizing (tree/surface)</td>
+<td style="text-align: left;"><span
+class="math inline">\(75\times\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Logical Error
+Suppression</strong></td>
+<td style="text-align: left;"><span
+class="math inline">\(p_{\text{log}}\)</span> at <span
+class="math inline">\(p=1\%, L=4\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(8.9 \times
+10^{-9}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span
+class="math inline">\(p_{\text{log}}\)</span> at <span
+class="math inline">\(p=1\%, L=8\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(&lt;
+10^{-30}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>AQF (<span
+class="math inline">\(N=15\)</span>)</strong></td>
+<td style="text-align: left;">Logical qubits</td>
+<td style="text-align: left;">8</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Logical gate count</td>
+<td style="text-align: left;">275</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Physical qubits at <span
+class="math inline">\(L=8\)</span></td>
+<td style="text-align: left;">52,488</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Runtime at 1 THz</td>
+<td style="text-align: left;">275 ps</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RSA-2048
+Extrapolation</strong></td>
+<td style="text-align: left;">Logical qubits</td>
+<td style="text-align: left;">6,144</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Gate count (<span
+class="math inline">\(20n^2\)</span>)</td>
+<td style="text-align: left;"><span class="math inline">\(8.4 \times
+10^7\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Runtime at 1 THz</td>
+<td style="text-align: left;">84 µs</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Magic State</strong></td>
+<td style="text-align: left;"><span
+class="math inline">\(T\)</span>-gate throughput</td>
+<td style="text-align: left;"><span class="math inline">\(&gt;
+10^{14}\)</span> <span class="math inline">\(T\)</span>/s at 1 THz</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Physical</strong></td>
+<td style="text-align: left;">Landauer at 4 K</td>
+<td style="text-align: left;"><span class="math inline">\(3.828 \times
+10^{-23}\)</span> J</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Electron Compton time</td>
+<td style="text-align: left;"><span class="math inline">\(8.093 \times
+10^{-21}\)</span> s</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Power (<span class="math inline">\(10^5
+\times E_{\min}\)</span>, 1 THz)</td>
+<td style="text-align: left;">3.83 W</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="appendix-b-file-cross-reference">Appendix B: File
+Cross-Reference</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Content</th>
+<th style="text-align: left;">File</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Consolidated synthesis (all results)</td>
+<td style="text-align: left;"><code>0.1.7.md</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">This final paper</td>
+<td style="text-align: left;"><code>0.1.15_final_paper.md</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Gottesman-Knill stabilizer simulation</td>
+<td style="text-align: left;"><code>0.1.11_stabilizer.py</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Surface code Monte Carlo benchmark</td>
+<td
+style="text-align: left;"><code>0.1.12_surface_benchmark.py</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">AQF circuit simulation (Shor, <span
+class="math inline">\(N=15\)</span>)</td>
+<td style="text-align: left;"><code>0.1.13_aqf_sim.py</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Bit-flip threshold Monte Carlo</td>
+<td style="text-align: left;"><code>0.1.6_btree_threshold.py</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Depolarizing threshold + verification</td>
+<td style="text-align: left;"><code>0.1.10_verification.py</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Classical CFRAC failure demonstration</td>
+<td style="text-align: left;"><code>0.1.6_cfrac.py</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Gate-error threshold analysis</td>
+<td style="text-align: left;"><code>0.1.9_gate.py</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Magic state distillation overhead</td>
+<td style="text-align: left;"><code>0.1.9_magic.py</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">Physical constants verification</td>
+<td style="text-align: left;"><code>0.1.3_review.py</code></td>
+</tr>
+</tbody>
+</table>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

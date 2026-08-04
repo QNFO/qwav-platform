@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3 Core Concepts | QWAV</title>
+<meta name="description" content="Section 3: Core Components of Fundamental Entities Having identified the foundational entities comprising the initial corpus (Section 2), the next crucial st...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/3-core-concepts">
+<meta property="og:title" content="3 Core Concepts">
+<meta property="og:description" content="Section 3: Core Components of Fundamental Entities Having identified the foundational entities comprising the initial corpus (Section 2), the next crucial st...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/3-core-concepts">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "3 Core Concepts",
+  "url": "https://deep.qwav.tech/papers/3-core-concepts",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-05-09T03:21:34Z",
+  "abstract": "Section 3: Core Components of Fundamental Entities Having identified the foundational entities comprising the initial corpus (Section 2), the next crucial st..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<p><strong>Section 3: Core Components of Fundamental
+Entities</strong></p>
+<p>Having identified the foundational entities comprising the initial
+corpus (Section 2), the next crucial step towards constructing our
+network map involves dissecting each entity into its <strong>core
+components</strong>. This process moves beyond broad definitions to
+expose the internal structure, explicit formulations (laws, equations,
+postulates), and, significantly, the often <strong>implicit
+assumptions</strong> (ontological, epistemological, methodological) upon
+which each paradigm rests. Representing these components as distinct
+nodes allows for a more granular and insightful analysis of the
+relationships between fundamental ideas. The extraction methodology
+involves careful analysis of authoritative descriptions and foundational
+texts for each entity, aiming for clarity and objectivity.</p>
+<p>Beginning with <strong>classical mechanics (CM)</strong>, its
+explicit formulations are dominated by <strong>Newton’s laws of
+motion</strong>: the first law (inertia) stating that bodies maintain
+their state of motion unless acted upon by a force; the second law
+(force law) quantifying the relationship between force, mass, and
+acceleration (<strong>F</strong> = m<strong>a</strong>); and the third
+law (action-reaction) asserting the equality and opposition of
+interacting forces. Often implicitly included, especially in celestial
+mechanics, is the <strong>Law of Universal Gravitation</strong> (<span
+class="math inline">\(F_g = G M_1 M_2 / r^2\)</span>), though this is
+superseded by general relativity. Underlying these laws are critical
+implicit assumptions. Ontologically, CM presupposes an <strong>absolute
+space</strong> (Euclidean, fixed) and <strong>absolute time</strong>
+(uniform, independent), providing an unchanging background. It often
+employs idealizations like <strong>point masses</strong> or rigid bodies
+and assumes matter possesses intrinsic properties like mass.
+Epistemologically, CM assumes <strong>determinism</strong>, where the
+complete state (all positions <strong>x</strong> and momenta
+<strong>p</strong>) at one time dictates all future states via the laws,
+and assumes physical properties possess <strong>objective
+reality</strong> independent of measurement. Methodologically, it
+focuses on forces as agents of change and utilizes the calculus of
+differential equations.</p>
+<p><strong>General relativity (GR)</strong> presents a different set of
+components. Its explicit formulations are grounded in fundamental
+principles: the <strong>Equivalence Principle</strong>, asserting the
+local indistinguishability of gravity and acceleration, and the
+<strong>Principle of General Covariance</strong>, requiring physical
+laws to maintain their form under arbitrary coordinate transformations.
+The core mathematical structure is postulated as a
+<strong>four-dimensional pseudo-Riemannian spacetime manifold</strong>
+<span class="math inline">\((M, g_{\mu\nu})\)</span>. The motion of free
+particles is governed by the <strong>Geodesic Motion Postulate</strong>,
+stating they follow the “straightest” paths in this curved geometry. The
+central law is expressed in <strong>Einstein’s field equations
+(EFE)</strong>: <span class="math inline">\(G_{\mu\nu} + \Lambda
+g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}\)</span>, quantitatively
+linking spacetime curvature (<span
+class="math inline">\(G_{\mu\nu}\)</span>) to the distribution of mass
+and energy (<span class="math inline">\(T_{\mu\nu}\)</span>),
+potentially including the cosmological constant Λ. Implicitly, GR
+assumes spacetime is a <strong>dynamic physical entity</strong>, not a
+passive background, and typically treats it as a
+<strong>continuum</strong> (though this breaks down at the Planck
+scale). Ontologically, it assumes mass-energy sources curvature.
+Epistemologically, it assumes geometry is empirically accessible and
+that physical laws are fundamentally geometric. Methodologically, it
+relies heavily on <strong>differential geometry and tensor
+calculus</strong> within a field equation approach.</p>
+<p>The standard interpretation of <strong>quantum mechanics
+(qm)</strong> is often presented via postulates governing its
+mathematical formalism and connection to observation. The <strong>State
+Postulate</strong> asserts that a system’s state is fully represented by
+a normalized vector <span class="math inline">\(|\psi\rangle\)</span>in
+a complex Hilbert space <span class="math inline">\(H\)</span>. The
+<strong>Observable Postulate</strong> associates measurable quantities
+with Hermitian operators <span class="math inline">\(A\)</span>on <span
+class="math inline">\(H\)</span>. The <strong>Dynamics
+Postulate</strong> describes deterministic, unitary evolution between
+measurements via the <strong>Schrödinger equation</strong>: <span
+class="math inline">\(i\hbar \frac{d}{dt}|\psi(t)\rangle =
+H|\psi(t)\rangle\)</span>. The <strong>Measurement Postulate</strong>,
+incorporating the <strong>Born rule</strong>, states that measurement
+outcomes are eigenvalues <span class="math inline">\(a_i\)</span>of
+<span class="math inline">\(A\)</span>, obtained with probability <span
+class="math inline">\(P(a_i) = |\langle a_i|\psi\rangle|^2\)</span>. The
+<strong>Projection Postulate</strong> describes the discontinuous
+“collapse” of the state vector to the corresponding eigenstate <span
+class="math inline">\(|a_i\rangle\)</span>upon measurement. Underlying
+these are significant interpretive assumptions, often associated with
+the Copenhagen view: ontologically, micro-reality is described by <span
+class="math inline">\(|\psi\rangle\)</span>, properties may lack
+definite values before measurement (<strong>contextuality</strong>), and
+non-local connections (<strong>entanglement</strong>) exist.
+Epistemologically, there’s a fundamental limit to knowledge
+(<strong>Uncertainty Principle</strong>), measurement is inherently
+disruptive and probabilistic (<strong>Intrinsic Indeterminism</strong>),
+and classical language is needed for describing experiments
+(<strong>Complementarity</strong>). Methodologically, the focus is on
+measurement probabilities using Hilbert space linear algebra.</p>
+<p>The <strong>Standard Model (SM)</strong> of particle physics
+integrates qm with special relativity into a quantum field theory (QFT).
+Its explicit components include defining the fundamental
+<strong>particle content</strong> (quarks, leptons, gauge bosons, Higgs
+boson) and asserting the <strong>Gauge Symmetry Principle</strong>,
+which dictates that interactions are governed by the symmetry group
+<span class="math inline">\(SU(3)_C \times SU(2)_L \times
+U(1)_Y\)</span>. The specific dynamics and interactions are encoded in
+the <strong>Lagrangian density</strong>, a complex mathematical
+expression consistent with these symmetries. Mass generation for
+fundamental particles (except neutrinos, typically) is explained via the
+<strong>Higgs mechanism</strong>. Implicitly, the SM assumes the
+ontological reality of <strong>quantum fields</strong> as fundamental,
+with particles as their excitations, and the validity of the specific
+gauge symmetries. Epistemologically, it relies on <strong>QFT</strong>
+as the descriptive framework and utilizes <strong>perturbation
+theory</strong> (Feynman diagrams) and <strong>renormalization</strong>
+techniques for calculations. Methodologically, it is deeply rooted in
+gauge symmetry principles.</p>
+<p>The <strong>Laws of Thermodynamics</strong> govern energy
+transformations in macroscopic systems. Explicitly, the <strong>Zeroth
+Law</strong> defines thermal equilibrium and temperature. The
+<strong>First Law</strong> states the conservation of energy (<span
+class="math inline">\(\Delta U = Q - W\)</span>). The <strong>Second
+Law</strong> mandates that the total entropy of an isolated system never
+decreases (<span class="math inline">\(\Delta S_{\text{univ}} \ge
+0\)</span>), establishing a macroscopic arrow of time. The <strong>Third
+Law</strong> states that entropy approaches a constant minimum as
+temperature approaches absolute zero. Implicitly, these laws assume the
+ontological reality of <strong>macroscopic systems</strong> and state
+variables (T, P, V, U, S) and the concept of <strong>thermal
+equilibrium</strong>. Epistemologically, they focus on measurable
+macroscopic properties, often averaging over microscopic details.
+Methodologically, they rely on defining system boundaries and analyzing
+state changes and processes (reversible/irreversible).</p>
+<p>Foundational <strong>mathematics and logic</strong> provide the
+language and deductive structure for physical theories.
+<strong>First-order logic (FOL)</strong> explicitly defines the
+<strong>syntax</strong> (symbols, rules for well-formed formulas) and
+<strong>semantics</strong> (interpretations, truth) for formal
+reasoning, along with a <strong>proof theory</strong> (axioms, inference
+rules like Modus Ponens) ensuring soundness and completeness (Gödel’s
+Completeness Theorem) for logical validity. <strong>Zermelo-Fraenkel set
+theory with Choice (ZFC)</strong> provides the standard axiomatic
+foundation for most mathematics, explicitly postulating the existence
+and properties of sets through its <strong>axioms</strong>
+(Extensionality, Pairing, Union, Power Set, Infinity, Specification,
+Replacement, Regularity, Choice) stated within FOL. Implicitly, ZFC
+assumes an ontological commitment to a <strong>universe of pure
+sets</strong> structured as a <strong>well-founded cumulative
+hierarchy</strong> (enforced by Regularity). Epistemologically, it often
+aligns with a formalist view where mathematical truth within the system
+equates to provability from the axioms. Methodologically, it relies
+entirely on the <strong>axiomatic method</strong> and formal proof.
+<strong>Gödel’s Incompleteness Theorems</strong> are crucial
+meta-mathematical results revealing limitations of any such formal
+system if it is consistent, effectively axiomatized, and strong enough
+to express arithmetic.</p>
+<p>Core <strong>philosophical concepts</strong> provide interpretive
+frameworks and address fundamental questions. <strong>Physicalism (or
+materialism)</strong> explicitly posits <strong>ontological
+monism</strong>–everything is physical or supervenes on the physical. It
+often implicitly assumes the <strong>causal closure of the
+physical</strong> domain and relies epistemologically on the methods of
+physics to define the “physical.” <strong>Causation</strong> involves
+various explicit analyses (counterfactual, mechanistic, etc.) attempting
+to define the relationship between cause and effect, implicitly assuming
+the reality of such relationships and their discoverability.
+<strong>Fundamentality</strong> explicitly addresses the metaphysical
+structure of reality, often defined via asymmetric dependence relations
+like <strong>grounding</strong>, implicitly assuming reality has a
+hierarchical or foundational structure that can be analyzed.</p>
+<p><strong>Shannon Information Theory</strong> provides a mathematical
+framework for quantifying information. Its explicit components include
+the definition of <strong>Shannon entropy (H)</strong> as average
+uncertainty (<span class="math inline">\(H = -\sum p_i \log
+p_i\)</span>), the <strong>Source Coding Theorem</strong> limiting
+lossless compression, the definition of <strong>Channel Capacity
+(C)</strong>, and the <strong>Noisy-Channel Coding Theorem</strong>
+limiting reliable communication rate (<span class="math inline">\(R &lt;
+C\)</span>). Implicitly, it assumes information sources and channels can
+be modeled <strong>probabilistically</strong>. Epistemologically, its
+focus is purely <strong>syntactic</strong>, quantifying symbol
+transmission accuracy irrespective of meaning. Methodologically, it
+relies on probability theory and asymptotic analysis.</p>
+<p>Finally, the <strong>ΛCDM Model</strong> of cosmology explicitly
+assumes the <strong>framework of general relativity</strong> and the
+<strong>Cosmological Principle</strong> (large-scale
+homogeneity/isotropy). It postulates the <strong>existence and specific
+properties of cold dark matter (CDM)</strong> and <strong>dark energy
+(Λ)</strong>. Its narrative includes key processes like the <strong>hot
+Big Bang origin</strong>, expansion, cooling, <strong>Big Bang
+Nucleosynthesis (BBN)</strong>, recombination (<strong>CMB
+formation</strong>), and <strong>structure formation</strong> via
+gravitational instability. Implicitly, it assumes the
+<strong>universality and constancy of physical laws</strong> across
+cosmic time and the validity of interpreting diverse observational data
+(CMB, supernovae, large-scale structure, BBN) through the model’s
+equations. Methodologically, it involves <strong>fitting cosmological
+parameters</strong> (like <span class="math inline">\(\Omega_M,
+\Omega_\Lambda, H_0\)</span>) to these datasets within the assumed
+theoretical framework.</p>
+<p>This detailed extraction of explicit formulations and implicit
+assumptions for each foundational entity provides the necessary granular
+nodes for constructing the network graph. It reveals not only the core
+content of each paradigm but also the often-unstated beliefs and
+preconditions upon which they depend, setting the stage for mapping
+their intricate interrelations.</p>
+<hr />
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

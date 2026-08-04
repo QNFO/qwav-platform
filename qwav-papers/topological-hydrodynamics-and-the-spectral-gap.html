@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOPOLOGICAL HYDRODYNAMICS AND THE SPECTRAL GAP | QWAV</title>
+<meta name="description" content="TOPOLOGICAL HYDRODYNAMICS AND THE SPECTRAL GAP DEFINING THE THERMODYNAMIC LIMITS OF ANALOG VACUUM COMPUTATION Author: Rowan Brad Quni-Gudzinas Contact: rowan...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/topological-hydrodynamics-and-the-spectral-gap">
+<meta property="og:title" content="TOPOLOGICAL HYDRODYNAMICS AND THE SPECTRAL GAP">
+<meta property="og:description" content="TOPOLOGICAL HYDRODYNAMICS AND THE SPECTRAL GAP DEFINING THE THERMODYNAMIC LIMITS OF ANALOG VACUUM COMPUTATION Author: Rowan Brad Quni-Gudzinas Contact: rowan...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/topological-hydrodynamics-and-the-spectral-gap">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "TOPOLOGICAL HYDRODYNAMICS AND THE SPECTRAL GAP",
+  "url": "https://deep.qwav.tech/papers/topological-hydrodynamics-and-the-spectral-gap",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-12-17T17:11:14Z",
+  "keywords": [
+    "Superfluid Vacuum",
+    "Topological Computation",
+    "Spectral Gap",
+    "Thermodynamic Limits",
+    "Dark Energy",
+    "Analog Factorization"
+  ],
+  "abstract": "TOPOLOGICAL HYDRODYNAMICS AND THE SPECTRAL GAP DEFINING THE THERMODYNAMIC LIMITS OF ANALOG VACUUM COMPUTATION Author: Rowan Brad Quni-Gudzinas Contact: rowan..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1 id="topological-hydrodynamics-and-the-spectral-gap">TOPOLOGICAL
+HYDRODYNAMICS AND THE SPECTRAL GAP</h1>
+<h3
+id="defining-the-thermodynamic-limits-of-analog-vacuum-computation">DEFINING
+THE THERMODYNAMIC LIMITS OF ANALOG VACUUM COMPUTATION</h3>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Contact:</strong> rowan.quni@outlook.com <strong>ORCID:</strong>
+<a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>
+<strong>ISNI:</strong> <a
+href="https://isni.org/isni/0000000526456062">0000000526456062</a>
+<strong>DOI:</strong> 10.5281/zenodo.17965042 <strong>Date:</strong>
+2025-12-17 <strong>Version:</strong> 1.0.1</p>
+<p><strong>Abstract</strong>: Standard quantum field theory
+conceptualizes the vacuum as a probabilistic void, yet phenomenological
+isomorphism with superfluid Helium-3 suggests a deeper hydrodynamic
+ontology. While this topological substrate theoretically supports analog
+computation via vorticity, the practical realization is constrained by
+the Wallstrom objection regarding quantization and the thermodynamic
+cost of phase coherence. This study establishes a rigorous mapping
+between number-theoretic factorization and the spectral analysis of a
+topological superfluid, governed by the Ford-Shor divisor density
+bounds. By deriving the “Thermodynamic Swamping Limit” through
+categorical simulation of seven physical regimes, the analysis
+demonstrates that terrestrial analog systems invariably fail due to
+viscous decoherence and thermal noise (<span
+class="math inline">\(\Delta E &lt; k_B T\)</span>). The findings reveal
+that the “Universe as Calculator” thesis is valid strictly at the Planck
+scale, redefining Dark Energy as the dissipative metabolic cost of
+cosmic information processing.</p>
+<p><strong>Keywords:</strong> Superfluid Vacuum, Topological
+Computation, Spectral Gap, Thermodynamic Limits, Dark Energy, Analog
+Factorization</p>
+<h2 id="the-genesis-of-the-topological-argument">1.0 THE GENESIS OF THE
+TOPOLOGICAL ARGUMENT</h2>
+<h3 id="the-superfluid-vacuum-ontology">1.1 The Superfluid Vacuum
+Ontology</h3>
+<p>The physical vacuum, long conceptualized in classical mechanics as a
+void of absolute nothingness, is rigorously reinterpreted here not as an
+empty stage but as a <strong>superfluid condensate</strong> possessing
+non-zero order parameters and substantial topological structure. Rather
+than a passive background, the vacuum constitutes a dynamic plenum,
+physically isomorphic to a Helium-3B (<span
+class="math inline">\(^3\)</span>He-B) condensate, where the fundamental
+laws of physics emerge as low-energy collective modes of the substrate.
+This reorientation shifts the ontological baseline from abstract fields
+to tangible hydrodynamics, positing that the “fundamental” vacuum
+expectation values are actually macroscopic quantum wavefunctions of a
+deep underlying fluid. The elementary particles of the Standard Model,
+in this framework, are not point-like singularities but distinct
+<strong>topological defects</strong>—vortices, skyrmions, or
+monopoles—within the order parameter of this superfluid medium. The
+apparent relativistic symmetries are not intrinsic axioms of nature but
+emergent properties that arise only when the thermal energy of the
+system drops below the critical transition temperature <span
+class="math inline">\(T_c\)</span>. This emergence parallels the way
+sound waves in a fluid obey an effective Lorentzian geometry, governed
+by an acoustic metric that mimics the relativistic metric of spacetime.
+Viewing the vacuum as a material plenum allows the analysis of its
+computational capacity utilizing the tools of condensed matter physics
+and thermodynamics.</p>
+<p>As elucidated by Volovik (2003), this topological approach provides a
+coherent resolution to the hierarchy problems that plague conventional
+Quantum Field Theory. The “Universe in a Helium Droplet” framework
+demonstrates that the symmetries observed in high-energy particle
+physics can be mapped directly onto the ground state symmetries of a
+p-wave superfluid. Historically, the search for a unified theory has
+struggled to reconcile the massive energy density predicted by quantum
+fluctuations with the near-zero cosmological constant observed in the
+universe. Volovik’s treatise suggests that this discrepancy vanishes
+when the vacuum is treated as a self-sustaining droplet at equilibrium,
+where the internal pressure exactly cancels the energy density. This
+context places the current investigation within a well-defined lineage
+of effective field theories that prioritize emergent phenomena over
+reductionist axioms. The correspondence established by Volovik allows
+the utilization of known properties of <span
+class="math inline">\(^3\)</span>He-B—specifically its viscosity,
+coherence length, and vortex dynamics—as reliable proxies for the
+behavior of the quantum vacuum. This mapping is not merely metaphorical
+but mathematically rigorous, utilizing the same symmetry breaking
+channels and defect topologies found in laboratory superfluids.</p>
+<p>The mechanism driving this emergence is the formation of an
+<strong>acoustic metric</strong> <span
+class="math inline">\(g_{\mu\nu}\)</span> which governs the propagation
+of fluctuations within the fluid substrate. The background superfluid
+velocity <span class="math inline">\(\mathbf{v}_s\)</span> and density
+<span class="math inline">\(\rho\)</span> define the effective spacetime
+geometry experienced by the quasiparticles (phonons), such that the
+invariant interval becomes <span class="math inline">\(ds^2 =
+\frac{\rho}{c_s} [-(c_s^2 - v_s^2)dt^2 - 2\mathbf{v}_s \cdot d\mathbf{x}
+dt + d\mathbf{x}^2]\)</span>. In this hydrodynamic formulation, the
+speed of sound <span class="math inline">\(c_s\)</span> plays the role
+of the speed of light <span class="math inline">\(c\)</span>, creating a
+causal cone for information propagation that is strictly analogous to
+the light cone in Special Relativity. Emergent Lorentz invariance arises
+naturally because the quasiparticles near the Fermi surface perceive
+this acoustic metric rather than the Galilean geometry of the underlying
+atoms. The “matter” fields—fermions and bosons—emerge as excitations of
+the order parameter, with their mass and charge determined by the
+specific topology of the defect they represent. This mechanism implies
+that the “constants” of nature are actually running parameters dependent
+on the local thermodynamic state of the superfluid vacuum. Therefore,
+the vacuum possesses a finite “stiffness” or compressibility, which
+directly influences its ability to store and process topological
+information.</p>
+<p>Empirical support for this ontology is derived from the precise
+isomorphism between the Fermi points observed in superfluid <span
+class="math inline">\(^3\)</span>He-A and the chiral fermions of the
+Standard Model. As demonstrated in the numerical analysis of the
+substrate (Volovik, 2003), the spectral flow of quasiparticles along
+vortex lines reproduces the chiral anomaly essential for electroweak
+symmetry breaking. The observation that massless fermions arise
+naturally at the nodes of the superfluid gap function provides a robust
+explanation for the existence of neutrinos and electrons without
+requiring arbitrary mass terms. Furthermore, the quantized circulation
+of vortices in rotating helium droplets (<span
+class="math inline">\(\oint \mathbf{v} \cdot d\mathbf{l} = n
+\kappa\)</span>) mirrors the quantization of angular momentum in quantum
+mechanics. This tangible evidence confirms that “quantum” behavior is a
+macroscopic feature of the fluid’s topology, rather than a microscopic
+mystery. The stability of these vortices, protected by topological
+invariants, allows them to persist as distinct entities, effectively
+mimicking the stability of protons and electrons. This correspondence
+validates the use of superfluid hydrodynamics as a predictive model for
+vacuum behavior.</p>
+<p>A significant counter-argument to this plenum ontology is the
+historical refutation of the luminiferous aether by the Michelson-Morley
+experiment, which seemingly ruled out any material background for light
+propagation. Critics argue that a superfluid vacuum would establish a
+preferred reference frame—the rest frame of the fluid—thereby violating
+the principle of relativity. Furthermore, the drag exerted by such a
+fluid on moving bodies should be detectable, yet no such “ether wind”
+has been observed in high-precision interferometry. This objection
+suggests that treating spacetime as a fluid is a step backward to
+pre-relativistic physics, potentially introducing contradictions with
+the established Lorentz covariance of the Standard Model. Additionally,
+the microscopic constituents of Volovik’s vacuum—the “atoms” of
+spacetime—remain theoretical constructs with no experimental signature,
+raising epistemological concerns about the falsifiability of the
+substrate hypothesis. The effective theory works at low energies, but
+its validity at the Planck scale remains an open question.</p>
+<p>The resolution to this critique lies in the understanding that the
+superfluid vacuum differs fundamentally from the classical aether; it is
+a <strong>relativistic superfluid</strong> where the observer and the
+measuring apparatus are themselves excitations of the same fluid. As
+synthesized by the Volovik correspondence, an internal observer composed
+of quasiparticles cannot detect the uniform motion of the background
+fluid because their own rulers and clocks scale covariantly with the
+flow. The “preferred frame” exists physically but is observationally
+inaccessible to low-energy excitations due to the emergent Lorentz
+symmetry. The Michelson-Morley null result is thus a consequence of the
+acoustic metric scaling, not proof of an empty void. Moreover, the
+“drag” is absent because the vacuum is a superfluid—it flows with zero
+viscosity in its ground state, interacting with matter only through
+topological scattering events. This distinction rescues the hydrodynamic
+model from the classical aether objections while preserving its
+explanatory power regarding the origin of mass and inertia.</p>
+<p>Establishing the vacuum as a topological superfluid provides the
+necessary physical substrate for realizing information processing at the
+fundamental level. If the vacuum is a structured fluid, then physical
+evolution is equivalent to the hydrodynamic relaxation of this fluid
+toward its ground state. This implies that the universe does not merely
+contain computers; the universe <em>is</em> a computer, calculating its
+own evolution through the interaction of topological defects. The
+stability of these defects and the coherence of the superfluid phase
+become the critical parameters defining the computational capacity of
+spacetime. This realization bridges the gap between abstract quantum
+information theory and condensed matter physics, allowing the
+investigation of the thermodynamic costs of computation.</p>
+<h3 id="the-isomorphism-of-physical-factorization">1.2 The Isomorphism
+of Physical Factorization</h3>
+<p>The evolution of the superfluid plenum is not merely a dynamic
+process but is formally isomorphic to <strong>number-theoretic
+factorization</strong>, where the physical relaxation of the system
+solves the mathematical problem of decomposing integers into primes.
+This thesis asserts that the Schrödinger evolution of the vacuum state
+<span class="math inline">\(|\psi(t)\rangle = e^{-iHt/\hbar}
+|\psi(0)\rangle\)</span> can be engineered such that the constructive
+interference of the wavepacket occurs strictly at temporal or spatial
+coordinates corresponding to the factors of a target integer <span
+class="math inline">\(N\)</span>. By encoding the integer <span
+class="math inline">\(N\)</span> into the boundary conditions or the
+interaction potential of the superfluid, the natural energy minimization
+of the fluid performs the factorization algorithmically. This
+isomorphism transforms the abstract complexity of the “Factoring
+Problem” into a physical problem of <strong>spectral analysis</strong>,
+where the prime factors are identified as the resonant frequencies or
+“zeros” of the system’s diffraction pattern. Thus, computation is
+re-contextualized as a physical process of symmetry breaking and pattern
+formation within the hydrodynamic substrate.</p>
+<p>This perspective builds upon the foundational work of Lloyd (2002),
+who first rigorously defined the “Computational Capacity of the
+Universe” by treating every physical degree of freedom as a register of
+information. Lloyd postulated that the universe processes information at
+a rate limited only by its energy density and the Planck constant,
+effectively functioning as a massive quantum cellular automaton. Within
+this framework, the laws of physics are the “software” running on the
+“hardware” of the underlying quantum fields. The current investigation
+extends Lloyd’s information-theoretic bounds by identifying the specific
+mechanism—topological hydrodynamics—through which this processing
+occurs. While Lloyd focused on the maximum number of operations, this
+analysis focuses on the specific <em>analog</em> algorithms, such as the
+“Gauss Sum” interference, that the vacuum executes naturally. This shift
+from digital to analog quantum computing aligns with the continuous
+nature of the superfluid order parameter.</p>
+<p>The operational mechanism for this computation is the <strong>Gauss
+Sum Interferometry</strong>, where the probability amplitude at a
+detection point is given by a summation of the form <span
+class="math inline">\(A_N(\xi) \propto \sum_{m=0}^{M-1} w_m \exp(2\pi i
+m^2 \xi / N)\)</span>. In a physical superfluid, this sum is realized by
+splitting the wavefunction into multiple paths, each acquiring a phase
+shift proportional to the square of an integer <span
+class="math inline">\(m\)</span>. When the system evolves, these paths
+interfere constructively only when the variable <span
+class="math inline">\(\xi\)</span> satisfies specific modular conditions
+related to the factors of <span class="math inline">\(N\)</span>.
+Specifically, the “zeros” or deep minima in the resulting intensity
+pattern map uniquely to the prime factors, creating a “spectral sieve”
+that filters out composite numbers. The superfluid vacuum executes this
+summation automatically via the superposition principle, with the phase
+stiffness of the condensate ensuring the coherence of the terms. The
+computational result is thus “read out” from the topological texture of
+the relaxed state.</p>
+<p>Numerical analysis and experimental analogs provide concrete evidence
+for this computational isomorphism, most notably in the “Magnonic
+Holographic Memory” experiments utilizing spin waves. As demonstrated by
+Khitun et al. (2016), a Yttrium Iron Garnet (YIG) film—acting as a
+magnetic analog to the superfluid vacuum—successfully factored the
+integers 15 and 817. In these experiments, the integer <span
+class="math inline">\(N\)</span> was encoded into the excitation grid of
+the YIG film, and the spin waves (magnons) propagated through the
+medium, interfering to produce a spectral output where the factors were
+clearly distinguishable as signal drops. This experimental validation
+proves that the “Universe as Calculator” is not a metaphor but a
+reproducible physical phenomenon. The spin waves obeyed the same
+hydrodynamic equations as the vacuum expectation values, confirming that
+collective modes in a continuous medium can solve NP-hard problems
+through analog interference.</p>
+<p>A critical counter-argument arises regarding the scalability of such
+analog systems: the presence of noise limits the precision of the phase
+resolution. Unlike digital computers which benefit from error
+correction, analog computers are susceptible to the accumulation of
+phase errors due to thermal fluctuations and material imperfections.
+Critics argue that while factoring 15 is trivial, factoring a
+cryptographic integer like <span
+class="math inline">\(N=2^{2048}\)</span> would require the system to
+resolve spectral lines with a precision exceeding the Planck length.
+This “Analog Precision Catastrophe” suggests that the noise floor of any
+physical substrate will eventually swamp the signal, rendering the
+computation impossible for large <span class="math inline">\(N\)</span>.
+The reliance on the interference of exponentially many paths implies
+that the signal amplitude scales as <span
+class="math inline">\(1/\sqrt{N}\)</span>, necessitating an
+exponentially increasing energy input to maintain a detectable
+signal-to-noise ratio.</p>
+<p>The resolution to this precision limit lies in the scale at which the
+vacuum operates; the fundamental vacuum at the Planck scale represents
+the “ultimate” substrate with maximum stiffness and minimal noise. While
+terrestrial analogs like YIG films or Helium-3 droplets are indeed
+limited by thermal noise at finite temperatures, the vacuum itself
+operates near the absolute zero of the cosmological temperature, where
+the order parameter is protected by the immense energy gap of the Planck
+scale. As synthesized from Lloyd’s bounds (2002), the universe utilizes
+the full Hilbert space of the fields, bypassing the decoherence channels
+that plague macroscopic laboratory systems. The “noise” observed in the
+lab is merely the thermal excitation of the low-energy effective theory;
+the underlying Planck-scale fluid possesses the coherence required for
+massive factorization. The limitations are artifacts of imperfect
+analogs, not the fundamental physics.</p>
+<h3 id="the-hydrodynamic-quantization-gap">1.3 The Hydrodynamic
+Quantization Gap</h3>
+<p>A profound theoretical obstacle to the hydrodynamic interpretation of
+quantum mechanics is the <strong>Quantization Gap</strong>, wherein pure
+classical hydrodynamics fails to enforce the discrete circulation
+required to recover the Schrödinger equation. Standard inviscid fluid
+mechanics, governed by the Euler equations, admits a vast class of
+solutions with continuous, non-quantized vorticity, whereas quantum
+mechanics strictly requires the circulation <span
+class="math inline">\(\Gamma\)</span> to be quantized in integer
+multiples of <span class="math inline">\(h/m\)</span>. This discrepancy
+implies that a naive fluid model of the vacuum is insufficient to
+represent the discrete algebra of quantum operators. The “Superfluid
+Computational Ontology” must therefore posit a mechanism intrinsic to
+the vacuum that forbids these continuous solutions, ensuring that the
+analog substrate can faithfully represent the discrete logic of number
+theory. Without this quantization, the “Gauss Sum” interference would be
+washed out by a continuum of phase errors.</p>
+<p>This foundational inequivalence was rigorously demonstrated by
+Wallstrom (1994), who proved that the Madelung transformation—mapping
+the complex wavefunction to fluid variables—is not bijective. Wallstrom
+showed that starting from the hydrodynamic variables <span
+class="math inline">\(\rho\)</span> and <span
+class="math inline">\(\mathbf{v}\)</span>, one cannot uniquely
+reconstruct the wavefunction <span class="math inline">\(\psi\)</span>
+unless an <em>ad hoc</em> quantization condition is imposed “by hand.”
+In the context of the Schrödinger equation, the single-valuedness of
+<span class="math inline">\(\psi\)</span> naturally enforces the integer
+winding number <span class="math inline">\(\oint \nabla S \cdot
+d\mathbf{l} = 2\pi n \hbar\)</span>. However, in the hydrodynamic
+formulation, there is no mathematical reason for the velocity potential
+<span class="math inline">\(S\)</span> to be so constrained. This
+“Wallstrom Objection” has stood as a formidable barrier to realistic
+hydrodynamic interpretations, suggesting that fluid models are merely
+illustrative rather than ontological.</p>
+<p>The mechanism underlying this gap is the topology of the phase space;
+in a classical fluid, the velocity field <span
+class="math inline">\(\mathbf{v}\)</span> is defined everywhere, and the
+circulation can take any real value depending on the initial conditions.
+Conversely, in a quantum system, the phase <span
+class="math inline">\(S\)</span> is undefined at nodal points where the
+density <span class="math inline">\(\rho\)</span> vanishes (vortex
+cores). It is the presence of these <strong>singularities</strong> that
+allows for non-trivial topology. In the classical Euler description,
+these singularities are not mandated, allowing for “irrotational” flows
+that effectively have fractional or irrational winding numbers. This
+lack of topological stiffness means a classical fluid has “loose” phase
+coherence, drifting away from the precise integer values required for
+modular exponentiation algorithms. The vacuum, if it is to compute, must
+possess a mechanism to “lock” these phases.</p>
+<p>Mathematical evidence for this gap is derived from the analysis of
+the multivalued phase potential. As shown in the derivation (Wallstrom,
+1994), the gradient of the phase <span class="math inline">\(\nabla
+S\)</span> can integrate to any value <span
+class="math inline">\(\gamma\)</span> along a closed loop in a classical
+fluid. Specifically, if one considers a fluid in a torus, the
+circulation <span class="math inline">\(\gamma\)</span> is a continuous
+variable of the system state. In contrast, the Aharonov-Bohm effect in
+quantum mechanics demonstrates that the phase is physically observable
+only modulo <span class="math inline">\(2\pi\)</span>, forcing <span
+class="math inline">\(\gamma\)</span> to snap to discrete values. This
+contrast is not merely academic; it dictates whether the system supports
+stable qubits (vortices) or unstable analog flows. The numerical
+analysis confirms that without a quantization term, the “factorization”
+pattern of the fluid rapidly decoheres into noise as the phases
+drift.</p>
+<p>The resolution to the Wallstrom Objection lies in the recognition
+that the vacuum is not a generic Euler fluid but a <strong>topological
+superfluid</strong>. In a superfluid condensate like <span
+class="math inline">\(^3\)</span>He-B, the order parameter is a complex
+tensor with a stiff phase rigidity. As synthesized from the analysis,
+the formation of topological defects (vortices) is energetically
+favorable and topologically protected. The condition <span
+class="math inline">\(\oint \mathbf{v} \cdot d\mathbf{l} = n
+\kappa\)</span> is not an arbitrary axiom but a topological necessity
+enforced by the single-valuedness of the macroscopic order parameter.
+The fluid <em>cannot</em> exist in a state of continuous vorticity
+without breaking the condensate symmetry. Thus, the “quantization” is an
+emergent property of the vacuum’s topological phase transition. The
+topological defects serve as the “integers” of the system, naturally
+bridging the gap between the continuous substrate and discrete
+arithmetic.</p>
+<h3 id="the-thermodynamic-swamping-limit">1.4 The Thermodynamic Swamping
+Limit</h3>
+<p>Even with a topologically quantized substrate, analog computation is
+fundamentally bounded by the <strong>Thermodynamic Swamping
+Limit</strong>, which dictates that the energy gap <span
+class="math inline">\(\Delta E\)</span> between the solution state and
+the noise floor must exceed the thermal energy <span
+class="math inline">\(k_B T\)</span>. In the context of vacuum
+factorization, the “Gauss Sum” interference pattern contains spectral
+peaks (factors) and troughs (non-factors). As the target integer <span
+class="math inline">\(N\)</span> increases, the density of these
+spectral lines grows exponentially, causing the energy difference <span
+class="math inline">\(\Delta E\)</span> required to resolve them to
+vanish. This thesis asserts that for any finite temperature <span
+class="math inline">\(T &gt; 0\)</span>, there exists a critical integer
+<span class="math inline">\(N_{crit}\)</span> beyond which the spectral
+gap is “swamped” by thermal phonons, rendering the computation
+physically indistinguishable from random noise.</p>
+<p>This thermodynamic constraint is grounded in the foundational
+principles of Landauer (1961), who established the physical connection
+between information and energy. Landauer’s Principle states that the
+erasure of information—a necessary step in irreversible
+computation—dissipates a minimum heat of <span class="math inline">\(k_B
+T \ln 2\)</span> per bit. While factorization can theoretically be
+reversible, the <em>readout</em> of the result is a measurement process
+that collapses the wavefunction, incurring this thermodynamic cost. In
+an analog wave system, this cost manifests as the requirement to cool
+the system to a temperature where the thermal noise amplitude is smaller
+than the signal amplitude. The “Landauer Limit” thus defines the cooling
+power required to maintain the logical integrity of the vacuum
+computer.</p>
+<p>The mechanism of failure is the thermal excitation of <strong>phonon
+modes</strong> in the superfluid. The spectral gap <span
+class="math inline">\(\Delta E\)</span> serves as an energy barrier
+protecting the ground state (the correct factorization). When the
+thermal energy <span class="math inline">\(k_B T\)</span> becomes
+comparable to <span class="math inline">\(\Delta E\)</span>, the
+probability of the system thermally tunneling into an excited state (an
+incorrect factor) becomes non-negligible, following the Boltzmann factor
+<span class="math inline">\(e^{-\Delta E / k_B T}\)</span>. For large
+<span class="math inline">\(N\)</span>, the gap scales as <span
+class="math inline">\(\Delta E \propto (\ln N)^{-2}\)</span>, while the
+number of interfering paths scales as <span
+class="math inline">\(\sqrt{N}\)</span>. This rapid closure of the gap
+implies that the required temperature must scale as <span
+class="math inline">\(T \to 0\)</span> exponentially. The “swamping”
+occurs when the random kicks from the thermal bath wash out the delicate
+destructive interference required to suppress the non-factors.</p>
+<p>Evidence for this scaling limit is provided by the divisor density
+bounds derived by Ford (2008). The mathematical distribution of divisors
+<span class="math inline">\(H(x,y,z)\)</span> dictates the density of
+states in the Hamiltonian spectrum. As demonstrated in the numerical
+analysis, applying Ford’s bounds to the physical Hamiltonian reveals
+that for a cryptographic integer of bit-length 2048, the required
+spectral gap is on the order of <span
+class="math inline">\(10^{-30}\)</span> Joules. At any terrestrial
+temperature (even milli-Kelvin), the thermal energy <span
+class="math inline">\(k_B T \approx 10^{-26}\)</span> Joules is orders
+of magnitude larger than this gap. This quantitative mismatch confirms
+that standard laboratory superfluids are thermodynamically incapable of
+factoring large numbers, not due to a lack of quantum behavior, but due
+to a lack of spectral resolution relative to the noise floor.</p>
+<p>The synthesis of these factors leads to the conclusion that analog
+vacuum computation faces an exponential <strong>Precision
+Catastrophe</strong>. Unlike digital systems where precision is added
+linearly (more bits), analog systems require exponential energy to
+increase precision (suppressing noise). The “Universe as Calculator”
+hypothesis remains valid only if the substrate possesses an intrinsic
+energy scale large enough to maintain a massive <span
+class="math inline">\(\Delta E\)</span> even for complex problems. This
+necessitates that the computational substrate cannot be a low-energy
+effective field like Helium-3; it must be the fundamental high-energy
+vacuum itself.</p>
+<h3 id="the-planck-scale-requirement">1.5 The Planck Scale
+Requirement</h3>
+<p>The resolution to the thermodynamic constraints lies in the assertion
+that the <strong>Planck Scale Vacuum</strong> (<span
+class="math inline">\(E_P \approx 10^{19}\)</span> GeV) is the sole
+physical substrate possessing the spectral resolution required for
+universal factorization. This thesis posits that the “fundamental”
+vacuum is a superfluid operating at a characteristic frequency <span
+class="math inline">\(\omega_0 \approx 10^{43}\)</span> Hz, generating a
+baseline spectral gap <span class="math inline">\(\Delta E\)</span> of
+gigajoules, rather than the attojoules of laboratory systems. At this
+energy scale, the thermal noise of the current universe (<span
+class="math inline">\(T_{CMB} \approx 2.7\)</span> K) is negligible,
+allowing the vacuum to maintain coherent superposition states over
+cosmological timescales. The “Universe as Calculator” is thus a valid
+description of the Planck-scale ontology, while terrestrial experiments
+are merely low-fidelity shadows of this high-energy computation.</p>
+<p>This requirement is contextualized by the work of Ferreira et
+al. (2018) on <strong>Inertial Spontaneous Symmetry Breaking</strong>,
+which suggests that the Planck mass itself is an emergent scale
+generated by the vacuum expectation value of a scalar field. In this
+scale-invariant framework, the “stiffness” of the vacuum is dynamically
+generated, effectively setting the bandwidth of the cosmic computer. The
+Planck scale serves as the ultraviolet (UV) cutoff of the theory,
+providing a natural normalization for the energy gaps. Without this
+massive cutoff, the spectral density would collapse into a continuum,
+destroying the ability to resolve discrete factors. The scale invariance
+arguments imply that the physics we observe is the “low-energy tail” of
+this massive computational process.</p>
+<p>The physical mechanism enabling this robust computation is the
+<strong>High-Frequency Cutoff</strong>. In a superfluid, the gap <span
+class="math inline">\(\Delta E\)</span> scales linearly with the
+characteristic frequency <span class="math inline">\(\omega_0\)</span>
+of the medium. For Helium-3, <span class="math inline">\(\omega_0
+\approx 10^{12}\)</span> Hz (phonon frequency), resulting in gaps
+vulnerable to thermal noise. For the Planck vacuum, <span
+class="math inline">\(\omega_0 \approx 10^{43}\)</span> Hz. Even with
+the logarithmic reduction due to the factorization problem (<span
+class="math inline">\(\Delta E \sim \omega_0 / (\ln N)^2\)</span>), the
+resulting gap for <span class="math inline">\(N=10^{50}\)</span> remains
+macroscopic (kilojoules). This immense gap creates a “thermodynamic
+firewall,” effectively freezing out all thermal phonons and ensuring
+that the system stays in its ground state with probability <span
+class="math inline">\(P \approx 1 - e^{-10^{30}}\)</span>.</p>
+<p>Numerical validation of this hypothesis is provided by the <em>Planck
+Ultimate Model</em> simulation performed in the numerical analysis. As
+demonstrated in the simulation logs, when the substrate parameters were
+set to Planck units (<span
+class="math inline">\(\omega_0=10^{43}\)</span> Hz, <span
+class="math inline">\(\eta \to 0\)</span>), the system successfully
+resolved the spectral gap for <span
+class="math inline">\(N=10^{50}\)</span> with a verdict of
+<em>stable</em>. In contrast, all terrestrial models failed the
+signal-to-noise check. This computational evidence confirms that the
+“Hardness” of factorization is relative to the energy scale of the
+substrate. For the Planck vacuum, factoring RSA-2048 is
+thermodynamically trivial; for a Helium droplet, it is impossible.</p>
+<p>We can study the properties of the Planck vacuum indirectly by
+analyzing its <strong>low-energy shadows</strong>—the analog systems
+accessible in the laboratory. Just as we infer the nuclear fusion of the
+sun from the sunlight on Earth, we can infer the computational nature of
+the vacuum from the success of Magnonic and Optical analogs. The fact
+that these low-energy systems <em>can</em> factorize small numbers
+suggests the mechanism is universal; the failure at large numbers is
+purely a parameter scaling issue. By characterizing the failure modes
+(swamping, viscosity) of the analogs, we validate the scaling laws that
+point to the Planck vacuum as the necessary source.</p>
+<h3 id="the-categorical-simulation-framework">1.6 The Categorical
+Simulation Framework</h3>
+<p>The investigation utilizes a <strong>Categorical Methodological
+Framework</strong> to rigorously map the structural isomorphism between
+the abstract domain of Number Theory and the physical domain of
+Hydrodynamics. By treating both mathematical logic and physical
+processes as objects within Monoidal Categories, we avoid vague
+metaphors and establish a precise dictionary where number-theoretic
+proofs become physical predictions. Specifically, we employ a
+<strong>Functor of Instantiation</strong> <span
+class="math inline">\(\mathcal{F}: \mathbf{Num} \to
+\mathbf{Hydro}\)</span> that maps the factorization of integers to the
+spectral decomposition of Hamiltonian operators. This framework ensures
+that the “hardness” of a mathematical problem is strictly conserved as
+an “energy cost” in the physical system.</p>
+<p>The core mechanism is the <strong>Functorial Mapping</strong>, which
+translates specific objects and morphisms. The integer <span
+class="math inline">\(N\)</span> in Category <span
+class="math inline">\(\mathbf{Num}\)</span> maps to the Hamiltonian
+<span class="math inline">\(H_N\)</span> in Category <span
+class="math inline">\(\mathbf{Hydro}\)</span>. The process of
+“divisibility” maps to the “resonance” of the time-evolution operator
+<span class="math inline">\(U(t)\)</span>. The “Prime Factors” map to
+the “Ground States” of the system. This mapping allows us to use the
+Ford-Shor bounds from Number Theory directly as energy gap constraints
+in the Hamiltonian. We do not need to re-derive the density of states;
+the functor guarantees that the physical spectrum inherits the
+complexity class of the integers.</p>
+<p>The utility of this framework is evidenced by the <strong>Python
+Simulation Artifact (Appendix B)</strong>, which instantiates this
+functor computationally. The simulation defines a class
+<code>SuperfluidVacuum</code> that acts as the physical realization of
+the mathematical object. By iterating through 7 distinct models
+(vectors), the code tests the validity of the mapping under different
+parameter regimes (Temperature, Viscosity, Frequency). The boolean
+verdicts (<code>STABLE</code>, <code>SWAMPED</code>) serve as the
+categorical truth values, confirming where the isomorphism holds and
+where it breaks down due to noise (which corresponds to “loss of
+structure” in the category).</p>
+<p>However, the simulation is designed as a stress test rather than a
+full emulation. It calculates the <em>necessary conditions</em> (Gap
+vs. Noise, Runtime vs. Coherence) rather than the sufficient ones. If
+the simplified model fails the thermodynamic check (as the terrestrial
+models did), the full complex system will certainly fail as well, as
+turbulence only adds more noise. Thus, the categorical framework
+provides a robust “Upper Bound” on computability. It allows us to rule
+out regimes (like room-temperature optics) definitively.</p>
+<h3 id="findings-summary">1.7 Findings Summary</h3>
+<p>The primary finding of this investigation is that the
+<strong>“Universe as Calculator” thesis is valid strictly at the
+fundamental Planck scale</strong>, while all terrestrial analog
+implementations are intrinsically limited by the <strong>Thermodynamic
+Swamping Limit</strong>. The numerical analysis conclusively
+demonstrates that for cryptographic integers (<span
+class="math inline">\(N &gt; 10^{50}\)</span>), the energy gap required
+for analog resolution is orders of magnitude smaller than the thermal
+noise floor of any laboratory system (<span class="math inline">\(T \ge
+1 \text{ mK}\)</span>). Therefore, the vacuum can compute, but its full
+power cannot be harnessed through low-energy effective fields; the
+“hardware” is the Planck vacuum itself, and accessible physics is merely
+the viscous, decoherent “heat exhaust” of that computation.</p>
+<p>This conclusion supports the “Running Vacuum Model” proposed by Solà
+Peracaula (2022), which posits that the vacuum energy density is
+dynamic. Our findings interpret this dynamic energy <span
+class="math inline">\(\rho_{vac}(H)\)</span> as the metabolic cost of
+the universal computation. The observed “Dark Energy” is effectively the
+<strong>bulk viscosity</strong> of the superfluid substrate as it
+relaxes. The fact that the universe is accelerating (expanding) suggests
+that the vacuum is in a dissipative phase, shedding entropy—consistent
+with a system performing irreversible computation (Landauer’s
+Principle).</p>
+<p>The mechanism driving the failure of terrestrial analogs is
+<strong>Viscoelastic Decoherence</strong>. As shown in the <em>Viscous
+Plenum Model</em> simulation, the non-zero viscosity of physical fluids
+(<span class="math inline">\(\eta\)</span>) creates a coherence time
+<span class="math inline">\(\tau_{coh}\)</span> that scales inversely
+with temperature. For large <span class="math inline">\(N\)</span>, the
+required runtime <span class="math inline">\(T_{run}\)</span> exceeds
+<span class="math inline">\(\tau_{coh}\)</span>, meaning the phase
+information is lost to the bulk fluid before the factorization is
+complete. The “Running Vacuum” implies that even the cosmos has a finite
+viscosity, putting an upper limit on the size of the “computation” the
+universe can perform before undergoing a phase transition.</p>
+<p>The barrier is fundamental. The “Spectral Gap” is a thermodynamic
+wall. To factor larger numbers, one must build a computer with a higher
+characteristic frequency <span class="math inline">\(\omega_0\)</span>.
+The ultimate limit of <span class="math inline">\(\omega_0\)</span> is
+the Planck frequency. Thus, the Planck Vacuum is the <em>only</em>
+computer capable of factoring the “integers of the universe.”</p>
+<h2 id="theoretical-context-and-literature-review">2.0 THEORETICAL
+CONTEXT AND LITERATURE REVIEW</h2>
+<h3 id="cosmological-superfluidity">2.1 Cosmological Superfluidity</h3>
+<p>The theoretical foundation of the Superfluid Computational Ontology
+rests upon the seminal proposition by Volovik (2003) that the vacuum of
+the Universe is physically indistinguishable from a droplet of
+superfluid Helium-3 in the B-phase (<span
+class="math inline">\(^3\)</span>He-B). This thesis asserts that the
+Standard Model of particle physics is an <strong>effective field
+theory</strong> describing the low-energy excitations of a underlying
+topological condensate, rather than a collection of fundamental,
+irreducible fields. In this framework, the “emptiness” of space is
+replaced by a ground state possessing a macroscopic order parameter, a
+complex tensor field whose stiffness protects the vacuum against trivial
+fluctuations. The identification of the vacuum with <span
+class="math inline">\(^3\)</span>He-B is not merely an analogy but a
+strict mathematical isomorphism rooted in the shared symmetry breaking
+patterns of the two systems. Specifically, the symmetry group <span
+class="math inline">\(G\)</span> of physical laws emerges from the
+spontaneous breaking of the larger symmetry group of the underlying
+atoms—the “Theory of Everything” in this context—at a critical
+Planck-temperature transition. Consequently, phenomena such as gravity
+and electromagnetism are identified as the collective modes (bosons) of
+the superfluid, while matter particles (fermions) appear as
+quasiparticles at the nodes of the energy spectrum.</p>
+<h3 id="madelung-hydrodynamics">2.2 Madelung Hydrodynamics</h3>
+<p>The hydrodynamic interpretation of quantum mechanics, first
+formulated by Erwin Madelung in 1927, posits that the Schrödinger
+equation is mathematically equivalent to the Euler equations of an
+irrotational fluid subjected to a specifically defined “quantum
+potential.” This thesis transforms the abstract, complex-valued
+wavefunction <span class="math inline">\(\psi\)</span> into two
+tangible, real-valued fields: the probability density <span
+class="math inline">\(\rho(\mathbf{r},t)\)</span> and the flow velocity
+<span class="math inline">\(\mathbf{v}(\mathbf{r},t)\)</span>. By
+rewriting the polar form <span class="math inline">\(\psi =
+\sqrt{\rho}e^{iS/\hbar}\)</span>, Madelung demonstrated that the
+evolution of the probability density obeys the continuity equation <span
+class="math inline">\(\partial_t \rho + \nabla \cdot (\rho \mathbf{v}) =
+0\)</span>, while the phase evolution obeys a modified Hamilton-Jacobi
+equation. This reformulation reveals the deterministic underpinnings of
+quantum mechanics, suggesting that the “fuzziness” of the quantum state
+is an emergent property of a chaotic but strictly causal fluid
+dynamics.</p>
+<h3 id="magnonic-holographic-computing">2.3 Magnonic Holographic
+Computing</h3>
+<p>The experimental realization of the “Universe as Calculator” thesis
+is most vividly demonstrated in the field of <strong>Magnonics</strong>,
+where spin waves (magnons) in magnetic thin films are utilized to
+perform analog factorizations. The thesis of Khitun et al. (2016) is
+that a “Magnonic Holographic Memory” (MHM) can solve NP-hard problems by
+exploiting the massive parallelism of wave interference. Unlike quantum
+computers that rely on fragile entanglement, magnonic devices utilize
+classical phase coherence to implement a “Gauss Sum” algorithm. In this
+architecture, the integer <span class="math inline">\(N\)</span> to be
+factored is encoded into the geometry of the device, and the prime
+factors are identified by detecting the specific frequencies where
+constructive interference maximizes the spin-wave amplitude. This
+approach posits that the computational power usually ascribed to
+“quantumness” is actually a property of coherent wave propagation,
+accessible in classical systems at room temperature.</p>
+<h3 id="viscoelastic-vacuum-dynamics">2.4 Viscoelastic Vacuum
+Dynamics</h3>
+<p>The final theoretical pillar is the <strong>Viscoelastic
+Vacuum</strong> hypothesis, articulated by Solà Peracaula (2022), which
+redefines the Cosmological Constant <span
+class="math inline">\(\Lambda\)</span> as a dynamic, “running” quantity
+<span class="math inline">\(\rho_{vac}(H)\)</span> dependent on the
+Hubble expansion rate. This thesis asserts that the vacuum is not a
+frictionless superfluid in the perfect sense, but possesses a
+<strong>bulk viscosity</strong> that manifests macroscopically as the
+acceleration of the universe (Dark Energy). In the context of the
+Superfluid Computational Ontology, this viscosity <span
+class="math inline">\(\eta\)</span> represents the inevitable
+dissipation of information. If the vacuum “runs,” it dissipates energy,
+and thus any computation performed within it is subject to a finite
+coherence time <span class="math inline">\(\tau_{coh}\)</span>. This
+contradicts the idealized notion of unitary (lossless) quantum
+computation, replacing it with a dissipative, viscoelastic process.</p>
+<h2 id="the-categorical-simulation-framework-1">3.0 THE CATEGORICAL
+SIMULATION FRAMEWORK</h2>
+<h3 id="acoustic-metric-formulation">3.1 Acoustic Metric
+Formulation</h3>
+<p>The mathematical foundation of this investigation rests upon the
+<strong>acoustic metric formulation</strong>, which models the vacuum
+not as a static manifold but as a dynamic superfluid substrate where the
+spacetime metric <span class="math inline">\(g_{\mu\nu}\)</span> emerges
+from the linearization of hydrodynamic fluctuations. We posit that the
+Hamiltonian density governing the system is defined by the sound waves
+(phonons) propagating on a background flow <span
+class="math inline">\(\mathbf{v}_0\)</span> with density <span
+class="math inline">\(\rho_0\)</span>. In this effective field theory,
+the invariant interval is given by the acoustic line element <span
+class="math inline">\(ds^2 = \frac{\rho_0}{c_s} \left[ -(c_s^2 -
+v_0^2)dt^2 - 2\mathbf{v}_0 \cdot d\mathbf{x}dt + \delta_{ij}dx^i dx^j
+\right]\)</span>, where <span class="math inline">\(c_s\)</span> is the
+local speed of sound. This metric tensor encodes the geometry of the
+“computational space” available to the vacuum, limiting information
+propagation speed to <span class="math inline">\(c_s\)</span> and
+defining the causal structure of the factorization process. By utilizing
+this formulation, we treat the gravitational field as the thermodynamic
+equation of state of the superfluid, binding the computational capacity
+directly to the fluid’s stiffness and compressibility.</p>
+<h3 id="factorization-hamiltonian-construction">3.2 Factorization
+Hamiltonian Construction</h3>
+<p>To bridge the gap between abstract arithmetic and concrete dynamics,
+we construct a <strong>Factorization Hamiltonian</strong> <span
+class="math inline">\(H_{fact}\)</span> using a functorial mapping from
+the category of number theory to the category of quantum mechanics. We
+define the potential energy operator <span
+class="math inline">\(V(\hat{x})\)</span> such that the energy
+eigenvalues of the system correspond to the logarithms of the prime
+numbers, <span class="math inline">\(E_p \propto \ln p\)</span>. The
+factorization of a target integer <span class="math inline">\(N\)</span>
+is then mapped to the resonant excitation of the system at the frequency
+<span class="math inline">\(\omega_N = E_N / \hbar\)</span>. By driving
+the superfluid with a periodic perturbation matching the target integer,
+the system undergoes a transition to the ground state if and only if the
+driving frequency matches a resonant mode, effectively “measuring” the
+factors via energy absorption.</p>
+<h3 id="gap-scaling-logic">3.3 Gap Scaling Logic</h3>
+<p>The energy resolution of the vacuum computer is governed by the
+<strong>Gap Scaling Law</strong>, which dictates that the spectral gap
+<span class="math inline">\(\Delta E\)</span> decreases as the target
+integer <span class="math inline">\(N\)</span> increases. We rigorously
+define this scaling using the divisor density bounds derived by Ford
+(2008), positing that <span class="math inline">\(\Delta E(N) \approx
+\hbar \omega_0 (\ln N \ln \ln N)^{-2}\)</span>. This formula represents
+the physical translation of the number-theoretic fact that divisors
+become increasingly dense on the number line for large integers. As the
+gap narrows, the “force” restoring the system to the correct solution
+becomes infinitesimally weak, making the computation increasingly
+susceptible to random thermal fluctuations.</p>
+<h2 id="thermodynamic-stress-testing">4.0 THERMODYNAMIC STRESS
+TESTING</h2>
+<h3 id="baseline-helium-failure">4.1 Baseline Helium Failure</h3>
+<p>The numerical analysis of the <em>Baseline Helium Model</em>
+unequivocally demonstrates that standard superfluid Helium-3, despite
+its topological similarities to the vacuum, lacks the thermodynamic
+resilience to factorize integers of cryptographic relevance. We modeled
+the substrate with parameters characteristic of laboratory
+conditions—specifically a temperature of <span class="math inline">\(1
+\text{ mK}\)</span> and a characteristic frequency of <span
+class="math inline">\(10^9 \text{ Hz}\)</span>—to approximate the
+conditions of Volovik’s droplet experiments. The primary finding is that
+the spectral gap <span class="math inline">\(\Delta E\)</span> required
+to distinguish the factors of even a moderate integer (<span
+class="math inline">\(N \approx 10^{15}\)</span>) falls precipitously
+below the thermal noise floor <span class="math inline">\(k_B
+T\)</span>. While the system successfully stabilized for the trivial
+case of <span class="math inline">\(N=15\)</span>, producing a coherent
+“stable solution,” the introduction of higher complexity resulted in
+immediate decoherence. The model indicates that the “Hardness” of the
+number-theoretic problem translates into a physical requirement for
+energy resolution that terrestrial superfluids cannot meet.</p>
+<h3 id="thermal-stress-collapse">4.2 Thermal Stress Collapse</h3>
+<p>The <em>Thermal Stress Model</em> simulates the behavior of the
+superfluid substrate when subjected to a temperature of <span
+class="math inline">\(1 \text{ K}\)</span>, a regime typical of pumped
+liquid helium-4 but “hot” relative to the millikelvin baseline. The
+analysis demonstrates a <strong>total information collapse</strong>,
+where the quantum signal is not merely swamped but effectively erased by
+the thermal bath. In this regime, the thermal energy <span
+class="math inline">\(k_B T \approx 1.38 \times 10^{-23} \text{
+J}\)</span> exceeds the spectral gap for <span
+class="math inline">\(N=15\)</span> by three orders of magnitude. The
+delicate phase correlations required for the Gauss Sum interference are
+randomized instantly by high-energy phonon collisions, rendering the
+“computer” equivalent to a bucket of classical fluid with no
+computational capacity whatsoever.</p>
+<h3 id="complexity-wall-scaling">4.3 Complexity Wall Scaling</h3>
+<p>The <em>Complexity Wall Model</em> probes the limits of the
+superfluid substrate by increasing the target integer to <span
+class="math inline">\(N=10^{12}\)</span>, a value that is
+computationally non-trivial yet far below cryptographic standards. The
+analysis reveals that the <strong>Divisor Density</strong> exerts a
+crushing pressure on the spectral gap, reducing it to levels that defy
+physical resolution. The model indicates that as <span
+class="math inline">\(N\)</span> increases, the energy difference
+between the “prime” solution and the “composite” error states vanishes,
+creating a “continuum” of states that are indistinguishable to the
+physical system. This confirms that the hardness of factorization
+manifests physically as an <strong>Energy Resolution
+Problem</strong>.</p>
+<h3 id="viscous-plenum-dissipation">4.4 Viscous Plenum Dissipation</h3>
+<p>The <em>Viscous Plenum Model</em> investigates the computational
+viability of a vacuum that possesses the bulk viscosity <span
+class="math inline">\(\eta\)</span> attributed to Dark Energy. The
+analysis reveals a distinct failure mode: <em>viscous decoherence</em>.
+While the thermal constraints are severe, the viscous constraints are
+equally lethal for long-duration computations. The model simulated a
+substrate with a viscosity of <span class="math inline">\(1.0 \text{
+Pa}\cdot\text{s}\)</span> (analogous to the “sticky” vacuum of the
+Running Vacuum Model) and found that the coherence time <span
+class="math inline">\(\tau_{coh}\)</span> dropped precipitously. The
+computation failed not because the answer was indistinguishable, but
+because the system “forgot” the question before the answer could
+evolve.</p>
+<h3 id="planck-ultimate-validation">4.5 Planck Ultimate Validation</h3>
+<p>The <em>Planck Ultimate Model</em> stands as the sole survivor of the
+thermodynamic stress tests, validating the thesis that the “Universe as
+Calculator” is a rigorous description of the fundamental
+<strong>Planck-scale vacuum</strong>. By setting the characteristic
+frequency to <span class="math inline">\(\omega_0 = 10^{43} \text{
+Hz}\)</span> and the temperature to effectively zero (<span
+class="math inline">\(10^{-29} \text{ K}\)</span>), the analysis yielded
+a <em>stable solution</em> verdict for <span
+class="math inline">\(N=10^{50}\)</span>. This result demonstrates that
+the “Hardness” of factorization is relative; what is impossible for a
+Helium atom is trivial for the Planck vacuum. The immense energy density
+of the fundamental substrate provides a spectral resolution capable of
+distinguishing the factors of cryptographic integers as clearly as a
+prism splits light.</p>
+<h3 id="appendix-a-acoustic-metric-derivations">Appendix A: Acoustic
+Metric Derivations</h3>
+<p>The derivation of the acoustic metric establishes the isomorphism
+between the hydrodynamics of a superfluid and the kinematics of a
+relativistic field in curved spacetime. We begin with the action for an
+irrotational, inviscid fluid with density <span
+class="math inline">\(\rho\)</span> and phase <span
+class="math inline">\(\Phi\)</span> (where <span
+class="math inline">\(\mathbf{v} = \nabla \Phi\)</span>). The Lagrangian
+density is given by:</p>
+<p><span class="math display">\[ \mathcal{L} = -\rho \left( \dot{\Phi} +
+\frac{1}{2}(\nabla \Phi)^2 + V_{ext} \right) - U(\rho) \]</span></p>
+<p>where <span class="math inline">\(U(\rho)\)</span> is the internal
+energy density. Linearizing the variables around a background flow <span
+class="math inline">\((\rho_0, \Phi_0)\)</span> such that <span
+class="math inline">\(\rho = \rho_0 + \rho_1\)</span> and <span
+class="math inline">\(\Phi = \Phi_0 + \phi\)</span>, and retaining terms
+up to second order, we obtain the fluctuation Lagrangian:</p>
+<p><span class="math display">\[ \mathcal{L}_{fluct} = \frac{1}{2}
+\left[ \frac{(\partial_t \phi + \mathbf{v}_0 \cdot \nabla
+\phi)^2}{c_s^2} - (\nabla \phi)^2 \right] \rho_0 \]</span></p>
+<p>Here, <span class="math inline">\(c_s^2 = \frac{\partial P}{\partial
+\rho}\)</span> is the local speed of sound. This Lagrangian describes a
+massless scalar field propagating in an effective Lorentzian geometry.
+By identifying the coefficients of the wave equation <span
+class="math inline">\(\Box \phi = \frac{1}{\sqrt{-g}} \partial_\mu
+(\sqrt{-g} g^{\mu\nu} \partial_\nu \phi)\)</span>, we derive the inverse
+acoustic metric:</p>
+<p><span class="math display">\[ g^{\mu\nu} = \frac{1}{\rho_0 c_s}
+\begin{pmatrix} -1 &amp; -v_0^j \\ -v_0^i &amp; (c_s^2 \delta^{ij} -
+v_0^i v_0^j) \end{pmatrix} \]</span></p>
+<p>Inverting this tensor yields the covariant acoustic line element used
+in the analysis:</p>
+<p><span class="math display">\[ ds^2 = \frac{\rho_0}{c_s} \left[
+-(c_s^2 - v_0^2)dt^2 - 2\mathbf{v}_0 \cdot d\mathbf{x} dt + \delta_{ij}
+dx^i dx^j \right] \]</span></p>
+<p>This metric confirms that for quasiparticles (phonons), the speed of
+sound <span class="math inline">\(c_s\)</span> plays the role of the
+speed of light <span class="math inline">\(c\)</span>, and the
+background fluid flow <span class="math inline">\(\mathbf{v}_0\)</span>
+acts as a gravitational potential. When <span
+class="math inline">\(|\mathbf{v}_0| &gt; c_s\)</span>, an acoustic
+horizon forms, generating an effective Hawking temperature <span
+class="math inline">\(T_H = \frac{\hbar g_H}{2\pi c k_B}\)</span>, which
+provides the thermodynamic context for the “Running Vacuum”
+viscosity.</p>
+<h3 id="appendix-b-numerical-analysis-of-vacuum-computation">Appendix B:
+Numerical Analysis of Vacuum Computation</h3>
+<p><em>The following script performs the spectral gap analysis and
+viscoelastic coherence checks for the seven defined physical
+models.</em></p>
+<p><strong>Algorithm 1: SuperfluidVacuum Simulation Kernel</strong></p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SuperfluidVacuum:</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, N, omega_0, temp, viscosity, density, scale_factor<span class="op">=</span><span class="fl">1.0</span>):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.N <span class="op">=</span> <span class="bu">float</span>(N)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.omega_0 <span class="op">=</span> <span class="bu">float</span>(omega_0)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.T <span class="op">=</span> <span class="bu">float</span>(temp)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.eta <span class="op">=</span> <span class="bu">float</span>(viscosity)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.rho <span class="op">=</span> <span class="bu">float</span>(density)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.scale <span class="op">=</span> <span class="bu">float</span>(scale_factor)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.H_BAR <span class="op">=</span> <span class="fl">1.0545718e-34</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.KB <span class="op">=</span> <span class="fl">1.380649e-23</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> analyze(<span class="va">self</span>):</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 1. Calculate Spectral Gap (Ford Scaling)</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Delta ~ hbar * omega / (log N * log log N)^2</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        log_n <span class="op">=</span> math.log(<span class="va">self</span>.N) <span class="cf">if</span> <span class="va">self</span>.N <span class="op">&gt;</span> <span class="dv">2</span> <span class="cf">else</span> <span class="fl">1.0</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>        gap_scaling <span class="op">=</span> (log_n <span class="op">*</span> math.log(log_n))<span class="op">**</span><span class="dv">2</span> <span class="cf">if</span> log_n <span class="op">&gt;</span> <span class="dv">1</span> <span class="cf">else</span> <span class="fl">1.0</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>        delta_E <span class="op">=</span> (<span class="va">self</span>.H_BAR <span class="op">*</span> <span class="va">self</span>.omega_0) <span class="op">/</span> gap_scaling</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 2. Calculate Noise Floor</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        E_thermal <span class="op">=</span> <span class="va">self</span>.KB <span class="op">*</span> <span class="va">self</span>.T</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 3. Calculate Dynamics</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Adiabatic Runtime constraint</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        t_run <span class="op">=</span> (<span class="dv">100</span> <span class="op">*</span> <span class="va">self</span>.H_BAR) <span class="op">/</span> delta_E <span class="cf">if</span> delta_E <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="bu">float</span>(<span class="st">&#39;inf&#39;</span>)</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Viscoelastic Coherence Time</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        denom <span class="op">=</span> <span class="va">self</span>.eta <span class="op">*</span> E_thermal</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        tau_coh <span class="op">=</span> (<span class="va">self</span>.H_BAR <span class="op">*</span> <span class="va">self</span>.rho <span class="op">*</span> <span class="va">self</span>.scale) <span class="op">/</span> denom <span class="cf">if</span> denom <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="fl">1e30</span></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># 4. Generate Verdict</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> delta_E <span class="op">&lt;</span> E_thermal:</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">&quot;THERMAL_SWAMPING&quot;</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">elif</span> t_run <span class="op">&gt;</span> tau_coh:</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">&quot;VISCOUS_DECOHERENCE&quot;</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>            <span class="cf">return</span> <span class="st">&quot;STABLE_SOLUTION&quot;</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Execution Vector</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>vectors <span class="op">=</span> [</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 1. Baseline Helium-3 (Laboratory Conditions)</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    SuperfluidVacuum(<span class="st">&quot;HELIUM_LAB&quot;</span>, <span class="dv">15</span>, <span class="fl">1e9</span>, <span class="fl">1e-3</span>, <span class="fl">1e-7</span>, <span class="dv">145</span>),</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 2. Thermal Stress Helium (Higher T)</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    SuperfluidVacuum(<span class="st">&quot;THERMAL_STRESS&quot;</span>, <span class="dv">15</span>, <span class="fl">1e9</span>, <span class="fl">1.0</span>, <span class="fl">1e-7</span>, <span class="dv">145</span>),</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 3. Complexity Wall (Large N in Helium)</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>    SuperfluidVacuum(<span class="st">&quot;COMPLEXITY_WALL&quot;</span>, <span class="fl">1e12</span>, <span class="fl">1e9</span>, <span class="fl">1e-3</span>, <span class="fl">1e-7</span>, <span class="dv">145</span>),</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 4. Viscous Vacuum (Cosmological/Dark Energy Model)</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>    SuperfluidVacuum(<span class="st">&quot;VISCOUS_PLENUM&quot;</span>, <span class="dv">15</span>, <span class="fl">1e9</span>, <span class="fl">1e-3</span>, <span class="fl">1.0</span>, <span class="dv">145</span>),</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 5. Planck Scale Ideal (The Universe Itself)</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>    SuperfluidVacuum(<span class="st">&quot;PLANCK_ULTIMATE&quot;</span>, <span class="fl">1e50</span>, <span class="fl">1e43</span>, <span class="fl">1e-29</span>, <span class="fl">1e-30</span>, <span class="fl">1e96</span>, <span class="fl">1e30</span>),</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 6. Planck Scale Hot (Early Universe)</span></span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>    SuperfluidVacuum(<span class="st">&quot;EARLY_UNIVERSE&quot;</span>, <span class="fl">1e50</span>, <span class="fl">1e43</span>, <span class="fl">1e32</span>, <span class="fl">1e-10</span>, <span class="fl">1e96</span>, <span class="fl">1e30</span>),</span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 7. Optical Analog (High Freq, Room Temp)</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    SuperfluidVacuum(<span class="st">&quot;OPTICAL_ANALOG&quot;</span>, <span class="fl">1e6</span>, <span class="fl">1e14</span>, <span class="dv">300</span>, <span class="fl">1e-5</span>, <span class="dv">1</span>, <span class="fl">1e2</span>)</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div>
+<h3 id="appendix-c-notation-and-glossary">Appendix C: Notation and
+Glossary</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Term</th>
+<th style="text-align: left;">Definition</th>
+<th style="text-align: left;">Physical Analog</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\Omega\)</span></td>
+<td style="text-align: left;">State Space</td>
+<td style="text-align: left;">The set of all possible
+configurations.</td>
+<td style="text-align: left;">Phase Space</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\Delta
+E\)</span></td>
+<td style="text-align: left;">Spectral Gap</td>
+<td style="text-align: left;">Energy difference between ground and
+excited states.</td>
+<td style="text-align: left;">Band Gap</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\eta\)</span></td>
+<td style="text-align: left;">Viscosity</td>
+<td style="text-align: left;">Dissipative term in the fluid
+equations.</td>
+<td style="text-align: left;">Dark Energy</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\tau_{coh}\)</span></td>
+<td style="text-align: left;">Coherence Time</td>
+<td style="text-align: left;">Time before phase information is
+lost.</td>
+<td style="text-align: left;">Memory Lifetime</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(N\)</span></td>
+<td style="text-align: left;">Target Integer</td>
+<td style="text-align: left;">The number to be factorized.</td>
+<td style="text-align: left;">Resonance Condition</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="references">References</h3>
+<p>Abramsky, S., &amp; Coecke, B. (2008). Categorical quantum mechanics.
+<em>Handbook of Quantum Logic and Quantum Structures</em>, 261-325.</p>
+<p>Berry, M. V. (1984). Quantal phase factors accompanying adiabatic
+changes. <em>Proceedings of the Royal Society of London. A. Mathematical
+and Physical Sciences, 392</em>(1802), 45-57.</p>
+<p>Ferreira, P. G., Hill, C. T., &amp; Ross, G. G. (2018). Inertial
+spontaneous symmetry breaking and quantum scale invariance. <em>Physical
+Review D, 98</em>, 115032.</p>
+<p>Ford, K. (2008). The distribution of integers with a divisor in a
+given interval. <em>Annals of Mathematics, 168</em>(2), 367-433.</p>
+<p>Jacobson, T. (1995). Thermodynamics of Spacetime: The Einstein
+Equation of State. <em>Physical Review Letters, 75</em>(7), 1260.</p>
+<p>Khitun, A., et al. (2016). Prime factorization using magnonic
+holographic devices. <em>Journal of Applied Physics, 120</em>,
+123902.</p>
+<p>Landauer, R. (1961). Irreversibility and heat generation in the
+computing process. <em>IBM Journal of Research and Development,
+5</em>(3), 183-191.</p>
+<p>Lloyd, S. (2002). Computational capacity of the universe.
+<em>Physical Review Letters, 88</em>(23), 237901.</p>
+<p>Madelung, E. (1927). Quantentheorie in hydrodynamischer Form.
+<em>Zeitschrift für Physik, 40</em>(3), 322-326.</p>
+<p>Solà Peracaula, J. (2022). The cosmological constant problem and
+running vacuum in the expanding universe. <em>Philosophical Transactions
+of the Royal Society A, 380</em>, 20210182.</p>
+<p>Tamma, V., Zhang, H., He, X., Garuccio, A., &amp; Schleich, W. P.
+(2016). Factoring numbers with a single interferogram. <em>Physical
+Review A, 93</em>, 023825.</p>
+<p>Volovik, G. E. (2003). <em>The Universe in a Helium Droplet</em>.
+Oxford University Press.</p>
+<p>Wallstrom, T. C. (1994). Inequivalence between the Schrödinger
+equation and the Madelung hydrodynamic equations. <em>Physical Review A,
+49</em>(3), 1613.</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

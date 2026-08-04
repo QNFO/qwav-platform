@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Proof-of-Concept for Auditable Attention Using Ultrametric Tree Distances | QWAV</title>
+<meta name="description" content="A Proof-of-Concept for Auditable Attention Using Ultrametric Tree Distances Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com ORCID: 0009-0002...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/a-proof-of-concept-for-auditable-attention-using-ultrametric-tree-distances">
+<meta property="og:title" content="A Proof-of-Concept for Auditable Attention Using Ultrametric Tree Distances">
+<meta property="og:description" content="A Proof-of-Concept for Auditable Attention Using Ultrametric Tree Distances Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com ORCID: 0009-0002...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/a-proof-of-concept-for-auditable-attention-using-ultrametric-tree-distances">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "A Proof-of-Concept for Auditable Attention Using Ultrametric Tree Distances",
+  "url": "https://deep.qwav.tech/papers/a-proof-of-concept-for-auditable-attention-using-ultrametric-tree-distances",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2026-04-19T05:28:01Z",
+  "abstract": "A Proof-of-Concept for Auditable Attention Using Ultrametric Tree Distances Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com ORCID: 0009-0002..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1
+id="a-proof-of-concept-for-auditable-attention-using-ultrametric-tree-distances">A
+Proof-of-Concept for Auditable Attention Using Ultrametric Tree
+Distances</h1>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Contact:</strong> <a
+href="mailto:rowan.quni@outlook.com">rowan.quni@outlook.com</a>
+<strong>ORCID:</strong> <a
+href="http://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>
+<strong>ISNI:</strong> <a
+href="http://isni.org/isni/0000000526456062">0000000526456062</a>
+<strong>DOI:</strong> <a
+href="http://doi.org/10.5281/zenodo.19648274">10.5281/zenodo.19648274</a>
+<strong>Date:</strong> 2026-04-19 <strong>Version:</strong> 1.0</p>
+<p><strong>Abstract</strong>: The dominance of high-dimensional
+Euclidean vector spaces in contemporary transformer architectures has
+precipitated an interpretability crisis, as continuous geometric
+embeddings can obscure the causal mechanisms of semantic attention. This
+paper presents a formal proof-of-concept for a structurally rigid
+ultrametric attention mechanism, utilizing a binary-tree proxy encoder
+to deterministically map tokens into a hierarchical space. A
+computational simulation deploying a ten-token synthetic vocabulary
+demonstrates that our ultrametric LCA matrix deterministically
+initializes a state that reflects semantic hierarchy, in contrast to the
+arbitrary semantic associations generated by baseline Euclidean random
+initializations. While this study is limited to a proof-of-concept and
+does not include task-based performance metrics, it directly addresses a
+pathway toward structural AI safety. It proves that topological
+constraints can be integrated into a differentiable attention layer,
+providing a necessary framework for regulatory auditing and establishing
+the classical state-space foundation for future quantum-walk sequence
+architectures.</p>
+<h2 id="introduction-the-opacity-crisis-and-topological-solutions">1.0
+Introduction: The Opacity Crisis and Topological Solutions</h2>
+<h3 id="the-gauge-problem-in-vector-spaces">1.1 The Gauge Problem in
+Vector Spaces</h3>
+<p>High-dimensional vector embeddings, while powerful, can obscure
+semantic causality through arbitrary continuous transformations.
+Contemporary transformer architectures reflect this <strong>gauge
+dependence</strong>—a property where representations can be rotated or
+transformed without changing the underlying meaning, akin to rotating a
+map without changing the landscape—fundamentally limiting their capacity
+for transparent auditing (Tseng et al., 2023). By relying on stochastic
+dot-product similarity, these models process inputs through continuous
+geometric spaces devoid of discrete hierarchical boundaries. Theoretical
+analyses suggest that this reliance on Euclidean mapping can introduce
+adversarial fragility where unconstrained vector transformations may
+impact structural reasoning fidelity. While continuous embeddings
+facilitate smooth gradient descent optimization, they present challenges
+for achieving absolute structural interpretability (Mannix &amp;
+Bondell, 2024). This foundational challenge motivates an architectural
+transition toward models grounded in more rigid topological
+structures.</p>
+<h3 id="structural-alternative-ultrametric-spaces">1.2 Structural
+Alternative: Ultrametric Spaces</h3>
+<p>Replacing Euclidean distances with ultrametric topologies offers a
+potential pathway to enforcing strictly nested, non-overlapping semantic
+hierarchies. This paradigm shift relies on <span
+class="math inline">\(p\)</span>-adic tree structures where distances
+satisfy the strong triangle inequality (Emanuel, 2025). In these
+discrete spaces, the similarity between any two concepts can be defined
+purely as a function of their Lowest Common Ancestor (LCA) depth,
+bypassing the ambiguities of vector clustering. Data embedded in an
+ultrametric topology cannot chain or bleed across boundaries, ensuring
+that categorical distinctions remain mathematically absolute. While
+mapping continuous phenomena into discrete trees presents encoding
+complexities, the resulting data structures can guarantee perfect
+hierarchical containment. Synthesizing these topological axioms into
+sequence models provides a foundation for transparent relational logic.
+Consequently, ultrametric embeddings emerge as a compelling structural
+alternative to unconstrained continuous space.</p>
+<h3 id="contextual-isolation-in-current-literature">1.3 Contextual
+Isolation in Current Literature</h3>
+<p>Despite the theoretical advantages of tree-based routing, current
+implementations remain largely isolated within highly specialized domain
+applications. Existing literature demonstrates successful structural
+transformer deployments primarily for syntactic code parsing or rigid
+genetic trait mapping (Villmow et al., 2021). These restricted
+environments inherently possess strict pre-existing taxonomies, allowing
+researchers to bypass the complexities of unstructured linguistic
+parsing. The deployment of LCA-based self-attention in
+genotype-phenotype modeling has proven effective for specific risk
+assessments, but these methodologies lack immediate generalization (Lee
+et al., 2025). While success in specialized fields proves the
+mathematical viability of ultrametric attention, it underscores a
+methodological gap regarding unstructured natural language. Bridging
+this gap suggests abstracting the LCA metric away from rigid external
+ontologies into generalized mathematical tokens.</p>
+<h3 id="the-need-for-generalized-sequence-modeling">1.4 The Need for
+Generalized Sequence Modeling</h3>
+<p>Expanding topological attention into generalized Natural Language
+Processing (NLP) is a critical area of research for resolving the
+interpretability bottleneck in large language models. The lack of
+explicit hierarchical routing in general sequence modeling currently
+presents challenges for the deterministic tracing of semantic causality.
+Incorporating ultrametric structures into standard token streams could
+force a model to document its inferential pathways explicitly, a feature
+relevant to life-safety verification protocols (Pham, 2025).
+Establishing fixed ancestral relationships between generalized tokens
+may ensure that even ambiguous linguistic contexts are resolved through
+transparent taxonomic deduction. While imposing rigid taxonomic
+constraints on fluid human language may restrict generative plasticity,
+the mandate for deterministic transparency in advanced AI systems
+motivates this line of inquiry. Therefore, constructing a generalized
+topological attention mechanism is a key research goal for the next
+generation of sequence modeling.</p>
+<h3 id="primary-beneficiaries-and-ai-safety">1.5 Primary Beneficiaries
+and AI Safety</h3>
+<p>The implementation of structurally transparent attention mechanisms
+could serve as a foundational tool for AI safety regulators and
+compliance auditors. Deterministic LCA attention trails could grant
+regulatory bodies the ability to map an algorithm’s reasoning process
+directly back to specific ancestral concepts (Pham, 2025). This
+capability has the potential to transform the auditing process from a
+probabilistic analysis into a more rigorous mathematical verification
+exercise. Algorithm designers may additionally benefit from this
+paradigm by gaining the capacity to debug specific taxonomic pathways
+without retraining the entire embedding space. Fulfilling these urgent
+regulatory demands requires moving beyond post-hoc explanation modules
+toward fundamentally explainable-by-design architectures.</p>
+<h3 id="research-questions">1.6 Research Questions</h3>
+<p>To systematically address the tension between Euclidean opacity and
+ultrametric transparency, this study pursues three targeted research
+questions. First, how does the substitution of Euclidean dot-product
+attention with ultrametric tree-distance similarity affect the
+interpretability of attention weights in the context of sequence
+modeling? Second, what algorithmic approach is most appropriate for
+investigating the scalable encoding of vocabulary tokens into discrete
+ultrametric spaces? Third, if ultrametric attention can be integrated
+into a viable model, what are the implications for AI safety
+verification and quantum-walk extensions? These questions purposefully
+bypass standard benchmark chasing to focus entirely on the mathematical
+mechanics of structural interpretability.</p>
+<h3 id="structural-blueprint-overview">1.7 Structural Blueprint
+Overview</h3>
+<p>This manuscript proceeds through a progressive empirical proof
+structure designed to validate ultrametric attention mechanics. Section
+2 grounds the theoretical topology within the verified literature
+landscape, establishing the mathematical foundations of the LCA metric.
+Section 3 delineates the algorithmic design, introducing a binary-tree
+proxy encoder to simulate massive-scale p-adic factorization. Section 4
+details the methodological execution, defining the exact computational
+parameters required to replace standard query-key matrices with
+hierarchical distance logic. Section 5 presents the empirical results
+from the simulation, offering direct comparative tables and visual
+traces. The final sections synthesize these findings into potential
+frameworks for AI safety auditing and discuss speculative future
+extensions.</p>
+<h2 id="literature-landscape-and-theoretical-foundations">2.0 Literature
+Landscape and Theoretical Foundations</h2>
+<h3 id="the-evolution-of-attention-mechanisms">2.1 The Evolution of
+Attention Mechanisms</h3>
+<p>The trajectory of transformer architecture has heavily prioritized
+computational efficiency and scaling laws, sometimes at the expense of
+mechanistic interpretability. The foundational scaled dot-product
+attention mechanism relies on the continuous proximity of
+high-dimensional vectors to distribute focus. While techniques like
+sparse autoencoders attempt to retroactively map these dense vector
+spaces into interpretable features, the underlying matrix operations
+remain a complex area of study (Cunningham et al., 2023). This reliance
+on continuous inner products means the model lacks intrinsic, rigid
+structural reasoning pathways, relying instead on vast statistical
+correlation matrices. Attempts to extract human-readable logic from
+these continuous spaces are challenged by the gauge-dependent nature of
+the embeddings. This fundamental limitation suggests that post-hoc
+explainability algorithms, while useful, may not be sufficient for
+rigorous systemic verification, motivating research into alternative
+attention mechanisms.</p>
+<h3 id="hyperbolic-and-tree-structured-transformers">2.2 Hyperbolic and
+Tree-Structured Transformers</h3>
+<p>Recognizing the limitations of flat Euclidean spaces, researchers
+have increasingly turned to hyperbolic and tree-structured geometries to
+capture semantic hierarchies natively. The introduction of
+hierarchy-aware attention mechanisms using hyperbolic cones successfully
+demonstrated that non-Euclidean spaces can dramatically improve
+relational mapping capabilities (Tseng et al., 2023). Similarly,
+embedding topologies derived from particle physics decay trees into
+transformer layers has proven that pairwise attention can be restricted
+to track specific physical hierarchies (Yu et al., 2023). These
+structural transformers prove that neural networks can successfully
+optimize over spaces that enforce parent-child containment boundaries.
+Although hyperbolic space accurately reflects continuous hierarchical
+expansion, it does not fully resolve the need for absolute, discrete
+decision logging. Synthesizing these geometric insights points toward
+the utility of strictly discrete tree structures for absolute
+interpretability.</p>
+<h3 id="lowest-common-ancestor-lca-in-neural-networks">2.3 Lowest Common
+Ancestor (LCA) in Neural Networks</h3>
+<p>The Lowest Common Ancestor (LCA) metric serves as a definitive
+topological distance measure for perfectly nested hierarchical systems.
+Recent innovations in image recognition have successfully modified
+slot-attention mechanisms to measure similarities via LCA over
+categorical trees, embedding explanations into output confidence scores
+(Wang et al., 2024). Furthermore, incorporating pairwise mask
+integration maps tokens directly to LCA distances within tree-structured
+syntax layers, validating the metric’s utility in linguistic contexts
+(Y. Wang et al., 2021). By utilizing LCA, algorithms replace abstract
+vector angles with a discrete, countable integer representing exact
+semantic divergence. While some computational overhead is introduced
+when dynamically calculating LCA, the trade-off can yield mathematically
+perfect categorical isolation. Therefore, LCA effectively functions as a
+powerful similarity metric that naturally translates conceptual
+relationships into machine-readable mathematical boundaries.</p>
+<h3 id="latent-vs.-fixed-ontological-trees">2.4 Latent vs. Fixed
+Ontological Trees</h3>
+<p>The deployment of LCA topologies has sparked an active methodological
+debate regarding the origin and flexibility of the reference trees. One
+faction advocates for learning latent tree hierarchies dynamically
+directly from the data via the Lowest Common Ancestor Generation (LCAG)
+matrix, maximizing model flexibility (Yu et al., 2022). Conversely, the
+opposing faction argues that mapping tokens to fixed, human-readable
+external ontologies is necessary to guarantee reliable, auditable
+explainability. Latent trees allow the transformer to discover
+non-obvious hierarchical relationships but risk generating taxonomies
+that defy human comprehension. Fixed ontologies mathematically guarantee
+that every attention weight traces back to a pre-approved,
+human-understandable concept, sacrificing some plasticity for safety.
+This study adopts the fixed-ontology paradigm to explore its potential
+for 100% deterministic trace-back capabilities.</p>
+<h3 id="the-continuous-discrete-translation-gap">2.5 The
+Continuous-Discrete Translation Gap</h3>
+<p>Integrating discrete tree distances into continuous neural network
+architectures presents a mathematical translation challenge (GAP_02).
+Standard gradient descent optimization requires differentiable
+similarity scores, rendering raw discrete integer LCA depths
+mathematically incompatible with standard backpropagation. Previous
+works highlight this tension, noting the difficulty of maintaining
+structural tree constraints without breaking the continuous loss
+landscape (Wang et al., 2024). Similarly, attempts to incorporate syntax
+masks often require complex auxiliary losses to force continuous weights
+to respect discrete boundaries (Y. Wang et al., 2021). Bridging this gap
+requires a formal mathematical function that maps discrete integers into
+a continuous, monotonically decaying similarity space. A specialized
+exponential decay function must therefore be derived to solve this
+translation gap.</p>
+<h3 id="formal-topological-definitions">2.6 Formal Topological
+Definitions</h3>
+<p>To formally bridge this gap, we must rigorously define the
+ultrametric topology governing the attention space. Let <span
+class="math inline">\(T\)</span> be an ultrametric space characterized
+by a distance function <span class="math inline">\(\delta(x,y)\)</span>
+such that the strong triangle inequality holds: <span
+class="math inline">\(\delta(x,z) \le \max(\delta(x,y), \delta(y,z))
+\quad \forall x,y,z \in T\)</span>. In our tree model of maximum depth
+<span class="math inline">\(D\)</span>, we define distance via the
+lowest common ancestor depth <span
+class="math inline">\(d_{LCA}(x,y)\)</span> as <span
+class="math inline">\(\delta(x,y) = D - d_{LCA}(x,y)\)</span>. To
+translate this topological distance into a continuous attention
+similarity score <span class="math inline">\(S(x,y)\)</span>, we apply
+an exponential decay: <span class="math inline">\(S(x,y) =
+\lambda^{\delta(x,y)} \quad \text{where } \lambda \in (0,1)\)</span>.
+This continuous mapping strictly preserves the ultrametric hierarchy
+because exponential functions are monotonically increasing, ensuring
+that smaller topological distances yield exponentially larger attention
+scores. Finally, the attention matrix <span
+class="math inline">\(A\)</span> is normalized via standard softmax:
+<span class="math inline">\(A_{i,j} = \frac{\exp(S(i,j))}{\sum_k
+\exp(S(i,k))}\)</span>. This derivation explicitly solves the
+continuous-discrete translation gap.</p>
+<h3 id="summary-of-epistemic-stance">2.7 Summary of Epistemic
+Stance</h3>
+<p>The proposed ultrametric framework synthesizes established geometric
+deep learning principles with rigorous topological constraints. By
+grounding our approach in the hierarchy-aware success of hyperbolic
+models and the structural precision of LCA-based classifiers, we
+establish a robust baseline for experimentation (Tseng et al., 2023).
+This synthesis actively explores an alternative to the opacity of
+standard dot-product attention in favor of the transparent,
+mathematically bounded relationships relevant to modern safety
+parameters (Wang et al., 2024). Acknowledging the computational friction
+between discrete structures and continuous gradients forces a highly
+disciplined algorithmic design phase. The resulting theoretical stance
+asserts that structural constraints, despite their optimization
+challenges, are a necessary area of research for sequence modeling.</p>
+<h2 id="algorithmic-design-token-to-p-adic-tree-mapping">3.0 Algorithmic
+Design: Token to P-Adic Tree Mapping</h2>
+<h3 id="addressing-the-scalable-integration-gap">3.1 Addressing the
+Scalable Integration Gap</h3>
+<p>Dynamically mapping massive, generalized token vocabularies into
+complex <span class="math inline">\(p\)</span>-adic hierarchical trees
+during forward passes presents an algorithmic challenge (GAP_01). Large
+vocabularies require deterministic algorithmic mapping to prevent
+latency delays during attention generation (Emanuel, 2025). Standard
+dot-product attention succeeds in part because dense matrix
+multiplication is hyper-optimized on modern hardware, whereas dynamic
+tree traversal can be less efficient. To explore this limitation, we
+introduce a fixed-depth binary tree proxy encoder that simulates the
+structural properties of a comprehensive <span
+class="math inline">\(p\)</span>-adic space. While this proxy condenses
+the infinite expandability of true prime-based factorization, it
+preserves the vital strong triangle inequality required for empirical
+validation. This abstraction enables the rapid integration of
+topological distances into the transformer workflow.</p>
+<h3 id="synthetic-vocabulary-generation">3.2 Synthetic Vocabulary
+Generation</h3>
+<p>Validating the binary proxy algorithm necessitates the construction
+of a controlled, synthetic test environment. Given operational
+constraints, we deployed a minimal, 10-token toy vocabulary engineered
+to test precise semantic branching. The vocabulary is divided into
+logical semantic groupings: Felines (<code>cat</code>,
+<code>tiger</code>), Canines (<code>dog</code>, <code>wolf</code>),
+Plants (<code>tree</code>, <code>flower</code>), Cars
+(<code>sedan</code>, <code>coupe</code>), and Trucks
+(<code>pickup</code>, <code>semi</code>). This restricted dataset allows
+for the immediate, manual verification of every generated LCA
+relationship against a known ground truth. Although limited in scale,
+this foundational vocabulary mirrors the fractal complexity of larger
+linguistic ontologies while maintaining strict auditability. The
+resulting synthetic data ledger serves as the baseline for all
+subsequent similarity calculations.</p>
+<h3 id="prime-based-factorization-mechanics">3.3 Prime-Based
+Factorization Mechanics</h3>
+<p>In a fully realized <span class="math inline">\(p\)</span>-adic
+space, semantic tokens can be mapped to specific nodes via unique prime
+number factorization. Each semantic feature within an ontology is
+assigned a unique prime, and a token’s identity is the mathematical
+product of its constituent primes, mapping to a Bruhat-Tits tree
+hierarchy. This theoretical mapping guarantees that the greatest common
+divisor between any two token values isolates their lowest common
+ancestral node (Emanuel, 2025). Consequently, prime factorization can
+uniquely identify tree paths. Implementing true prime factorization
+dynamically across a large vocabulary, however, can exceed standard
+floating-point precision limits. Therefore, while prime factorization
+represents a theoretical ideal for ultrametric embeddings, an
+operational proxy is useful for matrix-level simulation.</p>
+<h3 id="binary-tree-proxy-implementation">3.4 Binary Tree Proxy
+Implementation</h3>
+<p>To bypass the potential integer overflow limitations of massive prime
+multiplication, we implement a computationally efficient binary tree
+proxy. Each of the 10 tokens in the synthetic vocabulary is assigned a
+fixed-depth (<span class="math inline">\(D=4\)</span>) bitstring that
+hard-codes its path through the ontological hierarchy. For example,
+<code>cat</code> is mapped to <code>0000</code>, <code>tiger</code> to
+<code>0001</code>, and <code>sedan</code> to <code>1000</code>,
+establishing a clear, machine-readable taxonomic lineage. A binary tree
+serves as an efficient computational proxy for <span
+class="math inline">\(p\)</span>-adic prime spaces, as modern processors
+process bitwise operations with low latency. While binary mapping
+restricts nodes to two child branches, it flawlessly maintains the
+necessary ultrametric constraints for this proof-of-concept.</p>
+<h3 id="lowest-common-ancestor-depth-calculation">3.5 Lowest Common
+Ancestor Depth Calculation</h3>
+<p>Calculating the topological distance between any two tokens using the
+binary proxy simply requires determining their common prefix length. By
+iterating through the paired bitstrings and counting identical
+consecutive bits from the root, the algorithm isolates the exact depth
+of the Lowest Common Ancestor. This string matching computationally
+resolves structural tree distance in <span
+class="math inline">\(O(D)\)</span> time, establishing the baseline
+topological divergence (Villmow et al., 2021). For example, comparing
+<code>0000</code> (cat) and <code>0010</code> (dog) yields a common
+prefix of <code>00</code>, resulting in an LCA depth of <span
+class="math inline">\(d=2\)</span>. This simple metric definition
+provides the exact integer values required for subsequent conversion
+into continuous attention weights.</p>
+<h3 id="similarity-decay-function">3.6 Similarity Decay Function</h3>
+<p>Converting the discrete integer LCA depth into a continuous
+similarity score utilizes the formal decay function derived in Section
+2.6.1. We apply the equation <span class="math inline">\(S(x,y) =
+\lambda^{D - d_{LCA}(x,y)}\)</span>, utilizing a decay parameter of
+<span class="math inline">\(\lambda = 0.5\)</span> and a maximum tree
+depth of <span class="math inline">\(D=4\)</span>. This exponential
+decay preserves the ultrametric inequality in continuous space, ensuring
+that tokens sharing deep ancestry receive exponentially higher base
+similarity scores than distant relatives (Wang et al., 2024). The
+resulting continuous values are perfectly formatted to be ingested by
+the standard row-wise softmax normalization function. This mathematical
+translation is the critical linchpin allowing discrete topology to be
+integrated with standard neural network layers.</p>
+<h3 id="encoding-summary-and-limitations">3.7 Encoding Summary and
+Limitations</h3>
+<p>The binary proxy encoding successfully transforms semantic taxonomy
+into a computationally viable, differentiable format. However, it is
+critical to acknowledge that utilizing a rigid, pre-defined 4-bit
+vocabulary significantly restricts the model’s capacity for latent
+semantic discovery. While binary proxies limit continuous learning and
+cannot handle highly ambiguous words, they explicitly prove the
+structural auditability of the underlying mathematics. This methodology
+intentionally trades generative flexibility for interpretability.
+Furthermore, the <span class="math inline">\(N=10\)</span> constraint
+prevents the observation of large-scale matrix sparsity dynamics.
+Despite these limitations, this encoding protocol fully satisfies the
+conditions required to execute and analyze an ultrametric forward
+pass.</p>
+<h2 id="methodological-execution-ultrametric-attention-mechanism">4.0
+Methodological Execution: Ultrametric Attention Mechanism</h2>
+<h3 id="dot-product-baseline-architecture">4.1 Dot-Product Baseline
+Architecture</h3>
+<p>To contextualize the behavioral advantages of ultrametric routing, a
+standard scaled dot-product attention matrix must first be established
+as a baseline control. Standard transformers rely on Euclidean vector
+distances, computing attention via the formula <span
+class="math inline">\(\text{softmax}(Q K^T / \sqrt{d})\)</span> where
+<span class="math inline">\(Q\)</span> and <span
+class="math inline">\(K\)</span> are randomly initialized continuous
+embedding matrices (Cunningham et al., 2023). Before training adjusts
+these weights, the resulting matrix represents a disorganized
+scatterplot of semantic focus. This baseline explicitly shows that
+standard attention is a black box at initialization, requiring massive
+datasets to carve boundaries into continuous space. Recognizing this
+inherent opacity is necessary to appreciate the immediate organizational
+power of topological constraints.</p>
+<h3 id="ultrametric-matrix-construction">4.2 Ultrametric Matrix
+Construction</h3>
+<p>Constructing the experimental ultrametric mechanism involves entirely
+replacing the <span class="math inline">\(Q K^T\)</span> dot-product
+step with our algorithmically generated LCA similarity scores. Using the
+Python computational environment, an <span class="math inline">\(N
+\times N\)</span> matrix is populated by executing the
+<code>lca_depth</code> function across all token permutations,
+generating a raw integer matrix of tree divergences. The LCA matrix
+replaces <span class="math inline">\(Q K^T\)</span> by passing the
+integer matrix through the exponential decay function, generating a
+pre-softmax similarity grid (Tseng et al., 2023). This construction
+mathematically guarantees that the attention weights are determined
+exclusively by the fixed taxonomic blueprint rather than arbitrary
+vector alignment. The resulting populated array stands ready for
+normalization and comparative analysis.</p>
+<h3 id="complexity-analysis-big-o">4.3 Complexity Analysis (Big-O)</h3>
+<p>Replacing hardware-optimized matrix multiplication with dynamic tree
+traversal introduces computational complexities (GAP_05). Standard
+dot-product attention executes in <span
+class="math inline">\(\mathcal{O}(N^2 \cdot d)\)</span> time, leveraging
+the native tensor cores of modern GPUs. Conversely, dynamic LCA
+utilizing prefix matching incurs a time complexity of <span
+class="math inline">\(\mathcal{O}(N^2 \cdot \log_2(V))\)</span>, where
+<span class="math inline">\(V\)</span> represents the vocabulary size
+(Mannix &amp; Bondell, 2024). While this introduces a hardware penalty,
+it is theoretically comparable in complexity but currently lacks the
+hardware-level optimization of dot-product attention, resulting in
+significant practical latency. Furthermore, as theoretical quantum
+attention modules develop, this classical hierarchy could map to the
+<span class="math inline">\(p\)</span>-adic state spaces of quantum
+walks, potentially altering the performance landscape (Emanuel, 2025).
+Therefore, the computational overhead is a critical factor for current
+hardware.</p>
+<h3 id="softmax-application-and-normalization">4.4 Softmax Application
+and Normalization</h3>
+<p>To finalize the attention layer and ensure compatibility with
+standard transformer feed-forward mechanisms, a row-wise softmax
+function is applied to the similarity grid. Softmax ensures that all
+attention weights sum to 1, transforming the raw exponential
+similarities into a valid, differentiable probability distribution. The
+equation <span class="math inline">\(A_{i,j} =
+\frac{\exp(S(i,j))}{\sum_k \exp(S(i,k))}\)</span> is executed
+computationally across the <span class="math inline">\(10 \times
+10\)</span> array. One notable side effect of this normalization is that
+it can squash the exponential decay spread, producing a uniform lower
+bound of attention even for orthogonal tokens. While this could
+necessitate sparsity thresholding at scale, it maintains strict gradient
+consistency for the forward pass.</p>
+<h3 id="simulated-forward-pass-protocol">4.5 Simulated Forward Pass
+Protocol</h3>
+<p>The execution of the simulated forward pass requires adherence to a
+controlled computational protocol. The Python environment is configured
+to generate both the <span class="math inline">\(N=10\)</span> random
+normal dot-product baseline (<span class="math inline">\(d_{model}=16,
+\text{seed}=42\)</span>) and the corresponding LCA matrix
+simultaneously. A simulated forward pass validates the structural
+integrity of the weights without requiring the compute overhead of
+backpropagation. By executing this script within an isolated,
+deterministic footprint, we guarantee the reproducibility of the
+resulting attention arrays. Proving the base structural integrity of the
+attention routing is the precise objective of this investigation.</p>
+<h3 id="extraction-of-explanatory-subtrees">4.6 Extraction of
+Explanatory Subtrees</h3>
+<p>The utility of the ultrametric matrix lies in the ability to run a
+deterministic extraction algorithm to explain any given attention
+weight. By reversing the prefix-matching logic, we can trace why Token A
+attended to Token B by identifying their exact point of ontological
+divergence. Reversing the path provides human-readable logic,
+translating an LCA depth integer back into its corresponding semantic
+parent node (e.g., Cat -&gt; Feline &lt;- Tiger) (Yu et al., 2022). If a
+model generates an anomalous output, this extraction algorithm provides
+an accurate audit trail of the causal sequence. While standard gradient
+attribution methods offer probabilistic heatmaps, the subtree extraction
+can guarantee semantic certainty within the given ontology.</p>
+<h3 id="hardwarethread-constraints-contextualization">4.7
+Hardware/Thread Constraints Contextualization</h3>
+<p>It is imperative to acknowledge the specific hardware and thread
+constraints shaping this methodological execution. The computational
+simulation utilizes a Python proxy because full-scale transformer
+training exceeds the memory and processing limits of isolated
+chat-thread footprints. However, matrix generation alone mathematically
+proves the theorem of interpretability; full-scale loss convergence is
+secondary to proving topological validity. The <span
+class="math inline">\(N=10\)</span> limitation ensures that the arrays
+remain visually parsable within standard text outputs. While this
+constrains our ability to observe macro-sparsity patterns, it focuses
+the analysis precisely on the mechanical differences between vector and
+tree routing.</p>
+<h2
+id="computational-results-lca-attention-scaling-and-interpretability">5.0
+Computational Results: LCA Attention Scaling and Interpretability</h2>
+<h3 id="execution-of-the-simulation">5.1 Execution of the
+Simulation</h3>
+<p>The comparative simulation protocol was successfully executed via the
+Python computational environment, generating the required matrices for
+analysis. The script deterministically processed the 10-word synthetic
+vocabulary, executing both the standard Euclidean dot-product mechanism
+and the novel ultrametric LCA routing. The synthetic execution ran
+flawlessly, outputting dense arrays that perfectly capture the
+mathematical disparity between the two approaches. While the simulation
+was strictly confined to a single forward pass, the raw initialization
+states provide significant empirical insights. The resulting data tables
+serve as the definitive empirical evidence for this
+proof-of-concept.</p>
+<h3 id="baseline-dot-product-matrix-analysis">5.2 Baseline Dot-Product
+Matrix Analysis</h3>
+<p>The baseline dot-product simulation generated a scattered,
+semantically opaque matrix typical of randomly initialized continuous
+embedding spaces. It is crucial to note that this represents an
+<em>untrained</em> state, designed specifically to highlight the
+structural properties of initialization, and is not a fair performance
+comparison against a trained model. Analysis of the <span
+class="math inline">\(10 \times 10\)</span> array reveals that
+structurally unrelated tokens arbitrarily receive high attention weights
+(Cunningham et al., 2023). For example, the token ‘Cat’ randomly attends
+to the orthogonal vehicle concept ‘Coupe’ with a weight of 0.195,
+significantly higher than its attention to the related concept ‘Dog’
+(0.055). This illustrates that standard continuous vectors lack inherent
+structural meaning pre-training, resulting in a matrix governed by
+initialization noise rather than logic.</p>
+<hr />
+<p><strong>Table 1: Baseline Attention Matrix (Subset)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: right;">cat</th>
+<th style="text-align: right;">tiger</th>
+<th style="text-align: right;">dog</th>
+<th style="text-align: right;">coupe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">cat</td>
+<td style="text-align: right;">0.061</td>
+<td style="text-align: right;">0.245</td>
+<td style="text-align: right;">0.055</td>
+<td style="text-align: right;">0.195</td>
+</tr>
+<tr>
+<td style="text-align: left;">tiger</td>
+<td style="text-align: right;">0.206</td>
+<td style="text-align: right;">0.111</td>
+<td style="text-align: right;">0.115</td>
+<td style="text-align: right;">0.079</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ultrametric-lca-matrix-analysis">5.3 Ultrametric LCA Matrix
+Analysis</h3>
+<p>In stark contrast to the baseline, the computed LCA similarity matrix
+immediately exhibits pristine, structurally sound semantic clustering.
+The LCA matrix weights naturally group semantically related tokens
+without requiring a single epoch of gradient optimization (Tseng et al.,
+2023). The data shows perfect hierarchical weighting: Self-attention
+peaks at 0.202, Sibling relationships (Cat-Tiger) hold at 0.122, Cousin
+relationships (Cat-Dog) score 0.095, and completely orthogonal concepts
+(Cat-Sedan) drop to a baseline of 0.079. This matrix explicitly
+demonstrates the massive inductive bias provided by ultrametric
+topologies, perfectly segregating the animal, plant, and vehicle
+clusters.</p>
+<p><strong>Table 2: LCA Attention Matrix (Subset)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: right;">cat</th>
+<th style="text-align: right;">tiger</th>
+<th style="text-align: right;">dog</th>
+<th style="text-align: right;">coupe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">cat</td>
+<td style="text-align: right;">0.202</td>
+<td style="text-align: right;">0.122</td>
+<td style="text-align: right;">0.095</td>
+<td style="text-align: right;">0.079</td>
+</tr>
+<tr>
+<td style="text-align: left;">tiger</td>
+<td style="text-align: right;">0.122</td>
+<td style="text-align: right;">0.202</td>
+<td style="text-align: right;">0.095</td>
+<td style="text-align: right;">0.079</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comparative-interpretability-metrics">5.4 Comparative
+Interpretability Metrics</h3>
+<p>Comparing the two matrices provides definitive empirical evidence
+addressing the core gap in attention interpretability (GAP_03). While
+the baseline matrix relies on abstract, untraceable vector geometries,
+LCA matrices allow deterministic trace-back to parent concepts (Wang et
+al., 2024). In the LCA matrix, every decimal value correlates directly
+to an integer depth in the taxonomic tree, removing statistical
+ambiguity. Critics may note that the softmax function compresses the
+lower bounds (0.079) rather than zeroing them out, causing minor
+attention dilution. However, this does not break the strict ordinal
+ranking dictated by the tree structure, preserving absolute relative
+interpretability. Thus, the ultrametric approach provides a pathway to
+structural interpretability at initialization.</p>
+<h3 id="visual-trace-of-a-decision-pathway">5.5 Visual Trace of a
+Decision Pathway</h3>
+<p>The empirical strength of this architecture is best demonstrated by
+tracing a single, high-weight token pair back through its ontological
+pathway. Extracting the data for the ‘Cat’ and ‘Tiger’ relationship
+(<span class="math inline">\(W = 0.122\)</span>) from the LCA matrix
+allows for a reverse-engineering of the model’s logic. We can explain
+why Token A attended to Token B by reading the specific tree traversal:
+[Query] Cat (0000) <span class="math inline">\(\rightarrow\)</span>
+[Parent] Feline (000) <span
+class="math inline">\(\leftarrow\)</span>[Key] Tiger (0001) (Yu et al.,
+2023). This text-based visual trace provides a formal, syntactic
+guarantee of the causal link generating the attention weight, distinct
+from fuzzy heatmap approximations. This mechanism delivers the exact
+human-readable audit trail required by critical safety protocols.</p>
+<h3 id="performance-vs-transparency-trade-off">5.6 Performance Vs
+Transparency Trade-off</h3>
+<p>The simulation execution highlighted the computational trade-offs
+inherent in enforcing topological transparency. Generating the LCA
+matrix requires dynamic prefix matching, which incurs a logarithmic
+computational cost compared to highly optimized matrix multiplication
+(Mannix &amp; Bondell, 2024). Transparency comes at the cost of
+processing speed, as the algorithm must navigate the <span
+class="math inline">\(\mathcal{O}(N^2 \log_2 V)\)</span> complexity
+penalty without specialized hardware accelerators. However, prioritizing
+raw speed over safety has contributed to the current black-box problem;
+accepting a latency penalty may be a necessary cost in high-stakes
+environments. Future hardware advancements optimizing boolean
+string-matching could eventually neutralize this penalty.</p>
+<h3 id="results-synthesis">5.7 Results Synthesis</h3>
+<p>The empirical data successfully validates the core hypothesis
+regarding ultrametric spaces and vector opacity. The block-diagonal
+structure of the LCA matrix, combined with the execution of the visual
+trace algorithm, provides a strong proof of concept. The simulation
+suggests that ultrametric structures can resolve black-box opacity at
+initialization by replacing continuous statistical guessing with
+discrete mathematical logic. While the <span
+class="math inline">\(N=10\)</span> constraint limits macroscopic
+observations, the mathematical principles demonstrated are scalable.
+This simulation proves that it is mechanically possible to build
+sequence models that are transparent by design.</p>
+<h2 id="discussion-interpretability-and-opacity-resolution">6.0
+Discussion: Interpretability and Opacity Resolution</h2>
+<h3 id="evaluating-opacity-resolution">6.1 Evaluating Opacity
+Resolution</h3>
+<p>The successful execution of the ultrametric forward pass demonstrates
+a potential pathway toward resolving the core tension between Euclidean
+vector spaces and mathematical transparency. By explicitly tying
+attention weights to a rigid taxonomic hierarchy, the LCA routing
+provides the kind of audibility demanded by modern safety parameters
+(Pham, 2025). The simulation proved that it is computationally viable to
+strip away the gauge-dependent ambiguities of continuous embeddings at
+initialization without destroying the network’s ability to normalize and
+pass data forward. This study achieves audibility (a deterministic trace
+of computation) but does not yet achieve full explainability, as the
+<em>reasons</em> for the ontology’s structure are external to the model.
+Replacing opacity with topological certainty transforms the transformer
+from an uninterpretable correlation engine into a more rigorous,
+auditable machine.</p>
+<h3 id="ai-safety-and-auditability-frameworks">6.2 AI Safety and
+Auditability Frameworks</h3>
+<p>The deterministic nature of LCA attention could yield benefits for
+the development of AI safety and auditing frameworks (GAP_06). Because
+every attention allocation is tied to a specific tree node, regulatory
+bodies could audit LCA models deterministically, checking specific
+branches for bias or logic failures (Pham, 2025). If a medical sequence
+model makes an erroneous diagnosis, auditors could pull the LCA trace
+(e.g., Symptom <span class="math inline">\(\rightarrow\)</span>
+Pathology <span class="math inline">\(\leftarrow\)</span> Diagnosis) to
+isolate the point of logical failure (Lee et al., 2025). This framework
+could eliminate the reliance on probabilistic gradient attribution
+methods, which can highlight spurious correlations. While implementing
+this requires standardizing massive ontological trees, the potential
+safety guarantees are significant.</p>
+<h3 id="limitations-and-the-ontology-bottleneck">6.3 Limitations and the
+Ontology Bottleneck</h3>
+<p>A critical limitation of this approach is the “Ontology Bottleneck.”
+The entire method relies on a pre-existing, manually curated, fixed
+ontology. This is feasible for 10 words but presents a massive, unsolved
+challenge for real-world vocabularies of 50,000+ tokens. The process of
+creating and maintaining such a vast, consistent, and unbiased taxonomy
+is a field of research in itself and is fundamentally unscalable as a
+manual process. While some work explores learning tree structures
+directly from data (Yu et al., 2022), this reintroduces a layer of
+opacity, as the learned tree may not be human-interpretable. This study
+does not solve the ontology bottleneck but highlights its centrality to
+building truly auditable AI.</p>
+<h3 id="scalability-to-billion-parameter-models">6.4 Scalability to
+Billion-Parameter Models</h3>
+<p>Projecting this proof of concept up to the scale of modern,
+billion-parameter LLMs highlights severe, though potentially solvable,
+hardware limitations. The Big-O complexity analysis confirms that native
+<span class="math inline">\(p\)</span>-adic tree traversal at massive
+scale generates latency bottlenecks that standard GPUs are poorly
+equipped to handle (Mannix &amp; Bondell, 2024). Hardware acceleration
+specifically designed for discrete topological processing would be
+required for native p-adic tree traversal at enterprise scale. However,
+the software logic is scalable; the mathematical properties of
+ultrametric spaces do not degrade as the dimension of the vocabulary
+increases. Therefore, scalability is a significant engineering
+challenge, not necessarily an invalidating theoretical flaw.</p>
+<h3 id="impact-on-transformer-generalization">6.5 Impact on Transformer
+Generalization</h3>
+<p>Replacing flexible continuous embeddings with strict topological
+attention fundamentally alters the downstream generalization
+capabilities of the transformer. The imposition of strict hierarchies
+provides strong inductive biases that may prevent logical
+hallucinations, keeping the model bound to the provided ontology (Y.
+Wang et al., 2021). A standard LLM might hallucinate a connection
+between ‘sedan’ and ‘cat’, but an LCA model is mathematically blocked
+from doing so. Conversely, this rigidity may inhibit the model’s ability
+to generate creative or metaphorical associations that rely on breaking
+strict categorical boundaries. This indicates that ultrametric attention
+may be specialized for analytical, deductive, and fact-based sequence
+modeling rather than creative text generation.</p>
+<h3 id="ethical-and-regulatory-beneficiaries">6.6 Ethical and Regulatory
+Beneficiaries</h3>
+<p>The shift toward explainable-by-design architectures directly serves
+the ethical mandates and regulatory requirements increasingly imposed on
+AI developers. Policymakers and compliance officers stand as potential
+beneficiaries, as LCA attention could meet upcoming standards for
+algorithmic transparency (Pham, 2025). The ability to prove why a model
+made a specific decision could protect developers from liability and
+end-users from unchecked algorithmic bias. Structurally embedding safety
+into the attention mechanism ensures that ethical compliance is a
+foundational aspect of the system.</p>
+<h3 id="limitations-of-the-current-study">6.7 Limitations of the Current
+Study</h3>
+<p>While the empirical results are definitive for the given constraints,
+several critical limitations must be acknowledged. The study was limited
+to a proof-of-concept and did not include a task-based performance
+evaluation. The execution was artificially restricted to a minimal,
+synthetic 10-token vocabulary. Toy vocabularies do not capture the full
+semantic ambiguity and context-dependence of natural language.
+Furthermore, the simulation was limited to matrix generation and did not
+conduct iterative backpropagation. These methodological constraints
+restrict our findings strictly to the realm of structural verification
+rather than full-scale deployment analysis. Future research must expand
+this framework into fully trained, multi-layer language models to
+observe macro-behavioral shifts.</p>
+<h2 id="future-work-and-conclusion">7.0 Future Work and Conclusion</h2>
+<h3 id="restatement-of-core-findings">7.1 Restatement of Core
+Findings</h3>
+<p>This investigation demonstrated that topological, tree-based
+attention mechanisms provide a mathematically rigorous pathway toward
+solving the opacity of standard continuous transformers. By replacing
+scaled dot-products with exponentially decayed LCA metrics, we
+mathematically guaranteed that attention routing at initialization
+adheres strictly to hierarchical, semantic logic (Tseng et al., 2023).
+The empirical data confirms that ultrametric mappings can solve vector
+opacity by inherently grouping related concepts. Furthermore, the
+ability to execute trace-backs from attention weights to parent nodes
+proves the architecture’s capacity for audibility.</p>
+<h3 id="resolution-of-the-core-tension">7.2 Resolution of the Core
+Tension</h3>
+<p>The core theoretical tension between the computational ease of
+high-dimensional continuous spaces and the demand for discrete
+transparency has been shown to be navigable. The empirical output
+demonstrates that structural embeddings provide explainability, offering
+audit trails that continuous vectors lack at initialization (Wang et
+al., 2024). While a hardware-induced latency cost exists, the trade-off
+between performance and transparency is mathematically solvable.
+Continuous gradient optimization can coexist with discrete topological
+boundaries, provided the bridging decay functions are monotonically
+precise. Therefore, the architectural reliance on continuous black boxes
+is a design choice, not a mathematical necessity.</p>
+<h3 id="future-work-task-based-evaluation">7.3 Future Work: Task-Based
+Evaluation</h3>
+<p>The most critical and immediate next step is to conduct a task-based
+evaluation of this architecture. As established in the peer review, the
+current study lacks any performance metrics. Future work must implement
+a small-scale transformer with the LCA attention layer and train it on a
+benchmark NLP task, such as sentiment classification on an IMDB subset.
+Reporting metrics like accuracy, loss, and training time against a
+standard dot-product baseline is essential to prove that this mechanism
+is not just auditable, but also useful. This was beyond the
+computational constraints of the present study but is a non-negotiable
+requirement for validating the approach.</p>
+<h3 id="future-work-the-quantum-bridge">7.4 Future Work: The Quantum
+Bridge</h3>
+<p>A more speculative direction for future research involves the
+connection between these classical structures and quantum sequence
+modeling. The discrete, hierarchical nature of the classical tree model
+could serve as the initial state space for future quantum walks (Yu et
+al., 2022). <span class="math inline">\(P\)</span>-adic topologies are
+native to certain formulations of quantum mechanics, meaning that tokens
+encoded via LCA could be transitioned into quantum probability
+amplitudes. This conceptual integration suggests that resolving
+classical interpretability is a step toward building coherent quantum
+attention matrices. The mathematical synergy between these fields
+provides a vast, largely unexplored frontier. This hypothesis, however,
+requires significant formal development, including the definition of a
+specific Hamiltonian, to move beyond speculation (Yu et al., 2023).</p>
+<h3 id="implications-for-formal-sequence-modeling">7.5 Implications for
+Formal Sequence Modeling</h3>
+<p>The validation of ultrametric attention has implications for the
+broader domain of theoretical computer science. Sequence modeling may
+need to shift further toward discrete topology to satisfy the
+verification demands of next-generation AI (Emanuel, 2025). The era of
+relying on stochastic emergence is challenged by the mathematical
+guarantees required by critical infrastructure. This research suggests
+that syntax, structure, and topology must be considered alongside raw
+statistical correlation as the foundation of reasoning algorithms.</p>
+<h3 id="final-recommendations">7.6 Final Recommendations</h3>
+<p>Given the findings, we recommend that future research investigate the
+feasibility of integrating LCA-auxiliary layers into critical systems as
+hardware and ontology management techniques mature (Pham, 2025).
+Industry leaders should explore hybrid attention models, utilizing
+standard dot-products for creative tasks while testing LCA attention for
+analytical, factual routing. Investing in hardware optimization for
+dynamic boolean tree traversal could yield competitive advantages as
+transparent models become more prevalent.</p>
+<h3 id="concluding-statement">7.7 Concluding Statement</h3>
+<p>The black box of artificial intelligence presents a formidable
+challenge, but it is one that may be addressed through the rigorous
+application of mathematical topology.</p>
+<hr />
+<h2 id="references">References</h2>
+<p>Cunningham, H., Ewart, A., Riggs, L., Huben, R., &amp; Sharkey, L.
+(2023). <em>Sparse autoencoders find highly interpretable features in
+language models</em>. arXiv preprint arXiv:2309.08600.</p>
+<p>Emanuel, J. (2025). <em>Nanochat / model_guided_research: Systematic
+investigation of 11 exotic math frameworks</em>. GitHub.
+https://github.com/Dicklesworthstone/model_guided_research</p>
+<p>Lee, I., Wallace, Z. S., Wang, Y., Park, S., Nam, H., Majithia, A.
+R., &amp; Ideker, T. (2025). <em>A genotype-phenotype transformer to
+assess and explain polygenic risk</em>. bioRxiv.
+https://doi.org/10.1101/2024.10.23.619940</p>
+<p>Mannix, E., &amp; Bondell, H. (2024). <em>Scalable and Robust
+Transformer Decoders for Interpretable Image Classification with
+Foundation Models</em>. arXiv. arXiv:2403.04125</p>
+<p>Pham, M.-K. (2025). <em>Explainable AI for Infection Prevention and
+Control: Modeling CPE Acquisition and Patient Outcomes in an Irish
+Hospital with Transformers</em>.
+https://doi.org/10.1186/s12911-025-03214-1</p>
+<p>Tseng, A., Yu, T., Liu, T. J. B., &amp; De Sa, C. (2023).
+<em>Coneheads: Hierarchy Aware Attention</em>. Advances in Neural
+Information Processing Systems (NeurIPS 36).
+https://doi.org/10.48550/arXiv.2306.00392</p>
+<p>Villmow, J., Ulges, A., &amp; Schwanecke, U. (2021). <em>A Structural
+Transformer with Relative Positions in Trees for Code-to-Sequence
+Tasks</em>. 2021 International Joint Conference on Neural Networks
+(IJCNN). https://doi.org/10.1109/IJCNN52387.2021.9533717</p>
+<p>Wang, B., Li, L., Zhang, J., Nakashima, Y., &amp; Nagahara, H.
+(2024). <em>Explainable Image Recognition via Enhanced Slot-attention
+Based Classifier</em>. arXiv preprint. arXiv:2407.05616.</p>
+<p>Wang, Y., et al. (2021). <em>Syntax-BERT: Improving Pre-trained
+Transformers with Syntax Trees</em>. arXiv. arXiv:2103.04350.</p>
+<p>Yu, B., et al. (2022). <em>Learning tree structures from leaves for
+particle decay reconstruction</em>. KIT / Machine Learning for Physics.
+https://doi.org/10.48550/arXiv.2209.06641</p>
+<p>Yu, B., et al. (2023). <em>Reconstruction of Full Decays using
+Transformers and Hyperbolic Embedding at Belle II</em>. EPJ Web of
+Conferences. https://doi.org/10.1051/epjconf/202533701139</p>
+<hr />
+<h2 id="appendices">Appendices</h2>
+<h3 id="appendix-a-formal-derivations">Appendix A: Formal
+Derivations</h3>
+<p>Let <span class="math inline">\(T\)</span> be an ultrametric space
+characterized by a distance function <span
+class="math inline">\(\delta(x,y)\)</span> such that the strong triangle
+inequality holds:</p>
+<p><span class="math display">\[
+\delta(x,z) \le \max(\delta(x,y), \delta(y,z)) \quad \forall x,y,z \in T
+\]</span></p>
+<p>In our tree model of maximum depth <span
+class="math inline">\(D\)</span>, we define distance via the lowest
+common ancestor depth <span
+class="math inline">\(d_{LCA}(x,y)\)</span>:</p>
+<p><span class="math display">\[
+\delta(x,y) = D - d_{LCA}(x,y)
+\]</span></p>
+<p>To translate this topological distance into an attention similarity
+score <span class="math inline">\(S(x,y)\)</span> ingestible by a neural
+network, we apply an exponential decay:</p>
+<p><span class="math display">\[
+S(x,y) = \lambda^{\delta(x,y)} \quad \text{where } \lambda \in (0,1)
+\]</span></p>
+<p>This continuous mapping strictly preserves the ultrametric hierarchy
+because exponential functions are monotonically increasing, ensuring
+that smaller topological distances yield exponentially larger attention
+scores. Finally, the attention matrix <span
+class="math inline">\(A\)</span> is normalized:</p>
+<p><span class="math display">\[
+A_{i,j} = \frac{\exp(S(i,j))}{\sum_k \exp(S(i,k))}
+\]</span></p>
+<h3 id="appendix-b-computational-assets">Appendix B: Computational
+Assets</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>vocab <span class="op">=</span> {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;cat&quot;</span>: <span class="st">&quot;0000&quot;</span>, <span class="st">&quot;tiger&quot;</span>: <span class="st">&quot;0001&quot;</span>,</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;dog&quot;</span>: <span class="st">&quot;0010&quot;</span>, <span class="st">&quot;wolf&quot;</span>: <span class="st">&quot;0011&quot;</span>,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;tree&quot;</span>: <span class="st">&quot;0100&quot;</span>, <span class="st">&quot;flower&quot;</span>: <span class="st">&quot;0101&quot;</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;sedan&quot;</span>: <span class="st">&quot;1000&quot;</span>, <span class="st">&quot;coupe&quot;</span>: <span class="st">&quot;1001&quot;</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;pickup&quot;</span>: <span class="st">&quot;1010&quot;</span>, <span class="st">&quot;semi&quot;</span>: <span class="st">&quot;1011&quot;</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>tokens <span class="op">=</span> <span class="bu">list</span>(vocab.keys())</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="bu">len</span>(tokens)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> lca_depth(bin1, bin2):</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    depth <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> b1, b2 <span class="kw">in</span> <span class="bu">zip</span>(bin1, bin2):</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> b1 <span class="op">==</span> b2: depth <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>: <span class="cf">break</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> depth</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>lca_matrix <span class="op">=</span> np.zeros((N, N))</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(N):</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(N):</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        lca_matrix[i, j] <span class="op">=</span> lca_depth(vocab[tokens[i]], vocab[tokens[j]])</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>LAMBDA <span class="op">=</span> <span class="fl">0.5</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>sim_matrix <span class="op">=</span> np.power(LAMBDA, D <span class="op">-</span> lca_matrix)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> softmax(x):</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    e_x <span class="op">=</span> np.exp(x <span class="op">-</span> np.<span class="bu">max</span>(x, axis<span class="op">=</span><span class="dv">1</span>, keepdims<span class="op">=</span><span class="va">True</span>))</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> e_x <span class="op">/</span> e_x.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>, keepdims<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>attn_lca <span class="op">=</span> softmax(sim_matrix)</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="co"># Baseline for comparison</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>d_model <span class="op">=</span> <span class="dv">16</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Q <span class="op">=</span> np.random.randn(N, d_model)</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>K <span class="op">=</span> np.random.randn(N, d_model)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>scores <span class="op">=</span> np.matmul(Q, K.T) <span class="op">/</span> np.sqrt(d_model)</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>attn_baseline <span class="op">=</span> softmax(scores)</span></code></pre></div>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td>### Appendix C: Data Tables and Visualizations</td>
+</tr>
+<tr>
+<td><strong>LCA Attention Matrix (Generated via
+Artifact_001)</strong></td>
+</tr>
+<tr>
+<td>| | cat | tiger | dog | wolf | tree | flower | sedan | coupe |
+pickup | semi | |:—|—:|—:|—:|—:|—:|—:|—:|—:|—:|—:| | cat | 0.202 | 0.122
+| 0.095 | 0.095 | 0.084 | 0.084 | 0.079 | 0.079 | 0.079 | 0.079 | |
+tiger | 0.122 | 0.202 | 0.095 | 0.095 | 0.084 | 0.084 | 0.079 | 0.079 |
+0.079 | 0.079 | | dog | 0.095 | 0.095 | 0.202 | 0.122 | 0.084 | 0.084 |
+0.079 | 0.079 | 0.079 | 0.079 | | wolf | 0.095 | 0.095 | 0.122 | 0.202 |
+0.084 | 0.084 | 0.079 | 0.079 | 0.079 | 0.079 | | tree | 0.086 | 0.086 |
+0.086 | 0.086 | 0.207 | 0.125 | 0.081 | 0.081 | 0.081 | 0.081 | | flower
+| 0.086 | 0.086 | 0.086 | 0.086 | 0.125 | 0.207 | 0.081 | 0.081 | 0.081
+| 0.081 | | sedan | 0.080 | 0.080 | 0.080 | 0.080 | 0.080 | 0.080 |
+0.204 | 0.124 | 0.096 | 0.096 | | coupe | 0.080 | 0.080 | 0.080 | 0.080
+| 0.080 | 0.080 | 0.124 | 0.204 | 0.096 | 0.096 | | pickup | 0.080 |
+0.080 | 0.080 | 0.080 | 0.080 | 0.080 | 0.096 | 0.096 | 0.204 | 0.124 |
+| semi | 0.080 | 0.080 | 0.080 | 0.080 | 0.080 | 0.080 | 0.096 | 0.096 |
+0.124 | 0.204 |</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Baseline Attention Matrix (Generated via
+Artifact_002)</strong></p>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: right;">cat</th>
+<th style="text-align: right;">tiger</th>
+<th style="text-align: right;">dog</th>
+<th style="text-align: right;">wolf</th>
+<th style="text-align: right;">tree</th>
+<th style="text-align: right;">flower</th>
+<th style="text-align: right;">sedan</th>
+<th style="text-align: right;">coupe</th>
+<th style="text-align: right;">pickup</th>
+<th style="text-align: right;">semi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">cat</td>
+<td style="text-align: right;">0.061</td>
+<td style="text-align: right;">0.245</td>
+<td style="text-align: right;">0.055</td>
+<td style="text-align: right;">0.245</td>
+<td style="text-align: right;">0.017</td>
+<td style="text-align: right;">0.081</td>
+<td style="text-align: right;">0.012</td>
+<td style="text-align: right;">0.195</td>
+<td style="text-align: right;">0.032</td>
+<td style="text-align: right;">0.058</td>
+</tr>
+<tr>
+<td style="text-align: left;">tiger</td>
+<td style="text-align: right;">0.206</td>
+<td style="text-align: right;">0.111</td>
+<td style="text-align: right;">0.115</td>
+<td style="text-align: right;">0.039</td>
+<td style="text-align: right;">0.179</td>
+<td style="text-align: right;">0.067</td>
+<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">0.079</td>
+<td style="text-align: right;">0.140</td>
+<td style="text-align: right;">0.050</td>
+</tr>
+<tr>
+<td style="text-align: left;">dog</td>
+<td style="text-align: right;">0.084</td>
+<td style="text-align: right;">0.112</td>
+<td style="text-align: right;">0.163</td>
+<td style="text-align: right;">0.006</td>
+<td style="text-align: right;">0.170</td>
+<td style="text-align: right;">0.045</td>
+<td style="text-align: right;">0.136</td>
+<td style="text-align: right;">0.058</td>
+<td style="text-align: right;">0.097</td>
+<td style="text-align: right;">0.129</td>
+</tr>
+<tr>
+<td style="text-align: left;">wolf</td>
+<td style="text-align: right;">0.097</td>
+<td style="text-align: right;">0.033</td>
+<td style="text-align: right;">0.216</td>
+<td style="text-align: right;">0.028</td>
+<td style="text-align: right;">0.145</td>
+<td style="text-align: right;">0.096</td>
+<td style="text-align: right;">0.069</td>
+<td style="text-align: right;">0.055</td>
+<td style="text-align: right;">0.149</td>
+<td style="text-align: right;">0.111</td>
+</tr>
+<tr>
+<td style="text-align: left;">tree</td>
+<td style="text-align: right;">0.043</td>
+<td style="text-align: right;">0.088</td>
+<td style="text-align: right;">0.008</td>
+<td style="text-align: right;">0.722</td>
+<td style="text-align: right;">0.003</td>
+<td style="text-align: right;">0.080</td>
+<td style="text-align: right;">0.006</td>
+<td style="text-align: right;">0.014</td>
+<td style="text-align: right;">0.009</td>
+<td style="text-align: right;">0.028</td>
+</tr>
+<tr>
+<td style="text-align: left;">flower</td>
+<td style="text-align: right;">0.105</td>
+<td style="text-align: right;">0.061</td>
+<td style="text-align: right;">0.132</td>
+<td style="text-align: right;">0.145</td>
+<td style="text-align: right;">0.139</td>
+<td style="text-align: right;">0.103</td>
+<td style="text-align: right;">0.047</td>
+<td style="text-align: right;">0.032</td>
+<td style="text-align: right;">0.087</td>
+<td style="text-align: right;">0.148</td>
+</tr>
+<tr>
+<td style="text-align: left;">sedan</td>
+<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">0.073</td>
+<td style="text-align: right;">0.112</td>
+<td style="text-align: right;">0.028</td>
+<td style="text-align: right;">0.235</td>
+<td style="text-align: right;">0.120</td>
+<td style="text-align: right;">0.111</td>
+<td style="text-align: right;">0.169</td>
+<td style="text-align: right;">0.070</td>
+<td style="text-align: right;">0.069</td>
+</tr>
+<tr>
+<td style="text-align: left;">coupe</td>
+<td style="text-align: right;">0.157</td>
+<td style="text-align: right;">0.075</td>
+<td style="text-align: right;">0.009</td>
+<td style="text-align: right;">0.251</td>
+<td style="text-align: right;">0.136</td>
+<td style="text-align: right;">0.119</td>
+<td style="text-align: right;">0.047</td>
+<td style="text-align: right;">0.085</td>
+<td style="text-align: right;">0.019</td>
+<td style="text-align: right;">0.101</td>
+</tr>
+<tr>
+<td style="text-align: left;">pickup</td>
+<td style="text-align: right;">0.088</td>
+<td style="text-align: right;">0.084</td>
+<td style="text-align: right;">0.038</td>
+<td style="text-align: right;">0.026</td>
+<td style="text-align: right;">0.217</td>
+<td style="text-align: right;">0.099</td>
+<td style="text-align: right;">0.212</td>
+<td style="text-align: right;">0.127</td>
+<td style="text-align: right;">0.047</td>
+<td style="text-align: right;">0.062</td>
+</tr>
+<tr>
+<td style="text-align: left;">semi</td>
+<td style="text-align: right;">0.128</td>
+<td style="text-align: right;">0.038</td>
+<td style="text-align: right;">0.016</td>
+<td style="text-align: right;">0.191</td>
+<td style="text-align: right;">0.067</td>
+<td style="text-align: right;">0.091</td>
+<td style="text-align: right;">0.019</td>
+<td style="text-align: right;">0.325</td>
+<td style="text-align: right;">0.038</td>
+<td style="text-align: right;">0.087</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Visual Trace of Decision Pathway (Generated via
+Artifact_003)</strong></p>
+<pre><code>    Living
+      |
+  Animal
+      |
+ Feline
+   /        \
+Cat(0000) Tiger(0001)</code></pre>
+<p><em>Trace Evaluation:</em> - [Query Token] Cat (ID: 0000) - [Key
+Token] Tiger (ID: 0001) - [LCA Operation] Common Prefix: ‘000’ - [Depth
+Matched] D = 3 - [Semantic Map] Concept Node: ‘Feline’ - [Attention
+Allocated] W = 0.122</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

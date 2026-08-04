@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Information Realism | QWAV</title>
+<meta name="description" content="Informational Realism: The Structure and Derivation of Physical Reality Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.org ORCID...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/information-realism">
+<meta property="og:title" content="Information Realism">
+<meta property="og:description" content="Informational Realism: The Structure and Derivation of Physical Reality Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.org ORCID...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/information-realism">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Information Realism",
+  "url": "https://deep.qwav.tech/papers/information-realism",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-09-21T16:08:09Z",
+  "abstract": "Informational Realism: The Structure and Derivation of Physical Reality Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.org ORCID..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h2
+id="informational-realism-the-structure-and-derivation-of-physical-reality">Informational
+Realism: The Structure and Derivation of Physical Reality</h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Affiliation:</strong> QNFO <strong>Contact:</strong>
+rowan.quni@qnfo.org <strong>ORCID:</strong> 0009-0002-4317-5604
+<strong>ISNI:</strong> 0000 0005 2645 6062 <strong>DOI</strong>:
+10.5281/zenodo.17171020 <strong>Publication Date:</strong> 2025-09-21
+<strong>Version</strong>: 1.0</p>
+<p>This manuscript presents a comprehensive theory of Informational
+Realism, a form of Ontic Structural Realism which posits that
+information is the fundamental constituent of the universe. The
+framework is developed from first principles, tracing the philosophical
+evolution from substance-based metaphysics to structural realism. It is
+then formalized using axiomatic set theory (ZFC) to define the static
+universe of all possible informational states and category theory to
+describe the dynamic processes governing them. From a minimal set of
+axioms—the conservation of information (unitarity), the constraint on
+information processing (the Data Processing Inequality), and a formal
+definition of measurement—the theory derives the core phenomena of
+quantum mechanics. The measurement problem, quantum entanglement, the
+uncertainty principle, and wave-particle duality are shown to be
+necessary informational corollaries, not arbitrary features of a
+material substrate. The framework further demonstrates the emergence of
+spacetime from entanglement geometry and dynamics from quantum
+computational processes. It provides an axiomatic resolution to the
+black hole information paradox, defines the epistemological limits of
+scientific inquiry, and is distinguished from other quantum
+interpretations. The theory culminates in a concrete, falsifiable
+prediction regarding a quantized action floor for measurement, elevating
+it from a philosophical framework to a testable scientific program.</p>
+<p>Keywords: Informational Realism, Ontic Structural Realism, Quantum
+Information Theory, Philosophy of Science, Category Theory, Quantum
+Foundations, Measurement Problem, Black Hole Information Paradox</p>
+<hr />
+<h3 id="ontological-foundations-of-informational-realism"><strong>1.0
+Ontological Foundations of Informational Realism</strong></h3>
+<p>A comprehensive theory of physical reality requires a coherent
+ontological framework. The theory of <strong>Informational
+Realism</strong> proposes a fundamental shift from traditional
+substance-based metaphysics, arguing that the universe’s ultimate
+constituent is not matter or energy, but information itself. This
+section traces the philosophical evolution that leads to this position,
+defines its core tenets, and describes its key variants, thereby setting
+the stage for the theory’s formal mathematical and physical
+development.</p>
+<h4
+id="the-philosophical-evolution-from-substance-to-structure"><strong>1.1
+The Philosophical Evolution from Substance to Structure</strong></h4>
+<p>The proposal that reality is informational is the culmination of a
+long-standing philosophical refinement in response to challenges posed
+by the history of science. This evolution begins with scientific realism
+and, under the pressure of historical evidence, transforms into a
+defensible structuralist position from which Informational Realism
+emerges.</p>
+<h5 id="the-tenets-of-scientific-realism"><strong>1.1.1 The Tenets of
+Scientific Realism</strong></h5>
+<p>Traditional <strong>scientific realism</strong> is the stance that
+our best scientific theories describe a mind-independent world. This
+position rests on three core commitments: (1) a metaphysical commitment
+to a mind-independent reality; (2) a semantic commitment that theories
+are <strong>truth-apt</strong> statements about that reality; and (3) an
+epistemic commitment that mature, successful theories are
+<strong>approximately true</strong>. The “no-miracles argument” supports
+this epistemic claim, suggesting that the profound predictive success of
+theories would be inexplicable if they were not latching onto the real
+structure of the world.</p>
+<h5
+id="the-historical-challenge-the-pessimistic-meta-induction"><strong>1.1.2
+The Historical Challenge: The Pessimistic Meta-Induction</strong></h5>
+<p>Traditional scientific realism faces a powerful challenge from the
+historical record of scientific progress. This challenge, the
+<strong>pessimistic meta-induction</strong>, uses the history of science
+as inductive evidence against the truth claims of current theories. Its
+central premise is that the history of science is a graveyard of
+discarded ontologies (e.g., phlogiston, caloric, the luminiferous
+aether) from theories once considered empirically successful. The
+argument concludes by induction that our current theories’ ontologies,
+such as those of the Standard Model, are likely also false and will
+eventually be superseded.</p>
+<h5
+id="the-response-the-formulation-of-structural-realism"><strong>1.1.3
+The Response: The Formulation of Structural Realism</strong></h5>
+<p>In response to the pessimistic meta-induction, a more nuanced
+position, <strong>Structural Realism</strong>, was developed. Its core
+insight, articulated by John Worrall (1989), is that while descriptions
+of the underlying <em>nature</em> of things (the ontology) are often
+discontinuous between successive theories, the <em>mathematical
+equations describing the relations</em> between phenomena are frequently
+preserved or subsumed. Structural Realism thus shifts the locus of
+realist commitment from the intrinsic nature of objects to the objective
+reality of the relational structures described by the mathematical
+formalism of our theories. This allows for realism about the structure
+of the world without commitment to a specific, and likely transient,
+ontology of objects.</p>
+<h5 id="the-bifurcation-of-structural-realism"><strong>1.1.4 The
+Bifurcation of Structural Realism</strong></h5>
+<p>This structuralist turn evolved into two distinct positions.
+<strong>Epistemic Structural Realism</strong> (ESR) is a cautious
+variant maintaining that while objects (“relata”) may exist as the nodes
+in the relational structure, their intrinsic nature is fundamentally
+unknowable; our knowledge is limited to the structure of relations.
+<strong>Ontic Structural Realism</strong> (OSR), championed by James
+Ladyman (1998), is a more radical variant that makes the metaphysical
+claim that structure is all there is. Relations are ontologically
+primary, and what we perceive as “objects” are reducible to their place
+within this structural network.</p>
+<h4 id="the-ontological-primacy-of-information"><strong>1.2 The
+Ontological Primacy of Information</strong></h4>
+<p>Building on this philosophical evolution, Informational Realism
+emerges as a specific, physically grounded form of Ontic Structural
+Realism. It provides a concrete candidate for the “structure” that OSR
+posits is fundamental.</p>
+<p>This framework identifies the abstract structure with the concrete
+physical and mathematical concept of “information,” a position
+articulated by Luciano Floridi (2008). The laws of physics are
+re-interpreted as the rules governing the processing and transformation
+of this fundamental informational substrate. This identification
+profoundly inverts the traditional materialist hierarchy. In the
+classical view, information is a secondary property of a material
+substrate (e.g., ink on paper). In the informational view, the
+informational structure is primary, and what is perceived as a material
+substrate—such as an elementary particle—is a manifestation or stable
+pattern of underlying informational processes.</p>
+<p>To make this concept rigorous, the theory defines reality’s basic
+constituents as <strong>informational objects</strong>. The framework of
+Object-Oriented Programming provides a powerful analogy: an object is
+defined not by its underlying substance but by its state (data) and the
+rules governing its interactions with other objects (methods). Applying
+this to physics, an electron is defined not by some underlying “stuff,”
+but by its properties (mass, charge, spin) and its lawful interactions.
+Its identity is entirely relational and dynamic.</p>
+<h4 id="key-variants-of-informational-realism"><strong>1.3 Key Variants
+of Informational Realism</strong></h4>
+<p>Two major variants offer complementary perspectives on this
+informational reality. <strong>Informational Structural Realism</strong>
+(ISR), primarily associated with Luciano Floridi, provides a
+comprehensive descriptive ontology. Its main function is to map
+reality’s structural composition, providing a formal language for
+analyzing any system in terms of its informational objects and their
+relations. It posits that the ultimate ground of this structure is
+<strong>dedomena</strong>—mind-independent data existing as fundamental
+points of difference from which all information, and thus all reality,
+is constructed.</p>
+<p>A second, generative variant is proposed within this manuscript,
+described as a <strong>Fisher Information Field Theory</strong> (FIFT).
+This conceptual model moves beyond a descriptive project to offer a
+generative account of how the informational universe evolves. It
+postulates dynamic information fields: a <strong>J-field</strong> as a
+universal reservoir of latent informational potential (pure
+possibility), an <strong>I-field</strong> as a transformative agent that
+actualizes this potential into definite structures, and a
+<strong>K-field</strong> as a stabilizing agent that ensures systemic
+coherence and persistence over time.</p>
+<h3 id="the-formal-mathematical-architecture"><strong>2.0 The Formal
+Mathematical Architecture</strong></h3>
+<p>After establishing the philosophical foundations, the theory requires
+a rigorous mathematical language. This architecture is twofold: a static
+set-theoretic foundation defines the universe of all possible
+informational states, and a dynamic categorical framework describes the
+processes that govern these states.</p>
+<h4
+id="the-static-universe-of-states-a-set-theoretic-foundation"><strong>2.1
+The Static Universe of States: A Set-Theoretic Foundation</strong></h4>
+<p>To ground the theory in a paradox-free, universally accepted
+language, the framework adopts <strong>Zermelo-Fraenkel set theory with
+the Axiom of Choice</strong> (ZFC). ZFC provides the foundational object
+(the empty set), generative tools for constructing complex sets
+(pairing, union, power set), rules for defining subsets (specification),
+and axioms to enforce a well-founded structure that prevents paradoxes
+(regularity). The axioms of infinity and choice guarantee the existence
+of infinite sets and the choice functions required for the mathematics
+of quantum mechanics.</p>
+<p>Using ZFC, we define the <strong>Informational Census</strong>,
+denoted <span class="math inline">\(\Omega\)</span>, as the totality of
+all possible information, coextensive with the von Neumann cumulative
+hierarchy (the class of all hereditary well-founded sets). Because a
+“set of all sets” leads to Russell’s Paradox, <span
+class="math inline">\(\Omega\)</span> is a <strong>proper
+class</strong>—a collection too large to be a set itself.</p>
+<p>Physical reality, however, corresponds to a distinguishable subset of
+this space. A physical measurement, with its finite resolution, acts as
+an <strong>equivalence relation</strong> (<span
+class="math inline">\(\sim\)</span>) on <span
+class="math inline">\(\Omega\)</span> that partitions it into sets of
+indistinguishable microstates. The <strong>Physical Poll</strong>,
+denoted <span class="math inline">\(\mathcal{E}\)</span>, is the
+quotient set <span class="math inline">\(\Omega/\sim\)</span>,
+representing the coarse-grained reality accessible to observation. The
+Axiom of Replacement ensures that <span
+class="math inline">\(\mathcal{E}\)</span> is a well-defined set.</p>
+<p>This set-theoretic coarse-graining has a profound consequence. By
+definition, the cardinality of the observable space is less than that of
+the total possibility space: <span class="math inline">\(|\mathcal{E}|
+&lt; |\Omega|\)</span>. The mapping from <span
+class="math inline">\(\Omega\)</span> to <span
+class="math inline">\(\mathcal{E}\)</span> is therefore a many-to-one
+(surjective but not injective) function, which means information is
+necessarily lost in any observation. This unavoidable loss is the
+<strong>Information Deficit</strong>.</p>
+<h4
+id="the-dynamic-logic-of-processes-a-categorical-framework"><strong>2.2
+The Dynamic Logic of Processes: A Categorical Framework</strong></h4>
+<p>To describe dynamics, evolution, and interaction, the framework uses
+the language of <strong>category theory</strong>. The field of
+<strong>Categorical Quantum Mechanics</strong> (CQM), pioneered by
+Abramsky and Coecke (2004), provides a powerful, process-oriented
+reformulation of quantum theory where physical processes, not static
+states, are the fundamental primitives. Its central strength is its
+focus on <strong>compositionality</strong>, providing rigorous rules for
+combining processes sequentially (one after another) or in parallel (at
+the same time).</p>
+<p>This perspective is formalized in the <strong>Category of
+Information</strong> (Inf). The objects of this category are sets of
+information states from the Physical Poll <span
+class="math inline">\(\mathcal{E}\)</span>. The morphisms (<span
+class="math inline">\(f: A \to B\)</span>) are information-processing
+channels that represent all physical processes, including interactions
+and time evolution. To capture the full structure of quantum physics,
+Inf is endowed with the structure of a <strong>dagger symmetric monoidal
+category</strong>. - The <strong>monoidal</strong> structure allows for
+the description of multiple, composite systems via the tensor product
+(<span class="math inline">\(\otimes\)</span>). - The
+<strong>symmetric</strong> structure encodes the physical principle that
+the ordering of parallel systems is irrelevant. - The
+<strong>dagger</strong> (<span class="math inline">\(\dagger\)</span>)
+is an operation that maps a process to its adjoint, representing process
+reversal. It provides a formal link between processes like state
+preparation and their corresponding measurements.</p>
+<p>This categorical framework has an associated graphical language of
+<strong>string diagrams</strong>, where systems are represented as wires
+and processes as boxes. This calculus allows for intuitive, topological
+reasoning about complex quantum interactions, abstracting away the
+cumbersome algebra of the standard Hilbert space formalism.</p>
+<h3
+id="the-axiomatic-principles-of-an-informational-universe"><strong>3.0
+The Axiomatic Principles of an Informational Universe</strong></h3>
+<p>Building on the mathematical architecture, the framework posits
+universal principles governing the conservation, processing, and
+observation of information. These axioms are presented as the
+fundamental laws of physics.</p>
+<h4 id="axiom-i-the-conservation-of-information"><strong>3.1 Axiom I:
+The Conservation of Information</strong></h4>
+<p>The first axiom states that information in an isolated system is
+conserved. This is the informational equivalent of unitarity in quantum
+mechanics. Information content is quantified by <strong>von Neumann
+entropy</strong>. For a physical state represented by a density matrix
+<span class="math inline">\(\rho\)</span>, the uncertainty is given
+by:</p>
+<p><span class="math display">\[
+S(\rho) = -\text{Tr}(\rho \log_2 \rho). \quad (3.1)
+\]</span></p>
+<p>A <strong>pure</strong> state, known with certainty, has zero
+entropy; a <strong>mixed</strong> state, representing a probabilistic
+ensemble, has positive entropy. The axiom formally states that for any
+isolated system undergoing a unitary transformation <span
+class="math inline">\(U\)</span>, the von Neumann entropy of the state
+is conserved: <span class="math inline">\(S(U\rho U^\dagger) =
+S(\rho)\)</span>. This axiom expresses the principles of
+<strong>unitarity</strong> and <strong>reversibility</strong> for all
+fundamental processes.</p>
+<h4 id="axiom-ii-the-constraint-on-information-processing"><strong>3.2
+Axiom II: The Constraint on Information Processing</strong></h4>
+<p>The second axiom elevates the <strong>Data Processing
+Inequality</strong> (DPI) from information theory to a fundamental
+physical law governing information flow. The axiom applies to any
+process that can be modeled as a <strong>Markov chain</strong> (<span
+class="math inline">\(X \to Y \to Z\)</span>), where the future depends
+only on the present. The DPI states that for any such chain, the
+<strong>mutual information</strong> between the beginning and the end
+cannot exceed the mutual information between the beginning and any
+intermediate stage:</p>
+<p><span class="math display">\[
+I(X;Z) \le I(X;Y). \quad (3.2)
+\]</span></p>
+<p>The physical meaning of this axiom is profound: any local physical
+process can only preserve or degrade the information a system contains
+about its source; it can never create or amplify new information. This
+single principle of causality is sufficient to derive many core “rules”
+of quantum mechanics, including the <strong>no-cloning theorem</strong>
+and the prohibition of superluminal communication via entanglement.</p>
+<h4 id="axiom-iii-the-nature-of-observation"><strong>3.3 Axiom III: The
+Nature of Observation</strong></h4>
+<p>The third axiom provides a quantitative, physical definition of
+measurement. It defines measurement as any physical interaction that
+reduces an observer’s uncertainty about a system. This uncertainty is
+termed the <strong>Information Deficit</strong> (<span
+class="math inline">\(\Delta I\)</span>) and is formally quantified by
+the <strong>conditional entropy</strong>:</p>
+<p><span class="math display">\[
+\Delta I \equiv H(X|Y) = S(XY) - S(Y). \quad (3.3)
+\]</span></p>
+<p>A <strong>measurement</strong> is any physical process that results
+in a reduction of this deficit: <span
+class="math inline">\(H(X&#39;|Y&#39;) &lt; H(X|Y)\)</span>. This
+definition reveals a key signature of <strong>quantum
+entanglement</strong>: the possibility of negative conditional entropy.
+In quantum systems, <span class="math inline">\(H(X|Y)\)</span> can be
+negative, implying that the entropy of the whole system is less than the
+entropy of one of its parts (<span class="math inline">\(S(XY) &lt;
+S(Y)\)</span>). This is mathematically impossible if information is a
+local property; it signifies that in entangled systems, information is
+stored non-locally in the correlations <em>between</em> the parts.</p>
+<h3
+id="the-derivation-of-quantum-phenomena-as-informational-corollaries"><strong>4.0
+The Derivation of Quantum Phenomena as Informational
+Corollaries</strong></h3>
+<p>The power of this axiomatic framework lies in its ability to derive
+the characteristic—and often paradoxical—features of quantum mechanics
+as necessary consequences of these fundamental laws of information.</p>
+<h4 id="the-measurement-problem-and-wave-function-collapse"><strong>4.1
+The Measurement Problem and “Wave Function Collapse”</strong></h4>
+<p>The measurement problem is resolved by demonstrating that “collapse”
+is not a fundamental, ad-hoc process distinct from unitary evolution. It
+is an emergent, irreversible thermodynamic phenomenon that is a
+necessary consequence of measurement (Axiom III) under the constraint of
+information conservation (Axiom I).</p>
+<p>The proof proceeds by considering an isolated system comprising a
+quantum object <span class="math inline">\(X\)</span> and an
+observer/environment <span class="math inline">\(Y\)</span>. 1. By Axiom
+I, the evolution of the total system <span
+class="math inline">\(XY\)</span> is unitary, and its total entropy
+<span class="math inline">\(S(XY)\)</span> is conserved. 2. By Axiom
+III, a measurement is an interaction that reduces the Information
+Deficit <span class="math inline">\(H(X|Y) = S(XY) - S(Y)\)</span>. 3.
+For <span class="math inline">\(H(X|Y)\)</span> to decrease while <span
+class="math inline">\(S(XY)\)</span> remains constant, the entropy of
+the observer/environment, <span class="math inline">\(S(Y)\)</span>,
+must necessarily increase. 4. By Landauer’s principle (1961), an
+increase in thermodynamic entropy is equivalent to the logical erasure
+of information. The increase in <span
+class="math inline">\(S(Y)\)</span> corresponds to the irreversible
+erasure of the information about the unobserved outcomes of the
+superposition, which is dissipated as heat into the environment’s
+degrees of freedom.</p>
+<p>This irreversible, information-erasing process, which appears
+non-unitary when considering only subsystem <span
+class="math inline">\(X\)</span>, is precisely what is termed “wave
+function collapse.” It is derived here as the thermodynamic consequence
+of an information-acquiring interaction within a globally
+information-conserving universe. The <strong>wave function</strong> is
+thus reinterpreted as an objective field of potential information, and
+what appears as “<strong>collapse</strong>” is a two-stage process:
+first, <strong>decoherence</strong> (Zurek, 2003), where system
+information becomes entangled with the environment, followed by
+thermodynamic actualization, where one outcome is stabilized as a
+classical record. The <strong>Quantum Toll Framework</strong>, proposed
+herein, models this actualization as a thermodynamic phase
+transition.</p>
+<h4 id="quantum-entanglement-and-non-locality"><strong>4.2 Quantum
+Entanglement and Non-Locality</strong></h4>
+<p>The paradox of entanglement is resolved by rejecting its foundational
+premise of <strong>separability</strong>. An entangled pair is redefined
+as a single, <strong>non-local informational object</strong> whose state
+is holistically defined. The mathematical inseparability of the state
+vector reflects a real physical inseparability. As established in Axiom
+III, the signature of this state is negative conditional entropy, which
+proves that information is stored non-locally.</p>
+<p>A local measurement on one part of the system is therefore an
+internal update of this unified structure, not a superluminal signal.
+The notion of “spooky action at a distance” is a category error arising
+from incorrectly applying a two-object model to what is fundamentally a
+single, non-local object. Axiom II (the DPI) rigorously guarantees that
+this internal update cannot be used for superluminal communication.</p>
+<h4 id="the-uncertainty-principle"><strong>4.3 The Uncertainty
+Principle</strong></h4>
+<p>The <strong>Heisenberg Uncertainty Principle</strong> is reframed as
+a fundamental epistemological limit on information extraction. In CQM,
+an <strong>observable</strong> is an information-extraction process,
+formalized by the algebraic structure of a <strong>commutative dagger
+Frobenius algebra</strong>. <strong>Complementary observables</strong>,
+like position and momentum, correspond to algebraically incompatible
+algebras. The uncertainty principle emerges as a direct theorem from
+this formalism: the act of measuring one observable (i.e., projecting
+onto one basis) necessarily randomizes the state with respect to a
+complementary observable, creating an unavoidable trade-off in the
+knowledge an observer can acquire.</p>
+<h4 id="wave-particle-duality"><strong>4.4 Wave-Particle
+Duality</strong></h4>
+<p>The paradox of <strong>wave-particle duality</strong> is resolved
+through the methodological principle of <strong>Levels of
+Abstraction</strong> (LoA). The wave and particle aspects are not
+contradictory intrinsic properties but are different manifestations of
+an underlying informational object, revealed by the informational
+context of the experiment. An interference experiment operates at the
+“<strong>wave LoA</strong>,” probing the object’s delocalized,
+field-like behavior. A position-detection experiment operates at the
+“<strong>particle LoA</strong>,” probing a localized interaction. The
+object manifests different aspects of its nature depending on the
+questions asked of it.</p>
+<h3
+id="the-emergence-of-physical-reality-from-the-informational-substrate"><strong>5.0
+The Emergence of Physical Reality from the Informational
+Substrate</strong></h3>
+<p>The framework culminates by showing how the macroscopic structures of
+reality—spacetime and dynamics—are not fundamental but are emergent
+properties of the underlying informational network.</p>
+<h4 id="the-genesis-of-spacetime"><strong>5.1 The Genesis of
+Spacetime</strong></h4>
+<p><strong>Spacetime</strong> is not a pre-existing container but an
+emergent property of the universe’s entanglement patterns. The framework
+begins with the principle of <strong>background independence</strong>,
+asserting that all geometry must derive from relational structure.
+Geometric proximity between two systems is defined as a monotonically
+decreasing function of their mutual information (<span
+class="math inline">\(d(A, B) \propto 1/I(A:B)^\alpha\)</span>), meaning
+highly entangled systems are geometrically “close.” This defines a
+pre-geometric network from which a continuous geometric space (a
+<strong>manifold</strong>) can be derived as the best-fit approximation.
+A causal, <strong>light-cone structure</strong> is then imprinted on
+this manifold using <strong>causal categories</strong>, which restrict
+parallel composition to space-like separated systems, thus turning the
+space into a spacetime, with causality governed by Axiom II.</p>
+<h4 id="the-genesis-of-dynamics"><strong>5.2 The Genesis of
+Dynamics</strong></h4>
+<p>The laws of motion (<strong>dynamics</strong>) emerge from the
+computational evolution of the universe’s informational state. The
+universe’s evolution is modeled as a gigantic <strong>quantum
+computation</strong>. The smooth evolution described by the
+<strong>Schrödinger equation</strong> is seen as an effective,
+macroscopic approximation of an underlying discrete process, such as a
+<strong>quantum cellular automaton</strong> (QCA). This algorithmic view
+is formalized by <strong>Constructor Theory</strong> (Deutsch, 2013),
+which posits that fundamental laws are timeless statements about which
+physical transformations are possible versus impossible. Dynamics are a
+derived consequence of these timeless computational principles.</p>
+<h3 id="synthesis-critique-and-scientific-status"><strong>6.0 Synthesis,
+Critique, and Scientific Status</strong></h3>
+<p>This final section applies the framework to the black hole
+information paradox, assesses its epistemological limits, and identifies
+its scientific status.</p>
+<h4
+id="a-unifying-test-case-the-black-hole-information-paradox"><strong>6.1
+A Unifying Test Case: The Black Hole Information Paradox</strong></h4>
+<p>The <strong>black hole information paradox</strong> arises from the
+conflict between semi-classical gravity, which suggests information is
+destroyed during black hole evaporation (Hawking, 1975), and quantum
+mechanics, which requires information to be conserved (Axiom I).
+Informational Realism resolves this axiomatically: information cannot be
+lost. The scientific task shifts from asking <em>if</em> information
+escapes to <em>how</em>. The mechanism is that information is scrambled
+and re-encoded in subtle, non-local correlations within the outgoing
+Hawking radiation. Recent validation of the <strong>Page curve</strong>
+(Page, 1993) shows that the entanglement entropy of the radiation
+follows the precise behavior required for a unitary,
+information-preserving process. The information is practically
+inaccessible due to the exponential computational complexity required
+for its retrieval, but it is not fundamentally lost.</p>
+<h4 id="epistemological-constraints-of-the-framework"><strong>6.2
+Epistemological Constraints of the Framework</strong></h4>
+<p>The framework’s own axioms place fundamental limits on what can be
+known. Axiom II (the DPI) proves that any observation is an
+information-losing process, making the universe’s complete, fine-grained
+state (the Informational Census) fundamentally inaccessible. The goal of
+science is therefore not to find the “true” model but the best possible
+approximation, a task formalized as finding models that minimize the
+<strong>Kullback-Leibler divergence</strong> from the true
+data-generating process. This information loss also explains the
+practical necessity of <strong>regularization</strong> in all
+non-trivial data analysis.</p>
+<h4
+id="comparative-analysis-with-other-quantum-interpretations"><strong>6.3
+Comparative Analysis with Other Quantum Interpretations</strong></h4>
+<p>Informational Realism is a thoroughly realist position. Unlike the
+<strong>Copenhagen interpretation</strong>, it provides a physical
+explanation for measurement instead of positing an arbitrary
+quantum-classical cut. Compared to the <strong>Many-Worlds
+Interpretation</strong> (MWI), it is more ontologically parsimonious,
+positing one universe of informational potentials rather than an
+infinite number of branching actual worlds. In direct opposition to
+<strong>Quantum Bayesianism</strong> (QBism), which treats information
+as a subjective belief, IR treats information as an objective,
+mind-independent feature of reality.</p>
+<h4 id="philosophical-critiques-and-falsifiable-predictions"><strong>6.4
+Philosophical Critiques and Falsifiable Predictions</strong></h4>
+<p>The framework answers philosophical critiques such as the
+<strong>Newman Problem</strong> (the charge that structural claims are
+trivial) by grounding its structures in dynamic, constrained physical
+processes. It addresses the charge of being untestable metaphysics by
+positioning itself as a generative theory from which existing physics
+should be derivable as an effective approximation. Most importantly, the
+Quantum Toll model of measurement makes a concrete, <strong>falsifiable
+prediction</strong>: the formation of a stable, classical measurement
+outcome is a threshold event requiring a minimum, quantized exchange of
+physical action (<span class="math inline">\(S = n\hbar\)</span>).
+Experiments probing interactions at extremely low action levels could
+provide a definitive test, elevating the theory from a philosophical
+framework to a testable scientific program.</p>
+<hr />
+<h3 id="references"><strong>References</strong></h3>
+<p>Abramsky, S., &amp; Coecke, B. (2004). A categorical semantics of
+quantum protocols. In <em>Proceedings of the 19th Annual IEEE Symposium
+on Logic in Computer Science</em> (pp. 415–425). IEEE Computer Society.
+https://doi.org/10.1109/LICS.2004.1319612</p>
+<p>Bekenstein, J. D. (1973). Black holes and entropy. <em>Physical
+Review D, 7</em>(8), 2333–2346.
+https://doi.org/10.1103/PhysRevD.7.2333</p>
+<p>Bell, J. S. (1964). On the Einstein Podolsky Rosen paradox.
+<em>Physics Physique Fizika, 1</em>(3), 195–200.
+https://doi.org/10.1103/PhysicsPhysiqueFizika.1.195</p>
+<p>Cover, T. M., &amp; Thomas, J. A. (2006). <em>Elements of information
+theory</em> (2nd ed.). Wiley-Interscience.</p>
+<p>Deutsch, D. (2013). Constructor theory. <em>Synthese, 190</em>(18),
+4331–4359. https://doi.org/10.1007/s11229-013-0279-z</p>
+<p>Einstein, A., Podolsky, B., &amp; Rosen, N. (1935). Can
+quantum-mechanical description of physical reality be considered
+complete? <em>Physical Review, 47</em>(10), 777–780.
+https://doi.org/10.1103/PhysRev.47.777</p>
+<p>Everett, H. (1957). “Relative State” formulation of quantum
+mechanics. <em>Reviews of Modern Physics, 29</em>(3), 454–462.
+https://doi.org/10.1103/RevModPhys.29.454</p>
+<p>Floridi, L. (2008). A defence of informational structural realism.
+<em>Synthese, 161</em>(2), 219–253.
+https://doi.org/10.1007/s11229-007-9163-z</p>
+<p>Hawking, S. W. (1975). Particle creation by black holes.
+<em>Communications in Mathematical Physics, 43</em>(3), 199–220.
+https://doi.org/10.1007/BF02345020</p>
+<p>Ladyman, J. (1998). What is structural realism? <em>Studies in
+History and Philosophy of Science Part A, 29</em>(3), 409–424.
+https://doi.org/10.1016/S0039-3681(98)00021-9</p>
+<p>Landauer, R. (1961). Irreversibility and heat generation in the
+computing process. <em>IBM Journal of Research and Development,
+5</em>(3), 183–191. https://doi.org/10.1147/rd.53.0183</p>
+<p>Nielsen, M. A., &amp; Chuang, I. L. (2010). <em>Quantum computation
+and quantum information</em> (10th anniversary ed.). Cambridge
+University Press.</p>
+<p>Page, D. N. (1993). Information in black hole radiation. <em>Physical
+Review Letters, 71</em>(23), 3743–3746.
+https://doi.org/10.1103/PhysRevLett.71.3743</p>
+<p>Schrödinger, E. (1935). Die gegenwärtige Situation in der
+Quantenmechanik [The present situation in quantum mechanics].
+<em>Naturwissenschaften, 23</em>(48), 807–812.
+https://doi.org/10.1007/BF01491891</p>
+<p>Wheeler, J. A. (1990). Information, physics, quantum: The search for
+links. In W. H. Zurek (Ed.), <em>Complexity, entropy and the physics of
+information</em> (pp. 3–28). Addison-Wesley.</p>
+<p>Worrall, J. (1989). Structural realism: The best of both worlds?
+<em>Dialectica, 43</em>(1–2), 99–124.
+https://doi.org/10.1111/j.1746-8361.1989.tb00933.x</p>
+<p>Zurek, W. H. (2003). Decoherence, einselection, and the quantum
+origins of the classical. <em>Reviews of Modern Physics, 75</em>(3),
+715–775. https://doi.org/10.1103/RevModPhys.75.715</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

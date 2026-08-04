@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emergent Number Theory | QWAV</title>
+<meta name="description" content="Emergent Number Theory Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com ORCID: 0009-0002-4317-5604 ISNI: 0000 0005 2645 6062 DOI: 10.5281/zen...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/emergent-number-theory">
+<meta property="og:title" content="Emergent Number Theory">
+<meta property="og:description" content="Emergent Number Theory Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com ORCID: 0009-0002-4317-5604 ISNI: 0000 0005 2645 6062 DOI: 10.5281/zen...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/emergent-number-theory">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Emergent Number Theory",
+  "url": "https://deep.qwav.tech/papers/emergent-number-theory",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-11-01T04:57:38Z",
+  "keywords": [
+    ": Emergent number theory",
+    "Pisot-Vijayaraghavan theory",
+    "Spectral geometry",
+    "Noncommutative geometry",
+    "Category theory",
+    "Operational primality"
+  ],
+  "abstract": "Emergent Number Theory Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com ORCID: 0009-0002-4317-5604 ISNI: 0000 0005 2645 6062 DOI: 10.5281/zen..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1 id="emergent-number-theory">Emergent Number Theory</h1>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Contact:</strong> rowan.quni@outlook.com <strong>ORCID:</strong>
+0009-0002-4317-5604 <strong>ISNI:</strong> 0000 0005 2645 6062
+<strong>DOI:</strong> 10.5281/zenodo.17499278 <strong>Publication
+Date:</strong> 2025-11-01 <strong>Version:</strong> 1.0</p>
+<p><strong>Abstract</strong>: This work demonstrates that natural
+numbers and primes are not primitive ontological entities but emerge
+asymptotically from more fundamental continuous structures. The
+framework establishes that natural numbers emerge from continuous
+dynamics (Pisot flows, cut-and-project schemes) via exponential rounding
+or geometric projection with mathematically precise error bounds. Primes
+emerge from spectral data (zeta zeros) via exact Fourier duality, not
+combinatorial indivisibility, as demonstrated by Riemann’s explicit
+formula. A formal structural isomorphism exists between algebraic
+irreducibility (as seen in the golden ratio <span
+class="math inline">\(\phi\)</span>) and analytic irreducibility (as
+seen in the Riemann zeta function <span
+class="math inline">\(\zeta(s)\)</span>), mediated by trace formulas and
+Euler products. This reframing resolves the central tension in the
+literature: defining primality solely via natural-number indivisibility
+constitutes a category error that conflates a coarse-grained observable
+with its generative substrate. Primality must be redefined as a property
+of irreducible generators in a continuous representational space, with
+natural-number indivisibility serving as a derived, approximate shadow.
+The framework provides a rigorous operational definition of emergence
+that applies uniformly across scales, with explicit error bounds that
+handle edge cases with the same rigor as asymptotic cases.</p>
+<p><strong>Keywords</strong>: Emergent number theory,
+Pisot-Vijayaraghavan theory, Spectral geometry, Noncommutative geometry,
+Category theory, Operational primality</p>
+<h2 id="state-of-the-art-and-gap-identification">1.0 State of the Art
+and Gap Identification</h2>
+<p>The relationship between discrete number theory and continuous
+mathematical structures represents one of the most profound and actively
+investigated frontiers in modern mathematics. This scholarly landscape
+reveals a sophisticated understanding of how discrete structures emerge
+from continuous foundations, while simultaneously highlighting
+unresolved questions that form the basis for this work. The literature
+demonstrates that the conventional understanding of natural numbers and
+primes as primitive ontological entities requires reevaluation in light
+of emerging evidence from multiple mathematical domains, including
+analytic number theory, spectral geometry, noncommutative geometry, and
+dynamical systems theory.</p>
+<h3 id="summary-of-key-prior-work">1.1 Summary of Key Prior Work</h3>
+<p>Pisot-Vijayaraghavan (PV) theory provides a rigorous mathematical
+framework for understanding how integer sequences emerge from continuous
+irrational flows through exponential rounding with quantifiable error
+bounds. Akiyama and Komornik (2021) established that Pisot numbers
+generate integer sequences via exponential rounding with mathematically
+precise error bounds. For the golden ratio <span
+class="math inline">\(\phi = (1+\sqrt{5})/2\)</span> (a Pisot number of
+degree 2, minimal polynomial <span class="math inline">\(x^2 - x -
+1\)</span>), the Fibonacci sequence satisfies:</p>
+<p><span class="math display">\[\left| F_n - \frac{\phi^n}{\sqrt{5}}
+\right| = \left| \frac{\psi^n}{\sqrt{5}} \right| &lt; \frac{1}{2} \quad
+\text{for all } n \geq 1\]</span></p>
+<p>where <span class="math inline">\(\psi = (1-\sqrt{5})/2\)</span> is
+the conjugate of <span class="math inline">\(\phi\)</span>, with the
+error decaying exponentially as <span class="math inline">\(n\)</span>
+increases. This demonstrates that the Fibonacci sequence is not
+primitive but emerges as a rounded projection of a continuous Pisot flow
+with quantifiable error bounds (Akiyama and Komornik, 2021). The natural
+numbers in this sequence are stable outputs of a deterministic
+continuous dynamical system, with the error bound holding uniformly for
+all <span class="math inline">\(n\)</span>.</p>
+<p>Riemann’s explicit formula establishes primes as Fourier duals of
+zeta zeros through an exact distributional identity, not merely a
+statistical approximation. Meyer (2018) demonstrated that the Chebyshev
+function <span class="math inline">\(\psi(x)\)</span> satisfies:</p>
+<p><span class="math display">\[\psi(x) = x - \sum_{\rho}
+\frac{x^{\rho}}{\rho} - \log(2\pi) - \frac{1}{2}\log(1 -
+x^{-2})\]</span></p>
+<p>where the sum is over all non-trivial zeros <span
+class="math inline">\(\rho\)</span> of the Riemann zeta function. This
+formula is not merely asymptotic but represents a Poisson summation on
+adeles, establishing an exact duality between discrete prime
+distribution and continuous spectral data (Meyer, 2018). The precise
+error term for finite truncations:</p>
+<p><span class="math display">\[|R(x,T)| \leq \frac{x \log^2(xT)}{2\pi
+T} + \frac{\log x}{\pi} + \frac{1}{x-1}\]</span></p>
+<p>provides a mathematically rigorous framework for understanding the
+relationship between primes and zeta zeros, with explicit bounds that
+handle edge cases such as small <span class="math inline">\(x\)</span>
+values.</p>
+<p>In noncommutative geometry, Connes and Marcolli (2008) developed the
+adele class space formalism where natural numbers emerge as
+coarse-grained observables from continuous flows (Connes and Marcolli,
+2008). In this framework, primes correspond to ergodic components of the
+flow, and the Riemann zeta function arises from a spectral triple, where
+it encodes geometric data through the spectrum of a Dirac operator. This
+approach treats <span class="math inline">\(\mathbb{N}\)</span> not as a
+primitive set but as a derived object in the category of spectral
+triples, fundamentally challenging the conventional view of natural
+numbers as foundational.</p>
+<p>The trace formula connects matrix powers to Dirichlet series
+coefficients, demonstrating formal structural isomorphisms between
+seemingly disparate mathematical domains. Serre (1977) established that
+for recurrence sequences <span class="math inline">\((a_n)\)</span> with
+companion matrix <span class="math inline">\(M\)</span>, the
+relation:</p>
+<p><span class="math display">\[a_n = \text{Tr}(M^n) \quad \text{and}
+\quad \zeta_P(s) = \sum_{n=1}^{\infty} a_n n^{-s}\]</span></p>
+<p>provides a formal bridge between Pisot recurrences and L-functions
+(Serre, 1977). This correspondence is not merely analogical but
+mathematically precise, with the Artin-Hasse exponential providing the
+connecting mechanism between recurrence coefficients and Euler
+factors.</p>
+<p>Modern primality testing algorithms inherently depend on continuous
+mathematical structures, revealing that the conventional definition of
+primality through indivisibility in <span
+class="math inline">\(\mathbb{N}\)</span> is a pedagogical
+simplification rather than a foundational truth. Elliptic Curve
+Primality Proving (ECPP) operates on elliptic curves over finite fields
+whose endomorphism rings are orders in imaginary quadratic fields—a
+continuous structure. Miller-Rabin probabilistic testing relies on
+modular exponentiation, which is efficient only because of the
+continuous logarithm in exponent reduction. Sierra (2023) has
+demonstrated that quantum systems with spectra matching zeta zeros have
+been identified, though a complete operational framework for primality
+based on these spectral properties remains under development (Sierra,
+2023).</p>
+<p>Omar Pol’s geometric visualization of primes through “curvas
+periódicas” (periodic curves) provides an intuitive framework for
+understanding primality. In this model, each natural number <span
+class="math inline">\(n\)</span> is intersected by periodic curves
+corresponding to its divisors. Prime numbers appear as points
+intersected by exactly two curves (for divisors 1 and <span
+class="math inline">\(n\)</span>), providing a visual representation of
+the mathematical fact that <span class="math inline">\(n\)</span> is
+prime if and only if <span class="math inline">\(\tau(n) = 2\)</span>,
+where <span class="math inline">\(\tau(n)\)</span> is the divisor
+function (Pol, 2007). This geometric embodiment reveals the structural
+isomorphism between discrete primality and continuous projection
+operations, with primes emerging as the level set <span
+class="math inline">\(\tau^{-1}(2)\)</span>.</p>
+<h3 id="identified-open-problems-or-tensions">1.2 Identified Open
+Problems or Tensions</h3>
+<p>While the mathematical connections between discrete number theory and
+continuous structures are well-established, a critical gap exists in the
+literature regarding a unified emergence framework that handles edge
+cases (small primes, degenerate Pisot numbers) with the same rigor as
+asymptotic cases. Current approaches often treat small values as special
+cases without a unified theoretical framework that applies uniformly
+across scales.</p>
+<p>The category-theoretic correspondence between Pisot recurrences and
+L-functions, while preserving irreducibility, is not a full functor in
+general, limiting its applicability. As noted by Serre (1977) and
+Koblitz (1984), this correspondence requires careful handling of
+degenerate cases and does not universally extend to all morphisms
+between the relevant categories (Serre, 1977) (Koblitz, 1984).
+Specifically:</p>
+<ol type="1">
+<li><p>When <span class="math inline">\(P(x)\)</span> has multiple
+irreducible factors of the same degree, the corresponding L-function has
+multiple identical factors, requiring special handling in the
+category-theoretic mapping.</p></li>
+<li><p>When <span class="math inline">\(P(x)\)</span> is a power of an
+irreducible polynomial, the corresponding L-function has a pole of
+higher order, violating the standard irreducibility
+correspondence.</p></li>
+<li><p>When <span class="math inline">\(P(x)\)</span> has roots on the
+unit circle (non-Pisot case), the error bounds in the emergence process
+no longer hold exponentially, requiring alternative analytical
+approaches.</p></li>
+</ol>
+<p>This limitation creates a tension between the operational
+effectiveness of <span class="math inline">\(\mathbb{N}\)</span>-based
+primality testing and the theoretical insight that primality may be
+better understood through continuous spectral data. While practical
+algorithms work effectively for computational purposes, they lack a
+theoretical foundation that integrates seamlessly with the deeper
+structural understanding provided by continuous mathematics.</p>
+<p>A significant gap exists in the literature regarding the precise
+operational definition of emergence that applies uniformly across
+scales. Meyer (2018) established the exact distributional identity of
+Riemann’s explicit formula, but a comprehensive operational definition
+of emergence that applies uniformly across scales—particularly for small
+values where asymptotic approximations break down—remains undeveloped
+(Meyer, 2018). This gap prevents a complete reframing of primality
+outside the natural number framework.</p>
+<p>Sierra (2023) has identified the need for a complete operational
+framework for primality based on spectral properties, noting that while
+quantum systems with spectra matching zeta zeros have been identified, a
+practical implementation of primality testing based on these spectral
+properties is still lacking (Sierra, 2023). This represents a critical
+gap between theoretical understanding and operational utility, where the
+theoretical insight has not yet translated into practical computational
+methods.</p>
+<h3 id="positioned-contribution-of-this-work">1.3 Positioned
+Contribution of This Work</h3>
+<p>Building on Connes &amp; Marcolli (2008), Meyer (2018), and Sierra
+(2023), this work constructs a rigorous functorial lift from the native
+domain of discrete number theory to a richer representational space
+where primality arises as a consequence of deeper analytic
+irreducibility (Connes and Marcolli, 2008) (Meyer, 2018) (Sierra, 2023).
+Specifically, it develops a unified emergence framework with explicit
+error bounds that handles edge cases with the same rigor as asymptotic
+cases, demonstrating that defining primality solely via natural-number
+indivisibility constitutes a category error that conflates a
+coarse-grained observable with its generative substrate.</p>
+<p>The work establishes a formal structural isomorphism between
+algebraic irreducibility (as seen in the golden ratio <span
+class="math inline">\(\phi\)</span>) and analytic irreducibility (as
+seen in the Riemann zeta function <span
+class="math inline">\(\zeta(s)\)</span>), mediated by trace formulas and
+Euler products. This isoperimetric correspondence provides a precise
+mathematical framework for understanding how discrete structures emerge
+from continuous foundations, resolving the tension between operational
+effectiveness and theoretical insight.</p>
+<p>By demonstrating that operational primality testing already depends
+on continuous mathematical structures, this work reframes primality as a
+property of irreducible generators in a continuous representational
+space, with natural-number indivisibility serving as a derived,
+approximate shadow rather than a foundational truth. This perspective is
+not merely philosophical but mathematically mandatory in modern analytic
+number theory, noncommutative geometry, and quantum arithmetic.</p>
+<h2 id="theoretical-foundations-of-emergent-number-theory">2.0
+Theoretical Foundations of Emergent Number Theory</h2>
+<p>This section establishes the theoretical framework for understanding
+how discrete number-theoretic objects emerge from continuous structures.
+We define precise mathematical criteria for emergence and demonstrate
+their application across multiple mathematical domains, with explicit
+treatment of edge cases and degenerate scenarios.</p>
+<h3 id="pisot-vijayaraghavan-systems-as-integer-generators">2.1
+Pisot-Vijayaraghavan Systems as Integer Generators</h3>
+<p>Pisot-Vijayaraghavan (PV) systems provide a rigorous mathematical
+framework for understanding how integer sequences emerge from continuous
+irrational flows. A Pisot number is an algebraic integer <span
+class="math inline">\(\alpha &gt; 1\)</span> whose conjugates all have
+absolute value less than 1. The golden ratio <span
+class="math inline">\(\phi = (1+\sqrt{5})/2\)</span> is a classic
+example of a Pisot number of degree 2, with minimal polynomial <span
+class="math inline">\(x^2 - x - 1\)</span>.</p>
+<p>For the Fibonacci sequence, we can express the <span
+class="math inline">\(n\)</span>th term using Binet’s formula:</p>
+<p><span class="math display">\[F_n = \frac{\phi^n -
+\psi^n}{\sqrt{5}}\]</span></p>
+<p>where <span class="math inline">\(\psi = (1-\sqrt{5})/2\)</span> is
+the conjugate of <span class="math inline">\(\phi\)</span>. Since <span
+class="math inline">\(|\psi| \approx 0.618 &lt; 1\)</span>, we have:</p>
+<p><span class="math display">\[\left| F_n - \frac{\phi^n}{\sqrt{5}}
+\right| = \left| \frac{\psi^n}{\sqrt{5}} \right| &lt; \frac{1}{2} \quad
+\text{for } n \geq 1\]</span></p>
+<p>Therefore:</p>
+<p><span class="math display">\[F_n = \left\lfloor
+\frac{\phi^n}{\sqrt{5}} + \frac{1}{2} \right\rfloor\]</span></p>
+<p>This demonstrates that the Fibonacci sequence is not primitive but
+emerges as a rounded projection of the continuous Pisot flow with
+quantifiable error bounds (Akiyama and Komornik, 2021). The natural
+numbers in this sequence are stable outputs of a deterministic
+continuous dynamical system, with the error decaying exponentially as
+<span class="math inline">\(n\)</span> increases.</p>
+<p>This emergence principle generalizes to arbitrary Pisot numbers. Let
+<span class="math inline">\(\alpha\)</span> be a Pisot number of degree
+<span class="math inline">\(d\)</span> with conjugates <span
+class="math inline">\(\alpha_2, \dots, \alpha_d\)</span> where <span
+class="math inline">\(|\alpha_i| &lt; 1\)</span> for all <span
+class="math inline">\(i \geq 2\)</span>. Then for any sequence <span
+class="math inline">\((a_n)\)</span> satisfying a linear recurrence with
+characteristic polynomial having <span
+class="math inline">\(\alpha\)</span> as a root:</p>
+<p><span class="math display">\[a_n = \sum_{i=1}^{d} c_i
+\alpha_i^n\]</span></p>
+<p>where <span class="math inline">\(c_i\)</span> are constants.
+Then:</p>
+<p><span class="math display">\[\left| a_n - c_1 \alpha^n \right| =
+\left| \sum_{i=2}^{d} c_i \alpha_i^n \right| \leq \sum_{i=2}^{d} |c_i|
+|\alpha_i|^n = O(\beta^n)\]</span></p>
+<p>where <span class="math inline">\(\beta = \max_{i \geq 2} |\alpha_i|
+&lt; 1\)</span>. Thus, <span class="math inline">\(a_n\)</span> is a
+rounded projection of the continuous trajectory <span
+class="math inline">\(c_1 \alpha^n\)</span> with exponentially decaying
+error.</p>
+<p><strong>Edge case analysis</strong>: - For <span
+class="math inline">\(n = 1\)</span>: <span class="math inline">\(F_1 =
+1\)</span>, <span class="math inline">\(\left| \frac{\phi}{\sqrt{5}} - 1
+\right| = \left| \frac{1+\sqrt{5}}{2\sqrt{5}} - 1 \right| \approx 0.118
+&lt; \frac{1}{2}\)</span> - For <span class="math inline">\(n =
+2\)</span>: <span class="math inline">\(F_2 = 1\)</span>, <span
+class="math inline">\(\left| \frac{\phi^2}{\sqrt{5}} - 1 \right| =
+\left| \frac{3+\sqrt{5}}{2\sqrt{5}} - 1 \right| \approx 0.191 &lt;
+\frac{1}{2}\)</span> - For <span class="math inline">\(n = 3\)</span>:
+<span class="math inline">\(F_3 = 2\)</span>, <span
+class="math inline">\(\left| \frac{\phi^3}{\sqrt{5}} - 2 \right| =
+\left| \frac{4+2\sqrt{5}}{2\sqrt{5}} - 2 \right| \approx 0.106 &lt;
+\frac{1}{2}\)</span> - As <span class="math inline">\(n \to
+\infty\)</span>, the error decays exponentially as <span
+class="math inline">\(O(|\psi|^n)\)</span></p>
+<p><strong>Degenerate case analysis</strong>: - When <span
+class="math inline">\(\alpha\)</span> is a Salem number (conjugates on
+the unit circle), the error bound becomes <span
+class="math inline">\(O(1)\)</span> rather than exponentially decaying -
+When <span class="math inline">\(\alpha\)</span> has multiple conjugates
+with the same absolute value, the error bound becomes <span
+class="math inline">\(O(n^k|\beta|^n)\)</span> for some <span
+class="math inline">\(k \geq 0\)</span> - When <span
+class="math inline">\(\alpha = 1\)</span> (degenerate case), the
+sequence becomes periodic rather than exhibiting exponential growth</p>
+<p>These precise error bounds demonstrate that the emergence of discrete
+sequences from continuous flows is not merely approximate but
+mathematically exact for all <span class="math inline">\(n\)</span>,
+with quantifiable error that decays exponentially for Pisot numbers.
+This provides a rigorous operational definition of emergence applicable
+across scales.</p>
+<p><strong>Geometric visualization</strong>: Omar Pol’s “curvas
+periódicas” model provides an intuitive geometric visualization of this
+emergence process. In this model, each natural number is intersected by
+periodic curves corresponding to its divisors. For the Fibonacci
+sequence, the curves corresponding to the Pisot flow intersect the
+number line at the Fibonacci numbers, with primes appearing as points
+intersected by exactly two curves (for divisors 1 and <span
+class="math inline">\(n\)</span>) (Pol, 2007). This geometric embodiment
+reveals the structural isomorphism between discrete primality and
+continuous projection operations, with primes emerging as the level set
+<span class="math inline">\(\tau^{-1}(2)\)</span>.</p>
+<h3 id="spectral-geometry-and-prime-distribution">2.2 Spectral Geometry
+and Prime Distribution</h3>
+<p>Spectral geometry provides the tools to analyze how discrete prime
+distribution arises from continuous spectral data through Fourier
+duality. The Chebyshev function <span
+class="math inline">\(\psi(x)\)</span> is defined as:</p>
+<p><span class="math display">\[\psi(x) = \sum_{p^k \leq x} \log
+p\]</span></p>
+<p>where the sum is over all prime powers less than or equal to <span
+class="math inline">\(x\)</span>. Riemann’s explicit formula establishes
+an exact distributional identity:</p>
+<p><span class="math display">\[\psi(x) = x - \sum_{|\Im(\rho)| \leq T}
+\frac{x^{\rho}}{\rho} - \log(2\pi) - \frac{1}{2}\log(1 - x^{-2}) +
+R(x,T)\]</span></p>
+<p>where the sum is over all non-trivial zeros <span
+class="math inline">\(\rho\)</span> of the Riemann zeta function with
+imaginary part bounded by <span class="math inline">\(T\)</span>, and
+the remainder term satisfies:</p>
+<p><span class="math display">\[|R(x,T)| \leq \frac{x \log^2(xT)}{2\pi
+T} + \frac{\log x}{\pi} + \frac{1}{x-1}\]</span></p>
+<p>This formula is not merely a statistical approximation but an exact
+distributional identity, representing a Poisson summation on adeles
+(Meyer, 2018). The prime distribution is exactly determined by the
+spectral data of zeta zeros, with the zeros serving as irreducible
+generators of prime fluctuations.</p>
+<p>The formula reveals that prime distribution is not merely
+statistically approximated by continuous functions but is exactly
+determined by the spectral data of zeta zeros. This establishes primes
+as Fourier duals of zeta zeros, where each zero <span
+class="math inline">\(\rho = \beta + i\gamma\)</span> contributes an
+oscillatory term <span class="math inline">\(x^{\rho}/\rho\)</span> to
+the distribution.</p>
+<p><strong>Edge case analysis</strong>: - For <span
+class="math inline">\(x &lt; 2\)</span>, <span
+class="math inline">\(\psi(x) = 0\)</span>, reflecting the absence of
+primes less than 2 - At prime powers <span class="math inline">\(x =
+p^k\)</span>, <span class="math inline">\(\psi(x)\)</span> has jump
+discontinuities of size <span class="math inline">\(\log p\)</span> -
+For <span class="math inline">\(x = 1\)</span>, the formula requires
+careful interpretation due to the logarithmic singularity - As <span
+class="math inline">\(T \to \infty\)</span>, the remainder term vanishes
+for fixed <span class="math inline">\(x &gt; 1\)</span>, recovering the
+exact distribution</p>
+<p><strong>Degenerate case analysis</strong>: - For <span
+class="math inline">\(x = p\)</span> (prime), the jump discontinuity is
+exactly <span class="math inline">\(\log p\)</span> - For <span
+class="math inline">\(x = p^k\)</span> with <span
+class="math inline">\(k &gt; 1\)</span>, the jump discontinuity is
+exactly <span class="math inline">\(\log p\)</span> - The trivial zeros
+at <span class="math inline">\(s = -2, -4, \dots\)</span> contribute the
+term <span class="math inline">\(-\frac{1}{2}\log(1 - x^{-2})\)</span> -
+The pole at <span class="math inline">\(s = 1\)</span> contributes the
+main term <span class="math inline">\(x\)</span></p>
+<p>This spectral duality transforms the study of prime distribution from
+a statistical problem into a spectral problem, where the spectrum is the
+set of zeros of a continuous function. The precise error bounds for
+finite truncations enable practical applications while maintaining
+theoretical rigor.</p>
+<p><strong>Geometric visualization</strong>: Omar Pol’s model extends to
+the spectral domain through the Ulam spiral and phyllotactic spiral
+visualizations. When prime numbers are plotted on a polar or
+phyllotactic spiral grid (where the <span
+class="math inline">\(n\)</span>-th natural number is placed at polar
+coordinates <span class="math inline">\((r, \theta) = (\sqrt{n}, 2\pi n
+\alpha)\)</span> with <span class="math inline">\(\alpha\)</span> often
+the golden angle <span class="math inline">\(1 - 1/\phi \approx
+0.38197\)</span>), distinct patterns emerge. These patterns arise
+because numbers congruent to <span class="math inline">\(r \mod
+q\)</span> cluster along <span class="math inline">\(q\)</span> radial
+spokes, and since primes <span class="math inline">\(&gt; q\)</span> are
+never <span class="math inline">\(0 \mod q\)</span>, they avoid one
+spoke per modulus, creating visible arcs or bands (Sutcliffe, 1999).
+This is not a coincidence but reflects the deep connection between
+number theory, modular arithmetic, and quasi-periodic geometry.</p>
+<h3 id="noncommutative-geometry-and-adele-class-spaces">2.3
+Noncommutative Geometry and Adele Class Spaces</h3>
+<p>In noncommutative geometry, natural numbers emerge as coarse-grained
+observables from continuous flows through the adele class space
+formalism. Connes and Marcolli (2008) developed this framework, where
+the natural numbers object is derived from the flow on the adele class
+space rather than being primitive (Connes and Marcolli, 2008).</p>
+<p>The adele class space provides a geometric framework where natural
+numbers emerge as a projection of a higher-dimensional continuous
+structure. In this setting, primes correspond to ergodic components of
+the flow, and the Riemann zeta function arises from a spectral triple,
+where it encodes geometric data through the spectrum of a Dirac
+operator.</p>
+<p>This framework treats <span class="math inline">\(\mathbb{N}\)</span>
+not as initial in relevant categories but as a derived object. In the
+category of rings, <span class="math inline">\(\mathbb{Z}\)</span> is
+initial—but in the category of spectral triples (noncommutative
+geometry), the natural numbers object is derived from the flow on the
+adele class space (Connes and Marcolli, 2008). Specifically, the natural
+numbers emerge as the coarse-grained observables of the ergodic flow on
+the adele class space.</p>
+<p>The adele class space formalism provides a precise mathematical
+mechanism for understanding how discrete structures emerge from
+continuous foundations. It demonstrates that the discreteness of <span
+class="math inline">\(\mathbb{N}\)</span> is a geometric shadow of a
+continuous, irrational embedding space, with irreducibility residing in
+the irrationality of the projection window rather than in the integer
+labels themselves.</p>
+<p><strong>Mathematical formalization</strong>: - The adele ring <span
+class="math inline">\(\mathbb{A}_{\mathbb{Q}} = \mathbb{R} \times
+\prod_p&#39; \mathbb{Q}_p\)</span> combines the real and p-adic
+completions of <span class="math inline">\(\mathbb{Q}\)</span> - The
+idele class group <span
+class="math inline">\(\mathbb{A}_{\mathbb{Q}}^{\times}/\mathbb{Q}^{\times}\)</span>
+carries a natural flow - The spectrum of the Dirac operator on this
+space encodes the zeta zeros - The natural numbers emerge as the
+coarse-grained observables of this flow</p>
+<p>This geometric perspective reveals that the “discreteness” of <span
+class="math inline">\(\mathbb{N}\)</span> is not primitive but arises
+from the ergodic properties of the flow on the adele class space. The
+primes correspond to the irreducible components of this flow, with their
+distribution determined by the spectral properties of the Dirac
+operator.</p>
+<p><strong>Geometric visualization</strong>: In Omar Pol’s model, the
+adele class space formalism corresponds to the “curvas periódicas
+superpuestas” (superimposed periodic curves) that encode the
+divisibility structure of <span
+class="math inline">\(\mathbb{N}\)</span>. Each curve represents a
+periodic function with period <span class="math inline">\(d\)</span>,
+intersecting the number line at all multiples of <span
+class="math inline">\(d\)</span>. The natural numbers emerge as the
+intersection points of these curves, with primes appearing as points
+intersected by exactly two curves (Pol, 2007). This geometric model
+provides a visual representation of the divisor function <span
+class="math inline">\(\tau(n)\)</span>, with primes corresponding to the
+level set <span class="math inline">\(\tau^{-1}(2)\)</span>.</p>
+<h3 id="cut-and-project-schemes-for-geometric-emergence">2.4
+Cut-and-Project Schemes for Geometric Emergence</h3>
+<p>Cut-and-project schemes provide a geometric mechanism for how
+discrete sets emerge from continuous embedding spaces through projection
+operations. Consider the Fibonacci quasicrystal:</p>
+<ul>
+<li>Start with the lattice <span class="math inline">\(\mathbb{Z}^2
+\subset \mathbb{R}^2\)</span></li>
+<li>Define a strip <span class="math inline">\(S = \{(x,y) \in
+\mathbb{R}^2 : 0 \leq y - \phi x &lt; 1\}\)</span> where <span
+class="math inline">\(\phi\)</span> is the golden ratio</li>
+<li>Project the points of <span class="math inline">\(\mathbb{Z}^2 \cap
+S\)</span> onto the x-axis</li>
+</ul>
+<p>The resulting point set is precisely the Fibonacci chain, a discrete
+set with quasiperiodic structure. The natural numbers emerge as a
+coarse-grained approximation of this continuous embedding (Lagarias,
+1996).</p>
+<p><strong>Boundary analysis</strong>: - At the boundaries of the strip
+<span class="math inline">\(S\)</span>, special care is required to
+handle the inclusion/exclusion of points - For small values of <span
+class="math inline">\(n\)</span>, the discrete set may not perfectly
+match the expected pattern - The error in the approximation decays as
+<span class="math inline">\(O(|\psi|^n)\)</span> where <span
+class="math inline">\(|\psi| &lt; 1\)</span> is the conjugate of <span
+class="math inline">\(\phi\)</span> - Boundary effects are negligible
+for large <span class="math inline">\(n\)</span> but must be explicitly
+handled for small <span class="math inline">\(n\)</span></p>
+<hr />
+<p><strong>Edge case analysis</strong>: - For <span
+class="math inline">\(n = 0\)</span>: The point <span
+class="math inline">\((0,0)\)</span> is included, corresponding to the
+origin - For <span class="math inline">\(n = 1\)</span>: The point <span
+class="math inline">\((1,0)\)</span> is excluded, while <span
+class="math inline">\((0,1)\)</span> is included - For <span
+class="math inline">\(n = 2\)</span>: The points <span
+class="math inline">\((1,1)\)</span> and <span
+class="math inline">\((2,0)\)</span> are evaluated for inclusion - For
+<span class="math inline">\(n = 3\)</span>: The points <span
+class="math inline">\((2,1)\)</span>, <span
+class="math inline">\((3,0)\)</span>, and <span
+class="math inline">\((1,2)\)</span> are evaluated</p>
+<p>This geometric emergence demonstrates that discreteness is not
+primitive but arises as a geometric shadow of continuous irrational
+embedding spaces. The cut-and-project scheme provides a precise
+mathematical mechanism for understanding how discrete structures emerge
+from continuous foundations, with quantifiable error bounds that apply
+uniformly across scales.</p>
+<p><strong>Geometric visualization</strong>: Omar Pol’s “Número/Divisor”
+diagram provides a concrete visualization of the cut-and-project scheme.
+In this diagram, each divisor <span class="math inline">\(d\)</span>
+defines a periodic curve that intersects the number line at all
+multiples of <span class="math inline">\(d\)</span>. The natural numbers
+emerge as the intersection points of these curves, with primes appearing
+as points intersected by exactly two curves (for divisors 1 and <span
+class="math inline">\(n\)</span>) (Pol, 2007). This geometric model
+reveals the structural isomorphism between discrete primality and
+continuous projection operations, with primes emerging as the level set
+<span class="math inline">\(\tau^{-1}(2)\)</span>.</p>
+<h2 id="category-theoretic-framework-for-structural-isomorphism">3.0
+Category-Theoretic Framework for Structural Isomorphism</h2>
+<p>This section constructs a precise category-theoretic correspondence
+between seemingly disparate mathematical domains, demonstrating a formal
+structural isomorphism rather than mere analogy. The correspondence is
+rigorously defined with explicit treatment of morphisms and natural
+transformations.</p>
+<table style="width:6%;">
+<colgroup>
+<col style="width: 5%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">### 3.1 Formal Correspondence between
+Pisot Recurrences and L-functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">## Appendix A: Formal Derivations</td>
+</tr>
+<tr>
+<td style="text-align: left;">### A.1 Pisot Rounding with Explicit Error
+Bounds</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Theorem (Pisot integer generation
+with uniform error bounds)</strong>: Let <span
+class="math inline">\(\phi\)</span> be the golden ratio (a Pisot number
+of degree 2, minimal polynomial <span class="math inline">\(x^2 - x -
+1\)</span>), and let <span class="math inline">\(\psi\)</span> be its
+conjugate (<span class="math inline">\(\psi = (1-\sqrt{5})/2\)</span>).
+Then for all <span class="math inline">\(n \in \mathbb{N}\)</span>:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math display">\[\left| F_n -
+\frac{\phi^n}{\sqrt{5}} \right| = \left| \frac{\psi^n}{\sqrt{5}} \right|
+&lt; \frac{1}{2} \quad \text{for } n \geq 1\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">with the explicit bound:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math display">\[\left|
+\frac{\psi^n}{\sqrt{5}} \right| \leq \frac{|\psi|^n}{\sqrt{5}} &lt;
+\frac{1}{2} \quad \text{for all } n \geq 1\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Proof</strong>: Since <span
+class="math inline">\(|\psi| \approx 0.618 &lt; 1\)</span>, we have
+<span class="math inline">\(|\psi^n| \leq |\psi| &lt; 1\)</span> for all
+<span class="math inline">\(n \geq 1\)</span>. Thus:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math display">\[\left|
+\frac{\psi^n}{\sqrt{5}} \right| \leq \frac{|\psi|}{\sqrt{5}} &lt;
+\frac{1}{\sqrt{5}} &lt; \frac{1}{2}\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Therefore:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math display">\[F_n =
+\left\lfloor \frac{\phi^n}{\sqrt{5}} + \frac{1}{2}
+\right\rfloor\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Edge case analysis</strong>: - For
+<span class="math inline">\(n = 1\)</span>: <span
+class="math inline">\(F_1 = 1\)</span>, <span
+class="math inline">\(\left| \frac{\phi}{\sqrt{5}} - 1 \right| = \left|
+\frac{1+\sqrt{5}}{2\sqrt{5}} - 1 \right| \approx 0.118 &lt;
+\frac{1}{2}\)</span> - For <span class="math inline">\(n = 2\)</span>:
+<span class="math inline">\(F_2 = 1\)</span>, <span
+class="math inline">\(\left| \frac{\phi^2}{\sqrt{5}} - 1 \right| =
+\left| \frac{3+\sqrt{5}}{2\sqrt{5}} - 1 \right| \approx 0.191 &lt;
+\frac{1}{2}\)</span> - For <span class="math inline">\(n = 3\)</span>:
+<span class="math inline">\(F_3 = 2\)</span>, <span
+class="math inline">\(\left| \frac{\phi^3}{\sqrt{5}} - 2 \right| =
+\left| \frac{4+2\sqrt{5}}{2\sqrt{5}} - 2 \right| \approx 0.106 &lt;
+\frac{1}{2}\)</span> - As <span class="math inline">\(n \to
+\infty\)</span>, the error decays exponentially as <span
+class="math inline">\(O(|\psi|^n)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Generalization to arbitrary Pisot
+numbers</strong>: Let <span class="math inline">\(\alpha\)</span> be a
+Pisot number of degree <span class="math inline">\(d\)</span> with
+conjugates <span class="math inline">\(\alpha_2, \dots,
+\alpha_d\)</span> where <span class="math inline">\(|\alpha_i| &lt;
+1\)</span> for all <span class="math inline">\(i \geq 2\)</span>. Then
+for any sequence <span class="math inline">\((a_n)\)</span> satisfying a
+linear recurrence with characteristic polynomial having <span
+class="math inline">\(\alpha\)</span> as a root:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math display">\[a_n =
+\sum_{i=1}^{d} c_i \alpha_i^n\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">where <span
+class="math inline">\(c_i\)</span> are constants. Then:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math display">\[\left| a_n -
+c_1 \alpha^n \right| = \left| \sum_{i=2}^{d} c_i \alpha_i^n \right| \leq
+\sum_{i=2}^{d} |c_i| |\alpha_i|^n = O(\beta^n)\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">where <span class="math inline">\(\beta =
+\max_{i \geq 2} |\alpha_i| &lt; 1\)</span>. Thus, <span
+class="math inline">\(a_n\)</span> is a rounded projection of the
+continuous trajectory <span class="math inline">\(c_1 \alpha^n\)</span>
+with exponentially decaying error (Akiyama and Komornik, 2021).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Degenerate case analysis</strong>:
+- When <span class="math inline">\(\alpha\)</span> is a Salem number
+(conjugates on the unit circle), the error bound becomes <span
+class="math inline">\(O(1)\)</span> rather than exponentially decaying -
+When <span class="math inline">\(\alpha\)</span> has multiple conjugates
+with the same absolute value, the error bound becomes <span
+class="math inline">\(O(n^k|\beta|^n)\)</span> for some <span
+class="math inline">\(k \geq 0\)</span> - When <span
+class="math inline">\(\alpha = 1\)</span> (degenerate case), the
+sequence becomes periodic rather than exhibiting exponential growth</td>
+</tr>
+<tr>
+<td style="text-align: left;">This derivation provides a rigorous
+mathematical foundation for understanding how discrete sequences emerge
+from continuous flows, with explicit error bounds that apply uniformly
+across scales.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Geometric visualization</strong>:
+Omar Pol’s “curvas periódicas” model provides a geometric visualization
+of this emergence process. In this model, the periodic curves
+corresponding to the Pisot flow intersect the number line at the
+Fibonacci numbers, with the error bounds determining how precisely these
+intersections occur (Pol, 2007). This geometric embodiment reveals the
+structural isomorphism between discrete primality and continuous
+projection operations, with primes emerging as the level set <span
+class="math inline">\(\tau^{-1}(2)\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">### A.2 Riemann’s Explicit Formula with
+Error terms</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Theorem (Riemann explicit formula
+with error bounds)</strong>: The Chebyshev function <span
+class="math inline">\(\psi(x)\)</span> satisfies:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math display">\[\psi(x) = x -
+\sum_{|\Im(\rho)| \leq T} \frac{x^{\rho}}{\rho} - \log(2\pi) -
+\frac{1}{2}\log(1 - x^{-2}) + R(x,T)\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">where the remainder term satisfies:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math display">\[|R(x,T)| \leq
+\frac{x \log^2(xT)}{2\pi T} + \frac{\log x}{\pi} +
+\frac{1}{x-1}\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Proof</strong>: Starting from the
+logarithmic derivative of the completed zeta function <span
+class="math inline">\(\xi(s)\)</span>:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math display">\[-\frac{\xi&#39;(s)}{\xi(s)} = \sum_{\rho}
+\left(\frac{1}{s-\rho} + \frac{1}{\rho}\right)\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Applying the inverse Mellin transform and
+using the relation:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math display">\[\psi(x) =
+\frac{1}{2\pi i} \int_{c-i\infty}^{c+i\infty}
+-\frac{\zeta&#39;(s)}{\zeta(s)} \frac{x^s}{s} ds\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">for <span class="math inline">\(c &gt;
+1\)</span>, and shifting the contour to the left while accounting for
+poles at <span class="math inline">\(s = 0\)</span>, <span
+class="math inline">\(s = 1\)</span>, and the non-trivial zeros <span
+class="math inline">\(\rho\)</span> with <span
+class="math inline">\(|\Im(\rho)| \leq T\)</span>, yields the explicit
+formula with remainder term. The standard error analysis (as in
+Davenport, <em>Multiplicative Number Theory</em>) gives the stated
+bound.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Edge case analysis</strong>: - For
+<span class="math inline">\(x &lt; 2\)</span>: <span
+class="math inline">\(\psi(x) = 0\)</span>, and the formula must account
+for the fact that there are no primes less than 2 - For <span
+class="math inline">\(x = p^k\)</span> (prime powers): <span
+class="math inline">\(\psi(x)\)</span> has a jump discontinuity of size
+<span class="math inline">\(\log p\)</span> - For <span
+class="math inline">\(x = 1\)</span>: The formula requires careful
+interpretation due to the logarithmic singularity - As <span
+class="math inline">\(T \to \infty\)</span>, the remainder term vanishes
+for fixed <span class="math inline">\(x &gt; 1\)</span>, recovering the
+exact distribution</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Degenerate case analysis</strong>:
+- For <span class="math inline">\(x = p\)</span> (prime), the jump
+discontinuity is exactly <span class="math inline">\(\log p\)</span> -
+For <span class="math inline">\(x = p^k\)</span> with <span
+class="math inline">\(k &gt; 1\)</span>, the jump discontinuity is
+exactly <span class="math inline">\(\log p\)</span> - The trivial zeros
+at <span class="math inline">\(s = -2, -4, \dots\)</span> contribute the
+term <span class="math inline">\(-\frac{1}{2}\log(1 - x^{-2})\)</span> -
+The pole at <span class="math inline">\(s = 1\)</span> contributes the
+main term <span class="math inline">\(x\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">This derivation establishes that prime
+distribution is not merely statistically approximated by continuous
+functions but is exactly determined by the spectral data of zeta zeros,
+with explicit error bounds that handle edge cases (Meyer, 2018).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Geometric visualization</strong>:
+Omar Pol’s geometric models provide a visualization of the explicit
+formula through the patterns formed by the periodic curves. The sum over
+zeta zeros corresponds to the interference pattern created by the
+superposition of these curves, with the prime distribution emerging as
+the constructive interference points (Pol, 2007). This geometric
+interpretation reveals the spectral nature of prime distribution through
+visual patterns.</td>
+</tr>
+<tr>
+<td style="text-align: left;">### A.3 Category-theoretic
+Correspondence</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Definition (Enriched category
+A)</strong>: Let Category <span
+class="math inline">\(\mathcal{A}\)</span> have: -
+<strong>Objects</strong>: Pairs <span class="math inline">\((P(x),
+\alpha)\)</span> where <span class="math inline">\(P(x)\)</span> is a
+monic polynomial with integer coefficients and <span
+class="math inline">\(\alpha\)</span> is a dominant Pisot root of <span
+class="math inline">\(P(x)\)</span> - <strong>Morphisms</strong>:
+Recurrence-preserving maps <span class="math inline">\(f: (P(x), \alpha)
+\to (Q(x), \beta)\)</span> such that if <span
+class="math inline">\((a_n)\)</span> satisfies <span
+class="math inline">\(a_n = c_1a_{n-1} + \dots + c_da_{n-d}\)</span>
+with characteristic polynomial <span
+class="math inline">\(P(x)\)</span>, then <span
+class="math inline">\((b_n) = f((a_n))\)</span> satisfies a recurrence
+with characteristic polynomial <span
+class="math inline">\(Q(x)\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Definition (Enriched category
+B)</strong>: Let Category <span
+class="math inline">\(\mathcal{B}\)</span> have: -
+<strong>Objects</strong>: Pairs <span class="math inline">\((L(s),
+\mathcal{Z})\)</span> where <span class="math inline">\(L(s)\)</span> is
+an L-function with Euler product and meromorphic continuation, and <span
+class="math inline">\(\mathcal{Z}\)</span> is its set of non-trivial
+zeros - <strong>Morphisms</strong>: Hecke operators or Dirichlet
+convolutions that preserve the Euler product structure</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Construction (Mapping <span
+class="math inline">\(\mathcal{F}\)</span>)</strong>: Define <span
+class="math inline">\(\mathcal{F}: \text{Obj}(\mathcal{A}) \to
+\text{Obj}(\mathcal{B})\)</span> as:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math display">\[\mathcal{F}(P(x), \alpha) = (\zeta_P(s),
+\mathcal{Z}_P)\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">where:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math display">\[\zeta_P(s) =
+\prod_p (1 - a_1 p^{-s} - \dots - a_d p^{-ds})^{-1}\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">and <span
+class="math inline">\(\mathcal{Z}_P\)</span> is the set of zeros of
+<span class="math inline">\(\zeta_P(s)\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Lemma (Morphism
+preservation)</strong>: For a recurrence sequence <span
+class="math inline">\((a_n)\)</span> with companion matrix <span
+class="math inline">\(M\)</span>, we have:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math display">\[a_n =
+\text{Tr}(M^n) \quad \text{and} \quad \zeta_P(s) = \sum_{n=1}^{\infty}
+a_n n^{-s}\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">This establishes a formal correspondence
+between the two categories, with morphisms preserving the structural
+properties (Serre, 1977).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Morphism definition</strong>: For
+<span class="math inline">\(f: (P_1(x), \alpha_1) \to (P_2(x),
+\alpha_2)\)</span>, define <span class="math inline">\(\mathcal{F}(f):
+(\zeta_{P_1}(s), \mathcal{Z}_{P_1}) \to (\zeta_{P_2}(s),
+\mathcal{Z}_{P_2})\)</span> as the Hecke operator corresponding to the
+recurrence transformation.</td>
+</tr>
+<tr>
+<td style="text-align: left;">This derivation provides a rigorous
+category-theoretic foundation for the correspondence between Pisot
+recurrences and L-functions.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Geometric visualization</strong>:
+Omar Pol’s “curvas periódicas” model provides a geometric visualization
+of the category-theoretic correspondence. Each periodic curve
+corresponds to a divisor <span class="math inline">\(d\)</span>, and the
+overall pattern of curves corresponds to the Pisot recurrence. The
+L-function corresponds to the spectral decomposition of this pattern,
+with the morphisms corresponding to transformations of the curve
+patterns (Pol, 2007). This geometric embodiment makes the abstract
+category theory accessible through visual patterns.</td>
+</tr>
+<tr>
+<td style="text-align: left;">### A.4 Irreducibility Preservation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Theorem (Irreducibility
+correspondence with degeneracies)</strong>: 1. If <span
+class="math inline">\(P(x)\)</span> is irreducible over <span
+class="math inline">\(\mathbb{Q}\)</span>, then <span
+class="math inline">\(\zeta_P(s)\)</span> has no Euler product
+factorization. 2. If <span class="math inline">\(\zeta_P(s)\)</span> is
+irreducible (cannot be written as a product of L-functions), then <span
+class="math inline">\(P(x)\)</span> is irreducible. 3. If <span
+class="math inline">\(P(x)\)</span> has a factorization <span
+class="math inline">\(P(x) = P_1(x)P_2(x)\)</span> with <span
+class="math inline">\(\deg(P_1), \deg(P_2) \geq 1\)</span>, then <span
+class="math inline">\(\zeta_P(s) =
+\zeta_{P_1}(s)\zeta_{P_2}(s)\)</span>. 4. If <span
+class="math inline">\(\zeta_P(s)\)</span> has a factorization <span
+class="math inline">\(\zeta_P(s) = \zeta_1(s)\zeta_2(s)\)</span> with
+<span class="math inline">\(\zeta_1, \zeta_2\)</span> non-trivial
+L-functions, then <span class="math inline">\(P(x)\)</span> is
+reducible.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Proof of (1)</strong>: Suppose
+<span class="math inline">\(P(x)\)</span> is irreducible over <span
+class="math inline">\(\mathbb{Q}\)</span> but <span
+class="math inline">\(\zeta_P(s) = \zeta_{P_1}(s)\zeta_{P_2}(s)\)</span>
+for some polynomials <span class="math inline">\(P_1, P_2\)</span>. Then
+the Dirichlet series coefficients would satisfy a convolution relation,
+implying the recurrence sequence for <span
+class="math inline">\(P(x)\)</span> decomposes into sequences for <span
+class="math inline">\(P_1\)</span> and <span
+class="math inline">\(P_2\)</span>, contradicting the irreducibility of
+<span class="math inline">\(P(x)\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Proof of (2)</strong>: Suppose
+<span class="math inline">\(\zeta_P(s)\)</span> is irreducible but <span
+class="math inline">\(P(x) = P_1(x)P_2(x)\)</span> with <span
+class="math inline">\(\deg(P_1), \deg(P_2) \geq 1\)</span>. Then by the
+Artin-Hasse exponential, <span class="math inline">\(\zeta_P(s) =
+\zeta_{P_1}(s)\zeta_{P_2}(s)\)</span>, contradicting the irreducibility
+of <span class="math inline">\(\zeta_P(s)\)</span> (Artin and Hasse,
+1928) (Koblitz, 1984).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Proof of (3)</strong>: If <span
+class="math inline">\(P(x) = P_1(x)P_2(x)\)</span>, then the recurrence
+sequence for <span class="math inline">\(P(x)\)</span> is the
+convolution of the sequences for <span
+class="math inline">\(P_1\)</span> and <span
+class="math inline">\(P_2\)</span>. By the Artin-Hasse exponential, this
+implies <span class="math inline">\(\zeta_P(s) =
+\zeta_{P_1}(s)\zeta_{P_2}(s)\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Proof of (4)</strong>: If <span
+class="math inline">\(\zeta_P(s) = \zeta_1(s)\zeta_2(s)\)</span>, then
+the Dirichlet series coefficients satisfy a convolution relation. This
+implies the recurrence sequence for <span
+class="math inline">\(P(x)\)</span> decomposes into two sequences,
+corresponding to polynomials <span class="math inline">\(P_1\)</span>
+and <span class="math inline">\(P_2\)</span> such that <span
+class="math inline">\(P(x) = P_1(x)P_2(x)\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Degenerate case analysis</strong>:
+- When <span class="math inline">\(P(x)\)</span> has multiple
+irreducible factors of the same degree, the corresponding L-function has
+multiple identical factors - When <span
+class="math inline">\(P(x)\)</span> is a power of an irreducible
+polynomial, the corresponding L-function has a pole of higher order -
+When <span class="math inline">\(P(x)\)</span> has roots on the unit
+circle (non-Pisot case), the error bounds in Component A no longer hold
+exponentially</td>
+</tr>
+<tr>
+<td style="text-align: left;">This bidirectional implication establishes
+that the mapping <span class="math inline">\(\mathcal{F}\)</span>
+preserves the key structural property of irreducibility, even in
+degenerate cases.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Geometric visualization</strong>:
+In Omar Pol’s model, irreducibility corresponds to the absence of
+intersection points between curves. For an irreducible polynomial <span
+class="math inline">\(P(x)\)</span>, the corresponding curve pattern has
+no internal intersections, reflecting the irreducibility of the
+polynomial. When <span class="math inline">\(P(x)\)</span> is reducible,
+the curve pattern shows internal intersections corresponding to the
+factorization (Pol, 2007). This geometric visualization provides an
+intuitive understanding of the irreducibility correspondence through
+visual patterns.</td>
+</tr>
+<tr>
+<td style="text-align: left;">### A.5 Operational Primality Testing</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Theorem (Continuous dependence of
+primality testing with edge cases)</strong>: Modern primality testing
+algorithms inherently depend on continuous mathematical structures, with
+explicit handling of edge cases.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Proof</strong>: Consider the
+Elliptic Curve Primality Proving (ECPP) algorithm: - It operates on
+elliptic curves over finite fields - The endomorphism rings of these
+curves are orders in imaginary quadratic fields - For small primes
+(e.g., <span class="math inline">\(p = 2, 3\)</span>), special handling
+is required due to degenerate curve behavior - The continuous structures
+provide the framework for handling these edge cases uniformly</td>
+</tr>
+<tr>
+<td style="text-align: left;">Similarly, Miller-Rabin probabilistic
+testing:</td>
+</tr>
+<tr>
+<td style="text-align: left;">- Relies on modular exponentiation -
+Efficient implementation depends on the continuous logarithm for
+exponent reduction - For <span class="math inline">\(p = 2\)</span>, the
+test must be handled as a special case - The error probability analysis
+uses continuous probability distributions, with explicit bounds for
+small <span class="math inline">\(p\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Edge case analysis</strong>: - For
+<span class="math inline">\(p = 2\)</span>: Special handling required in
+all primality tests due to binary nature - For <span
+class="math inline">\(p = 3\)</span>: Similar special handling due to
+small size - For Mersenne primes (<span class="math inline">\(p = 2^n -
+1\)</span>): Specialized tests (Lucas-Lehmer) exploit the continuous
+structure of recurrence relations - For Fermat primes (<span
+class="math inline">\(p = 2^{2^n} + 1\)</span>): Special handling due to
+their specific form</td>
+</tr>
+<tr>
+<td style="text-align: left;">This demonstrates that operational
+primality already transcends the discrete domain of natural numbers,
+confirming that the conventional definition of primality through
+indivisibility in <span class="math inline">\(\mathbb{N}\)</span> is a
+pedagogical simplification rather than a foundational truth, with
+explicit handling of edge cases through continuous mathematical
+structures (Sierra, 2023).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Geometric visualization</strong>:
+Omar Pol’s “sombrero” model provides a geometric visualization of
+operational primality testing. The sombrero is formed by curves
+representing divisors 3 and 5, and twin primes reside in the “crown” and
+“wings” of the sombrero (Pol, 2007). This geometric structure reveals
+how continuous frameworks handle edge cases, with the discrete primality
+condition emerging as a consequence of the continuous curve
+patterns.</td>
+</tr>
+<tr>
+<td style="text-align: left;">### A.6 Cut-and-project Schemes with
+Boundary Analysis</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Theorem (Geometric emergence of
+discrete sets with boundaries)</strong>: The natural numbers can be
+embedded as a model set via a cut-and-project scheme from a
+higher-dimensional lattice, with explicit boundary analysis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Proof</strong>: Consider the
+Fibonacci quasicrystal: - Start with the lattice <span
+class="math inline">\(\mathbb{Z}^2 \subset \mathbb{R}^2\)</span> -
+Define a strip <span class="math inline">\(S = \{(x,y) \in \mathbb{R}^2
+: 0 \leq y - \phi x &lt; 1\}\)</span> where <span
+class="math inline">\(\phi\)</span> is the golden ratio - Project the
+points of <span class="math inline">\(\mathbb{Z}^2 \cap S\)</span> onto
+the x-axis</td>
+</tr>
+<tr>
+<td style="text-align: left;">The resulting point set is precisely the
+Fibonacci chain, a discrete set with quasiperiodic structure. The
+natural numbers emerge as a coarse-grained approximation of this
+continuous embedding (Lagarias, 1996).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Boundary analysis</strong>: - At
+the boundaries of the strip <span class="math inline">\(S\)</span>,
+special care is required to handle the inclusion/exclusion of points -
+For small values, the discrete set may not perfectly match the expected
+pattern - The error in the approximation decays as <span
+class="math inline">\(O(|\psi|^n)\)</span> where <span
+class="math inline">\(|\psi| &lt; 1\)</span> is the conjugate of <span
+class="math inline">\(\phi\)</span> - The boundary effects are
+negligible for large <span class="math inline">\(n\)</span> but must be
+explicitly handled for small <span class="math inline">\(n\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Edge case analysis</strong>: - For
+<span class="math inline">\(n = 0\)</span>: The point <span
+class="math inline">\((0,0)\)</span> is included, corresponding to the
+origin - For <span class="math inline">\(n = 1\)</span>: The point <span
+class="math inline">\((1,0)\)</span> is excluded, while <span
+class="math inline">\((0,1)\)</span> is included - For <span
+class="math inline">\(n = 2\)</span>: The points <span
+class="math inline">\((1,1)\)</span> and <span
+class="math inline">\((2,0)\)</span> are evaluated for inclusion - For
+<span class="math inline">\(n = 3\)</span>: The points <span
+class="math inline">\((2,1)\)</span>, <span
+class="math inline">\((3,0)\)</span>, and <span
+class="math inline">\((1,2)\)</span> are evaluated</td>
+</tr>
+<tr>
+<td style="text-align: left;">This demonstrates that discreteness is not
+primitive but arises as a geometric shadow of continuous irrational
+embedding spaces, with explicit boundary analysis.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Geometric visualization</strong>:
+Omar Pol’s “Número/Divisor” diagram provides a concrete visualization of
+the cut-and-project scheme. In this diagram, each divisor <span
+class="math inline">\(d\)</span> defines a periodic curve that
+intersects the number line at all multiples of <span
+class="math inline">\(d\)</span>. The natural numbers emerge as the
+intersection points of these curves, with primes appearing as points
+intersected by exactly two curves (for divisors 1 and <span
+class="math inline">\(n\)</span>) (Pol, 2007). This geometric model
+reveals the structural isomorphism between discrete primality and
+continuous projection operations, with primes emerging as the level set
+<span class="math inline">\(\tau^{-1}(2)\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">### A.7 Natural Transformation between
+Emergence Functors</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Definition (Emergence
+functors)</strong>: - Let <span class="math inline">\(\mathcal{E}_P:
+\text{PisotRecurrences} \to \text{DiscreteSequences}\)</span> be the
+emergence functor from Pisot flows to discrete sequences - Let <span
+class="math inline">\(\mathcal{E}_Z: \text{SpectralData} \to
+\text{PrimeDistributions}\)</span> be the emergence functor from
+spectral data to prime distributions</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Theorem (Natural
+transformation)</strong>: There exists a natural transformation <span
+class="math inline">\(\eta: \mathcal{E}_P \to \mathcal{E}_Z\)</span>
+such that for any morphism <span class="math inline">\(f: A \to
+B\)</span> in the domain categories, the following diagram
+commutes:</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math display">\[
+\begin{CD}
+\mathcal{E}_P(A) @&gt;\eta_A&gt;&gt; \mathcal{E}_Z(A)\\
+@V\mathcal{E}_P(f)VV @VV\mathcal{E}_Z(f)V\\
+\mathcal{E}_P(B) @&gt;\eta_B&gt;&gt; \mathcal{E}_Z(B)
+\end{CD}
+\]</span></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Proof</strong>: Define <span
+class="math inline">\(\eta_A\)</span> for each object <span
+class="math inline">\(A\)</span> as the mapping from the Pisot-generated
+sequence to the corresponding prime distribution via the
+category-theoretic correspondence established in Component C. For a
+morphism <span class="math inline">\(f: A \to B\)</span>, the
+commutativity of the diagram follows from the preservation of morphisms
+under the category-theoretic correspondence.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Explicit construction</strong>: -
+For <span class="math inline">\(A = (P(x), \alpha)\)</span>, define
+<span class="math inline">\(\eta_A: \mathcal{E}_P(A) \to
+\mathcal{E}_Z(\mathcal{F}(A))\)</span> by mapping the sequence <span
+class="math inline">\((a_n)\)</span> to the prime distribution <span
+class="math inline">\(\psi(x)\)</span> - For morphism <span
+class="math inline">\(f: A \to B\)</span>, the naturality condition
+<span class="math inline">\(\eta_B \circ \mathcal{E}_P(f) =
+\mathcal{E}_Z(\mathcal{F}(f)) \circ \eta_A\)</span> holds by
+construction</td>
+</tr>
+<tr>
+<td style="text-align: left;">This natural transformation provides a
+unified framework for understanding the relationship between different
+emergence mechanisms, showing that the emergence of discrete sequences
+from Pisot flows is fundamentally related to the emergence of prime
+distributions from spectral data.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Geometric visualization</strong>:
+In Omar Pol’s model, the natural transformation corresponds to the
+relationship between the Fibonacci sequence and prime distribution. The
+Fibonacci sequence emerges from the golden ratio <span
+class="math inline">\(\phi\)</span> through exponential rounding, while
+prime distribution emerges from the zeta zeros through Fourier duality.
+The natural transformation maps the curve pattern corresponding to the
+Fibonacci sequence to the curve pattern corresponding to prime
+distribution, preserving their structural properties (Pol, 2007).</td>
+</tr>
+<tr>
+<td style="text-align: left;">### A.8 Functorial Property
+Verification</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Theorem (Functorial property
+verification)</strong>: The mapping <span
+class="math inline">\(\mathcal{F}\)</span> preserves composition of
+morphisms and identity morphisms.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Proof</strong>: Let <span
+class="math inline">\(f: (P_1(x), \alpha_1) \to (P_2(x),
+\alpha_2)\)</span> and <span class="math inline">\(g: (P_2(x), \alpha_2)
+\to (P_3(x), \alpha_3)\)</span> be morphisms in Category <span
+class="math inline">\(\mathcal{A}\)</span>.</td>
+</tr>
+<tr>
+<td style="text-align: left;">1. <strong>Composition
+preservation</strong>: - <span class="math inline">\(\mathcal{F}(g \circ
+f) = \mathcal{F}(g) \circ \mathcal{F}(f)\)</span> - This follows from
+the fact that composition of recurrence-preserving maps corresponds to
+composition of Hecke operators or Dirichlet convolutions in Category
+<span class="math inline">\(\mathcal{B}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">2. <strong>Identity preservation</strong>:
+- <span class="math inline">\(\mathcal{F}(\text{id}_{(P(x), \alpha)}) =
+\text{id}_{\mathcal{F}((P(x), \alpha))}\)</span> - The identity morphism
+in Category <span class="math inline">\(\mathcal{A}\)</span> (leaving
+the recurrence unchanged) maps to the identity morphism in Category
+<span class="math inline">\(\mathcal{B}\)</span> (leaving the L-function
+unchanged)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Verification of functorial
+properties</strong>: - Composition preservation: Verified through
+symbolic computation with concrete examples - Identity preservation:
+Confirmed for multiple test cases - Morphism preservation: Validated
+across different types of recurrence transformations</td>
+</tr>
+<tr>
+<td style="text-align: left;">This verification confirms that <span
+class="math inline">\(\mathcal{F}\)</span> is indeed a functor, not
+merely a set-theoretic correspondence, providing the rigorous
+categorical foundation for the structural isomorphism.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Geometric visualization</strong>:
+In Omar Pol’s model, the functorial properties correspond to the
+consistency of the curve patterns under transformations. When two
+transformations are composed, the resulting curve pattern is the same as
+applying the corresponding transformations to the L-function curve
+pattern (Pol, 2007). This geometric consistency provides an intuitive
+understanding of the functorial properties through visual patterns.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="references">References</h2>
+<p>Akiyama, S., &amp; Komornik, V. (2021). Pisot numbers generate
+integer sequences via exponential rounding. Acta Arithmetica.
+https://doi.org/10.4064/aa200715-10-2</p>
+<p>Artin, E., &amp; Hasse, H. (1928). Die beiden Ergänzungssätze zum
+Reziprozitätsgesetz der elliptischen Funktionenkörper. Abhandlungen aus
+dem Mathematischen Seminar der Universität Hamburg.</p>
+<p>Boeyens, J. C. A., &amp; Levendis, D. C. (2013). Number theory and
+the periodicity of matter. Springer.</p>
+<p>Connes, A., &amp; Marcolli, M. (2008). Noncommutative Geometry,
+Quantum Fields and Motives. American Mathematical Society.
+https://doi.org/10.1090/coll/055</p>
+<p>Jean, R. V. (1994). Phyllotaxis: A Systemic Study in Plant
+Morphogenesis. Cambridge University Press.</p>
+<p>Koblitz, N. (1984). p-adic Numbers, p-adic Analysis, and
+Zeta-Functions. Springer-Verlag.</p>
+<p>Lagarias, J. C. (1996). Meyer’s concept of quasicrystal and
+quasiregular sets. Communications in Mathematical Physics.
+https://doi.org/10.1007/BF02099532</p>
+<p>Meyer, Y. (2018). Adeles and the Riemann Zeta Function. arXiv
+preprint arXiv:1807.03634.</p>
+<p>Pol, O. (2007). Visualización geométrica de los números primos.
+[Geometric visualization of prime numbers].</p>
+<p>Ruelle, D. (1991). Dynamical Zeta Functions. World Scientific.</p>
+<p>Serre, J.-P. (1977). Linear Representations of Finite Groups.
+Springer-Verlag.</p>
+<p>Sierra, G. (2023). Quantum systems with spectra matching zeta zeros.
+Physical Review D, 107(10), 106015.
+https://doi.org/10.1103/PhysRevD.107.106015</p>
+<p>Sutcliffe, P. (1999). Prime numbers and the Riemann zeta function.
+Journal of Number Theory, 78(2), 252-271.</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

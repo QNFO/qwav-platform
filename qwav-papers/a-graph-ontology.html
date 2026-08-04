@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Graph Ontology | QWAV</title>
+<meta name="description" content="Appendix A: Graph Data Dictionary (Nodes and Edges) The following tables constitute the detailed edge list for the conceptual network graph analyzed in this ...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/a-graph-ontology">
+<meta property="og:title" content="A Graph Ontology">
+<meta property="og:description" content="Appendix A: Graph Data Dictionary (Nodes and Edges) The following tables constitute the detailed edge list for the conceptual network graph analyzed in this ...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/a-graph-ontology">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "A Graph Ontology",
+  "url": "https://deep.qwav.tech/papers/a-graph-ontology",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-05-09T03:21:34Z",
+  "abstract": "Appendix A: Graph Data Dictionary (Nodes and Edges) The following tables constitute the detailed edge list for the conceptual network graph analyzed in this ..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<p><strong>Appendix A: Graph Data Dictionary (Nodes and
+Edges)</strong></p>
+<p>The following tables constitute the detailed edge list for the
+conceptual network graph analyzed in this work. This list represents the
+specific relationships—dependencies, conflicts, explanations,
+formalizations, etc.—identified between the fundamental entities and
+components (nodes) defined in Appendix B. Constructing and analyzing
+this relational structure is the core methodology employed to assess the
+coherence of our current foundational knowledge and to guide the
+synthesis of a consilient meta-framework (Section 7).</p>
+<p>To ensure rigor, consistency, and analytical utility, the edges are
+described using strictly defined controlled vocabularies for their
+<strong>Type</strong>, <strong>Confidence</strong>, and
+<strong>Directionality</strong>. These vocabularies, detailed below,
+serve as the “lookup tables” or data dictionary for interpreting the
+edge annotations. The careful definition and application of these
+annotations, particularly the Relationship Types, are crucial for
+enabling the network analysis (discussed conceptually in Section 5) to
+reveal meaningful patterns, identify critical bottlenecks hindering
+unification, and illuminate potential pathways towards consilience.</p>
+<p><strong>A.1 Node Type</strong></p>
+<p>Controlled vocabulary used for the <code>Type</code> column in the
+Node List (Appendix B), as these types inform the nature of the nodes
+being connected by the edges:</p>
+<table>
+<colgroup>
+<col style="width: 4%" />
+<col style="width: 51%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Node Type ID</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Examples (Illustrative)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>Paradigm</code></td>
+<td style="text-align: left;">A large-scale theoretical framework,
+scientific model, philosophical stance, or foundational axiomatic
+system.</td>
+<td style="text-align: left;">Classical Mechanics, General Relativity,
+Quantum Mechanics, Standard Model, ΛCDM Model, Physicalism, Infomatics,
+ZFC, FOL</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Principle</code></td>
+<td style="text-align: left;">A core guiding idea, fundamental
+assertion, axiom, postulate, or background assumption underpinning a
+paradigm or argument.</td>
+<td style="text-align: left;">Equivalence Principle, Cosmological
+Principle, Superposition, Uncertainty Principle, Causal Closure,
+Continuum Postulate, ZFC Axioms</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Formalism</code></td>
+<td style="text-align: left;">A specific symbolic statement,
+mathematical equation, definition, structure, object, or calculational
+framework used for description.</td>
+<td style="text-align: left;">Newton’s Laws, EFE, Schrödinger Eq.,
+Entropy Formulas, Hilbert Space, Manifold, Group Theory, Calculus, π, φ,
+Zero, Base10</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Concept</code></td>
+<td style="text-align: left;">An abstract idea, term, or category used
+within or across paradigms, often representing physical quantities,
+properties, or relations.</td>
+<td style="text-align: left;">Energy, Entropy, Spacetime, Field,
+Probability, Causation, Information, Realism, Locality, Determinism,
+Singularity, Measurement</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Observation</code></td>
+<td style="text-align: left;">An empirical finding, observed phenomenon,
+experimental result, or data pattern that theories aim to explain or are
+constrained by.</td>
+<td style="text-align: left;">Flat Rotation Curves, Supernova Dimming,
+CMB Anisotropies, BBN Abundances, Entanglement (as phenomenon),
+Quantization (as phenomenon)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Problem</code></td>
+<td style="text-align: left;">An identified inconsistency, paradox,
+theoretical tension, limitation, or unresolved question within or
+between paradigms.</td>
+<td style="text-align: left;">Measurement Problem (QM), Quantum Gravity
+Problem, Cosmological Constant Problem, Singularity (GR context), GR-QM
+Incompatibility</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Methodology</code></td>
+<td style="text-align: left;">A specific method, approach, technique, or
+tool used for investigation, calculation, modeling, or reasoning.</td>
+<td style="text-align: left;">Probability Theory, Differential Geometry,
+Axiomatic Method, Renormalization, Formal System approach, Computational
+Simulation</td>
+</tr>
+</tbody>
+</table>
+<p><strong>B.2 Edge Relationship Type</strong></p>
+<p>This ontology defines the permissible values for the
+<code>Relationship Type</code> column in the edge list. The types are
+designed to capture diverse interactions and enable specific analytical
+queries aimed at understanding the structure of knowledge:</p>
+<table>
+<colgroup>
+<col style="width: 2%" />
+<col style="width: 9%" />
+<col style="width: 38%" />
+<col style="width: 1%" />
+<col style="width: 4%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Type ID</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Definition</th>
+<th style="text-align: left;">Dir.</th>
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Analytical Utility Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>DEPENDS_ON</code></td>
+<td style="text-align: left;">Depends On / Requires</td>
+<td style="text-align: left;">B relies on A foundationally, logically,
+or conceptually for its formulation or validity.</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Foundational</td>
+<td style="text-align: left;">Tracing dependency chains back to core
+<code>Principles</code> or <code>MathematicalStructures</code>;
+identifying reliance on potentially flawed foundations.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CONTRADICTS</code></td>
+<td style="text-align: left;">Contradicts / Challenges</td>
+<td style="text-align: left;">A and B are logically incompatible, or A
+undermines a key assumption/component of B.</td>
+<td style="text-align: left;">S/D</td>
+<td style="text-align: left;">Foundational</td>
+<td style="text-align: left;">Identifying core conflict zones (e.g., GR
+vs QM nodes linked by <code>CONTRADICTS</code>); pinpointing bottlenecks
+for unification.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>IS_INSTANCE_OF</code></td>
+<td style="text-align: left;">Is Instance Of</td>
+<td style="text-align: left;">A is a specific case, example, or
+instantiation of the more general concept or structure B.</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Logical</td>
+<td style="text-align: left;">Mapping specific theories/concepts to
+broader categories; understanding generalization/specification
+relationships.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>EXPLAINS</code></td>
+<td style="text-align: left;">Explains / Grounds</td>
+<td style="text-align: left;">A (Theory/Law/Principle) provides a
+causal, mechanistic, or metaphysical account for B
+(Phenomenon/Concept).</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Explanatory</td>
+<td style="text-align: left;">Tracing explanatory pathways; identifying
+phenomena poorly explained by established theories (few incoming
+<code>EXPLAINS</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>IS_LIMIT_OF</code></td>
+<td style="text-align: left;">Is Limit Of / Emerges From</td>
+<td style="text-align: left;">A arises from B under specific conditions
+(limits, coarse-graining, abstraction).</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Foundational</td>
+<td style="text-align: left;">Mapping hierarchical relationships between
+theories (e.g., CM &lt;- GR); understanding emergence across descriptive
+levels.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>IS_COMPONENT_OF</code></td>
+<td style="text-align: left;">Is Component Of</td>
+<td style="text-align: left;">A is a defining part or constituent
+element of B (Paradigm, Theory, Concept).</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Structural</td>
+<td style="text-align: left;">Deconstructing paradigms into their core
+parts; analyzing internal consistency.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>IS_ANALOGOUS_TO</code></td>
+<td style="text-align: left;">Is Analogous To</td>
+<td style="text-align: left;">A and B share significant structural or
+functional similarities, suggesting potential deeper links.</td>
+<td style="text-align: left;">S</td>
+<td style="text-align: left;">Explanatory</td>
+<td style="text-align: left;">Identifying potential unifying concepts or
+fruitful areas for cross-disciplinary transfer based on structural
+parallels.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>IS_DERIVED_FROM</code></td>
+<td style="text-align: left;">Is Derived From</td>
+<td style="text-align: left;">A (Equation/Result) is
+mathematically/logically deduced from B (Premise/Axiom/Equation).</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Mathematical</td>
+<td style="text-align: left;">Mapping the deductive structure within
+formal theories; verifying logical consistency.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>IS_TRANSFORMATION_OF</code></td>
+<td style="text-align: left;">Is Transformation Of</td>
+<td style="text-align: left;">Mathematical transformation links A and B
+(e.g., Fourier).</td>
+<td style="text-align: left;">S/D</td>
+<td style="text-align: left;">Mathematical</td>
+<td style="text-align: left;">Understanding relationships between
+different mathematical representations of the same underlying
+concept.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>IS_ISOMORPHIC_TO</code></td>
+<td style="text-align: left;">Is Isomorphic To</td>
+<td style="text-align: left;">Mathematical structures A and B have a
+structure-preserving one-to-one correspondence.</td>
+<td style="text-align: left;">S</td>
+<td style="text-align: left;">Mathematical</td>
+<td style="text-align: left;">Identifying deep structural equivalence
+between different mathematical domains.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>USES_FRAMEWORK</code></td>
+<td style="text-align: left;">Uses Framework</td>
+<td style="text-align: left;">A (Theory/Paradigm) employs B
+(MathematicalStructure/Methodology) as its descriptive language or
+tool.</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Structural</td>
+<td style="text-align: left;">Identifying reliance on specific
+mathematical tools; assessing impact if the tool itself is flawed (e.g.,
+reliance on <code>Math::Calculus</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>IS_CONSISTENT_WITH</code></td>
+<td style="text-align: left;">Is Consistent With</td>
+<td style="text-align: left;">A and B can logically coexist without
+direct contradiction.</td>
+<td style="text-align: left;">S</td>
+<td style="text-align: left;">Logical</td>
+<td style="text-align: left;">Identifying areas of compatibility between
+different paradigms or concepts.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>REQUIRES_RESOLUTION</code></td>
+<td style="text-align: left;">Requires Resolution By</td>
+<td style="text-align: left;">A (Problem/Tension) indicates the need for
+explanation or resolution potentially provided by B
+(Theory/Concept).</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Foundational</td>
+<td style="text-align: left;">Explicitly mapping recognized open
+problems to the theoretical domains expected to resolve them (e.g.,
+GRQMIncompatibility -&gt; QuantumGravity).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>B.3 Confidence Score</strong></p>
+<p>This score reflects the assessed certainty or consensus regarding the
+relationship represented by the edge. A numeric scale allows for
+potential weighting in analysis.</p>
+<table>
+<colgroup>
+<col style="width: 3%" />
+<col style="width: 9%" />
+<col style="width: 86%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Score</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>5</strong></td>
+<td style="text-align: left;">Definitional</td>
+<td style="text-align: left;">Relationship holds by definition, direct
+logical necessity, or core mathematical derivation within standard
+frameworks.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4</strong></td>
+<td style="text-align: left;">Established</td>
+<td style="text-align: left;">Widely accepted consensus in relevant
+mainstream discipline(s); strong empirical or theoretical support.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3</strong></td>
+<td style="text-align: left;">Plausible</td>
+<td style="text-align: left;">Generally accepted or reasonable view, but
+may involve interpretation, some debate, or rely on specific
+models.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2</strong></td>
+<td style="text-align: left;">Speculative</td>
+<td style="text-align: left;">Hypothesis based on analogy, preliminary
+evidence, or specific theoretical framework (like novel infomatics
+claims); contested.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>1</strong></td>
+<td style="text-align: left;">Tentative</td>
+<td style="text-align: left;">Highly speculative, weak analogy, or
+primarily serves as a placeholder for future investigation.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>B.4 Edge Directionality</strong></p>
+<p>This specifies the nature of the relationship flow between the Source
+and Target nodes.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>D</code></td>
+<td style="text-align: left;">Directed (Source -&gt; Target as per Type
+definition)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>S</code></td>
+<td style="text-align: left;">Symmetric (Relationship holds in both
+directions)</td>
+</tr>
+</tbody>
+</table>
+<p>By annotating each relationship (edge) with these controlled
+vocabularies, the resulting graph network becomes a powerful analytical
+tool. We can query for specific patterns: trace foundational
+dependencies using <code>DEPENDS_ON</code>, pinpoint core disagreements
+using <code>CONTRADICTS</code>, map explanatory hierarchies using
+<code>EXPLAINS</code> and <code>IS_LIMIT_OF</code>, identify reliance on
+potentially flawed mathematical tools using <code>USES_FRAMEWORK</code>,
+and highlight the frontiers of science using
+<code>REQUIRES_RESOLUTION_BY</code>. Analyzing the distribution and
+clustering of different edge types, weighted by their
+<code>Confidence</code> score, allows for an objective, data-driven
+assessment of the structure, coherence, and limitations of our current
+fundamental knowledge, thereby guiding the synthesis of a consilient
+framework as undertaken in Section 7.</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

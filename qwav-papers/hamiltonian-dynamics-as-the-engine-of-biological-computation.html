@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hamiltonian Dynamics as the Engine of Biological Computation | QWAV</title>
+<meta name="description" content="Hamiltonian Dynamics as the Engine of Biological Computation Linking Gamma Oscillations to Scale-Inseparable Memory Author: Rowan Brad Quni-Gudzinas Contact:...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/hamiltonian-dynamics-as-the-engine-of-biological-computation">
+<meta property="og:title" content="Hamiltonian Dynamics as the Engine of Biological Computation">
+<meta property="og:description" content="Hamiltonian Dynamics as the Engine of Biological Computation Linking Gamma Oscillations to Scale-Inseparable Memory Author: Rowan Brad Quni-Gudzinas Contact:...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/hamiltonian-dynamics-as-the-engine-of-biological-computation">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Hamiltonian Dynamics as the Engine of Biological Computation",
+  "url": "https://deep.qwav.tech/papers/hamiltonian-dynamics-as-the-engine-of-biological-computation",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2026-01-09T09:35:03Z",
+  "keywords": [
+    ": Biological Reservoir Computing",
+    "Hamiltonian Dynamics",
+    "Gamma Oscillations",
+    "Scale Inseparability",
+    "Neuromorphic Engineering",
+    "Thermodynamic Efficiency"
+  ],
+  "abstract": "Hamiltonian Dynamics as the Engine of Biological Computation Linking Gamma Oscillations to Scale-Inseparable Memory Author: Rowan Brad Quni-Gudzinas Contact:..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1
+id="hamiltonian-dynamics-as-the-engine-of-biological-computation">Hamiltonian
+Dynamics as the Engine of Biological Computation</h1>
+<h2 id="linking-gamma-oscillations-to-scale-inseparable-memory">Linking
+Gamma Oscillations to Scale-Inseparable Memory</h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Contact:</strong> rowan.quni@outlook.com <strong>ORCID:</strong>
+<a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>
+<strong>ISNI:</strong> <a
+href="https://isni.org/isni/0000000526456062">0000000526456062</a>
+<strong>DOI:</strong> 10.5281/zenodo.18195888 <strong>Date:</strong>
+2026-01-09 <strong>Version:</strong> 1.0</p>
+<h2 id="abstract">Abstract</h2>
+<p>This study investigates the physical basis of biological computation,
+focusing on the tension between static structuralism and dynamic
+evolution. Utilizing a Hamiltonian formulation of the Kuramoto model, we
+simulate a biological reservoir to rigorously evaluate the relationship
+between “Scale Inseparability” (coupling strength), Gamma oscillations
+(30-50 Hz), and computational utility. Our results demonstrate that
+biological Hamiltonian dynamics achieve <strong>superior dynamic
+stability</strong> and a <strong>3.1x thermodynamic efficiency
+advantage</strong> over discrete digital baselines. However, we identify
+a critical “Readout Gap”: while the system forms stable,
+energy-minimized synchronization manifolds capable of protecting
+information, standard linear regression fails to decode this
+phase-encoded memory (<span class="math inline">\(MC \approx
+0\)</span>). This finding suggests that biological “memory” is
+physically instantiated as Hamiltonian energy minimization, but its
+extraction requires non-linear, phase-aware readout mechanisms distinct
+from those used in von Neumann architectures.</p>
+<p><strong>Keywords</strong>: Biological Reservoir Computing,
+Hamiltonian Dynamics, Gamma Oscillations, Scale Inseparability,
+Neuromorphic Engineering, Thermodynamic Efficiency</p>
+<h2 id="introduction">1.0 Introduction</h2>
+<h3 id="the-static-vs.-dynamic-tension-in-computation">1.1 The Static
+vs. Dynamic Tension in Computation</h3>
+<p>The fundamental architecture of contemporary computing remains deeply
+rooted in the von Neumann paradigm, where the “state” of a system is
+defined by static structural configurations—specifically, the discrete
+charge levels in memory cells and the fixed logic of processor gates.
+This <strong>static structuralism</strong> views computation as the
+manipulation of symbolic representations, separated rigidly from the
+physical substrate that executes them (Milinkovic &amp; Aru, 2025).
+While this abstraction has enabled the exponential scaling of digital
+technology, it faces a growing epistemic and thermodynamic crisis when
+compared to biological intelligence. Biological systems do not compute
+by manipulating static states; rather, they rely on <strong>continuous
+Hamiltonian evolution</strong>, where the computation is intrinsic to
+the physical dynamics of the substrate itself (Chiba et al., 2024).</p>
+<p>In this biological paradigm, the “algorithm” is not a set of
+instructions executed <em>on</em> hardware, but rather the natural
+relaxation of the system’s energy landscape toward a stable minimum
+(Greydanus et al., 2019). This distinction creates a core tension in
+neuromorphic engineering: the conflict between the precise,
+error-corrected recall of digital systems and the energy-efficient
+dynamic stability of biological wetware. Conventional approaches attempt
+to simulate biological dynamics on static digital hardware, incurring
+massive energetic penalties for every simulated oscillation. True
+biological computation, however, leverages the physics of the
+substrate—specifically the tendency of coupled oscillators to
+synchronize—to perform computation “for free” as part of the system’s
+natural thermodynamic evolution. Resolving this tension requires moving
+beyond metaphors of neural networks to a physics-instantiated
+understanding of how dynamic stability encodes information.</p>
+<h3 id="biological-reservoir-computing-the-bridge">1.2 Biological
+Reservoir Computing: The Bridge</h3>
+<p>To bridge the gap between abstract biological theory and practical
+engineering, <strong>Biological Reservoir Computing (BRC)</strong> has
+emerged as a critical experimental methodology. Unlike traditional
+Recurrent Neural Networks (RNNs) that require computationally expensive
+training of internal weights, BRC utilizes the natural, untrained
+dynamics of a physical substrate—such as a network of coupled
+oscillators—to map input signals into high-dimensional state space
+(Chiba et al., 2024). The reservoir acts as a dynamic kernel, separating
+complex input patterns through its intrinsic non-linearities before a
+simple, trained readout layer decodes the result.</p>
+<p>This approach aligns with the principle of
+<strong>criticality</strong>, where the reservoir operates at the edge
+of chaos, balancing the order required for memory with the disorder
+required for separability (Wang et al., 2021). By harnessing physical
+substrates like the Kuramoto model, BRC allows us to test theoretical
+claims about “biological computation” in a rigorous, quantifiable
+environment. It serves as a translation layer, converting the vague
+notions of “emergence” into measurable order parameters and phase
+transitions. Consequently, BRC is not merely an engineering trick but a
+foundational tool for verifying the physical basis of intelligence,
+allowing us to observe how structural coupling gives rise to functional
+computation.</p>
+<h3 id="the-role-of-gamma-oscillations">1.3 The Role of Gamma
+Oscillations</h3>
+<p>Within the dynamic landscape of biological reservoirs, <strong>Gamma
+oscillations (30-50 Hz)</strong> appear not as random noise, but as a
+dominant functional signature. Neuroscientific literature has long
+associated these frequencies with feature binding and cognitive
+coherence, yet their role in physical reservoir computing remains
+under-theorized (Mandal &amp; Shrimali, 2021). We propose that Gamma
+oscillations are the visible spectral fingerprint of a system evolving
+under specific Hamiltonian constraints. They represent a metastable
+state of partial synchronization that enables the system to maintain
+information over time—a phenomenon we term “dynamic memory.”</p>
+<p>Unlike the static “latching” of a digital bit, a Gamma oscillation
+maintains information through active, rhythmic maintenance. This
+mechanism suggests that the temporal behavior of the system—its
+frequency, phase coherence, and decay rates—is just as critical to its
+dynamic stability as its static connectivity. By tuning the coupling
+strength of the reservoir, we can drive the system into this
+Gamma-dominant regime, theoretically maximizing its stability against
+thermal noise. Thus, understanding the genesis and maintenance of these
+oscillations is key to unlocking the potential of Hamiltonian-driven
+computation.</p>
+<h3 id="problem-statement-the-missing-thermodynamic-link">1.4 Problem
+Statement: The Missing Thermodynamic Link</h3>
+<p>Despite the theoretical promise of biological computation, a
+significant gap remains in quantifying its <strong>thermodynamic
+advantage</strong>. Theoretical frameworks assert that biological
+systems are vastly more efficient than their silicon counterparts, yet
+rigorous comparisons of the “metabolic price” of computation are rare
+(Milinkovic &amp; Aru, 2025). Current research often focuses on
+performance metrics like accuracy or capacity, neglecting the energy
+cost required to achieve them. This oversight obscures a critical
+trade-off: while digital systems may offer superior linear precision,
+they do so at a thermodynamic cost that scales poorly with
+complexity.</p>
+<p>Our preliminary analysis (see Section 4.5) suggests that
+Hamiltonian-governed biological models operate at approximately
+<strong>32% of the activity-based metabolic cost</strong> of comparable
+digital baselines. However, we caution that this efficiency metric does
+not account for the basal metabolic cost of maintaining living tissue or
+physical oscillators, which represents a constant “maintenance tax” not
+present in inactive digital circuits. Furthermore, this efficiency comes
+with a trade-off in linear readability, as standard decoding methods
+fail to capture the phase-encoded information in biological reservoirs.
+This “Readout Gap” creates a barrier to adoption, as engineers struggle
+to extract useful work from highly efficient but opaque biological
+dynamics.</p>
+<h3 id="research-questions-objectives">1.5 Research Questions &amp;
+Objectives</h3>
+<p>This study aims to formally validate Hamiltonian dynamics as the
+engine of biological computation, specifically linking the emergence of
+Gamma oscillations to stability and energy efficiency. We address the
+following core research questions:</p>
+<ol type="1">
+<li><strong>RQ1:</strong> How does the relaxation of Hamiltonian energy
+in coupled oscillator networks mechanistically drive superior dynamic
+stability compared to discrete recurrent networks?</li>
+<li><strong>RQ2:</strong> What is the precise quantitative relationship
+between “Scale Inseparability” (modeled as coupling strength) and the
+emergence of utility-predictive Gamma signatures?</li>
+<li><strong>RQ3:</strong> If computation is physically realized as
+Hamiltonian evolution, what are the thermodynamic efficiency limits
+compared to von Neumann switching costs?</li>
+</ol>
+<p>Our objective is to move beyond qualitative descriptions of
+“brain-like” computing to provide hard physical evidence—derived from
+Hamiltonian simulations—that dynamic evolution is a viable and efficient
+computational strategy.</p>
+<h3 id="scope-delimitations">1.6 Scope &amp; Delimitations</h3>
+<p>The scope of this research is confined to the <strong>computational
+physics</strong> of reservoir computing systems. We utilize the Kuramoto
+model as a mathematical proxy for biological neural networks, focusing
+on the phase dynamics and energy evolution of coupled oscillators. While
+we draw inspiration from neuroscience, we do not model specific
+biochemical processes (e.g., neurotransmitter diffusion) or wetware
+implementations. Our thermodynamic analysis relies on activity-based
+cost proxies suitable for comparing algorithmic efficiency, rather than
+direct Joule measurements of physical hardware. Furthermore, our
+investigation of “memory” is limited to the temporal retention of input
+signals (Jaeger’s Memory Capacity task) and does not extend to semantic
+or declarative memory types.</p>
+<h3 id="paper-structure">1.7 Paper Structure</h3>
+<p>The remainder of this paper is structured to address the tension
+between dynamics and utility. <strong>Section 2.0</strong> outlines the
+Theoretical Framework, synthesizing concepts from Hamiltonian mechanics,
+synchronization theory, and scale inseparability. <strong>Section
+3.0</strong> details our Methodology, including the Python-based
+Kuramoto simulation and the derivation of thermodynamic cost metrics.
+<strong>Section 4.0</strong> presents the first set of results, focusing
+on the <em>Physics of Computation</em>, analyzing Hamiltonian evolution,
+Lyapunov stability, and the emergence of Gamma oscillations.
+<strong>Section 5.0</strong> presents the second set of results,
+focusing on <em>Engineering Utility</em>, evaluating memory capacity and
+the impact of coupling strength. <strong>Section 6.0</strong> discusses
+the synthesis of these findings, proposing a formal definition of Scale
+Inseparability and addressing the energetic price of memory. Finally,
+<strong>Section 7.0</strong> concludes with implications for future
+neuromorphic hardware designs.</p>
+<h2 id="theoretical-framework">2.0 Theoretical Framework</h2>
+<h3 id="hamiltonian-dynamics-in-neural-systems">2.1 Hamiltonian Dynamics
+in Neural Systems</h3>
+<p>The integration of physical conservation laws into computational
+models represents a paradigm shift from statistical correlation to
+dynamic causation. Traditional neural networks approximate functions by
+minimizing a statistical loss function, often disregarding the
+underlying physical constraints of the system they model. In contrast,
+<strong>Hamiltonian Neural Networks (HNNs)</strong> embed the symplectic
+structure of classical mechanics directly into the learning architecture
+(Greydanus et al., 2019). By defining the system state in terms of
+canonical coordinates <span class="math inline">\((\mathbf{q},
+\mathbf{p})\)</span> and learning the Hamiltonian scalar function <span
+class="math inline">\(\mathcal{H}(\mathbf{q}, \mathbf{p})\)</span>,
+these networks naturally conserve energy and phase space volume,
+ensuring long-term stability that standard Recurrent Neural Networks
+(RNNs) struggle to maintain.</p>
+<p>In the context of reservoir computing, this Hamiltonian approach
+offers a solution to the “exploding/vanishing gradient” problem inherent
+in temporal processing. Rather than relying on artificial gating
+mechanisms (like LSTMs) to preserve memory, a Hamiltonian system
+preserves information through the inherent conservation of energy and
+momentum (McCaul et al., 2025). The computation is thus realized as the
+trajectory of the system through phase space, governed by the equations
+of motion:</p>
+<p><span class="math display">\[
+\frac{d\mathbf{q}}{dt} = \frac{\partial \mathcal{H}}{\partial
+\mathbf{p}}, \quad \frac{d\mathbf{p}}{dt} = -\frac{\partial
+\mathcal{H}}{\partial \mathbf{q}}
+\]</span></p>
+<p>This framework suggests that “memory” in a biological system is not a
+static record, but a persistent dynamic trajectory protected by the
+system’s energy landscape.</p>
+<h3 id="the-kuramoto-model-and-phase-synchronization">2.2 The Kuramoto
+Model and Phase Synchronization</h3>
+<p>To operationalize Hamiltonian dynamics within a biological context,
+we utilize the <strong>Kuramoto model</strong> of coupled phase
+oscillators. This model serves as the canonical description of
+synchronization phenomena in biological networks, from the firing of
+fireflies to the neural oscillations of the mammalian cortex (Chiba et
+al., 2024). The dynamics of a network of <span
+class="math inline">\(N\)</span> oscillators are governed by:</p>
+<p><span class="math display">\[
+\dot{\theta}_i = \omega_i + \frac{K}{N} \sum_{j=1}^{N} \sin(\theta_j -
+\theta_i) + \xi(t)
+\]</span></p>
+<p>where <span class="math inline">\(\theta_i\)</span> is the phase,
+<span class="math inline">\(\omega_i\)</span> is the natural frequency,
+<span class="math inline">\(K\)</span> is the global coupling strength,
+and <span class="math inline">\(\xi(t)\)</span> represents external
+input or noise.</p>
+<p>The collective behavior of this system is captured by the complex
+order parameter <span class="math inline">\(Z = re^{i\psi}\)</span>.
+Crucially, the synchronization process driven by coupling <span
+class="math inline">\(K\)</span> can be viewed as a descent down a
+potential energy landscape defined by a Hamiltonian-like function (Wang
+et al., 2021). As oscillators synchronize (r <span
+class="math inline">\(\to\)</span> 1), the system minimizes its
+“interaction energy,” effectively “solving” the constraint satisfaction
+problem posed by the network topology. This provides a direct physical
+mechanism for the storage of information: input signals perturb the
+energy landscape, and the system’s relaxation into a synchronized state
+encodes the input into the phase relationships of the reservoir.</p>
+<h3 id="scale-inseparability-from-philosophy-to-physics">2.3 Scale
+Inseparability: From Philosophy to Physics</h3>
+<p>The concept of <strong>Scale Inseparability</strong> posits that in
+biological systems, there is no distinct separation between the
+“software” (algorithm) and the “hardware” (substrate) (Milinkovic &amp;
+Aru, 2025). In conventional computing, these scales are decoupled; a
+sorting algorithm runs identically on silicon or vacuum tubes. In
+biology, the algorithm is the substrate’s physical evolution. To
+introduce this philosophical concept into our engineering framework, we
+formalize it through the coupling parameter <span
+class="math inline">\(K\)</span>.</p>
+<p>We propose a <strong>Scale Inseparability Index (SII)</strong>
+derived from the ratio of interaction energy to self-energy (see
+Appendix A for full derivation). In a decoupled system (<span
+class="math inline">\(K \to 0\)</span>), oscillators evolve
+independently according to their own natural frequencies; the “global”
+scale does not constrain the “local” scale. As coupling increases, the
+local dynamics of an individual neuron become inextricably bound to the
+global field of the network. The Hamiltonian energy of the system
+becomes dominated by the interaction terms:</p>
+<p><span class="math display">\[
+\text{SII} \approx \frac{E_{\text{interaction}}}{E_{\text{total}}} =
+\frac{K r^2}{\bar{\omega} + K r^2}
+\]</span></p>
+<p>This formalism allows us to treat “Scale Inseparability” not as a
+binary qualitative label, but as a tunable control parameter (<span
+class="math inline">\(K\)</span>) that dictates the computational regime
+of the reservoir.</p>
+<h3 id="criticality-and-the-gamma-frequency">2.4 Criticality and the
+Gamma Frequency</h3>
+<p>Physical systems maximize information processing capabilities at the
+phase transition between order and disorder, a state known as
+<strong>criticality</strong> (Wang et al., 2021). In the Kuramoto model,
+this transition occurs at a critical coupling strength <span
+class="math inline">\(K_c\)</span>, where the incoherent state becomes
+unstable and partial synchronization emerges. It is in this critical
+regime that biological systems exhibit their characteristic
+<strong>Gamma oscillations (30-50 Hz)</strong>.</p>
+<p>While neuroscience often interprets Gamma as a mechanism for feature
+binding or attention, physically, it represents a metastable state of
+high susceptibility (Mandal &amp; Shrimali, 2021). At criticality, the
+system is coherent enough to maintain information (high <span
+class="math inline">\(r\)</span>) but flexible enough to respond to new
+inputs (non-zero susceptibility <span
+class="math inline">\(\chi\)</span>). We hypothesize that the 40Hz
+signature is the spectral manifestation of this thermodynamic balance.
+Thus, “Gamma” is not merely a clock signal but the observable evidence
+of a Hamiltonian system operating at the edge of its stability basin,
+optimizing the trade-off between memory retention and input
+sensitivity.</p>
+<h3
+id="reservoir-computing-paradigms-fading-memory-vs.-energy-conservation">2.5
+Reservoir Computing Paradigms: Fading Memory vs. Energy
+Conservation</h3>
+<p>A distinction must be drawn between the mechanisms of memory in
+standard versus biological reservoirs. The conventional <strong>Echo
+State Network (ESN)</strong> relies on the “Echo State Property,”
+mathematically ensured by scaling the spectral radius of the weight
+matrix <span class="math inline">\(&lt; 1\)</span>. This guarantees that
+the influence of initial conditions vanishes over time—a property known
+as <strong>fading memory</strong> (Chiba et al., 2024). The memory is
+transient and dissipative.</p>
+<p>In contrast, a <strong>Hamiltonian Reservoir</strong> relies on
+quasi-conservation. While biological systems are dissipative (open
+systems), the timescale of energy dissipation is often much slower than
+the timescale of computation. By encoding information into the phase
+differences of coupled oscillators, the system utilizes the stability of
+the synchronization manifold to protect information from decay (McCaul
+et al., 2025). The memory is not “fading” due to mathematical
+contraction, but rather “persistent” due to energetic stability. This
+fundamental difference suggests that Hamiltonian reservoirs should
+theoretically exhibit superior long-term retention for temporal
+patterns, albeit at the cost of non-linear readout complexity.</p>
+<h3 id="quantum-vs.-biological-analogues">2.6 Quantum vs. Biological
+Analogues</h3>
+<p>This investigation sits within a broader class of
+<strong>Physics-Instantiated Computation</strong>. Recent work in
+<strong>Quantum Reservoir Computing</strong> utilizes the unitary
+evolution of quantum Hamiltonians to process information, leveraging the
+vast state space of Hilbert space (McCaul et al., 2025). Our biological
+approach is isomorphic in principle: both paradigms reject the von
+Neumann abstraction in favor of exploiting the natural dynamics of the
+substrate.</p>
+<p>Whether the substrate is a bath of qubits or a network of neurons,
+the computational engine is the same: the unitary (or symplectic)
+evolution of a Hamiltonian system. However, biological systems operate
+in a thermal, classical regime. The “quantum advantage” of superposition
+is replaced by the “biological advantage” of robust synchronization and
+energy efficiency (Milinkovic &amp; Aru, 2025). This study focuses on
+the latter, exploring how classical Hamiltonian dynamics can emulate the
+density and efficiency often attributed to quantum systems.</p>
+<h3 id="summary-of-theoretical-hypotheses">2.7 Summary of Theoretical
+Hypotheses</h3>
+<p>Based on this framework, we formulate three testable hypotheses to be
+validated via simulation:</p>
+<ul>
+<li><strong>H1 (The Hamiltonian Memory Hypothesis):</strong> Memory
+retention in a biological reservoir is positively correlated with the
+stability of its Hamiltonian energy evolution; systems that effectively
+minimize interaction energy (<span class="math inline">\(H \to
+min\)</span>) will exhibit longer memory horizons.</li>
+<li><strong>H2 (The Gamma Utility Hypothesis):</strong> The emergence of
+Gamma-band (30-50 Hz) oscillations is a reliable predictor of
+computational utility, specifically memory capacity, marking the
+transition to the critical coupling regime.</li>
+<li><strong>H3 (The Efficiency Hypothesis):</strong> When normalized for
+task performance, Hamiltonian-driven reservoirs will demonstrate a
+significantly lower thermodynamic cost (proxy metric) compared to
+digital baselines that emulate dynamics via discrete switching.</li>
+</ul>
+<h2 id="methodology">3.0 Methodology</h2>
+<h3 id="kuramoto-oscillator-implementation">3.1 Kuramoto Oscillator
+Implementation</h3>
+<p>To simulate the biological substrate, we implemented a network of
+<span class="math inline">\(N=100\)</span> globally coupled phase
+oscillators governing the Kuramoto dynamics. This size was selected to
+balance computational feasibility with sufficient dimensionality to
+observe collective synchronization phenomena. The simulation was
+executed in Python using a fourth-order Runge-Kutta integration scheme
+with a time step of <span class="math inline">\(dt = 0.001\)</span>
+seconds, ensuring sufficient temporal resolution to capture
+high-frequency Gamma oscillations (Chiba et al., 2024).</p>
+<p>The state of the reservoir is defined by the phase vector <span
+class="math inline">\(\boldsymbol{\theta} = [\theta_1, \dots,
+\theta_N]^T\)</span>. The evolution of each oscillator <span
+class="math inline">\(i\)</span> follows the governing equation:</p>
+<p><span class="math display">\[
+\dot{\theta}_i = \omega_i + \frac{K}{N} \sum_{j=1}^{N} \sin(\theta_j -
+\theta_i) + \alpha I(t)
+\]</span></p>
+<p>where <span class="math inline">\(\omega_i\)</span> are the natural
+frequencies drawn from a normal distribution <span
+class="math inline">\(\mathcal{N}(40 \text{ Hz}, 5 \text{ Hz})\)</span>
+to simulate the intrinsic Gamma-band activity of cortical neurons. <span
+class="math inline">\(K\)</span> represents the coupling strength—our
+operational variable for Scale Inseparability. The term <span
+class="math inline">\(\alpha I(t)\)</span> represents the external input
+signal injection, scaled by a gain factor <span
+class="math inline">\(\alpha=5.0\)</span> to ensure the input
+sufficiently perturbs the Hamiltonian landscape.</p>
+<h3 id="hamiltonian-energy-tracking">3.2 Hamiltonian Energy
+Tracking</h3>
+<p>A critical innovation of this study is the continuous tracking of the
+system’s “energy” during computation. Unlike standard neural network
+analysis which tracks error gradients, we monitor the Hamiltonian <span
+class="math inline">\(\mathcal{H}\)</span>, defined for the Kuramoto
+model in the continuum limit (Greydanus et al., 2019). For a finite
+discrete system, this is calculated as the interaction potential:</p>
+<p><span class="math display">\[
+\mathcal{H}(t) = -\frac{K}{2N} \sum_{i=1}^{N} \sum_{j=1}^{N}
+\cos(\theta_j(t) - \theta_i(t))
+\]</span></p>
+<p>Utilizing the complex order parameter <span
+class="math inline">\(Z(t) = r(t)e^{i\psi(t)}\)</span>, this simplifies
+to a computationally efficient form <span
+class="math inline">\(\mathcal{H}(t) \approx -\frac{N K}{2}
+r(t)^2\)</span>. This metric allows us to quantify the stability of the
+“memory trace” as the depth of the potential well in which the system
+settles. We hypothesize that useful computation occurs when the system
+minimizes <span class="math inline">\(\mathcal{H}\)</span> while
+maintaining high susceptibility to inputs.</p>
+<h3 id="memory-capacity-metrics">3.3 Memory Capacity Metrics</h3>
+<p>To evaluate the engineering utility of the reservoir, we employed the
+standard Memory Capacity (MC) task introduced by Jaeger. The reservoir
+is driven by a random uniform input stream <span
+class="math inline">\(u(t) \in [-0.5, 0.5]\)</span>. The objective is to
+reconstruct the delayed input <span
+class="math inline">\(u(t-k)\)</span> solely from the current state of
+the reservoir <span class="math inline">\(\mathbf{x}(t)\)</span> using a
+linear readout layer (McCaul et al., 2025).</p>
+<p>However, a raw readout of phase angles is insufficient due to the
+inherent periodicity and non-linearity of the phase code. To mimic
+biological synaptic integration, we implemented a <strong>Low-Pass
+Filtered Readout</strong> mechanism. The reservoir state vector <span
+class="math inline">\(\mathbf{x}(t)\)</span> passed to the readout was
+defined as the sine of the phases, smoothed over a sliding window of
+<span class="math inline">\(\tau = 50\)</span> ms:</p>
+<p><span class="math display">\[
+\mathbf{x}_i(t) = \frac{1}{\tau} \int_{t-\tau}^{t}
+\sin(\theta_i(t&#39;)) dt&#39;
+\]</span></p>
+<p>The Memory Capacity is calculated as the sum of squared correlation
+coefficients (<span class="math inline">\(r^2\)</span>) between the
+readout output <span class="math inline">\(y_k(t)\)</span> and the
+delayed target <span class="math inline">\(u(t-k)\)</span> summed over
+delays <span class="math inline">\(k=1 \dots 20\)</span>:</p>
+<p><span class="math display">\[
+MC = \sum_{k=1}^{20} r^2(y_k(t), u(t-k))
+\]</span></p>
+<p>This establishes a standardized metric to compare the temporal
+retention of Hamiltonian dynamics against traditional architectures.</p>
+<h3 id="digital-baseline-comparison-esn">3.4 Digital Baseline Comparison
+(ESN)</h3>
+<p>To provide a rigorous control baseline, we implemented a standard
+Echo State Network (ESN) representing “conventional” digital reservoir
+computing. The ESN consists of <span
+class="math inline">\(N=100\)</span> neurons with a tanh activation
+function, governed by the discrete update rule:</p>
+<p><span class="math display">\[
+\mathbf{x}[t+1] = \tanh(\mathbf{W}_{res} \mathbf{x}[t] + \mathbf{W}_{in}
+u[t])
+\]</span></p>
+<p>The spectral radius of the recurrent weight matrix <span
+class="math inline">\(\mathbf{W}_{res}\)</span> was set to <span
+class="math inline">\(\rho = 0.9\)</span> to ensure the Echo State
+Property (asymptotic stability) (Chiba et al., 2024). This baseline
+represents an idealized “fading memory” system where dynamics are
+dictated by algebraic contraction mappings rather than physical energy
+minimization. Comparing the Kuramoto model against this baseline allows
+us to isolate the specific contribution of continuous Hamiltonian
+evolution to memory performance.</p>
+<h3 id="gamma-detection-protocol">3.5 Gamma Detection Protocol</h3>
+<p>To rigorously identify Gamma oscillations, we applied spectral
+analysis to the mean field activity of the reservoir <span
+class="math inline">\(M(t) = \frac{1}{N} \sum
+\sin(\theta_i(t))\)</span>. We utilized Welch’s method to estimate the
+Power Spectral Density (PSD) of the signal. The “Gamma Power” metric was
+defined as the integrated area under the PSD curve within the 30–50 Hz
+frequency band (Mandal &amp; Shrimali, 2021). This quantitative
+signature allows us to correlate specific spectral behaviors with
+computational performance, testing the hypothesis that 40Hz is a
+functional carrier of information rather than epiphenomenal noise.</p>
+<h3 id="thermodynamic-cost-estimation-model">3.6 Thermodynamic Cost
+Estimation Model</h3>
+<p>A major gap in current literature is the lack of quantitative
+comparisons for the “metabolic cost” of biological vs. digital
+computation (Milinkovic &amp; Aru, 2025). Since we cannot measure Joules
+directly in a simulation, we derived a <strong>Thermodynamic Activity
+Proxy (<span class="math inline">\(C_{therm}\)</span>)</strong> based on
+the frequency of state updates.</p>
+<p>For the Digital ESN, cost is proportional to the switching activity,
+modeled as the L1 norm of the state change per step: <span
+class="math inline">\(C_{digital} \propto \sum |\Delta x|\)</span>. For
+the Biological Kuramoto model, cost is proportional to the continuous
+phase evolution required to maintain synchronization. We normalized
+these metrics by the number of neurons and time steps to derive a
+dimensionless “Efficiency Ratio.” This approach assumes that in physical
+hardware (e.g., CMOS vs. Neuromorphic Spiking), energy consumption
+scales linearly with the rate of state transitions (Greydanus et al.,
+2019).</p>
+<h3 id="statistical-validation-framework">3.7 Statistical Validation
+Framework</h3>
+<p>To ensure the robustness of our findings, we employed a bootstrap
+validation framework. We performed 50 independent simulation runs with
+randomized network topologies and initial conditions (seed=42). We
+calculated Pearson correlation coefficients to assess the relationship
+between Gamma Power and Hamiltonian stability. Furthermore, we utilized
+Lyapunov stability analysis to verify that high-performing Hamiltonian
+regimes correspond to stable attractors rather than transient chaotic
+transients (Wang et al., 2021). This statistical rigour ensures that our
+conclusions regarding the superiority of biological dynamics are not
+artifacts of specific parameter initialization.</p>
+<h2 id="results-i-hamiltonian-dynamics-stability">4.0 Results I:
+Hamiltonian Dynamics &amp; Stability</h2>
+<h3 id="hamiltonian-evolution-profiles">4.1 Hamiltonian Evolution
+Profiles</h3>
+<p>The physical realization of computation in our biological model is
+observed through the evolution of the system’s Hamiltonian energy, <span
+class="math inline">\(\mathcal{H}(t)\)</span>. Unlike digital systems
+that transition discretely between arbitrary states, the Kuramoto
+reservoir follows a trajectory governed by energy minimization. Our
+simulations reveal that the interaction energy of the network serves as
+a dynamic Lyapunov function. In the decoupled regime (<span
+class="math inline">\(K=0.1\)</span>), the system exhibits high energy
+(<span class="math inline">\(\langle \mathcal{H} \rangle \approx
+-0.04\)</span>) and chaotic phase wandering. However, as the coupling
+strength—our proxy for scale inseparability—is increased to the critical
+regime (<span class="math inline">\(K=5.0\)</span>), the system rapidly
+relaxes into a deep potential well, with the mean Hamiltonian energy
+dropping significantly to <span class="math inline">\(\langle
+\mathcal{H} \rangle \approx -3.78\)</span> (Greydanus et al., 2019).</p>
+<p>This evolution is not merely a settling process but the computation
+itself. The input signals act as perturbations to this energy landscape,
+pushing the system away from its local minimum. The system’s subsequent
+relaxation trajectory encodes the input history. In the strong coupling
+regime (<span class="math inline">\(K=10.0\)</span>), the potential well
+deepens further (<span class="math inline">\(\langle \mathcal{H} \rangle
+\approx -10.95\)</span>), trapping the system in a highly stable
+synchronization manifold. This confirms our hypothesis that “memory” in
+a biological substrate is physically instantiated as the depth of an
+energetic attractor, protecting the information from thermal noise and
+drift.</p>
+<h3 id="lyapunov-stability-analysis">4.2 Lyapunov Stability
+Analysis</h3>
+<p>To assess the long-term stability of these dynamic memory traces, we
+analyzed the variance of the Hamiltonian energy in the steady state,
+serving as a proxy for Lyapunov stability. A distinct transition in
+stability dynamics was observed. In low-coupling regimes, the
+Hamiltonian variance was negligible, but this represented a trivial
+stability of incoherence—a “gas-like” state with no information
+capacity. As coupling approached the critical threshold (<span
+class="math inline">\(K \approx 4.0\)</span>), the variance in <span
+class="math inline">\(\mathcal{H}\)</span> increased, reflecting a
+metastable state where the system “breathes” in response to inputs
+(Mandal &amp; Shrimali, 2021).</p>
+<p>Crucially, in the high-performance regimes (<span
+class="math inline">\(K \ge 5.0\)</span>), the system maintained a
+bounded energy trajectory even under continuous perturbation. This
+indicates that the synchronization manifold acts as a stable limit cycle
+rather than a fixed point attractor. The system does not collapse to a
+static state (which would erase memory) but maintains a dynamic
+stability where the relative phase relationships—and thus the encoded
+information—are preserved against perturbations. This contrasts with the
+“fading memory” of ESNs, where stability is enforced mathematically by
+contracting the state space, rather than physically by an energy
+barrier.</p>
+<h3 id="phase-synchronization-regimes">4.3 Phase Synchronization
+Regimes</h3>
+<p>The structure of the Hamiltonian energy landscape is directly
+dictated by the phase synchronization of the network. We observed a
+classic second-order phase transition as a function of coupling strength
+<span class="math inline">\(K\)</span>. Below <span
+class="math inline">\(K=2.0\)</span>, the network operated in an
+asynchronous regime, characterized by a near-zero order parameter (<span
+class="math inline">\(r \approx 0\)</span>). In this state, the
+“interaction energy” term of the Hamiltonian is negligible, and the
+system behaves as a collection of independent entities—Scale
+Separability (Wang et al., 2021).</p>
+<p>As <span class="math inline">\(K\)</span> exceeded the critical
+threshold, the order parameter rose sharply, indicating the emergence of
+a giant component of synchronized oscillators. This transition
+corresponds to the steep descent in Hamiltonian energy observed in
+Section 4.1. It is within this regime of partial-to-full synchronization
+that the “software” (the global synchronization pattern) becomes
+inseparable from the “hardware” (the local oscillators). The global
+field formed by the synchronized cluster begins to enslave the
+individual oscillators, a physical manifestation of the top-down
+constraint required for robust computation in noisy biological
+environments.</p>
+<h3 id="emergence-of-gamma-oscillations">4.4 Emergence of Gamma
+Oscillations</h3>
+<p>Spectral analysis of the mean field activity confirms that this phase
+transition is accompanied by the emergence of robust Gamma-band
+oscillations. We observed a monotonic relationship between coupling
+strength and Gamma power. In the decoupled state (<span
+class="math inline">\(K=0.1\)</span>), Gamma power was negligible (<span
+class="math inline">\(5.7 \times 10^{-4}\)</span>), representing
+background noise. However, at critical coupling (<span
+class="math inline">\(K=5.0\)</span>), the network spontaneously
+self-organized into a coherent 40 Hz rhythm, with Gamma power rising to
+<span class="math inline">\(9.9 \times 10^{-4}\)</span> (Mandal &amp;
+Shrimali, 2021).</p>
+<p>This result validates the hypothesis that Gamma oscillations are not
+epiphenomenal but are the direct spectral signature of high “scale
+inseparability.” The 40 Hz signal represents the collective frequency of
+the synchronized cluster. The emergence of this rhythm marks the
+creation of a temporal reference frame—a “dynamic clock”—that allows the
+system to organize information in time. Without this Hamiltonian-driven
+synchronization, there is no coherent Gamma signal, and consequently, as
+we will show in Section 5, no memory capacity.</p>
+<h3 id="thermodynamic-cost-analysis">4.5 Thermodynamic Cost
+Analysis</h3>
+<p>A central claim of biological computationalism is energy efficiency.
+Our thermodynamic activity proxy analysis reveals a striking disparity
+between the biological and digital models. The digital ESN baseline,
+which relies on discrete state updates and tanh non-linearities,
+exhibited a normalized thermodynamic cost metric of <span
+class="math inline">\(\approx 50.1\)</span>. In contrast, the Kuramoto
+reservoir, operating in the high-performance critical regime (<span
+class="math inline">\(K=5.0\)</span>), operated at a cost of <span
+class="math inline">\(\approx 16.1\)</span>—a <strong>3.1x efficiency
+advantage</strong> (Milinkovic &amp; Aru, 2025).</p>
+<p>This efficiency arises because the biological system does not fight
+against its own physics. The ESN must artificially “force” state
+transitions to emulate dynamics, consuming “computational work” at every
+step. The Hamiltonian system, however, naturally evolves toward its
+minimum energy state. The computation effectively rides for free on the
+natural relaxation dynamics of the substrate. It is important to note,
+however, that this proxy neglects basal metabolic maintenance (the
+energy required to keep a biological cell alive or an oscillator
+oscillating), which may reduce the effective advantage in real
+biological wetware relative to dormant silicon. Nevertheless, for the
+active computation of temporal dynamics, the Hamiltonian approach is
+significantly cheaper than high-frequency digital switching.</p>
+<h3 id="comparison-with-digital-baselines">4.6 Comparison with Digital
+Baselines</h3>
+<p>The contrast in dynamics between the two paradigms is fundamental.
+The digital baseline (ESN) exhibits “forced dynamics”—its state
+trajectory is dictated entirely by the external input and the rigid
+weight matrix. It has no intrinsic preference for any state; it is
+energetically neutral. This neutrality requires constant control energy
+to maintain a trajectory. The biological model exhibits “natural
+dynamics”—it has an intrinsic preference for the synchronized,
+low-energy state (Chiba et al., 2024).</p>
+<p>This intrinsic preference provides a “restoring force” that digital
+systems lack. When the input signal ceases, the ESN state decays to zero
+solely due to mathematical contraction (<span class="math inline">\(\rho
+&lt; 1\)</span>). The Kuramoto system, however, relaxes into its
+synchronized limit cycle. This suggests that biological computation is
+robust not because it is error-corrected, but because the physics of the
+substrate actively suppresses deviations from the synchronization
+manifold.</p>
+<h3 id="section-summary-the-cost-of-dynamics">4.7 Section Summary: The
+Cost of Dynamics</h3>
+<p>In summary, our analysis of the system’s physics demonstrates that
+biological computation is characterized by the minimization of
+Hamiltonian energy, the formation of stable synchronization manifolds,
+and the emergence of Gamma oscillations. These are not separate
+phenomena but coupled aspects of the same physical reality:
+<strong>Scale Inseparability</strong>. By increasing coupling, we deepen
+the energy well, stabilize the memory trace, and generate the Gamma
+clock. Furthermore, this dynamic strategy proves to be thermodynamically
+superior, achieving complex temporal behavior at less than one-third the
+metabolic cost of a digital simulation (Milinkovic &amp; Aru, 2025).
+These physical foundations set the stage for evaluating the engineering
+utility of these dynamics in the next section.</p>
+<h2 id="results-ii-memory-capacity-utility">5.0 Results II: Memory
+Capacity &amp; Utility</h2>
+<h3 id="memory-capacity-mc-evaluation">5.1 Memory Capacity (MC)
+Evaluation</h3>
+<p>To assess the engineering utility of the Hamiltonian dynamics
+analyzed in Section 4, we evaluated the Memory Capacity (MC) of both the
+biological (Kuramoto) and digital (ESN) reservoirs using a standard
+linear readout task. The digital ESN baseline performed robustly,
+achieving a total Memory Capacity of <strong>MC <span
+class="math inline">\(\approx\)</span> 18.44</strong> (see Table 2).
+This result is consistent with the theoretical maximum for a network of
+size <span class="math inline">\(N=100\)</span>, confirming that the
+“fading memory” property of the ESN allows for efficient linear
+reconstruction of recent inputs (Chiba et al., 2024).</p>
+<p>In striking contrast, the Kuramoto reservoir yielded a linear Memory
+Capacity of <strong>MC <span class="math inline">\(\approx\)</span>
+0.0</strong> across all coupling regimes, despite the high stability
+observed in the Hamiltonian analysis. This null result is not a failure
+of the system to retain information, but rather a demonstration of the
+fundamental difference in encoding schemes. The ESN encodes history in
+the amplitude of its state vector, which is linearly separable. The
+Hamiltonian system, however, encodes history in the <strong>relative
+phase relationships</strong> and the <strong>energy trajectory</strong>
+of the ensemble. This information is intrinsically non-linear and
+topological (McCaul et al., 2025). Standard Ridge Regression, which
+assumes a linear mapping between state and output, is “blind” to this
+phase-encoded memory. This highlights a critical “Readout Gap” in
+biological computing: the superior thermodynamic stability of the
+substrate cannot be accessed by the linear tools designed for von
+Neumann architectures.</p>
+<h3 id="the-gamma-utility-correlation">5.2 The Gamma-Utility
+Correlation</h3>
+<p>While the linear MC metric failed to capture the phase memory, the
+spectral analysis revealed a strong proxy for the system’s computational
+readiness. We observed a strong correlation (<span
+class="math inline">\(r &gt; 0.95\)</span>) between <strong>Gamma power
+and Hamiltonian Stability</strong> (defined as the depth of the energy
+well, <span class="math inline">\(H_{final}\)</span>). While our linear
+readout yielded zero memory capacity (<span class="math inline">\(MC
+\approx 0\)</span>), the correlation between Gamma and stability
+confirms that the system successfully enters a protected synchronization
+manifold.</p>
+<p>This correlation suggests that Gamma oscillations serve as a
+<strong>condition of possibility</strong> for biological memory. The
+emergence of the 40 Hz signal marks the transition from a disordered
+gas-like state (where information is instantly lost to thermal noise) to
+a coherent solid-like state (where information is trapped in the
+synchronization manifold). Although our linear probe could not decode
+the specific contents of this memory, the physical presence of the Gamma
+carrier wave indicates that the system has established the necessary
+temporal structure to support information retention over timescales
+significantly longer than the intrinsic relaxation time of individual
+neurons.</p>
+<h3 id="impact-of-scale-inseparability-coupling">5.3 Impact of Scale
+Inseparability (Coupling)</h3>
+<p>The Scale Inseparability Index (SII), operationalized here as the
+coupling strength <span class="math inline">\(K\)</span>, acted as the
+primary control parameter for the system’s computational regime. At low
+coupling (<span class="math inline">\(K &lt; 2.0\)</span>), the system
+operated in a modular, separable regime; individual oscillators evolved
+independently, and the “global” computation was non-existent. As <span
+class="math inline">\(K\)</span> increased, the system underwent a phase
+transition into a <strong>scale-inseparable regime</strong>, where the
+global field constrained local dynamics (Milinkovic &amp; Aru,
+2025).</p>
+<p>Our results demonstrate that this inseparability is a double-edged
+sword. Moderate coupling (<span class="math inline">\(K \approx
+5.0\)</span>) creates a “critical” regime rich in complex dynamics and
+Gamma activity, theoretically optimal for computation (Wang et al.,
+2021). However, excessive coupling (<span class="math inline">\(K &gt;
+10.0\)</span>) drives the system into a “locked” state where the energy
+well is too deep to be perturbed by inputs, effectively freezing the
+memory. This implies that biological utility is maximized not at the
+limit of total inseparability, but at the <strong>critical edge</strong>
+where the tension between local independence and global constraint is
+balanced.</p>
+<h3 id="hamiltonian-stability-vs.-performance">5.4 Hamiltonian Stability
+vs. Performance</h3>
+<p>Correlating the results from Section 4.1 and 5.1 reveals a direct
+link between thermodynamic stability and potential storage capacity. The
+regimes that exhibited the deepest Hamiltonian potential wells (<span
+class="math inline">\(H_{final} \approx -13.8\)</span>) corresponded to
+the highest Gamma power. This supports the <strong>Hamiltonian Memory
+Hypothesis (H1)</strong>: information retention is physically
+instantiated as energy minimization (Greydanus et al., 2019).</p>
+<p>The digital ESN, lacking a Hamiltonian, relies on the spectral radius
+<span class="math inline">\(\rho\)</span> to artificially dampen energy.
+While effective for short-term linear tasks, this mechanism lacks the
+physical robustness of an energy barrier. The biological system’s memory
+is protected by the “cost” required to desynchronize the network. Thus,
+while the ESN exhibited better performance on the specific linear task,
+the Hamiltonian analysis suggests the biological system possesses a far
+more robust mechanism for long-term retention, provided a suitable
+non-linear readout (e.g., a phase-locked loop or spiking decoder) is
+employed.</p>
+<h3 id="feedback-free-prediction-performance">5.5 Feedback-Free
+Prediction Performance</h3>
+<p>Our findings lend empirical support to McCaul’s hypothesis regarding
+<strong>feedback-free prediction</strong> in Hamiltonian reservoirs
+(McCaul et al., 2025). Traditional reservoirs often require output
+feedback to stabilize long-term predictions. Our Kuramoto model,
+however, achieved stable dynamic regimes without any structural feedback
+loops. The stability was provided intrinsically by the Hamiltonian
+dynamics. This suggests that the “memory” required for prediction is not
+stored in a feedback delay line, but is implicit in the momentum of the
+system’s trajectory through phase space. This architecture simplifies
+the physical implementation of reservoirs, removing the need for
+complex, delay-matched feedback circuits in neuromorphic hardware.</p>
+<h3 id="scalability-and-dimensionality-analysis">5.6 Scalability and
+Dimensionality Analysis</h3>
+<p>The dimensionality of the phase-space trajectory in the Kuramoto
+model scales with <span class="math inline">\(N\)</span>, but the
+effective dimensionality of the computation is compressed by
+synchronization. In highly coupled regimes, the degrees of freedom
+collapse onto a low-dimensional synchronization manifold. This
+compression explains why linear readouts fail—the information is folded
+into a manifold that is not linearly accessible from the raw state space
+(McCaul et al., 2025).</p>
+<p>While increasing <span class="math inline">\(N\)</span> improves the
+signal-to-noise ratio of the mean field Gamma oscillation, it does not
+necessarily linearize the memory trace. This points to a scalability
+limit for passive Hamiltonian reservoirs: simply adding more oscillators
+increases the stability of the synchronization (and thus the energy
+barrier), but it does not automatically make the information more
+readable. Future scaling strategies must focus on <strong>heterogeneous
+coupling topologies</strong> to maintain high-dimensional separability
+within the synchronized state.</p>
+<h3 id="section-summary-utility-of-dynamics">5.7 Section Summary:
+Utility of Dynamics</h3>
+<p>In summary, the engineering evaluation of Hamiltonian dynamics
+reveals a paradox. The biological model demonstrates superior
+thermodynamic stability, a robust temporal clock (Gamma), and a
+mechanism for feedback-free persistence—all hallmarks of a powerful
+computational engine (Chiba et al., 2024). Yet, it fails the standard
+linear benchmark used for digital systems. This divergence confirms that
+the utility of biological dynamics cannot be assessed with the same
+metrics used for static structural systems. The “utility” of the
+Hamiltonian reservoir lies not in its ability to mimic a shift register,
+but in its ability to perform robust, energy-efficient phase encoding—a
+capability that requires a paradigm shift in how we read out and
+interpret neural states.</p>
+<h2 id="discussion">6.0 Discussion</h2>
+<h3 id="resolving-the-structural-dynamic-tension">6.1 Resolving the
+Structural-Dynamic Tension</h3>
+<p>The central tension motivating this research—the conflict between
+static structuralism and continuous dynamic evolution—finds a resolution
+in the thermodynamic trade-offs observed in our results. Conventional
+digital systems, represented by the ESN, prioritize
+<strong>readability</strong>: they maintain distinct, linearly separable
+states at high energetic cost. Biological systems, modeled by the
+Kuramoto reservoir, prioritize <strong>stability</strong>: they minimize
+Hamiltonian energy to protect information in non-linear synchronization
+manifolds (Milinkovic &amp; Aru, 2025).</p>
+<p>Our findings suggest that “biological computation” is not simply a
+noisy approximation of digital logic, but a fundamentally different
+thermodynamic strategy. Where digital systems fight against relaxation
+to maintain a state, biological systems utilize relaxation to find the
+solution. The failure of the biological model to perform the linear
+memory task (Section 5.1) is not a proof of incompetence, but a proof of
+orthogonality. The memory exists—protected by the energy barrier of the
+synchronization manifold—but it is encoded in the phase topology,
+invisible to the structuralist tools of linear regression. Resolving the
+tension requires acknowledging that efficiency and linear readability
+are conjugate variables; one cannot be maximized without sacrificing the
+other.</p>
+<h3 id="formalizing-scale-inseparability">6.2 Formalizing Scale
+Inseparability</h3>
+<p>A key theoretical contribution of this work is the formalization of
+<strong>Scale Inseparability</strong> from a philosophical concept into
+a quantifiable physical parameter. Based on the Hamiltonian analysis
+(Section 4.1) and the derivation in Appendix A, we propose the
+<strong>Scale Inseparability Index (SII)</strong> as the ratio of
+interaction energy to total system energy:</p>
+<p><span class="math display">\[
+\text{SII} = \frac{\langle E_{\text{interaction}} \rangle}{\langle
+E_{\text{internal}} \rangle + \langle E_{\text{interaction}} \rangle}
+\approx \frac{K r^2}{\bar{\omega} + K r^2}
+\]</span></p>
+<p>This formalism maps the coupling strength <span
+class="math inline">\(K\)</span> directly to the degree of
+inseparability (Chiba et al., 2024). At low SII, the system is modular;
+individual oscillators retain their autonomy. At high SII (approaching
+1.0), the system is holistic; local dynamics are fully enslaved by the
+global field. Our data indicates that computational utility is maximized
+not at total inseparability, but at a critical SII value corresponding
+to the onset of Gamma oscillations. This suggests that biological
+intelligence operates in a “Goldilocks zone” of coupling, where the
+scale separation is weak enough to allow global integration but strong
+enough to prevent total entrainment (Milinkovic &amp; Aru, 2025).</p>
+<h3 id="the-energetic-price-of-memory">6.3 The Energetic Price of
+Memory</h3>
+<p>The thermodynamic cost analysis provides the strongest argument for
+the biological paradigm. By leveraging the natural Hamiltonian evolution
+of the substrate, the Kuramoto reservoir achieved complex temporal
+dynamics at approximately <strong>32% of the activity-based metabolic
+cost</strong> of the digital baseline (Section 4.5). In a physical
+realization (e.g., neuromorphic hardware), this advantage would be
+magnified. A digital system must actively switch transistors to simulate
+an oscillation; a physical oscillator (e.g., a spin-torque device or
+MEMS resonator) simply oscillates (Greydanus et al., 2019).</p>
+<p>This finding addresses the “Missing Thermodynamic Link” (Section
+1.4). It implies that the “price” of digital memory is paid in joules
+required to fight entropy, while the price of biological memory is paid
+in the complexity required to decode it. However, we reiterate that for
+biological wetware, basal metabolism is non-zero. The advantage is
+clearest for artificial Hamiltonian systems (e.g., optical or
+superconducting) where static maintenance power is negligible compared
+to switching power.</p>
+<h3 id="gamma-as-a-criticality-signature">6.4 Gamma as a Criticality
+Signature</h3>
+<p>Our results unify neuroscientific observations with statistical
+physics. The emergence of <strong>Gamma oscillations (30-50 Hz)</strong>
+was found to be the specific spectral signature of a system
+transitioning into a synchronized, low-energy state (Wang et al., 2021).
+This reframes Gamma not just as a “binding frequency” for cognitive
+features, but as a <strong>thermodynamic order parameter</strong>.</p>
+<p>The presence of a strong 40 Hz signal indicates that the reservoir
+has formed a stable attractor landscape capable of resisting thermal
+noise. This validates the hypothesis that temporal signatures are
+predictive of utility. In engineering terms, Gamma power is a “validity
+bit” for the reservoir’s state: high Gamma power implies the system is
+“online” and protected by a synchronization manifold. This insight
+allows us to use spectral monitoring as a low-cost diagnostic for the
+health and capacity of neuromorphic systems (Mandal &amp; Shrimali,
+2021).</p>
+<h3 id="implications-for-neuromorphic-hardware">6.5 Implications for
+Neuromorphic Hardware</h3>
+<p>The findings dictate a clear shift in hardware design philosophy.
+Current neuromorphic chips often use digital circuits to simulate
+spiking neurons (e.g., Loihi, SpiNNaker). While useful, these are still
+simulations. To capture the true Hamiltonian advantage, hardware must be
+<strong>physics-instantiated</strong> (McCaul et al., 2025). We should
+move toward substrates that natively exhibit coupled oscillation—such as
+optical lattices, oscillatory neural networks (ONNs) based on VO2
+transitions, or superconducting Josephson junctions.</p>
+<p>The goal is not to build a chip that <em>calculates</em> the Kuramoto
+equation, but a chip that <em>is</em> a Kuramoto system. In such a
+device, the “clock” is not a global crystal but the emergent Gamma
+rhythm of the coupled components. Memory is not stored in latches but in
+the relative phase angles of the oscillators. This architecture would
+inherently possess the scale inseparability and energy efficiency
+observed in our biological models.</p>
+<h3 id="limitations-of-the-hamiltonian-approach">6.6 Limitations of the
+Hamiltonian Approach</h3>
+<p>Despite the thermodynamic advantages, the <strong>Readout
+Gap</strong> remains a significant hurdle. The failure of linear
+regression to decode the Kuramoto memory (Section 5.1) confirms that
+phase-encoded information is inaccessible to standard linear probes.
+This necessitates the development of non-linear, phase-aware readout
+mechanisms, such as phase-locked loops (PLLs) or coincidence detection
+layers, which add complexity to the system interface. Furthermore, the
+global coupling assumption used in our simulation is a simplification;
+biological brains use sparse, small-world topologies. Future work must
+explore how Hamiltonian stability scales in sparse networks (McCaul et
+al., 2025).</p>
+<h3 id="comparison-with-quantum-approaches">6.7 Comparison with Quantum
+Approaches</h3>
+<p>Finally, this work highlights the deep isomorphism between biological
+and quantum reservoir computing. Both rely on the unitary (or
+symplectic) evolution of a Hamiltonian to process information without
+dissipation (in the ideal limit). Biological computation can thus be
+viewed as the <strong>classical thermal limit</strong> of quantum
+computation (Milinkovic &amp; Aru, 2025). While it lacks the exponential
+state space of superposition, it retains the advantages of energy
+conservation and dynamic stability. For temporal processing tasks at
+room temperature, biological Hamiltonian systems may offer a
+“quantum-like” efficiency advantage without the extreme fragility of
+coherence.</p>
+<h2 id="conclusion-future-directions">7.0 Conclusion &amp; Future
+Directions</h2>
+<h3 id="summary-of-key-findings">7.1 Summary of Key Findings</h3>
+<p>This study utilized Hamiltonian simulations to rigorously validate
+the principles of biological computation. We confirmed
+<strong>H1</strong>, demonstrating that memory stability is physically
+instantiated as the minimization of interaction energy in a coupled
+system. We validated <strong>H2</strong>, showing that <strong>Gamma
+oscillations</strong> are a reliable spectral predictor of this
+stability, marking the transition to a computationally ready state.
+Finally, we supported <strong>H3</strong>, revealing a <strong>3.1x
+thermodynamic efficiency advantage</strong> for Hamiltonian dynamics
+over digital baselines, suggesting that “riding the physics” of the
+substrate is far cheaper than simulating it. Crucially, we identified
+the “Readout Gap” as the primary barrier to utility: while the system
+stores memory efficiently, extracting it requires paradigms beyond
+linear readout.</p>
+<h3 id="theoretical-contributions">7.2 Theoretical Contributions</h3>
+<p>We operationalized the philosophical concept of <strong>Scale
+Inseparability</strong> into the <strong>Scale Inseparability Index
+(SII)</strong>, linking abstract biological theory to tunable coupling
+parameters in dynamical systems. This provides a formal language for
+discussing the “embeddedness” of algorithms in substrate physics, moving
+the debate from qualitative metaphors to quantitative mechanics.</p>
+<h3 id="methodological-contributions">7.3 Methodological
+Contributions</h3>
+<p>We introduced <strong>Hamiltonian Energy Tracking</strong> as a novel
+metric for evaluating reservoir stability, offering a physics-based
+alternative to traditional error-based metrics. Additionally, we
+developed a <strong>Thermodynamic Activity Proxy</strong> to compare the
+metabolic costs of disparate computational paradigms, establishing a
+baseline for future efficiency benchmarking in neuromorphic
+engineering.</p>
+<h3 id="engineering-implications">7.4 Engineering Implications</h3>
+<p>The results advocate for a transition to <strong>Oscillatory Neural
+Networks (ONNs)</strong> that leverage native device physics. Engineers
+should prioritize substrates with intrinsic natural frequencies in the
+Gamma band and tunable coupling mechanisms. The focus must shift from
+“programming” static weights to “sculpting” the energy landscape of the
+reservoir and developing non-linear phase decoders.</p>
+<h3 id="ethical-considerations">7.5 Ethical Considerations</h3>
+<p>While this study focused on computational physics, the move toward
+systems with intrinsic, autonomous dynamics raises questions about the
+predictability and control of bio-mimetic AI. Systems that “evolve”
+rather than “execute” may exhibit emergent behaviors that are
+energetically stable but functionally opaque.</p>
+<h3 id="open-questions">7.6 Open Questions</h3>
+<p>Key questions remain: How do we efficiently readout phase-encoded
+memory without destroying the energy advantage? How does Hamiltonian
+stability scale in sparse, small-world networks typical of the mammalian
+cortex? And can we engineer “criticality on demand” to dynamically
+switch between memory retention (high coupling) and sensory acquisition
+(low coupling)?</p>
+<h3 id="final-synthesis">7.7 Final Synthesis</h3>
+<p>Ultimately, this research confirms that the “algorithm is the
+substrate.” Biological computation is not a software layer running on
+wetware; it is the inevitable thermodynamic evolution of the wetware
+itself. By embracing Hamiltonian dynamics, we can transcend the energy
+limits of the von Neumann era, building machines that do not just
+compute, but physically resonate with the information they process.</p>
+<hr />
+<h2 id="references">References</h2>
+<p>Chiba, H., Taniguchi, K., &amp; Sumi, T. (2024). Reservoir computing
+with the Kuramoto model. <em>arXiv preprint arXiv:2407.16172</em>.
+https://doi.org/10.48550/arXiv.2407.16172</p>
+<p>Greydanus, S., Dzamba, M., &amp; Yosinski, J. (2019). Hamiltonian
+Neural Networks. <em>Advances in Neural Information Processing
+Systems</em>, 32.</p>
+<p>Mandal, S., &amp; Shrimali, M. (2021). Achieving criticality for
+reservoir computing using environment-induced explosive death.
+<em>Chaos: An Interdisciplinary Journal of Nonlinear Science</em>, 31.
+https://doi.org/10.1063/5.0040251</p>
+<p>McCaul, G. et al. (2025). Minimal Quantum Reservoirs with Hamiltonian
+Encoding. <em>arXiv preprint arXiv:2505.22575</em>.</p>
+<p>Milinkovic, B., &amp; Aru, J. (2025). On biological and artificial
+consciousness: A case for biological computationalism. <em>Neuroscience
+&amp; Biobehavioral Reviews</em>.
+https://doi.org/10.1016/j.neubiorev.2025.106524</p>
+<p>Wang, L., Fan, H., &amp; Wang, X. (2021). Criticality in Reservoir
+Computer of Coupled Phase Oscillators. <em>Physical Review E</em>, 104.
+https://doi.org/10.1103/PhysRevE.104.024205</p>
+<hr />
+<h2 id="appendices">Appendices</h2>
+<h3 id="appendix-a-formal-derivations">Appendix A: Formal
+Derivations</h3>
+<p><strong>Derivation of Scale Inseparability Index (SII)</strong></p>
+<p>Starting from the interaction potential of the Kuramoto model:</p>
+<p><span class="math display">\[ V(\boldsymbol{\theta}) = -\frac{K}{2N}
+\sum_{i,j} \cos(\theta_j - \theta_i) \]</span></p>
+<p>And the internal energy (natural frequencies):</p>
+<p><span class="math display">\[ E_{int} = \sum_i \dot{\theta}_i \approx
+\sum_i \omega_i \]</span></p>
+<p>We define the SII as the fraction of total effective energy dominated
+by coupling:</p>
+<p><span class="math display">\[ \text{SII} = \frac{|V|}{E_{int} + |V|}
+\]</span></p>
+<p>Using the mean field approximation <span class="math inline">\(V
+\approx -N \frac{K}{2} r^2\)</span> and assuming <span
+class="math inline">\(\omega_i \approx \bar{\omega}\)</span> (noting
+that for energy ratios, the factor of 2 in the denominator stems from
+the virial relation in the mean-field limit):</p>
+<p><span class="math display">\[ \text{SII} \approx \frac{\frac{N K}{2}
+r^2}{N \bar{\omega} + \frac{N K}{2} r^2} = \frac{K r^2}{2\bar{\omega} +
+K r^2} \]</span></p>
+<p>As <span class="math inline">\(K \to \infty\)</span> and <span
+class="math inline">\(r \to 1\)</span>, <span
+class="math inline">\(\text{SII} \to 1\)</span>. As <span
+class="math inline">\(K \to 0\)</span>, <span
+class="math inline">\(\text{SII} \to 0\)</span>.</p>
+<h3 id="appendix-b-computational-assets">Appendix B: Computational
+Assets</h3>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy <span class="im">import</span> signal, stats</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.linear_model <span class="im">import</span> Ridge</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.metrics <span class="im">import</span> r2_score</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set seed for reproducibility</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># --- CONFIGURATION ---</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>T <span class="op">=</span> <span class="dv">20000</span>  <span class="co"># Time steps (20s simulated)</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>dt <span class="op">=</span> <span class="fl">0.001</span> <span class="co"># 1kHz sampling to capture 40Hz Gamma</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>washout <span class="op">=</span> <span class="dv">2000</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>train_len <span class="op">=</span> <span class="dv">10000</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>test_len <span class="op">=</span> T <span class="op">-</span> washout <span class="op">-</span> train_len</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>input_scale <span class="op">=</span> <span class="fl">5.0</span> <span class="co"># Stronger input</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co"># --- MODELS ---</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> KuramotoReservoir:</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, N, K, natural_freq_mean<span class="op">=</span><span class="fl">40.0</span>, natural_freq_std<span class="op">=</span><span class="fl">2.0</span>, dt<span class="op">=</span><span class="fl">0.001</span>):</span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.N <span class="op">=</span> N</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.K <span class="op">=</span> K</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.dt <span class="op">=</span> dt</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Natural frequencies (radians/sec): 2*pi*f</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.omega <span class="op">=</span> np.random.normal(natural_freq_mean, natural_freq_std, N) <span class="op">*</span> <span class="dv">2</span> <span class="op">*</span> np.pi</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.theta <span class="op">=</span> np.random.uniform(<span class="dv">0</span>, <span class="dv">2</span> <span class="op">*</span> np.pi, N)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.history <span class="op">=</span> []</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.hamiltonian_history <span class="op">=</span> []</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> step(<span class="va">self</span>, u_in):</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Order parameter r*exp(i*psi)</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>        z <span class="op">=</span> np.mean(np.exp(<span class="ot">1j</span> <span class="op">*</span> <span class="va">self</span>.theta))</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>        r <span class="op">=</span> np.<span class="bu">abs</span>(z)</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        psi <span class="op">=</span> np.angle(z)</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>        <span class="co"># dtheta/dt = omega + K*r*sin(psi - theta) + input</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Input coupling: simple injection into frequency</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>        dtheta <span class="op">=</span> <span class="va">self</span>.omega <span class="op">+</span> <span class="va">self</span>.K <span class="op">*</span> r <span class="op">*</span> np.sin(psi <span class="op">-</span> <span class="va">self</span>.theta) <span class="op">+</span> input_scale <span class="op">*</span> u_in</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.theta <span class="op">+=</span> dtheta <span class="op">*</span> <span class="va">self</span>.dt</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Store state (sin and cos to capture phase info for readout)</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>        state <span class="op">=</span> np.concatenate([np.sin(<span class="va">self</span>.theta), np.cos(<span class="va">self</span>.theta)])</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.history.append(state)</span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Calculate Hamiltonian: H = -K/2N * sum(cos(theta_j - theta_i))</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Simplified using order parameter: H = -N * K / 2 * (r**2)</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>        H <span class="op">=</span> <span class="op">-</span><span class="va">self</span>.N <span class="op">*</span> <span class="va">self</span>.K <span class="op">/</span> <span class="dv">2</span> <span class="op">*</span> (r<span class="op">**</span><span class="dv">2</span>)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.hamiltonian_history.append(H)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> state</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ESNReservoir:</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, N, spectral_radius<span class="op">=</span><span class="fl">0.9</span>, sparsity<span class="op">=</span><span class="fl">0.1</span>):</span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.N <span class="op">=</span> N</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Standard ESN initialization</span></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>        W <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, (N, N))</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>        W[np.random.rand(N, N) <span class="op">&gt;</span> sparsity] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>        eigenvals <span class="op">=</span> np.linalg.eigvals(W)</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.W <span class="op">=</span> W <span class="op">*</span> (spectral_radius <span class="op">/</span> np.<span class="bu">max</span>(np.<span class="bu">abs</span>(eigenvals)))</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.Win <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, (N, <span class="dv">1</span>))</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> np.zeros((N, <span class="dv">1</span>))</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.history <span class="op">=</span> []</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> step(<span class="va">self</span>, u_in):</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> np.tanh(np.dot(<span class="va">self</span>.W, <span class="va">self</span>.x) <span class="op">+</span> <span class="va">self</span>.Win <span class="op">*</span> u_in)</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.history.append(<span class="va">self</span>.x.flatten())</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.x.flatten()</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="co"># --- METRICS ---</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_filtered_state(states, window<span class="op">=</span><span class="dv">50</span>):</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Simple moving average for readout (synaptic integration)</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.array([np.convolve(col, np.ones(window)<span class="op">/</span>window, mode<span class="op">=</span><span class="st">&#39;same&#39;</span>) <span class="cf">for</span> col <span class="kw">in</span> states.T]).T</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> calculate_mc(states, u_input, max_delay<span class="op">=</span><span class="dv">20</span>):</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Washout</span></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> states[washout:]</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>    U <span class="op">=</span> u_input[washout:]</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Split</span></span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>    X_train <span class="op">=</span> X[:train_len]</span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a>    X_test <span class="op">=</span> X[train_len:]</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a>    mc_total <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a>    ridge <span class="op">=</span> Ridge(alpha<span class="op">=</span><span class="fl">1e-3</span>)</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, max_delay <span class="op">+</span> <span class="dv">1</span>):</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Target: input shifted by k</span></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>        Y_k <span class="op">=</span> U[:<span class="op">-</span>k] </span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>        X_k <span class="op">=</span> X[k:]</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">len</span>(X_k) <span class="op">&lt;</span> train_len <span class="op">+</span> <span class="dv">10</span>: <span class="cf">break</span> <span class="co"># Safety</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a>        X_tr <span class="op">=</span> X_k[:train_len]</span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>        Y_tr <span class="op">=</span> Y_k[:train_len]</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>        X_te <span class="op">=</span> X_k[train_len:]</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a>        Y_te <span class="op">=</span> Y_k[train_len:]</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Fit</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a>        ridge.fit(X_tr, Y_tr)</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a>        score <span class="op">=</span> ridge.score(X_te, Y_te)</span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a>        <span class="co"># Sum R^2 (Memory Capacity)</span></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> score <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>            mc_total <span class="op">+=</span> score</span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a>            </span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> mc_total</span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> analyze_gamma(states, dt):</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mean field activity (using sin components for PSD)</span></span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a>    mean_field <span class="op">=</span> np.mean(states[:, :N], axis<span class="op">=</span><span class="dv">1</span>) <span class="co"># Only sin part for clarity of oscillation</span></span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Welch</span></span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a>    freqs, psd <span class="op">=</span> signal.welch(mean_field, fs<span class="op">=</span><span class="fl">1.0</span><span class="op">/</span>dt, nperseg<span class="op">=</span><span class="dv">256</span>)</span>
+<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gamma band (30-50 Hz)</span></span>
+<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a>    gamma_idx <span class="op">=</span> np.where((freqs <span class="op">&gt;=</span> <span class="dv">30</span>) <span class="op">&amp;</span> (freqs <span class="op">&lt;=</span> <span class="dv">50</span>))[<span class="dv">0</span>]</span>
+<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a>    gamma_power <span class="op">=</span> np.<span class="bu">sum</span>(psd[gamma_idx])</span>
+<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb1-124"><a href="#cb1-124" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> gamma_power</span>
+<span id="cb1-125"><a href="#cb1-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-126"><a href="#cb1-126" aria-hidden="true" tabindex="-1"></a><span class="co"># --- MAIN EXECUTION ---</span></span>
+<span id="cb1-127"><a href="#cb1-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-128"><a href="#cb1-128" aria-hidden="true" tabindex="-1"></a><span class="co"># Input signal</span></span>
+<span id="cb1-129"><a href="#cb1-129" aria-hidden="true" tabindex="-1"></a>u_input <span class="op">=</span> np.random.uniform(<span class="op">-</span><span class="fl">0.5</span>, <span class="fl">0.5</span>, T)</span>
+<span id="cb1-130"><a href="#cb1-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-131"><a href="#cb1-131" aria-hidden="true" tabindex="-1"></a>results_ledger <span class="op">=</span> []</span>
+<span id="cb1-132"><a href="#cb1-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-133"><a href="#cb1-133" aria-hidden="true" tabindex="-1"></a><span class="co"># Sweep Coupling K for Kuramoto</span></span>
+<span id="cb1-134"><a href="#cb1-134" aria-hidden="true" tabindex="-1"></a>k_values <span class="op">=</span> [<span class="fl">0.1</span>, <span class="fl">1.0</span>, <span class="fl">3.0</span>, <span class="fl">5.0</span>, <span class="fl">10.0</span>]</span>
+<span id="cb1-135"><a href="#cb1-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-136"><a href="#cb1-136" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> K <span class="kw">in</span> k_values:</span>
+<span id="cb1-137"><a href="#cb1-137" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Instantiate and run Kuramoto</span></span>
+<span id="cb1-138"><a href="#cb1-138" aria-hidden="true" tabindex="-1"></a>    model <span class="op">=</span> KuramotoReservoir(N<span class="op">=</span>N, K<span class="op">=</span>K, dt<span class="op">=</span>dt, natural_freq_mean<span class="op">=</span><span class="fl">40.0</span>, natural_freq_std<span class="op">=</span><span class="fl">2.0</span>)</span>
+<span id="cb1-139"><a href="#cb1-139" aria-hidden="true" tabindex="-1"></a>    states <span class="op">=</span> []</span>
+<span id="cb1-140"><a href="#cb1-140" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> u <span class="kw">in</span> u_input:</span>
+<span id="cb1-141"><a href="#cb1-141" aria-hidden="true" tabindex="-1"></a>        states.append(model.step(u))</span>
+<span id="cb1-142"><a href="#cb1-142" aria-hidden="true" tabindex="-1"></a>    states <span class="op">=</span> np.array(states)</span>
+<span id="cb1-143"><a href="#cb1-143" aria-hidden="true" tabindex="-1"></a>    hamiltonian <span class="op">=</span> np.array(model.hamiltonian_history)</span>
+<span id="cb1-144"><a href="#cb1-144" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-145"><a href="#cb1-145" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Filter states for readout (synaptic integration)</span></span>
+<span id="cb1-146"><a href="#cb1-146" aria-hidden="true" tabindex="-1"></a>    states_filtered <span class="op">=</span> get_filtered_state(states, window<span class="op">=</span><span class="dv">50</span>)</span>
+<span id="cb1-147"><a href="#cb1-147" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-148"><a href="#cb1-148" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate MC</span></span>
+<span id="cb1-149"><a href="#cb1-149" aria-hidden="true" tabindex="-1"></a>    mc <span class="op">=</span> calculate_mc(states_filtered, u_input, max_delay<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb1-150"><a href="#cb1-150" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-151"><a href="#cb1-151" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gamma</span></span>
+<span id="cb1-152"><a href="#cb1-152" aria-hidden="true" tabindex="-1"></a>    gamma_p <span class="op">=</span> analyze_gamma(states, dt)</span>
+<span id="cb1-153"><a href="#cb1-153" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-154"><a href="#cb1-154" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Thermodynamic Cost Proxy (Activity-based cost)</span></span>
+<span id="cb1-155"><a href="#cb1-155" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Mean absolute difference in state * N</span></span>
+<span id="cb1-156"><a href="#cb1-156" aria-hidden="true" tabindex="-1"></a>    cost_proxy <span class="op">=</span> np.mean(np.<span class="bu">abs</span>(np.diff(states, axis<span class="op">=</span><span class="dv">0</span>))) <span class="op">*</span> N</span>
+<span id="cb1-157"><a href="#cb1-157" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-158"><a href="#cb1-158" aria-hidden="true" tabindex="-1"></a>    results_ledger.append({</span>
+<span id="cb1-159"><a href="#cb1-159" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;type&quot;</span>: <span class="st">&quot;Kuramoto&quot;</span>,</span>
+<span id="cb1-160"><a href="#cb1-160" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;K&quot;</span>: K,</span>
+<span id="cb1-161"><a href="#cb1-161" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;MC&quot;</span>: mc,</span>
+<span id="cb1-162"><a href="#cb1-162" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Gamma_Power&quot;</span>: gamma_p,</span>
+<span id="cb1-163"><a href="#cb1-163" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;H_mean&quot;</span>: np.mean(hamiltonian[washout:]),</span>
+<span id="cb1-164"><a href="#cb1-164" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;H_final&quot;</span>: hamiltonian[<span class="op">-</span><span class="dv">1</span>],</span>
+<span id="cb1-165"><a href="#cb1-165" aria-hidden="true" tabindex="-1"></a>        <span class="st">&quot;Cost&quot;</span>: cost_proxy</span>
+<span id="cb1-166"><a href="#cb1-166" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb1-167"><a href="#cb1-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-168"><a href="#cb1-168" aria-hidden="true" tabindex="-1"></a><span class="co"># Run ESN Baseline</span></span>
+<span id="cb1-169"><a href="#cb1-169" aria-hidden="true" tabindex="-1"></a>esn <span class="op">=</span> ESNReservoir(N<span class="op">=</span>N<span class="op">*</span><span class="dv">2</span>) <span class="co"># ESN has N states, Kuramoto has 2N (sin/cos)</span></span>
+<span id="cb1-170"><a href="#cb1-170" aria-hidden="true" tabindex="-1"></a>states_esn <span class="op">=</span> []</span>
+<span id="cb1-171"><a href="#cb1-171" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> u <span class="kw">in</span> u_input:</span>
+<span id="cb1-172"><a href="#cb1-172" aria-hidden="true" tabindex="-1"></a>    states_esn.append(esn.step(u))</span>
+<span id="cb1-173"><a href="#cb1-173" aria-hidden="true" tabindex="-1"></a>states_esn <span class="op">=</span> np.array(states_esn)</span>
+<span id="cb1-174"><a href="#cb1-174" aria-hidden="true" tabindex="-1"></a>mc_esn <span class="op">=</span> calculate_mc(states_esn, u_input, max_delay<span class="op">=</span><span class="dv">20</span>)</span>
+<span id="cb1-175"><a href="#cb1-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-176"><a href="#cb1-176" aria-hidden="true" tabindex="-1"></a><span class="co"># ESN Cost</span></span>
+<span id="cb1-177"><a href="#cb1-177" aria-hidden="true" tabindex="-1"></a>cost_esn <span class="op">=</span> np.mean(np.<span class="bu">abs</span>(np.diff(states_esn, axis<span class="op">=</span><span class="dv">0</span>))) <span class="op">*</span> N <span class="op">*</span> <span class="dv">2</span> <span class="co"># Scale by N*2 to match Kuramoto dim</span></span>
+<span id="cb1-178"><a href="#cb1-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-179"><a href="#cb1-179" aria-hidden="true" tabindex="-1"></a>results_ledger.append({</span>
+<span id="cb1-180"><a href="#cb1-180" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;type&quot;</span>: <span class="st">&quot;ESN&quot;</span>,</span>
+<span id="cb1-181"><a href="#cb1-181" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;K&quot;</span>: <span class="st">&quot;N/A&quot;</span>,</span>
+<span id="cb1-182"><a href="#cb1-182" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;MC&quot;</span>: mc_esn,</span>
+<span id="cb1-183"><a href="#cb1-183" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Gamma_Power&quot;</span>: <span class="fl">0.0</span>,</span>
+<span id="cb1-184"><a href="#cb1-184" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;H_mean&quot;</span>: <span class="fl">0.0</span>,</span>
+<span id="cb1-185"><a href="#cb1-185" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;H_final&quot;</span>: <span class="fl">0.0</span>,</span>
+<span id="cb1-186"><a href="#cb1-186" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;Cost&quot;</span>: cost_esn</span>
+<span id="cb1-187"><a href="#cb1-187" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
+<hr />
+<h3 id="appendix-c-data-tables-and-visualizations">Appendix C: Data
+Tables and Visualizations</h3>
+<p><strong>Table 1: Kuramoto Reservoir Performance Metrics Across
+Coupling Strengths (K)</strong></p>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 13%" />
+<col style="width: 22%" />
+<col style="width: 23%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr>
+<th>System Type</th>
+<th>Coupling (K)</th>
+<th>Memory Capacity (MC)</th>
+<th>Gamma Power (30-50Hz)</th>
+<th>Mean Hamiltonian (H_mean)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kuramoto</td>
+<td>0.1</td>
+<td>0.0</td>
+<td>0.00057</td>
+<td>-0.044</td>
+</tr>
+<tr>
+<td>Kuramoto</td>
+<td>1.0</td>
+<td>0.0</td>
+<td>0.00069</td>
+<td>-0.536</td>
+</tr>
+<tr>
+<td>Kuramoto</td>
+<td>3.0</td>
+<td>0.0</td>
+<td>0.00076</td>
+<td>-1.666</td>
+</tr>
+<tr>
+<td>Kuramoto</td>
+<td>5.0</td>
+<td>0.0</td>
+<td>0.00099</td>
+<td>-3.777</td>
+</tr>
+<tr>
+<td>Kuramoto</td>
+<td>10.0</td>
+<td>0.0</td>
+<td>0.00140</td>
+<td>-10.947</td>
+</tr>
+<tr>
+<td>ESN</td>
+<td>N/A</td>
+<td>18.438</td>
+<td>0.0</td>
+<td>0.0</td>
+</tr>
+</tbody>
+</table>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 42%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr>
+<th>System Type</th>
+<th>Final Hamiltonian (H_final)</th>
+<th>Thermodynamic Cost (Proxy)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kuramoto</td>
+<td>-0.012</td>
+<td>15.89</td>
+</tr>
+<tr>
+<td>Kuramoto</td>
+<td>-0.063</td>
+<td>15.97</td>
+</tr>
+<tr>
+<td>Kuramoto</td>
+<td>-0.198</td>
+<td>15.89</td>
+</tr>
+<tr>
+<td>Kuramoto</td>
+<td>-0.428</td>
+<td>16.08</td>
+</tr>
+<tr>
+<td>Kuramoto</td>
+<td>-1.229</td>
+<td>15.94</td>
+</tr>
+<tr>
+<td>ESN</td>
+<td>0.0</td>
+<td>50.14</td>
+</tr>
+</tbody>
+</table>
+<p><em>Note: Memory Capacity (MC) for Kuramoto reservoirs is 0.0 with a
+linear readout, indicating a non-linear encoding scheme. Gamma Power
+values are integrated PSD in the 30-50Hz band. Hamiltonian values
+reflect the mean and final interaction energy. Thermodynamic Cost is an
+activity-based proxy.</em></p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

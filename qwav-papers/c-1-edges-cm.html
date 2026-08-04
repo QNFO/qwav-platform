@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C.1 Edges CM | QWAV</title>
+<meta name="description" content="Appendix C: Detailed Graph Data (Edges) C.1: Edges Originating from Classical Mechanics (CM) Nodes: Source Node ID Target Node ID Type Rationale Conf. Dir. C...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/c-1-edges-cm">
+<meta property="og:title" content="C.1 Edges CM">
+<meta property="og:description" content="Appendix C: Detailed Graph Data (Edges) C.1: Edges Originating from Classical Mechanics (CM) Nodes: Source Node ID Target Node ID Type Rationale Conf. Dir. C...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/c-1-edges-cm">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "C.1 Edges CM",
+  "url": "https://deep.qwav.tech/papers/c-1-edges-cm",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-05-09T03:21:34Z",
+  "abstract": "Appendix C: Detailed Graph Data (Edges) C.1: Edges Originating from Classical Mechanics (CM) Nodes: Source Node ID Target Node ID Type Rationale Conf. Dir. C..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<p><strong>Appendix C: Detailed Graph Data (Edges)</strong></p>
+<p><strong>C.1: Edges Originating from Classical Mechanics (CM)
+Nodes:</strong></p>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 2%" />
+<col style="width: 66%" />
+<col style="width: 2%" />
+<col style="width: 1%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Source Node ID</th>
+<th style="text-align: left;">Target Node ID</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Rationale</th>
+<th style="text-align: left;">Conf.</th>
+<th style="text-align: left;">Dir.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>CM</code></td>
+<td style="text-align: left;"><code>GR</code></td>
+<td style="text-align: left;"><code>F-LIM</code></td>
+<td style="text-align: left;">Classical Mechanics (specifically
+Newtonian gravity) is the weak-field, low-velocity limit of General
+Relativity.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>F-LIM</code></td>
+<td style="text-align: left;">Classical Mechanics emerges as a limit of
+Quantum Mechanics (e.g., via correspondence principle, decoherence at
+large scales).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::NewtonsLaws</code></td>
+<td style="text-align: left;"><code>CM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Newton’s Laws are core defining components
+of the paradigm of Classical Mechanics.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::Law2_Force</code></td>
+<td style="text-align: left;"><code>CM::Determinism</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">Given initial positions/momenta and F=ma,
+future states are mathematically determined.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::GravityLaw_Newton</code></td>
+<td
+style="text-align: left;"><code>CM::InstantActionDistance</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The <span
+class="math inline">\(1/r^2\)</span>form with no time delay implies
+instantaneous propagation of gravitational influence.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::GravityLaw_Newton</code></td>
+<td style="text-align: left;"><code>GR::EFE</code></td>
+<td style="text-align: left;"><code>F-LIM</code></td>
+<td style="text-align: left;">Newton’s gravity law is the weak-field,
+static limit approximation of Einstein’s Field Equations.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::AbsoluteSpace</code></td>
+<td style="text-align: left;"><code>GR::DynamicSpacetime</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">The concept of a fixed, absolute
+background space contradicts GR’s dynamic spacetime that interacts with
+matter/energy.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::AbsoluteTime</code></td>
+<td style="text-align: left;"><code>GR::DynamicSpacetime</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">The concept of a universal, absolute time
+contradicts GR’s notion of time being relative and part of a dynamic
+spacetime manifold.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::AbsoluteSpacetime</code></td>
+<td style="text-align: left;"><code>GR::DynamicSpacetime</code></td>
+<td style="text-align: left;"><code>F-REQ</code></td>
+<td style="text-align: left;">Empirical evidence against absolute space
+(e.g., null result of Michelson-Morley related experiments) necessitated
+GR’s dynamic view.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::Determinism</code></td>
+<td
+style="text-align: left;"><code>QM::IntrinsicIndeterminism</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Classical determinism (predictable
+outcomes) contradicts the fundamentally probabilistic nature of
+measurement in standard QM.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::Determinism</code></td>
+<td style="text-align: left;"><code>Phil::Determinism</code></td>
+<td style="text-align: left;"><code>L-INST</code></td>
+<td style="text-align: left;">Classical mechanics provides a prime
+physical instantiation and historical support for the philosophical
+thesis of determinism.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::ObjectiveProperties</code></td>
+<td style="text-align: left;"><code>QM::MeasurementCollapse</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">The idea that properties have definite
+values independent of measurement contradicts the QM postulate where
+measurement defines the state.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::ObjectiveProperties</code></td>
+<td style="text-align: left;"><code>QM::Complementarity</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">The classical assumption of simultaneous
+definite values for all properties is challenged by QM’s principle of
+complementarity.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::ObjectiveProperties</code></td>
+<td style="text-align: left;"><code>Phil::Realism</code></td>
+<td
+style="text-align: left;"><code>L-CON</code>/<code>L-INST</code></td>
+<td style="text-align: left;">The classical view of objective properties
+aligns with and instantiates philosophical realism about measured
+quantities.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>CM::InstantActionDistance</code></td>
+<td style="text-align: left;"><code>GR::Locality</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Instantaneous gravitational action
+contradicts the local propagation of influences at speed c inherent in
+GR.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::Locality</code></td>
+<td style="text-align: left;"><code>QM::NonLocality</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">The implicit assumption of locality in
+classical mechanics (excluding Newtonian gravity) is contradicted by QM
+entanglement.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM</code></td>
+<td style="text-align: left;"><code>Phil::Physicalism</code></td>
+<td style="text-align: left;"><code>L-CON</code></td>
+<td style="text-align: left;">The ontology of classical mechanics
+(matter, forces in spacetime) is generally considered compatible with
+physicalism/materialism.</td>
+<td style="text-align: left;">M/H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::GravityLaw_Newton</code></td>
+<td style="text-align: left;"><code>Obs::FlatRotationCurves</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Applying Newton’s gravity law to visible
+mass fails to predict observed flat galactic rotation curves.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::GravityLaw_Newton</code></td>
+<td style="text-align: left;"><code>Math::Calculus</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">Newtonian gravity is formulated using
+standard differential and integral calculus.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+</tbody>
+</table>
+<p><strong>C.2: Edges Originating from General Relativity (GR)
+Nodes:</strong></p>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 13%" />
+<col style="width: 7%" />
+<col style="width: 62%" />
+<col style="width: 2%" />
+<col style="width: 1%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Source Node ID</th>
+<th style="text-align: left;">Target Node ID</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Rationale</th>
+<th style="text-align: left;">Conf.</th>
+<th style="text-align: left;">Dir.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>GR</code></td>
+<td style="text-align: left;"><code>CM</code></td>
+<td style="text-align: left;"><code>F-LIM</code> (Inverse)</td>
+<td style="text-align: left;">General Relativity contains Classical
+Mechanics (Newtonian Gravity) as its weak-field, low-velocity
+limit.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR</code></td>
+<td style="text-align: left;"><code>LCDM</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">General Relativity provides the
+fundamental framework for gravity and spacetime dynamics used in the
+ΛCDM model.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR</code></td>
+<td
+style="text-align: left;"><code>Math::DifferentialGeometry</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">General Relativity is mathematically
+formulated using the language and tools of differential geometry
+(manifolds, tensors).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR</code></td>
+<td style="text-align: left;"><code>Problem::QuantumGravity</code></td>
+<td style="text-align: left;"><code>F-REQ</code></td>
+<td style="text-align: left;">General Relativity’s incompatibility with
+quantum mechanics necessitates a more fundamental theory of quantum
+gravity.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::EquivalencePrinciple</code></td>
+<td style="text-align: left;"><code>GR</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Equivalence Principle is a core
+conceptual component and motivation for General Relativity’s geometric
+interpretation.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::EquivalencePrinciple</code></td>
+<td style="text-align: left;"><code>CM::GravityLaw_Newton</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">The Equivalence Principle motivates
+viewing gravity as geometry, challenging the Newtonian concept of
+gravity as a force.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::GeneralCovariance</code></td>
+<td style="text-align: left;"><code>GR</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Principle of General Covariance is a
+key principle guiding the mathematical formulation of General
+Relativity.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::SpacetimeManifold</code></td>
+<td style="text-align: left;"><code>GR</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The modeling of spacetime as a
+pseudo-Riemannian manifold is the central mathematical structure
+defining GR.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::SpacetimeManifold</code></td>
+<td style="text-align: left;"><code>GR::MetricTensor</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The metric tensor defines the geometry of
+the spacetime manifold in GR.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::MetricTensor</code></td>
+<td style="text-align: left;"><code>GR::EFE</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The metric tensor (and its derivatives
+forming the Einstein tensor) is a key component of the Einstein Field
+Equations.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::GeodesicMotion</code></td>
+<td style="text-align: left;"><code>GR</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The principle that free particles follow
+geodesics is a core postulate describing motion within GR.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::GeodesicMotion</code></td>
+<td style="text-align: left;"><code>CM::Law2_Force</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">Geodesic motion (path determined by
+geometry) offers an alternative explanation for gravitational
+trajectories compared to F=ma.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::EFE</code></td>
+<td style="text-align: left;"><code>GR</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Einstein Field Equations are the
+central dynamical law of General Relativity.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::EFE</code></td>
+<td style="text-align: left;"><code>GR::StressEnergyTensor</code></td>
+<td style="text-align: left;"><code>C-NEC</code></td>
+<td style="text-align: left;">The Stress-Energy Tensor acts as the
+source term in the EFE, determining the spacetime curvature.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::EFE</code></td>
+<td style="text-align: left;"><code>GR::CosmologicalConstant</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The cosmological constant Λ is an optional
+term within the structure of the EFE.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::EFE</code></td>
+<td style="text-align: left;"><code>GR::Determinism</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The EFE are deterministic partial
+differential equations for the metric tensor, given source terms and
+initial/boundary conditions.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::EFE</code></td>
+<td style="text-align: left;"><code>CM::GravityLaw_Newton</code></td>
+<td style="text-align: left;"><code>F-LIM</code> (Inverse)</td>
+<td style="text-align: left;">Einstein’s Field Equations reduce to
+Newton’s law of gravitation in the appropriate weak-field, low-velocity
+limit.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::StressEnergyTensor</code></td>
+<td style="text-align: left;"><code>Concept::Energy</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">The Stress-Energy Tensor generalizes the
+concept of energy density and includes momentum density and stress.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::DynamicSpacetime</code></td>
+<td style="text-align: left;"><code>CM::AbsoluteSpacetime</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">GR’s dynamic spacetime, which interacts
+with matter, contradicts CM’s fixed, absolute spacetime background.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::DynamicSpacetime</code></td>
+<td style="text-align: left;"><code>Phil::Physicalism</code></td>
+<td style="text-align: left;"><code>F-REQ</code></td>
+<td style="text-align: left;">The dynamic nature of spacetime in GR
+requires physicalism to clarify whether spacetime itself is a
+fundamental physical entity.</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::ContinuumAssumption</code></td>
+<td style="text-align: left;"><code>Problem::PlanckScale</code></td>
+<td style="text-align: left;"><code>F-REQ</code></td>
+<td style="text-align: left;">GR’s assumption of a smooth spacetime
+continuum is expected to break down at the Planck scale, requiring a
+quantum gravity description.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::Determinism</code></td>
+<td
+style="text-align: left;"><code>QM::IntrinsicIndeterminism</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">The deterministic evolution described by
+GR conflicts with the probabilistic nature of measurement outcomes in
+standard QM.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::Locality</code></td>
+<td style="text-align: left;"><code>QM::NonLocality</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">GR’s description of local interactions
+propagating at speed c is challenged by the non-local correlations of
+quantum entanglement.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::Singularity</code></td>
+<td style="text-align: left;"><code>GR</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">The prediction of singularities indicates
+a breakdown or limit of applicability of the GR framework itself.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::Singularity</code></td>
+<td style="text-align: left;"><code>Problem::GRSingularity</code></td>
+<td style="text-align: left;"><code>L-INST</code></td>
+<td style="text-align: left;">GR’s predictions are the primary instances
+defining the singularity problem in physics.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::Singularity</code></td>
+<td style="text-align: left;"><code>Problem::QuantumGravity</code></td>
+<td style="text-align: left;"><code>F-REQ</code></td>
+<td style="text-align: left;">Singularities signal the need for a
+quantum theory of gravity to describe physics under extreme
+conditions.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+</tbody>
+</table>
+<p><strong>C.3: Edges Originating from Quantum Mechanics (QM - Standard
+Interpretation) Nodes:</strong></p>
+<table>
+<colgroup>
+<col style="width: 13%" />
+<col style="width: 13%" />
+<col style="width: 2%" />
+<col style="width: 66%" />
+<col style="width: 2%" />
+<col style="width: 1%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Source Node ID</th>
+<th style="text-align: left;">Target Node ID</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Rationale</th>
+<th style="text-align: left;">Conf.</th>
+<th style="text-align: left;">Dir.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>CM</code></td>
+<td style="text-align: left;"><code>F-LIM</code> (Inverse)</td>
+<td style="text-align: left;">Quantum Mechanics contains Classical
+Mechanics as its macroscopic or large quantum number limit
+(Correspondence Principle).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>SM</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Quantum Mechanics provides the
+foundational principles upon which the Standard Model (as a QFT) is
+built.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>Math::HilbertSpace</code></td>
+<td style="text-align: left;"><code>S-FORM</code></td>
+<td style="text-align: left;">The standard mathematical formulation of
+QM uses Hilbert spaces to represent states and operators.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>Math::ProbabilityTheory</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">QM fundamentally relies on probability
+theory via the Born rule to connect formalism to experimental
+outcomes.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>Problem::QuantumGravity</code></td>
+<td style="text-align: left;"><code>F-REQ</code></td>
+<td style="text-align: left;">Standard QM does not incorporate gravity
+dynamically, necessitating a unification with GR (Quantum Gravity).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>Problem::QMeasurement</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The measurement problem is an internal
+conceptual inconsistency or incompleteness within standard QM
+interpretations.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::StateVector</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The state vector (wavefunction) is the
+core representation of a system’s state in QM.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::StateVector</code></td>
+<td style="text-align: left;"><code>QM::Superposition</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The vector nature of states in Hilbert
+space directly entails the principle of superposition (linear
+combinations are valid states).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::HilbertSpace</code></td>
+<td style="text-align: left;"><code>QM::StateVector</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">Hilbert space is the mathematical
+structure within which state vectors are defined.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::ObservableOperator</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Associating observables with operators is
+a core postulate of QM.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::ObservableOperator</code></td>
+<td style="text-align: left;"><code>QM::Quantization</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The postulate that measurement results are
+eigenvalues of operators directly leads to observed quantization.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::SchrodingerEq</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Schrödinger equation is the core
+postulate governing time evolution (between measurements).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::SchrodingerEq</code></td>
+<td style="text-align: left;"><code>QM::UnitaryEvolution</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The mathematical form of the Schrödinger
+equation ensures that time evolution is unitary.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::UnitaryEvolution</code></td>
+<td style="text-align: left;"><code>QM::MeasurementCollapse</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Unitary evolution is deterministic and
+preserves superposition, contradicting the non-unitary, probabilistic
+nature of collapse.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::BornRule</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Born rule is the core postulate
+linking the formalism (state vector) to experimental probabilities.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::BornRule</code></td>
+<td
+style="text-align: left;"><code>QM::IntrinsicIndeterminism</code></td>
+<td style="text-align: left;"><code>F-BAS</code></td>
+<td style="text-align: left;">The Born rule provides probabilities,
+which are interpreted as fundamental indeterminism in standard QM.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::MeasurementCollapse</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The projection postulate (collapse) is a
+core component of the standard description of measurement.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::MeasurementCollapse</code></td>
+<td style="text-align: left;"><code>CM::ObjectiveProperties</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Collapse implies properties are
+defined/created by measurement, contradicting classical objective
+reality.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::MeasurementCollapse</code></td>
+<td style="text-align: left;"><code>Phil::Realism</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">The nature of collapse challenges simple
+forms of scientific realism about pre-measurement properties.</td>
+<td style="text-align: left;">M/H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::MeasurementCollapse</code></td>
+<td style="text-align: left;"><code>Problem::QMeasurement</code></td>
+<td style="text-align: left;"><code>L-ENT</code></td>
+<td style="text-align: left;">The collapse postulate is central to the
+measurement problem, conflicting with unitary evolution.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Superposition</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Superposition is a fundamental principle
+arising from the linearity of the Hilbert space structure.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Quantization</code></td>
+<td style="text-align: left;"><code>CM</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Observed quantization contradicts the
+classical assumption that physical quantities can take continuous
+values.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>QM::IntrinsicIndeterminism</code></td>
+<td style="text-align: left;"><code>CM::Determinism</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Fundamental indeterminism contradicts
+classical determinism.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>QM::IntrinsicIndeterminism</code></td>
+<td style="text-align: left;"><code>Phil::Determinism</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Standard QM interpretation contradicts the
+philosophical thesis of determinism.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>QM::IntrinsicIndeterminism</code></td>
+<td style="text-align: left;"><code>Phil::CausalClosure</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">If quantum events are truly random, it
+potentially challenges the idea that all physical events have sufficient
+<em>physical</em> causes.</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Complementarity</code></td>
+<td style="text-align: left;"><code>CM::ObjectiveProperties</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">Complementarity challenges the classical
+assumption that all properties can possess definite values
+simultaneously.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::UncertaintyPrinciple</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">The Uncertainty Principle is a core
+principle derived from the QM formalism (non-commuting operators).</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::UncertaintyPrinciple</code></td>
+<td style="text-align: left;"><code>CM::ObjectiveProperties</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">The Uncertainty Principle places
+fundamental limits on the simultaneous definability of properties
+assumed objective in CM.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Entanglement</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Entanglement is a key phenomenon predicted
+and described by the QM formalism for multi-part systems.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Entanglement</code></td>
+<td style="text-align: left;"><code>CM::Locality</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">Entanglement demonstrates non-local
+correlations that challenge the implicit locality assumptions of
+classical mechanics.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Entanglement</code></td>
+<td style="text-align: left;"><code>Phil::LocalRealism</code></td>
+<td style="text-align: left;"><code>L-CTR</code></td>
+<td style="text-align: left;">Experimental verification of Bell’s
+theorem violations using entangled states contradicts local
+realism.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::NonLocality</code></td>
+<td style="text-align: left;"><code>GR::Locality</code></td>
+<td style="text-align: left;"><code>L-CTR</code> /
+<code>F-CHL</code></td>
+<td style="text-align: left;">QM non-locality conflicts with the local
+nature of interactions described by classical GR field equations.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">S/D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>QM::ClassicalDescriptionReq</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>S-COMP</code></td>
+<td style="text-align: left;">Bohr’s requirement for classical
+descriptions is a component of the Copenhagen interpretation.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>QM::ClassicalDescriptionReq</code></td>
+<td style="text-align: left;"><code>Problem::QMeasurement</code></td>
+<td style="text-align: left;"><code>C-INF</code></td>
+<td style="text-align: left;">This requirement contributes to the
+measurement problem by creating an ambiguous quantum-classical
+divide.</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: left;">D</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::MeasurementProblem</code></td>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;"><code>F-CHL</code></td>
+<td style="text-align: left;">The measurement problem indicates a
+fundamental conceptual incompleteness or inconsistency within standard
+QM interpretations.</td>
+<td style="text-align: left;">H</td>
+<td style="text-align: left;">D</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

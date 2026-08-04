@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thermodynamic Veto | QWAV</title>
+<meta name="description" content="Thermodynamic Veto Correlated Noise and the Phase Transition of Scalable Quantum Computing Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com O...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/thermodynamic-veto">
+<meta property="og:title" content="Thermodynamic Veto">
+<meta property="og:description" content="Thermodynamic Veto Correlated Noise and the Phase Transition of Scalable Quantum Computing Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com O...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/thermodynamic-veto">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Thermodynamic Veto",
+  "url": "https://deep.qwav.tech/papers/thermodynamic-veto",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-11-27T11:01:23Z",
+  "abstract": "Thermodynamic Veto Correlated Noise and the Phase Transition of Scalable Quantum Computing Author: Rowan Brad Quni-Gudzinas Contact: rowan.quni@outlook.com O..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1 id="thermodynamic-veto">Thermodynamic Veto</h1>
+<h2
+id="correlated-noise-and-the-phase-transition-of-scalable-quantum-computing">Correlated
+Noise and the Phase Transition of Scalable Quantum Computing</h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Contact:</strong> rowan.quni@outlook.com <strong>ORCID:</strong>
+<a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>
+<strong>ISNI:</strong> <a
+href="https://isni.org/isni/0000000526456062">0000000526456062</a>
+<strong>DOI:</strong> 10.5281/zenodo.17734805 <strong>Publication
+Date:</strong> 2025-11-27 <strong>Version:</strong> 1.0</p>
+<blockquote>
+<p>The realization of commercially viable, fault-tolerant quantum
+computing is precluded not by engineering immaturity but by a
+fundamental percolation phase transition driven by correlated noise and
+thermodynamic constraints, which render the required system scales
+physically uncorrectable.</p>
+</blockquote>
+<h2
+id="deconstructing-the-foundational-myth-of-shors-algorithm">Deconstructing
+the Foundational Myth of Shor’s Algorithm</h2>
+<p>The status of integer factorization within quantum information theory
+rests on a conflation of mathematical validity with physical
+realizability. While the derivation holds within the standard quantum
+circuit model, it necessitates axioms of ideal unitary evolution and
+infinite precision that violate the thermodynamic constraints of open
+systems. This formalism treats quantum amplitudes as continuous
+variables capable of infinite resolution, a premise challenged by Levin,
+who observes that physical laws are not verified to the precision
+required to sustain such states against environmental degradation.
+Concurrently, the underlying complexity model assumes a constant
+operational cost independent of system size, ignoring the argument that
+the thermodynamic resources required to maintain coherence must scale
+with the non-degeneracy of the state space. The resulting discord
+creates an asymptotic projection where theoretical efficiency diverges
+from engineering feasibility. Empirical evidence reflects this
+ontological gap, as the massive overhead required for quantum error
+correction expands the resource requirements for cryptographically
+relevant factorization by orders of magnitude beyond current
+capabilities. Consequently, the algorithm serves as an abstract
+attractor that prioritizes formal elegance over the energetic realities
+governing information storage and retrieval.</p>
+<h2
+id="landauers-principle-and-the-three-legged-stool-of-constraints">Landauer’s
+Principle and the Three-Legged Stool of Constraints</h2>
+<p>The presumption that qubit volume, coherence fidelity, and circuit
+depth function as independent variables ignores the physical grounding
+of information processing. Landauer’s principle dictates that logical
+states are inseparable from physical degrees of freedom, binding
+computational metrics to the laws of thermodynamics. This coupling
+creates a system where optimizing for quantity, correlation, or duration
+necessarily degrades the remaining parameters through increased entropy
+production. A large-scale quantum processor constitutes a low-entropy
+assembly requiring precise phase relationships across a high-dimensional
+state space. Expanding the physical array steepens the thermodynamic
+gradient relative to the thermal environment, increasing the
+cross-section for interaction and noise injection. The maintenance of
+macroscopic order demands an energetic cost that scales non-linearly, as
+the density of states facilitates rapid thermalization. Consequently,
+the linear addition of physical units accelerates the degradation of
+global correlation. Temporal extension through error correction relies
+on irreversible operations, specifically syndrome measurement and
+ancilla reset, which mandate energy dissipation. This local entropy
+generation introduces thermal fluctuations that propagate as correlated
+noise, effectively recycling the disorder the system attempts to excise.
+The mechanism intended to preserve logical lifetimes thereby functions
+as a thermodynamic load, imposing a cycle-time constraint where the rate
+of heat extraction must exceed the rate of logical erasure to prevent
+thermal runaway. These coupled constraints destabilize the fault
+tolerance threshold as the system scales. Increased device density
+promotes correlated error mechanisms, leading to percolation events
+where noise clusters span the lattice and defeat topological protection.
+The divergence between the energy required for error suppression and the
+thermal capacity of the substrate indicates a phase transition in device
+physics. The mutual exclusivity of maximizing isolation and control
+limits system utility when the thermodynamic penalty of error correction
+overwhelms the gain in logical fidelity.</p>
+<h2 id="the-percolation-phase-transition-mechanism">The Percolation
+Phase Transition Mechanism</h2>
+<p>Fault tolerance relies on threshold theorems guaranteeing logical
+error suppression, provided physical errors remain local, uncorrelated,
+and below a critical density. Thermodynamic constraints challenge this
+independence assumption, as correlated noise in large-scale systems
+drives a percolation phase transition rather than asymptotic
+suppression. Conventional error correction models map to random bond
+Ising models or site-percolation on two-dimensional lattices, where
+independent failures allow logical error rates to decay exponentially
+with code distance. However, environmental radiation deposits energy
+into substrates, generating phonon cascades and quasiparticle poisoning
+that manifest as spatially correlated error bursts. This phenomenology
+shifts the statistical failure model from Bernoulli percolation to
+continuum percolation, defined by a characteristic correlation length
+corresponding to the macroscopic radius of the error cluster. A critical
+geometric threshold emerges when the code distance fails to span this
+burst diameter, allowing a single event to topologically connect logical
+boundaries and bypass correction mechanisms. Empirical measurements
+indicate this geometric limit lies orders of magnitude below the
+physical qubit count required for practical algorithms. By expanding the
+lattice to useful scales, the system increases its interaction
+cross-section for these macroscopic events, entering a super-critical
+regime. The processor effectively undergoes a phase transition from an
+ordered, correctable state to a disordered, percolating state where the
+probability of catastrophic logical failure approaches unity.</p>
+<h2
+id="empirical-divergence-of-required-versus-critical-scales">Empirical
+Divergence of Required versus Critical Scales</h2>
+<p>Operational constraints for cryptographic quantum utility are defined
+by the resource overhead of surface code implementations, necessitating
+approximately 20 million physical qubits to factor standard integers
+given current gate fidelities. This theoretical trajectory presumes that
+noise processes remain local and uncorrelated as system dimensions
+expand. Empirical characterization of superconducting arrays contradicts
+this independence, identifying environmental ionizing radiation as a
+mechanism for correlated entropy generation. High-energy particle
+impacts deposit energy into the substrate, triggering phonon-mediated
+cascades that break Cooper pairs and induce simultaneous quasiparticle
+poisoning across a characteristic radius of ten lattice sites.</p>
+<p>The robustness of topological error correction is governed by
+continuum percolation statistics, where logical validity relies on the
+sparsity of error chains. The experimentally observed correlation length
+establishes a specific critical threshold for system size, estimated at
+400 qubits, beyond which the processor exits the correctable subcritical
+phase. The divergence between the algorithmic requirement of 20 million
+qubits and this stability limit places the target architecture deep
+within the supercritical percolation regime. In this thermodynamic
+domain, single ionization events generate error clusters that exceed the
+code distance, bridging the logical lattice and neutralizing fault
+tolerance. This discrepancy indicates that scaling requires not merely
+linear engineering optimization but the resolution of a fundamental
+phase transition where macroscopic quantum states are dismantled by
+correlated environmental coupling.</p>
+<h2 id="toward-a-paradigm-of-physically-grounded-computation">Toward a
+Paradigm of Physically Grounded Computation</h2>
+<p>The segregation of logical architecture from its thermodynamic
+substrate rests on the assumption that physical noise remains
+perturbative and statistically independent. However, correlated
+high-energy events and material defects drive percolation phase
+transitions that disrupt the separability of information and medium. A
+quantum processor operates as a non-equilibrium thermodynamic system
+subject to entropy production and quasiparticle dynamics, not as an
+approximation of ideal vector geometry. A physically grounded
+computational model must therefore position statistical mechanics and
+condensed matter physics as axioms rather than engineering
+constraints.</p>
+<p>The operational envelope of any device is bounded by a critical
+system size defined by the percolation threshold of correlated error
+clusters. Empirical evidence indicates that error correction codes fail
+in the supercritical regime, suggesting that the pursuit of unbounded
+fault tolerance is ill-posed. Computational capacity depends on
+effective thermodynamic free energy and the correlation length of the
+noise environment rather than nominal qubit count. The inability to
+execute arbitrarily deep circuits constitutes a fundamental boundary
+condition similar to Carnot efficiency, prohibiting the realization of
+asymptotic fidelity through resource scaling alone.</p>
+<p>This thermodynamic reality necessitates a transition from universal
+algorithmic objectives to bounded-advantage architectures designed for
+the sub-critical regime. By prioritizing analog Hamiltonian simulation
+and variational approaches, such systems exploit the natural dynamics of
+the substrate and the physical isomorphism between the processor and
+target applications in chemistry or materials science. Progress requires
+abandoning the teleological commitment to specific end-states in favor
+of empirical exploration consistent with the energetic costs of
+information processing and the hard limits imposed by the scaling phase
+transition.</p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

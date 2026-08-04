@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B Nodes | QWAV</title>
+<meta name="description" content="Appendix A: Detailed Graph Data (Nodes) This appendix provides the definitive and exhaustive data defining the nodes (fundamental entities, components, conce...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/b-nodes">
+<meta property="og:title" content="B Nodes">
+<meta property="og:description" content="Appendix A: Detailed Graph Data (Nodes) This appendix provides the definitive and exhaustive data defining the nodes (fundamental entities, components, conce...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/b-nodes">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "B Nodes",
+  "url": "https://deep.qwav.tech/papers/b-nodes",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-05-09T03:21:34Z",
+  "abstract": "Appendix A: Detailed Graph Data (Nodes) This appendix provides the definitive and exhaustive data defining the nodes (fundamental entities, components, conce..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<p><strong>Appendix A: Detailed Graph Data (Nodes)</strong></p>
+<p>This appendix provides the definitive and exhaustive data defining
+the nodes (fundamental entities, components, concepts) constituting the
+conceptual network graph analyzed in this work (Sections 5, 6, 7). This
+data serves as the traceable foundation for the structural analysis,
+critiques, and synthesis presented.</p>
+<p><strong>Node List / Data Dictionary</strong></p>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 15%" />
+<col style="width: 14%" />
+<col style="width: 45%" />
+<col style="width: 8%" />
+<col style="width: 4%" />
+<col style="width: 1%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Node ID</th>
+<th style="text-align: left;">Label</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Definition/Description</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Entities/Paradigms</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM</code></td>
+<td style="text-align: left;">Classical Mechanics</td>
+<td style="text-align: left;">Entity/Paradigm</td>
+<td style="text-align: left;">Physical theory describing macroscopic
+motion under forces, based on Newton’s laws, assuming absolute
+space/time and determinism.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR</code></td>
+<td style="text-align: left;">General Relativity</td>
+<td style="text-align: left;">Entity/Paradigm</td>
+<td style="text-align: left;">Einstein’s geometric theory of gravitation
+describing gravity as spacetime curvature.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM</code></td>
+<td style="text-align: left;">Quantum Mechanics (Standard
+Interpretation)</td>
+<td style="text-align: left;">Entity/Paradigm</td>
+<td style="text-align: left;">Fundamental theory describing microscopic
+phenomena, typically interpreted via Copenhagen-like principles
+(superposition, collapse, probability).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SM</code></td>
+<td style="text-align: left;">Standard Model (Particle Physics)</td>
+<td style="text-align: left;">Entity/Paradigm</td>
+<td style="text-align: left;">QFT describing fundamental particles
+(quarks, leptons, gauge bosons, Higgs) and their electromagnetic, weak,
+and strong interactions.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo</code></td>
+<td style="text-align: left;">Laws of Thermodynamics</td>
+<td style="text-align: left;">Entity/LawSet</td>
+<td style="text-align: left;">Principles governing energy, heat, work,
+entropy in macroscopic systems.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>StatMech</code></td>
+<td style="text-align: left;">Statistical Mechanics</td>
+<td style="text-align: left;">Entity/Framework</td>
+<td style="text-align: left;">Framework linking microscopic properties
+to macroscopic thermodynamic behavior using probability and
+statistics.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FOL</code></td>
+<td style="text-align: left;">First-Order Logic</td>
+<td style="text-align: left;">Entity/FormalSystem</td>
+<td style="text-align: left;">Standard formal system for deduction
+involving quantification over individuals.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC</code></td>
+<td style="text-align: left;">Zermelo-Fraenkel Set Theory with
+Choice</td>
+<td style="text-align: left;">Entity/AxiomaticSystem</td>
+<td style="text-align: left;">Standard axiomatic foundation for most of
+modern mathematics, formulated in FOL.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Phil::Physicalism</code></td>
+<td style="text-align: left;">Physicalism/Materialism</td>
+<td style="text-align: left;">Entity/MetaphysicalThesis</td>
+<td style="text-align: left;">Metaphysical view that everything is
+physical or depends entirely on the physical.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::ShannonTheory</code></td>
+<td style="text-align: left;">Shannon Information Theory</td>
+<td style="text-align: left;">Entity/Theory</td>
+<td style="text-align: left;">Mathematical theory quantifying syntactic
+information, communication limits, and data compression.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LCDM</code></td>
+<td style="text-align: left;">ΛCDM Model</td>
+<td style="text-align: left;">Entity/Paradigm</td>
+<td style="text-align: left;">Standard model of Big Bang cosmology
+incorporating dark energy (Λ) and cold dark matter (CDM).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>CM Components</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::NewtonsLaws</code></td>
+<td style="text-align: left;">Newton’s Laws of Motion</td>
+<td style="text-align: left;">Component:LawSet</td>
+<td style="text-align: left;">The three fundamental laws (Inertia, F=ma,
+Action-Reaction) governing motion in classical mechanics.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::Law1_Inertia</code></td>
+<td style="text-align: left;">Newton’s First Law (Inertia)</td>
+<td style="text-align: left;">Component:Law</td>
+<td style="text-align: left;">A body maintains constant velocity unless
+acted upon by a net external force.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::Law2_Force</code></td>
+<td style="text-align: left;">Newton’s Second Law (F=ma)</td>
+<td style="text-align: left;">Component:Law/Equation</td>
+<td style="text-align: left;">Net force equals mass times acceleration
+(<strong>F</strong>=m<strong>a</strong>). Defines inertial mass
+operationally.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::Law3_ActionReaction</code></td>
+<td style="text-align: left;">Newton’s Third Law (Action-Reaction)</td>
+<td style="text-align: left;">Component:Law</td>
+<td style="text-align: left;">For every action force, there is an equal
+and opposite reaction force.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::GravityLaw_Newton</code></td>
+<td style="text-align: left;">Newton’s Law of Universal Gravitation</td>
+<td style="text-align: left;">Component:Law/Equation</td>
+<td style="text-align: left;">Gravitational force between two masses
+<span class="math inline">\(M_1, M_2\)</span>is <span
+class="math inline">\(F_g = G M_1 M_2 / r^2\)</span>.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::AbsoluteSpace</code></td>
+<td style="text-align: left;">Absolute Space Assumption</td>
+<td style="text-align: left;">Component:Assumption_Ontological</td>
+<td style="text-align: left;">Assumes space is a fixed, infinite,
+Euclidean background, independent of matter.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::AbsoluteTime</code></td>
+<td style="text-align: left;">Absolute Time Assumption</td>
+<td style="text-align: left;">Component:Assumption_Ontological</td>
+<td style="text-align: left;">Assumes time flows uniformly and
+independently for all observers and locations.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::Determinism</code></td>
+<td style="text-align: left;">Determinism (Classical)</td>
+<td style="text-align: left;">Component:Property/Implication</td>
+<td style="text-align: left;">The principle that the state of a system
+at one time fully determines its state at all other times via the laws
+of motion.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::ObjectiveProperties</code></td>
+<td style="text-align: left;">Objective Properties Assumption</td>
+<td
+style="text-align: left;">Component:Assumption_Ontological/Epistemological</td>
+<td style="text-align: left;">Assumes physical properties (position,
+momentum) have definite, real values independent of measurement.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::PointMass</code></td>
+<td style="text-align: left;">Point Mass Idealization</td>
+<td style="text-align: left;">Component:Idealization/Methodology</td>
+<td style="text-align: left;">Treating objects as having mass
+concentrated at a single point with no spatial extent.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>CM::InstantActionDistance</code></td>
+<td style="text-align: left;">Instantaneous Action at a Distance
+(Gravity)</td>
+<td style="text-align: left;">Component:Assumption_Implicit</td>
+<td style="text-align: left;">Assumption (Newtonian Gravity) that
+gravitational influence propagates instantaneously.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>CM::Locality</code></td>
+<td style="text-align: left;">Locality (Classical Implicit)</td>
+<td style="text-align: left;">Component:Assumption_Implicit</td>
+<td style="text-align: left;">Assumption that influences propagate
+locally through space; no instantaneous action at a distance (except
+Newtonian gravity).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>GR Components</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::EquivalencePrinciple</code></td>
+<td style="text-align: left;">Equivalence Principle</td>
+<td style="text-align: left;">Component:Principle</td>
+<td style="text-align: left;">Local equivalence of gravitational and
+inertial effects; foundation for geometric interpretation.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::GeneralCovariance</code></td>
+<td style="text-align: left;">Principle of General Covariance</td>
+<td style="text-align: left;">Component:Principle</td>
+<td style="text-align: left;">Physical laws should have the same form in
+all coordinate systems.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::SpacetimeManifold</code></td>
+<td style="text-align: left;">Spacetime as 4D Pseudo-Riemannian
+Manifold</td>
+<td
+style="text-align: left;">Component:Postulate/MathematicalStructure</td>
+<td style="text-align: left;">Mathematical model for spacetime <span
+class="math inline">\((M, g_{\mu\nu})\)</span>used in GR.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::MetricTensor</code></td>
+<td style="text-align: left;">Metric Tensor (g_munu)</td>
+<td style="text-align: left;">Component:MathematicalObject</td>
+<td style="text-align: left;">Tensor field defining distances and
+geometry on the spacetime manifold; represents the gravitational
+potential.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::GeodesicMotion</code></td>
+<td style="text-align: left;">Geodesic Motion Postulate</td>
+<td style="text-align: left;">Component:Postulate/Law</td>
+<td style="text-align: left;">Freely falling objects follow timelike or
+null geodesics of the spacetime manifold.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::EFE</code></td>
+<td style="text-align: left;">Einstein’s Field Equations</td>
+<td style="text-align: left;">Component:Law/Equation</td>
+<td style="text-align: left;">Equations relating spacetime curvature
+(<span class="math inline">\(G_{\mu\nu}\)</span>) to stress-energy
+(<span class="math inline">\(T_{\mu\nu}\)</span>): <span
+class="math inline">\(G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi
+G}{c^4} T_{\mu\nu}\)</span>.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::StressEnergyTensor</code></td>
+<td style="text-align: left;">Stress-Energy Tensor (T_munu)</td>
+<td style="text-align: left;">Component:MathematicalObject</td>
+<td style="text-align: left;">Tensor describing the density and flux of
+energy and momentum, acting as the source of spacetime curvature.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::CosmologicalConstant</code></td>
+<td style="text-align: left;">Cosmological Constant (Λ term in EFE)</td>
+<td style="text-align: left;">Component:Parameter/Term</td>
+<td style="text-align: left;">Term potentially representing vacuum
+energy density, affecting cosmic expansion.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::DynamicSpacetime</code></td>
+<td style="text-align: left;">Dynamic Spacetime</td>
+<td style="text-align: left;">Component:Property/Implication</td>
+<td style="text-align: left;">Implication of GR that spacetime geometry
+interacts with and is shaped by matter/energy.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::ContinuumAssumption</code></td>
+<td style="text-align: left;">Spacetime Continuum Assumption</td>
+<td style="text-align: left;">Component:Assumption_Ontological</td>
+<td style="text-align: left;">Assumes spacetime is a continuous
+manifold, expected to break down at Planck scale.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::Determinism</code></td>
+<td style="text-align: left;">Determinism (Classical Field)</td>
+<td style="text-align: left;">Component:Property/Implication</td>
+<td style="text-align: left;">EFE are deterministic differential
+equations; given initial conditions, evolution is fixed (ignoring
+QM).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::Locality</code></td>
+<td style="text-align: left;">Locality (Classical Field)</td>
+<td style="text-align: left;">Component:Property/Implication</td>
+<td style="text-align: left;">Interactions are local; influences
+propagate at or below speed c according to spacetime geometry.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>GR::Singularity</code></td>
+<td style="text-align: left;">Singularity Prediction (GR)</td>
+<td style="text-align: left;">Component:Limitation/Prediction</td>
+<td style="text-align: left;">Prediction of infinite curvature/density
+under certain conditions (Big Bang, black holes), indicating theory
+breakdown.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>QM Components</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::StateVector</code></td>
+<td style="text-align: left;">State Vector / Wave Function (Psi)</td>
+<td style="text-align: left;">Component:Postulate/Representation</td>
+<td style="text-align: left;">Represents the state of a quantum system
+as a vector <span class="math inline">\(| \psi\rangle\)</span>in Hilbert
+space.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::HilbertSpace</code></td>
+<td style="text-align: left;">Hilbert Space Formalism</td>
+<td style="text-align: left;">Component:MathematicalStructure</td>
+<td style="text-align: left;">The complex vector space with inner
+product used to represent quantum states and operators.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::ObservableOperator</code></td>
+<td style="text-align: left;">Observable as Hermit toian Operator</td>
+<td style="text-align: left;">Component:Postulate</td>
+<td style="text-align: left;">Associates measurable physical quantities
+with self-adjoint (Hermitian) operators <span
+class="math inline">\(A\)</span>on Hilbert space.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::SchrodingerEq</code></td>
+<td style="text-align: left;">Schrödinger Equation (Time Evolution)</td>
+<td style="text-align: left;">Component:Law/Equation</td>
+<td style="text-align: left;">Governs the deterministic, unitary time
+evolution of the state vector: <span class="math inline">\(i\hbar
+\frac{d}{dt}                                                               |
+\psi(t)\rangle = H            | \psi(t)\rangle\)</span>.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::UnitaryEvolution</code></td>
+<td style="text-align: left;">Unitary Evolution (Between
+Measurements)</td>
+<td style="text-align: left;">Component:Property</td>
+<td style="text-align: left;">Evolution described by the Schrödinger
+equation preserves probabilities (conserves norm of state vector).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::BornRule</code></td>
+<td style="text-align: left;">Born Rule (Probabilities)</td>
+<td style="text-align: left;">Component:Law/Rule</td>
+<td style="text-align: left;">Specifies the probability of obtaining a
+measurement outcome <span class="math inline">\(a_i\)</span>as <span
+class="math inline">\(P(a_i)
+=                                                                            |
+\langle a_i                   | \psi\rangle      | ^2\)</span>.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::MeasurementCollapse</code></td>
+<td style="text-align: left;">Measurement Collapse / Projection
+Postulate</td>
+<td style="text-align: left;">Component:Postulate/Process</td>
+<td style="text-align: left;">Postulates that measurement causes a
+non-unitary, probabilistic transition of the state vector to an
+eigenstate corresponding to the outcome.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Superposition</code></td>
+<td style="text-align: left;">Principle of Superposition</td>
+<td style="text-align: left;">Component:Principle</td>
+<td style="text-align: left;">Quantum states can exist as linear
+combinations (superpositions) of other valid states.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Quantization</code></td>
+<td style="text-align: left;">Quantization of Observables</td>
+<td style="text-align: left;">Component:Observation/Principle</td>
+<td style="text-align: left;">Observation that certain physical
+quantities only take on discrete values (eigenvalues). (Standard View:
+Fundamental).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>QM::IntrinsicIndeterminism</code></td>
+<td style="text-align: left;">Intrinsic Indeterminism</td>
+<td style="text-align: left;">Component:InterpretiveAssumption</td>
+<td style="text-align: left;">Assumption (Copenhagen-like) that QM’s
+probabilities are fundamental, not due to hidden variables.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Complementarity</code></td>
+<td style="text-align: left;">Principle of Complementarity</td>
+<td
+style="text-align: left;">Component:InterpretiveAssumption/Principle</td>
+<td style="text-align: left;">Bohr’s principle that certain quantum
+properties are complementary and require mutually exclusive experimental
+setups to observe.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::UncertaintyPrinciple</code></td>
+<td style="text-align: left;">Heisenberg Uncertainty Principle</td>
+<td style="text-align: left;">Component:Principle/Limitation</td>
+<td style="text-align: left;">Fundamental limit on the simultaneous
+precision with which pairs of conjugate variables (e.g., <span
+class="math inline">\(\Delta x \Delta p \ge \hbar/2\)</span>) can be
+determined.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::Entanglement</code></td>
+<td style="text-align: left;">Entanglement</td>
+<td style="text-align: left;">Component:Phenomenon/Principle</td>
+<td style="text-align: left;">Quantum correlation where multiple systems
+share a single state, exhibiting non-local connections.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::NonLocality</code></td>
+<td style="text-align: left;">Non-Locality (via Entanglement)</td>
+<td style="text-align: left;">Component:Implication/Property</td>
+<td style="text-align: left;">Implication from Bell’s theorem violations
+that quantum correlations cannot be explained by local hidden
+variables.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>QM::ClassicalDescriptionReq</code></td>
+<td style="text-align: left;">Requirement of Classical Description for
+Experiments</td>
+<td style="text-align: left;">Component:InterpretiveAssumption</td>
+<td style="text-align: left;">Bohr’s view that experimental setups and
+results must be described in unambiguous classical terms.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>QM::MeasurementProblem</code></td>
+<td style="text-align: left;">Measurement Problem</td>
+<td style="text-align: left;">Component:Problem/Tension</td>
+<td style="text-align: left;">The unresolved conceptual problem of
+reconciling unitary evolution with probabilistic measurement
+collapse.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SM Components</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SM::ParticleContent</code></td>
+<td style="text-align: left;">Particle Content</td>
+<td style="text-align: left;">Component:Ontology/Taxonomy</td>
+<td style="text-align: left;">The specific set of fermions (quarks,
+leptons) and bosons (gauge, Higgs) included in the Standard Model.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SM::GaugeSymmetry</code></td>
+<td style="text-align: left;">Gauge Symmetry Principle (SU3xSU2xU1)</td>
+<td
+style="text-align: left;">Component:Principle/MathematicalStructure</td>
+<td style="text-align: left;">The gauge group defining the fundamental
+electromagnetic, weak, and strong interactions.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SM::QFTFramework</code></td>
+<td style="text-align: left;">Quantum Field Theory Framework</td>
+<td style="text-align: left;">Component:FrameworkAssumption</td>
+<td style="text-align: left;">Assumes QFT is the correct framework for
+describing relativistic quantum particles and forces.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SM::Lagrangian</code></td>
+<td style="text-align: left;">Standard Model Lagrangian</td>
+<td style="text-align: left;">Component:Law/Equation</td>
+<td style="text-align: left;">The mathematical expression summarizing
+the dynamics and interactions of all SM fields.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SM::HiggsMechanism</code></td>
+<td style="text-align: left;">Higgs Mechanism</td>
+<td style="text-align: left;">Component:Mechanism</td>
+<td style="text-align: left;">Mechanism involving the Higgs field that
+gives mass to W/Z bosons and fermions via spontaneous symmetry
+breaking.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>SM::Renormalization</code></td>
+<td style="text-align: left;">Renormalization Procedure</td>
+<td style="text-align: left;">Component:Methodology</td>
+<td style="text-align: left;">Mathematical techniques required to handle
+infinities and extract finite predictions from QFT calculations.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Thermo Components</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::ZerothLaw</code></td>
+<td style="text-align: left;">Zeroth Law (Thermal Equilibrium)</td>
+<td style="text-align: left;">Component:Law</td>
+<td style="text-align: left;">Defines thermal equilibrium: if A=B and
+B=C then A=C thermally.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::FirstLaw</code></td>
+<td style="text-align: left;">First Law (Energy Conservation)</td>
+<td style="text-align: left;">Component:Law</td>
+<td style="text-align: left;">Change in internal energy equals heat
+added minus work done (<span class="math inline">\(\Delta U = Q -
+W\)</span>).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::SecondLaw</code></td>
+<td style="text-align: left;">Second Law (Entropy Increase)</td>
+<td style="text-align: left;">Component:Law</td>
+<td style="text-align: left;">Total entropy of an isolated system tends
+to increase over time (<span class="math inline">\(\Delta
+S_{\text{univ}} \ge 0\)</span>). Defines thermodynamic arrow of
+time.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::ThirdLaw</code></td>
+<td style="text-align: left;">Third Law (Entropy at Absolute Zero)</td>
+<td style="text-align: left;">Component:Law</td>
+<td style="text-align: left;">Entropy approaches a constant minimum as
+temperature approaches absolute zero.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Thermo::Entropy</code></td>
+<td style="text-align: left;">Thermodynamic Entropy</td>
+<td style="text-align: left;">Component:Concept/Quantity</td>
+<td style="text-align: left;">Macroscopic state function related to heat
+transfer and disorder/energy unavailability.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>Thermo::MacroscopicSystem</code></td>
+<td style="text-align: left;">Macroscopic System Assumption</td>
+<td style="text-align: left;">Component:Assumption_Scope</td>
+<td style="text-align: left;">Laws apply primarily to systems with many
+degrees of freedom, near equilibrium.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>StatMech Components</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>StatMech::BoltzmannEntropy</code></td>
+<td style="text-align: left;">Boltzmann Entropy (S=kBlnW)</td>
+<td style="text-align: left;">Component:Definition/Equation</td>
+<td style="text-align: left;">Defines entropy based on the number of
+accessible microstates (W or Ω) corresponding to a macrostate.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>StatMech::GibbsEntropy</code></td>
+<td style="text-align: left;">Gibbs Entropy (S=-kB Sum p ln p)</td>
+<td style="text-align: left;">Component:Definition/Equation</td>
+<td style="text-align: left;">Defines entropy for statistical ensembles
+based on probabilities (p) of microstates.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>StatMech::Microstate</code></td>
+<td style="text-align: left;">Microstate Concept</td>
+<td style="text-align: left;">Component:Concept</td>
+<td style="text-align: left;">A specific microscopic configuration of a
+system (e.g., positions and momenta of all particles).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>StatMech::Macrostate</code></td>
+<td style="text-align: left;">Macrostate Concept</td>
+<td style="text-align: left;">Component:Concept</td>
+<td style="text-align: left;">A macroscopic state defined by variables
+like T, P, V, corresponding to many possible microstates.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>StatMech::ProbabilisticAssumption</code></td>
+<td style="text-align: left;">Probabilistic Assumptions</td>
+<td style="text-align: left;">Component:Assumption_Methodological</td>
+<td style="text-align: left;">Relies on assumptions like equal a priori
+probability of microstates or ergodicity for calculating averages.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>General Physics
+Concepts</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Concept::Energy</code></td>
+<td style="text-align: left;">Energy</td>
+<td style="text-align: left;">Concept/Quantity</td>
+<td style="text-align: left;">Conserved quantity representing capacity
+to do work; exists in various forms.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Concept::Entropy</code></td>
+<td style="text-align: left;">Entropy (General Concept)</td>
+<td style="text-align: left;">Concept</td>
+<td style="text-align: left;">Broad concept related to disorder,
+information, uncertainty, number of states, or energy
+unavailability.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Concept::Spacetime</code></td>
+<td style="text-align: left;">Spacetime</td>
+<td style="text-align: left;">Concept/Framework</td>
+<td style="text-align: left;">The geometric framework combining space
+and time (absolute or dynamic).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Concept::Field</code></td>
+<td style="text-align: left;">Field Concept (Physics)</td>
+<td style="text-align: left;">Concept</td>
+<td style="text-align: left;">Physical quantity having a value for each
+point in space and time.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Concept::Locality</code></td>
+<td style="text-align: left;">Locality Principle (Classical)</td>
+<td style="text-align: left;">Concept/Principle</td>
+<td style="text-align: left;">Principle that objects are only directly
+influenced by their immediate surroundings; interactions propagate at
+finite speed (&lt;=c).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Concept::Determinism</code></td>
+<td style="text-align: left;">Determinism</td>
+<td style="text-align: left;">Concept/Principle</td>
+<td style="text-align: left;">Principle that future states are uniquely
+determined by past states and laws of evolution.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Concept::Probability</code></td>
+<td style="text-align: left;">Probability</td>
+<td style="text-align: left;">Concept/Tool</td>
+<td style="text-align: left;">Mathematical measure of likelihood or
+uncertainty; interpretation debated.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Concept::Symmetry</code></td>
+<td style="text-align: left;">Symmetry Principle</td>
+<td style="text-align: left;">Concept/Principle</td>
+<td style="text-align: left;">Invariance of a system or laws under
+certain transformations; linked to conservation laws.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Problems/Tensions</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Problem::QuantumGravity</code></td>
+<td style="text-align: left;">Quantum Gravity Problem</td>
+<td style="text-align: left;">Problem/Tension</td>
+<td style="text-align: left;">The unresolved challenge of unifying
+general relativity and quantum mechanics.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Problem::PlanckScale</code></td>
+<td style="text-align: left;">Planck Scale Limitation</td>
+<td style="text-align: left;">Problem/Concept</td>
+<td style="text-align: left;">Energy/length/time scale where both GR and
+QM effects are significant, and current theories likely break down.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Problem::QMeasurement</code></td>
+<td style="text-align: left;">QM Measurement Problem</td>
+<td style="text-align: left;">Problem/Tension</td>
+<td style="text-align: left;">Unresolved issue of reconciling QM’s
+unitary evolution with probabilistic measurement outcomes and
+collapse.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>Problem::CosmologicalConstant</code></td>
+<td style="text-align: left;">Cosmological Constant Problem</td>
+<td style="text-align: left;">Problem/Tension</td>
+<td style="text-align: left;">Extreme discrepancy between observed value
+of Λ and theoretical estimates of vacuum energy.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Problem::GRSingularity</code></td>
+<td style="text-align: left;">General Relativity Singularities</td>
+<td style="text-align: left;">Problem/Limitation</td>
+<td style="text-align: left;">Prediction of infinite curvature/density
+by GR under certain conditions (Big Bang, black holes), indicating
+theory breakdown.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>Problem::GRQMIncompatibility</code></td>
+<td style="text-align: left;">GR-QM Incompatibility</td>
+<td style="text-align: left;">Problem/Tension</td>
+<td style="text-align: left;">Fundamental conflict between the
+principles and mathematical frameworks of general relativity and quantum
+mechanics.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Obs::FlatRotationCurves</code></td>
+<td style="text-align: left;">Flat Galactic Rotation Curves</td>
+<td style="text-align: left;">Observation/Problem</td>
+<td style="text-align: left;">Observation that galaxy rotation speeds
+remain constant at large radii, contradicting predictions from visible
+mass using standard gravity.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Obs::SupernovaDimming</code></td>
+<td style="text-align: left;">Apparent Dimming of Type Ia
+Supernovae</td>
+<td style="text-align: left;">Observation/Problem</td>
+<td style="text-align: left;">Observation that distant Type Ia
+supernovae are dimmer than expected in a non-accelerating universe model
+(standard interpretation).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Math &amp; Logic
+Components</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FOL::Syntax</code></td>
+<td style="text-align: left;">FOL Syntax</td>
+<td style="text-align: left;">Component:Definition</td>
+<td style="text-align: left;">Rules for forming well-formed formulas
+using symbols, variables, predicates, quantifiers, connectives.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FOL::Semantics</code></td>
+<td style="text-align: left;">FOL Semantics (Models, Truth)</td>
+<td style="text-align: left;">Component:Definition</td>
+<td style="text-align: left;">Rules for interpreting formulas in
+mathematical structures (models) and defining truth.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>FOL::ProofTheory</code></td>
+<td style="text-align: left;">FOL Proof Theory</td>
+<td style="text-align: left;">Component:Definition</td>
+<td style="text-align: left;">Axioms and rules (e.g., Modus Ponens,
+Generalization) for deriving theorems.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC::Axioms</code></td>
+<td style="text-align: left;">ZFC Axioms</td>
+<td style="text-align: left;">Component:AxiomSet</td>
+<td style="text-align: left;">The specific axioms defining sets
+(Extensionality, Pairing, Union, Power Set, Infinity, Specification,
+Replacement, Regularity, Choice).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC::SetConcept</code></td>
+<td style="text-align: left;">Concept of Pure Set</td>
+<td style="text-align: left;">Component:Assumption_Ontological</td>
+<td style="text-align: left;">Assumes the mathematical universe consists
+only of sets built ultimately from the empty set.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>ZFC::CumulativeHierarchy</code></td>
+<td style="text-align: left;">Cumulative Hierarchy Assumption</td>
+<td style="text-align: left;">Component:Assumption_Ontological</td>
+<td style="text-align: left;">Assumes sets form a well-founded hierarchy
+built up in stages (V_alpha), enforced by Axiom of Regularity.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::FormalSystem</code></td>
+<td style="text-align: left;">Formal System Concept</td>
+<td style="text-align: left;">Concept</td>
+<td style="text-align: left;">General concept of a system with formal
+language, axioms, and inference rules.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::GoedelTheorems</code></td>
+<td style="text-align: left;">Gödel’s Incompleteness Theorems</td>
+<td style="text-align: left;">Meta-Theorem</td>
+<td style="text-align: left;">Theorems demonstrating inherent limits of
+sufficiently strong, consistent, effectively axiomatized formal systems
+containing arithmetic.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Calculus</code></td>
+<td style="text-align: left;">Standard Calculus
+(Differential/Integral)</td>
+<td style="text-align: left;">Framework/Tool</td>
+<td style="text-align: left;">Mathematical framework dealing with
+limits, derivatives, integrals based on the real number continuum.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>Math::DifferentialGeometry</code></td>
+<td style="text-align: left;">Differential Geometry</td>
+<td style="text-align: left;">Framework/Tool</td>
+<td style="text-align: left;">Mathematical framework using calculus and
+algebra to study smooth manifolds and geometry; language of GR.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::HilbertSpace</code></td>
+<td style="text-align: left;">Hilbert Space</td>
+<td style="text-align: left;">MathematicalStructure</td>
+<td style="text-align: left;">Complex vector space with inner product,
+complete; mathematical setting for QM states.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::ProbabilityTheory</code></td>
+<td style="text-align: left;">Probability Theory</td>
+<td style="text-align: left;">Framework/Tool</td>
+<td style="text-align: left;">Mathematical framework for quantifying
+uncertainty and likelihood.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::GroupTheory</code></td>
+<td style="text-align: left;">Group Theory</td>
+<td style="text-align: left;">Framework/Tool</td>
+<td style="text-align: left;">Mathematical study of algebraic structures
+(groups) representing symmetry.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Continuum</code></td>
+<td style="text-align: left;">Real Number Continuum</td>
+<td style="text-align: left;">MathematicalStructure</td>
+<td style="text-align: left;">The set of real numbers, typically assumed
+to be continuous and complete. Critiqued within the context of this
+work.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Zero</code></td>
+<td style="text-align: left;">Concept/Symbol Zero</td>
+<td style="text-align: left;">MathematicalObject</td>
+<td style="text-align: left;">Mathematical entity representing null
+quantity or origin; properties critiqued within the context of this
+work.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Pi</code></td>
+<td style="text-align: left;">Constant Pi (π)</td>
+<td style="text-align: left;">MathematicalObject/Constant</td>
+<td style="text-align: left;">Fundamental geometric constant relating
+circumference to diameter.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Phi</code></td>
+<td style="text-align: left;">Constant Phi (φ)</td>
+<td style="text-align: left;">MathematicalObject/Constant</td>
+<td style="text-align: left;">Golden ratio, fundamental constant related
+to scaling and recursion.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Math::Base10</code></td>
+<td style="text-align: left;">Base-10 Decimal System</td>
+<td style="text-align: left;">NotationSystem</td>
+<td style="text-align: left;">Standard positional number system;
+critiqued within the context of this work as anthropocentric and
+limited.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Philosophy
+Components</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Phil::OntologicalMonism</code></td>
+<td style="text-align: left;">Ontological Monism (Physicalist)</td>
+<td style="text-align: left;">Component:Postulate</td>
+<td style="text-align: left;">Commitment to only one fundamental type of
+substance/property (physical).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Phil::CausalClosure</code></td>
+<td style="text-align: left;">Causal Closure of the Physical</td>
+<td style="text-align: left;">Component:Assumption</td>
+<td style="text-align: left;">Principle that all physical effects have
+sufficient physical causes. Often assumed by physicalism.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Phil::Supervenience</code></td>
+<td style="text-align: left;">Supervenience (Mind-Body)</td>
+<td style="text-align: left;">Component:Relation</td>
+<td style="text-align: left;">Relation often used by physicalists: no
+mental change without a physical change.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Phil::Fundamentality</code></td>
+<td style="text-align: left;">Fundamentality</td>
+<td style="text-align: left;">Concept</td>
+<td style="text-align: left;">Metaphysical concept concerning the basic
+or ultimate level of reality.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Phil::Grounding</code></td>
+<td style="text-align: left;">Grounding Relation</td>
+<td style="text-align: left;">Concept/Relation</td>
+<td style="text-align: left;">Metaphysical relation of non-causal
+determination or explanation (A exists <em>in virtue of</em> B).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Phil::Causation</code></td>
+<td style="text-align: left;">Causation</td>
+<td style="text-align: left;">Concept/Relation</td>
+<td style="text-align: left;">Relationship between cause and effect;
+subject of various philosophical analyses.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Phil::Determinism</code></td>
+<td style="text-align: left;">Determinism (Philosophical)</td>
+<td style="text-align: left;">Concept/Thesis</td>
+<td style="text-align: left;">Metaphysical thesis that all events are
+necessitated by antecedent causes and conditions together with the laws
+of nature.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Phil::Realism</code></td>
+<td style="text-align: left;">Scientific Realism / Objective
+Reality</td>
+<td style="text-align: left;">Concept/Thesis</td>
+<td style="text-align: left;">View that scientific theories aim for true
+descriptions of an objective reality, including unobservable
+entities.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>Phil::LocalRealism</code></td>
+<td style="text-align: left;">Local Realism</td>
+<td style="text-align: left;">Concept/Thesis</td>
+<td style="text-align: left;">Combination of locality and realism
+(properties exist independently of measurement); challenged by QM.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>InfoSci Components</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::ShannonEntropy</code></td>
+<td style="text-align: left;">Shannon Entropy (H)</td>
+<td style="text-align: left;">Component:Definition/Equation</td>
+<td style="text-align: left;">Measure of average uncertainty/information
+content of a probabilistic source (<span class="math inline">\(H = -\sum
+p_i \log p_i\)</span>).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::ChannelCapacity</code></td>
+<td style="text-align: left;">Channel Capacity (C)</td>
+<td style="text-align: left;">Component:Definition/Equation</td>
+<td style="text-align: left;">Maximum rate of reliable information
+transmission over a noisy channel (<span class="math inline">\(C = \max
+I(X;Y)\)</span>).</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>InfoSci::SourceCodingTheorem</code></td>
+<td style="text-align: left;">Source Coding Theorem</td>
+<td style="text-align: left;">Component:Theorem</td>
+<td style="text-align: left;">Establishes limit for lossless data
+compression based on source entropy H.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>InfoSci::NoisyChannelTheorem</code></td>
+<td style="text-align: left;">Noisy-Channel Coding Theorem</td>
+<td style="text-align: left;">Component:Theorem</td>
+<td style="text-align: left;">Establishes channel capacity C as the
+limit for reliable communication.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>InfoSci::Information</code></td>
+<td style="text-align: left;">Information (Shannon Concept)</td>
+<td style="text-align: left;">Concept/Quantity</td>
+<td style="text-align: left;">Reduction of uncertainty regarding symbol
+transmission; explicitly ignores semantic meaning. (Syntactic)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ΛCDM Components</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LCDM::AssumesGR</code></td>
+<td style="text-align: left;">Assumption of GR Framework</td>
+<td style="text-align: left;">Component:Assumption</td>
+<td style="text-align: left;">Relies on general relativity as the theory
+of gravity governing cosmic expansion.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td
+style="text-align: left;"><code>LCDM::CosmologicalPrinciple</code></td>
+<td style="text-align: left;">Cosmological Principle Assumption</td>
+<td style="text-align: left;">Component:Assumption/Principle</td>
+<td style="text-align: left;">Assumes universe is homogeneous and
+isotropic on large scales. Basis for FLRW metric.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LCDM::ExpandingUniverse</code></td>
+<td style="text-align: left;">Expanding Universe Description</td>
+<td style="text-align: left;">Component:Implication/ModelFeature</td>
+<td style="text-align: left;">Core feature describing increasing scale
+factor <span class="math inline">\(a(t)\)</span>over time.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LCDM::HotBigBang</code></td>
+<td style="text-align: left;">Hot Big Bang Initial State</td>
+<td style="text-align: left;">Component:Assumption/ModelFeature</td>
+<td style="text-align: left;">Assumes an early epoch of extreme heat and
+density.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LCDM::BBN</code></td>
+<td style="text-align: left;">Big Bang Nucleosynthesis</td>
+<td style="text-align: left;">Component:Process/Prediction</td>
+<td style="text-align: left;">Predicts primordial abundances of light
+elements formed in the first few minutes.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LCDM::CMB</code></td>
+<td style="text-align: left;">Cosmic Microwave Background</td>
+<td style="text-align: left;">Component:Phenomenon/Prediction</td>
+<td style="text-align: left;">Predicts relic radiation from epoch of
+recombination, with specific blackbody spectrum and anisotropy
+pattern.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LCDM::StructureFormation</code></td>
+<td style="text-align: left;">Structure Formation Model</td>
+<td style="text-align: left;">Component:ModelFeature</td>
+<td style="text-align: left;">Describes growth of structure via
+gravitational instability of initial density fluctuations, requiring
+CDM.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LCDM::DarkMatter</code></td>
+<td style="text-align: left;">Cold Dark Matter (CDM) Postulate</td>
+<td style="text-align: left;">Component:Postulate/Entity</td>
+<td style="text-align: left;">Postulates existence of non-baryonic,
+cold, weakly interacting matter dominating cosmic mass.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LCDM::DarkEnergy</code></td>
+<td style="text-align: left;">Dark Energy (Λ) Postulate</td>
+<td style="text-align: left;">Component:Postulate/Entity</td>
+<td style="text-align: left;">Postulates existence of component with
+negative pressure (often cosmological constant Λ) driving accelerated
+expansion.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LCDM::FLRWMetric</code></td>
+<td style="text-align: left;">Friedmann-Lemaître-Robertson-Walker
+Metric</td>
+<td style="text-align: left;">Component:MathematicalStructure</td>
+<td style="text-align: left;">Specific solution to EFE assuming
+homogeneity and isotropy, used as the basis for standard cosmology.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>LCDM::Inflation</code></td>
+<td style="text-align: left;">Inflationary Epoch (Often Assumed)</td>
+<td style="text-align: left;">Component:Hypothesis/Mechanism</td>
+<td style="text-align: left;">Hypothetical early period of exponential
+expansion invoked to solve flatness/horizon problems and seed
+fluctuations.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

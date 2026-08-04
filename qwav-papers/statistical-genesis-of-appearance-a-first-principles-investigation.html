@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Statistical Genesis of Appearance—A First-Principles Investigation | QWAV</title>
+<meta name="description" content="Statistical Genesis of Appearance—A First-Principles Investigation Status: Definitive. Capstone document for the Statistical Genesis of Appearance project. V...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/statistical-genesis-of-appearance-a-first-principles-investigation">
+<meta property="og:title" content="Statistical Genesis of Appearance—A First-Principles Investigation">
+<meta property="og:description" content="Statistical Genesis of Appearance—A First-Principles Investigation Status: Definitive. Capstone document for the Statistical Genesis of Appearance project. V...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/statistical-genesis-of-appearance-a-first-principles-investigation">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Statistical Genesis of Appearance\u2014A First-Principles Investigation",
+  "url": "https://deep.qwav.tech/papers/statistical-genesis-of-appearance-a-first-principles-investigation",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2026-05-14T14:12:05Z",
+  "abstract": "Statistical Genesis of Appearance\u2014A First-Principles Investigation Status: Definitive. Capstone document for the Statistical Genesis of Appearance project. V..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1
+id="statistical-genesis-of-appearancea-first-principles-investigation">Statistical
+Genesis of Appearance—A First-Principles Investigation</h1>
+<blockquote>
+<p><strong>Status:</strong> Definitive. Capstone document for the
+Statistical Genesis of Appearance project. <strong>Version:</strong>
+0.16 <strong>Date:</strong> 2026-05-14 <strong>DOI:</strong> <a
+href="https://doi.org/10.5281/zenodo.20182909">10.5281/zenodo.20182909</a>
+<strong>Supersedes:</strong> All prior synthesis documents (<span
+class="math inline">\(0.9.md\)</span> and earlier). Incorporates all
+findings from companion explorations <span
+class="math inline">\(0.10.md\)</span> through <span
+class="math inline">\(0.15.md\)</span>. <strong>Reading time:</strong>
+~45 minutes (full), ~15 minutes (essential sections only).</p>
+</blockquote>
+<h2 id="preamble-what-this-document-is">1. Preamble: What This Document
+Is</h2>
+<h3 id="purpose">1.1 Purpose</h3>
+<p>This document investigates a single hypothesis:</p>
+<blockquote>
+<p>The dimensionless numbers encoded in the fine-structure constant —
+<span class="math inline">\(1/\alpha \approx 137\)</span> and <span
+class="math inline">\(1/\alpha^2 \approx 18{,}800\)</span> — are not
+brute facts of nature. They are the quantitative signatures of a layered
+statistical process, a Central Limit Theorem operating at multiple
+strata, that converts fundamental quantum noise into the stable,
+classical appearance of atoms.</p>
+</blockquote>
+<p>We do not prove this hypothesis. We clarify what it means, what would
+constitute evidence for and against it, and how it connects to broader
+questions about the statistical origins of physical law.</p>
+<h3 id="scope-and-boundaries">1.2 Scope and Boundaries</h3>
+<p><strong>What this document does:</strong> - Derives all key numbers
+from first principles using CODATA 2018 constants with code-level
+verification (<span class="math inline">\(0.2.py\)</span>) - Presents
+the Central Limit Theorem (CLT) as the organizing principle behind
+dimensionless ratios in atomic physics - Systematically assesses four
+load-bearing gaps in the argument - Extends the framework to other
+dimensionless constants — most notably the cosmological constant <span
+class="math inline">\(\rho_\Lambda/\rho_{Pl} \approx 10^{-122}\)</span>
+- Maps the full hierarchy from the Planck scale to macroscopic objects -
+Explicitly identifies what is claimed, what is consistent-with, and what
+is speculative - Defines what a minimum viable theory would need to
+demonstrate</p>
+<p><strong>What this document does NOT do:</strong> - Prove that <span
+class="math inline">\(\alpha\)</span> emerges from a CLT process -
+Derive <span class="math inline">\(\alpha\)</span> from first principles
+- Replace the Standard Model or general relativity - Claim all
+dimensionless constants have statistical origins - Provide
+experimentally testable predictions at current technology levels</p>
+<h3 id="reading-guide">1.3 Reading Guide</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Section</th>
+<th style="text-align: left;">Content</th>
+<th style="text-align: left;">Essential?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+2\)</span></td>
+<td style="text-align: left;">First principles: constants, scales,
+kinematics</td>
+<td style="text-align: left;"><strong>YES</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+3\)</span></td>
+<td style="text-align: left;">The two key numbers: derivation and
+meaning</td>
+<td style="text-align: left;"><strong>YES</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+4\)</span></td>
+<td style="text-align: left;">The Central Limit Theorem framework</td>
+<td style="text-align: left;"><strong>YES</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+5\)</span></td>
+<td style="text-align: left;">The core hypothesis</td>
+<td style="text-align: left;"><strong>YES</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+6,7\)</span></td>
+<td style="text-align: left;">Spatial and temporal genesis</td>
+<td style="text-align: left;"><strong>YES</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+8\)</span></td>
+<td style="text-align: left;">Evidence and supporting structures</td>
+<td style="text-align: left;">Recommended</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+9\)</span></td>
+<td style="text-align: left;">The four load-bearing gaps</td>
+<td style="text-align: left;"><strong>YES</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+10\)</span></td>
+<td style="text-align: left;">The agent and Quantum Darwinism</td>
+<td style="text-align: left;">Recommended</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+11\)</span></td>
+<td style="text-align: left;">Beyond <span
+class="math inline">\(\alpha\)</span>: the cosmological constant</td>
+<td style="text-align: left;">Recommended</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+12\)</span></td>
+<td style="text-align: left;">The full hierarchy</td>
+<td style="text-align: left;"><strong>YES</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+13\)</span></td>
+<td style="text-align: left;">The missing rung: gauge symmetry
+emergence</td>
+<td style="text-align: left;">Advanced</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+14\)</span></td>
+<td style="text-align: left;">Anthropic bounds: statistical
+reframing</td>
+<td style="text-align: left;">Recommended</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+15\)</span></td>
+<td style="text-align: left;">Computational and experimental
+pathways</td>
+<td style="text-align: left;">Advanced</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="math inline">\(\S
+16\)</span></td>
+<td style="text-align: left;">Boundaries, falsification, open
+questions</td>
+<td style="text-align: left;"><strong>YES</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="document-provenance">1.4 Document Provenance</h3>
+<p>This document supersedes: - <span
+class="math inline">\(0.1.2.md\)</span> — Original synthesis
+(reader-tested, 8 issues found) - <span
+class="math inline">\(0.1.3.md\)</span> — Revised synthesis - <span
+class="math inline">\(0.9.md\)</span> — Definitive synthesis (11
+sections, canonical through Sprint 7)</p>
+<p>It incorporates findings from all companion explorations (<span
+class="math inline">\(0.2.md\)</span> through <span
+class="math inline">\(0.15.md\)</span>).</p>
+<h3 id="provenance-of-claims">1.5 Provenance of Claims</h3>
+<p>Throughout this document: - <span
+class="math inline">\([CODE-EXECUTED]\)</span> — Verified by Python
+execution (<span class="math inline">\(0.2.py\)</span>, 242 lines, 6/6
+checks pass) - <span class="math inline">\([EXTERNAL-SOURCE]\)</span> —
+Traced to cited references (CODATA 2018, published literature) - <span
+class="math inline">\([LLM-INFERRED]\)</span> — Interpretive synthesis,
+not independently verified</p>
+<hr />
+<h2 id="first-principles-the-constants-and-scales-of-nature">2. First
+Principles: The Constants and Scales of Nature</h2>
+<h3 id="the-fundamental-constants">2.1 The Fundamental Constants</h3>
+<p>Modern physics rests on three dimensionful constants and one
+dimensionless one:</p>
+<p><span class="math display">\[c = 2.99792458 \times 10^8\ \text{m/s}
+\quad \text{(speed of light, exact)}\]</span> <span
+class="math display">\[\hbar = 1.054571817 \times 10^{-34}\ \text{J·s}
+\quad \text{(reduced Planck constant)}\]</span> <span
+class="math display">\[m_e = 9.1093837015 \times 10^{-31}\ \text{kg}
+\quad \text{(electron mass)}\]</span> <span class="math display">\[e =
+1.602176634 \times 10^{-19}\ \text{C} \quad \text{(elementary charge,
+exact since 2019)}\]</span></p>
+<p>From these, plus the vacuum permittivity <span
+class="math inline">\(\varepsilon_0\)</span>, we construct the
+fine-structure constant:</p>
+<p><span class="math display">\[\alpha = \frac{e^2}{4\pi\varepsilon_0
+\hbar c} \approx \frac{1}{137.035999084} \quad
+[CODE-EXECUTED]\]</span></p>
+<p><span class="math inline">\(\alpha\)</span> is dimensionless — it has
+the same value in any system of units. This is why it matters: it cannot
+be “scaled away” by choosing different meters or seconds. It is a pure
+number that nature has chosen.</p>
+<h3 id="the-three-fundamental-length-scales">2.2 The Three Fundamental
+Length Scales</h3>
+<p>From <span class="math inline">\(c\)</span>, <span
+class="math inline">\(\hbar\)</span>, <span
+class="math inline">\(m_e\)</span>, and <span
+class="math inline">\(\alpha\)</span>, three length scales emerge that
+define the architecture of atomic physics:</p>
+<p><strong>Planck length</strong> (quantum gravity scale): <span
+class="math display">\[l_{Pl} = \sqrt{\frac{\hbar G}{c^3}} \approx 1.616
+\times 10^{-35}\ \text{m}\]</span></p>
+<p><strong>Compton wavelength</strong> (quantum field theory scale —
+where pair creation becomes inevitable): <span
+class="math display">\[\bar{\lambda}_C = \frac{\hbar}{m_e c} =
+3.8615926796 \times 10^{-13}\ \text{m} \quad [CODE-EXECUTED]\]</span>
+<span class="math display">\[\lambda_C = \frac{h}{m_e c} =
+2\pi\bar{\lambda}_C = 2.4263102389 \times 10^{-12}\ \text{m} \quad
+[CODE-EXECUTED]\]</span></p>
+<p><strong>Bohr radius</strong> (atomic physics scale — characteristic
+size of hydrogen): <span class="math display">\[a_0 =
+\frac{4\pi\varepsilon_0 \hbar^2}{m_e e^2} = \frac{\hbar}{\alpha m_e c} =
+5.2917721090 \times 10^{-11}\ \text{m} \quad
+[CODE-EXECUTED]\]</span></p>
+<p>These three lengths form a hierarchy spanning 24 orders of
+magnitude:</p>
+<p><span class="math display">\[l_{Pl} : \bar{\lambda}_C : a_0 \approx 1
+: 2.4 \times 10^{22} : 3.3 \times 10^{24}\]</span></p>
+<h3 id="the-two-compton-conventions-critical">2.3 The Two Compton
+Conventions (Critical)</h3>
+<p>The Compton wavelength has two standard definitions, and the
+distinction matters profoundly:</p>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 19%" />
+<col style="width: 26%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Value (m)</th>
+<th style="text-align: left;">Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Reduced Compton wavelength</td>
+<td style="text-align: left;"><span
+class="math inline">\(\bar{\lambda}_C\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(3.8616 \times
+10^{-13}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\hbar / m_e
+c\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Full Compton wavelength</td>
+<td style="text-align: left;"><span
+class="math inline">\(\lambda_C\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(2.4263 \times
+10^{-12}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(h / m_e c =
+2\pi\bar{\lambda}_C\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Reduced Compton time</td>
+<td style="text-align: left;"><span
+class="math inline">\(\bar{\tau}_C\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(1.2881 \times
+10^{-21}\)</span> s</td>
+<td style="text-align: left;"><span
+class="math inline">\(\bar{\lambda}_C / c\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Full Compton time</td>
+<td style="text-align: left;"><span
+class="math inline">\(\tau_C\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(8.0933 \times
+10^{-21}\)</span> s</td>
+<td style="text-align: left;"><span class="math inline">\(\lambda_C / c
+= 2\pi\bar{\tau}_C\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The central numbers of this project depend on which
+convention is used.</strong> We will see that the spatial ratio uses the
+reduced Compton while the temporal ratio uses the full Compton. This
+asymmetry is kinematic in origin (not arbitrary), but it must be stated
+explicitly.</p>
+<hr />
+<h2 id="the-two-key-numbers-derivation-and-physical-meaning">3. The Two
+Key Numbers: Derivation and Physical Meaning</h2>
+<h3 id="the-spatial-ratio">3.1 The Spatial Ratio</h3>
+<p>The Bohr radius expressed in reduced Compton wavelengths:</p>
+<p><span class="math display">\[\frac{a_0}{\bar{\lambda}_C} =
+\frac{\hbar/(\alpha m_e c)}{\hbar/(m_e c)} = \frac{1}{\alpha} \approx
+137.036 \quad [CODE-EXECUTED]\]</span></p>
+<p>Using the full Compton wavelength gives a different number:</p>
+<p><span class="math display">\[\frac{a_0}{\lambda_C} =
+\frac{1}{2\pi\alpha} \approx 21.809 \quad [CODE-EXECUTED]\]</span></p>
+<p>The number 137 — central to this project — depends on using the
+<strong>reduced</strong> Compton wavelength.</p>
+<h3 id="the-temporal-ratio">3.2 The Temporal Ratio</h3>
+<p>The orbital period in the Bohr model (ground state, <span
+class="math inline">\(n = 1\)</span>):</p>
+<p><span class="math display">\[T = \frac{2\pi a_0}{v} = \frac{2\pi
+a_0}{\alpha c} = 1.5198 \times 10^{-16}\ \text{s} \quad
+[CODE-EXECUTED]\]</span></p>
+<p>The ratio of this orbital period to the Compton time:</p>
+<p><span class="math display">\[\frac{T}{\tau_C} = \frac{2\pi
+a_0/(\alpha c)}{h/(m_e c^2)} = \frac{1}{\alpha^2} \approx 18{,}778.9
+\quad [CODE-EXECUTED]\]</span></p>
+<p>The number 18,800 uses the <strong>full</strong> Compton time (not
+the reduced).</p>
+<h3 id="the-convention-asymmetry">3.3 The Convention Asymmetry</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Domain</th>
+<th style="text-align: left;">Convention for Ratio = 137</th>
+<th style="text-align: left;">Convention for Ratio = 18,800</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Spatial</td>
+<td style="text-align: left;"><strong>Reduced</strong> Compton (<span
+class="math inline">\(\bar{\lambda}_C\)</span>)</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;">Temporal</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;"><strong>Full</strong> Compton (<span
+class="math inline">\(\tau_C\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<p>This mixing follows from kinematics:</p>
+<p><span class="math display">\[T = \frac{2\pi a_0}{\alpha c} =
+\frac{2\pi}{\alpha} \cdot \frac{\bar{\lambda}_C}{c} = \frac{1}{\alpha^2}
+\cdot \tau_C\]</span></p>
+<p>The factor of <span class="math inline">\(2\pi\)</span> from the
+orbit circumference combines with the factor of <span
+class="math inline">\(2\pi\)</span> in the Compton definitions to
+produce a clean <span class="math inline">\(1/\alpha^2\)</span>. This is
+not an arbitrary choice — it is forced by the physics. But it means the
+“137” and “18,800” are not independent discoveries; the <span
+class="math inline">\(N^2\)</span> relationship is built into the
+definitions once the convention choices are fixed.</p>
+<p><strong>This is not a flaw, but it is a constraint on
+interpretation:</strong> the temporal ratio adds no independent
+information beyond what 137 and the orbit kinematics already encode. The
+project’s thesis must acknowledge this — the temporal ratio is a
+consistency check, not an independent observation.</p>
+<h3 id="physical-interpretation">3.4 Physical Interpretation</h3>
+<ul>
+<li><strong><span class="math inline">\(1/\alpha \approx
+137\)</span>:</strong> The Bohr radius spans approximately 137 reduced
+Compton wavelengths. This is the spatial scale separation — a hydrogen
+atom is 137 quantum “pixels” across.</li>
+<li><strong><span class="math inline">\(1/\alpha^2 \approx
+18{,}800\)</span>:</strong> One classical electron orbit contains
+approximately 18,800 Compton-time “ticks.” This is the temporal scale
+separation — the atom integrates 18,800 fundamental time intervals per
+classical cycle.</li>
+</ul>
+<h3 id="verification">3.5 Verification</h3>
+<p>All derivations are verified by <span
+class="math inline">\(0.2.py\)</span> (Python, 242 lines, standard
+library only, CODATA 2018). Six consistency checks pass:</p>
+<pre><code>[PASS] a_0 formula 1 vs 2
+[PASS] lambda_C = 2*pi*lambda_bar_C
+[PASS] a_0/lambda_bar_C = 1/alpha
+[PASS] a_0/lambda_C = 1/(2*pi*alpha)
+[PASS] T/tau_C = 1/alpha^2
+[PASS] T/tau_bar_C = 2*pi/alpha^2</code></pre>
+<hr />
+<h2 id="the-central-limit-theorem-classical-free-and-layered">4. The
+Central Limit Theorem: Classical, Free, and Layered</h2>
+<h3 id="the-classical-clt">4.1 The Classical CLT</h3>
+<p>For independent, identically distributed (i.i.d.) random variables
+<span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> with mean
+<span class="math inline">\(\mu\)</span> and finite variance <span
+class="math inline">\(\sigma^2\)</span>:</p>
+<p><span class="math display">\[\frac{1}{\sqrt{n}} \sum_{i=1}^{n} (X_i -
+\mu) \xrightarrow{d} \mathcal{N}(0, \sigma^2) \quad \text{as } n \to
+\infty\]</span></p>
+<p>The precision of the sample mean scales as <span
+class="math inline">\(1/\sqrt{n}\)</span>. The Gaussian distribution is
+an <strong>attractor</strong> — any sum of sufficiently many independent
+random variables converges to it, regardless of the original
+distribution (provided finite variance). This universality is what makes
+the CLT powerful.</p>
+<h3 id="the-free-clt-voiculescu-1985">4.2 The Free CLT (Voiculescu,
+1985)</h3>
+<p>Quantum observables are not commuting real numbers — they are
+operators on a Hilbert space. Their “statistics” obey non-commutative
+probability theory. The appropriate generalization is the <strong>free
+Central Limit Theorem</strong>:</p>
+<p>For freely independent, identically distributed non-commutative
+random variables <span class="math inline">\(a_1, a_2, \ldots,
+a_n\)</span> (self-adjoint operators):</p>
+<p><span class="math display">\[\frac{1}{\sqrt{n}} \sum_{i=1}^{n} a_i
+\xrightarrow{\text{free}} \text{Wigner semicircle}\]</span></p>
+<p>The limiting distribution is the Wigner semicircle law, not the
+Gaussian:</p>
+<p><span class="math display">\[\rho(x) = \frac{1}{2\pi} \sqrt{4 - x^2},
+\quad |x| \leq 2\]</span></p>
+<p>Key differences from the classical CLT:</p>
+<table>
+<colgroup>
+<col style="width: 29%" />
+<col style="width: 41%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Classical CLT</th>
+<th style="text-align: left;">Free CLT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Random variables</td>
+<td style="text-align: left;">Commutative real numbers</td>
+<td style="text-align: left;">Non-commutative operators</td>
+</tr>
+<tr>
+<td style="text-align: left;">Independence</td>
+<td style="text-align: left;">Classical independence</td>
+<td style="text-align: left;">Free independence</td>
+</tr>
+<tr>
+<td style="text-align: left;">Limiting distribution</td>
+<td style="text-align: left;">Gaussian (unbounded)</td>
+<td style="text-align: left;">Wigner semicircle (compact)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Precision scaling</td>
+<td style="text-align: left;"><span
+class="math inline">\(1/\sqrt{n}\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(1/\sqrt{n}\)</span> (same!)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Physics applications</td>
+<td style="text-align: left;">Classical statistics</td>
+<td style="text-align: left;">Random matrices, quantum chaos</td>
+</tr>
+</tbody>
+</table>
+<p>The free CLT is almost certainly the correct mathematical framework
+for any rigorous statistical emergence of quantum structure. We use the
+classical CLT throughout this document as a <strong>structural
+analogy</strong> — the full free CLT treatment is deferred to external
+literature (<span class="math inline">\(0.10.md\)</span>, queries
+Q3.1–Q3.2).</p>
+<h3 id="layered-clt-the-organizing-metaphor">4.3 Layered CLT: The
+Organizing Metaphor</h3>
+<p>The central organizing idea of this project: CLT-like convergence
+operates at <strong>multiple strata</strong> of physical reality:</p>
+<p><span class="math display">\[\text{Quantum noise}
+\xrightarrow{\text{CLT}} \text{Stable atom} \xrightarrow{\text{CLT}}
+\text{Classical object} \xrightarrow{\text{CLT}} \text{Macroscopic
+world}\]</span></p>
+<p>At each layer, a new set of random variables is averaged over,
+producing emergent stability at the next scale up. The dimensionless
+constants encode the effective sample sizes at each transition.</p>
+<p><strong>What this is NOT:</strong> - It is not a proof that atoms
+literally execute 137 independent Compton events - It does not claim CLT
+conditions (independence, identical distribution) are satisfied at the
+quantum scale — they are not - It does not replace quantum mechanics
+with classical statistics - It is a <strong>structural analogy</strong>
+identifying a pattern that may point toward deeper physics</p>
+<hr />
+<h2 id="the-core-hypothesis">5. The Core Hypothesis</h2>
+<h3 id="statement">5.1 Statement</h3>
+<blockquote>
+<p>The dimensionless ratios <span class="math inline">\(1/\alpha \approx
+137\)</span> and <span class="math inline">\(1/\alpha^2 \approx
+18{,}800\)</span> are effective sample sizes of a CLT-like statistical
+convergence. The fine-structure constant <span
+class="math inline">\(\alpha\)</span> is not a fundamental coupling
+strength but the reciprocal of the number of independent quantum events
+that must be spatially (and temporally) integrated for an atom to
+acquire stable, classical appearance.</p>
+</blockquote>
+<h3 id="the-wavefunction-as-a-statistical-artifact">5.2 The Wavefunction
+as a Statistical Artifact</h3>
+<p>In this picture, the wavefunction <span
+class="math inline">\(\psi\)</span> is not a fundamental ontological
+entity — it is a statistical description. It is to quantum reality what
+a probability distribution is to a random process. We, as macroscopic
+agents, can only perceive the convergent limit. The wavefunction is the
+emergent statistical summary of a deeper layer whose individual events
+are inaccessible to us.</p>
+<p>This interpretation is compatible with (not proven by) several
+existing frameworks:</p>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 54%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Framework</th>
+<th style="text-align: left;">Statistical Mechanism</th>
+<th style="text-align: left;">Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Semiclassical path integral</td>
+<td style="text-align: left;">CLT on fluctuations when <span
+class="math inline">\(S \gg \hbar\)</span></td>
+<td style="text-align: left;">Established</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stochastic mechanics (Nelson)</td>
+<td style="text-align: left;"><span
+class="math inline">\(\psi^*\psi\)</span> as equilibrium distribution of
+drift-diffusion</td>
+<td style="text-align: left;">Speculative</td>
+</tr>
+<tr>
+<td style="text-align: left;">Trace dynamics (Adler)</td>
+<td style="text-align: left;">Free CLT on non-commutative matrix
+variables</td>
+<td style="text-align: left;">Active research</td>
+</tr>
+<tr>
+<td style="text-align: left;">QBism / quantum reconstruction</td>
+<td style="text-align: left;">Wavefunction as Bayesian belief; couplings
+as informational capacity</td>
+<td style="text-align: left;">Interpretational</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-pattern-at-all-scales">5.3 The Pattern at All Scales</h3>
+<p>The same structural pattern appears across physics:</p>
+<p><span class="math display">\[\text{Observable scale} =
+\text{Fundamental grain} \times \text{Effective sample
+size}\]</span></p>
+<p>For the atom: <span class="math inline">\(a_0 = \bar{\lambda}_C \cdot
+(1/\alpha)\)</span>. For the universe: <span
+class="math inline">\(\Lambda \sim M_{Pl}^4 / S_{dS}\)</span> where
+<span class="math inline">\(S_{dS} \sim 10^{122}\)</span>.</p>
+<p>This pattern is the <strong>statistical genesis
+hypothesis</strong>.</p>
+<hr />
+<h2 id="the-spatial-genesis-n_textspatial-1alpha-approx-137">6. The
+Spatial Genesis: <span class="math inline">\(N_{\text{spatial}} =
+1/\alpha \approx 137\)</span></h2>
+<h3 id="the-picture">6.1 The Picture</h3>
+<p>The reduced Compton wavelength <span
+class="math inline">\(\bar{\lambda}_C \approx 3.86 \times
+10^{-13}\)</span> m is the scale at which quantum field theory becomes
+essential — below this scale, the concept of a single-particle position
+breaks down, and electron-positron pair creation becomes energetically
+possible. It is the fundamental “grain size” of the electron’s quantum
+field.</p>
+<p>The Bohr radius <span class="math inline">\(a_0 \approx 5.29 \times
+10^{-11}\)</span> m is the characteristic size of a hydrogen atom — the
+scale at which the electron’s probabilistic cloud stabilizes into a
+recognizable “object.”</p>
+<p>The ratio <span class="math inline">\(a_0 / \bar{\lambda}_C =
+1/\alpha \approx 137\)</span> means: <strong>the atom spans 137 quantum
+grains in space.</strong> An electron in a hydrogen atom does not have a
+definite position at the Compton scale, but averaged over 137 such
+grains, a stable spatial structure emerges.</p>
+<h3 id="clt-interpretation">6.2 CLT Interpretation</h3>
+<p>If each Compton-wavelength-sized region of the atom’s volume
+contributes an independent “sample” to the electron’s effective
+position, the CLT would predict:</p>
+<p><span class="math display">\[\text{Position uncertainty} \propto
+\frac{\bar{\lambda}_C}{\sqrt{N_{\text{spatial}}}} =
+\frac{\bar{\lambda}_C}{\sqrt{137}} \approx 0.085 \cdot
+\bar{\lambda}_C\]</span></p>
+<p>This is qualitatively consistent with the hydrogen ground state: the
+electron probability distribution has width <span
+class="math inline">\(\sim a_0 = 137 \cdot \bar{\lambda}_C\)</span>, not
+<span class="math inline">\(\bar{\lambda}_C/\sqrt{137}\)</span>. The CLT
+analogy is structural (the number 137 appears as a scale factor), not
+quantitative (the convergence rate does not match <span
+class="math inline">\(\sqrt{N}\)</span>).</p>
+<h3 id="convention-dependence">6.3 Convention Dependence</h3>
+<p>The spatial ratio yields 137 only with the <strong>reduced</strong>
+Compton wavelength. Using the full Compton wavelength gives <span
+class="math inline">\(a_0 / \lambda_C = 1/(2\pi\alpha) \approx
+21.8\)</span>. The reduced convention is the natural choice for spatial
+comparisons because it corresponds to <span
+class="math inline">\(1/k\)</span> rather than <span
+class="math inline">\(2\pi/k\)</span> in wave mechanics — but the reader
+should be aware that this convention choice is what produces the
+suggestive number 137.</p>
+<hr />
+<h2 id="the-temporal-genesis-n_texttemporal-1alpha2-approx-18800">7. The
+Temporal Genesis: <span class="math inline">\(N_{\text{temporal}} =
+1/\alpha^2 \approx 18{,}800\)</span></h2>
+<h3 id="the-picture-1">7.1 The Picture</h3>
+<p>The Compton time <span class="math inline">\(\tau_C \approx 8.09
+\times 10^{-21}\)</span> s is the time for light to traverse one full
+Compton wavelength. It is the fundamental “tick” of the electron’s
+quantum field — the timescale below which the single-particle picture
+breaks down.</p>
+<p>The orbital period <span class="math inline">\(T \approx 1.52 \times
+10^{-16}\)</span> s is the classical period of an electron in the
+hydrogen ground state.</p>
+<p>The ratio <span class="math inline">\(T / \tau_C = 1/\alpha^2 \approx
+18{,}800\)</span> means: <strong>one classical orbit contains
+approximately 18,800 Compton ticks.</strong></p>
+<h3 id="the-n2-relationship">7.2 The <span
+class="math inline">\(N^2\)</span> Relationship</h3>
+<p>Why <span class="math inline">\(N_{\text{temporal}} =
+N_{\text{spatial}}^2\)</span>? The kinematics force it:</p>
+<p><span class="math display">\[T = \frac{2\pi a_0}{\alpha c} =
+\frac{2\pi (N_{\text{spatial}} \cdot \bar{\lambda}_C)}{\alpha c} =
+\frac{2\pi N_{\text{spatial}}}{\alpha} \cdot
+\frac{\bar{\lambda}_C}{c}\]</span></p>
+<p>Using <span class="math inline">\(\tau_C = 2\pi \bar{\lambda}_C /
+c\)</span> (full Compton time):</p>
+<p><span class="math display">\[T = \frac{N_{\text{spatial}}}{\alpha}
+\cdot \tau_C = N_{\text{spatial}}^2 \cdot \tau_C\]</span></p>
+<p>The spatial scale separation enters twice: once through the orbit
+circumference (<span class="math inline">\(\propto a_0 \propto
+N_{\text{spatial}}\)</span>) and once through the orbital velocity
+(<span class="math inline">\(v = \alpha c =
+c/N_{\text{spatial}}\)</span>).</p>
+<p><strong>Statistical interpretation:</strong> If each unit of orbital
+arc requires a fresh set of <span
+class="math inline">\(N_{\text{spatial}}\)</span> Compton events, the
+total events per complete orbit is <span
+class="math inline">\(N_{\text{spatial}} \times N_{\text{spatial}} =
+N_{\text{spatial}}^2\)</span>.</p>
+<h3 id="the-convention-asymmetry-restated">7.3 The Convention Asymmetry
+(Restated)</h3>
+<p>The <span class="math inline">\(N^2\)</span> relationship is clean
+only because of the convention mixing: reduced Compton for spatial, full
+Compton for temporal. This is kinematically forced (not cherry-picked),
+but it means the temporal ratio is not an independent observation — it
+is a consequence of the spatial ratio plus orbit kinematics. The
+project’s thesis must acknowledge this dependence.</p>
+<hr />
+<h2 id="evidence-and-supporting-structures">8. Evidence and Supporting
+Structures</h2>
+<h3 id="the-hydrogen-ground-state-exponential-not-gaussian">8.1 The
+Hydrogen Ground State: Exponential, Not Gaussian</h3>
+<p>The hydrogen ground state wavefunction is:</p>
+<p><span class="math display">\[\psi_{1s}(r) = \frac{1}{\sqrt{\pi
+a_0^3}} e^{-r/a_0}\]</span></p>
+<p>The radial probability density <span class="math inline">\(P(r)
+\propto r^2 e^{-2r/a_0}\)</span> is an exponential distribution with
+coefficient of variation <span class="math inline">\(\text{CV} =
+1\)</span>.</p>
+<p><strong>Why this matters:</strong> The exponential distribution is
+the <strong>maximum-entropy distribution</strong> for a positive random
+variable with a fixed mean (Jaynes, 1957). If the electron’s radial
+position is a random variable constrained only by its mean value (the
+Bohr radius), the MaxEnt principle selects the exponential — exactly
+what we observe in the hydrogen ground state.</p>
+<p>This is a statistical argument for why the ground state has the form
+it does — not a proof of CLT emergence, but a consistency check: the
+observed distribution is the one that maximizes entropy given the
+constraint.</p>
+<h3 id="the-gaussian-is-not-the-ground-state">8.2 The Gaussian Is NOT
+the Ground State</h3>
+<p>A naive CLT would predict a <strong>Gaussian</strong> ground state.
+The hydrogen ground state is exponential, not Gaussian.</p>
+<p><strong>Resolution:</strong> The CLT applies to sums of random
+variables. The electron’s radial position is not a sum — it is a
+magnitude. In the statistical genesis picture, the CLT convergence
+happens at the level of quantum field fluctuations that
+<strong>produce</strong> the effective potential in which the electron
+moves. The exponential ground state is the equilibrium distribution of
+the emergent dynamics — which, by MaxEnt, is the right answer.</p>
+<p>The Poisson/MaxEnt connection (<span
+class="math inline">\(0.5.md\)</span>) explores this in detail: the
+exponential ground state is consistent with statistical emergence, but
+through the MaxEnt route rather than the direct CLT route.</p>
+<h3 id="scale-separation-alpha-ll-1">8.3 Scale Separation: <span
+class="math inline">\(\alpha \ll 1\)</span></h3>
+<p>The fine-structure constant is small: <span
+class="math inline">\(\alpha \approx 1/137 \ll 1\)</span>. This is why
+QED is perturbatively tractable. In the statistical genesis picture,
+small <span class="math inline">\(\alpha\)</span> means
+<strong>many</strong> samples (<span
+class="math inline">\(N_{\text{eff}} \gg 1\)</span>), which means
+<strong>good</strong> convergence. If <span
+class="math inline">\(\alpha\)</span> were <span
+class="math inline">\(O(1)\)</span>, atoms would be only a few Compton
+wavelengths across, and classical stability would not emerge.</p>
+<h3 id="numerical-suggestiveness">8.4 Numerical Suggestiveness</h3>
+<p>The numbers are suggestive but not probative:</p>
+<ul>
+<li><span class="math inline">\(1/\alpha \approx 137.036\)</span> is
+close to an integer (137) — but not exactly</li>
+<li><span class="math inline">\(1/\alpha^2 \approx 18{,}779\)</span> is
+close to a round number (18,800) — but not exactly</li>
+<li>The <span class="math inline">\(1/\alpha \approx
+\alpha^{-1}\)</span> relationship with <span
+class="math inline">\(1/\alpha^2 \approx \alpha^{-2}\)</span> is a
+mathematical identity, not a discovery</li>
+</ul>
+<p>These numerical coincidences are <strong>heuristic pointers</strong>
+— they suggest a counting interpretation, but they do not constitute
+evidence.</p>
+<hr />
+<h2 id="the-four-load-bearing-gaps">9. The Four Load-Bearing Gaps</h2>
+<p>The statistical genesis hypothesis has four acknowledged weaknesses.
+Each has been systematically explored in companion documents with
+quantitative Python verification.</p>
+<h3 id="gap-1-renormalization-group-connection-weakest-star">9.1 Gap 1:
+Renormalization Group Connection — WEAKEST <span
+class="math inline">\(\star\)</span></h3>
+<p><strong>The question:</strong> Does the running of <span
+class="math inline">\(\alpha\)</span> with energy have a CLT
+interpretation?</p>
+<p><strong>The problem:</strong> In quantum field theory, <span
+class="math inline">\(\alpha\)</span> is not constant — it runs with
+energy due to vacuum polarization:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Energy scale</th>
+<th style="text-align: left;"><span
+class="math inline">\(\alpha\)</span></th>
+<th style="text-align: left;"><span
+class="math inline">\(1/\alpha\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Thomson limit (0 eV)</td>
+<td style="text-align: left;"><span
+class="math inline">\(1/137.036\)</span></td>
+<td style="text-align: left;">137.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Z-pole (91.2 GeV)</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+1/128\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+128\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">10 TeV</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+1/129\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+132\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>The effective sample size <span class="math inline">\(N_{\text{eff}}
+= 1/\alpha\)</span> <strong>decreases</strong> with energy (137 <span
+class="math inline">\(\to\)</span> 128). This is the opposite of naive
+CLT expectation: at higher energies, we probe shorter distances, and
+there should be <strong>fewer</strong> Compton-scale events to average
+over.</p>
+<p>The QED <span class="math inline">\(\beta\)</span>-function governs
+this running:</p>
+<p><span class="math display">\[\beta(\alpha) = \mu \frac{d\alpha}{d\mu}
+= \frac{2\alpha^2}{3\pi} + O(\alpha^3)\]</span></p>
+<p>This <span class="math inline">\(\beta\)</span>-function has
+<strong>no known connection to the Central Limit Theorem.</strong> It is
+derived from vacuum polarization diagrams, not from statistical
+convergence.</p>
+<p><strong>Partial salvage — UV-flow perspective:</strong> Viewing the
+RG flow from the Planck scale downward (UV <span
+class="math inline">\(\to\)</span> IR), integrated degrees of freedom
+<strong>increase</strong> as energy decreases. At the Planck scale,
+<span class="math inline">\(N_{\text{eff}}\)</span> may be small; as the
+universe cools, <span class="math inline">\(N_{\text{eff}}\)</span>
+grows to <span class="math inline">\(\approx 137\)</span> at atomic
+energies. This perspective makes the RG flow consistent with the CLT
+direction — but depends on an unknown UV boundary condition.</p>
+<p><strong>Verdict:</strong> This is the <strong>weakest link.</strong>
+The RG-statistical connection is an unproven analogy. This gap receives
+the most text because it is the most directly contradictory — the RG
+flow runs opposite to naive CLT expectation — making it the gap that
+most needs explicit acknowledgment.</p>
+<h3 id="gap-2-dyson-stability-bound-not-prediction-starstarstar">9.2 Gap
+2: Dyson Stability — Bound, Not Prediction <span
+class="math inline">\(\star\star\star\)</span></h3>
+<p><strong>The question:</strong> Does the stability of matter uniquely
+predict <span class="math inline">\(\alpha \approx 1/137\)</span>?</p>
+<p><strong>Known bounds:</strong></p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 44%" />
+<col style="width: 29%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Bound</th>
+<th style="text-align: left;">Constraint</th>
+<th style="text-align: left;">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Dirac stability (hydrogen)</td>
+<td style="text-align: left;"><span class="math inline">\(\alpha &lt;
+1\)</span></td>
+<td style="text-align: left;">Ground state must exist</td>
+</tr>
+<tr>
+<td style="text-align: left;">Thermal binding</td>
+<td style="text-align: left;"><span class="math inline">\(\alpha &gt;
+3.18 \times 10^{-4}\)</span></td>
+<td style="text-align: left;">Binding energy exceeds <span
+class="math inline">\(kT\)</span> at 300 K</td>
+</tr>
+<tr>
+<td style="text-align: left;">Bulk matter stability</td>
+<td style="text-align: left;"><span class="math inline">\(\alpha &lt;
+O(1)\)</span></td>
+<td style="text-align: left;">Dyson-Lenard + Lieb-Thirring</td>
+</tr>
+<tr>
+<td style="text-align: left;">Chemistry constraint</td>
+<td style="text-align: left;">Unknown</td>
+<td style="text-align: left;">Periodic table diversity, covalent
+bonding</td>
+</tr>
+</tbody>
+</table>
+<p>The permitted range from combined bounds: <span
+class="math inline">\(3.18 \times 10^{-4} &lt; \alpha &lt; 1\)</span>,
+spanning a factor of <span class="math inline">\(\sim
+3{,}144\times\)</span>. The observed <span class="math inline">\(\alpha
+= 1/137\)</span> sits comfortably in the middle.</p>
+<p><strong>The chemistry bottleneck:</strong> The real constraint is
+chemistry: what range of <span class="math inline">\(\alpha\)</span>
+permits a diverse periodic table, covalent bonding (C, O, N), and
+complex molecules? This constraint is <strong>not yet
+quantified.</strong> Computational studies (lattice QED, DFT with
+variable <span class="math inline">\(\alpha\)</span>) are needed (<span
+class="math inline">\(0.15.md\)</span>, Model 1).</p>
+<p><strong>Verdict:</strong> Anthropic reasoning survives as a
+<strong>bound</strong> (“<span class="math inline">\(\alpha\)</span>
+must be small enough for stable atoms”) but not as a
+<strong>prediction</strong> (“<span
+class="math inline">\(\alpha\)</span> must be <span
+class="math inline">\(1/137\)</span>”).</p>
+<h3
+id="gap-3-poissonmaxent-statistics-strong-but-untested-starstarstar">9.3
+Gap 3: Poisson/MaxEnt Statistics — Strong but Untested <span
+class="math inline">\(\star\star\star\)</span></h3>
+<p><strong>The question:</strong> Does the hydrogen ground state’s
+exponential form imply a statistical origin?</p>
+<p><strong>What we know:</strong> - The hydrogen ground state is
+exponential (CV = 1), not Gaussian - The exponential is the unique
+MaxEnt distribution for a positive variable with fixed mean - If
+stochastic mechanics is correct, Poisson counting statistics (Fano
+factor = 1) are predicted - The Compton timescale (<span
+class="math inline">\(\sim 10^{-21}\)</span> s) creates an experimental
+barrier</p>
+<p><strong>What we don’t know:</strong> - Can we distinguish Poisson
+(Fano = 1) from Gaussian fluctuations at the atomic scale? - <span
+class="math inline">\(0.5.py\)</span> shows: with <span
+class="math inline">\(N \sim 10^2\)</span>–<span
+class="math inline">\(10^3\)</span> counts, Poisson and Gaussian are
+distinguishable. But we cannot count individual Compton events.</p>
+<p><strong>Verdict:</strong> The MaxEnt connection is physically
+well-motivated. The Compton timescale barrier prevents current
+experimental falsification.</p>
+<h3
+id="gap-4-quantum-hall-effect-universality-double-edged-starstar">9.4
+Gap 4: Quantum Hall Effect Universality — Double-Edged <span
+class="math inline">\(\star\star\)</span></h3>
+<p><strong>The question:</strong> Does <span
+class="math inline">\(\alpha\)</span>‘s universal appearance in the QHE
+support or undermine the hypothesis?</p>
+<p><strong>The observation:</strong> <span
+class="math inline">\(\alpha\)</span> from the von Klitzing constant
+<span class="math inline">\(R_K = h/e^2\)</span> matches atomic <span
+class="math inline">\(\alpha\)</span> to <span
+class="math inline">\(\sim 5 \times 10^{-10}\)</span>, spanning <span
+class="math inline">\(\sim 10^7\)</span> in length scale.</p>
+<p><strong>Two interpretations:</strong> 1. <strong>FOR statistical
+genesis:</strong> Scale-invariant statistical convergence — the same
+CLT-like process operates at all scales. Topological protection (Chern
+number) provides a synthesis-compatible bridge. 2. <strong>AGAINST
+statistical genesis:</strong> Universality shows <span
+class="math inline">\(\alpha\)</span> is a <strong>fundamental coupling
+constant</strong>, not emergent. If <span
+class="math inline">\(\alpha\)</span> were emergent from atomic-scale
+dynamics, why would it appear identically in 2D electron gases?</p>
+<p><strong>Verdict: Double-edged.</strong> Current experiments cannot
+distinguish. The topological bridge (Chern number as CLT-invariant) is
+appealing but not experimentally testable.</p>
+<h3 id="gap-summary">9.5 Gap Summary</h3>
+<table>
+<colgroup>
+<col style="width: 12%" />
+<col style="width: 25%" />
+<col style="width: 35%" />
+<col style="width: 27%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Gap</th>
+<th style="text-align: left;">Strength</th>
+<th style="text-align: left;">Core Finding</th>
+<th style="text-align: left;">Companion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">RG Connection</td>
+<td style="text-align: left;"><span
+class="math inline">\(\star\)</span></td>
+<td style="text-align: left;">QED <span
+class="math inline">\(\beta\)</span>-function has no CLT connection;
+UV-flow gives partial salvage</td>
+<td style="text-align: left;"><span
+class="math inline">\(0.6.md\)</span>, <span
+class="math inline">\(0.6.py\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Dyson Stability</td>
+<td style="text-align: left;"><span
+class="math inline">\(\star\star\star\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(\alpha\)</span> range spans 3,144<span
+class="math inline">\(\times\)</span>; anthropic claim is bound, not
+prediction</td>
+<td style="text-align: left;"><span
+class="math inline">\(0.3.md\)</span>, <span
+class="math inline">\(0.3.py\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">Poisson/MaxEnt</td>
+<td style="text-align: left;"><span
+class="math inline">\(\star\star\star\)</span></td>
+<td style="text-align: left;">Exponential = MaxEnt; Compton barrier
+blocks tests</td>
+<td style="text-align: left;"><span
+class="math inline">\(0.5.md\)</span>, <span
+class="math inline">\(0.5.py\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">QHE Universality</td>
+<td style="text-align: left;"><span
+class="math inline">\(\star\star\)</span></td>
+<td style="text-align: left;">Double-edged; topological bridge;
+experiments cannot distinguish</td>
+<td style="text-align: left;"><span
+class="math inline">\(0.4.md\)</span>, <span
+class="math inline">\(0.4.py\)</span></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="the-agent-and-quantum-darwinism">10. The Agent and Quantum
+Darwinism</h2>
+<h3 id="why-the-agent-matters">10.1 Why the Agent Matters</h3>
+<p>“Appearance” requires an observer. Stable classical appearance
+requires not just a statistical process but an <strong>agent</strong> —
+something that registers the convergent result. Without an agent,
+“appearance” has no meaning.</p>
+<h3 id="operational-agent-definition">10.2 Operational Agent
+Definition</h3>
+<p>An agent satisfies four criteria:</p>
+<ol type="1">
+<li><strong>Redundancy intercept:</strong> Can access multiple copies of
+the same environmental information (Quantum Darwinism)</li>
+<li><strong>Coarse-graining:</strong> Resolution is coarser than the
+quantum grain — integrates over many Compton events</li>
+<li><strong>Persistence:</strong> Maintains stable internal state across
+multiple Compton periods (<span class="math inline">\(\gg
+10^{-21}\)</span> s)</li>
+<li><strong>Interaction:</strong> Couples strongly enough to register
+the system but weakly enough not to destroy the pointer state</li>
+</ol>
+<h3 id="quantum-darwinism-and-redundancy">10.3 Quantum Darwinism and
+Redundancy</h3>
+<p>Zurek’s Quantum Darwinism (2003) provides the mechanism:
+environmental decoherence selects <strong>pointer states</strong>
+redundantly recorded in many fragments of the environment. Multiple
+observers accessing different fragments obtain consistent
+information.</p>
+<p>The key parameter is <strong>redundancy</strong> <span
+class="math inline">\(R_\delta\)</span> — the number of distinct
+environmental fragments from which an observer can determine the pointer
+state:</p>
+<p><span class="math display">\[R_\delta = \frac{\text{accessible
+environment fragments}}{\text{minimum fragments needed}}\]</span></p>
+<p>Known values (<span class="math inline">\(0.13.md\)</span>): <span
+class="math inline">\(R_\delta \sim 10^3\)</span>–<span
+class="math inline">\(10^8\)</span> for photon scattering, <span
+class="math inline">\(10^2\)</span>–<span
+class="math inline">\(10^4\)</span> for spin baths.</p>
+<h3 id="multiplication-of-sample-size">10.4 Multiplication of Sample
+Size</h3>
+<p>Quantum Darwinism multiplies the effective sample size:</p>
+<p><span class="math display">\[N_{\text{eff, total}} \approx
+N_{\text{CLT}} \times R_\delta\]</span></p>
+<p>For a macroscopic observer (<span class="math inline">\(R_\delta \sim
+10^3\)</span>–<span class="math inline">\(10^8\)</span>), the effective
+sample size is vastly larger than the atom’s own CLT convergence (<span
+class="math inline">\(N \approx 137\)</span> spatial, <span
+class="math inline">\(\approx 18{,}800\)</span> temporal). Classical
+appearance is <strong>overdetermined</strong> by environmental
+redundancy.</p>
+<p>The full hierarchy from atom to macroscopic consensus:</p>
+<p><span class="math display">\[\text{Compton grain} \xrightarrow{137}
+\text{Atom (pointer states)} \xrightarrow{10^3-10^8} \text{Macroscopic
+consensus}\]</span></p>
+<hr />
+<h2 id="beyond-alpha-the-cosmological-constant">11. Beyond Alpha: The
+Cosmological Constant</h2>
+<p>The fine-structure constant is not the only dimensionless constant
+with a natural counting interpretation. The cosmological constant — the
+dimensionless ratio <span class="math inline">\(\rho_\Lambda /
+\rho_{Pl}\)</span> — is arguably a stronger candidate.</p>
+<h3 id="the-numbers">11.1 The Numbers</h3>
+<p>Observed dark energy density: <span
+class="math inline">\(\rho_\Lambda \approx (2.3 \times 10^{-3}\
+\text{eV})^4\)</span>. Planck density: <span
+class="math inline">\(\rho_{Pl} \approx 5.2 \times 10^{111}\
+\text{J/m}^3\)</span>.</p>
+<p><span class="math display">\[\frac{\rho_\Lambda}{\rho_{Pl}} \approx
+10^{-122}\]</span></p>
+<h3 id="the-counting-interpretation">11.2 The Counting
+Interpretation</h3>
+<p>The de Sitter entropy of the cosmic horizon:</p>
+<p><span class="math display">\[S_{dS} = \frac{A}{4 l_{Pl}^2} \approx
+10^{122}\]</span></p>
+<p>This is the number of Planck-area “pixels” on the cosmological
+horizon. The cosmological constant then follows:</p>
+<p><span class="math display">\[\rho_\Lambda \sim
+\frac{\rho_{Pl}}{S_{dS}} \sim \frac{\rho_{Pl}}{10^{122}} \sim 10^{-122}
+\rho_{Pl}\]</span></p>
+<p>This is the same pattern as the atom: the observable quantity equals
+the fundamental grain divided by the effective sample size. For the
+atom, the grain is the Compton wavelength and the sample size is <span
+class="math inline">\(1/\alpha \approx 137\)</span>. For the universe,
+the grain is the Planck density and the sample size is <span
+class="math inline">\(S_{dS} \sim 10^{122}\)</span>.</p>
+<h3 id="why-the-cosmological-constant-is-stronger">11.3 Why the
+Cosmological Constant Is Stronger</h3>
+<table>
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 28%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Criterion</th>
+<th style="text-align: left;"><span
+class="math inline">\(\alpha\)</span> (<span
+class="math inline">\(1/137\)</span>)</th>
+<th style="text-align: left;"><span
+class="math inline">\(\rho_\Lambda/\rho_{Pl}\)</span> (<span
+class="math inline">\(10^{-122}\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Natural counting</td>
+<td style="text-align: left;">Yes (spatial pixels)</td>
+<td style="text-align: left;">Yes (horizon pixels)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Convention-independent</td>
+<td style="text-align: left;"><strong>No</strong> (reduced vs. full
+Compton)</td>
+<td style="text-align: left;"><strong>Yes</strong> (<span
+class="math inline">\(S = A/4G\)</span> is universal)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Framework prediction</td>
+<td style="text-align: left;"><strong>No</strong></td>
+<td style="text-align: left;"><strong>Yes</strong> (causal set: <span
+class="math inline">\(\Lambda \sim 1/\sqrt{N}\)</span>,
+order-of-magnitude <span class="math inline">\(10^{-122}\)</span>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Magnitude</td>
+<td style="text-align: left;">Moderate (137)</td>
+<td style="text-align: left;"><strong>Extreme</strong> (<span
+class="math inline">\(10^{122}\)</span> — strongest signal in
+physics)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Existing theory</td>
+<td style="text-align: left;">Weak (analogy only)</td>
+<td style="text-align: left;"><strong>Strong</strong> (holography,
+Jacobson, causal sets)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other-constants-assessed">11.4 Other Constants Assessed</h3>
+<p><span class="math inline">\(0.7.md\)</span> systematically assessed
+six constants. Summary:</p>
+<table>
+<colgroup>
+<col style="width: 24%" />
+<col style="width: 17%" />
+<col style="width: 19%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Constant</th>
+<th style="text-align: left;">Value</th>
+<th style="text-align: center;">Rating</th>
+<th style="text-align: left;">Key Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\alpha\)</span> (fine-structure)</td>
+<td style="text-align: left;"><span
+class="math inline">\(1/137\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\star\star\star\star\star\)</span></td>
+<td style="text-align: left;">No framework predicts <span
+class="math inline">\(1/137\)</span> from counting</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\rho_\Lambda/\rho_{Pl}\)</span> (CC)</td>
+<td style="text-align: left;"><span
+class="math inline">\(10^{-122}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\star\star\star\star\)</span></td>
+<td style="text-align: left;">de Sitter vs. observed tension</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(m_p/M_{Pl}\)</span> (hierarchy)</td>
+<td style="text-align: left;"><span
+class="math inline">\(10^{-19}\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\star\star\star\)</span></td>
+<td style="text-align: left;">Extra-dimensional volume as count; no
+unique framework</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(m_e/m_p\)</span> (mass ratio)</td>
+<td style="text-align: left;"><span
+class="math inline">\(1/1836\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\star\star\)</span></td>
+<td style="text-align: left;">Decomposes into multiple free
+parameters</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\alpha_s\)</span> (strong coupling)</td>
+<td style="text-align: left;"><span
+class="math inline">\(0.118\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\star\star\)</span></td>
+<td style="text-align: left;">Already RG-emergent; no counting
+interpretation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\sin^2\theta_W\)</span> (Weinberg)</td>
+<td style="text-align: left;"><span
+class="math inline">\(0.23\)</span></td>
+<td style="text-align: center;"><span
+class="math inline">\(\star\star\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(O(1)\)</span>;
+no scale separation</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="the-full-hierarchy-from-planck-to-macroscopic">12. The Full
+Hierarchy: From Planck to Macroscopic</h2>
+<h3 id="the-stacked-picture">12.1 The Stacked Picture</h3>
+<p>If statistical genesis is correct, nature consists of a stacked
+hierarchy:</p>
+<p><span class="math display">\[\text{Planck grain} \xrightarrow{N \sim
+10^{122}} \text{Spacetime} \xrightarrow{N \sim 10^{17}} \text{Gauge
+structure} \xrightarrow{} \text{Particles} \xrightarrow{N \sim 137}
+\text{Atoms} \xrightarrow{N \gg 10^6} \text{Macroscopic}\]</span></p>
+<h3 id="the-layers-in-detail">12.2 The Layers in Detail</h3>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 16%" />
+<col style="width: 24%" />
+<col style="width: 16%" />
+<col style="width: 18%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Layer</th>
+<th style="text-align: left;">Transition</th>
+<th style="text-align: left;"><span
+class="math inline">\(N_{\text{eff}}\)</span></th>
+<th style="text-align: left;">Observable</th>
+<th style="text-align: left;">Key Constant</th>
+<th style="text-align: left;">Framework</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">0</td>
+<td style="text-align: left;">Quantum gravity substrate</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Spacetime quanta</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Speculative</td>
+</tr>
+<tr>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">Substrate <span
+class="math inline">\(\to\)</span> Spacetime</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+10^{122}\)</span></td>
+<td style="text-align: left;">Classical spacetime, gravity</td>
+<td style="text-align: left;"><span
+class="math inline">\(\rho_\Lambda/\rho_{Pl}\)</span></td>
+<td style="text-align: left;">Holography, causal sets, Jacobson</td>
+</tr>
+<tr>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">Spacetime <span
+class="math inline">\(\to\)</span> Gauge structure</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+10^{17}\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(SU(3) \times
+SU(2) \times U(1)\)</span></td>
+<td style="text-align: left;"><span
+class="math inline">\(v/M_{Pl}\)</span></td>
+<td style="text-align: left;"><strong>MISSING RUNG</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">Gauge <span
+class="math inline">\(\to\)</span> Particle spectrum</td>
+<td style="text-align: left;"><span class="math inline">\(\sim
+10^2\)</span></td>
+<td style="text-align: left;">Quarks, leptons, Higgs</td>
+<td style="text-align: left;">Yukawa couplings</td>
+<td style="text-align: left;">Weak</td>
+</tr>
+<tr>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">Compton <span
+class="math inline">\(\to\)</span> Bohr</td>
+<td style="text-align: left;"><span class="math inline">\(\approx
+137\)</span>, <span class="math inline">\(18{,}800\)</span></td>
+<td style="text-align: left;">Stable atoms</td>
+<td style="text-align: left;"><span
+class="math inline">\(\alpha\)</span></td>
+<td style="text-align: left;">This project</td>
+</tr>
+<tr>
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">Bohr <span
+class="math inline">\(\to\)</span> Macro</td>
+<td style="text-align: left;"><span class="math inline">\(\gg
+10^6\)</span></td>
+<td style="text-align: left;">Classical objects</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">Decoherence</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-same-pattern-at-every-layer">12.3 The Same Pattern at Every
+Layer</h3>
+<p><span class="math display">\[\text{Observable} =
+\frac{\text{Fundamental grain}}{\text{Effective sample
+size}}\]</span></p>
+<ul>
+<li><strong>Layer 1:</strong> <span class="math inline">\(\rho_\Lambda =
+\rho_{Pl} / S_{dS}\)</span> — the cosmological constant is Planck
+density divided by <span class="math inline">\(10^{122}\)</span> horizon
+pixels</li>
+<li><strong>Layer 4:</strong> <span class="math inline">\(a_0 =
+\bar{\lambda}_C \cdot (1/\alpha)\)</span> — the Bohr radius is the
+Compton wavelength times 137</li>
+<li><strong>Layer 5:</strong> Classical objects are atomic-scale
+structures averaged over <span class="math inline">\(10^6\)</span>–<span
+class="math inline">\(10^{12}\)</span> atomic units</li>
+</ul>
+<p>The dimensionless constants are the reciprocals of the CLT sample
+sizes at each transition.</p>
+<hr />
+<h2 id="the-missing-rung-gauge-symmetry-emergence">13. The Missing Rung:
+Gauge Symmetry Emergence</h2>
+<h3 id="the-problem">13.1 The Problem</h3>
+<p>Layer 2 — emergence of <span class="math inline">\(SU(3)_C \times
+SU(2)_L \times U(1)_Y\)</span> from the quantum-informational substrate
+— has <strong>no concrete statistical mechanism.</strong> This is the
+“missing rung” (<span class="math inline">\(0.11.md\)</span>).</p>
+<h3 id="why-its-hard">13.2 Why It’s Hard</h3>
+<ol type="1">
+<li><strong>Gauge symmetries are exact, not approximate.</strong>
+Statistical emergence typically produces approximate structures.</li>
+<li><strong>The group structure is specific.</strong> Why <span
+class="math inline">\(SU(3) \times SU(2) \times U(1)\)</span> among
+infinitely many Lie groups?</li>
+<li><strong>Fermion representations are discrete choices.</strong>
+Quarks as <span class="math inline">\((3, 2, 1/6)\)</span>, leptons as
+<span class="math inline">\((1, 2, -1/2)\)</span> — discrete, not
+continuous.</li>
+<li><strong>The hierarchy spans 17 orders of magnitude.</strong> From
+<span class="math inline">\(M_{Pl} \sim 10^{19}\)</span> GeV to <span
+class="math inline">\(v \sim 10^2\)</span> GeV.</li>
+</ol>
+<h3 id="existing-approaches-none-statistical">13.3 Existing Approaches
+(None Statistical)</h3>
+<ul>
+<li><strong>String theory:</strong> Gauge group from compactification
+geometry (geometric, not statistical)</li>
+<li><strong>Grand unification:</strong> <span
+class="math inline">\(SU(5)\)</span>, <span
+class="math inline">\(SO(10)\)</span> — symmetry breaking, not
+emergence</li>
+<li><strong>Non-commutative geometry (Connes):</strong> SM from spectral
+action (algebraic, not statistical)</li>
+</ul>
+<h3 id="speculative-pathways-llm-inferred">13.4 Speculative Pathways
+<span class="math inline">\([LLM-INFERRED]\)</span></h3>
+<ol type="1">
+<li><strong>Entanglement structure:</strong> Gauge symmetries as robust
+entanglement patterns surviving coarse-graining</li>
+<li><strong>RG attractors:</strong> Gauge groups as statistical
+attractors under RG flow</li>
+<li><strong>Landscape selection:</strong> Anthropic selection from a
+multiverse</li>
+</ol>
+<p>None has produced a quantitative result. The missing rung is the
+<strong>largest open problem.</strong></p>
+<hr />
+<h2 id="anthropic-bounds-statistical-reframing">14. Anthropic Bounds:
+Statistical Reframing</h2>
+<h3 id="standard-anthropic-argument">14.1 Standard Anthropic
+Argument</h3>
+<p>“If <span class="math inline">\(\alpha\)</span> were different, we
+wouldn’t be here to observe it — therefore the observed value is
+anthropically selected.”</p>
+<h3 id="statistical-genesis-reframing">14.2 Statistical Genesis
+Reframing</h3>
+<p><span class="math inline">\(N_{\text{eff}} = 1/\alpha \approx
+137\)</span> is the number of independent quantum events a macroscopic
+agent must average over to register a stable atom. The anthropic
+constraint is on the effective sample size:</p>
+<ul>
+<li><strong>Too few samples (large <span
+class="math inline">\(\alpha\)</span>):</strong> Atoms are small and
+unstable; agents cannot form</li>
+<li><strong>Too many samples (small <span
+class="math inline">\(\alpha\)</span>):</strong> Atoms are large but too
+weakly bound for chemistry</li>
+<li><strong>Just right (<span class="math inline">\(N \approx
+137\)</span>):</strong> Atoms are stable at the scale where chemistry
+and observers are possible</li>
+</ul>
+<p>The quantity being anthropically selected is not a fundamental
+coupling constant — it is the <strong>effective sample size</strong>
+determining whether statistical convergence produces stable classical
+appearance.</p>
+<h3 id="bound-vs.-prediction">14.3 Bound vs. Prediction</h3>
+<p>The anthropic argument works as a <strong>bound</strong> but not a
+<strong>prediction.</strong> The chemistry constraint (what <span
+class="math inline">\(\alpha\)</span> permits complex molecules) remains
+the unquantified bottleneck (<span
+class="math inline">\(0.14.md\)</span>).</p>
+<hr />
+<h2 id="computational-and-experimental-pathways">15. Computational and
+Experimental Pathways</h2>
+<h3 id="computational-models-from-0.15.md">15.1 Computational Models
+(from <span class="math inline">\(0.15.md\)</span>)</h3>
+<table>
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 20%" />
+<col style="width: 26%" />
+<col style="width: 40%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: left;">Priority</th>
+<th style="text-align: left;">Feasibility</th>
+<th style="text-align: left;">What It Would Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Lattice QED + <span
+class="math inline">\(\alpha\)</span> scanning</td>
+<td style="text-align: left;"><strong>HIGHEST</strong></td>
+<td style="text-align: left;">Moderate</td>
+<td style="text-align: left;">Is <span class="math inline">\(\alpha =
+1/137\)</span> special for chemistry?</td>
+</tr>
+<tr>
+<td style="text-align: left;">Random matrix emergent QED</td>
+<td style="text-align: left;">HIGH</td>
+<td style="text-align: left;">Moderate</td>
+<td style="text-align: left;">Can gauge theory emerge from free
+CLT?</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tensor network geometry</td>
+<td style="text-align: left;">MEDIUM</td>
+<td style="text-align: left;">Low (frontier)</td>
+<td style="text-align: left;">Connection to holographic emergence</td>
+</tr>
+<tr>
+<td style="text-align: left;">Causal set <span
+class="math inline">\(\Lambda\)</span></td>
+<td style="text-align: left;">MEDIUM</td>
+<td style="text-align: left;">Moderate</td>
+<td style="text-align: left;">Verifies <span
+class="math inline">\(\Lambda \sim 1/\sqrt{N}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Model 1</strong> is the most actionable: determine the range
+of <span class="math inline">\(\alpha\)</span> for which hydrogen has a
+stable ground state, carbon forms four covalent bonds, and the periodic
+table has at least 10 stable elements.</p>
+<h3 id="experimental-falsification">15.2 Experimental Falsification</h3>
+<table>
+<colgroup>
+<col style="width: 19%" />
+<col style="width: 36%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Claim</th>
+<th style="text-align: left;">Falsified by</th>
+<th style="text-align: left;">Current Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CLT produces <span
+class="math inline">\(1/\alpha \sim O(100)\)</span></td>
+<td style="text-align: left;">Stability insensitive to <span
+class="math inline">\(\alpha\)</span> over <span
+class="math inline">\(\gg 3{,}144\times\)</span> range</td>
+<td style="text-align: left;">Not tested</td>
+</tr>
+<tr>
+<td style="text-align: left;">Exponential = MaxEnt</td>
+<td style="text-align: left;">Ground state CV significantly <span
+class="math inline">\(\neq 1\)</span></td>
+<td style="text-align: left;">Not tested (Compton barrier)</td>
+</tr>
+<tr>
+<td style="text-align: left;">CLT interpretation of ratios</td>
+<td style="text-align: left;">Non-statistical structure at Compton-Bohr
+interface</td>
+<td style="text-align: left;">Not tested</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\alpha\)</span> running = CLT</td>
+<td style="text-align: left;"><span
+class="math inline">\(\beta\)</span>-function derived from
+statistics</td>
+<td style="text-align: left;"><strong>Contradicted</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(\alpha\)</span> constant at all scales</td>
+<td style="text-align: left;"><span
+class="math inline">\(\alpha\)</span> varies with energy</td>
+<td style="text-align: left;"><strong>Contradicted</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-compton-barrier">15.3 The Compton Barrier</h3>
+<p>The Compton timescale is <span class="math inline">\(\sim
+10^{-21}\)</span> s. Current technology cannot resolve individual events
+at this timescale. The statistical genesis hypothesis may remain
+<strong>experimentally untestable</strong> until sub-attosecond
+resolution technologies are developed.</p>
+<hr />
+<h2 id="boundaries-falsification-and-open-questions">16. Boundaries,
+Falsification, and Open Questions</h2>
+<h3 id="what-is-claimed">16.1 What Is Claimed</h3>
+<ol type="1">
+<li>The numbers <span class="math inline">\(1/\alpha \approx
+137\)</span> and <span class="math inline">\(1/\alpha^2 \approx
+18{,}800\)</span> <strong>resemble</strong> effective sample sizes of
+CLT-like statistical convergence</li>
+<li>This resemblance is <strong>not coincidental</strong> — it reflects
+a layered statistical architecture of nature</li>
+<li>The cosmological constant provides a stronger and cleaner example of
+the same pattern</li>
+<li>The hydrogen ground state’s exponential form is consistent with
+MaxEnt statistical emergence</li>
+<li>Quantum Darwinism provides the mechanism for statistically-converged
+information to become accessible to multiple agents</li>
+<li>The pattern <span class="math inline">\(\text{Observable} =
+\text{Grain} / N_{\text{eff}}\)</span> appears at multiple scales</li>
+</ol>
+<h3 id="what-is-consistent-with-not-claimed-as-proven">16.2 What Is
+Consistent-With (Not Claimed as Proven)</h3>
+<ol type="1">
+<li>The wavefunction is a statistical artifact, not a fundamental
+ontological entity</li>
+<li>Trace dynamics and free CLT provide the mathematical framework for
+quantum emergence</li>
+<li><span class="math inline">\(\alpha\)</span> running is consistent
+with the CLT picture (via UV-flow perspective)</li>
+<li>Gauge symmetries may have statistical origins (no mechanism
+identified)</li>
+<li><span class="math inline">\(\alpha \approx 1/137\)</span> may be
+anthropically selected from a broader distribution</li>
+</ol>
+<h3 id="what-is-speculative">16.3 What Is Speculative</h3>
+<ol type="1">
+<li>Any specific mechanism for how Compton-scale events are “sampled” to
+produce the Bohr radius</li>
+<li>That <span class="math inline">\(\alpha\)</span> can be derived from
+first principles through statistical mechanics</li>
+<li>That all dimensionless constants have statistical origins</li>
+<li>That the missing rung (gauge emergence) can be filled by statistical
+methods</li>
+</ol>
+<h3 id="what-is-explicitly-not-claimed">16.4 What Is Explicitly NOT
+Claimed</h3>
+<ol type="1">
+<li>This is not a proof that <span class="math inline">\(\alpha\)</span>
+emerges from CLT</li>
+<li>This is not a replacement for quantum mechanics, QED, or the
+Standard Model</li>
+<li>This is not a claim that all dimensionless constants are sample
+sizes</li>
+<li>This is not a complete theory — the missing rung is explicitly
+identified</li>
+<li>This is not testable at current technology levels</li>
+</ol>
+<h3 id="minimum-viable-theory">16.5 Minimum Viable Theory</h3>
+<p>A theory substantiating the statistical genesis hypothesis would need
+to:</p>
+<ol type="1">
+<li>Specify the microscopic degrees of freedom participating in the
+CLT</li>
+<li>Demonstrate <span class="math inline">\(1/\alpha \approx
+137\)</span> emerges from the CLT on those degrees of freedom</li>
+<li>Predict <span class="math inline">\(\alpha\)</span> running (or
+explain why RG has no CLT interpretation)</li>
+<li>Explain why <span class="math inline">\(SU(3) \times SU(2) \times
+U(1)\)</span> arise at the intermediate layer</li>
+<li>Make at least one testable prediction distinguishable from the
+Standard Model</li>
+</ol>
+<p><strong>No such theory exists.</strong></p>
+<h3 id="open-questions">16.6 Open Questions</h3>
+<ol type="1">
+<li><strong>Why <span class="math inline">\(\alpha \approx
+1/137\)</span> specifically?</strong> Why not 1/100 or 1/200? No known
+mathematical significance.</li>
+<li><strong>Can the free CLT bridge the gap?</strong> The free CLT
+(<span class="math inline">\(0.12.md\)</span>) is the correct framework
+for non-commutative quantum variables. Can it constrain <span
+class="math inline">\(\alpha\)</span>?</li>
+<li><strong>Does <span class="math inline">\(1/\alpha\)</span> vary
+across cosmological time?</strong> Quasar spectra constrain <span
+class="math inline">\(|\Delta\alpha/\alpha| &lt; 10^{-6}\)</span> over
+<span class="math inline">\(\sim 10\)</span> Gyr.</li>
+<li><strong>Is the cosmological constant’s counting causally connected
+to atomic-scale counting?</strong> Both obey <span
+class="math inline">\(\text{Observable} = \text{Grain} /
+N_{\text{eff}}\)</span>.</li>
+<li><strong>Can the chemistry constraint be quantified?</strong> The
+most actionable near-term research program.</li>
+<li><strong>What fills the missing rung?</strong> The emergence of gauge
+symmetries from a statistical substrate is the largest conceptual
+gap.</li>
+</ol>
+<hr />
+<h2 id="references-and-companion-documents">References and Companion
+Documents</h2>
+<h3 id="primary-this-project">Primary (This Project)</h3>
+<table>
+<colgroup>
+<col style="width: 43%" />
+<col style="width: 56%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Document</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.2.md\)</span></td>
+<td style="text-align: left;">Mathematical formalization — full
+derivations, 11 sections</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.2.py\)</span></td>
+<td style="text-align: left;">Python verification — 242 lines, 6/6
+checks pass</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.3.md\)</span> + <span
+class="math inline">\(0.3.py\)</span></td>
+<td style="text-align: left;">Dyson stability exploration</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.4.md\)</span> + <span
+class="math inline">\(0.4.py\)</span></td>
+<td style="text-align: left;">Quantum Hall Effect universality</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.5.md\)</span> + <span
+class="math inline">\(0.5.py\)</span></td>
+<td style="text-align: left;">Poisson/MaxEnt statistics</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.6.md\)</span> + <span
+class="math inline">\(0.6.py\)</span></td>
+<td style="text-align: left;">Renormalization Group connection</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.7.md\)</span></td>
+<td style="text-align: left;">Beyond <span
+class="math inline">\(\alpha\)</span> — other dimensionless
+constants</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.8.md\)</span></td>
+<td style="text-align: left;">Spacetime emergence from quantum
+information</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.9.md\)</span></td>
+<td style="text-align: left;">Definitive synthesis (superseded by this
+document)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.10.md\)</span></td>
+<td style="text-align: left;">Search Request Manifest — 20 queries
+across 7 categories</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.11.md\)</span></td>
+<td style="text-align: left;">The Missing Rung — gauge symmetry
+emergence</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.12.md\)</span></td>
+<td style="text-align: left;">Free CLT and non-commutative statistical
+genesis</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.13.md\)</span></td>
+<td style="text-align: left;">Quantum Darwinism and redundancy
+proliferation</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.14.md\)</span></td>
+<td style="text-align: left;">Anthropic bounds on the fine-structure
+constant</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(0.15.md\)</span></td>
+<td style="text-align: left;">Computational model specification</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span
+class="math inline">\(GENERAL-AUDIENCE.md\)</span></td>
+<td style="text-align: left;">Layperson’s guide</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-seminal-works">External (Seminal Works)</h3>
+<table>
+<colgroup>
+<col style="width: 21%" />
+<col style="width: 39%" />
+<col style="width: 39%" />
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: left;">Work</th>
+<th style="text-align: left;">Reference</th>
+<th style="text-align: left;">Relevance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">CODATA 2018</td>
+<td style="text-align: left;">Tiesinga et al., <em>Rev. Mod. Phys.</em>
+93, 025010 (2021)</td>
+<td style="text-align: left;">All numerical values</td>
+</tr>
+<tr>
+<td style="text-align: left;">CLT</td>
+<td style="text-align: left;">Laplace (1810), Lyapunov (1901)</td>
+<td style="text-align: left;">Classical CLT</td>
+</tr>
+<tr>
+<td style="text-align: left;">Free CLT</td>
+<td style="text-align: left;">Voiculescu, <em>J. Funct. Anal.</em> 66
+(1985)</td>
+<td style="text-align: left;">Non-commutative CLT</td>
+</tr>
+<tr>
+<td style="text-align: left;">QED <span
+class="math inline">\(\beta\)</span>-function</td>
+<td style="text-align: left;">Gell-Mann &amp; Low, <em>Phys. Rev.</em>
+95 (1954)</td>
+<td style="text-align: left;"><span
+class="math inline">\(\alpha\)</span> running</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dyson-Lenard</td>
+<td style="text-align: left;">Dyson &amp; Lenard, <em>J. Math.
+Phys.</em> 8 (1967)</td>
+<td style="text-align: left;">Stability of matter</td>
+</tr>
+<tr>
+<td style="text-align: left;">Lieb-Thirring</td>
+<td style="text-align: left;">Lieb &amp; Thirring, <em>Phys.
+Rev. Lett.</em> 35 (1975)</td>
+<td style="text-align: left;">Stability bound</td>
+</tr>
+<tr>
+<td style="text-align: left;">MaxEnt</td>
+<td style="text-align: left;">Jaynes, <em>Phys. Rev.</em> 106
+(1957)</td>
+<td style="text-align: left;">Exponential = MaxEnt</td>
+</tr>
+<tr>
+<td style="text-align: left;">Quantum Darwinism</td>
+<td style="text-align: left;">Zurek, <em>Rev. Mod. Phys.</em> 75
+(2003)</td>
+<td style="text-align: left;">Redundancy proliferation</td>
+</tr>
+<tr>
+<td style="text-align: left;">AdS/CFT</td>
+<td style="text-align: left;">Maldacena, <em>Adv. Theor. Math.
+Phys.</em> 2 (1998)</td>
+<td style="text-align: left;">Holographic emergence</td>
+</tr>
+<tr>
+<td style="text-align: left;">Jacobson</td>
+<td style="text-align: left;">Jacobson, <em>Phys. Rev. Lett.</em> 75
+(1995)</td>
+<td style="text-align: left;">Einstein equations as thermodynamics</td>
+</tr>
+<tr>
+<td style="text-align: left;">Causal sets</td>
+<td style="text-align: left;">Sorkin, in <em>Relativity and
+Gravitation</em> (1991)</td>
+<td style="text-align: left;"><span class="math inline">\(\Lambda \sim
+1/\sqrt{N}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: left;">ER = EPR</td>
+<td style="text-align: left;">Maldacena &amp; Susskind, <em>Fortsch.
+Phys.</em> 61 (2013)</td>
+<td style="text-align: left;">Entanglement = spacetime</td>
+</tr>
+<tr>
+<td style="text-align: left;">Trace dynamics</td>
+<td style="text-align: left;">Adler, <em>Quantum Theory as an Emergent
+Phenomenon</em> (2004)</td>
+<td style="text-align: left;">Free CLT emergence</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stochastic mechanics</td>
+<td style="text-align: left;">Nelson, <em>Phys. Rev.</em> 150
+(1966)</td>
+<td style="text-align: left;"><span class="math inline">\(\psi\)</span>
+as equilibrium distribution</td>
+</tr>
+<tr>
+<td style="text-align: left;">MERA/tensor networks</td>
+<td style="text-align: left;">Swingle, <em>Phys. Rev. D</em> 86
+(2012)</td>
+<td style="text-align: left;">Entanglement builds geometry</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>All numerical values are <span
+class="math inline">\([CODE-EXECUTED]\)</span> via <span
+class="math inline">\(0.2.py\)</span> (CODATA 2018). All interpretative
+claims are <span class="math inline">\([LLM-INFERRED]\)</span> —
+proposed, not proven. This document is the capstone synthesis of the
+Statistical Genesis of Appearance project. It supersedes <span
+class="math inline">\(0.9.md\)</span> and all prior synthesis
+documents.</em></p>
+<p><em>The core thesis — that dimensionless physical constants encode
+effective sample sizes of a cosmic statistical process — remains
+unproven. This document has clarified what it means, what would support
+it, what would refute it, and what gaps must be filled for it to advance
+from structural analogy to physical theory.</em></p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

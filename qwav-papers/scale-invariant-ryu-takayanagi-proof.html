@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scale-Invariant Ryu–Takayanagi Proof | QWAV</title>
+<meta name="description" content="Scale-Invariant Reformulation of the Ryu–Takayanagi Formula Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.org ORCID: 0009-0002-...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/scale-invariant-ryu-takayanagi-proof">
+<meta property="og:title" content="Scale-Invariant Ryu–Takayanagi Proof">
+<meta property="og:description" content="Scale-Invariant Reformulation of the Ryu–Takayanagi Formula Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.org ORCID: 0009-0002-...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/scale-invariant-ryu-takayanagi-proof">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Scale-Invariant Ryu\u2013Takayanagi Proof",
+  "url": "https://deep.qwav.tech/papers/scale-invariant-ryu-takayanagi-proof",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-09-27T22:11:41Z",
+  "abstract": "Scale-Invariant Reformulation of the Ryu\u2013Takayanagi Formula Author: Rowan Brad Quni-Gudzinas Affiliation: QNFO Contact: rowan.quni@qnfo.org ORCID: 0009-0002-..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h2
+id="scale-invariant-reformulation-of-the-ryutakayanagi-formula"><strong>Scale-Invariant
+Reformulation of the Ryu–Takayanagi Formula</strong></h2>
+<p><strong>Author:</strong> Rowan Brad Quni-Gudzinas
+<strong>Affiliation:</strong> QNFO <strong>Contact:</strong>
+rowan.quni@qnfo.org <strong>ORCID:</strong> 0009-0002-4317-5604
+<strong>ISNI:</strong> 0000 0005 2645 6062 <strong>DOI:</strong>
+10.5281/zenodo.17216372 <strong>Publication Date:</strong> 2025-09-28
+<strong>Version:</strong> 1.0</p>
+<hr />
+<h3 id="given"><strong>Given</strong></h3>
+<p>Let a <span class="math inline">\(d\)</span>-dimensional boundary
+conformal field theory (CFT) be holographically dual to a <span
+class="math inline">\((d+1)\)</span>-dimensional asymptotically anti-de
+Sitter (AdS) bulk spacetime of radius <span
+class="math inline">\(L\)</span>. Let <span class="math inline">\(A
+\subset \partial \mathcal{M}\)</span>be a spatial subregion of the
+boundary with characteristic linear size <span
+class="math inline">\(R\)</span>, and let <span
+class="math inline">\(\gamma_A\)</span>be the codimension-2 extremal
+surface in the bulk that is homologous to <span
+class="math inline">\(A\)</span>and satisfies <span
+class="math inline">\(\partial \gamma_A = \partial A\)</span>.</p>
+<p>Assume the Ryu–Takayanagi (RT) formula holds in its standard
+form:</p>
+<p><span class="math display">\[
+S_A = \frac{\mathrm{Area}(\gamma_A)}{4G_N^{(d+1)}},
+\]</span></p>
+<p>where <span class="math inline">\(G_N^{(d+1)}\)</span>is the <span
+class="math inline">\((d+1)\)</span>-dimensional Newton constant.</p>
+<p>Assume the AdS/CFT dictionary relates the bulk gravitational
+parameters to boundary CFT data via:</p>
+<p><span class="math display">\[
+\frac{L^{d-1}}{G_N^{(d+1)}} = k_d \cdot a_d,
+\]</span></p>
+<p>where <span class="math inline">\(a_d\)</span>is a dimensionless
+central charge of the CFT (e.g., <span class="math inline">\(a_2 =
+c/3\)</span>in <span class="math inline">\(d=2\)</span>, <span
+class="math inline">\(a_4 = a\)</span>in <span
+class="math inline">\(d=4\)</span>), and <span
+class="math inline">\(k_d\)</span>is a known dimensionless constant
+depending only on <span class="math inline">\(d\)</span>.</p>
+<p>Let <span class="math inline">\(\epsilon\)</span>denote a UV cutoff
+in the boundary theory, interpreted geometrically as a bulk cutoff at
+radial coordinate <span class="math inline">\(z = \epsilon\)</span>.</p>
+<hr />
+<h3 id="goal"><strong>Goal</strong></h3>
+<p>Reformulate the Ryu–Takayanagi formula in a
+<strong>scale-invariant</strong> manner that eliminates dependence on
+absolute scales (<span class="math inline">\(L\)</span>, <span
+class="math inline">\(\epsilon\)</span>, <span
+class="math inline">\(R\)</span>) and isolates the universal,
+dimensionless information-theoretic content of holographic entanglement
+entropy.</p>
+<hr />
+<h3 id="derivation"><strong>Derivation</strong></h3>
+<h4
+id="step-1-dimensional-analysis-of-the-standard-formula"><strong>Step 1:
+Dimensional Analysis of the Standard Formula</strong></h4>
+<p>In natural units (<span class="math inline">\(\hbar = c =
+1\)</span>), the dimensions are:</p>
+<ul>
+<li><span class="math inline">\([S_A] = 1\)</span>(dimensionless
+entropy),</li>
+<li><span class="math inline">\([\mathrm{Area}(\gamma_A)] =
+[\mathrm{length}]^{d-1}\)</span>,</li>
+<li><span class="math inline">\([G_N^{(d+1)}] =
+[\mathrm{length}]^{d-1}\)</span>.</li>
+</ul>
+<p>Thus, the RT formula is dimensionally consistent but <strong>not
+scale-invariant</strong>, as it depends on the absolute AdS scale <span
+class="math inline">\(L\)</span>through both <span
+class="math inline">\(\mathrm{Area}(\gamma_A)\)</span>and <span
+class="math inline">\(G_N^{(d+1)}\)</span>.</p>
+<h4
+id="step-2-express-gravitational-coupling-via-cft-central-charge"><strong>Step
+2: Express Gravitational Coupling via CFT Central Charge</strong></h4>
+<p>From the AdS/CFT dictionary, the combination <span
+class="math inline">\(L^{d-1}/G_N^{(d+1)}\)</span>is proportional to the
+number of degrees of freedom in the boundary CFT. Define the
+dimensionless central charge <span
+class="math inline">\(a_d\)</span>by:</p>
+<p><span class="math display">\[
+a_d := \frac{1}{k_d} \cdot \frac{L^{d-1}}{G_N^{(d+1)}},
+\]</span></p>
+<p>so that:</p>
+<p><span class="math display">\[
+G_N^{(d+1)} = \frac{L^{d-1}}{k_d a_d}. \tag{1}
+\]</span></p>
+<p>This expresses the bulk gravitational coupling in terms of a
+<strong>dimensionless</strong> boundary quantity.</p>
+<h4 id="step-3-parametrize-the-minimal-surface-area"><strong>Step 3:
+Parametrize the Minimal Surface Area</strong></h4>
+<p>For a region <span class="math inline">\(A\)</span>with
+characteristic size <span class="math inline">\(R\)</span>, the area of
+the extremal surface <span class="math inline">\(\gamma_A\)</span>in
+pure AdS<span class="math inline">\(_{d+1}\)</span>takes the form:</p>
+<p><span class="math display">\[
+\mathrm{Area}(\gamma_A) = L^{d-1} \cdot \mathcal{F}_d\left(
+\frac{R}{\epsilon}, \frac{R}{L} \right), \tag{2}
+\]</span></p>
+<p>where <span class="math inline">\(\mathcal{F}_d\)</span>is a
+dimensionless function encoding both UV-divergent and finite
+contributions. The dependence on <span
+class="math inline">\(R/L\)</span>arises only in the finite part; the
+divergent part depends solely on <span
+class="math inline">\(R/\epsilon\)</span>.</p>
+<p>For example, in <span class="math inline">\(d=2\)</span>with an
+interval of length <span class="math inline">\(R\)</span>:</p>
+<p><span class="math display">\[
+\mathrm{Area}(\gamma_A) = 2L \log\left( \frac{R}{\epsilon} \right).
+\]</span></p>
+<h4 id="step-4-substitute-into-the-ryutakayanagi-formula"><strong>Step
+4: Substitute into the Ryu–Takayanagi Formula</strong></h4>
+<p>Substituting (1) and (2) into the RT formula:</p>
+<p><span class="math display">\[
+S_A = \frac{L^{d-1} \cdot \mathcal{F}_d(R/\epsilon, R/L)}{4 \cdot
+(L^{d-1}/(k_d a_d))} = \frac{k_d a_d}{4} \cdot \mathcal{F}_d\left(
+\frac{R}{\epsilon}, \frac{R}{L} \right). \tag{3}
+\]</span></p>
+<p>The factor <span class="math inline">\(L^{d-1}\)</span>cancels,
+leaving an expression that depends only on <strong>dimensionless
+ratios</strong> and the <strong>dimensionless central charge</strong>
+<span class="math inline">\(a_d\)</span>.</p>
+<h4 id="step-5-isolate-the-universal-scale-invariant-term"><strong>Step
+5: Isolate the Universal (Scale-Invariant) Term</strong></h4>
+<p>The function <span
+class="math inline">\(\mathcal{F}_d\)</span>generally contains divergent
+terms as <span class="math inline">\(\epsilon \to 0\)</span>, but also a
+<strong>universal term</strong> <span
+class="math inline">\(\mathcal{F}_d^{\mathrm{univ}}\)</span>that is
+independent of <span class="math inline">\(\epsilon\)</span>and depends
+only on the geometry of <span class="math inline">\(A\)</span>and the
+ratio <span class="math inline">\(R/L\)</span>. Under a global scale
+transformation:</p>
+<p><span class="math display">\[
+R \mapsto \lambda R, \quad L \mapsto \lambda L, \quad \epsilon \mapsto
+\lambda \epsilon,
+\]</span></p>
+<p>the ratio <span class="math inline">\(R/L\)</span>is invariant, and
+thus:</p>
+<p><span class="math display">\[
+\mathcal{F}_d^{\mathrm{univ}}\left( \frac{R}{L} \right) \mapsto
+\mathcal{F}_d^{\mathrm{univ}}\left( \frac{R}{L} \right).
+\]</span></p>
+<p>Hence, the universal part of <span
+class="math inline">\(S_A\)</span>is
+<strong>scale-invariant</strong>.</p>
+<p>For spherical regions, this universal term is known explicitly:</p>
+<ul>
+<li>In <strong>even</strong> <span class="math inline">\(d\)</span>:
+<span class="math inline">\(S_A^{\mathrm{univ}} = (-1)^{d/2} \cdot 4 a_d
+\log(R/\epsilon)\)</span>,</li>
+<li>In <strong>odd</strong> <span class="math inline">\(d\)</span>:
+<span class="math inline">\(S_A^{\mathrm{univ}} = F_d(a_d)\)</span>, a
+constant independent of <span class="math inline">\(R\)</span>.</li>
+</ul>
+<p>In both cases, the coefficient is proportional to the <strong><span
+class="math inline">\(a\)</span>-anomaly</strong> (even <span
+class="math inline">\(d\)</span>) or the <strong><span
+class="math inline">\(F\)</span>-quantity</strong> (odd <span
+class="math inline">\(d\)</span>), both of which are
+<strong>dimensionless</strong> and <strong>intrinsic</strong> to the
+CFT.</p>
+<h4
+id="step-6-construct-a-scale-invariant-entropy-functional"><strong>Step
+6: Construct a Scale-Invariant Entropy Functional</strong></h4>
+<p>To extract the scale-invariant content without reference to <span
+class="math inline">\(\epsilon\)</span>or <span
+class="math inline">\(L\)</span>, define the <strong>universal
+entanglement entropy</strong> as:</p>
+<p><span class="math display">\[
+S_A^{\mathrm{univ}} := \lim_{\epsilon \to 0} \left[ S_A(R, \epsilon) -
+S_A^{\mathrm{div}}(R, \epsilon) \right], \tag{4}
+\]</span></p>
+<p>where <span class="math inline">\(S_A^{\mathrm{div}}\)</span>contains
+all terms that diverge as <span class="math inline">\(\epsilon \to
+0\)</span>. This subtraction is equivalent to the <strong>holographic
+renormalization</strong> procedure in the bulk, which removes boundary
+counterterms.</p>
+<p>Equivalently, for two regions <span
+class="math inline">\(A\)</span>and <span
+class="math inline">\(A_0\)</span>of the same shape but different sizes,
+the difference:</p>
+<p><span class="math display">\[
+\Delta S = S_A(R) - S_{A_0}(R_0)
+\]</span></p>
+<p>is scale-invariant when expressed in terms of the dimensionless ratio
+<span class="math inline">\(R/R_0\)</span>, and its finite part is
+universal.</p>
+<h4
+id="step-7-verify-scale-invariance-under-weyl-transformations"><strong>Step
+7: Verify Scale Invariance Under Weyl Transformations</strong></h4>
+<p>Under a boundary Weyl transformation <span
+class="math inline">\(g_{\mu\nu} \mapsto e^{2\omega(x)}
+g_{\mu\nu}\)</span>, the bulk metric in Fefferman–Graham coordinates
+transforms as:</p>
+<p><span class="math display">\[
+ds^2 = \frac{L^2}{z^2} \left( dz^2 + e^{2\omega(x)} g_{\mu\nu}(x) dx^\mu
+dx^\nu \right).
+\]</span></p>
+<p>The extremal surface <span
+class="math inline">\(\gamma_A\)</span>shifts, and its area changes
+by:</p>
+<p><span class="math display">\[
+\delta \mathrm{Area}(\gamma_A) = \int_{\partial A} \omega(x) \cdot
+(\text{local geometric terms}) + (\text{anomalous term}).
+\]</span></p>
+<p>However, the <strong>universal part</strong> of the entropy
+transforms <strong>covariantly</strong> and, for conformally invariant
+states, remains <strong>invariant</strong> under global rescalings. This
+is because the anomaly coefficients <span
+class="math inline">\(a_d\)</span>are Weyl-invariant by
+construction.</p>
+<p>Thus, the combination:</p>
+<p><span class="math display">\[
+S_A^{\mathrm{univ}} = \kappa_d \cdot a_d
+\]</span></p>
+<p>is invariant under <span class="math inline">\(R \mapsto \lambda
+R\)</span>, <span class="math inline">\(L \mapsto \lambda L\)</span>,
+confirming scale invariance.</p>
+<hr />
+<h3 id="conclusion"><strong>Conclusion</strong></h3>
+<p><strong>Theorem (Scale-Invariant Ryu–Takayanagi Formula).</strong>
+The universal part of holographic entanglement entropy is
+scale-invariant and given by:</p>
+<p><span class="math display">\[
+\boxed{S_A^{\mathrm{univ}} = \kappa_d \cdot a_d}
+\]</span></p>
+<p>where:</p>
+<ul>
+<li><span class="math inline">\(a_d\)</span>is the dimensionless central
+charge of the <span class="math inline">\(d\)</span>-dimensional
+boundary CFT (e.g., <span class="math inline">\(a_2 = c/3\)</span>,
+<span class="math inline">\(a_4 = a\)</span>),</li>
+<li><span class="math inline">\(\kappa_d\)</span>is a universal
+numerical constant depending only on spacetime dimension <span
+class="math inline">\(d\)</span>,</li>
+<li>The expression is invariant under global scale transformations <span
+class="math inline">\(x^\mu \mapsto \lambda x^\mu\)</span>.</li>
+</ul>
+<p>For a spherical region of radius <span
+class="math inline">\(R\)</span>in even dimensions, this yields:</p>
+<p><span class="math display">\[
+S_A^{\mathrm{univ}} = (-1)^{d/2} \cdot 4 a_d \log\left(
+\frac{R}{\epsilon} \right),
+\]</span></p>
+<p>where the logarithmic dependence on the dimensionless ratio <span
+class="math inline">\(R/\epsilon\)</span>reflects the conformal anomaly,
+and the coefficient is <strong>independent of the AdS radius <span
+class="math inline">\(L\)</span></strong> and <strong>Newton’s constant
+<span class="math inline">\(G_N^{(d+1)}\)</span></strong>.</p>
+<p>This reformulation demonstrates that the <strong>physically
+meaningful, observable content</strong> of holographic entanglement
+entropy resides entirely in <strong>dimensionless, scale-invariant
+data</strong> characterizing the boundary CFT, consistent with the
+principles of universal scale invariance and epistemic humility.</p>
+<hr />
+<p><strong>Q.E.D.</strong></p>
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>

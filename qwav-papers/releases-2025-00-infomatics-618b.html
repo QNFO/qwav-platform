@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[[releases/2025/00/Infomatics]] | QWAV</title>
+<meta name="description" content="[[releases/2025/00/Infomatics]] Appendix G: Phase 3 Progress Report - Deriving the (n, m) Resonance Structure (Phase 3 Development v3.0-alpha) G Introduction...">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://deep.qwav.tech/papers/releases-2025-00-infomatics-618b">
+<meta property="og:title" content="[[releases/2025/00/Infomatics]]">
+<meta property="og:description" content="[[releases/2025/00/Infomatics]] Appendix G: Phase 3 Progress Report - Deriving the (n, m) Resonance Structure (Phase 3 Development v3.0-alpha) G Introduction...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://deep.qwav.tech/papers/releases-2025-00-infomatics-618b">
+<meta name="twitter:card" content="summary">
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "[[releases/2025/00/Infomatics]]",
+  "url": "https://deep.qwav.tech/papers/releases-2025-00-infomatics-618b",
+  "license": "https://github.com/QNFO/license",
+  "copyrightHolder": {
+    "@type": "Person",
+    "name": "Rowan Brad Quni-Gudzinas",
+    "identifier": "https://orcid.org/0009-0002-4317-5604"
+  },
+  "usageInfo": "Non-commercial use only. Attribution required. Patent prior art citation required per QNFO Content License Agreement v1.1.",
+  "isAccessibleForFree": true,
+  "datePublished": "2025-05-09T03:21:50Z",
+  "abstract": "[[releases/2025/00/Infomatics]] Appendix G: Phase 3 Progress Report - Deriving the (n, m) Resonance Structure (Phase 3 Development v3.0-alpha) G Introduction..."
+}
+</script>
+<!-- MathJax v3 — renders LaTeX math from Pandoc output -->
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+<style>
+  :root {{
+    --bg: #0d1117; --fg: #c9d1d9; --link: #58a6ff;
+    --border: #30363d; --code-bg: #161b22;
+  }}
+  *, *::before, *::after {{ box-sizing: border-box; }}
+  body {{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background: var(--bg); color: var(--fg);
+    max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem;
+    line-height: 1.7; font-size: 16px;
+  }}
+  .nav {{
+    display: flex; gap: 1.5rem; padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border); margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }}
+  .nav a {{ color: var(--link); text-decoration: none; }}
+  .nav a:hover {{ text-decoration: underline; }}
+  h1, h2, h3, h4, h5, h6 {{
+    color: #f0f6fc; margin-top: 2rem; margin-bottom: 0.75rem;
+    line-height: 1.3; font-weight: 600;
+  }}
+  h1 {{ font-size: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; }}
+  h2 {{ font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }}
+  h3 {{ font-size: 1.25rem; }}
+  a {{ color: var(--link); text-decoration: none; }}
+  a:hover {{ text-decoration: underline; }}
+  code {{
+    background: var(--code-bg); padding: 0.2em 0.4em;
+    border-radius: 3px; font-size: 0.9em; font-family: 'Consolas', 'Monaco', monospace;
+  }}
+  pre {{
+    background: var(--code-bg); padding: 1rem; border-radius: 6px;
+    overflow-x: auto; border: 1px solid var(--border);
+    font-size: 0.9em; line-height: 1.5;
+  }}
+  pre code {{ background: none; padding: 0; }}
+  table {{
+    border-collapse: collapse; width: 100%; margin: 1.5rem 0;
+  }}
+  th, td {{
+    border: 1px solid var(--border); padding: 0.5rem 0.75rem;
+    text-align: left;
+  }}
+  th {{ background: var(--code-bg); font-weight: 600; }}
+  blockquote {{
+    border-left: 3px solid var(--link); margin: 1rem 0;
+    padding: 0.5rem 1rem; color: #8b949e; background: var(--code-bg);
+    border-radius: 0 6px 6px 0;
+  }}
+  hr {{ border: none; border-top: 1px solid var(--border); margin: 2rem 0; }}
+  img {{ max-width: 100%; border-radius: 6px; }}
+  /* MathJax display math centering */
+  .math.display {{ display: block; text-align: center; margin: 1.5rem 0; overflow-x: auto; }}
+  .math.inline {{ display: inline; }}
+  /* License footer */
+  .license-notice {{
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.85rem; color: #8b949e;
+  }}
+  .license-notice a {{ color: #8b949e; }}
+  /* Responsive */
+  @media (max-width: 600px) {{
+    body {{ padding: 1rem; font-size: 15px; }}
+    h1 {{ font-size: 1.5rem; }}
+    pre {{ font-size: 0.8em; }}
+  }}
+</style>
+</head>
+<body>
+<div class="nav">
+  <a href="https://deep.qwav.tech/">Home</a>
+  <a href="https://deep.qwav.tech/papers/">All Papers</a>
+  <a href="https://github.com/qnfo">GitHub</a>
+</div>
+<article>
+<h1 id="releases202500infomatics">[[releases/2025/00/Infomatics]]</h1>
+<h1
+id="appendix-g-phase-3-progress-report---deriving-the-n-m-resonance-structure">Appendix
+G: Phase 3 Progress Report - Deriving the (n, m) Resonance
+Structure</h1>
+<p><strong>(Phase 3 Development v3.0-alpha)</strong></p>
+<h2 id="g-introduction-objective-and-context">G Introduction: Objective
+and Context</h2>
+<p>This appendix documents the initial exploratory phase (designated
+Phase 3) of the Infomatics research program, building upon the
+operational framework established in the main documentation (Version
+2.5). The primary objective of Phase 3 is to move beyond the operational
+postulates and empirical correlations of the v2.5 framework towards a
+fully quantitative and predictive theory by deriving the fundamental
+rules governing manifest reality directly from the core principles {I,
+κ, ε(emergent), π, φ}.</p>
+<p>Specifically, this report details the investigation aimed at
+uncovering the <strong>rules that determine the allowed stable resonant
+states (Î)</strong>, characterized by integer indices <strong>(n,
+m)</strong>, within the continuous informational field I. This involves
+understanding why only specific <span class="math inline">\((n,
+m)\)</span>pairs correspond to stable particles, deriving their
+properties (Mass <span class="math inline">\(M \propto \phi^m\)</span>,
+Spin <span class="math inline">\(\sim n\)</span>, Topology/Charge), and
+ultimately deriving the geometric transition amplitude <span
+class="math inline">\(A_{geom}\)</span>governing their interactions.
+This report focuses on the crucial first step: finding the stability
+rules for the <span class="math inline">\((n, m)\)</span>structure,
+particularly informed by the compelling φ-scaling observed in particle
+masses. It assumes familiarity with the Infomatics v2.5 framework
+(Sections 1-11, Appendices A-F).</p>
+<h2 id="g-methodological-shift-inferring-rules-from-stable-patterns">G
+Methodological Shift: Inferring Rules from Stable Patterns</h2>
+<p>Recognizing the limitations and potential artifactual nature of
+standard physical formalisms (Lagrangians based on <span
+class="math inline">\(\hbar\)</span>, Standard Model particle
+classifications), Phase 3 adopts a methodology prioritizing
+<strong>inference from observation guided by geometric
+intuition</strong>, rather than modifying existing equations.</p>
+<ul>
+<li><strong>Focus on Stable Fundamentals:</strong> The analysis
+privileges the properties of the most stable, experimentally
+well-established fundamental patterns: the electron (e⁻), the stable
+constituents of protons/neutrons (u, d quarks), the photon (γ), and
+neutrinos (ν). Unstable particles (μ, τ, heavy quarks, W/Z, Higgs) are
+treated as crucial data points revealing allowed <em>excited</em>
+resonance levels, but not as the primary definers of the fundamental
+stability rules.</li>
+<li><strong>Geometric Inference:</strong> The core assumption is that
+the observed properties and relationships (mass hierarchy, spin types,
+charge quantization) are direct manifestations of underlying geometric
+and topological rules governed solely by π and φ. The task is to deduce
+these rules by analyzing the patterns in the stable particle data.</li>
+<li><strong>Rejection of Ad Hoc Constructs:</strong> The approach
+actively avoids introducing new variables or constants beyond {π, φ, (n,
+m), Topology} and seeks explanations that emerge naturally from the
+geometry, resisting “plug and chug” fitting or reliance on potentially
+flawed standard model concepts (like empirical α or fundamental <span
+class="math inline">\(h\)</span>).</li>
+</ul>
+<h2 id="g-analysis-of-mass-scaling-and-the-lm-primality-hypothesis">G
+Analysis of Mass Scaling and the L<sub>m</sub> Primality Hypothesis</h2>
+<p>The most striking empirical pattern guiding Phase 3 is the φ-scaling
+of particle masses (<span class="math inline">\(M \propto
+\phi^m\)</span>, Section 5.1).</p>
+<ul>
+<li><strong>Lepton Data:</strong> The ratios <span
+class="math inline">\(m_{\mu}/m_e \approx \phi^{11}\)</span>and <span
+class="math inline">\(m_{\tau}/m_e \approx \phi^{17}\)</span>strongly
+suggest that the unstable muon and tau are resonant excitations existing
+at levels <span class="math inline">\(m = m_e + 11\)</span>and <span
+class="math inline">\(m = m_e + 17\)</span>.</li>
+<li><strong>Lucas Number Connection:</strong> A detailed investigation
+[Ref: Appendix C - Lucas Primes, Fermions, Infomatics] revealed a
+remarkable correlation: if the stable electron corresponds to a base
+index <span class="math inline">\(m_e=2\)</span>(where <span
+class="math inline">\(L_2=3\)</span>is prime), then the muon level is
+<span class="math inline">\(m_{\mu}=13\)</span>(<span
+class="math inline">\(L_{13}=521\)</span>, prime!) and the tau level is
+<span class="math inline">\(m_{\tau}=19\)</span>(<span
+class="math inline">\(L_{19}=9349\)</span>, prime!). This led to the
+<strong>L<sub>m</sub> Primality Hypothesis:</strong> <em>Stable or
+metastable fundamental fermion resonances (Spin 1/2, n=2?) tend to occur
+at scaling levels m ≥ 2 where the m-th Lucas number, L<sub>m</sub>, is
+prime.</em></li>
+<li><strong>Quark Data:</strong> Applying this hypothesis to quarks
+(using tentative <span class="math inline">\(m\)</span>indices relative
+to <span class="math inline">\(m_e=2\)</span>) showed partial success:
+<span class="math inline">\(m_u \approx 4\)</span>(<span
+class="math inline">\(L_4=7\)</span>, prime), <span
+class="math inline">\(m_d \approx 5\)</span>(<span
+class="math inline">\(L_5=11\)</span>, prime), <span
+class="math inline">\(m_s \approx 13\)</span>(<span
+class="math inline">\(L_{13}=521\)</span>, prime - overlaps muon?),
+<span class="math inline">\(m_c \approx 18\)</span>(<span
+class="math inline">\(L_{18}\)</span>composite), <span
+class="math inline">\(m_b \approx 21\)</span>(<span
+class="math inline">\(L_{21}\)</span>composite), <span
+class="math inline">\(m_t \approx 28\)</span>(<span
+class="math inline">\(L_{28}\)</span>composite). <em>(Note: These quark
+m-indices differ slightly from previous estimates based on <span
+class="math inline">\(m_e=0\)</span>and need refinement based on the
+<span class="math inline">\(L_m\)</span>hypothesis itself and potential
+strong force effects).</em> The simple rule needs refinement for
+quarks.</li>
+<li><strong>Bosons:</strong> The rule clearly does not apply to bosons
+(Photon <span class="math inline">\(m=0\)</span>; W/Z <span
+class="math inline">\(m\approx 27\)</span>; Higgs <span
+class="math inline">\(m\approx 28\)</span>- using <span
+class="math inline">\(m_e=2\)</span>base), indicating different
+stability mechanisms.</li>
+</ul>
+<h2 id="g-exploring-theoretical-origins-for-the-lm-rule">G Exploring
+Theoretical Origins for the L<sub>m</sub> Rule</h2>
+<p>The literature review and theoretical exploration [Appendix C]
+investigated potential origins for the <span
+class="math inline">\(L_m\)</span>primality correlation within
+φ-governed systems, focusing on geometric, dynamic, and
+topological/symmetry avenues.</p>
+<ul>
+<li><strong>Geometric/Structural:</strong> Explored E8 projections, H4
+polytopes, quasicrystals (FIG). Found deep connections involving φ but
+no existing mechanism directly linking stability to <span
+class="math inline">\(L_m\)</span>primality. The potential lies in
+finding unique geometric properties (symmetry, packing, irreducibility)
+at <span class="math inline">\(L_m\)</span>-prime indexed
+sites/levels.</li>
+<li><strong>Dynamic/Resonance:</strong> Explored stability in non-linear
+π-φ wave equations. The Binet formula <span class="math inline">\(L_m =
+\phi^m + (-\phi)^{-m}\)</span>suggests interference. Stability might
+require resonance conditions met only when <span
+class="math inline">\(L_m\)</span>is prime (representing an
+“indivisible” resonance frequency/structure?). Requires formulating and
+solving the equations.</li>
+<li><strong>Topological/Symmetry:</strong> Explored particles as
+topological defects or symmetry representations (E8, H3, SU(2) via GA).
+Primality could correspond to irreducible topology or fundamental
+representations. Requires defining the topology/symmetry of the π-φ
+framework.</li>
+</ul>
+<p><strong>Conclusion from Exploration:</strong> While conceptually
+plausible links exist (primality <span
+class="math inline">\(\leftrightarrow\)</span>irreducibility/stability),
+no established mechanism was found. The <span
+class="math inline">\(L_m\)</span>primality correlation remains a
+powerful empirical hint demanding a theoretical explanation derived from
+Infomatics principles.</p>
+<h2 id="g-refined-phase-3-strategy-focus-on-geometric-stability-rules">G
+Refined Phase 3 Strategy: Focus on Geometric Stability Rules</h2>
+<p>Based on the above, the most promising and parsimonious path forward
+for Phase 3, prioritizing the derivation of the <span
+class="math inline">\((n, m)\)</span>rules, is:</p>
+<ol type="1">
+<li><strong>Assume L<sub>m</sub> Primality as Fermion
+Constraint:</strong> Adopt the refined hypothesis: Stable/metastable
+fundamental fermions (<span class="math inline">\(n=2\)</span>) exist at
+levels <span class="math inline">\(m \ge 2\)</span>where <span
+class="math inline">\(L_m\)</span>is prime. Use this as a strong
+constraint guiding model building.</li>
+<li><strong>Seek Geometric/Topological Origin:</strong> Focus research
+on finding <em>why</em> this rule holds. Investigate stability criteria
+within φ-based geometric structures (E8 projections, quasicrystals, GA
+representations of spinors) that naturally select <span
+class="math inline">\(L_m\)</span>-prime levels for <span
+class="math inline">\(n=2\)</span>states. What geometric property
+corresponds to <span class="math inline">\(L_m\)</span>primality?</li>
+<li><strong>Model Boson Stability Separately:</strong> Develop stability
+criteria for <span class="math inline">\(n=0\)</span>(scalar) and <span
+class="math inline">\(n=1\)</span>(vector) states, likely related to
+different principles (e.g., <span class="math inline">\(m=0\)</span>for
+massless propagation, potential minima for massive bosons).</li>
+<li><strong>Develop Dynamics Incorporating Rules:</strong> Formulate
+candidate π-φ dynamic equations (Lagrangians or other) whose stable
+solutions <em>automatically</em> satisfy the geometrically derived
+stability rules found above (including the <span
+class="math inline">\(L_m\)</span>primality condition for
+fermions).</li>
+<li><strong>Calculate <span class="math inline">\(A_{geom}\)</span>and
+Verify:</strong> Proceed to calculate transition amplitudes and compare
+with observation as outlined in Appendix D.</li>
+</ol>
+<h2 id="g-current-status-and-next-steps">G Current Status and Next
+Steps</h2>
+<p>Phase 3 exploration has identified the <span
+class="math inline">\(L_m\)</span>primality correlation as a key pattern
+potentially governing fundamental fermion stability levels (<span
+class="math inline">\(m\)</span>) within the φ-scaling hierarchy. While
+the underlying mechanism remains to be derived, this provides a powerful
+focus for continued research. The immediate next step is <strong>deep
+theoretical investigation into φ-based geometric structures (E8,
+quasicrystals, GA) and number theory to find a principle linking
+geometric/topological stability specifically to the primality of Lucas
+numbers for spinor (<span class="math inline">\(n=2\)</span>)
+configurations.</strong> Success in deriving this rule would represent a
+major breakthrough towards constructing the Infomatics “periodic table”
+and validating the entire framework.</p>
+<hr />
+
+</article>
+<footer class="license-notice">
+  <p>This work is licensed under the
+    <a href="https://github.com/QNFO/license" rel="license">QNFO Content License Agreement v1.1</a>
+    by Rowan Brad Quni-Gudzinas (ORCID:
+    <a href="https://orcid.org/0009-0002-4317-5604">0009-0002-4317-5604</a>).
+    <strong>Non-commercial use only.</strong> Attribution required. Patent prior art citation required (§4.2).
+  </p>
+</footer>
+</body>
+</html>
