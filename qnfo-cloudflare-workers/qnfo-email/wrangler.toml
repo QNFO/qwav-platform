@@ -8,9 +8,23 @@ workers_dev = true
 [[send_email]]
 name = "SEND_EMAIL"
 
-[[email_routing]]
-name = "INBOUND"
-destination_address = "qnfo@qnfo.org"
+# Custom domain route — eliminates workers.dev Bot Fight Mode (1010 errors)
+# Routes /email/* on qnfo.org to this Worker
+# Bot Fight Mode disabled on qnfo.org zone (browser_check: off, 2026-08-06)
+# Zone ID: 84e9dc1d7fb72629ccdbe3174ed24420
+[[routes]]
+pattern = "qnfo.org/email/*"
+zone_id = "84e9dc1d7fb72629ccdbe3174ed24420"
+
+# NOTE: [[email_routing]] binding is silently dropped by Workers API.
+# Actual routing is handled by Cloudflare Dashboard Email Routing rules:
+#   rowan.quni@qnfo.org, publications@qnfo.org, alerts@qnfo.org,
+#   research@qnfo.org, qnfo@qnfo.org → worker:qnfo-email
+#   Catch-all: forward → qnfo@qnfo.org
+# Verify with: wrangler email routing rules list qnfo.org
+# [[email_routing]]
+# name = "INBOUND"
+# destination_address = "qnfo@qnfo.org"
 
 [[d1_databases]]
 binding = "AUDIT_DB"
