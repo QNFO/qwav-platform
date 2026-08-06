@@ -60,7 +60,12 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const json = (data, status) => new Response(JSON.stringify(data), { status: status || 200, headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' } });
-    const p = url.pathname;
+    let p = url.pathname;
+
+    // Strip /email prefix from custom domain route (qnfo.org/email/*)
+    if (p === '/email' || p.startsWith('/email/')) {
+      p = p.replace('/email', '') || '/';
+    }
 
     // ── AUTH GATE (v1.6 — HARD finding from red-team) ──
     // ALL endpoints require: Authorization: Bearer <API_KEY> (or x-api-key header)
@@ -75,7 +80,7 @@ export default {
     // ── HEALTH ──
     if (p === '/health') {
       return json({
-        status: 'ok', worker: 'qnfo-email', version: '1.6',
+        status: 'ok', worker: 'qnfo-email', version: '1.8',
         bindings: { d1: !!env.AUDIT_DB, send_email: !!env.SEND_EMAIL, notify_webhook: !!env.NOTIFY_WEBHOOK },
         timestamp: new Date().toISOString()
       });
@@ -139,15 +144,17 @@ export default {
     if (p === '/send' && request.method === 'POST') {
       if (!env.SEND_EMAIL) return json({ error: 'send_email binding not available' }, 503);
       try {
-        const { to, subject, body, html, reply_to_id } = await request.json();
+        const { to, subject, body, html, reply_to_id, from } = await request.json();
         if (!to) return json({ error: 'to is required' }, 400);
 
         const htmlBody = html || (body ? `<p>${body.replace(/\n/g, '<br>')}</p>` : '');
         const textBody = body || html?.replace(/<[^>]*>/g, '') || '';
         const replySubject = subject || '(no subject)';
         
-        // FROM: qnfo@qnfo.org (the send_email binding's sender address)
-        const FROM_ADDR = 'qnfo@qnfo.org';
+        // FROM: configurable — must be on a QNFO/QWAV domain (Email Sending enabled on all 11 zones)
+        const ALLOWED_DOMAINS = ['qnfo.org', 'qwav.org', 'qwav.tech', 'qwav.net', 'qwav.uk', 'q-wave.tech', 'qwave.tech', 'q08.org', 'qnfo.net', 'qnfo.uk', 'empoweringchange.today'];
+        const fromDomain = (from || '').split('@')[1] || '';
+        const FROM_ADDR = (from && ALLOWED_DOMAINS.includes(fromDomain.toLowerCase())) ? from : 'qnfo@qnfo.org';
         // Modern Email Service API: object builder (not positional EmailMessage)
         const result = await env.SEND_EMAIL.send({
           to: to,
@@ -164,7 +171,7 @@ export default {
         // Record the sent email in D1
         await env.AUDIT_DB.prepare(
           'INSERT INTO emails (message_id, sender, recipient, subject, body_text, body_html, headers_json, classification, received_at, status) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10)'
-        ).bind(sentId, 'qnfo@qnfo.org', to, replySubject, textBody.substring(0, BODY_MAX_TEXT), htmlBody.substring(0, BODY_MAX_HTML), '{}', 'general', now, 'sent').run();
+        ).bind(sentId, FROM_ADDR, to, replySubject, textBody.substring(0, BODY_MAX_TEXT), htmlBody.substring(0, BODY_MAX_HTML), '{}', 'general', now, 'sent').run();
 
         if (reply_to_id) {
           await env.AUDIT_DB.prepare('UPDATE emails SET status=?1 WHERE id=?2').bind('replied', reply_to_id).run();
@@ -221,7 +228,7 @@ export default {
     }
 
     return json({
-      worker: 'qnfo-email', version: '1.6',
+      worker: 'qnfo-email', version: '1.8',
       endpoints: {
         health: 'GET /health',
         emails: {
