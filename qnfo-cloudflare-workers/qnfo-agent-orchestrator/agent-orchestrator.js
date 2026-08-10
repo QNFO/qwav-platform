@@ -106,8 +106,17 @@ export class AgentTask extends DurableObject {
         completedAt: null
       };
       await this.ctx.storage.put("state", state);
+      // Watchdog: if the DO is evicted mid-loop, this alarm re-activates it and
+      // marks a stale "running" task failed instead of leaving it hanging forever.
+      await this.ctx.storage.setAlarm(Date.now() + 30 * 60 * 1000);
       this.ctx.waitUntil(this.runAgentLoop(taskId));
       return Response.json({ task_id: taskId, status: "running" });
+    }
+
+    // Watchdog alarm — fires if the loop never completed (DO eviction / crash)
+    if (url.pathname.endsWith("/alarm") && request.method === "GET") {
+      await this.alarm();
+      return Response.json({ ok: true });
     }
 
     // Poll state
@@ -117,6 +126,20 @@ export class AgentTask extends DurableObject {
     }
 
     return new Response("Not found", { status: 404 });
+  }
+
+  // ── Watchdog: called by the runtime when the alarm fires ──
+  // If the agent loop never completed (DO eviction / crash / hang), mark the
+  // task failed so polling returns a terminal state instead of "running" forever.
+  async alarm() {
+    const state = await this.ctx.storage.get("state");
+    if (state && state.status === "running") {
+      state.status = "failed";
+      state.error = "Task timed out: agent loop exceeded 30-minute watchdog";
+      state.completedAt = Date.now();
+      await this.ctx.storage.put("state", state);
+      console.log(`[watchdog] task ${state.id} marked failed after 30min`);
+    }
   }
 
   // ── Agent loop ───────────────────────────────────────────
@@ -307,6 +330,16 @@ export class AgentTask extends DurableObject {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    const method = request.method;
+
+    // ── Auth gate (AI-ENDPOINT-AUTH-1): mutating endpoints require X-Sync-Token ──
+    // GET endpoints (/health, /task/:id polling, /) stay open.
+    if (method === "POST" || method === "PATCH") {
+      const auth = request.headers.get("X-Sync-Token");
+      if (!auth || !env.SYNC_TOKEN || auth !== env.SYNC_TOKEN) {
+        return Response.json({ error: "Unauthorized: missing or invalid X-Sync-Token" }, { status: 401 });
+      }
+    }
 
     // ── /health ──
     if (url.pathname === "/health") {

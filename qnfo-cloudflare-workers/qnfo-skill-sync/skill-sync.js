@@ -69,7 +69,16 @@ export default {
 
     // CORS preflight
     if (method === "OPTIONS") {
-      return new Response(null, { status: 204, headers: { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET,POST,PATCH,OPTIONS", "Access-Control-Allow-Headers": "Content-Type" } });
+      return new Response(null, { status: 204, headers: { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "GET,POST,PATCH,OPTIONS", "Access-Control-Allow-Headers": "Content-Type, X-Sync-Token" } });
+    }
+
+    // ── Auth gate (AI-ENDPOINT-AUTH-1): mutating endpoints require X-Sync-Token ──
+    // GET endpoints (/health, /issues read-only, /skills/status) stay open.
+    if (method === "POST" || method === "PATCH") {
+      const auth = request.headers.get("X-Sync-Token");
+      if (!auth || !env.SYNC_TOKEN || auth !== env.SYNC_TOKEN) {
+        return json({ error: "Unauthorized: missing or invalid X-Sync-Token" }, 401);
+      }
     }
 
     // ── /health ──
@@ -85,6 +94,8 @@ export default {
 
     // ── POST /log/chat — ingest local session log ──
     if (url.pathname === "/log/chat" && method === "POST") {
+      const len = Number(request.headers.get("Content-Length") || 0);
+      if (len > 20000) return json({ error: "payload too large (max 20KB)" }, 413);
       const body = await readJson(request);
       if (!body || !body.session_id) return json({ error: "session_id required" }, 400);
 
@@ -108,6 +119,8 @@ export default {
 
     // ── POST /issues — user-specified optimization/request ──
     if (url.pathname === "/issues" && method === "POST") {
+      const len = Number(request.headers.get("Content-Length") || 0);
+      if (len > 20000) return json({ error: "payload too large (max 20KB)" }, 413);
       const body = await readJson(request);
       if (!body || !body.title) return json({ error: "title required" }, 400);
       const now = Date.now();
@@ -210,11 +223,36 @@ async function runKaizenCycle(env) {
   const started = Date.now();
   const report = { date: new Date().toISOString().slice(0, 10), extracted: 0, issues: 0, reportUrl: null, errors: [] };
 
+  // ── Cycle lock: prevent overlapping cron + manual runs (HARD: duplicate issues) ──
+  try {
+    const lock = await env.AUDIT_DB.prepare(
+      "INSERT INTO kaizen_locks (lock_key, started_at) VALUES ('cycle', ?) ON CONFLICT(lock_key) DO NOTHING"
+    ).bind(started).run();
+    // If no row was inserted, a cycle is already running
+    if (lock.meta.changes === 0) {
+      return { ...report, errors: ["kaizen cycle already running — skipped"] };
+    }
+  } catch (e) {
+    // Lock table may not exist yet — create it lazily then retry once
+    await env.AUDIT_DB.prepare(
+      "CREATE TABLE IF NOT EXISTS kaizen_locks (lock_key TEXT PRIMARY KEY, started_at INTEGER)"
+    ).run();
+    await env.AUDIT_DB.prepare(
+      "INSERT INTO kaizen_locks (lock_key, started_at) VALUES ('cycle', ?) ON CONFLICT(lock_key) DO NOTHING"
+    ).bind(started).run();
+  }
+
   try {
     // 1. Pull unprocessed chat logs
     const logs = await env.AUDIT_DB.prepare(
       "SELECT id, session_id, title, summary, error_flag FROM chat_logs WHERE processed = 0 ORDER BY id DESC LIMIT 100"
     ).all();
+
+    // Mark logs processed IMMEDIATELY (before AI work) so overlapping cycles skip them.
+    // Re-processing after failure is handled by the dedup on insert, not by re-scan.
+    for (const l of logs.results) {
+      await env.AUDIT_DB.prepare("UPDATE chat_logs SET processed = 1 WHERE id = ?").bind(l.id).run();
+    }
 
     // 2. AI-extract issues from logs — process in small batches to respect model context
     if (logs.results.length > 0) {
@@ -292,12 +330,16 @@ async function runKaizenCycle(env) {
           if (items.length === 0 && bi === 0) report.rawAI = text.slice(0, 1500);
         }
 
-        // Insert extracted issues
+        // Insert extracted issues — with dedup: skip if an identical open issue exists
         const now = Date.now();
         for (const item of items.slice(0, 20)) {
           if (!item.title) continue;
           const priority = ["high", "medium", "low"].includes(item.priority) ? item.priority : "medium";
           const category = ["error", "optimization", "request", "infrastructure"].includes(item.category) ? item.category : "optimization";
+          const dup = await env.AUDIT_DB.prepare(
+            "SELECT id FROM agent_issues WHERE title = ? AND source = ? AND status = 'open' LIMIT 1"
+          ).bind(item.title.slice(0, 500), "kaizen-ai").first();
+          if (dup) continue; // already tracked — skip duplicate
           await env.AUDIT_DB.prepare(
             "INSERT INTO agent_issues (title, description, source, category, priority, status, linked_session, created_at, updated_at) VALUES (?,?,?,?,?,?,?,?,?)"
           ).bind(
@@ -400,6 +442,13 @@ async function runKaizenCycle(env) {
 
   } catch (e) {
     report.errors.push(`Cycle: ${e.message}`);
+  }
+
+  // Release the cycle lock so the next run can proceed
+  try {
+    await env.AUDIT_DB.prepare("DELETE FROM kaizen_locks WHERE lock_key = 'cycle'").run();
+  } catch (e) {
+    report.errors.push(`Lock release: ${e.message}`);
   }
 
   report.durationMs = Date.now() - started;
