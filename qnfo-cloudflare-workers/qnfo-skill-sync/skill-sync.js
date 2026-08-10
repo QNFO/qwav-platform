@@ -208,6 +208,22 @@ export default {
       });
     }
 
+    // ── GET / — endpoint index ──
+    if (url.pathname === "/") {
+      return json({
+        worker: "qnfo-skill-sync",
+        endpoints: {
+          "POST /log/chat": "Ingest DeepChat session log { session_id, title, summary, message_count, error_flag? }",
+          "POST /issues": "Create issue { title, description?, category?, priority?, source? }",
+          "GET /issues": "List issues ?status=open&category=&priority=&limit=",
+          "PATCH /issues/:id": "Update issue status { status: open|in_progress|done|wontfix|blocked }",
+          "POST /kaizen/run": "Trigger kaizen cycle (?sync=true for synchronous)",
+          "GET /skills/status": "GitHub vs R2 sync status",
+          "GET /health": "Health and bindings"
+        }
+      });
+    }
+
     return json({ error: "Not found" }, 404);
   },
 
@@ -237,9 +253,13 @@ async function runKaizenCycle(env) {
     await env.AUDIT_DB.prepare(
       "CREATE TABLE IF NOT EXISTS kaizen_locks (lock_key TEXT PRIMARY KEY, started_at INTEGER)"
     ).run();
-    await env.AUDIT_DB.prepare(
+    const retry = await env.AUDIT_DB.prepare(
       "INSERT INTO kaizen_locks (lock_key, started_at) VALUES ('cycle', ?) ON CONFLICT(lock_key) DO NOTHING"
     ).bind(started).run();
+    // Re-check after lazy create — a concurrent cycle may have won the lock
+    if (retry.meta.changes === 0) {
+      return { ...report, errors: ["kaizen cycle already running — skipped"] };
+    }
   }
 
   try {
