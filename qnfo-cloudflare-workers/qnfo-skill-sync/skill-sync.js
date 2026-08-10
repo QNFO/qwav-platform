@@ -417,6 +417,16 @@ async function runKaizenCycle(env) {
       if (putResp.ok) {
         const pr = await putResp.json();
         report.reportUrl = pr.content?.html_url || pr.content?.git_url || null;
+        // Capture the authoritative new HEAD SHA from the PUT response itself.
+        // Re-reading the commits endpoint right after a contents PUT can return
+        // a stale SHA (GitHub API eventual consistency) -> in_sync false-positives.
+        if (pr.commit?.sha) {
+          await env.SKILLS_BUCKET.put("_sync/last-snapshot.json", JSON.stringify({
+            sha: pr.commit.sha,
+            at: new Date().toISOString(),
+            report: report.date
+          }), { httpMetadata: { contentType: "application/json" } });
+        }
       } else {
         const errText = await putResp.text();
         report.errors.push(`GitHub push: ${putResp.status} ${errText.slice(0, 200)}`);
@@ -425,16 +435,22 @@ async function runKaizenCycle(env) {
       report.errors.push(`GitHub push: ${e.message}`);
     }
 
-    // 6. Snapshot GitHub HEAD to R2 (sync status baseline)
+    // 6. Snapshot GitHub HEAD to R2 (sync status baseline) — only if step 5
+    // didn't already capture the authoritative SHA from the PUT response.
     try {
-      const gh = await githubFetch(env, `/repos/${env.SKILLS_REPO}/commits/${env.SKILLS_BRANCH}`);
-      if (gh.ok) {
-        const head = await gh.json();
-        await env.SKILLS_BUCKET.put("_sync/last-snapshot.json", JSON.stringify({
-          sha: head.sha,
-          at: new Date().toISOString(),
-          report: report.date
-        }), { httpMetadata: { contentType: "application/json" } });
+      const existing = await env.SKILLS_BUCKET.get("_sync/last-snapshot.json");
+      if (existing && JSON.parse(await existing.text()).report === report.date) {
+        // already written by step 5 with the authoritative commit SHA
+      } else {
+        const gh = await githubFetch(env, `/repos/${env.SKILLS_REPO}/commits/${env.SKILLS_BRANCH}`);
+        if (gh.ok) {
+          const head = await gh.json();
+          await env.SKILLS_BUCKET.put("_sync/last-snapshot.json", JSON.stringify({
+            sha: head.sha,
+            at: new Date().toISOString(),
+            report: report.date
+          }), { httpMetadata: { contentType: "application/json" } });
+        }
       }
     } catch (e) {
       report.errors.push(`R2 snapshot: ${e.message}`);
