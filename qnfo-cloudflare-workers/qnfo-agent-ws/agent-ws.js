@@ -36,8 +36,17 @@ TOOLS AVAILABLE:
 - query_graph(sql): Run a read-only SQL query against the QNFO knowledge graph D1 database. Tables: nodes (id, name, label, properties), edges (source_id, target_id, label, properties).
 
 CLOUDFLARE ACCOUNT AUTOMATION (MCP tools, via cloudflare-api server):
+- docs(): Search the Cloudflare documentation. Use for any question about Cloudflare products or features (Workers, Pages, R2, D1, Durable Objects, KV, Vectorize, AI Gateway, etc.).
 - search(): Search the Cloudflare OpenAPI spec (2,500+ endpoints across DNS, Workers, R2, Zero Trust, D1, Vectorize, and every other product) for a capability. Returns the endpoint reference and required parameters. Use BEFORE execute() when you need to find the right API call.
 - execute(): Run generated JavaScript against the Cloudflare API client to perform the operation (read or write) in an isolated Dynamic Worker sandbox. The code has access to a typed client and the Cloudflare API spec.
+
+IMPORTANT — Code Mode contract for search()/execute():
+- Both tools take a code parameter: a JavaScript async arrow function, e.g.
+  async () => { const op = spec.paths['/accounts/{account_id}/workers/scripts']?.get; return op; }
+  for search(), or for execute():
+  async () => { const resp = await cloudflare.request({ method: 'GET', path: '/accounts/' + accountId + '/workers/scripts' }); return resp; }
+- Do NOT pass natural-language queries as code; write actual JS.
+- The sandbox pre-sets: cloudflare.request(), spec, and accountId.
 
 RULES FOR CLOUDFLARE API OPERATIONS:
 1. Read-only (GET) operations are always safe — use them freely to inspect resources.
@@ -53,7 +62,7 @@ When you are ready to answer, just respond with your final markdown output. Do n
 // raw binding (proven in qnfo-agent-orchestrator), but workers-ai-provider +
 // streamText serializes tool calls as plain text, which breaks the loop.
 
-const AGENT_MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
+const AGENT_MODEL = "@cf/qwen/qwen2.5-coder-32b-instruct";
 
 function getModel(env) {
   if (env.DEEPSEEK_API_KEY) {
@@ -68,12 +77,16 @@ function getModel(env) {
 
 const QNFO_ROUTER_URL = "https://qnfo-ai.q08.workers.dev/v1/chat/completions";
 
-// Route inference through the qnfo-ai router when ROUTER_AUTH_KEY is present.
-// The router has DeepSeek + ensemble + auto-routing (proven Code Mode models),
-// which the Cloudflare API MCP tools require (search/execute write JS against
-// the OpenAPI spec). Falls back to the raw Workers AI binding otherwise.
+// Route inference through the qnfo-ai router when ROUTER_AUTH_KEY is present
+// AND no tools are needed. CRITICAL: tool-calling turns MUST use the raw
+// Workers AI binding — the qnfo-ai router does NOT forward `tools` to its
+// upstream providers (verified in qnfo-ai source: callDeepSeek/runWorkersAI
+// omit the tools array), so routing a tool turn through it silently drops the
+// Cloudflare API MCP declarations and the loop stalls. The raw binding with a
+// code-capable model (qwen2.5-coder-32b) drives the Code Mode search/execute
+// pattern correctly.
 async function callModel(env, msgs, tools, maxTokens) {
-  if (env.ROUTER_AUTH_KEY) {
+  if (env.ROUTER_AUTH_KEY && (!tools || !tools.length)) {
     const resp = await fetch(QNFO_ROUTER_URL, {
       method: "POST",
       headers: {
@@ -83,8 +96,6 @@ async function callModel(env, msgs, tools, maxTokens) {
       body: JSON.stringify({
         model: "auto",
         messages: msgs,
-        tools: tools || undefined,
-        tool_choice: tools && tools.length ? "auto" : undefined,
         max_tokens: maxTokens || 4096,
         stream: false,
       }),
