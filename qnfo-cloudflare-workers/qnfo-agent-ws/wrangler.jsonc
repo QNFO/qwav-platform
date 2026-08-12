@@ -1,0 +1,36 @@
+{
+  "name": "qnfo-agent-ws",
+  "main": "agent-ws.js",
+  "compatibility_date": "2026-08-10",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+
+  "durable_objects": {
+    "bindings": [
+      {"name": "QnfoAgent", "class_name": "QnfoAgent"},
+      {"name": "QnfoReportWorkflow", "class_name": "QnfoReportWorkflow"}
+    ]
+  },
+  "migrations": [
+    {"tag": "v1", "new_sqlite_classes": ["QnfoAgent"]},
+    {"tag": "v2", "new_sqlite_classes": ["QnfoReportWorkflow"]}
+  ],
+
+  "d1_databases": [
+    {"binding": "LIVING_PAPER", "database_name": "living-paper", "database_id": "70a58cb3-b2cd-498d-877f-ecca86859a22"},
+    {"binding": "QNFO_GRAPH", "database_name": "qnfo-graph", "database_id": "a1954b92-d681-4d02-b1f6-f9a2eb4c265d"}
+  ],
+
+  "vectorize": [
+    {"binding": "PAPER_VZ", "index_name": "qwav-research-v2"}
+  ],
+
+  "ai": {
+    "binding": "AI"
+  },
+
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1.0
+  }
+}
