@@ -17,7 +17,7 @@ import { convertToModelMessages } from "ai";
 import { createOpenAI } from "@ai-sdk/openai";
 import { z } from "zod";
 
-const VERSION = "1.3.0";
+const VERSION = "1.3.1";
 const MAX_BODY = 64 * 1024;
 const CLOUDFLARE_API_MCP_URL = "https://mcp.cloudflare.com/mcp";
 
@@ -435,7 +435,7 @@ export class QnfoAgent extends AIChatAgent {
     }
   }
 
-  @callable()
+  // Public DO method — RPC-callable via stub without decorator (plain JS; @callable() is invalid syntax)
   async sendEmail({ to, subject, text, html }) {
     try {
       await this.env.EMAIL.send({
@@ -658,6 +658,7 @@ export default {
           deepseek_key: !!env.DEEPSEEK_API_KEY,
           auth: !!env.SYNC_TOKEN,
           mcp_cloudflare_api: !!env.CF_API_TOKEN,
+          email: !!env.EMAIL,
         },
       });
     }
