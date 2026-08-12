@@ -66,6 +66,55 @@ function getModel(env) {
   return null; // raw binding path used for Workers AI
 }
 
+const QNFO_ROUTER_URL = "https://qnfo-ai.q08.workers.dev/v1/chat/completions";
+
+// Route inference through the qnfo-ai router when ROUTER_AUTH_KEY is present.
+// The router has DeepSeek + ensemble + auto-routing (proven Code Mode models),
+// which the Cloudflare API MCP tools require (search/execute write JS against
+// the OpenAPI spec). Falls back to the raw Workers AI binding otherwise.
+async function callModel(env, msgs, tools, maxTokens) {
+  if (env.ROUTER_AUTH_KEY) {
+    const resp = await fetch(QNFO_ROUTER_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + env.ROUTER_AUTH_KEY,
+      },
+      body: JSON.stringify({
+        model: "auto",
+        messages: msgs,
+        tools: tools || undefined,
+        tool_choice: tools && tools.length ? "auto" : undefined,
+        max_tokens: maxTokens || 4096,
+        stream: false,
+      }),
+    });
+    if (!resp.ok) {
+      const errText = await resp.text();
+      throw new Error("router " + resp.status + ": " + errText.slice(0, 300));
+    }
+    const out = await resp.json();
+    if (out?.choices?.[0]?.message) {
+      const m = out.choices[0].message;
+      return {
+        response: typeof m.content === "string" ? m.content : "",
+        content: typeof m.content === "string" ? m.content : "",
+        tool_calls: m.tool_calls || [],
+        _router: out._router || null,
+      };
+    }
+    return out;
+  }
+  return env.AI.run(AGENT_MODEL, {
+    messages: msgs,
+    tools: tools || undefined,
+    tool_choice: tools && tools.length ? "auto" : undefined,
+    max_tokens: maxTokens || 4096,
+    temperature: 0.3,
+  });
+}
+
+
 // ── Raw agent loop (proven structured tool calling) ──────────────────────
 
 function flattenContent(content) {
@@ -221,13 +270,7 @@ async function runAgentTurn(env, messages, { abortSignal, onFinish, mcp } = {}) 
   let steps = 0;
   let finalText = "";
   for (; steps < 8; steps++) {
-    const aiResp = await env.AI.run(AGENT_MODEL, {
-      messages: msgs,
-      tools,
-      tool_choice: "auto",
-      max_tokens: 4096,
-      temperature: 0.3,
-    });
+    const aiResp = await callModel(env, msgs, tools, 4096);
     const toolCalls = normalizeToolCalls(aiResp.tool_calls || []);
     if (!toolCalls.length) {
       finalText = aiResp.response || aiResp.content || JSON.stringify(aiResp);
@@ -252,7 +295,7 @@ async function runAgentTurn(env, messages, { abortSignal, onFinish, mcp } = {}) 
   }
   if (!finalText && steps >= 8) {
     msgs.push({ role: "user", content: "You have reached the maximum number of steps. Provide your final answer now based on the information gathered. Do NOT make additional tool calls." });
-    const finalResponse = await env.AI.run(AGENT_MODEL, { messages: msgs, max_tokens: 4096, temperature: 0.3 });
+    const finalResponse = await callModel(env, msgs, null, 4096);
     finalText = finalResponse.response || finalResponse.content || "No result produced";
   }
   return { text: finalText, steps };
