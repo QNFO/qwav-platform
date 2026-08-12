@@ -12,7 +12,6 @@
 // Auth: mutating endpoints require X-Sync-Token or Authorization: Bearer <token>.
 
 import { AIChatAgent } from "@cloudflare/ai-chat";
-import { AgentWorkflow } from "agents/workflows";
 import { routeAgentRequest, getAgentByName } from "agents";
 import { createUIMessageStream, createUIMessageStreamResponse, convertToModelMessages } from "ai";
 import { createOpenAI } from "@ai-sdk/openai";
@@ -478,7 +477,8 @@ function handleModels(env) {
 // ── AIChatAgent (WebSocket-native) ───────────────────────────────────────
 
 export class QnfoAgent extends AIChatAgent {
-  // Autonomous daily report — schedule every 24h (offload from DeepChat cron)
+  // Autonomous daily report — runs inside THIS agent instance (no extra DO class).
+  // Offloads a DeepChat cronjob to Cloudflare: gather stats, AI-summarize, persist.
   async onStart() {
     try {
       await this.scheduleEvery(24 * 60 * 60 * 1000, "daily-qnfo-report", {});
@@ -490,13 +490,41 @@ export class QnfoAgent extends AIChatAgent {
   async onScheduleTask(name, payload) {
     if (name === "daily-qnfo-report") {
       try {
-        const wf = this.env.QnfoReportWorkflow;
-        const inst = wf.getByName("daily");
-        const result = await inst.run(payload || {});
-        console.log("[report] workflow complete");
+        await this.runDailyReport();
       } catch (err) {
-        console.log("[report] workflow failed: " + String(err).slice(0, 160));
+        console.log("[report] failed: " + String(err).slice(0, 160));
       }
+    }
+  }
+  async runDailyReport() {
+    const report = {};
+    try {
+      const r = await this.env.LIVING_PAPER.prepare(
+        "SELECT COUNT(*) AS total, COUNT(DISTINCT slug) AS distinct_slugs, " +
+        "SUM(CASE WHEN body_md IS NOT NULL THEN 1 ELSE 0 END) AS with_body FROM papers"
+      ).first();
+      report.papers = r || {};
+      const n = await this.env.QNFO_GRAPH.prepare("SELECT COUNT(*) AS n FROM nodes").first();
+      const e = await this.env.QNFO_GRAPH.prepare("SELECT COUNT(*) AS e FROM edges").first();
+      report.graph = { nodes: n?.n ?? 0, edges: e?.e ?? 0 };
+      let summary = "no summary";
+      try {
+        const aiResp = await this.env.AI.run("@cf/meta/llama-3.3-70b-instruct-fp8-fast", {
+          messages: [{ role: "user", content:
+            "Produce a 2-3 sentence daily QNFO infrastructure summary. Data: " +
+            JSON.stringify(report) + ". Be factual and concise." }],
+          max_tokens: 300,
+        });
+        summary = aiResp?.response || aiResp?.result?.response || JSON.stringify(aiResp).slice(0, 400);
+      } catch (err) {
+        summary = "AI summary unavailable: " + String(err).slice(0, 120);
+      }
+      report.summary = summary;
+      console.log("[report] " + new Date().toISOString() + " " + JSON.stringify(report).slice(0, 500));
+      return report;
+    } catch (err) {
+      console.log("[report] error: " + String(err).slice(0, 200));
+      return { error: String(err).slice(0, 200) };
     }
   }
 
@@ -592,69 +620,6 @@ export class QnfoAgent extends AIChatAgent {
 }
 
 
-// ── Durable AgentWorkflow: Daily QNFO report (offload from DeepChat cron) ──
-// Runs on Cloudflare: counts papers/graph/vector state, builds an AI summary
-// with Workers AI (free tier), and stores the report to D1 + optional email.
-// Triggered by scheduleEvery (autonomous) or POST /v1/reports/run (on-demand).
-
-export class QnfoReportWorkflow extends AgentWorkflow {
-  async run(event, step) {
-    const report = {};
-
-    await step.do("count-papers", async () => {
-      const r = await this.env.LIVING_PAPER.prepare(
-        "SELECT COUNT(*) AS total, COUNT(DISTINCT slug) AS distinct_slugs, " +
-        "SUM(CASE WHEN body_md IS NOT NULL THEN 1 ELSE 0 END) AS with_body FROM papers"
-      ).first();
-      report.papers = r || {};
-    });
-
-    await step.do("graph-state", async () => {
-      const n = await this.env.QNFO_GRAPH.prepare("SELECT COUNT(*) AS n FROM nodes").first();
-      const e = await this.env.QNFO_GRAPH.prepare("SELECT COUNT(*) AS e FROM edges").first();
-      report.graph = { nodes: n?.n ?? 0, edges: e?.e ?? 0 };
-    });
-
-    await step.do("vector-state", async () => {
-      try {
-        const v = await this.env.PAPER_VZ.get("stats");
-        report.vector = v ? JSON.parse(v) : { info: "no stats key" };
-      } catch (err) {
-        report.vector = { error: String(err).slice(0, 120) };
-      }
-    });
-
-    const summary = await step.do("ai-summary", async () => {
-      try {
-        const prompt =
-          "Produce a 2-3 sentence daily QNFO infrastructure summary. Data: " +
-          JSON.stringify(report) + ". Be factual and concise.";
-        const aiResp = await this.env.AI.run("@cf/meta/llama-3.3-70b-instruct-fp8-fast", {
-          messages: [{ role: "user", content: prompt }],
-          max_tokens: 300,
-        });
-        return aiResp?.response || aiResp?.result?.response || JSON.stringify(aiResp).slice(0, 400);
-      } catch (err) {
-        return "AI summary unavailable: " + String(err).slice(0, 120);
-      }
-    });
-    report.summary = summary;
-
-    await step.do("persist-report", async () => {
-      const ts = new Date().toISOString();
-      const body = JSON.stringify(report);
-      await this.env.LIVING_PAPER.prepare(
-        "INSERT INTO reports (ts, kind, body) VALUES (?, 'daily-qnfo-report', ?)"
-      ).bind(ts, body).run().catch(() => {});
-      // Table may not exist yet; fallback to a KV-less log line
-      console.log("[report] " + ts + " " + body.slice(0, 300));
-    });
-
-    await step.reportComplete({ report });
-    return { report };
-  }
-}
-
 // ── Worker fetch handler ─────────────────────────────────────────────────
 
 export default {
@@ -701,10 +666,9 @@ export default {
     // OpenAI-compatible surface
     if (path === "/v1/reports/run" && method === "POST") {
       try {
-        const workflow = env.QnfoReportWorkflow;
-        const instance = workflow.getByName("daily");
-        const result = await instance.run({});
-        return json({ ok: true, workflow: "QnfoReportWorkflow", instance: "daily", result: result?.report || result });
+        const agent = await getAgentByName(env.QnfoAgent, "reporter");
+        const result = await agent.runDailyReport();
+        return json({ ok: true, agent: "QnfoAgent", instance: "reporter", result });
       } catch (e) {
         return json({ ok: false, error: e?.message || String(e) }, 500);
       }
