@@ -12,12 +12,12 @@
 // Auth: mutating endpoints require X-Sync-Token or Authorization: Bearer <token>.
 
 import { AIChatAgent } from "@cloudflare/ai-chat";
-import { routeAgentRequest, getAgentByName } from "agents";
-import { createUIMessageStream, createUIMessageStreamResponse, convertToModelMessages } from "ai";
+import { routeAgentRequest, getAgentByName, routeAgentEmail, callable } from "agents";
+import { convertToModelMessages } from "ai";
 import { createOpenAI } from "@ai-sdk/openai";
 import { z } from "zod";
 
-const VERSION = "1.2.0";
+const VERSION = "1.3.0";
 const MAX_BODY = 64 * 1024;
 const CLOUDFLARE_API_MCP_URL = "https://mcp.cloudflare.com/mcp";
 
@@ -46,78 +46,6 @@ RULES FOR CLOUDFLARE API OPERATIONS:
 4. Never expose API tokens or credentials in your output.
 
 When you are ready to answer, just respond with your final markdown output. Do not make additional tool calls.`;
-
-// ── Tools ────────────────────────────────────────────────────────────────
-
-function buildTools(env) {
-  return {
-    search_papers: tool({
-      description:
-        "Semantic search across the QWAV research paper corpus using vector embeddings. Returns paper slugs, scores, and metadata.",
-      inputSchema: z.object({
-        query: z.string().describe("Natural language search query"),
-        limit: z.number().int().min(1).max(10).optional().describe("Max results (default 5)"),
-      }),
-      execute: async ({ query, limit }) => {
-        const topK = Math.min(limit || 5, 10);
-        const embedResp = await env.AI.run("@cf/baai/bge-base-en-v1.5", { text: [query] });
-        const vector = embedResp.data?.[0] || embedResp[0];
-        if (!vector) return JSON.stringify({ error: "Embedding failed" });
-        const results = await env.PAPER_VZ.query(vector, {
-          topK,
-          returnValues: false,
-          returnMetadata: true,
-        });
-        const matches = results.matches.map((m) => ({
-          id: m.id,
-          score: Math.round(m.score * 1000) / 1000,
-          slug: m.metadata?.slug || m.id,
-          title: m.metadata?.title || "",
-          authors: m.metadata?.authors || "",
-        }));
-        return JSON.stringify({ count: matches.length, matches });
-      },
-    }),
-
-    get_paper_context: tool({
-      description: "Get the full body text of a specific paper by its slug identifier.",
-      inputSchema: z.object({
-        slug: z.string().describe("Paper slug (e.g., 'zbw-p5-capstone')"),
-      }),
-      execute: async ({ slug }) => {
-        const row = await env.LIVING_PAPER.prepare(
-          "SELECT body_md, doi, authors, title FROM papers WHERE slug = ?"
-        )
-          .bind(slug)
-          .first();
-        if (!row) return JSON.stringify({ error: `Paper not found: ${slug}` });
-        return JSON.stringify({
-          slug,
-          doi: row.doi,
-          title: row.title,
-          authors: row.authors,
-          body: (row.body_md || "").substring(0, 8000),
-        });
-      },
-    }),
-
-    query_graph: tool({
-      description:
-        "Run a read-only SQL query against the QNFO knowledge graph (D1). Tables: nodes(id, name, label, properties JSON), edges(source_id, target_id, label, properties JSON).",
-      inputSchema: z.object({
-        sql: z.string().describe("SQL SELECT query (read-only)"),
-      }),
-      execute: async ({ sql }) => {
-        const trimmed = (sql || "").trim();
-        if (!trimmed.toUpperCase().startsWith("SELECT")) {
-          return JSON.stringify({ error: "Only SELECT queries allowed" });
-        }
-        const result = await env.QNFO_GRAPH.prepare(trimmed).all();
-        return JSON.stringify({ results: result.results, count: result.results?.length || 0 });
-      },
-    }),
-  };
-}
 
 // ── Model selection ──────────────────────────────────────────────────────
 // NOTE: tool calling uses the RAW Workers AI binding (env.AI.run with
@@ -274,7 +202,7 @@ async function executeQnfoTool(env, name, args) {
 }
 
 // The core ReAct loop. Returns { text, steps }.
-async function runRawAgentLoop(env, messages, { mcp } = {}) {
+async function runAgentTurn(env, messages, { abortSignal, onFinish, mcp } = {}) {
   const legacy = toLegacyMessages(messages);
   const msgs = [
     { role: "system", content: SYSTEM_PROMPT },
@@ -394,13 +322,14 @@ async function handleChatCompletions(request, env) {
 
   try {
     const result = await runAgentTurn(env, messages, {});
+    const chunks = [result.text];
 
     if (wantStream) {
       const encoder = new TextEncoder();
       const stream = new ReadableStream({
         async start(controller) {
           try {
-            for await (const delta of result.textStream) {
+            for (const delta of chunks) {
               const payload = {
                 id,
                 object: "chat.completion.chunk",
@@ -434,8 +363,7 @@ async function handleChatCompletions(request, env) {
       });
     }
 
-    let content = "";
-    for await (const delta of result.textStream) content += delta;
+    let content = chunks.join("");
     return json({
       id,
       object: "chat.completion",
@@ -479,23 +407,50 @@ function handleModels(env) {
 export class QnfoAgent extends AIChatAgent {
   // Autonomous daily report — runs inside THIS agent instance (no extra DO class).
   // Offloads a DeepChat cronjob to Cloudflare: gather stats, AI-summarize, persist.
+  // scheduleEvery takes SECONDS; 24h = 86400 (not ms — the ms value exceeds the
+  // 30-day cap and silently fails). The callback is the method name directly.
   async onStart() {
     try {
-      await this.scheduleEvery(24 * 60 * 60 * 1000, "daily-qnfo-report", {});
+      await this.scheduleEvery(24 * 60 * 60, "runDailyReport", {});
       console.log("[schedule] daily-qnfo-report registered");
     } catch (err) {
       console.log("[schedule] failed: " + String(err).slice(0, 120));
     }
   }
-  async onScheduleTask(name, payload) {
-    if (name === "daily-qnfo-report") {
-      try {
-        await this.runDailyReport();
-      } catch (err) {
-        console.log("[report] failed: " + String(err).slice(0, 160));
-      }
+  // Cloudflare-native email (v1.3.0): inbound via routeAgentEmail -> onEmail;
+  // outbound via sendEmail(). Uses the EMAIL send_email binding.
+  async onEmail(email) {
+    try {
+      const raw = await email.getRaw();
+      const from = email.from;
+      const subject = email.subject || '';
+      const text = typeof raw === 'string' ? raw.slice(0, 8000) : '[binary]';
+      console.log("[email] from=" + from + " subject=" + subject.slice(0, 80));
+      // Persist inbound to D1 chat_logs-style table (best-effort)
+      await this.env.LIVING_PAPER.prepare(
+        "INSERT INTO email_logs (ts, from_addr, subject, body) VALUES (?, ?, ?, ?)"
+      ).bind(new Date().toISOString(), String(from), subject.slice(0, 200), text.slice(0, 4000)).run().catch(() => {});
+    } catch (err) {
+      console.log("[email] onEmail error: " + String(err).slice(0, 160));
     }
   }
+
+  @callable()
+  async sendEmail({ to, subject, text, html }) {
+    try {
+      await this.env.EMAIL.send({
+        to: to || '',
+        from: "agent@qnfo.org",
+        subject: subject || "QNFO Agent message",
+        text: text || "",
+        html: html || "",
+      });
+      return { ok: true };
+    } catch (err) {
+      return { ok: false, error: String(err).slice(0, 200) };
+    }
+  }
+
   async runDailyReport() {
     const report = {};
     try {
@@ -573,9 +528,14 @@ export class QnfoAgent extends AIChatAgent {
     const result = await runAgentTurn(
       this.env,
       await convertToModelMessages(this.messages),
-      { abortSignal: options?.abortSignal, onFinish, mcpTools }
+      { abortSignal: options?.abortSignal, onFinish, mcp: this.mcp }
     );
-    return result.toUIMessageStreamResponse();
+    // AIChatAgent._reply handles a plain text body via _sendPlaintextReply
+    // (text-start / text-delta / text-end). createUIMessageStreamResponse
+    // requires a ReadableStream, not an async generator, in ai v7.
+    return new Response(result.text || "No response generated.", {
+      headers: { "Content-Type": "text/plain; charset=utf-8" },
+    });
   }
 
   // Debug RPC: report MCP connection state from inside the DO so we can
@@ -623,6 +583,17 @@ export class QnfoAgent extends AIChatAgent {
 // ── Worker fetch handler ─────────────────────────────────────────────────
 
 export default {
+  async email(message, env, ctx) {
+    await routeAgentEmail(message, env, {
+      resolver: async (email, env) => {
+        return { agent: "QnfoAgent", instance: email.to?.includes("agent@") ? "agent" : "default" };
+      },
+      onNoRoute: (email) => {
+        console.warn("No route for email from " + (email?.from || "?"));
+        email?.setReject?.("Unknown recipient");
+      },
+    });
+  },
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const path = url.pathname;
