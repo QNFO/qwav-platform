@@ -17,7 +17,7 @@ import { convertToModelMessages } from "ai";
 import { createOpenAI } from "@ai-sdk/openai";
 import { z } from "zod";
 
-const VERSION = "1.3.4";
+const VERSION = "1.3.5";
 const MAX_BODY = 64 * 1024;
 const CLOUDFLARE_API_MCP_URL = "https://mcp.cloudflare.com/mcp";
 
@@ -90,9 +90,15 @@ async function callModel(env, msgs, tools, maxTokens) {
   // v1.3.3: route tool turns through qnfo-ai -> DeepSeek (Code Mode capable; qnfo-ai
   // v4.3.10 now forwards `tools`). Workers AI raw binding remains the no-key fallback.
   if (env.ROUTER_AUTH_KEY) {
-    // Service binding bypasses the workers.dev->workers.dev recursion block (Cloudflare 1042)
-    const doFetch = env.QNFO_AI ? (u, init) => env.QNFO_AI.fetch(u, init) : fetch;
-    const resp = await doFetch(QNFO_ROUTER_URL, {
+    // Service binding bypasses the workers.dev->workers.dev recursion block (Cloudflare 1042).
+    // v1.3.5: binding fetches must NOT use the target's workers.dev hostname (edge reroute ->
+    // 1042). Use an internal host; qnfo-ai routes by path only.
+    const useBinding = !!env.QNFO_AI;
+    const doFetch = useBinding ? (u, init) => env.QNFO_AI.fetch(u, init) : fetch;
+    const routerUrl = useBinding
+      ? "https://qnfo-ai.internal/v1/chat/completions"
+      : QNFO_ROUTER_URL;
+    const resp = await doFetch(routerUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
