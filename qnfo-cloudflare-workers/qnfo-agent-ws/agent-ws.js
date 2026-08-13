@@ -17,7 +17,7 @@ import { convertToModelMessages } from "ai";
 import { createOpenAI } from "@ai-sdk/openai";
 import { z } from "zod";
 
-const VERSION = "1.3.7";
+const VERSION = "1.3.9";
 const MAX_BODY = 64 * 1024;
 const CLOUDFLARE_API_MCP_URL = "https://mcp.cloudflare.com/mcp";
 
@@ -532,7 +532,7 @@ export class QnfoAgent extends AIChatAgent {
       report.graph = { nodes: n?.n ?? 0, edges: e?.e ?? 0 };
       let summary = "no summary";
       try {
-        const aiResp = await this.env.AI.run("@cf/meta/llama-3.3-70b-instruct-fp8-fast", {
+        const aiResp = await this.env.AI.run("@cf/qwen/qwen3-30b-a3b-fp8", {
           messages: [{ role: "user", content:
             "Produce a 2-3 sentence daily QNFO infrastructure summary. Data: " +
             JSON.stringify(report) + ". Be factual and concise." }],
