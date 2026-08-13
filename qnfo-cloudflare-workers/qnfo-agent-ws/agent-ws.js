@@ -295,6 +295,7 @@ async function runAgentTurn(env, messages, { abortSignal, onFinish, mcp } = {}) 
   for (; steps < 8; steps++) {
     const aiResp = await callModel(env, msgs, tools, 4096);
     const toolCalls = normalizeToolCalls(aiResp.tool_calls || []);
+    console.log("[loop] step=" + steps + " model=" + (aiResp?._router?.routed_model || aiResp?._router?.model || "?") + " toolCalls=" + JSON.stringify(toolCalls.map(t => t.function.name + ":" + t.function.arguments.slice(0, 120))));
     if (!toolCalls.length) {
       finalText = aiResp.response || aiResp.content || JSON.stringify(aiResp);
       break;
@@ -307,6 +308,7 @@ async function runAgentTurn(env, messages, { abortSignal, onFinish, mcp } = {}) 
         if (tc.function.name.startsWith("cf_") && mcp?.callTool) {
           const mcpRes = await mcp.callTool({ arguments: args, name: tc.function.name.slice(3), serverId: "cloudflare-api" });
           result = JSON.stringify(mcpRes);
+          console.log("[loop] mcp result " + tc.function.name + " -> " + result.slice(0, 300));
         } else {
           result = await executeQnfoTool(env, tc.function.name, args);
         }
