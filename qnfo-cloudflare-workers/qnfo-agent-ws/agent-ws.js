@@ -17,7 +17,7 @@ import { convertToModelMessages } from "ai";
 import { createOpenAI } from "@ai-sdk/openai";
 import { z } from "zod";
 
-const VERSION = "1.3.5";
+const VERSION = "1.3.7";
 const MAX_BODY = 64 * 1024;
 const CLOUDFLARE_API_MCP_URL = "https://mcp.cloudflare.com/mcp";
 
@@ -591,11 +591,18 @@ export class QnfoAgent extends AIChatAgent {
         this._cfMcpError = e?.message || String(e);
       }
     }
-    const result = await runAgentTurn(
-      this.env,
-      await convertToModelMessages(this.messages),
-      { abortSignal: options?.abortSignal, onFinish, mcp: this.mcp }
-    );
+    let result;
+    try {
+      result = await runAgentTurn(
+        this.env,
+        await convertToModelMessages(this.messages),
+        { abortSignal: options?.abortSignal, onFinish, mcp: this.mcp }
+      );
+    } catch (e) {
+      return new Response("AGENT ERROR: " + (e?.message || String(e)), {
+        headers: { "Content-Type": "text/plain; charset=utf-8" },
+      });
+    }
     // AIChatAgent._reply handles a plain text body via _sendPlaintextReply
     // (text-start / text-delta / text-end). createUIMessageStreamResponse
     // requires a ReadableStream, not an async generator, in ai v7.
