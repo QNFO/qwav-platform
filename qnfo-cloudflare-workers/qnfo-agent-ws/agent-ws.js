@@ -724,6 +724,18 @@ export default {
     }
     // Debug: direct MCP probe from the Workers runtime (tests token + URL
     // exactly as the SDK MCP client would, without the agent/DO layer).
+    if (path === "/debug/router" && method === "GET") {
+      try {
+        const doFetch = env.QNFO_AI ? (u, init) => env.QNFO_AI.fetch(u, init) : fetch;
+        const r = await doFetch("https://qnfo-ai-any-host/v1/models", {
+          headers: { Authorization: "Bearer " + (env.ROUTER_AUTH_KEY || "") },
+        });
+        const t = await r.text();
+        return json({ binding: !!env.QNFO_AI, hasKey: !!env.ROUTER_AUTH_KEY, status: r.status, body: t.slice(0, 300) });
+      } catch (e) {
+        return json({ error: e.message }, 500);
+      }
+    }
     if (path === "/debug/mcp" && method === "GET") {
       try {
         const initResp = await fetch(CLOUDFLARE_API_MCP_URL, {
