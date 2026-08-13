@@ -7,7 +7,7 @@
  *   GET  /task/:id → poll state + result
  *   GET  /health   → binding verification
  * 
- * Inference: Workers AI (@cf/meta/llama-3.3-70b-instruct-fp8-fast)
+ * Inference: Workers AI (@cf/qwen/qwen2.5-coder-32b-instruct)
  *   with native function calling. Free tier: 10k neurons/day.
  * 
  * Tools: search_papers (Vectorize), get_paper_context (D1), query_graph (D1).
@@ -159,7 +159,7 @@ export class AgentTask extends DurableObject {
 
         // Call Workers AI with function calling
         const aiResponse = await this.env.AI.run(
-          "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+          "@cf/qwen/qwen2.5-coder-32b-instruct",
           {
             messages,
             tools: TOOLS,
@@ -242,7 +242,7 @@ export class AgentTask extends DurableObject {
       });
 
       const finalResponse = await this.env.AI.run(
-        "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+        "@cf/qwen/qwen2.5-coder-32b-instruct",
         { messages, max_tokens: 4096, temperature: 0.3 }
       );
 
