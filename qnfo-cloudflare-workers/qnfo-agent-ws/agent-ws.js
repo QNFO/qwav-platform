@@ -17,7 +17,7 @@ import { convertToModelMessages } from "ai";
 import { createOpenAI } from "@ai-sdk/openai";
 import { z } from "zod";
 
-const VERSION = "1.3.1";
+const VERSION = "1.3.3";
 const MAX_BODY = 64 * 1024;
 const CLOUDFLARE_API_MCP_URL = "https://mcp.cloudflare.com/mcp";
 
@@ -86,7 +86,10 @@ const QNFO_ROUTER_URL = "https://qnfo-ai.q08.workers.dev/v1/chat/completions";
 // code-capable model (qwen2.5-coder-32b) drives the Code Mode search/execute
 // pattern correctly.
 async function callModel(env, msgs, tools, maxTokens) {
-  if (env.ROUTER_AUTH_KEY && (!tools || !tools.length)) {
+  const hasTools = tools && tools.length;
+  // v1.3.3: route tool turns through qnfo-ai -> DeepSeek (Code Mode capable; qnfo-ai
+  // v4.3.10 now forwards `tools`). Workers AI raw binding remains the no-key fallback.
+  if (env.ROUTER_AUTH_KEY) {
     const resp = await fetch(QNFO_ROUTER_URL, {
       method: "POST",
       headers: {
@@ -94,10 +97,11 @@ async function callModel(env, msgs, tools, maxTokens) {
         Authorization: "Bearer " + env.ROUTER_AUTH_KEY,
       },
       body: JSON.stringify({
-        model: "auto",
+        model: hasTools ? "deepseek-v4-flash" : "auto",
         messages: msgs,
         max_tokens: maxTokens || 4096,
         stream: false,
+        ...(hasTools ? { tools, tool_choice: "auto" } : {}),
       }),
     });
     if (!resp.ok) {
@@ -119,7 +123,7 @@ async function callModel(env, msgs, tools, maxTokens) {
   return env.AI.run(AGENT_MODEL, {
     messages: msgs,
     tools: tools || undefined,
-    tool_choice: tools && tools.length ? "auto" : undefined,
+    tool_choice: hasTools ? "auto" : undefined,
     max_tokens: maxTokens || 4096,
     temperature: 0.3,
   });
