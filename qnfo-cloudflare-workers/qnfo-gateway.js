@@ -381,7 +381,7 @@ function buildPaperJsonLd(paper) {
     isAccessibleForFree: true
   };
   const jsonStr = JSON.stringify(jsonLd).replace(/</g, "\\u003c").replace(/>/g, "\\u003e").replace(/&/g, "\\u0026");
-  return '<script type="application/ld+json">' + jsonStr + "<\\/script>";
+  return '<script type="application/ld+json">' + jsonStr + "</script>";
 }
 
 function renderPaperHTML(paper) {
