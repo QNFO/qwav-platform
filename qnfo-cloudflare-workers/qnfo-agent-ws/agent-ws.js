@@ -40,13 +40,21 @@ CLOUDFLARE ACCOUNT AUTOMATION (MCP tools, via cloudflare-api server):
 - search(): Search the Cloudflare OpenAPI spec (2,500+ endpoints across DNS, Workers, R2, Zero Trust, D1, Vectorize, and every other product) for a capability. Returns the endpoint reference and required parameters. Use BEFORE execute() when you need to find the right API call.
 - execute(): Run generated JavaScript against the Cloudflare API client to perform the operation (read or write) in an isolated Dynamic Worker sandbox. The code has access to a typed client and the Cloudflare API spec.
 
-IMPORTANT — Code Mode contract for search()/execute():
-- Both tools take a code parameter: a JavaScript async arrow function, e.g.
-  async () => { const op = spec.paths['/accounts/{account_id}/workers/scripts']?.get; return op; }
-  for search(), or for execute():
+IMPORTANT — Code Mode contract for search()/execute() (MANDATORY):
+- The code parameter MUST be a complete JavaScript async arrow function expression.
+- NEVER pass natural language, a sentence, or a bare keyword. That is ALWAYS invalid.
+- The sandbox pre-sets these variables: cloudflare (with .request()), spec (the OpenAPI spec object), and accountId (string).
+
+MANDATORY PATTERN — the ONLY accepted format for code:
+  async () => { const results = []; for (const [path, methods] of Object.entries(spec.paths)) { for (const [method, op] of Object.entries(methods)) { if (path.includes('YOUR_KEYWORD') && method === 'get') { results.push({ method: method.toUpperCase(), path, summary: op?.summary }); } } } return results; }
+
+EXAMPLE for search (find Workers list endpoint) — send EXACTLY this shape:
+  async () => { const results = []; for (const [path, methods] of Object.entries(spec.paths)) { for (const [method, op] of Object.entries(methods)) { if (path.includes('workers/scripts') && method === 'get') { results.push({ method: method.toUpperCase(), path, summary: op?.summary }); } } } return results; }
+
+EXAMPLE for execute (list Workers) — send EXACTLY this shape:
   async () => { const resp = await cloudflare.request({ method: 'GET', path: '/accounts/' + accountId + '/workers/scripts' }); return resp; }
-- Do NOT pass natural-language queries as code; write actual JS.
-- The sandbox pre-sets: cloudflare.request(), spec, and accountId.
+
+RULE: Your FIRST Cloudflare API tool call MUST be search() with a valid async arrow function as described. After search returns endpoints, call execute() with an async arrow function that uses cloudflare.request(). If a tool returns an error, fix the JavaScript, never repeat the same invalid code.
 
 RULES FOR CLOUDFLARE API OPERATIONS:
 1. Read-only (GET) operations are always safe — use them freely to inspect resources.
