@@ -1,1 +1,0 @@
-This folder contains the built output assets for the worker "qnfo-agent-ws" generated at 2026-08-12T06:18:55.856Z.
